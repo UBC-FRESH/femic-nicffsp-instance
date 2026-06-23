@@ -121,3 +121,16 @@
 - kept raw zip payloads out of runtime source-path wiring; and
 - marked `P1.2` complete in the roadmap, leaving `P1.3` as the next active
   Phase 1 task.
+
+## 2026-06-23 - Compared the K3Z template against the NICF scaffold
+
+- recorded the `P1.3a` K3Z-to-NICF comparison in
+  `planning/k3z_template_adaptation.md`;
+- identified the K3Z surfaces that can provide structure but not accepted NICF
+  semantics: run profile, rebuild spec, model-input bundle, treatment variants,
+  Patchworks tracks, and runtime package layout;
+- recorded that NICF does not yet have a model-input bundle or Patchworks
+  package and that `config/patchworks.runtime.windows.yaml` remains a
+  K3Z-shaped placeholder; and
+- marked `P1.3a` complete while leaving run-profile boundary defaults and
+  assumption review lists as the next `P1.3` moves.

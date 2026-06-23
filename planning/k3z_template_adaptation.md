@@ -41,3 +41,81 @@ surfaces:
    utility-pole reporting?
 5. What source layer can identify unallocated expansion candidates, and what
    constraints bound the candidate pool?
+
+## P1.3a Template Comparison
+
+Comparison date: 2026-06-23
+
+Reference surfaces inspected:
+
+- K3Z run profile: `external/femic-k3z-instance/config/run_profile.k3z.yaml`
+- K3Z rebuild spec: `external/femic-k3z-instance/config/rebuild.spec.yaml`
+- K3Z TIPSY rules: `external/femic-k3z-instance/config/tipsy/tsak3z.yaml`
+- K3Z seral and silviculture surfaces:
+  `external/femic-k3z-instance/config/seral.k3z.yaml` and
+  `external/femic-k3z-instance/config/silviculture.k3z.*.yaml`
+- K3Z model-input bundle:
+  `external/femic-k3z-instance/data/model_input_bundle/`
+- K3Z Patchworks package:
+  `external/femic-k3z-instance/models/k3z_patchworks_model/`
+- NICF current scaffold:
+  `config/run_profile.nicffsp.yaml`, `config/rebuild.spec.yaml`,
+  `config/tipsy/nicffsp.yaml`, `config/silviculture.nicffsp.yaml`, and
+  `config/patchworks.runtime.windows.yaml`
+
+Observed K3Z template state:
+
+- `run_profile.k3z.yaml` uses a custom boundary path
+  `data/bc/cfa/k3z/CFA K3Z Tenure.shp`, `boundary_code: k3z`, subzone
+  stratification, `vdyp_sampling_mode: all`, two-pass VDYP rebinning, and
+  `managed_curve_mode: tipsy`.
+- K3Z carries a complete compiled model-input bundle:
+  `au_table.csv` has `27` rows, `curve_table.csv` has `451` rows, and
+  `curve_points_table.csv` has `8976` rows.
+- K3Z carries a full Patchworks teaching package under
+  `models/k3z_patchworks_model/`, including `analysis`, `blocks`, `metadata`,
+  `yield`, base `tracks`, and treatment/scenario track variants.
+- K3Z config has a large variant family: base, CT/fertilization, intensive,
+  PCT, overlay, runtime, and variant YAML files.
+- K3Z TIPSY rules are FSP-informed for North Island Community Forest context,
+  but they are still K3Z/teaching-rule specific and rely on K3Z AU and stratum
+  identities.
+
+Observed NICF bootstrap state:
+
+- `run_profile.nicffsp.yaml` now uses the accepted FSP AOI boundary path
+  `data/source/nicf_fsp/aoi/nicf_fsp_aoi.shp` and records LU reference context
+  at `data/source/nicf_fsp/lu_reference/nicf_lu_reference.shp`.
+- NICF does not yet have a compiled `data/model_input_bundle/`.
+- NICF does not yet have a `models/` Patchworks package.
+- `config/tipsy/nicffsp.yaml` is still a bootstrap placeholder and contains a
+  generic softwood rule that is not accepted for the North Island FSP boundary.
+- `config/silviculture.nicffsp.yaml` is still a scaffold, not an accepted
+  treatment or cedar-signal contract.
+- `config/patchworks.runtime.windows.yaml` is still a placeholder copied from
+  the K3Z shape and currently points at K3Z output/model paths; it must not be
+  treated as runnable NICF runtime configuration until P1.4 opens the runtime
+  package build/QA lane.
+
+Adaptation boundary from this comparison:
+
+- Carry forward the K3Z repository shape, rebuild-spec discipline, run-profile
+  boundary-mode pattern, model-input bundle table contract, Patchworks package
+  directory pattern, and issue/roadmap/changelog workflow.
+- Do not carry forward K3Z generated bundle tables, Patchworks tracks, scenario
+  variants, treatment YAMLs, seral assumptions, TIPSY AU rules, product/account
+  targets, or Patchworks runtime paths as accepted NICF semantics.
+- Treat the NICF accepted source boundary as decision-complete for starting
+  model-input design: AOI is FDU 1 Holberg, FDU 2 Keogh, and FDU 3 Marble; LU
+  reference context is the matching Holberg/Keogh/Marble BCGW subset.
+- Treat cedar-signal design, expansion candidate-area construction, and
+  Patchworks runtime packaging as separate follow-on task lanes under P1.4, not
+  as part of the K3Z template comparison.
+
+Immediate next P1.3 work:
+
+- Define the first NICF run-profile boundary beyond source paths: which K3Z
+  stratification, VDYP sampling, two-pass rebinning, and managed-curve settings
+  are acceptable defaults for the FSP AOI.
+- Separate K3Z assumptions into explicit carry-forward versus FRST 558 review
+  lists before any model-input bundle generation starts.

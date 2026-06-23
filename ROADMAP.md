@@ -17,7 +17,7 @@
   - [x] P1.2d Decide which extracted layers become tracked canonical source
     files and which remain regenerated scratch.
 - [ ] P1.3 Define the first K3Z-to-NICF adaptation contract (`#3`).
-  - [ ] P1.3a Compare K3Z config, model-input bundle, docs, and Patchworks
+  - [x] P1.3a Compare K3Z config, model-input bundle, docs, and Patchworks
     package structure against the NICF FSP requirements.
   - [ ] P1.3b Define the first `run_profile.nicffsp.yaml` boundary after AOI
     extraction.
@@ -35,7 +35,10 @@
 
 ## Current Next Steps
 
-1. Start `P1.3` / `#3`: compare the K3Z config, model-input bundle, docs, and
-   Patchworks package structure against the accepted NICF FSP source boundary.
-2. Keep `P1.4` / `#2` deferred until the K3Z-to-NICF adaptation contract
+1. Continue `P1.3` / `#3`: define the first NICF run-profile boundary beyond
+   source paths, especially stratification, VDYP sampling/rebinning, and managed
+   curve defaults.
+2. Continue `P1.3` / `#3`: separate K3Z assumptions into carry-forward versus
+   FRST 558 review-required lists before any model-input bundle generation.
+3. Keep `P1.4` / `#2` deferred until the K3Z-to-NICF adaptation contract
    identifies which follow-on issue bodies need the source-boundary terms.
