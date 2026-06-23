@@ -134,3 +134,15 @@
   K3Z-shaped placeholder; and
 - marked `P1.3a` complete while leaving run-profile boundary defaults and
   assumption review lists as the next `P1.3` moves.
+
+## 2026-06-23 - Defined the first NICF run-profile boundary
+
+- activated the first NICF stratification defaults in
+  `config/run_profile.nicffsp.yaml`: subzone BEC grouping, two-species
+  combinations, TM second-species fallback, and `0.90` area coverage;
+- set first-compile runtime defaults to `resume: false`,
+  `vdyp_sampling_mode: all`, `vdyp_two_pass_rebin: true`,
+  `vdyp_min_stands_per_si_bin: 10`, and `managed_curve_mode: tipsy`;
+- recorded the P1.3b decision in `planning/k3z_template_adaptation.md`; and
+- marked `P1.3b` complete while keeping K3Z assumption review and minimum
+  model-input surfaces as the next `P1.3` work.

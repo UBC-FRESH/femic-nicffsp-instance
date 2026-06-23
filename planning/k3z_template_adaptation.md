@@ -119,3 +119,47 @@ Immediate next P1.3 work:
   are acceptable defaults for the FSP AOI.
 - Separate K3Z assumptions into explicit carry-forward versus FRST 558 review
   lists before any model-input bundle generation starts.
+
+## P1.3b First NICF Run-Profile Boundary
+
+Decision date: 2026-06-23
+
+Accepted first-boundary settings in `config/run_profile.nicffsp.yaml`:
+
+| Field | Accepted value | Rationale |
+| --- | --- | --- |
+| `selection.boundary_path` | `data/source/nicf_fsp/aoi/nicf_fsp_aoi.shp` | Accepted FDU 1-3 FSP AOI from P1.2. |
+| `selection.boundary_code` | `nicffsp` | Case code for the custom-boundary lane. |
+| `selection.stratification.bec_grouping` | `subzone` | Carries forward the K3Z teaching-template structure and keeps the first AU design inspectable. |
+| `selection.stratification.species_combo_count` | `2` | Carries forward the K3Z two-species teaching simplification for the first bundle. |
+| `selection.stratification.include_tm_species2_for_single` | `true` | Carries forward K3Z's fallback species-pairing behavior for sparse/single-species records. |
+| `selection.stratification.top_area_coverage` | `0.90` | Carries forward K3Z's compact-strata teaching boundary. |
+| `modes.resume` | `false` | First NICF compile should build from a clean boundary rather than resuming stale bootstrap artifacts. |
+| `modes.vdyp_sampling_mode` | `all` | First accepted source-derived baseline should be complete; performance tuning can follow after evidence exists. |
+| `modes.vdyp_two_pass_rebin` | `true` | Carries forward K3Z's more stable low-count strata handling. |
+| `modes.vdyp_min_stands_per_si_bin` | `10` | Carries forward K3Z's teaching-scale minimum until NICF area/strata diagnostics justify a change. |
+| `modes.managed_curve_mode` | `tipsy` | Keeps the K3Z teaching-model contract that managed-origin curves use BatchTIPSY-style synthesis. |
+
+Boundary interpretation:
+
+- These settings accept K3Z's run-profile mechanics as the first NICF compile
+  boundary.
+- These settings do not accept K3Z AU identities, generated bundle tables,
+  TIPSY rule content, silviculture treatments, seral thresholds, products,
+  accounts, or Patchworks runtime paths as NICF semantics.
+- `config/tipsy/nicffsp.yaml` remains provisional; the `managed_curve_mode:
+  tipsy` decision means the first bundle will need NICF-reviewed TIPSY rules
+  before managed-curve outputs are treated as accepted teaching evidence.
+- The first bundle should still be blocked until P1.3c separates
+  carry-forward assumptions from FRST 558 review-required assumptions.
+
+Validation performed:
+
+- `load_pipeline_run_profile()` parsed the accepted boundary defaults from
+  `config/run_profile.nicffsp.yaml`.
+
+Immediate next P1.3 work:
+
+- Complete the carry-forward versus FRST 558 review-required assumption list.
+- Identify the minimum source-derived model-input surfaces needed before P1.4
+  runtime-package issue bodies can be finalized.
