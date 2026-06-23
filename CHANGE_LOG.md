@@ -75,3 +75,15 @@
 - kept the 2020 FSP three-FDU evidence as historical/context evidence; and
 - left canonical extraction and runtime config wiring for a later bounded
   `P1.2` slice.
+
+## 2026-06-23 - Extracted the canonical bootstrap AOI source layer
+
+- extracted `NICF_FDU_2024` from the amendment zip into
+  `data/source/nicf_fsp/aoi/nicf_fdu_2024.*`;
+- verified the extracted shapefile reads as six valid EPSG:3005 polygon
+  features with the same bounds and area recorded during raw-payload
+  inspection;
+- recorded file hashes and read-verification evidence in
+  `planning/source_inventory.md`; and
+- left BCGW LU canonical-reference and runtime config wiring decisions for
+  later bounded `P1.2` slices.

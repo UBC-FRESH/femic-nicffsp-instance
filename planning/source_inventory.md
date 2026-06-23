@@ -269,9 +269,44 @@ Rationale:
 
 Open normalization work:
 
-- Extract the accepted shapefile family into a stable lowercase tracked source
-  path.
 - Decide whether the full 27-feature BCGW LU layer should also be extracted as
   canonical reference context, or remain raw payload plus documented evidence.
 - Update `config/run_profile.nicffsp.yaml` only after the accepted extracted
   AOI path exists.
+
+## Canonical Extracted AOI Source
+
+Extraction date: 2026-06-23
+
+Accepted tracked source path:
+`data/source/nicf_fsp/aoi/nicf_fdu_2024.shp`
+
+Extracted shapefile family:
+
+| Tracked path | SHA-256 |
+| --- | --- |
+| `data/source/nicf_fsp/aoi/nicf_fdu_2024.dbf` | `2024cdf3db2733e77a3dc6a864ed1252e01f44b72359c349b2712a08f2b0267d` |
+| `data/source/nicf_fsp/aoi/nicf_fdu_2024.prj` | `4dc6a252b4e1e9468f9489c04fc559230f6d8b3f6ad8a79f02ba365a593636f5` |
+| `data/source/nicf_fsp/aoi/nicf_fdu_2024.sbn` | `453a0b065fc46e72bc0b8921f5b3c3e9bbd8f9f4371aecd0e0430e32dbba5914` |
+| `data/source/nicf_fsp/aoi/nicf_fdu_2024.sbx` | `7837493e8e589f85a110b2ceba9fdb58e6f25389d1eff39aac878887381061c4` |
+| `data/source/nicf_fsp/aoi/nicf_fdu_2024.shp` | `1dbe46b7d981453826182868068fd193b14033fc2a2efa651f5f0c88f50dfa4e` |
+| `data/source/nicf_fsp/aoi/nicf_fdu_2024.shx` | `49d2d4d95dcb5eb9c9ab480254a690eeda12ce6273958c317ebfae294d36f695` |
+
+Verification:
+
+- Read path: `data/source/nicf_fsp/aoi/nicf_fdu_2024.shp`
+- Feature count: `6`
+- Geometry type: `Polygon`
+- CRS: `EPSG:3005`
+- Bounds: `(849931.438, 580387.812, 928536.312, 653037.313)`
+- Geometry validity: `6` valid, `0` invalid
+- Total measured area in EPSG:3005: `204162.510 ha`
+- Feature names: Keogh, Tsulquate, Holberg, Marble, Nahwitti, Shushartie
+
+Interpretation:
+
+- This extracted lowercase shapefile family is the accepted canonical source
+  path for the bootstrap NICF FSP AOI.
+- The original zip remains tracked as raw provenance.
+- `config/run_profile.nicffsp.yaml` is not updated yet; runtime config wiring
+  should happen after the LU reference-context decision is recorded.
