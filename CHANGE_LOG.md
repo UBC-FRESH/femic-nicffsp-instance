@@ -146,3 +146,15 @@
 - recorded the P1.3b decision in `planning/k3z_template_adaptation.md`; and
 - marked `P1.3b` complete while keeping K3Z assumption review and minimum
   model-input surfaces as the next `P1.3` work.
+
+## 2026-06-23 - Split K3Z carry-forward and review assumptions
+
+- added the `P1.3c` carry-forward and FRST 558 review tables to
+  `planning/k3z_template_adaptation.md`;
+- accepted K3Z structure, run-profile mechanics, bundle table contracts, and
+  package layout as structural carry-forward assumptions;
+- marked K3Z TIPSY rules, treatment variants, cedar signals, expansion
+  candidate rules, seral objectives, product/account targets, and baseline
+  acceptance metrics as review-required before implementation; and
+- marked `P1.3c` complete while leaving minimum source-derived model-input
+  surfaces as the remaining `P1.3` planning move.

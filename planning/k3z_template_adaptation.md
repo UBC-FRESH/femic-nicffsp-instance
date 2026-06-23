@@ -163,3 +163,54 @@ Immediate next P1.3 work:
 - Complete the carry-forward versus FRST 558 review-required assumption list.
 - Identify the minimum source-derived model-input surfaces needed before P1.4
   runtime-package issue bodies can be finalized.
+
+## P1.3c Carry-Forward and Review Assumptions
+
+Decision date: 2026-06-23
+
+Accepted carry-forward assumptions:
+
+| Surface | Carry-forward assumption | Boundary |
+| --- | --- | --- |
+| Instance workflow | Use the K3Z standalone instance shape: repo-local `config/`, `data/`, `models/`, `planning/`, `runbooks/`, roadmap, changelog, and issue trail. | Structural only; filenames and case IDs must be NICF-specific and lowercase where FEMIC controls paths. |
+| Run profile | Use custom-boundary mode with `selection.boundary_path`, `selection.boundary_code`, and explicit stratification/mode defaults. | Source boundary is NICF FSP FDU 1-3, not K3Z tenure. |
+| Stratification | Start with K3Z-style subzone plus two leading species combinations and 90 percent top-area coverage. | Accepted as first compile boundary only; revise after NICF AU/strata diagnostics exist. |
+| VDYP handling | Start with complete VDYP sampling, two-pass rebinning, and minimum 10 stands per SI bin. | Performance tuning and alternate thresholds wait for first NICF diagnostics. |
+| Managed curve lane | Use the K3Z teaching convention that managed-origin curves are BatchTIPSY-style, with `managed_curve_mode: tipsy`. | TIPSY rule content is not carried forward; NICF rules need review before accepted outputs. |
+| Model-input bundle contract | Preserve the K3Z bundle table shape: AU table, curve table, and curve-points table as the pre-Patchworks handoff. | Bundle contents must be regenerated from NICF source data. |
+| Patchworks package shape | Preserve the K3Z directory/package concept: analysis scripts, blocks, metadata, yield surface, tracks, accounts, products, treatments, and runtime QA. | Package implementation is deferred to P1.4 runtime-package issue work. |
+| Documentation/control surfaces | Preserve K3Z-style assumptions registry, operator/runbook, rebuild spec, validation narrative, and append-only changelog behavior. | NICF documents must identify provisional versus accepted teaching assumptions. |
+
+FRST 558 review-required assumptions:
+
+| Surface | Review question | Why review is required before implementation |
+| --- | --- | --- |
+| TIPSY managed rules | Which species mixes, densities, utilization DBH, regeneration delays, OAFs, and site-index fallbacks represent managed-origin NICF stands? | K3Z `tsak3z.yaml` rules are AU/stratum-specific and not valid for the larger FSP AOI. |
+| Cedar cultural reserve signal | How should Cw cultural-reserve pressure be represented as area, eligibility, account, target, constraint, or scenario signal? | This is one of the core teaching questions and cannot be inferred from K3Z. |
+| Utility-pole production signal | Which cedar product/account definitions and utilization assumptions distinguish high-value utility-pole potential from generic harvested volume? | K3Z product/account targets do not encode the requested NICF value signal. |
+| Expansion candidate pool | Which source layers define unallocated candidate areas, tenure status, exclusions, productivity screening, and the AAC-uplift envelope? | The uploaded FSP AOI/LU files do not by themselves identify expansion eligibility. |
+| Seral/old-growth objectives | Which LU/FDU-level seral or old-growth objectives apply to Holberg, Keogh, and Marble for the teaching model? | K3Z thresholds are local teaching assumptions and the FSP/LU context must be reviewed. |
+| Treatment portfolio | Which base, cedar, thinning, fertilization, or intensive-management treatments should students be allowed to schedule? | K3Z variant families are examples, not accepted NICF treatments. |
+| Managed/unmanaged and origin assignment | How should Patchworks treatment eligibility and curve provenance be assigned across the FSP AOI? | FEMIC semantics require managed/unmanaged and natural/treated origin to remain distinct. |
+| Account and reporting package | Which accounts, products, targets, and summary reports are required for FRST 558 decision review? | K3Z reports are teaching examples and do not cover the new cedar/expansion mission. |
+| Baseline acceptance metrics | What minimum area, volume, account, and sanity checks make a first NICF bundle acceptable? | K3Z invariants use K3Z scale and cannot be reused numerically. |
+
+Rejected carry-forward assumptions for Phase 1:
+
+| Surface | Rejected assumption |
+| --- | --- |
+| K3Z boundary | Do not reuse the K3Z tenure boundary or its AOI semantics. |
+| K3Z generated bundle | Do not copy `data/model_input_bundle/*` into NICF. |
+| K3Z Patchworks tracks | Do not copy K3Z `tracks*`, `blocks`, `analysis`, or validated output artifacts as NICF runtime evidence. |
+| K3Z treatment variants | Do not treat K3Z CT/fertilization, intensive, PCT, or overlay variants as accepted NICF scenarios. |
+| K3Z TIPSY rules | Do not treat K3Z AU IDs, species-pair rules, or fallback pathways as accepted NICF managed-curve assumptions. |
+| K3Z product/account targets | Do not reuse K3Z product/account expectations as NICF cedar or expansion reporting semantics. |
+| K3Z runtime paths | Do not treat K3Z-shaped paths in `config/patchworks.runtime.windows.yaml` as runnable NICF runtime configuration. |
+
+Implementation gate:
+
+- Model-input bundle generation must not start until the review-required
+  TIPSY/managed-curve and baseline acceptance assumptions are either accepted
+  or explicitly bracketed as provisional.
+- P1.4 issue bodies must carry the review-required cedar-signal,
+  expansion-candidate, and runtime-package terms into separate follow-on lanes.
