@@ -181,3 +181,13 @@
   is a linked child issue; and
 - kept the task boundary to source materialization and verification, with no
   model-input bundle or Patchworks runtime-package build started.
+
+## 2026-06-23 - Recorded 2025 VRI package metadata
+
+- recorded the official BCDC titles, package ids, package UUIDs, resource ids,
+  resource names, modified timestamps, formats, and direct package URLs for the
+  2025 R1 and VDYP7 polygon/layer source packages in
+  `planning/vri_2025_data_collection.md`;
+- marked `P1.5a` complete in the roadmap; and
+- kept package size, checksum, read-smoke, and public-data publication status
+  open until the archives are actually materialized.
