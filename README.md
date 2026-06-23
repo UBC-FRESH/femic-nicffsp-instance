@@ -21,7 +21,7 @@ The teaching mission is being designed around two active management questions:
 ## Current Status
 
 This is a bootstrap snapshot. It contains source payload inventory, FEMIC
-instance scaffolding, and the first build-plan boundary. It is not yet a
+instance scaffolding, and the first TFL 6 boundary artifact. It is not yet a
 compiled or runnable Patchworks model package. The original FDU 1/2/3 boundary
 is retained as provenance, but TFL 6 is the active target AOI for the next input
 layer build.
@@ -43,9 +43,10 @@ Pre-pivot extracted source paths retained as provenance:
 - LU reference context:
   `data/source/nicf_fsp/lu_reference/nicf_lu_reference.shp`
 
-The active TFL 6 boundary will be materialized under
-`data/source/tfl_6/aoi/tfl_6_boundary.gpkg` by `P1.6a` before downstream VRI
-clipping starts.
+Active TFL 6 boundary:
+
+- `data/source/tfl_6/aoi/tfl_6_boundary.gpkg`
+- layer: `tfl_6_boundary`
 
 ## Workflow
 
@@ -67,6 +68,7 @@ The initial scaffold is present but not yet accepted as runnable:
 femic instance validate-spec --spec config/rebuild.spec.yaml
 ```
 
-Case preflight remains a bootstrap source-path check only until the TFL 6
-boundary and input layers are materialized under Phase 1. Full rebuild commands
-should wait until the TFL 6 input-layer and model-design contracts are accepted.
+Case preflight now points at the TFL 6 boundary but remains a bootstrap
+source-path check until the TFL 6-clipped input layers are materialized under
+Phase 1. Full rebuild commands should wait until the TFL 6 input-layer and
+model-design contracts are accepted.

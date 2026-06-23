@@ -231,3 +231,13 @@
   pre-pivot bootstrap path until `P1.6a` materializes the TFL 6 boundary; and
 - clarified that FDU 1/2/3 source layers remain valid provenance, not the active
   model extraction boundary.
+
+## 2026-06-23 - Materialized the TFL 6 boundary
+
+- fetched `WHSE_ADMIN_BOUNDARIES.FADM_TFL` where `FOREST_FILE_ID='TFL6'`;
+- wrote the normalized boundary to
+  `data/source/tfl_6/aoi/tfl_6_boundary.gpkg`;
+- verified 182 EPSG:3005 features, `217042.719 ha` union area, matching bounds,
+  and valid geometries after repairing one source ring self-intersection; and
+- switched `config/run_profile.nicffsp.yaml` to the accepted TFL 6 boundary
+  path and marked `P1.6a` complete.

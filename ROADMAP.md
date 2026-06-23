@@ -45,7 +45,7 @@
   - [ ] P1.5d Record DataLad/git-annex/public-data publication status and the
     downstream extraction handoff to the accepted active AOI issue.
 - [ ] P1.6 Pivot active AOI to TFL 6 and clip 2025 VRI inputs (`#6`).
-  - [ ] P1.6a Fetch and normalize the authoritative TFL 6 boundary from
+  - [x] P1.6a Fetch and normalize the authoritative TFL 6 boundary from
     `WHSE_ADMIN_BOUNDARIES.FADM_TFL`.
   - [ ] P1.6b Clip the 2025 VRI R1 polygon source to TFL 6 and record geometry
     QA.
@@ -66,9 +66,8 @@
 
 ## Current Next Steps
 
-1. Start `P1.6a` / `#6`: fetch and normalize the TFL 6 boundary. Do not switch
-   `config/run_profile.nicffsp.yaml` away from the pre-pivot FDU bootstrap path
-   until the canonical TFL 6 boundary artifact exists.
+1. Start `P1.6b` / `#6`: clip the 2025 VRI R1 polygon source to the accepted
+   TFL 6 boundary and record geometry QA.
 2. Continue `P1.5` / `#5`: record public-data remote publication status for
    the provincial 2025 VRI source archives.
 3. Start `P1.7` / `#7`: review the 2011 TFL 6 management plan and information

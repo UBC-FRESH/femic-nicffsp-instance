@@ -3,23 +3,21 @@ selection:
   tsa:
     - "nicffsp"
 
-  # Temporary pre-pivot bootstrap boundary path.
-  # TFL 6 is now the active target AOI, but P1.6a must materialize
-  # data/source/tfl_6/aoi/tfl_6_boundary.gpkg before this path is switched.
-  boundary_path: "data/source/nicf_fsp/aoi/nicf_fsp_aoi.shp"
-  boundary_layer: null
+  # Active TFL 6 boundary materialized by P1.6a.
+  boundary_path: "data/source/tfl_6/aoi/tfl_6_boundary.gpkg"
+  boundary_layer: "tfl_6_boundary"
   boundary_code: "nicffsp"
 
   # Source context paths tracked for P1.2 provenance. FEMIC currently consumes
   # boundary_path directly; LU reference context is carried here as historical
-  # NICF FSP context while P1.6 owns the active TFL 6 AOI contract.
+  # NICF FSP context while TFL 6 is the active AOI.
   source_context:
     lu_reference_path: "data/source/nicf_fsp/lu_reference/nicf_lu_reference.shp"
     fsp_pdf_path: "data/source/nicf_fsp/nicf_forest_stewardship_plan_2020.pdf"
 
   # First bootstrap defaults follow the K3Z teaching-template structure, but
   # not K3Z's generated AU identities or treatment/product semantics. Reconfirm
-  # these after the active TFL 6 input layers exist.
+  # these after the TFL 6-clipped VRI input layers exist.
   stratification:
     bec_grouping: "subzone"
     species_combo_count: 2

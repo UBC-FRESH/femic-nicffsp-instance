@@ -6,9 +6,9 @@
    `femic instance validate-spec --spec config/rebuild.spec.yaml`
 3. Review the pre-pivot FDU source provenance in
    `planning/source_inventory.md`.
-4. Confirm `config/run_profile.nicffsp.yaml` still points at the temporary
-   pre-pivot FDU boundary path. Do not switch it to the TFL 6 boundary until
-   `P1.6a` materializes `data/source/tfl_6/aoi/tfl_6_boundary.gpkg`.
+4. Confirm `config/run_profile.nicffsp.yaml` points at the active TFL 6
+   boundary path:
+   `data/source/tfl_6/aoi/tfl_6_boundary.gpkg`.
 5. Validate geospatial runtime dependencies:
    `femic prep geospatial-preflight`
 6. Validate case paths:

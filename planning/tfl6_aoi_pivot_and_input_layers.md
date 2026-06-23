@@ -40,6 +40,37 @@ The planned tracked boundary output is:
 - `data/source/tfl_6/aoi/tfl_6_boundary.gpkg`
 - layer: `tfl_6_boundary`
 
+Materialized boundary snapshot from `P1.6a`:
+
+- Retrieval/materialization date: 2026-06-23
+- Source service:
+  `https://delivery.maps.gov.bc.ca/arcgis/rest/services/whse/bcgw_pub_whse_admin_boundaries/MapServer/30`
+- Source query:
+  `FOREST_FILE_ID='TFL6'`, `outSR=3005`
+- Catalogue metadata caveat: the BCDC package record exposes a metadata-created
+  timestamp and service/resource modified timestamps, but no clean
+  `date_published` value was found in the package JSON during planning. Treat
+  the layer as current service data with feature-level dates recorded below.
+- Tracked output: `data/source/tfl_6/aoi/tfl_6_boundary.gpkg`
+- Layer: `tfl_6_boundary`
+- SHA-256:
+  `b581b378f16ed168e918699b6abc34a38fda7c2aa13e27c944aa2eeb78561d42`
+- Feature count: `182`
+- CRS: `EPSG:3005`
+- Geometry validity after normalization: `182` valid, `0` invalid
+- Source invalid geometry normalization: `make_valid` applied to one source
+  feature, `feature_id=309`, `objectid=19345`; union area change rounded to
+  `0.000 ha`
+- Total union area: `217042.719 ha`
+- Bounds: `(841375.750, 580345.507, 928480.824, 639356.277)`
+- Effective date: `2020-03-01T00:00:00Z`
+- Updated date: `2020-04-15T14:17:42Z`
+- Retirement date: none returned
+- Field normalization: source fields lowercased; ArcGIS `GEOMETRY.AREA` and
+  `GEOMETRY.LEN` stored as `geometry_area` and `geometry_len`
+- Run-profile boundary path switched to this GeoPackage in
+  `config/run_profile.nicffsp.yaml`
+
 ## Provincial 2025 Inputs
 
 The source archives already materialized under `external/femic-public-data` are:
