@@ -8,7 +8,7 @@
     `AGENTS.md`, `ROADMAP.md`, `CHANGE_LOG.md`, and `planning/`.
   - [x] P1.1c Add the uploaded AOI, LU, and FSP source payloads under stable
     lowercase tracked paths.
-- [ ] P1.2 Inspect and normalize source payloads.
+- [ ] P1.2 Inspect and normalize source payloads (`#1`).
   - [ ] P1.2a Unzip and inspect the NICF FSP amendment spatial payload.
   - [ ] P1.2b Identify the authoritative AOI layer, geometry type, CRS, and
     expected area.
@@ -16,7 +16,7 @@
     boundaries referenced by the FSP.
   - [ ] P1.2d Decide which extracted layers become tracked canonical source
     files and which remain regenerated scratch.
-- [ ] P1.3 Define the first K3Z-to-NICF adaptation contract.
+- [ ] P1.3 Define the first K3Z-to-NICF adaptation contract (`#1`).
   - [ ] P1.3a Compare K3Z config, model-input bundle, docs, and Patchworks
     package structure against the NICF FSP requirements.
   - [ ] P1.3b Define the first `run_profile.nicffsp.yaml` boundary after AOI
