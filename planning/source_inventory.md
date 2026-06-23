@@ -347,3 +347,41 @@ Interpretation:
   `selection.source_context.lu_reference_path`; the current FEMIC runtime
   consumes `selection.boundary_path` directly and carries LU reference context
   for downstream NICF adaptation work.
+
+## TFL 6 Management Plan 10 Information Package Reference
+
+Retrieval date: 2026-06-23
+
+Purpose:
+
+- Record a local reference copy of the TFL 6 timber supply analysis information
+  package cited in the TFL 6 AAC rationale as accepted by FLNR Forest Analysis
+  and Inventory Branch on March 3, 2011.
+- This is contextual reference material for North Island/TFL 6 assumptions, not
+  the accepted NICF FSP AOI boundary.
+
+Tracked source path:
+`data/source/nicf_fsp/reference/tfl_6_management_plan_10_information_package_2011.pdf`
+
+Source URL:
+`https://www2.gov.bc.ca/assets/gov/farming-natural-resources-and-industry/forestry/timber-tenures/tree-farm-licence/management-plans/tfl_6_mngment_plan_2011_ip.pdf`
+
+Verification:
+
+- File size: `2183218` bytes
+- SHA-256:
+  `302b4ce948a2cb765ec6a451157963422e9b8f102647d6b71864235e3bdb38e7`
+- Page count: `126`
+- Extracted text confirms:
+  - `TFL 6`
+  - `Management Plan #10`
+  - `Timber Supply Analysis Information Package`
+  - `February 2011`
+
+Interpretation:
+
+- The downloaded PDF is the BC-hosted copy titled in the file as Appendix A:
+  Accepted Timber Supply Analysis Information Package, February 2011, for
+  TFL 6 Management Plan #10.
+- The repository-local filename is normalized to lowercase while preserving the
+  original source URL for provenance.
