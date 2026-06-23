@@ -211,3 +211,14 @@
   `data/source/nicf_fsp/reference/tfl_6_management_plan_10_information_package_2011.pdf`;
 - verified the PDF page count, checksum, and title text; and
 - recorded source provenance in `planning/source_inventory.md`.
+
+## 2026-06-23 - Queued the TFL 6 AOI pivot and TSR recipe lanes
+
+- opened `#6` for the active AOI pivot to TFL 6 and the TFL 6-clipped 2025 VRI
+  input-layer build;
+- opened `#7` for translating the 2011 TFL 6 management plan and information
+  package into FEMIC-style source-layer and THLB netdown recipe planning;
+- added `planning/tfl6_aoi_pivot_and_input_layers.md` and
+  `planning/tfl6_thlb_recipe_extraction.md`; and
+- updated the roadmap so the original FDU 1/2/3 boundary remains provenance but
+  is superseded for active model extraction.

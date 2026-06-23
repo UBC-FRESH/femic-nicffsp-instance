@@ -4,8 +4,10 @@
 
 Phase 1 now includes a source-data collection task for the latest provincial
 VRI packages needed before the NICF FSP base AOI inventory can be generated.
-The extraction mask remains the accepted FSP AOI: FDU 1 Holberg, FDU 2 Keogh,
-and FDU 3 Marble from `data/source/nicf_fsp/aoi/nicf_fsp_aoi.shp`.
+The original extraction mask was the accepted FSP AOI: FDU 1 Holberg, FDU 2
+Keogh, and FDU 3 Marble from `data/source/nicf_fsp/aoi/nicf_fsp_aoi.shp`.
+As of the TFL 6 AOI pivot, that boundary remains provenance only; the active
+2025 VRI extraction handoff is governed by `#6`.
 
 This task is tracked as `P1.5` in issue `#5`.
 
@@ -92,7 +94,8 @@ the extracted directories should stay under the same vintage directory:
   read evidence, CRS, and any extraction/runtime path decision;
 - DataLad/git-annex publication status is recorded so a fresh environment can
   materialize the same files; and
-- the downstream FDU 1/2/3 cookie-cutter extraction boundary is documented.
+- the downstream active-AOI extraction handoff is documented; the earlier FDU
+  1/2/3 cookie-cutter boundary is superseded by the TFL 6 pivot in `#6`.
 
 No model-input bundle, Patchworks runtime package, or cedar/expansion design
 work should start inside this data-collection task.

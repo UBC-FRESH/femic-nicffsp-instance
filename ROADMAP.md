@@ -43,15 +43,33 @@
   - [ ] P1.5c Record file size, checksum, read-smoke, CRS, and layer-name
     evidence for both materialized packages.
   - [ ] P1.5d Record DataLad/git-annex/public-data publication status and the
-    downstream FDU 1/2/3 cookie-cutter extraction boundary.
+    downstream extraction handoff to the accepted active AOI issue.
+- [ ] P1.6 Pivot active AOI to TFL 6 and clip 2025 VRI inputs (`#6`).
+  - [ ] P1.6a Fetch and normalize the authoritative TFL 6 boundary from
+    `WHSE_ADMIN_BOUNDARIES.FADM_TFL`.
+  - [ ] P1.6b Clip the 2025 VRI R1 polygon source to TFL 6 and record geometry
+    QA.
+  - [ ] P1.6c Filter the 2025 VDYP7 polygon and layer tables to the TFL 6
+    feature-id set and verify key integrity.
+  - [ ] P1.6d Record the accepted TFL 6 input-layer manifest and mark the
+    original FDU 1/2/3 AOI as superseded for active model extraction.
+- [ ] P1.7 Plan TFL 6 source-layer and THLB netdown recipes from 2011 documents
+  (`#7`).
+  - [ ] P1.7a Add/verify local source copies of the TFL 6 Management Plan 10 and
+    information package PDFs.
+  - [ ] P1.7b Review the 2011 documents for land-base, source-layer, yield, and
+    THLB netdown assumptions.
+  - [ ] P1.7c Separate TSA29 workflow carry-forward assumptions from
+    TFL/general-FMU adaptation gaps.
+  - [ ] P1.7d Draft source-layer and THLB netdown recipe skeletons or planning
+    tables without executing recipes.
 
 ## Current Next Steps
 
-1. Continue `P1.5` / `#5`: run full geodatabase read smoke for the two 2025
-   source packages and record layer names, feature-count evidence, CRS, and any
-   extraction/runtime path decision.
-2. Continue `P1.5` / `#5`: record DataLad/git-annex public-remote publication
-   status for both materialized packages.
-3. Resume `P1.4` / `#2`: open the cedar, expansion, and runtime-package
-   follow-on design issues after the 2025 source-data dependency is queued and
-   the materialization boundary is explicit.
+1. Start `P1.6` / `#6`: fetch and normalize the TFL 6 boundary, then clip the
+   2025 VRI R1 and VDYP7 source inputs to the new active AOI.
+2. Continue `P1.5` / `#5`: record public-data remote publication status for
+   the provincial 2025 VRI source archives.
+3. Start `P1.7` / `#7`: review the 2011 TFL 6 management plan and information
+   package for source-layer and THLB netdown recipe candidates after the TFL 6
+   input layers are accepted.

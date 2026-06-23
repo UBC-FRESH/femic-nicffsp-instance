@@ -1,5 +1,13 @@
 # K3Z Template Adaptation Notes
 
+## TFL 6 AOI Pivot Note
+
+This contract captured the P1.3 state before the AOI pivot. Its FDU 1-3
+boundary references remain useful provenance for the original NICF FSP
+bootstrap lane, but they are no longer the active extraction boundary.
+`#6` now governs the active TFL 6 AOI and 2025 VRI clipping work, and `#7`
+governs the follow-on TFL 6 source-layer and THLB recipe planning.
+
 ## Template Reference
 
 Use `external/femic-k3z-instance` in the parent FEMIC checkout as the style and
