@@ -222,3 +222,12 @@
   `planning/tfl6_thlb_recipe_extraction.md`; and
 - updated the roadmap so the original FDU 1/2/3 boundary remains provenance but
   is superseded for active model extraction.
+
+## 2026-06-23 - Reconciled pre-pivot AOI planning surfaces
+
+- updated the README, quickstart, run-profile comments, and older planning
+  notes so TFL 6 is consistently described as the active target AOI;
+- preserved the current `selection.boundary_path` value as a temporary
+  pre-pivot bootstrap path until `P1.6a` materializes the TFL 6 boundary; and
+- clarified that FDU 1/2/3 source layers remain valid provenance, not the active
+  model extraction boundary.

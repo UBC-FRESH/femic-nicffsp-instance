@@ -6,9 +6,9 @@ Forest / Forest Stewardship Plan case.
 ## Purpose
 
 This repository will host the Patchworks model package and rebuild workflow for
-the expanded NICF FSP student case. The case starts from the existing K3Z
-teaching model style, but scales the area of interest from the small K3Z
-community forest tenure to the surrounding Forest Stewardship Plan area.
+the expanded NICF / TFL 6 student case. The case starts from the existing K3Z
+teaching model style, but the active target area of interest has pivoted to
+Tree Farm Licence 6.
 
 The teaching mission is being designed around two active management questions:
 
@@ -22,7 +22,9 @@ The teaching mission is being designed around two active management questions:
 
 This is a bootstrap snapshot. It contains source payload inventory, FEMIC
 instance scaffolding, and the first build-plan boundary. It is not yet a
-compiled or runnable Patchworks model package.
+compiled or runnable Patchworks model package. The original FDU 1/2/3 boundary
+is retained as provenance, but TFL 6 is the active target AOI for the next input
+layer build.
 
 ## Source Payloads
 
@@ -35,11 +37,15 @@ Initial source files are tracked under `data/source/nicf_fsp/`:
 See `planning/source_inventory.md` for original filenames, hashes, and the
 first interpretation boundary.
 
-Accepted extracted source paths:
+Pre-pivot extracted source paths retained as provenance:
 
-- AOI boundary: `data/source/nicf_fsp/aoi/nicf_fsp_aoi.shp`
+- FDU 1/2/3 bootstrap boundary: `data/source/nicf_fsp/aoi/nicf_fsp_aoi.shp`
 - LU reference context:
   `data/source/nicf_fsp/lu_reference/nicf_lu_reference.shp`
+
+The active TFL 6 boundary will be materialized under
+`data/source/tfl_6/aoi/tfl_6_boundary.gpkg` by `P1.6a` before downstream VRI
+clipping starts.
 
 ## Workflow
 
@@ -61,5 +67,6 @@ The initial scaffold is present but not yet accepted as runnable:
 femic instance validate-spec --spec config/rebuild.spec.yaml
 ```
 
-Case preflight is ready for source-path validation. Full rebuild commands
-should wait until the K3Z-to-NICF adaptation contract is accepted under Phase 1.
+Case preflight remains a bootstrap source-path check only until the TFL 6
+boundary and input layers are materialized under Phase 1. Full rebuild commands
+should wait until the TFL 6 input-layer and model-design contracts are accepted.

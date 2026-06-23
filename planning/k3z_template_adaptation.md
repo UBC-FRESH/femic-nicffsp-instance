@@ -8,6 +8,9 @@ bootstrap lane, but they are no longer the active extraction boundary.
 `#6` now governs the active TFL 6 AOI and 2025 VRI clipping work, and `#7`
 governs the follow-on TFL 6 source-layer and THLB recipe planning.
 
+Any later FDU-based "accepted" boundary language in this note should be read as
+the historical P1.3 bootstrap decision, not as the current active AOI contract.
+
 ## Template Reference
 
 Use `external/femic-k3z-instance` in the parent FEMIC checkout as the style and
@@ -91,9 +94,10 @@ Observed K3Z template state:
 
 Observed NICF bootstrap state:
 
-- `run_profile.nicffsp.yaml` now uses the accepted FSP AOI boundary path
-  `data/source/nicf_fsp/aoi/nicf_fsp_aoi.shp` and records LU reference context
-  at `data/source/nicf_fsp/lu_reference/nicf_lu_reference.shp`.
+- `run_profile.nicffsp.yaml` still uses the pre-pivot FSP AOI boundary path
+  `data/source/nicf_fsp/aoi/nicf_fsp_aoi.shp` as a temporary bootstrap path and
+  records LU reference context at
+  `data/source/nicf_fsp/lu_reference/nicf_lu_reference.shp`.
 - NICF does not yet have a compiled `data/model_input_bundle/`.
 - NICF does not yet have a `models/` Patchworks package.
 - `config/tipsy/nicffsp.yaml` is still a bootstrap placeholder and contains a
@@ -113,9 +117,10 @@ Adaptation boundary from this comparison:
 - Do not carry forward K3Z generated bundle tables, Patchworks tracks, scenario
   variants, treatment YAMLs, seral assumptions, TIPSY AU rules, product/account
   targets, or Patchworks runtime paths as accepted NICF semantics.
-- Treat the NICF accepted source boundary as decision-complete for starting
-  model-input design: AOI is FDU 1 Holberg, FDU 2 Keogh, and FDU 3 Marble; LU
-  reference context is the matching Holberg/Keogh/Marble BCGW subset.
+- Treat the historical P1.3 NICF source-boundary decision as bootstrap
+  provenance only: the pre-pivot AOI was FDU 1 Holberg, FDU 2 Keogh, and FDU 3
+  Marble, with LU reference context from the matching Holberg/Keogh/Marble BCGW
+  subset. The active AOI contract now belongs to `P1.6`.
 - Treat cedar-signal design, expansion candidate-area construction, and
   Patchworks runtime packaging as separate follow-on task lanes under P1.4, not
   as part of the K3Z template comparison.
@@ -124,7 +129,7 @@ Immediate next P1.3 work:
 
 - Define the first NICF run-profile boundary beyond source paths: which K3Z
   stratification, VDYP sampling, two-pass rebinning, and managed-curve settings
-  are acceptable defaults for the FSP AOI.
+  are acceptable defaults for the then-active FSP AOI.
 - Separate K3Z assumptions into explicit carry-forward versus FRST 558 review
   lists before any model-input bundle generation starts.
 
@@ -136,7 +141,7 @@ Accepted first-boundary settings in `config/run_profile.nicffsp.yaml`:
 
 | Field | Accepted value | Rationale |
 | --- | --- | --- |
-| `selection.boundary_path` | `data/source/nicf_fsp/aoi/nicf_fsp_aoi.shp` | Accepted FDU 1-3 FSP AOI from P1.2. |
+| `selection.boundary_path` | `data/source/nicf_fsp/aoi/nicf_fsp_aoi.shp` | Historical pre-pivot FDU 1-3 bootstrap AOI from P1.2; `P1.6a` must materialize TFL 6 before this path is switched. |
 | `selection.boundary_code` | `nicffsp` | Case code for the custom-boundary lane. |
 | `selection.stratification.bec_grouping` | `subzone` | Carries forward the K3Z teaching-template structure and keeps the first AU design inspectable. |
 | `selection.stratification.species_combo_count` | `2` | Carries forward the K3Z two-species teaching simplification for the first bundle. |
@@ -181,7 +186,7 @@ Accepted carry-forward assumptions:
 | Surface | Carry-forward assumption | Boundary |
 | --- | --- | --- |
 | Instance workflow | Use the K3Z standalone instance shape: repo-local `config/`, `data/`, `models/`, `planning/`, `runbooks/`, roadmap, changelog, and issue trail. | Structural only; filenames and case IDs must be NICF-specific and lowercase where FEMIC controls paths. |
-| Run profile | Use custom-boundary mode with `selection.boundary_path`, `selection.boundary_code`, and explicit stratification/mode defaults. | Source boundary is NICF FSP FDU 1-3, not K3Z tenure. |
+| Run profile | Use custom-boundary mode with `selection.boundary_path`, `selection.boundary_code`, and explicit stratification/mode defaults. | Historical P1.3 source boundary was NICF FSP FDU 1-3, not K3Z tenure; P1.6 now owns the active TFL 6 boundary. |
 | Stratification | Start with K3Z-style subzone plus two leading species combinations and 90 percent top-area coverage. | Accepted as first compile boundary only; revise after NICF AU/strata diagnostics exist. |
 | VDYP handling | Start with complete VDYP sampling, two-pass rebinning, and minimum 10 stands per SI bin. | Performance tuning and alternate thresholds wait for first NICF diagnostics. |
 | Managed curve lane | Use the K3Z teaching convention that managed-origin curves are BatchTIPSY-style, with `managed_curve_mode: tipsy`. | TIPSY rule content is not carried forward; NICF rules need review before accepted outputs. |
@@ -193,13 +198,13 @@ FRST 558 review-required assumptions:
 
 | Surface | Review question | Why review is required before implementation |
 | --- | --- | --- |
-| TIPSY managed rules | Which species mixes, densities, utilization DBH, regeneration delays, OAFs, and site-index fallbacks represent managed-origin NICF stands? | K3Z `tsak3z.yaml` rules are AU/stratum-specific and not valid for the larger FSP AOI. |
+| TIPSY managed rules | Which species mixes, densities, utilization DBH, regeneration delays, OAFs, and site-index fallbacks represent managed-origin NICF/TFL 6 stands? | K3Z `tsak3z.yaml` rules are AU/stratum-specific and not valid for the TFL 6 target AOI. |
 | Cedar cultural reserve signal | How should Cw cultural-reserve pressure be represented as area, eligibility, account, target, constraint, or scenario signal? | This is one of the core teaching questions and cannot be inferred from K3Z. |
 | Utility-pole production signal | Which cedar product/account definitions and utilization assumptions distinguish high-value utility-pole potential from generic harvested volume? | K3Z product/account targets do not encode the requested NICF value signal. |
-| Expansion candidate pool | Which source layers define unallocated candidate areas, tenure status, exclusions, productivity screening, and the AAC-uplift envelope? | The uploaded FSP AOI/LU files do not by themselves identify expansion eligibility. |
-| Seral/old-growth objectives | Which LU/FDU-level seral or old-growth objectives apply to Holberg, Keogh, and Marble for the teaching model? | K3Z thresholds are local teaching assumptions and the FSP/LU context must be reviewed. |
+| Expansion candidate pool | Which source layers define unallocated candidate areas, tenure status, exclusions, productivity screening, and the AAC-uplift envelope? | The pre-pivot FSP AOI/LU files do not by themselves identify expansion eligibility, and P1.6 now governs the active TFL 6 input surface. |
+| Seral/old-growth objectives | Which landscape-unit, FDU, or TFL 6-level seral or old-growth objectives apply to the teaching model? | K3Z thresholds are local teaching assumptions, and the pre-pivot FSP/LU context must be rechecked against the active TFL 6 AOI. |
 | Treatment portfolio | Which base, cedar, thinning, fertilization, or intensive-management treatments should students be allowed to schedule? | K3Z variant families are examples, not accepted NICF treatments. |
-| Managed/unmanaged and origin assignment | How should Patchworks treatment eligibility and curve provenance be assigned across the FSP AOI? | FEMIC semantics require managed/unmanaged and natural/treated origin to remain distinct. |
+| Managed/unmanaged and origin assignment | How should Patchworks treatment eligibility and curve provenance be assigned across the TFL 6 AOI? | FEMIC semantics require managed/unmanaged and natural/treated origin to remain distinct. |
 | Account and reporting package | Which accounts, products, targets, and summary reports are required for FRST 558 decision review? | K3Z reports are teaching examples and do not cover the new cedar/expansion mission. |
 | Baseline acceptance metrics | What minimum area, volume, account, and sanity checks make a first NICF bundle acceptable? | K3Z invariants use K3Z scale and cannot be reused numerically. |
 
@@ -232,7 +237,7 @@ start:
 
 | Surface | Minimum expected artifact | Purpose | Boundary |
 | --- | --- | --- | --- |
-| Accepted AOI boundary | `data/source/nicf_fsp/aoi/nicf_fsp_aoi.shp` | Defines the custom-boundary compile extent. | Complete from P1.2. |
+| Bootstrap AOI boundary | `data/source/nicf_fsp/aoi/nicf_fsp_aoi.shp` | Defines the pre-pivot custom-boundary compile extent. | Complete from P1.2 as provenance; active TFL 6 boundary is governed by P1.6. |
 | LU/FDU reference context | `data/source/nicf_fsp/lu_reference/nicf_lu_reference.shp` plus FDU identifiers from AOI source | Supports FDU/LU reporting, objectives, and diagnostics. | Complete as source context; downstream tables must preserve FDU/LU attribution. |
 | Source-resolved inventory checkpoint | NICF AOI-clipped VRI/forest inventory checkpoint under `data/` | Provides the raw stand/polygon base for AU construction. | Must be generated from FEMIC source data, not copied from K3Z. |
 | Stratification/AU diagnostics | selected-strata summary, AU summary, and missing-assignment/null-assignment reports under `runtime/logs/` or `evidence/` | Proves the first run-profile defaults produce inspectable AU families. | Required before accepting any first bundle. |
@@ -269,8 +274,9 @@ The first K3Z-to-NICF adaptation contract is accepted for Phase 1 planning with
 these limits:
 
 - K3Z is a structural template only.
-- NICF source boundary is the accepted FSP AOI: FDU 1 Holberg, FDU 2 Keogh, and
-  FDU 3 Marble.
+- NICF source boundary was the accepted pre-pivot FSP AOI: FDU 1 Holberg, FDU 2
+  Keogh, and FDU 3 Marble. This remains provenance only; active extraction now
+  belongs to TFL 6 under P1.6.
 - The first NICF run-profile defaults are accepted as an implementation boundary
   for future compile work.
 - K3Z assumptions are split into structural carry-forward, FRST 558

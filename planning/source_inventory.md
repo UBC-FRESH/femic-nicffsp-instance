@@ -4,7 +4,7 @@
 
 | Tracked path | Original uploaded filename | SHA-256 | Notes |
 | --- | --- | --- | --- |
-| `data/source/nicf_fsp/nicf_fsp_amendment_3_spatial.zip` | `NICF FSP amend #3 spatial.zip` | `de3776cda77d056390ffdee03aed6e3a914501a4c2c8adc34ba8481e02bbabcc` | Raw provenance for the accepted FSP AOI extraction. |
+| `data/source/nicf_fsp/nicf_fsp_amendment_3_spatial.zip` | `NICF FSP amend #3 spatial.zip` | `de3776cda77d056390ffdee03aed6e3a914501a4c2c8adc34ba8481e02bbabcc` | Raw provenance for the pre-pivot FSP AOI extraction. |
 | `data/source/nicf_fsp/bcgw_lu_clip_2026_06.zip` | `BCGW_LU_Clip_06-2026.zip` | `03477133df626104a60e07699fdb6025a712af1a0a6a710ca5958d44792c0a47` | Raw provenance for the accepted LU reference extraction. |
 | `data/source/nicf_fsp/nicf_forest_stewardship_plan_2020.pdf` | `NICF-Forest-Stewardship-Plan-2020-2.pdf` | `9bccd37a9666b4b1262f54afcb152bbbe9ec0475435cdc53434656194bdc3895` | FSP document used to interpret AOI/LU context and management constraints. |
 
@@ -12,6 +12,10 @@
 
 These files are raw source payloads only. The accepted extracted source layers
 are tracked separately under stable lowercase paths.
+
+As of the TFL 6 AOI pivot, this source inventory is provenance for the original
+NICF FSP bootstrap lane. The active target AOI is TFL 6 and is governed by
+`P1.6`.
 
 Do not point FEMIC runtime config at zip payloads as if they were ready-to-use
 case inputs.
@@ -59,7 +63,7 @@ Interpretation:
 
 - This zip contains a single shapefile family, but that shapefile is not a
   single dissolved AOI polygon. It is a six-feature FDU/LU-style layer.
-- Treat `NICF_FDU_2024.shp` as the raw amendment source for the accepted
+- Treat `NICF_FDU_2024.shp` as the raw amendment source for the pre-pivot
   three-FDU FSP AOI extraction documented below.
 - Do not point runtime config directly at the raw zip payload.
 
@@ -149,13 +153,13 @@ Interpretation:
 
 - The LU zip is a broader BCGW landscape-unit clip with `27` full LU features,
   not a narrow three-LU package.
-- The canonical LU reference context for this instance is the three BCGW LU
-  records named by the FSP: Holberg, Keogh, and Marble.
+- The pre-pivot canonical LU reference context for this instance is the three
+  BCGW LU records named by the FSP: Holberg, Keogh, and Marble.
 - The remaining 24 BCGW LU records stay in the raw zip as provenance/context,
   not as tracked canonical runtime inputs.
-- Each canonical FSP AOI feature is equal to or smaller than its corresponding
-  full BCGW LU, so the AOI surface should be treated as the modelling boundary
-  and the LU reference subset as context for FSP interpretation.
+- Each pre-pivot FSP AOI feature is equal to or smaller than its corresponding
+  full BCGW LU, so the FDU surface was treated as the bootstrap modelling
+  boundary and the LU reference subset as context for FSP interpretation.
 
 ## FSP PDF Cross-Check
 
@@ -213,7 +217,7 @@ Current source-boundary status:
 - Relevant LUs referenced by the 2020 FSP: Holberg, Keogh, Marble.
 - Broader FDU names present in the 2024 amendment spatial payload:
   Holberg, Keogh, Marble, Nahwitti, Shushartie, Tsulquate.
-- Accepted runtime AOI: see bootstrap AOI convention below.
+- Pre-pivot runtime AOI: see bootstrap AOI convention below.
 
 ## Bootstrap AOI Convention
 
@@ -223,16 +227,16 @@ Decision:
 
 - Use `NICF_FDU_2024.shp` from
   `data/source/nicf_fsp/nicf_fsp_amendment_3_spatial.zip` as the accepted
-  bootstrap AOI source for the NICF FSP teaching instance.
-- Filter the accepted FSP AOI boundary to the FSP's three FDUs only:
+  pre-pivot bootstrap AOI source for the NICF FSP teaching instance.
+- Filter the pre-pivot FSP AOI boundary to the FSP's three FDUs only:
   FDU 1 Holberg, FDU 2 Keogh, and FDU 3 Marble.
 - Treat the remaining amendment-payload features (`Nahwitti`, `Shushartie`,
   and `Tsulquate`) as raw source provenance/reference records, not as part of
   the FSP AOI for this instance.
 - Treat a dissolved whole-AOI polygon as a generated runtime helper only, not
   as the canonical source record.
-- Treat the 2020 FSP PDF three-FDU scope as the governing FSP AOI interpretation
-  for the provided amendment spatial boundary.
+- Treat the 2020 FSP PDF three-FDU scope as the governing pre-pivot FSP AOI
+  interpretation for the provided amendment spatial boundary.
 
 Accepted source candidate:
 
@@ -268,6 +272,15 @@ Open normalization work:
 
 Extraction date: 2026-06-23
 
+Pivot status:
+
+- This FDU 1/2/3 source inventory remains valid provenance for the original
+  NICF FSP bootstrap lane.
+- It is no longer the active model extraction AOI.
+- `P1.6` now governs the active TFL 6 AOI contract, and `P1.6a` will
+  materialize `data/source/tfl_6/aoi/tfl_6_boundary.gpkg` before the run
+  profile boundary path is switched.
+
 Accepted tracked source path:
 `data/source/nicf_fsp/aoi/nicf_fsp_aoi.shp`
 
@@ -295,11 +308,12 @@ Verification:
 Interpretation:
 
 - This extracted lowercase shapefile family is the accepted canonical source
-  path for the bootstrap NICF FSP AOI.
+  path for the pre-pivot bootstrap NICF FSP AOI.
 - The original zip remains tracked as raw provenance for all six amendment
   features.
-- `config/run_profile.nicffsp.yaml` now points `selection.boundary_path` at this
-  accepted AOI source path.
+- `config/run_profile.nicffsp.yaml` still points `selection.boundary_path` at
+  this pre-pivot source path only as a temporary bootstrap path until the TFL 6
+  boundary is materialized under `P1.6a`.
 
 ## Canonical Extracted LU Reference Source
 
@@ -310,8 +324,9 @@ Decision:
 - Track only the three FSP-relevant BCGW LU records as canonical reference
   context: Holberg, Keogh, and Marble.
 - Keep the full 27-feature BCGW LU zip as raw provenance/context.
-- Do not use the LU reference layer as the runtime AOI; the runtime AOI remains
-  `data/source/nicf_fsp/aoi/nicf_fsp_aoi.shp`.
+- Do not use the LU reference layer as the runtime AOI. The pre-pivot bootstrap
+  AOI remains `data/source/nicf_fsp/aoi/nicf_fsp_aoi.shp` until `P1.6a`
+  materializes the active TFL 6 boundary.
 
 Accepted tracked source path:
 `data/source/nicf_fsp/lu_reference/nicf_lu_reference.shp`
@@ -346,7 +361,7 @@ Interpretation:
 - `config/run_profile.nicffsp.yaml` records this source as
   `selection.source_context.lu_reference_path`; the current FEMIC runtime
   consumes `selection.boundary_path` directly and carries LU reference context
-  for downstream NICF adaptation work.
+  as provenance while TFL 6 becomes the active extraction AOI.
 
 ## TFL 6 Management Plan 10 Information Package Reference
 
@@ -358,7 +373,7 @@ Purpose:
   package cited in the TFL 6 AAC rationale as accepted by FLNR Forest Analysis
   and Inventory Branch on March 3, 2011.
 - This is contextual reference material for North Island/TFL 6 assumptions, not
-  the accepted NICF FSP AOI boundary.
+  the active TFL 6 boundary artifact.
 
 Tracked source path:
 `data/source/nicf_fsp/reference/tfl_6_management_plan_10_information_package_2011.pdf`
