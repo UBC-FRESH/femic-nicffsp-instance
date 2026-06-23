@@ -232,14 +232,15 @@ Decision:
 - Use `NICF_FDU_2024.shp` from
   `data/source/nicf_fsp/nicf_fsp_amendment_3_spatial.zip` as the accepted
   bootstrap AOI source for the NICF FSP teaching instance.
-- Preserve the six FDU/LU features as the canonical source geometry semantics:
-  Holberg, Keogh, Marble, Nahwitti, Shushartie, and Tsulquate.
+- Filter the accepted FSP AOI boundary to the FSP's three FDUs only:
+  FDU 1 Holberg, FDU 2 Keogh, and FDU 3 Marble.
+- Treat the remaining amendment-payload features (`Nahwitti`, `Shushartie`,
+  and `Tsulquate`) as raw source provenance/reference records, not as part of
+  the FSP AOI for this instance.
 - Treat a dissolved whole-AOI polygon as a generated runtime helper only, not
   as the canonical source record.
-- Treat the 2020 FSP PDF three-FDU scope as historical/context evidence for the
-  original FSP, not as the current modelling boundary, because the project
-  request explicitly identifies the 2024 amendment spatial payload as the AOI
-  for the new teaching instance.
+- Treat the 2020 FSP PDF three-FDU scope as the governing FSP AOI interpretation
+  for the provided amendment spatial boundary.
 
 Accepted source candidate:
 
@@ -247,22 +248,22 @@ Accepted source candidate:
 | --- | --- |
 | Raw payload | `data/source/nicf_fsp/nicf_fsp_amendment_3_spatial.zip` |
 | Path in zip | `NICF FSP Shapefiles/NICF_FDU_2024.shp` |
-| Canonical feature semantics | Six preserved FDU/LU polygons |
+| Canonical feature semantics | Three preserved FSP AOI polygons: Holberg, Keogh, Marble |
 | CRS | `EPSG:3005` |
 | Geometry type | `Polygon` |
-| Feature count | `6` |
-| Total measured area | `204162.510 ha` |
-| Bounds | `(849931.438, 580387.812, 928536.312, 653037.313)` |
+| Feature count | `3` |
+| Total measured area | `147798.392 ha` |
+| Bounds | `(849931.438, 580387.812, 928536.312, 639356.250)` |
 
 Rationale:
 
 - The bootstrap project note says to scale up to the new AOI uploaded as the
   amendment spatial payload.
-- The amendment payload is newer than the 2020 FSP PDF and explicitly carries
-  `2024` in the shapefile name.
-- The six amendment features are internally consistent with the broader BCGW LU
-  layer: each overlaps a same-named BCGW LU and is equal to or smaller than the
-  full LU.
+- The provided spatial payload contains the FSP AOI boundary records, but the
+  FSP AOI is only FDU 1, FDU 2, and FDU 3.
+- The 2020 FSP document identifies Holberg, Keogh, and Marble as the three
+  proposed FDUs, and the project clarification confirms only FDU 1, FDU 2, and
+  FDU 3 make up the FSP AOI.
 - Preserving FDU/LU feature identity keeps the teaching model able to report and
   reason at the FDU/LU level while still allowing a dissolved whole-AOI runtime
   boundary to be generated later if needed.
@@ -279,34 +280,34 @@ Open normalization work:
 Extraction date: 2026-06-23
 
 Accepted tracked source path:
-`data/source/nicf_fsp/aoi/nicf_fdu_2024.shp`
+`data/source/nicf_fsp/aoi/nicf_fsp_aoi.shp`
 
 Extracted shapefile family:
 
 | Tracked path | SHA-256 |
 | --- | --- |
-| `data/source/nicf_fsp/aoi/nicf_fdu_2024.dbf` | `2024cdf3db2733e77a3dc6a864ed1252e01f44b72359c349b2712a08f2b0267d` |
-| `data/source/nicf_fsp/aoi/nicf_fdu_2024.prj` | `4dc6a252b4e1e9468f9489c04fc559230f6d8b3f6ad8a79f02ba365a593636f5` |
-| `data/source/nicf_fsp/aoi/nicf_fdu_2024.sbn` | `453a0b065fc46e72bc0b8921f5b3c3e9bbd8f9f4371aecd0e0430e32dbba5914` |
-| `data/source/nicf_fsp/aoi/nicf_fdu_2024.sbx` | `7837493e8e589f85a110b2ceba9fdb58e6f25389d1eff39aac878887381061c4` |
-| `data/source/nicf_fsp/aoi/nicf_fdu_2024.shp` | `1dbe46b7d981453826182868068fd193b14033fc2a2efa651f5f0c88f50dfa4e` |
-| `data/source/nicf_fsp/aoi/nicf_fdu_2024.shx` | `49d2d4d95dcb5eb9c9ab480254a690eeda12ce6273958c317ebfae294d36f695` |
+| `data/source/nicf_fsp/aoi/nicf_fsp_aoi.cpg` | `3ad3031f5503a4404af825262ee8232cc04d4ea6683d42c5dd0a2f2a27ac9824` |
+| `data/source/nicf_fsp/aoi/nicf_fsp_aoi.dbf` | `9970cc3252a4dfe25e96252b6f85e16e1467f7f5f81a635a71cb9e48ab85fdf5` |
+| `data/source/nicf_fsp/aoi/nicf_fsp_aoi.prj` | `4dc6a252b4e1e9468f9489c04fc559230f6d8b3f6ad8a79f02ba365a593636f5` |
+| `data/source/nicf_fsp/aoi/nicf_fsp_aoi.shp` | `8e3cef68c9e0375550f240839e1f64b20e7036c6bbca14b0f995245b66566e7c` |
+| `data/source/nicf_fsp/aoi/nicf_fsp_aoi.shx` | `eaa7753e86ece7adf025cae244d0677f9db3562aaea3f727b06ad74eb8081727` |
 
 Verification:
 
-- Read path: `data/source/nicf_fsp/aoi/nicf_fdu_2024.shp`
-- Feature count: `6`
+- Read path: `data/source/nicf_fsp/aoi/nicf_fsp_aoi.shp`
+- Feature count: `3`
 - Geometry type: `Polygon`
 - CRS: `EPSG:3005`
-- Bounds: `(849931.438, 580387.812, 928536.312, 653037.313)`
-- Geometry validity: `6` valid, `0` invalid
-- Total measured area in EPSG:3005: `204162.510 ha`
-- Feature names: Keogh, Tsulquate, Holberg, Marble, Nahwitti, Shushartie
+- Bounds: `(849931.438, 580387.812, 928536.312, 639356.250)`
+- Geometry validity: `3` valid, `0` invalid
+- Total measured area in EPSG:3005: `147798.392 ha`
+- Feature names: Holberg, Keogh, Marble
 
 Interpretation:
 
 - This extracted lowercase shapefile family is the accepted canonical source
   path for the bootstrap NICF FSP AOI.
-- The original zip remains tracked as raw provenance.
+- The original zip remains tracked as raw provenance for all six amendment
+  features.
 - `config/run_profile.nicffsp.yaml` is not updated yet; runtime config wiring
   should happen after the LU reference-context decision is recorded.

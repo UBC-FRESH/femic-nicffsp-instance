@@ -35,10 +35,13 @@
 
 ## Current Next Steps
 
-1. Continue `P1.2` / `#1`: decide whether the 27-feature BCGW LU layer should
+1. Continue `P1.2` / `#1`: keep the canonical FSP AOI anchored to the provided
+   amendment spatial boundary filtered to FDU 1 Holberg, FDU 2 Keogh, and
+   FDU 3 Marble.
+2. Continue `P1.2` / `#1`: decide whether the 27-feature BCGW LU layer should
    also be extracted as canonical reference context or remain raw payload plus
    documented evidence.
-2. Continue `P1.2` / `#1`: update `config/run_profile.nicffsp.yaml` after the
+3. Continue `P1.2` / `#1`: update `config/run_profile.nicffsp.yaml` after the
    LU reference-context decision is recorded.
-3. Defer `P1.3` / `#3` and `P1.4` / `#2` implementation until the accepted AOI
+4. Defer `P1.3` / `#3` and `P1.4` / `#2` implementation until the accepted AOI
    and LU source paths are recorded.

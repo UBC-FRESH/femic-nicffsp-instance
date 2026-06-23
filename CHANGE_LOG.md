@@ -87,3 +87,14 @@
   `planning/source_inventory.md`; and
 - left BCGW LU canonical-reference and runtime config wiring decisions for
   later bounded `P1.2` slices.
+
+## 2026-06-23 - Corrected the canonical FSP AOI to FDU 1-3 only
+
+- corrected the bootstrap AOI convention after project clarification that only
+  FDU 1 Holberg, FDU 2 Keogh, and FDU 3 Marble make up the FSP AOI;
+- replaced the misleading six-feature canonical AOI extraction with
+  `data/source/nicf_fsp/aoi/nicf_fsp_aoi.*`;
+- verified the corrected canonical AOI reads as three valid EPSG:3005 polygon
+  features with total measured area `147798.392 ha`; and
+- kept the original amendment zip as raw provenance for all six amendment
+  features.
