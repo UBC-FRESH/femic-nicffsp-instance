@@ -214,3 +214,60 @@ Implementation gate:
   or explicitly bracketed as provisional.
 - P1.4 issue bodies must carry the review-required cedar-signal,
   expansion-candidate, and runtime-package terms into separate follow-on lanes.
+
+## P1.3d Minimum Source-Derived Model-Input Surfaces
+
+Decision date: 2026-06-23
+
+Minimum source-derived surfaces needed before Patchworks runtime-package work can
+start:
+
+| Surface | Minimum expected artifact | Purpose | Boundary |
+| --- | --- | --- | --- |
+| Accepted AOI boundary | `data/source/nicf_fsp/aoi/nicf_fsp_aoi.shp` | Defines the custom-boundary compile extent. | Complete from P1.2. |
+| LU/FDU reference context | `data/source/nicf_fsp/lu_reference/nicf_lu_reference.shp` plus FDU identifiers from AOI source | Supports FDU/LU reporting, objectives, and diagnostics. | Complete as source context; downstream tables must preserve FDU/LU attribution. |
+| Source-resolved inventory checkpoint | NICF AOI-clipped VRI/forest inventory checkpoint under `data/` | Provides the raw stand/polygon base for AU construction. | Must be generated from FEMIC source data, not copied from K3Z. |
+| Stratification/AU diagnostics | selected-strata summary, AU summary, and missing-assignment/null-assignment reports under `runtime/logs/` or `evidence/` | Proves the first run-profile defaults produce inspectable AU families. | Required before accepting any first bundle. |
+| Model-input bundle tables | `data/model_input_bundle/au_table.csv`, `curve_table.csv`, and `curve_points_table.csv` | Pre-Patchworks handoff contract inherited structurally from K3Z. | Contents must be NICF-derived and pass row/key sanity checks. |
+| Managed-curve inputs | BatchTIPSY input/output or explicitly bracketed provisional managed-curve evidence | Supports `managed_curve_mode: tipsy`. | TIPSY rule content remains FRST 558 review-required before accepted teaching outputs. |
+| Natural-curve evidence | VDYP-derived curve tables and diagnostics for accepted NICF strata | Supports natural-origin curve lane. | Complete VDYP sampling is required for first accepted baseline. |
+| Managed/unmanaged and origin fields | Explicit fields or derived tables distinguishing treatment eligibility from curve provenance | Preserves FEMIC/Patchworks semantics before tracks are built. | Must not infer `managed = treated` or `unmanaged = natural`. |
+| Baseline acceptance summary | area, AU count, curve count, missing-assignment count, managed/unmanaged/origin summaries, and known caveats | Determines whether a first NICF bundle is good enough for runtime-package work. | Numeric thresholds must be NICF-derived; do not reuse K3Z thresholds. |
+
+Minimum surfaces needed before P1.4 issue bodies are finalized:
+
+- Cedar-signal issue must reference required bundle/reporting evidence for Cw
+  cultural reserve, Cw availability, and utility-pole-grade product/account
+  design.
+- Expansion-candidate issue must reference the missing source layer contract for
+  unallocated candidate areas, tenure status, exclusions, productivity
+  screening, and AAC-uplift envelope.
+- Runtime-package issue must require a source-derived model-input bundle,
+  blocks/fragments/ForestModel XML generation, matrix build, account/product QA,
+  and launch/runtime smoke checks.
+
+Explicit non-goals for P1.3:
+
+- Do not generate the NICF model-input bundle.
+- Do not copy K3Z bundle tables, tracks, or Patchworks artifacts.
+- Do not implement cedar products/accounts, expansion candidate logic, or
+  Patchworks runtime packaging.
+
+## Accepted P1.3 Adaptation Boundary
+
+Decision date: 2026-06-23
+
+The first K3Z-to-NICF adaptation contract is accepted for Phase 1 planning with
+these limits:
+
+- K3Z is a structural template only.
+- NICF source boundary is the accepted FSP AOI: FDU 1 Holberg, FDU 2 Keogh, and
+  FDU 3 Marble.
+- The first NICF run-profile defaults are accepted as an implementation boundary
+  for future compile work.
+- K3Z assumptions are split into structural carry-forward, FRST 558
+  review-required, and rejected carry-forward categories.
+- Minimum model-input surfaces are defined before Patchworks runtime-package work
+  can start.
+- P1.4 must now split follow-on issue bodies for cedar-signal design,
+  expansion-candidate design, and Patchworks runtime-package build/QA.

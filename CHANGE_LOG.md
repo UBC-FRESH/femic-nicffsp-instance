@@ -158,3 +158,14 @@
   acceptance metrics as review-required before implementation; and
 - marked `P1.3c` complete while leaving minimum source-derived model-input
   surfaces as the remaining `P1.3` planning move.
+
+## 2026-06-23 - Accepted the first K3Z-to-NICF adaptation boundary
+
+- recorded the minimum source-derived model-input surfaces required before
+  Patchworks runtime-package work in `planning/k3z_template_adaptation.md`;
+- defined the P1.4 handoff terms for cedar-signal, expansion-candidate, and
+  runtime-package follow-on issue bodies;
+- recorded P1.3 non-goals so no model-input bundle, K3Z tracks, cedar products,
+  expansion logic, or runtime package work starts inside adaptation planning;
+  and
+- marked `P1.3` complete in the roadmap.
