@@ -18,3 +18,11 @@
   issue split; and
 - updated the roadmap so the active edge stays on `P1.2` source normalization
   before model design or compilation work starts.
+
+## 2026-06-23 - Added the Phase 1 parent issue
+
+- opened parent phase issue `#4` for Phase 1;
+- linked child task issues `#1`, `#3`, and `#2` from the parent issue body;
+- added child-issue backlinks to `#4`; and
+- updated the roadmap so Phase 1 follows the modelwright parent/child issue
+  workflow.

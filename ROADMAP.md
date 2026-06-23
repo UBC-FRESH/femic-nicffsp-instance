@@ -1,6 +1,6 @@
 # Roadmap
 
-## Phase 1: Bootstrap Repository and Build Plan
+## Phase 1: Bootstrap Repository and Build Plan (`#4`)
 
 - [x] P1.1 Create the standalone `femic-nicffsp-instance` repository scaffold.
   - [x] P1.1a Initialize the FEMIC instance skeleton.
