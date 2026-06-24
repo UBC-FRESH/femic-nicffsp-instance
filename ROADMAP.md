@@ -59,6 +59,10 @@
     information package PDFs, plus the broader TFL 6 reference corpus index.
   - [x] P1.7b Review the 2011 documents for land-base, source-layer, yield, and
     THLB netdown assumptions.
+  - [x] P1.7b1 Record the ordered Management Plan 10 Table 4 THLB netdown
+    backbone in `planning/tfl6_thlb_netdown_steps.md`, including tentative
+    `GLB -> AFLB -> LHLB -> THLB` mapping, cumulative benchmarks, and
+    per-step input-layer/GIS-operation readiness notes.
   - [ ] P1.7c Separate TSA29 workflow carry-forward assumptions from
     TFL/general-FMU adaptation gaps.
   - [ ] P1.7d Draft source-layer and THLB netdown recipe skeletons or planning
@@ -67,7 +71,8 @@
 ## Current Next Steps
 
 1. Start `P1.7c` / `#7`: separate TSA29 workflow carry-forward patterns from
-   TFL/general-FMU adaptation gaps before drafting recipe skeletons.
+   TFL/general-FMU adaptation gaps in
+   `planning/tfl6_thlb_netdown_steps.md` before drafting recipe skeletons.
 2. Continue `P1.5` / `#5`: record public-data remote publication status for
    the provincial 2025 VRI source archives.
 3. Continue `P1.4` / `#2`: split the cedar-signal, expansion-candidate, and
