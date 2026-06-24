@@ -783,3 +783,27 @@
   and
 - accepted no wildlife netdown semantics, created no recipe YAML, ran no THLB
   netdown, generated no model inputs, and performed no Patchworks runtime work.
+
+## 2026-06-24 - Materialized current OGMA overlays for review
+
+- materialized the current legal and current non-legal public OGMA overlay
+  candidates clipped to the accepted TFL 6 AOI;
+- wrote curated review artifacts under `data/source/tfl_6/ogma/`;
+- recorded provenance, source authority, transient fetch details, clipped
+  feature counts, area summaries, rule-critical fields, date summaries,
+  SHA-256 hashes, and read-smoke evidence in
+  `data/source/tfl_6/ogma/ogma_source_manifest.json`;
+- recorded `165` clipped legal-current OGMA polygons with `16131.032 ha`
+  total area and `2` clipped non-legal-current OGMA multipolygons with
+  `0.687 ha` total area;
+- preserved the current-vs-2011 vintage warning: current non-legal OGMA is a
+  proxy candidate only and should not be treated as the MP10 draft-OGMA row
+  without recipe-readiness review against MP10 Table 11 and the adjusted
+  benchmark;
+- updated `planning/tfl6_source_layer_dependency_inventory.md` and
+  `ROADMAP.md` so the next P2.1 materialization pass remains bounded to another
+  safe-to-clip source family, preferably recreation features or LU/BEC strata;
+  and
+- accepted no established-OGMA or draft-OGMA netdown semantics, created no
+  recipe YAML, ran no THLB netdown, generated no model inputs, and performed no
+  Patchworks runtime work.

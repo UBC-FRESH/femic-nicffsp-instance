@@ -1,0 +1,278 @@
+{
+  "generated_utc": "2026-06-24T18:39:51.053109+00:00",
+  "plan_status": "materialized_for_review",
+  "non_goals": [
+    "No THLB recipe semantics accepted.",
+    "No recipe YAML created.",
+    "No THLB netdown executed.",
+    "No model-input or Patchworks runtime work performed."
+  ],
+  "aoi": {
+    "path": "data\\source\\tfl_6\\aoi\\tfl_6_boundary.gpkg",
+    "layer": "tfl_6_boundary",
+    "crs": "EPSG:3005",
+    "feature_count": 182,
+    "union_area_ha": 217042.71895028095,
+    "bounds": [
+      841375.75,
+      580345.5069999993,
+      928480.8239999991,
+      639356.2770000007
+    ],
+    "invalid_geometries_repaired": 0
+  },
+  "layers": [
+    {
+      "source_id": "ogma_legal_current_tfl6",
+      "dependency_rows": [
+        "tfl6_nd_100"
+      ],
+      "status": "materialized_for_review",
+      "bcdc_title": "Old Growth Management Areas - Legal - Current",
+      "package_name": "old-growth-management-areas-legal-current",
+      "dataset_page_url": "https://catalogue.data.gov.bc.ca/dataset/old-growth-management-areas-legal-current",
+      "object_name": "WHSE_LAND_USE_PLANNING.RMP_OGMA_LEGAL_CURRENT_SVW",
+      "organization": "Land Use Policy, Planning and Ecosystems Division",
+      "licence": "Open Government Licence - British Columbia",
+      "access_method": "OpenMaps WFS bbox fetch via femic data bcdc-fetch, exact AOI clip via geopandas",
+      "fetch_query": "WHSE_LAND_USE_PLANNING.RMP_OGMA_LEGAL_CURRENT_SVW",
+      "raw_layer": "WHSE_LAND_USE_PLANNING_RMP_OGMA_LEGAL_CURRENT_SVW",
+      "raw_feature_count": 264,
+      "invalid_raw_geometries_repaired": 0,
+      "output_path": "data\\source\\tfl_6\\ogma\\ogma_legal_current_tfl6.gpkg",
+      "output_layer": "ogma_legal_current_tfl6",
+      "output_format": "GPKG",
+      "output_crs": "EPSG:3005",
+      "output_geometry_types": {
+        "MultiPolygon": 165
+      },
+      "output_feature_count": 165,
+      "output_bounds": [
+        842832.1429,
+        580393.518,
+        922709.0277653418,
+        638153.9531794171
+      ],
+      "output_metric_name": "area_ha",
+      "output_metric_value": 16131.031862530255,
+      "invalid_output_geometries_repaired": 0,
+      "field_count": 19,
+      "fields": [
+        "LEGAL_OGMA_INTERNAL_ID",
+        "LEGAL_OGMA_PROVID",
+        "OGMA_TYPE",
+        "OGMA_PRIMARY_REASON",
+        "LEGALIZATION_FRPA_DATE",
+        "LEGALIZATION_OGAA_DATE",
+        "LAST_AMENDMENT_DATE",
+        "ASSOCIATED_ACT_NAME",
+        "GIS_CHANGE_DATE",
+        "GIS_CHANGE_PERSON",
+        "CHANGE_REASON",
+        "INITIATOR_OF_CHANGE",
+        "ENABLING_DOCUMENT_TITLE",
+        "ENABLING_DOCUMENT_URL",
+        "FEATURE_CODE",
+        "FEATURE_AREA_SQM",
+        "FEATURE_LENGTH_M",
+        "OBJECTID",
+        "SE_ANNO_CAD_DATA"
+      ],
+      "rule_hint_fields_present": [
+        "OGMA_TYPE",
+        "OGMA_PRIMARY_REASON",
+        "LEGALIZATION_FRPA_DATE",
+        "LEGALIZATION_OGAA_DATE",
+        "LAST_AMENDMENT_DATE",
+        "ENABLING_DOCUMENT_TITLE",
+        "FEATURE_AREA_SQM",
+        "LEGAL_OGMA_PROVID"
+      ],
+      "rule_hint_value_counts": {
+        "OGMA_TYPE": {
+          "<NA>": 154,
+          "1": 11
+        },
+        "OGMA_PRIMARY_REASON": {
+          "<NA>": 111,
+          "Legalisation": 46,
+          "Legislation": 8
+        },
+        "LEGALIZATION_FRPA_DATE": {
+          "2016-10-13Z": 94,
+          "2010-07-26Z": 57,
+          "<NA>": 9,
+          "2005-10-26Z": 3,
+          "2007-05-10Z": 1,
+          "2010-08-26Z": 1
+        },
+        "LEGALIZATION_OGAA_DATE": {
+          "<NA>": 165
+        },
+        "LAST_AMENDMENT_DATE": {
+          "<NA>": 97,
+          "2010-08-12Z": 47,
+          "2016-10-19Z": 6,
+          "2010-05-17Z": 5,
+          "2013-08-30Z": 4,
+          "2018-06-05Z": 2,
+          "2014-05-01Z": 1,
+          "2010-03-17Z": 1,
+          "2015-05-21Z": 1,
+          "2016-05-11Z": 1
+        },
+        "ENABLING_DOCUMENT_TITLE": {
+          "<NA>": 165
+        },
+        "LEGAL_OGMA_PROVID": {
+          "NAN_niml_111": 1,
+          "NAN_marb_38": 1,
+          "NAN_marb_48": 1,
+          "NAN_marb_50": 1,
+          "NAN_marb_51": 1,
+          "NAN_marb_49": 1,
+          "NAN_marb_36": 1,
+          "NAN_marb_55": 1,
+          "NAN_marb_54": 1,
+          "NAN_marb_53": 1,
+          "NAN_marb_52": 1,
+          "NAN_marb_58": 1,
+          "NAN_marb_57": 1,
+          "NAN_marb_56": 1,
+          "NAN_marb_30": 1,
+          "NAN_marb_28": 1,
+          "NAN_marb_34": 1,
+          "NAN_marb_31": 1,
+          "NAN_marb_32": 1,
+          "NAN_marb_33": 1
+        }
+      },
+      "date_field_summaries": {
+        "LEGALIZATION_FRPA_DATE": {
+          "non_null": 156,
+          "parseable": 156,
+          "min": "2005-10-26",
+          "max": "2016-10-13"
+        },
+        "LEGALIZATION_OGAA_DATE": {
+          "non_null": 0,
+          "parseable": 0
+        },
+        "LAST_AMENDMENT_DATE": {
+          "non_null": 68,
+          "parseable": 68,
+          "min": "2010-03-17",
+          "max": "2018-06-05"
+        }
+      },
+      "feature_area_sqm_source_field_sum": 172994243.9866,
+      "feature_area_sqm_note": "source FEATURE_AREA_SQM values are source-feature attributes and may not equal clipped AOI area after intersection",
+      "sha256": "2c69c3c40c47dabebf9bb64cd65f63a655fea045e865f844553e21fe645ff434",
+      "read_smoke": "geopandas read_file succeeded after write",
+      "review_required_before_recipe": true,
+      "review_notes": "Materialized for source review only; current legal OGMA areas, dates, landscape units, overlap treatment, and MP10 established-OGMA consistency remain unaccepted.",
+      "raw_runtime_path_used_for_materialization": "runtime\\bcdc_fetch\\p2_1_ogma\\WHSE_LAND_USE_PLANNING_RMP_OGMA_LEGAL_CURRENT_SVW\\WHSE_LAND_USE_PLANNING_RMP_OGMA_LEGAL_CURRENT_SVW.gpkg",
+      "raw_runtime_artifact_retained": false,
+      "fetch_command_note": "Fetched to transient runtime cache with femic data bcdc-fetch, then clipped to exact TFL 6 AOI; runtime cache removed after curated outputs were written and read-smoked."
+    },
+    {
+      "source_id": "ogma_non_legal_current_tfl6",
+      "dependency_rows": [
+        "tfl6_nd_110"
+      ],
+      "status": "materialized_for_review",
+      "bcdc_title": "Old Growth Management Areas - Non Legal - Current",
+      "package_name": "old-growth-management-areas-non-legal-current",
+      "dataset_page_url": "https://catalogue.data.gov.bc.ca/dataset/old-growth-management-areas-non-legal-current",
+      "object_name": "WHSE_LAND_USE_PLANNING.RMP_OGMA_NON_LEGAL_CURRENT_SVW",
+      "organization": "Land Use Policy, Planning and Ecosystems Division",
+      "licence": "Open Government Licence - British Columbia",
+      "access_method": "OpenMaps WFS bbox fetch via femic data bcdc-fetch, exact AOI clip via geopandas",
+      "fetch_query": "WHSE_LAND_USE_PLANNING.RMP_OGMA_NON_LEGAL_CURRENT_SVW",
+      "raw_layer": "WHSE_LAND_USE_PLANNING_RMP_OGMA_NON_LEGAL_CURRENT_SVW",
+      "raw_feature_count": 26,
+      "invalid_raw_geometries_repaired": 0,
+      "output_path": "data\\source\\tfl_6\\ogma\\ogma_non_legal_current_tfl6.gpkg",
+      "output_layer": "ogma_non_legal_current_tfl6",
+      "output_format": "GPKG",
+      "output_crs": "EPSG:3005",
+      "output_geometry_types": {
+        "MultiPolygon": 2
+      },
+      "output_feature_count": 2,
+      "output_bounds": [
+        887861.1955216889,
+        583637.1329999994,
+        897010.0573823727,
+        590134.5060969309
+      ],
+      "output_metric_name": "area_ha",
+      "output_metric_value": 0.6871223513684427,
+      "invalid_output_geometries_repaired": 0,
+      "field_count": 16,
+      "fields": [
+        "NON_LEGAL_OGMA_INTERNAL_ID",
+        "NON_LEGAL_OGMA_PROVID",
+        "OGMA_TYPE",
+        "OGMA_PRIMARY_REASON",
+        "ORIGINAL_DECISION_DATE",
+        "LAST_AMENDMENT_DATE",
+        "ASSOCIATED_ACT_NAME",
+        "GIS_CHANGE_DATE",
+        "GIS_CHANGE_PERSON",
+        "CHANGE_REASON",
+        "INITIATOR_OF_CHANGE",
+        "FEATURE_CODE",
+        "FEATURE_AREA_SQM",
+        "FEATURE_LENGTH_M",
+        "OBJECTID",
+        "SE_ANNO_CAD_DATA"
+      ],
+      "rule_hint_fields_present": [
+        "OGMA_TYPE",
+        "OGMA_PRIMARY_REASON",
+        "ORIGINAL_DECISION_DATE",
+        "LAST_AMENDMENT_DATE",
+        "FEATURE_AREA_SQM",
+        "NON_LEGAL_OGMA_PROVID"
+      ],
+      "rule_hint_value_counts": {
+        "OGMA_TYPE": {
+          "<NA>": 2
+        },
+        "OGMA_PRIMARY_REASON": {
+          "<NA>": 2
+        },
+        "ORIGINAL_DECISION_DATE": {
+          "<NA>": 2
+        },
+        "LAST_AMENDMENT_DATE": {
+          "<NA>": 2
+        },
+        "NON_LEGAL_OGMA_PROVID": {
+          "NAN_kast_2": 1,
+          "NAN_klas_20": 1
+        }
+      },
+      "date_field_summaries": {
+        "ORIGINAL_DECISION_DATE": {
+          "non_null": 0,
+          "parseable": 0
+        },
+        "LAST_AMENDMENT_DATE": {
+          "non_null": 0,
+          "parseable": 0
+        }
+      },
+      "feature_area_sqm_source_field_sum": 4128612.2032,
+      "feature_area_sqm_note": "source FEATURE_AREA_SQM values are source-feature attributes and may not equal clipped AOI area after intersection",
+      "sha256": "71b1604ee992e0c032b1e71ece80608d092a04993678692dd21336f5507453ed",
+      "read_smoke": "geopandas read_file succeeded after write",
+      "review_required_before_recipe": true,
+      "review_notes": "Materialized for source review only; this is a current non-legal proxy candidate, not an accepted substitute for 2011 MP10 draft OGMAs until dates, landscape units, attributes, and areas are reviewed.",
+      "raw_runtime_path_used_for_materialization": "runtime\\bcdc_fetch\\p2_1_ogma\\WHSE_LAND_USE_PLANNING_RMP_OGMA_NON_LEGAL_CURRENT_SVW\\WHSE_LAND_USE_PLANNING_RMP_OGMA_NON_LEGAL_CURRENT_SVW.gpkg",
+      "raw_runtime_artifact_retained": false,
+      "fetch_command_note": "Fetched to transient runtime cache with femic data bcdc-fetch, then clipped to exact TFL 6 AOI; runtime cache removed after curated outputs were written and read-smoked."
+    }
+  ]
+}

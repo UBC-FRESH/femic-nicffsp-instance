@@ -200,11 +200,14 @@ The Phase 1 follow-on issues are placed into the future roadmap as follows:
    from the accepted plan in `planning/tfl6_source_layer_dependency_inventory.md`.
    The first FWA hydrology pass is materialized for review under
    `data/source/tfl_6/hydrology/`, and the approved UWR/WHA wildlife pass is
-   materialized for review under `data/source/tfl_6/wildlife/`. Riparian and
-   wildlife netdown semantics are still unaccepted. Keep the next pass bounded
-   to another safe-to-clip source family, preferably current legal/non-legal
-   OGMA overlays, and continue recording provenance, read-smoke evidence, and
-   recipe-readiness caveats.
+   materialized for review under `data/source/tfl_6/wildlife/`. Current
+   legal/non-legal OGMA overlays are materialized for review under
+   `data/source/tfl_6/ogma/`, with the non-legal current layer kept as a proxy
+   candidate only. Riparian, wildlife, established-OGMA, and draft-OGMA netdown
+   semantics are still unaccepted. Keep the next pass bounded to another
+   safe-to-clip source family, preferably recreation features or LU/BEC strata,
+   and continue recording provenance, read-smoke evidence, and recipe-readiness
+   caveats.
 2. Keep P2.2 field profiling queued until the accepted local R1/VDYP7
    dependency rows from P2.1 are ready for review or the maintainer explicitly
    approves a parallel field-mapping slice.
