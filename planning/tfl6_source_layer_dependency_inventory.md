@@ -42,11 +42,11 @@ reviewed aspatial or proxy treatment instead of public geometry.
 | `tfl6_nd_050` | prior-step checkpoint | MP10 Table 4 / adjusted targets | Report-only productive/AFLB checkpoint | No source needed | Keep as validation row only. |
 | `tfl6_nd_060` | `operability` | Historical WFP/TFL operability source if available; otherwise reviewed proxy; generic public `Operable and Inoperable Areas SIR` is not accepted for TFL 6 | Operability class exclusion for `I`, `Ocm`, `Ohm` semantics | No accepted public TFL 6 source found; proxy decision still open | Search the local/reference corpus for TFL 6 operability geometry or map evidence; otherwise record a reviewed teaching proxy or benchmark fallback. |
 | `tfl6_nd_070` | prior-step checkpoint | MP10 Table 4 / adjusted targets | Report-only operable/LHLB checkpoint | No source needed | Keep as validation row only. |
-| `tfl6_nd_080` | `hydrography_streams`, `lakes_wetlands_shoreline` | Freshwater Atlas stream/lake/wetland candidates plus shoreline/ocean boundary decision | Riparian reserve/management overlay or fallback | Missing source and rule decision | Resolve public hydrology/wetland/shoreline layers and encode MP10 class/retention rules. |
-| `tfl6_nd_090` | `uwr_orders` | Public UWR legal/order polygons | UWR overlay exclusion for `U-1-010` and small `U-1-011` overlap | Missing source | Resolve UWR layer and confirm IDs within current TFL 6 AOI. |
-| `tfl6_nd_100` | `ogma_established` | Public established/legal OGMA polygons | Established OGMA overlay exclusion | Missing source / vintage risk | Resolve OGMA layer and flag current-vs-2011 vintage mismatch. |
-| `tfl6_nd_110` | `ogma_draft_2011` | Historical/local draft OGMA geometry if available | Draft OGMA overlay or aspatial fallback | Missing historical source / fallback | Search reference/local corpus; otherwise keep MP10 deduction as reviewed fallback candidate. |
-| `tfl6_nd_120` | `wha_orders` | Public WHA legal/order polygons | WHA overlay exclusion for listed WHA IDs | Missing source | Resolve WHA layer and confirm listed IDs/overlaps. |
+| `tfl6_nd_080` | `hydrography_streams`, `lakes_wetlands_shoreline` | Freshwater Atlas `WHSE_BASEMAPPING.FWA_STREAM_NETWORKS_SP`, `WHSE_BASEMAPPING.FWA_LAKES_POLY`, and `WHSE_BASEMAPPING.FWA_WETLANDS_POLY`; coarse shoreline candidate `WHSE_BASEMAPPING.NTS_BC_COASTLINE_POLYS_125M` | Riparian reserve/management overlay or fallback | Public hydro candidates identified; shoreline/rule review still open | Use FWA as first hydrology materialization target; review whether coarse NTS coastline is good enough for teaching or whether MP10 shoreline/ocean handling should remain a rule/fallback. |
+| `tfl6_nd_090` | `uwr_orders` | Approved UWR, `WHSE_WILDLIFE_MANAGEMENT.WCP_UNGULATE_WINTER_RANGE_SP` | UWR overlay exclusion for `U-1-010` and small `U-1-011` overlap | Public authority candidate identified | Materialize/clip approved UWR and confirm listed IDs within current TFL 6 AOI. |
+| `tfl6_nd_100` | `ogma_established` | Legal current OGMA, `WHSE_LAND_USE_PLANNING.RMP_OGMA_LEGAL_CURRENT_SVW` | Established OGMA overlay exclusion | Public authority candidate identified; current-vs-2011 vintage risk | Materialize/clip current legal OGMAs and flag any mismatch against MP10 established OGMA assumptions. |
+| `tfl6_nd_110` | `ogma_draft_2011` | Historical/local draft OGMA geometry if available; current non-legal OGMA candidate `WHSE_LAND_USE_PLANNING.RMP_OGMA_NON_LEGAL_CURRENT_SVW` is only a review clue | Draft OGMA overlay or aspatial fallback | Missing historical source / fallback | Search reference/local corpus for 2011 draft OGMA geometry; do not substitute current non-legal OGMAs without review. |
+| `tfl6_nd_120` | `wha_orders` | Approved WHA, `WHSE_WILDLIFE_MANAGEMENT.WCP_WILDLIFE_HABITAT_AREA_POLY` | WHA overlay exclusion for listed WHA IDs | Public authority candidate identified | Materialize/clip approved WHA and confirm listed IDs/overlaps. |
 | `tfl6_nd_130` | `recreation_features` | Public recreation sites/trails candidates | Recreation feature overlay with 10 m buffer | Missing source | Resolve recreation site/trail layers and geometry type. |
 | `tfl6_nd_140` | `deciduous_leading_signal` from `vri_2025_r1_tfl6` and/or `vdyp7_2025_layer_tfl6` | Accepted 2025 VRI R1/VDYP7 species fields | Deciduous-leading attribute exclusion | Field mapping blocker | P2.2 define leading-species rule and deciduous/conifer species-code handling. |
 | `tfl6_nd_150` | `cultural_heritage_proxy` | Sensitive/local TUS/CMT data not expected as public source; possible EFZ/ocean-proximity proxy | Aspatial/proxy deduction | Fallback only | Do not seek sensitive public geometry; define reviewed teaching fallback. |
@@ -99,18 +99,83 @@ Current decision:
 - Operability remains unresolved: no public TFL 6-specific geometry was found
   by the first resolver pass.
 
+## Hydrology, Shoreline, and Legal Overlay Resolver Evidence
+
+This resolver slice was metadata-only. It did not download or materialize
+source layers.
+
+Commands:
+
+```powershell
+..\..\.venv\Scripts\python.exe -m femic data bcdc-resolve `
+  'Freshwater Atlas streams' `
+  'Freshwater Atlas lakes' `
+  'Freshwater Atlas wetlands' `
+  'shoreline' `
+  'ocean coastline' `
+  'Ungulate Winter Range' `
+  'Wildlife Habitat Area' `
+  'Old Growth Management Areas' `
+  'legal old growth management areas' `
+  --summary-csv runtime\logs\p2_1_hydro_legal_bcdc_summary.csv `
+  --manifest-path runtime\logs\p2_1_hydro_legal_bcdc_manifest.json
+
+..\..\.venv\Scripts\python.exe -m femic data bcdc-resolve `
+  'WHSE_WILDLIFE_MANAGEMENT.WCP_UNGULATE_WINTER_RANGE_SP' `
+  'WHSE_WILDLIFE_MANAGEMENT.WCP_WILDLIFE_HABITAT_AREA_POLY' `
+  'WHSE_LAND_USE_PLANNING.RMP_OGMA_LEGAL_CURRENT_SVW' `
+  'WHSE_LAND_USE_PLANNING.RMP_OGMA_NON_LEGAL_CURRENT_SVW' `
+  'FWA_STREAM_NETWORKS_SP' `
+  'FWA_LAKES_POLY' `
+  'FWA_WETLANDS_POLY' `
+  --summary-csv runtime\logs\p2_1_hydro_legal_targeted_bcdc_summary.csv `
+  --manifest-path runtime\logs\p2_1_hydro_legal_targeted_bcdc_manifest.json
+
+..\..\.venv\Scripts\python.exe -m femic data bcdc-resolve `
+  'BC coastline' `
+  'coastline polygon' `
+  'coastline line' `
+  'shorezone shoreline' `
+  'physical shore-zone' `
+  'TRIM coastline' `
+  'Tantalis coastline' `
+  --summary-csv runtime\logs\p2_1_shoreline_bcdc_summary.csv `
+  --manifest-path runtime\logs\p2_1_shoreline_bcdc_manifest.json
+```
+
+Resolver findings:
+
+| Dependency | Resolver result | Resolution decision |
+| --- | --- | --- |
+| Streams | `Freshwater Atlas Stream Network`, object `WHSE_BASEMAPPING.FWA_STREAM_NETWORKS_SP`, WFS bbox strategy available | Accept as the first public stream-network materialization candidate. |
+| Lakes | `Freshwater Atlas Lakes`, object `WHSE_BASEMAPPING.FWA_LAKES_POLY`, WFS bbox strategy available | Accept as the first public lake materialization candidate. |
+| Wetlands | `Freshwater Atlas Wetlands`, object `WHSE_BASEMAPPING.FWA_WETLANDS_POLY`, exact-text result from the broad pass | Accept as the first public wetland materialization candidate. The later object-suffix targeted query returned a bad top hit, so do not use that targeted row as wetland evidence. |
+| Shoreline / ocean boundary | `NTS BC Coastline Polygons 1:250,000`, object `WHSE_BASEMAPPING.NTS_BC_COASTLINE_POLYS_125M`; `NTS BC Coastline Lines 1:250,000`, object `WHSE_BASEMAPPING.NTS_BC_COASTLINE_LINES_125M`; ShoreZone results were monitoring/biobanding context, not a clean planning boundary | Keep as unresolved for rule review. The NTS coastline layers are plausible coarse teaching candidates, but MP10 shoreline/ocean handling may need a reviewed rule/fallback instead of a high-precision overlay. |
+| UWR | `Ungulate Winter Range - Approved`, object `WHSE_WILDLIFE_MANAGEMENT.WCP_UNGULATE_WINTER_RANGE_SP`, exact object-name hit | Accept as the first public approved-UWR materialization candidate. Do not use the proposed UWR layer returned by generic search. |
+| WHA | `Wildlife Habitat Areas - Approved`, object `WHSE_WILDLIFE_MANAGEMENT.WCP_WILDLIFE_HABITAT_AREA_POLY`, exact object-name hit | Accept as the first public approved-WHA materialization candidate. Do not use the proposed WHA layer returned by generic search. |
+| Established OGMA | `Old Growth Management Areas - Legal - Current`, object `WHSE_LAND_USE_PLANNING.RMP_OGMA_LEGAL_CURRENT_SVW`, exact object-name hit | Accept as the first current legal OGMA materialization candidate, with an explicit current-vs-2011 vintage warning. |
+| Draft OGMA | `Old Growth Management Areas - Non Legal - Current`, object `WHSE_LAND_USE_PLANNING.RMP_OGMA_NON_LEGAL_CURRENT_SVW`, exact object-name hit | Keep as a review clue only. MP10 draft OGMA likely needs historical/local evidence or an aspatial fallback; do not substitute current non-legal OGMAs automatically. |
+
+Current decision:
+
+- FWA streams, lakes, and wetlands have first-pass public authority candidates.
+- Approved UWR, approved WHA, and current legal OGMA have first-pass public
+  authority candidates.
+- Proposed UWR/WHA layers are explicitly rejected for this reviewed netdown
+  lane unless later review narrows a separate scenario.
+- Shoreline/ocean handling remains a review item because the clean public
+  coastline candidates found here are coarse NTS 1:250,000 layers.
+- Draft OGMA remains unresolved as historical/fallback work.
+
 ## Priority for Next P2.1 Slice
 
 The next P2.1 slice should resolve public/reference authorities for the missing
 source rows in this order:
 
-1. Hydrology/wetland/shoreline: riparian source bundle and rule contract.
-2. Legal overlays: UWR, WHA, and established OGMAs with current-vs-2011
-   vintage warnings.
-3. Recreation features: sites/trails and 10 m buffer source.
-4. Strata attribution: LU, RMZ, and BEC source/schema for stand-level retention.
-5. Historical/fallback rows: draft OGMAs, operability, and cultural heritage
-   proxy/aspatial handling.
+1. Recreation features: sites/trails and 10 m buffer source.
+2. Strata attribution: LU, RMZ, and BEC source/schema for stand-level retention.
+3. Historical/fallback rows: shoreline rule choice, draft OGMAs, operability,
+   and cultural heritage proxy/aspatial handling.
 
 P2.2 should run in parallel only after maintainer approval, because the
 accepted local R1/VDYP7 field-mapping rows are separable from missing public

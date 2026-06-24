@@ -573,3 +573,23 @@
 - updated `ROADMAP.md` Current Next Steps to move the next P2.1 resolver slice
   to hydrology/wetlands/shoreline and legal overlays before source
   materialization.
+
+## 2026-06-23 - Resolved hydrology and legal overlay candidates
+
+- ran metadata-only FEMIC BCDC resolver passes for Freshwater Atlas hydrology,
+  shoreline/coastline, UWR, WHA, and OGMA candidate layers;
+- recorded Freshwater Atlas streams, lakes, and wetlands as the first public
+  hydrology materialization candidates;
+- recorded approved UWR
+  `WHSE_WILDLIFE_MANAGEMENT.WCP_UNGULATE_WINTER_RANGE_SP` and approved WHA
+  `WHSE_WILDLIFE_MANAGEMENT.WCP_WILDLIFE_HABITAT_AREA_POLY` as the first
+  legal-overlay materialization candidates, rejecting proposed layers for the
+  reviewed lane;
+- recorded current legal OGMA
+  `WHSE_LAND_USE_PLANNING.RMP_OGMA_LEGAL_CURRENT_SVW` as the first established
+  OGMA candidate, with current-vs-2011 vintage risk;
+- kept current non-legal OGMA as a review clue only for the draft-OGMA row;
+- kept shoreline/ocean handling unresolved because the clean public coastline
+  candidates found in this pass are coarse NTS 1:250,000 layers; and
+- updated `ROADMAP.md` Current Next Steps to move the next P2.1 resolver slice
+  to recreation features and LU/RMZ/BEC strata before source materialization.
