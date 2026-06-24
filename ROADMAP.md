@@ -77,7 +77,7 @@
 - [ ] P1.8 Plan next roadmap phases and issue tree (`#11`).
   - [x] P1.8a Draft proposed Phase 2 through at least Phase 5 sections in this
     roadmap.
-  - [ ] P1.8b Create one GitHub parent issue per proposed phase.
+  - [x] P1.8b Create one GitHub parent issue per proposed phase.
   - [ ] P1.8c Create linked child task issues for the first executable tasks in
     each proposed phase.
   - [ ] P1.8d Record dependency order across source-layer/THLB work, cedar
@@ -86,7 +86,7 @@
   - [ ] P1.8e Place existing follow-on issues `#8`, `#9`, and `#10` into the
     planned phase structure or explicitly defer them.
 
-## Proposed Phase 2: Reviewed Source Layers and THLB Netdown
+## Proposed Phase 2: Reviewed Source Layers and THLB Netdown (`#12`)
 
 Goal: turn the TFL 6 source-layer and THLB planning surfaces into reviewed,
 executable FEMIC source-layer and netdown recipes before model-input generation
@@ -103,7 +103,7 @@ starts.
 - [ ] P2.5 Compare GLB/AFLB/LHLB/THLB milestones against the adjusted current-AOI
   benchmark targets and record accepted teaching tolerances.
 
-## Proposed Phase 3: Model Design Assumptions
+## Proposed Phase 3: Model Design Assumptions (`#13`)
 
 Goal: define the reviewed model-design assumptions that depend on the accepted
 source-layer and THLB surfaces, without compiling a Patchworks package.
@@ -118,7 +118,7 @@ source-layer and THLB surfaces, without compiling a Patchworks package.
 - [ ] P3.4 Update the TFL 6 run-profile/model-input contract with reviewed
   design decisions and explicit rejected/deferred assumptions.
 
-## Proposed Phase 4: Model Inputs and Patchworks Runtime Package
+## Proposed Phase 4: Model Inputs and Patchworks Runtime Package (`#14`)
 
 Goal: generate, inspect, and QA the first runnable TFL 6 Patchworks teaching
 package only after the reviewed source-layer, THLB, and model-design contracts
@@ -134,7 +134,7 @@ exist.
 - [ ] P4.4 Complete Patchworks runtime-package build/QA (`#10`) with
   representative launch and scenario-smoke checks.
 
-## Proposed Phase 5: Publication, Teaching Docs, and Release QA
+## Proposed Phase 5: Publication, Teaching Docs, and Release QA (`#15`)
 
 Goal: make the teaching instance reproducible and usable by students/instructors
 after the runtime package has passed direct artifact and launch smoke checks.
@@ -150,10 +150,11 @@ after the runtime package has passed direct artifact and launch smoke checks.
 
 ## Current Next Steps
 
-1. Continue `P1.8b` / `#11`: create one GitHub parent issue for each proposed
-   Phase 2 through Phase 5 section.
-2. Continue `P1.8c` / `#11`: create linked child task issues for the first
+1. Continue `P1.8c` / `#11`: create linked child task issues for the first
    executable tasks in each proposed phase.
+2. Continue `P1.8d` / `#11`: record dependency order across source-layer/THLB
+   work, cedar design, expansion design, model-input generation, Patchworks
+   runtime build, QA/publication, and teaching docs.
 3. Keep follow-on implementation issues `#8`, `#9`, and `#10` open but idle
    until P1.8 places them into the planned phase structure or the maintainer
    explicitly approves a parallel lane.

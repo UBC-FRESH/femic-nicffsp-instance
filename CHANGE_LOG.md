@@ -483,3 +483,14 @@
 - proposed Phase 5 for publication, teaching docs, and release QA; and
 - kept P1.8 open for parent phase issue creation, child task issue creation,
   and final dependency/placement synchronization.
+
+## 2026-06-23 - Created Phase 2 through Phase 5 parent issues
+
+- completed P1.8b by opening one GitHub parent issue per proposed future phase:
+  Phase 2 `#12`, Phase 3 `#13`, Phase 4 `#14`, and Phase 5 `#15`;
+- updated `ROADMAP.md` so each proposed phase heading references its parent
+  issue number;
+- moved Current Next Steps to P1.8c child task issue creation and P1.8d
+  dependency-order recording; and
+- kept implementation follow-on issues `#8`, `#9`, and `#10` idle until P1.8
+  links the full phase/child issue tree.
