@@ -66,6 +66,10 @@ helps relocate the text quickly.
 | Future roads | 1491 | Table 17; future roads reduce future/long-term landbase when harvested. |
 | Long-term landbase | 106319 | Long-term benchmark after future roads. |
 
+The ordered THLB netdown interpretation of Table 4, including tentative
+GLB/AFLB/LHLB/THLB stage mapping, candidate input layers, and GIS operation
+notes, is recorded separately in `planning/tfl6_thlb_netdown_steps.md`.
+
 ## Candidate Source-Layer and Recipe Strategy
 
 These are extraction candidates, not accepted recipe steps. P1.7c/P1.7d should

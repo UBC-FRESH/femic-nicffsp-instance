@@ -79,8 +79,8 @@ after the source assumptions are accepted.
 Planned planning outputs:
 
 - `planning/tfl6_2011_document_review.md`
-- `planning/tfl6_source_layer_candidates.md`
 - `planning/tfl6_thlb_netdown_steps.md`
+- `planning/tfl6_source_layer_candidates.md`
 
 Possible later recipe/config outputs:
 
@@ -143,6 +143,17 @@ modelling assumptions.
 P1.7c and P1.7d should now split the documented candidates into reusable TSA29
 workflow patterns, TFL/general-FMU adaptation gaps, and non-executable recipe
 skeletons.
+
+## THLB Netdown Backbone
+
+The ordered TFL 6 THLB netdown backbone is now recorded in
+`planning/tfl6_thlb_netdown_steps.md`.
+
+That note preserves the literal MP10 Table 4 order and adds a tentative FEMIC
+stage mapping onto `GLB -> AFLB`, `AFLB -> LHLB`, and `LHLB -> THLB`. The stage
+labels are review metadata, not source wording, because the TFL 6 information
+package uses `Total Landbase`, `Total Productive`, `Total Operable`,
+`Current THLB`, and `Long-term Landbase` rather than the TSA29 ladder names.
 
 ## Non-Goals
 

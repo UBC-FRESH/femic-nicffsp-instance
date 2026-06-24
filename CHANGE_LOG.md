@@ -307,3 +307,14 @@
 - noted the MP10 historical Table 4 total landbase/THLB benchmarks separately
   from the current P1.6 2025 TFL 6 input-layer surface; and
 - marked P1.7b complete without creating or executing recipe YAML.
+
+## 2026-06-23 - Added the TFL 6 THLB netdown backbone
+
+- added `planning/tfl6_thlb_netdown_steps.md` as the ordered MP10 Table 4
+  THLB netdown planning surface;
+- preserved the literal TFL 6 information-package order from total landbase to
+  current THLB and long-term landbase;
+- added tentative GLB/AFLB/LHLB/THLB stage mapping for FEMIC review;
+- recorded per-step input-layer and GIS overlay/readiness notes; and
+- kept recipe YAML creation and netdown execution blocked pending P1.7c
+  adaptation review and P1.7d skeleton drafting.
