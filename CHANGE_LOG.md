@@ -535,3 +535,13 @@
 - moved Current Next Steps to P2.1 `#16` while keeping Phase 3 and Phase 4
   implementation lanes idle until their dependencies are accepted or explicitly
   narrowed.
+
+## 2026-06-23 - Tightened phase closeout workflow contract
+
+- amended `AGENTS.md` to make phase closeout the required next slice after the
+  final child issue or phase gate completes;
+- clarified that agents must reconcile the phase parent issue, PR state,
+  roadmap, changelog, and issue comments before advancing to the next phase's
+  first task; and
+- corrected `ROADMAP.md` Current Next Steps so Phase 1 closeout comes before
+  P2.1 `#16`.

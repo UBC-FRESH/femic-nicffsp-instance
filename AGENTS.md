@@ -75,6 +75,10 @@ Use this workflow for active development from each phase boundary onward:
   comments synchronized when status changes.
 - Open a PR from the phase branch back to `main` when the parent issue's child
   issues are complete or explicitly deferred.
+- Treat phase closeout as the next required slice after the final child issue or
+  phase gate completes. Do not advance to the next phase's first task until the
+  current phase closeout checklist, parent issue state, PR state, roadmap,
+  changelog, and issue comments are reconciled.
 - Close the parent phase issue only after the phase PR has merged back to
   `main`, or after all child work is explicitly deferred with a recorded
   rationale.

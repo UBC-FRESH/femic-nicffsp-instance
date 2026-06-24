@@ -195,10 +195,14 @@ The Phase 1 follow-on issues are placed into the future roadmap as follows:
 
 ## Current Next Steps
 
-1. Start Phase 2 with P2.1 / `#16`: resolve and materialize the TFL 6 THLB
-   source layers needed by the first executable netdown lane.
-2. Keep Phase 3 design issues `#8` and `#9` idle until Phase 2 source-layer and
+1. Complete Phase 1 closeout: confirm Phase 1 parent `#4`, closed P1.8 gate
+   `#11`, parent FEMIC issue `UBC-FRESH/femic#199`, and parent PR
+   `UBC-FRESH/femic#200` are synchronized before starting Phase 2 work.
+2. After Phase 1 closeout, start Phase 2 with P2.1 / `#16`: resolve and
+   materialize the TFL 6 THLB source layers needed by the first executable
+   netdown lane.
+3. Keep Phase 3 design issues `#8` and `#9` idle until Phase 2 source-layer and
    THLB dependencies are accepted or the maintainer explicitly approves a
    narrower parallel design slice.
-3. Keep Phase 4 runtime issue `#10` idle until Phase 2, Phase 3, and P4.1
+4. Keep Phase 4 runtime issue `#10` idle until Phase 2, Phase 3, and P4.1
    prerequisites are accepted.
