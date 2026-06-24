@@ -78,7 +78,7 @@
   - [x] P1.8a Draft proposed Phase 2 through at least Phase 5 sections in this
     roadmap.
   - [x] P1.8b Create one GitHub parent issue per proposed phase.
-  - [ ] P1.8c Create linked child task issues for the first executable tasks in
+  - [x] P1.8c Create linked child task issues for the first executable tasks in
     each proposed phase.
   - [ ] P1.8d Record dependency order across source-layer/THLB work, cedar
     design, expansion design, model-input generation, Patchworks runtime build,
@@ -93,7 +93,7 @@ executable FEMIC source-layer and netdown recipes before model-input generation
 starts.
 
 - [ ] P2.1 Resolve and materialize public/reference source layers needed by the
-  TFL 6 THLB skeleton.
+  TFL 6 THLB skeleton (`#16`).
 - [ ] P2.2 Profile accepted 2025 R1 and VDYP7 fields for non-forest,
   non-productive, deciduous-leading, productivity, and join-key assumptions.
 - [ ] P2.3 Define reviewed current-AOI source-layer recipe contracts under the
@@ -125,7 +125,7 @@ package only after the reviewed source-layer, THLB, and model-design contracts
 exist.
 
 - [ ] P4.1 Build the reviewed model-input bundle from accepted TFL 6 source
-  layers, THLB outputs, and model-design assumptions.
+  layers, THLB outputs, and model-design assumptions (`#17`).
 - [ ] P4.2 Generate ForestModel/XML and inspect the semantics that affect
   Patchworks treatment eligibility, curve provenance, products, accounts, and
   targets.
@@ -140,7 +140,7 @@ Goal: make the teaching instance reproducible and usable by students/instructors
 after the runtime package has passed direct artifact and launch smoke checks.
 
 - [ ] P5.1 Decide which compact runtime artifacts are tracked, annexed,
-  published, or regenerated.
+  published, or regenerated (`#18`).
 - [ ] P5.2 Publish required data/runtime artifacts through the accepted FEMIC
   public-data workflow and prove fresh-environment materialization.
 - [ ] P5.3 Write teaching workflow docs, quickstart instructions, validation
@@ -150,11 +150,11 @@ after the runtime package has passed direct artifact and launch smoke checks.
 
 ## Current Next Steps
 
-1. Continue `P1.8c` / `#11`: create linked child task issues for the first
-   executable tasks in each proposed phase.
-2. Continue `P1.8d` / `#11`: record dependency order across source-layer/THLB
+1. Continue `P1.8d` / `#11`: record dependency order across source-layer/THLB
    work, cedar design, expansion design, model-input generation, Patchworks
    runtime build, QA/publication, and teaching docs.
+2. Continue `P1.8e` / `#11`: place existing follow-on issues `#8`, `#9`, and
+   `#10` into the planned phase structure or explicitly defer them.
 3. Keep follow-on implementation issues `#8`, `#9`, and `#10` open but idle
    until P1.8 places them into the planned phase structure or the maintainer
    explicitly approves a parallel lane.

@@ -494,3 +494,16 @@
   dependency-order recording; and
 - kept implementation follow-on issues `#8`, `#9`, and `#10` idle until P1.8
   links the full phase/child issue tree.
+
+## 2026-06-23 - Created first future-phase child issues
+
+- completed P1.8c by creating/linking first executable child task issues under
+  each proposed future phase;
+- opened P2.1 `#16` for resolving and materializing TFL 6 THLB source layers;
+- reused existing cedar design issue `#8` as the first Phase 3 child task
+  under Phase 3 parent `#13`;
+- opened P4.1 `#17` for building the reviewed TFL 6 model-input bundle after
+  Phase 2 and Phase 3 prerequisites are ready;
+- opened P5.1 `#18` for deciding runtime artifact publication policy; and
+- kept implementation follow-on issues `#8`, `#9`, and `#10` idle until P1.8d
+  and P1.8e finish dependency-order and placement synchronization.
