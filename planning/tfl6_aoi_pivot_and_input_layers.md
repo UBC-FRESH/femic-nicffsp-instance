@@ -106,6 +106,52 @@ Planned outputs:
 | TFL 6 VDYP7 layer table | `data/input/tfl_6/vdyp7_input_layer_2025_tfl6.parquet` | Filter `VEG_COMP_VDYP7_INPUT_LAYER` to the same feature-id set. |
 | Input-layer manifest | `data/input/tfl_6/input_layers_manifest.json` | Record source paths, source checksums/annex keys, row counts, CRS, bounds, area, and key-integrity checks. |
 
+## Materialized 2025 R1 Clip
+
+`P1.6b` materialized the TFL 6-clipped 2025 R1 polygon input.
+
+Output:
+
+- path: `data/input/tfl_6/vri_2025_r1_poly_tfl6.gpkg`
+- layer: `vri_2025_r1_poly_tfl6`
+- clip manifest: `data/input/tfl_6/vri_2025_r1_poly_tfl6_clip_manifest.json`
+- SHA-256:
+  `8146651b1a3d2c2edf7f433897f082e9016722116748d61056697e456b68f27c`
+- file size: `52469760` bytes
+
+Source and method:
+
+- source archive:
+  `external/femic-public-data/data/bc/vri/2025/VEG_COMP_LYR_R1_POLY_2025.gdb.zip`
+- source layer: `VEG_COMP_LYR_R1_POLY`
+- source feature count: `7154522`
+- boundary: `data/source/tfl_6/aoi/tfl_6_boundary.gpkg`,
+  layer `tfl_6_boundary`
+- method: bbox-read the provincial R1 source using the TFL 6 bounds, then exact
+  intersection with the dissolved TFL 6 boundary
+
+QA:
+
+- bbox-read feature count: `42297`
+- intersecting feature count before exact clip: `26959`
+- output feature count: `26959`
+- CRS: `EPSG:3005`
+- geometry type after write/read: `MultiPolygon`
+- geometry validity after write/read: `26959` valid, `0` invalid
+- source geometry repairs before clipping: `33`
+- non-polygonal intersections repaired: `0`
+- clipped bounds: `(841375.750, 580345.507, 928480.824, 639356.277)`
+- source intersecting area before exact clip: `298604.489813 ha`
+- clipped output area: `217042.718950 ha`
+- boundary area: `217042.718950 ha`
+
+VDYP join-key handoff:
+
+- `feature_id`: `26959` non-null, `26959` unique, `0` duplicates
+- `map_id`: `26959` non-null, `30` unique
+- `polygon_id`: `26959` non-null, `26955` unique
+- preferred VDYP join-key candidate for `P1.6c`: `feature_id`
+
 ## Validation Requirements
 
 The `#6` implementation should record:
@@ -113,7 +159,9 @@ The `#6` implementation should record:
 - TFL 6 boundary feature count, CRS, bounds, area, effective date, and source
   filter;
 - clipped R1 feature count, CRS, bounds, total area, and geometry validity;
-- the exact feature-id field used to link R1 to the VDYP7 tables;
+  (complete for R1 clip)
+- the exact feature-id field used to link R1 to the VDYP7 tables; (candidate:
+  `feature_id`)
 - row counts for the filtered VDYP7 polygon and layer tables;
 - key-integrity checks:
   - every retained VDYP7 polygon row belongs to a retained TFL 6 R1 feature;

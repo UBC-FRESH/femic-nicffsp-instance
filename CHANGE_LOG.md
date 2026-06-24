@@ -258,3 +258,14 @@
 
 - updated visible instance naming in README, quickstart, AGENTS, roadmap, and
   generated corpus metadata ahead of the GitHub/local submodule rename.
+
+## 2026-06-23 - Clipped the 2025 R1 VRI source to TFL 6
+
+- read the provincial 2025 R1 polygon source from the FEMIC public-data mirror;
+- bbox-filtered `42297` R1 features to the TFL 6 boundary extent;
+- exact-clipped `26959` intersecting features to the dissolved TFL 6 boundary;
+- wrote `data/input/tfl_6/vri_2025_r1_poly_tfl6.gpkg` and
+  `data/input/tfl_6/vri_2025_r1_poly_tfl6_clip_manifest.json`;
+- verified `26959` valid EPSG:3005 MultiPolygon features with
+  `217042.718950 ha` clipped area; and
+- identified `feature_id` as the preferred VDYP join-key candidate for `P1.6c`.

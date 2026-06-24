@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "created_date": "2026-06-23",
+  "role": "tfl6_clipped_2025_vri_r1_polygon",
+  "source_archive": "external/femic-public-data/data/bc/vri/2025/VEG_COMP_LYR_R1_POLY_2025.gdb.zip",
+  "source_layer": "VEG_COMP_LYR_R1_POLY",
+  "boundary_path": "data/source/tfl_6/aoi/tfl_6_boundary.gpkg",
+  "boundary_layer": "tfl_6_boundary",
+  "output_path": "data/input/tfl_6/vri_2025_r1_poly_tfl6.gpkg",
+  "output_layer": "vri_2025_r1_poly_tfl6",
+  "output_sha256": "8146651b1a3d2c2edf7f433897f082e9016722116748d61056697e456b68f27c",
+  "source_feature_count": 7154522,
+  "bbox_feature_count": 42297,
+  "intersecting_feature_count_before_clip": 26959,
+  "output_feature_count": 26959,
+  "crs": "EPSG:3005",
+  "bounds": [
+    841375.75,
+    580345.507,
+    928480.824,
+    639356.277
+  ],
+  "boundary_area_ha": 217042.71895,
+  "source_intersecting_area_ha": 298604.489813,
+  "clipped_area_ha": 217042.71895,
+  "valid_geometry_count": 26959,
+  "invalid_geometry_count": 0,
+  "source_invalid_geometry_repairs": 33,
+  "clip_invalid_geometry_repairs_before": 0,
+  "clip_invalid_geometry_repairs_after": 0,
+  "non_polygonal_intersections_repaired": 0,
+  "key_field_candidates": {
+    "feature_id": {
+      "non_null": 26959,
+      "unique": 26959,
+      "duplicate_count": 0
+    },
+    "map_id": {
+      "non_null": 26959,
+      "unique": 30
+    },
+    "polygon_id": {
+      "non_null": 26959,
+      "unique": 26955
+    }
+  },
+  "preferred_vdyp_join_key_candidate": "feature_id",
+  "elapsed_seconds": 216.374
+}
