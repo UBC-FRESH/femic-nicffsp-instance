@@ -717,3 +717,21 @@
 - performed no source download, DEM materialization, slope derivation, zonal
   statistics, recipe YAML creation, THLB execution, model-input generation, or
   Patchworks runtime work.
+
+## 2026-06-24 - Drafted P2.1 source-materialization plan
+
+- added a source-materialization plan to
+  `planning/tfl6_source_layer_dependency_inventory.md`;
+- separated safe-to-clip-first public candidates from review/fallback-only rows;
+- listed planned output paths for FWA hydrology, approved UWR/WHA, legal and
+  non-legal current OGMAs, recreation features, landscape units, BEC, and DRA
+  roads;
+- kept operability proxy/DEM slope, shoreline precision, RMZ schema, cultural
+  heritage, future roads, historical WFP operability geometry, and
+  government-only OGMA `All` layers out of the first materialization pass;
+- added provenance manifest requirements and first-pass QA checks for future
+  materialized layers;
+- updated `ROADMAP.md` Current Next Steps so source downloads remain blocked
+  until the materialization plan is accepted; and
+- performed no source download, clipping, recipe YAML creation, THLB execution,
+  model-input generation, or Patchworks runtime work.

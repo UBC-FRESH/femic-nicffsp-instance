@@ -196,14 +196,13 @@ The Phase 1 follow-on issues are placed into the future roadmap as follows:
 
 ## Current Next Steps
 
-1. Continue P2.1 / `#16`: draft the source-materialization plan before any
-   source downloads. List which accepted candidates are safe to clip first
-   (FWA streams/lakes/wetlands, approved UWR/WHA, current legal OGMA, current
-   non-legal OGMA for review, recreation features, LU, BEC, DRA roads) and
-   which items stay fallback/review-only for now (operability proxy/DEM slope,
-   shoreline precision, RMZ schema, cultural heritage, future roads). P2.1a
-   operability design is complete, but DEM materialization remains a later
-   planned dependency rather than an immediate download.
+1. Continue P2.1 / `#16`: review the source-materialization plan now recorded
+   in `planning/tfl6_source_layer_dependency_inventory.md`. The plan separates
+   safe-to-clip-first public candidates from fallback/review-only rows and
+   defines output paths, provenance manifest requirements, and first-pass QA
+   checks. The next bounded move should either make targeted edits to that plan
+   or run the first approved materialization pass; do not download source
+   layers until the plan is accepted.
 2. Keep P2.2 field profiling queued until the accepted local R1/VDYP7
    dependency rows from P2.1 are ready for review or the maintainer explicitly
    approves a parallel field-mapping slice.

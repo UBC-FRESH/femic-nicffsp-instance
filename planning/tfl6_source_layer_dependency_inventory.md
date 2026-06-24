@@ -322,6 +322,97 @@ P2.2 should run in parallel only after maintainer approval, because the
 accepted local R1/VDYP7 field-mapping rows are separable from missing public
 source-layer acquisition.
 
+## Source-Materialization Plan
+
+This section defines the first materialization plan for public/reference source
+layers. It is still planning-only: no layers are downloaded, clipped, or
+accepted by this section.
+
+The first materialization pass should use the accepted TFL 6 AOI boundary as
+the clip/filter boundary:
+
+- path: `data/source/tfl_6/aoi/tfl_6_boundary.gpkg`;
+- layer: `tfl_6_boundary`;
+- CRS: EPSG:3005;
+- union area: `217042.718950 ha`.
+
+### Safe-To-Clip First
+
+These layers have enough source authority and public access evidence to enter
+the first source-materialization pass. "Safe-to-clip" means safe to fetch/clip
+for review, not automatically accepted as executable THLB recipe logic.
+
+| Source ID | Authority / object | Planned output path | First QA/read-smoke | Review before executable use |
+| --- | --- | --- | --- | --- |
+| `fwa_stream_networks_tfl6` | Freshwater Atlas Stream Network, `WHSE_BASEMAPPING.FWA_STREAM_NETWORKS_SP` | `data/source/tfl_6/hydrology/fwa_stream_networks_tfl6.gpkg` | verify nonzero feature count after AOI bbox/clip; CRS EPSG:3005 or documented reprojection; line geometry; bounds intersect TFL 6 | map stream classes to MP10 riparian rules and decide which features receive reserve/management buffers. |
+| `fwa_lakes_tfl6` | Freshwater Atlas Lakes, `WHSE_BASEMAPPING.FWA_LAKES_POLY` | `data/source/tfl_6/hydrology/fwa_lakes_tfl6.gpkg` | verify nonzero feature count; polygon geometry; valid geometries; clipped area summary | decide lake/riparian reserve treatment and overlap order with wetlands/streams. |
+| `fwa_wetlands_tfl6` | Freshwater Atlas Wetlands, `WHSE_BASEMAPPING.FWA_WETLANDS_POLY` | `data/source/tfl_6/hydrology/fwa_wetlands_tfl6.gpkg` | verify nonzero feature count; polygon geometry; valid geometries; clipped area summary | decide wetland/riparian reserve treatment and whether FWA wetlands overlap VRI non-forest/non-productive classes. |
+| `uwr_approved_tfl6` | Ungulate Winter Range - Approved, `WHSE_WILDLIFE_MANAGEMENT.WCP_UNGULATE_WINTER_RANGE_SP` | `data/source/tfl_6/wildlife/uwr_approved_tfl6.gpkg` | verify listed UWR IDs are present or explicitly absent; polygon geometry; valid geometries; clipped area summary | compare clipped IDs/areas against MP10 UWR assumptions before executable exclusion. |
+| `wha_approved_tfl6` | Wildlife Habitat Areas - Approved, `WHSE_WILDLIFE_MANAGEMENT.WCP_WILDLIFE_HABITAT_AREA_POLY` | `data/source/tfl_6/wildlife/wha_approved_tfl6.gpkg` | verify listed WHA IDs are present or explicitly absent; polygon geometry; valid geometries; clipped area summary | compare clipped IDs/areas against MP10 WHA assumptions before executable exclusion. |
+| `ogma_legal_current_tfl6` | Old Growth Management Areas - Legal - Current, `WHSE_LAND_USE_PLANNING.RMP_OGMA_LEGAL_CURRENT_SVW` | `data/source/tfl_6/ogma/ogma_legal_current_tfl6.gpkg` | verify nonzero feature count; fields include `OGMA_TYPE`, `OGMA_PRIMARY_REASON`, legal dates, enabling-document fields, `FEATURE_AREA_SQM`; clipped area summary | compare landscape units, dates, and areas against MP10 established OGMA Table 11 before executable use. |
+| `ogma_non_legal_current_tfl6` | Old Growth Management Areas - Non Legal - Current, `WHSE_LAND_USE_PLANNING.RMP_OGMA_NON_LEGAL_CURRENT_SVW` | `data/source/tfl_6/ogma/ogma_non_legal_current_tfl6.gpkg` | verify nonzero feature count; fields include `OGMA_TYPE`, `OGMA_PRIMARY_REASON`, `ORIGINAL_DECISION_DATE`, `LAST_AMENDMENT_DATE`, `FEATURE_AREA_SQM`; clipped area summary | treat as draft-OGMA proxy candidate only until dates/LU/area consistency are compared against MP10 Table 11. |
+| `recreation_polygons_tfl6` | Recreation Polygons, `WHSE_FOREST_TENURE.FTEN_RECREATION_POLY_SVW` | `data/source/tfl_6/recreation/recreation_polygons_tfl6.gpkg` | verify polygon geometry; clipped feature count/area; key recreation identifiers retained | decide which polygon classes receive MP10 recreation netdown treatment. |
+| `recreation_trails_tfl6` | Recreation Trails, `WHSE_FOREST_TENURE.FTEN_REC_TRAILS_SVW` | `data/source/tfl_6/recreation/recreation_trails_tfl6.gpkg` | verify line geometry; clipped feature count/length; trail identifiers retained | decide trail classes and whether the MP10 10 m buffer applies. |
+| `recreation_site_points_tfl6` | Recreation Sites, `WHSE_FOREST_TENURE.FTEN_REC_SITE_POINTS_SVW` | `data/source/tfl_6/recreation/recreation_site_points_tfl6.gpkg` | verify point geometry; clipped feature count; site identifiers retained | decide point-buffer rules and relation to polygon recreation features. |
+| `recreation_details_closures_tfl6` | Recreation details/closures, `WHSE_FOREST_TENURE.FTEN_REC_DTAILS_CLOSURES_SV` | `data/source/tfl_6/recreation/recreation_details_closures_tfl6.parquet` or `.gpkg` depending on geometry/service evidence | verify table/geometry type; row count; join keys to recreation points/trails/polygons if present | attribution/context only unless a joinable contract is reviewed. |
+| `landscape_units_tfl6` | Landscape Units of British Columbia - Current, `WHSE_LAND_USE_PLANNING.RMP_LANDSCAPE_UNIT_SVW` | `data/source/tfl_6/strata/landscape_units_tfl6.gpkg` | verify Holberg, Keogh, Mahatta, Marble, Neroutsos, San Josef, or other intersecting LU names as applicable; clipped areas | use for OGMA/RMZ/BEC stratification review, not as a netdown by itself. |
+| `bec_tfl6` | BEC Map, `WHSE_FOREST_VEGETATION.BEC_BIOGEOCLIMATIC_POLY` | `data/source/tfl_6/strata/bec_tfl6.gpkg` | verify BEC zone/subzone/variant fields; clipped areas by BEC unit; valid polygons | use for Table 16 and old-seral strata review. |
+| `dra_roads_tfl6` | Digital Road Atlas MPAR, `WHSE_BASEMAPPING.DRA_DGTL_ROAD_ATLAS_MPAR_SP` | `data/source/tfl_6/roads/dra_roads_tfl6.gpkg` | verify line geometry; clipped feature count/length; road class/status fields retained | decide MP10 existing-road width/buffer classes and keep future roads separate. |
+
+### Review/Fallback Only For Now
+
+These rows should not be downloaded or executed in the first source pass unless
+the maintainer explicitly narrows or changes the scope.
+
+| Dependency | Current status | Why it stays out of first materialization |
+| --- | --- | --- |
+| Operability proxy / DEM slope | P2.1a design is complete; LidarBC/open LiDAR is preferred for future slope metrics, CDED is a coarse smoke-test fallback | DEM tile selection, size, storage, public-data suitability, slope processing, and zonal-stat QA need their own materialization plan before downloads. |
+| Shoreline / ocean precision | MP10 40 m ocean-shoreline rule is accepted as a teaching rule; public discovery found coarse NTS coastline candidates | precision and coastline geometry choice need maintainer review before a shoreline layer is treated as authoritative. |
+| RMZ schema | LU and BEC are materialization candidates; RMZ geometry/schema is unresolved | no accepted TFL 6 RMZ geometry exists yet; Table 16 remains a reviewed percent-by-stratum fallback until schema is accepted. |
+| Cultural heritage | MP10 Table 15 / adjusted benchmark fallback accepted; sensitive TUS/CMT geometry should not be sought | public sensitive-source geometry is inappropriate for this teaching instance. |
+| Future roads | MP10 Table 17 is a long-term/aspatial assumption | keep separate from current existing-road overlay and out of current THLB lane unless long-term scenario work is opened. |
+| 1999 WFP operability geometry | preferred historical evidence if supplied locally | no reviewed local geometry has been materialized; do not fetch generic/non-local operability layers. |
+| Government-only OGMA `All` layers | resolver evidence found `RMP_OGMA_LEGAL_ALL_SVW` and `RMP_OGMA_NON_LEGAL_ALL_SVW` as access-only/government surfaces | out of scope for the public teaching source lane unless a reviewed local copy or public access path is supplied. |
+
+### Provenance Manifest Requirements
+
+Each materialized source layer should have a manifest entry, either in a
+single source-layer manifest or in per-layer sidecar JSON, recording:
+
+- source ID and THLB dependency row(s);
+- BCDC title, package name, package URL, object name, organization, licence,
+  and download/access method;
+- fetch command or DWDS/order metadata;
+- AOI boundary path, layer, CRS, and bounds used for clipping/filtering;
+- output path, layer/table name, format, CRS, geometry type, feature count,
+  bounds, and area/length summary where applicable;
+- field list or a compact field digest for rule-critical attributes;
+- checksum for downloaded archives or generated output where practical;
+- read-smoke command and result;
+- review status: `materialized_for_review`, `accepted_for_recipe`,
+  `fallback_only`, or `rejected`; and
+- caveats, especially current-vs-2011 vintage risks.
+
+### First-Pass QA Checks
+
+The first materialization pass should run these checks before any source is
+accepted for recipe use:
+
+1. All outputs are readable from a clean Python/geopandas session.
+2. Vector outputs have expected geometry type and valid geometries or a
+   documented repair step.
+3. Output CRS is EPSG:3005 or a documented source CRS with a reproducible
+   reprojection plan.
+4. Output bounds intersect the accepted TFL 6 AOI and do not obviously include
+   unbounded provincial geometry after clipping.
+5. Area or length summaries are recorded for each overlay source.
+6. Rule-critical fields are present, especially IDs, dates, type/status/class
+   fields, and area fields for OGMA/UWR/WHA/recreation/LU/BEC/roads.
+7. Current-vs-2011 vintage warnings are preserved for OGMA, recreation, roads,
+   LU/BEC, and any other current public layer used to approximate MP10 state.
+8. No output is wired into recipe YAML until the recipe-readiness review
+   accepts its semantics.
+
 ## Non-Goals
 
 - No source downloads or materialization were performed in this slice.
