@@ -325,8 +325,13 @@ source-layer acquisition.
 ## Source-Materialization Plan
 
 This section defines the first materialization plan for public/reference source
-layers. It is still planning-only: no layers are downloaded, clipped, or
-accepted by this section.
+layers.
+
+Plan status: accepted for the first materialization pass under P2.1 on
+2026-06-24. This acceptance authorizes a later bounded materialization pass for
+the safe-to-clip-first rows only. It does not accept any materialized layer as
+executable THLB recipe logic, and it does not authorize download of the
+review/fallback-only rows.
 
 The first materialization pass should use the accepted TFL 6 AOI boundary as
 the clip/filter boundary:

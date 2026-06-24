@@ -735,3 +735,17 @@
   until the materialization plan is accepted; and
 - performed no source download, clipping, recipe YAML creation, THLB execution,
   model-input generation, or Patchworks runtime work.
+
+## 2026-06-24 - Accepted P2.1 source-materialization plan
+
+- marked the source-materialization plan in
+  `planning/tfl6_source_layer_dependency_inventory.md` as accepted for the first
+  bounded P2.1 materialization pass;
+- clarified that acceptance authorizes only safe-to-clip-first rows and does
+  not accept any materialized layer as executable THLB recipe logic;
+- kept review/fallback-only rows out of scope for the first materialization
+  pass;
+- updated `ROADMAP.md` Current Next Steps to the first approved
+  source-materialization pass; and
+- performed no source download, clipping, recipe YAML creation, THLB execution,
+  model-input generation, or Patchworks runtime work.

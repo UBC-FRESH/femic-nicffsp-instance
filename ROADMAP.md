@@ -196,13 +196,12 @@ The Phase 1 follow-on issues are placed into the future roadmap as follows:
 
 ## Current Next Steps
 
-1. Continue P2.1 / `#16`: review the source-materialization plan now recorded
-   in `planning/tfl6_source_layer_dependency_inventory.md`. The plan separates
-   safe-to-clip-first public candidates from fallback/review-only rows and
-   defines output paths, provenance manifest requirements, and first-pass QA
-   checks. The next bounded move should either make targeted edits to that plan
-   or run the first approved materialization pass; do not download source
-   layers until the plan is accepted.
+1. Continue P2.1 / `#16`: run the first approved source-materialization pass
+   from the accepted plan in `planning/tfl6_source_layer_dependency_inventory.md`.
+   Keep the first pass bounded to safe-to-clip-first public rows only, write
+   provenance/read-smoke evidence, and do not treat any materialized layer as
+   executable THLB recipe logic until a later recipe-readiness review accepts
+   its semantics. Review/fallback-only rows remain out of scope.
 2. Keep P2.2 field profiling queued until the accepted local R1/VDYP7
    dependency rows from P2.1 are ready for review or the maintainer explicitly
    approves a parallel field-mapping slice.
