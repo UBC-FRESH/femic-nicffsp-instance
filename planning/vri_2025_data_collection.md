@@ -82,6 +82,38 @@ the extracted directories should stay under the same vintage directory:
 - `external/femic-public-data/data/bc/vri/2025/VEG_COMP_LYR_R1_POLY_2025.gdb/`
 - `external/femic-public-data/data/bc/vri/2025/VEG_COMP_VDYP7_INPUT_POLY_AND_LAYER_2025.gdb/`
 
+## Read-Smoke Snapshot
+
+Read-smoke date: 2026-06-23.
+
+The source packages were inspected directly from the zipped file geodatabases
+using `pyogrio` / GDAL virtual zip paths. No extracted geodatabase directories
+were required for this smoke check.
+
+| Package | Geodatabase root | Layer/table | Geometry type | CRS | Feature/row count | Field count | Read evidence |
+| --- | --- | --- | --- | --- | ---: | ---: | --- |
+| `VEG_COMP_LYR_R1_POLY_2025.gdb.zip` | `VEG_COMP_LYR_R1_POLY_2025.gdb` | `VEG_COMP_LYR_R1_POLY` | `MultiPolygon` | `EPSG:3005` | `7154522` | `192` | `pyogrio.list_layers`, `pyogrio.read_info`, and one-row read passed |
+| `VEG_COMP_VDYP7_INPUT_POLY_AND_LAYER_2025.gdb.zip` | `VEG_COMP_VDYP7_INPUT_POLY_AND_LAYER_2025.gdb` | `VEG_COMP_VDYP7_INPUT_POLY` | non-spatial table | n/a | `7104182` | `47` | `pyogrio.list_layers`, `pyogrio.read_info`, and one-row read passed |
+| `VEG_COMP_VDYP7_INPUT_POLY_AND_LAYER_2025.gdb.zip` | `VEG_COMP_VDYP7_INPUT_POLY_AND_LAYER_2025.gdb` | `VEG_COMP_VDYP7_INPUT_LAYER` | non-spatial table | n/a | `7608054` | `42` | `pyogrio.list_layers`, `pyogrio.read_info`, and one-row read passed |
+
+First-field smoke:
+
+- R1 layer first fields include `FEATURE_ID`, `MAP_ID`, `POLYGON_ID`,
+  `OPENING_IND`, `FEATURE_CLASS_SKEY`, `POLYGON_AREA`,
+  `NON_PRODUCTIVE_DESCRIPTOR_CD`, `NON_PRODUCTIVE_CD`, and `BCLCS_LEVEL_1`.
+- VDYP7 polygon table first fields include `FEATURE_ID`, `MAP_ID`,
+  `POLYGON_NUMBER`, `ORG_UNIT`, `TSA_NAME`, `TFL_NAME`,
+  `INVENTORY_STANDARD_CODE`, `TSA_NUMBER`, `BEC_ZONE_CODE`, and
+  `NON_PRODUCTIVE_DESCRIPTOR_CD`.
+- VDYP7 layer table first fields include `FEATURE_ID`,
+  `TREE_COVER_LAYER_ESTIMATED_ID`, `MAP_ID`, `POLYGON_NUMBER`,
+  `LAYER_LEVEL_CODE`, `VDYP7_LAYER_CD`, `FOREST_COVER_RANK_CODE`,
+  `SPECIES_CD_1`, `SPECIES_PCT_1`, `SPECIES_CD_2`, and `SPECIES_PCT_2`.
+
+The accepted downstream TFL 6 AOI extraction is already recorded under `#6` and
+uses the same source archives. `P1.5` still needs public-data remote
+publication status before the source-data collection task can close.
+
 ## Acceptance Boundary
 
 `P1.5` is complete when:
@@ -91,7 +123,7 @@ the extracted directories should stay under the same vintage directory:
   convention or an explicitly documented successor convention; (complete)
 - file size and checksum metadata is recorded for both packages; (complete)
 - a read smoke records geodatabase/layer names, feature counts or equivalent
-  read evidence, CRS, and any extraction/runtime path decision;
+  read evidence, CRS, and any extraction/runtime path decision; (complete)
 - DataLad/git-annex publication status is recorded so a fresh environment can
   materialize the same files; and
 - the downstream active-AOI extraction handoff is documented; the earlier FDU

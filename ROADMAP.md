@@ -40,7 +40,7 @@
   - [x] P1.5a Record official 2025 R1 and VDYP7 polygon/layer package metadata.
   - [x] P1.5b Materialize the 2025 provincial source packages under the
     accepted `external/femic-public-data/data/bc/vri/2025/` convention.
-  - [ ] P1.5c Record file size, checksum, read-smoke, CRS, and layer-name
+  - [x] P1.5c Record file size, checksum, read-smoke, CRS, and layer-name
     evidence for both materialized packages.
   - [ ] P1.5d Record DataLad/git-annex/public-data publication status and the
     downstream extraction handoff to the accepted active AOI issue.
@@ -76,9 +76,7 @@
 
 ## Current Next Steps
 
-1. Continue `P1.5c` / `#5`: record file size, checksum, read-smoke, CRS, and
-   layer-name evidence for the provincial 2025 VRI source packages.
-2. Continue `P1.5d` / `#5`: record public-data remote publication status for
+1. Continue `P1.5d` / `#5`: record public-data remote publication status for
    the provincial 2025 VRI source archives.
-3. Continue `P1.4` / `#2`: split the cedar-signal, expansion-candidate, and
+2. Continue `P1.4` / `#2`: split the cedar-signal, expansion-candidate, and
    Patchworks runtime-package design lanes into their own follow-on issues.

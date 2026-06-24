@@ -382,3 +382,16 @@
   classes, blocked-execution status, and validation targets;
 - kept all missing-source and fallback rows blocked from execution; and
 - marked P1.7 complete without creating recipe YAML or running THLB netdown.
+
+## 2026-06-23 - Recorded 2025 VRI source-package read smoke
+
+- updated `planning/vri_2025_data_collection.md` with direct zipped
+  file-geodatabase read-smoke evidence for the 2025 VRI source packages;
+- verified `VEG_COMP_LYR_R1_POLY` as an EPSG:3005 `MultiPolygon` layer with
+  `7154522` features;
+- verified `VEG_COMP_VDYP7_INPUT_POLY` and `VEG_COMP_VDYP7_INPUT_LAYER` as
+  non-spatial tables with `7104182` and `7608054` rows, respectively;
+- recorded first-field checks for R1, VDYP7 polygon, and VDYP7 layer surfaces;
+  and
+- marked P1.5c complete while leaving public-data remote publication status
+  open for P1.5d.
