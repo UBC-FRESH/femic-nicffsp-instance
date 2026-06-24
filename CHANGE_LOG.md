@@ -652,3 +652,20 @@
   source-materialization plan; and
 - performed no DEM materialization, slope-raster build, recipe YAML creation,
   THLB execution, model-input generation, or Patchworks runtime work.
+
+## 2026-06-24 - Confirmed public current OGMA polygon authorities
+
+- ran a metadata-only FEMIC BCDC resolver deep dive for legal, non-legal, and
+  general OGMA layer candidates;
+- confirmed `WHSE_LAND_USE_PLANNING.RMP_OGMA_LEGAL_CURRENT_SVW` as the public,
+  WFS-queryable current legal OGMA polygon layer and first established-OGMA
+  materialization candidate;
+- confirmed `WHSE_LAND_USE_PLANNING.RMP_OGMA_NON_LEGAL_CURRENT_SVW` as the
+  public, WFS-queryable current non-legal OGMA polygon layer and first
+  materialization/review candidate for the draft-OGMA row;
+- recorded non-materializing TFL 6 bbox WFS hit checks of `264` legal-current
+  and `26` non-legal-current features;
+- kept government-only `Legal - All` and `Non Legal - All` OGMA layers out of
+  the public teaching source lane; and
+- performed no OGMA download, clipping, recipe YAML creation, THLB execution,
+  model-input generation, or Patchworks runtime work.

@@ -44,8 +44,8 @@ reviewed aspatial or proxy treatment instead of public geometry.
 | `tfl6_nd_070` | prior-step checkpoint | MP10 Table 4 / adjusted targets | Report-only operable/LHLB checkpoint | No source needed | Keep as validation row only. |
 | `tfl6_nd_080` | `hydrography_streams`, `lakes_wetlands_shoreline` | Freshwater Atlas `WHSE_BASEMAPPING.FWA_STREAM_NETWORKS_SP`, `WHSE_BASEMAPPING.FWA_LAKES_POLY`, and `WHSE_BASEMAPPING.FWA_WETLANDS_POLY`; coarse shoreline candidate `WHSE_BASEMAPPING.NTS_BC_COASTLINE_POLYS_125M` | Riparian reserve/management overlay or fallback | Public hydro candidates identified; MP10 40 m ocean-shoreline rule accepted, but coarse NTS coastline still requires review before precision use | Use FWA as first hydrology materialization target; keep the MP10 40 m ocean-shoreline reserve as the teaching rule and review whether NTS coastline is adequate for approximate clipping. |
 | `tfl6_nd_090` | `uwr_orders` | Approved UWR, `WHSE_WILDLIFE_MANAGEMENT.WCP_UNGULATE_WINTER_RANGE_SP` | UWR overlay exclusion for `U-1-010` and small `U-1-011` overlap | Public authority candidate identified | Materialize/clip approved UWR and confirm listed IDs within current TFL 6 AOI. |
-| `tfl6_nd_100` | `ogma_established` | Legal current OGMA, `WHSE_LAND_USE_PLANNING.RMP_OGMA_LEGAL_CURRENT_SVW` | Established OGMA overlay exclusion | Public authority candidate identified; current-vs-2011 vintage risk | Materialize/clip current legal OGMAs and flag any mismatch against MP10 established OGMA assumptions. |
-| `tfl6_nd_110` | `ogma_draft_2011` | Historical/local draft OGMA geometry if available; current non-legal OGMA candidate `WHSE_LAND_USE_PLANNING.RMP_OGMA_NON_LEGAL_CURRENT_SVW` is only a review clue | Draft OGMA overlay or aspatial fallback | Historical geometry missing; MP10 Table 11 aspatial fallback accepted until local draft geometry is found | Use MP10 Table 11 / adjusted benchmark deduction for draft OGMAs unless historical/local draft OGMA geometry is accepted; do not substitute current non-legal OGMAs automatically. |
+| `tfl6_nd_100` | `ogma_established` | Legal current OGMA, `WHSE_LAND_USE_PLANNING.RMP_OGMA_LEGAL_CURRENT_SVW` | Established OGMA overlay exclusion | Public current polygon authority confirmed; WFS-queryable with TFL 6 bbox hits; current-vs-2011 vintage risk remains | Materialize/clip current legal OGMAs in the source-materialization pass and compare resulting areas/landscape units against MP10 established OGMA assumptions. |
+| `tfl6_nd_110` | `ogma_draft_2011` | Current non-legal OGMA, `WHSE_LAND_USE_PLANNING.RMP_OGMA_NON_LEGAL_CURRENT_SVW`, plus historical/local draft OGMA geometry if found | Draft OGMA overlay or benchmark-calibrated fallback | Public current non-legal polygon authority confirmed as a likely draft-OGMA proxy candidate; WFS-queryable with TFL 6 bbox hits; current-vs-2011 draft-state risk remains | Materialize/clip current non-legal OGMAs for review. Do not automatically treat them as the 2011 draft OGMAs until clipped areas, landscape units, dates, and MP10 Table 11 consistency are reviewed. |
 | `tfl6_nd_120` | `wha_orders` | Approved WHA, `WHSE_WILDLIFE_MANAGEMENT.WCP_WILDLIFE_HABITAT_AREA_POLY` | WHA overlay exclusion for listed WHA IDs | Public authority candidate identified | Materialize/clip approved WHA and confirm listed IDs/overlaps. |
 | `tfl6_nd_130` | `recreation_features` | Recreation polygons `WHSE_FOREST_TENURE.FTEN_RECREATION_POLY_SVW`, recreation trails `WHSE_FOREST_TENURE.FTEN_REC_TRAILS_SVW`, recreation site points `WHSE_FOREST_TENURE.FTEN_REC_SITE_POINTS_SVW`, plus details/closures `WHSE_FOREST_TENURE.FTEN_REC_DTAILS_CLOSURES_SV` as attribution context | Recreation feature overlay with 10 m buffer | Public authority candidates identified; geometry/rule review still open | Materialize/clip the point/line/polygon recreation feature set and decide which geometry classes receive the MP10 10 m buffer. |
 | `tfl6_nd_140` | `deciduous_leading_signal` from `vri_2025_r1_tfl6` and/or `vdyp7_2025_layer_tfl6` | Accepted 2025 VRI R1/VDYP7 species fields | Deciduous-leading attribute exclusion | Field mapping blocker | P2.2 define leading-species rule and deciduous/conifer species-code handling. |
@@ -154,7 +154,7 @@ Resolver findings:
 | UWR | `Ungulate Winter Range - Approved`, object `WHSE_WILDLIFE_MANAGEMENT.WCP_UNGULATE_WINTER_RANGE_SP`, exact object-name hit | Accept as the first public approved-UWR materialization candidate. Do not use the proposed UWR layer returned by generic search. |
 | WHA | `Wildlife Habitat Areas - Approved`, object `WHSE_WILDLIFE_MANAGEMENT.WCP_WILDLIFE_HABITAT_AREA_POLY`, exact object-name hit | Accept as the first public approved-WHA materialization candidate. Do not use the proposed WHA layer returned by generic search. |
 | Established OGMA | `Old Growth Management Areas - Legal - Current`, object `WHSE_LAND_USE_PLANNING.RMP_OGMA_LEGAL_CURRENT_SVW`, exact object-name hit | Accept as the first current legal OGMA materialization candidate, with an explicit current-vs-2011 vintage warning. |
-| Draft OGMA | `Old Growth Management Areas - Non Legal - Current`, object `WHSE_LAND_USE_PLANNING.RMP_OGMA_NON_LEGAL_CURRENT_SVW`, exact object-name hit | Keep as a review clue only. MP10 draft OGMA likely needs historical/local evidence or an aspatial fallback; do not substitute current non-legal OGMAs automatically. |
+| Draft OGMA | `Old Growth Management Areas - Non Legal - Current`, object `WHSE_LAND_USE_PLANNING.RMP_OGMA_NON_LEGAL_CURRENT_SVW`, exact object-name hit | First-pass decision was review clue only; superseded by the OGMA deep-dive below, which accepts the current non-legal layer as the first materialization/review candidate while still requiring 2011-vintage consistency review. |
 
 Current decision:
 
@@ -165,7 +165,65 @@ Current decision:
   lane unless later review narrows a separate scenario.
 - Shoreline/ocean handling remains a review item because the clean public
   coastline candidates found here are coarse NTS 1:250,000 layers.
-- Draft OGMA remains unresolved as historical/fallback work.
+- Draft OGMA remained unresolved after the first pass, but the later OGMA
+  deep-dive section below upgrades current non-legal OGMA to the first public
+  materialization/review candidate for the draft-OGMA row.
+
+## OGMA Deep-Dive Resolver Evidence
+
+This resolver/schema slice was metadata-only. It did not download or
+materialize source layers.
+
+Commands:
+
+```powershell
+..\..\.venv\Scripts\python.exe -m femic data bcdc-resolve `
+  'Old Growth Management Areas Legal Current' `
+  'Old Growth Management Areas Non Legal Current' `
+  'WHSE_LAND_USE_PLANNING.RMP_OGMA_LEGAL_CURRENT_SVW' `
+  'WHSE_LAND_USE_PLANNING.RMP_OGMA_NON_LEGAL_CURRENT_SVW' `
+  'RMP_OGMA' `
+  'Legal Old Growth Management Areas Current' `
+  'Non Legal Old Growth Management Areas Current' `
+  'OGMA polygons' `
+  'Old Growth Management Area polygons' `
+  'Landscape Unit old growth management areas' `
+  --limit 10 `
+  --summary-csv runtime\logs\p2_1_ogma_deep_bcdc_summary.csv `
+  --manifest-path runtime\logs\p2_1_ogma_deep_bcdc_manifest.json
+
+..\..\.venv\Scripts\python.exe -m femic data bcdc-fetch `
+  'WHSE_LAND_USE_PLANNING.RMP_OGMA_LEGAL_CURRENT_SVW' `
+  'WHSE_LAND_USE_PLANNING.RMP_OGMA_NON_LEGAL_CURRENT_SVW' `
+  --bbox '841375.750,580345.507,928480.824,639356.277' `
+  --output-format gpkg `
+  --plan-only
+```
+
+Resolver findings:
+
+| Candidate | Object | Public/access status | WFS/schema evidence | TFL 6 bbox hit check | Decision |
+| --- | --- | --- | --- | --- | --- |
+| Old Growth Management Areas - Legal - Current | `WHSE_LAND_USE_PLANNING.RMP_OGMA_LEGAL_CURRENT_SVW` | Public; Open Government Licence - British Columbia; BCGW custom download plus OpenMaps WFS service | WFS typename `pub:WHSE_LAND_USE_PLANNING.RMP_OGMA_LEGAL_CURRENT_SVW`; fields include `LEGAL_OGMA_INTERNAL_ID`, `LEGAL_OGMA_PROVID`, `OGMA_TYPE`, `OGMA_PRIMARY_REASON`, `LEGALIZATION_FRPA_DATE`, `LEGALIZATION_OGAA_DATE`, `LAST_AMENDMENT_DATE`, `ENABLING_DOCUMENT_TITLE`, `ENABLING_DOCUMENT_URL`, and `FEATURE_AREA_SQM` | WFS `resultType=hits` against the TFL 6 bbox returned `264` matches | Accept as the first materialization target for established/current legal OGMA geometry. |
+| Old Growth Management Areas - Non Legal - Current | `WHSE_LAND_USE_PLANNING.RMP_OGMA_NON_LEGAL_CURRENT_SVW` | Public; Open Government Licence - British Columbia; BCGW custom download plus OpenMaps WFS service | WFS typename `pub:WHSE_LAND_USE_PLANNING.RMP_OGMA_NON_LEGAL_CURRENT_SVW`; fields include `NON_LEGAL_OGMA_INTERNAL_ID`, `NON_LEGAL_OGMA_PROVID`, `OGMA_TYPE`, `OGMA_PRIMARY_REASON`, `ORIGINAL_DECISION_DATE`, `LAST_AMENDMENT_DATE`, `ASSOCIATED_ACT_NAME`, and `FEATURE_AREA_SQM` | WFS `resultType=hits` against the TFL 6 bbox returned `26` matches | Accept as the first materialization/review target for draft/non-legal OGMA proxy geometry, but require 2011-vintage consistency review before using it as the MP10 draft OGMA row. |
+| Old Growth Management Areas - Legal - All | `WHSE_LAND_USE_PLANNING.RMP_OGMA_LEGAL_ALL_SVW` | Government audience; Access Only | BCGW custom download only in resolver evidence | Not tested | Do not use in the public teaching source lane unless access policy changes or the maintainer supplies a local copy. |
+| Old Growth Management Areas - Non Legal - All | `WHSE_LAND_USE_PLANNING.RMP_OGMA_NON_LEGAL_ALL_SVW` | Government audience; Access Only | BCGW custom download only in resolver evidence | Not tested | Do not use in the public teaching source lane unless access policy changes or the maintainer supplies a local copy. |
+
+Current decision:
+
+- There are up-to-date public spatial polygon OGMA layers.
+- The current legal OGMA layer is accepted as the established-OGMA
+  materialization candidate.
+- The current non-legal OGMA layer is accepted as the first public
+  materialization/review candidate for the draft-OGMA row, replacing the
+  earlier "review clue only" status.
+- The non-legal layer still must not be blindly substituted for the 2011 MP10
+  draft OGMAs. After clipping, compare landscape units, original decision or
+  amendment dates, `OGMA_TYPE`, `OGMA_PRIMARY_REASON`, and area totals against
+  MP10 Table 11 before accepting the row as executable.
+- The `All` legal/non-legal OGMA layers appear to be government-only access
+  surfaces and are out of scope for the public teaching data lane unless a
+  reviewed local copy is supplied.
 
 ## Recreation and Strata Resolver Evidence
 
@@ -241,7 +299,7 @@ claims that the historical geometry exists locally or has been accepted.
 | --- | --- | --- |
 | Operability | Split to P2.1a issue `#20`: use MP10 Table 8 / adjusted benchmark as calibration context only, while designing a VRI/VDYP-informed and DEM-slope-capable proxy/sensitivity lane until local 1999 WFP physical/economic operability geometry is found and reviewed. | Public resolver work found no accepted TFL 6-specific operability geometry, but MP9/MP10 provide enough inventory, terrain, economic-access, and yarding-system clues that operability should not be swept into a permanently locked aspatial fallback. |
 | Shoreline / ocean | Preserve the MP10 40 m ocean-shoreline reserve rule; keep NTS 1:250,000 coastline as a coarse teaching candidate requiring review. | FWA streams/lakes/wetlands are accepted first candidates, but shoreline discovery found only coarse NTS coastline and ShoreZone context layers. The rule is source-supported; precision geometry remains unresolved. |
-| Draft OGMAs | Use MP10 Table 11 / adjusted benchmark as an aspatial fallback unless historical/local 2011 draft OGMA geometry is found. | Current non-legal OGMA is a review clue only. MP10 draft OGMAs are historical planning state and should not be replaced automatically by current non-legal OGMAs. |
+| Draft OGMAs | Materialize and review current non-legal OGMA geometry as the first public draft-OGMA proxy candidate; keep MP10 Table 11 / adjusted benchmark as the fallback until clipped areas, landscape units, dates, and OGMA attributes are compared against 2011 assumptions. | Current non-legal OGMA is public and WFS-queryable, but MP10 draft OGMAs are historical planning state and should not be replaced automatically by current non-legal OGMAs without consistency review. |
 | RMZ / Table 16 stand-level retention | Accept LU and BEC as public candidates, but use reviewed MP10 Table 16 percent-by-stratum/aspatial fallback until RMZ geometry/schema is accepted. | Public LU and BEC sources resolved cleanly. RMZ did not: Strategic Land and Resource Plans is only a review clue, and the TFL 6 RMZ query returned an unrelated dataset. |
 | Cultural heritage | Use MP10 Table 15 / adjusted benchmark as an aspatial fallback; do not seek sensitive TUS/CMT geometry. | MP10 supports a 1% incremental netdown where EFZ and 1 km ocean-proximity overlap. Sensitive cultural-source geometry is not expected as a public input for this teaching instance. |
 
