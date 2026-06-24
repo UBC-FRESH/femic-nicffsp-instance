@@ -42,7 +42,7 @@ reviewed aspatial or proxy treatment instead of public geometry.
 | `tfl6_nd_050` | prior-step checkpoint | MP10 Table 4 / adjusted targets | Report-only productive/AFLB checkpoint | No source needed | Keep as validation row only. |
 | `tfl6_nd_060` | `operability` | Historical 1999 WFP/TFL physical and economic operability inventory if local geometry is found; generic public `Operable and Inoperable Areas SIR` is not accepted for TFL 6; see P2.1a issue `#20` and `planning/tfl6_operability_netdown_proxy.md` | Operability class exclusion for `I`, `Ocm`, `Ohm`, plus base-case/sensitivity treatment of yarding-system and economic-access assumptions | Separate design lane opened; no accepted public geometry; aspatial benchmark remains provisional only, not a final locked base-case rule | Complete P2.1a before source-materialization planning treats operability as resolved. Use MP10 Table 8 / adjusted benchmark as calibration context, and design a VRI/VDYP plus DEM-slope proxy lane before executable spatial logic is accepted. |
 | `tfl6_nd_070` | prior-step checkpoint | MP10 Table 4 / adjusted targets | Report-only operable/LHLB checkpoint | No source needed | Keep as validation row only. |
-| `tfl6_nd_080` | `hydrography_streams`, `lakes_wetlands_shoreline` | Freshwater Atlas `WHSE_BASEMAPPING.FWA_STREAM_NETWORKS_SP`, `WHSE_BASEMAPPING.FWA_LAKES_POLY`, and `WHSE_BASEMAPPING.FWA_WETLANDS_POLY`; coarse shoreline candidate `WHSE_BASEMAPPING.NTS_BC_COASTLINE_POLYS_125M` | Riparian reserve/management overlay or fallback | Public hydro candidates identified; MP10 40 m ocean-shoreline rule accepted, but coarse NTS coastline still requires review before precision use | Use FWA as first hydrology materialization target; keep the MP10 40 m ocean-shoreline reserve as the teaching rule and review whether NTS coastline is adequate for approximate clipping. |
+| `tfl6_nd_080` | `hydrography_streams`, `lakes_wetlands_shoreline` | Freshwater Atlas `WHSE_BASEMAPPING.FWA_STREAM_NETWORKS_SP`, `WHSE_BASEMAPPING.FWA_LAKES_POLY`, and `WHSE_BASEMAPPING.FWA_WETLANDS_POLY`; coarse shoreline candidate `WHSE_BASEMAPPING.NTS_BC_COASTLINE_POLYS_125M` | Riparian reserve/management overlay or fallback | FWA streams/lakes/wetlands materialized for review; MP10 40 m ocean-shoreline rule accepted, but coarse NTS coastline still requires review before precision use | Review FWA hydrology attributes and buffer semantics before recipe use; keep the MP10 40 m ocean-shoreline reserve as the teaching rule and review whether NTS coastline is adequate for approximate clipping. |
 | `tfl6_nd_090` | `uwr_orders` | Approved UWR, `WHSE_WILDLIFE_MANAGEMENT.WCP_UNGULATE_WINTER_RANGE_SP` | UWR overlay exclusion for `U-1-010` and small `U-1-011` overlap | Public authority candidate identified | Materialize/clip approved UWR and confirm listed IDs within current TFL 6 AOI. |
 | `tfl6_nd_100` | `ogma_established` | Legal current OGMA, `WHSE_LAND_USE_PLANNING.RMP_OGMA_LEGAL_CURRENT_SVW` | Established OGMA overlay exclusion | Public current polygon authority confirmed; WFS-queryable with TFL 6 bbox hits; current-vs-2011 vintage risk remains | Materialize/clip current legal OGMAs in the source-materialization pass and compare resulting areas/landscape units against MP10 established OGMA assumptions. |
 | `tfl6_nd_110` | `ogma_draft_2011` | Current non-legal OGMA, `WHSE_LAND_USE_PLANNING.RMP_OGMA_NON_LEGAL_CURRENT_SVW`, plus historical/local draft OGMA geometry if found | Draft OGMA overlay or benchmark-calibrated fallback | Public current non-legal polygon authority confirmed as a likely draft-OGMA proxy candidate; WFS-queryable with TFL 6 bbox hits; current-vs-2011 draft-state risk remains | Materialize/clip current non-legal OGMAs for review. Do not automatically treat them as the 2011 draft OGMAs until clipped areas, landscape units, dates, and MP10 Table 11 consistency are reviewed. |
@@ -418,9 +418,72 @@ accepted for recipe use:
 8. No output is wired into recipe YAML until the recipe-readiness review
    accepts its semantics.
 
+## First Hydrology Materialization Pass
+
+This pass materialized the FWA hydrology trio for source review only. It did
+not accept riparian recipe semantics, create recipe YAML, or run THLB netdown.
+
+Commands used:
+
+```powershell
+..\..\.venv\Scripts\python.exe -m femic data bcdc-fetch `
+  'WHSE_BASEMAPPING.FWA_STREAM_NETWORKS_SP' `
+  'WHSE_BASEMAPPING.FWA_LAKES_POLY' `
+  'WHSE_BASEMAPPING.FWA_WETLANDS_POLY' `
+  --bbox '841375.750,580345.507,928480.824,639356.277' `
+  --output-format gpkg `
+  --download-root runtime\bcdc_fetch\p2_1_hydrology `
+  --manifest-path runtime\logs\p2_1_hydrology_bcdc_fetch_manifest.json `
+  --allow-bulk
+
+..\..\.venv\Scripts\python.exe -m femic data bcdc-fetch `
+  'Freshwater Atlas Wetlands' `
+  --bbox '841375.750,580345.507,928480.824,639356.277' `
+  --output-format gpkg `
+  --download-root runtime\bcdc_fetch\p2_1_hydrology `
+  --manifest-path runtime\logs\p2_1_wetlands_bcdc_fetch_manifest.json `
+  --allow-bulk
+```
+
+Notes:
+
+- The first combined fetch succeeded for streams and lakes, then stopped at the
+  exact wetlands object because the resolver selected a direct-download path
+  without a WFS resource. The title query `Freshwater Atlas Wetlands` resolved
+  the WFS service and was used for the wetlands fetch.
+- Runtime WFS outputs were used as transient cache only. They were clipped to
+  the exact TFL 6 AOI, written to curated source paths, read-smoked, and then
+  removed from `runtime/`.
+- Curated output manifest:
+  `data/source/tfl_6/hydrology/hydrology_source_manifest.json`.
+
+| Source ID | Curated output | Raw bbox features | TFL 6 clipped features | Metric | Status |
+| --- | --- | ---: | ---: | ---: | --- |
+| `fwa_stream_networks_tfl6` | `data/source/tfl_6/hydrology/fwa_stream_networks_tfl6.gpkg`, layer `fwa_stream_networks_tfl6` | `25069` | `12078` | `4748715.276 m` line length | materialized for review |
+| `fwa_lakes_tfl6` | `data/source/tfl_6/hydrology/fwa_lakes_tfl6.gpkg`, layer `fwa_lakes_tfl6` | `1365` | `599` | `3243.849 ha` polygon area | materialized for review |
+| `fwa_wetlands_tfl6` | `data/source/tfl_6/hydrology/fwa_wetlands_tfl6.gpkg`, layer `fwa_wetlands_tfl6` | `1099` | `572` | `982.424 ha` polygon area | materialized for review |
+
+Read-smoke and QA:
+
+- all three curated outputs read successfully with geopandas;
+- all three outputs are EPSG:3005;
+- stream geometry type is `MultiLineString`;
+- lake and wetland geometry types are `MultiPolygon`;
+- all curated output geometries are valid after clipping;
+- output bounds are inside the accepted TFL 6 AOI bbox; and
+- each output has a SHA-256 hash recorded in
+  `data/source/tfl_6/hydrology/hydrology_source_manifest.json`.
+
+Recipe boundary:
+
+- These layers are source-review artifacts only.
+- Riparian reserve/management buffer rules, stream/lake/wetland class handling,
+  overlap order, shoreline/ocean handling, and final netdown semantics remain
+  unaccepted until recipe-readiness review.
+
 ## Non-Goals
 
-- No source downloads or materialization were performed in this slice.
+- No THLB recipe semantics were accepted in this slice.
 - No recipe YAML was created.
 - No THLB netdown execution was run.
 - No model-input, ForestModel/XML, Matrix Builder, or Patchworks runtime work

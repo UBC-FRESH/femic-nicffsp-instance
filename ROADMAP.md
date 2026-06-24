@@ -196,12 +196,13 @@ The Phase 1 follow-on issues are placed into the future roadmap as follows:
 
 ## Current Next Steps
 
-1. Continue P2.1 / `#16`: run the first approved source-materialization pass
+1. Continue P2.1 / `#16`: run the next approved source-materialization pass
    from the accepted plan in `planning/tfl6_source_layer_dependency_inventory.md`.
-   Keep the first pass bounded to safe-to-clip-first public rows only, write
-   provenance/read-smoke evidence, and do not treat any materialized layer as
-   executable THLB recipe logic until a later recipe-readiness review accepts
-   its semantics. Review/fallback-only rows remain out of scope.
+   The first FWA hydrology pass is materialized for review under
+   `data/source/tfl_6/hydrology/`, with riparian semantics still unaccepted.
+   Keep the next pass bounded to another safe-to-clip source family, preferably
+   approved UWR/WHA wildlife overlays, and continue recording provenance,
+   read-smoke evidence, and recipe-readiness caveats.
 2. Keep P2.2 field profiling queued until the accepted local R1/VDYP7
    dependency rows from P2.1 are ready for review or the maintainer explicitly
    approves a parallel field-mapping slice.

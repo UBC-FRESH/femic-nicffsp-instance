@@ -749,3 +749,20 @@
   source-materialization pass; and
 - performed no source download, clipping, recipe YAML creation, THLB execution,
   model-input generation, or Patchworks runtime work.
+
+## 2026-06-24 - Materialized FWA hydrology sources for review
+
+- materialized the first approved P2.1 source family: FWA streams, lakes, and
+  wetlands clipped to the accepted TFL 6 AOI;
+- wrote curated review artifacts under `data/source/tfl_6/hydrology/`;
+- recorded provenance, source authority, transient fetch details, clipped
+  feature counts, area/length summaries, SHA-256 hashes, and read-smoke
+  evidence in `data/source/tfl_6/hydrology/hydrology_source_manifest.json`;
+- recorded `12078` clipped stream features with `4748715.276 m` total line
+  length, `599` clipped lake polygons with `3243.849 ha`, and `572` clipped
+  wetland polygons with `982.424 ha`;
+- updated `planning/tfl6_source_layer_dependency_inventory.md` and
+  `ROADMAP.md` so the next P2.1 materialization pass remains bounded to another
+  safe-to-clip source family; and
+- accepted no riparian recipe semantics, created no recipe YAML, ran no THLB
+  netdown, generated no model inputs, and performed no Patchworks runtime work.

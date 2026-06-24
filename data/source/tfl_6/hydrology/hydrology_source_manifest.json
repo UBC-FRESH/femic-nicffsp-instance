@@ -1,0 +1,151 @@
+{
+  "generated_utc": "2026-06-24T18:28:01.594371+00:00",
+  "plan_status": "materialized_for_review",
+  "non_goals": [
+    "No THLB recipe semantics accepted.",
+    "No recipe YAML created.",
+    "No THLB netdown executed.",
+    "No model-input or Patchworks runtime work performed."
+  ],
+  "aoi": {
+    "path": "data\\source\\tfl_6\\aoi\\tfl_6_boundary.gpkg",
+    "layer": "tfl_6_boundary",
+    "crs": "EPSG:3005",
+    "feature_count": 182,
+    "union_area_ha": 217042.71895028095,
+    "bounds": [
+      841375.75,
+      580345.5069999993,
+      928480.8239999991,
+      639356.2770000007
+    ]
+  },
+  "layers": [
+    {
+      "source_id": "fwa_stream_networks_tfl6",
+      "dependency_rows": [
+        "tfl6_nd_080"
+      ],
+      "status": "materialized_for_review",
+      "bcdc_title": "Freshwater Atlas Stream Network",
+      "package_name": "freshwater-atlas-stream-network",
+      "dataset_page_url": "https://catalogue.data.gov.bc.ca/dataset/freshwater-atlas-stream-network",
+      "object_name": "WHSE_BASEMAPPING.FWA_STREAM_NETWORKS_SP",
+      "organization": "GeoBC Branch",
+      "licence": "Open Government Licence - British Columbia",
+      "access_method": "OpenMaps WFS bbox fetch via femic data bcdc-fetch, exact AOI clip via geopandas",
+      "fetch_query": "WHSE_BASEMAPPING.FWA_STREAM_NETWORKS_SP",
+      "raw_layer": "WHSE_BASEMAPPING_FWA_STREAM_NETWORKS_SP",
+      "raw_feature_count": 25069,
+      "invalid_raw_geometries_repaired": 0,
+      "output_path": "data\\source\\tfl_6\\hydrology\\fwa_stream_networks_tfl6.gpkg",
+      "output_layer": "fwa_stream_networks_tfl6",
+      "output_format": "GPKG",
+      "output_crs": "EPSG:3005",
+      "output_geometry_types": {
+        "MultiLineString": 12078
+      },
+      "output_feature_count": 12078,
+      "output_bounds": [
+        841673.006,
+        580530.947,
+        928299.967,
+        639349.5635607621
+      ],
+      "output_metric_name": "length_m",
+      "output_metric_value": 4748715.275953752,
+      "invalid_output_geometries_repaired": 0,
+      "sha256": "3f557b5c8b17efab60aa81d15d45c8cbed3ed50983ea7c77263c3ecef834c538",
+      "read_smoke": "geopandas read_file succeeded after write",
+      "review_required_before_recipe": true,
+      "review_notes": "Materialized for source review only; riparian semantics and buffer rules remain unaccepted.",
+      "raw_runtime_path_used_for_materialization": "runtime\\bcdc_fetch\\p2_1_hydrology\\WHSE_BASEMAPPING_FWA_STREAM_NETWORKS_SP\\WHSE_BASEMAPPING_FWA_STREAM_NETWORKS_SP.gpkg",
+      "raw_runtime_artifact_retained": false,
+      "fetch_command_note": "Fetched to transient runtime cache with femic data bcdc-fetch, then clipped to exact TFL 6 AOI; runtime cache removed after curated outputs were written and read-smoked."
+    },
+    {
+      "source_id": "fwa_lakes_tfl6",
+      "dependency_rows": [
+        "tfl6_nd_080"
+      ],
+      "status": "materialized_for_review",
+      "bcdc_title": "Freshwater Atlas Lakes",
+      "package_name": "freshwater-atlas-lakes",
+      "dataset_page_url": "https://catalogue.data.gov.bc.ca/dataset/freshwater-atlas-lakes",
+      "object_name": "WHSE_BASEMAPPING.FWA_LAKES_POLY",
+      "organization": "GeoBC Branch",
+      "licence": "Open Government Licence - British Columbia",
+      "access_method": "OpenMaps WFS bbox fetch via femic data bcdc-fetch, exact AOI clip via geopandas",
+      "fetch_query": "WHSE_BASEMAPPING.FWA_LAKES_POLY",
+      "raw_layer": "WHSE_BASEMAPPING_FWA_LAKES_POLY",
+      "raw_feature_count": 1365,
+      "invalid_raw_geometries_repaired": 0,
+      "output_path": "data\\source\\tfl_6\\hydrology\\fwa_lakes_tfl6.gpkg",
+      "output_layer": "fwa_lakes_tfl6",
+      "output_format": "GPKG",
+      "output_crs": "EPSG:3005",
+      "output_geometry_types": {
+        "MultiPolygon": 599
+      },
+      "output_feature_count": 599,
+      "output_bounds": [
+        844683.464,
+        580583.347,
+        928336.177,
+        637489.687
+      ],
+      "output_metric_name": "area_ha",
+      "output_metric_value": 3243.8492023785166,
+      "invalid_output_geometries_repaired": 0,
+      "sha256": "3da6ff01c505afe66961da4eda91fdcdb12d8c3920e0ca96fc6593cafb2bc67c",
+      "read_smoke": "geopandas read_file succeeded after write",
+      "review_required_before_recipe": true,
+      "review_notes": "Materialized for source review only; riparian semantics and buffer rules remain unaccepted.",
+      "raw_runtime_path_used_for_materialization": "runtime\\bcdc_fetch\\p2_1_hydrology\\WHSE_BASEMAPPING_FWA_LAKES_POLY\\WHSE_BASEMAPPING_FWA_LAKES_POLY.gpkg",
+      "raw_runtime_artifact_retained": false,
+      "fetch_command_note": "Fetched to transient runtime cache with femic data bcdc-fetch, then clipped to exact TFL 6 AOI; runtime cache removed after curated outputs were written and read-smoked."
+    },
+    {
+      "source_id": "fwa_wetlands_tfl6",
+      "dependency_rows": [
+        "tfl6_nd_080"
+      ],
+      "status": "materialized_for_review",
+      "bcdc_title": "Freshwater Atlas Wetlands",
+      "package_name": "freshwater-atlas-wetlands",
+      "dataset_page_url": "https://catalogue.data.gov.bc.ca/dataset/freshwater-atlas-wetlands",
+      "object_name": "WHSE_BASEMAPPING.FWA_WETLANDS_POLY",
+      "organization": "GeoBC Branch",
+      "licence": "Open Government Licence - British Columbia",
+      "access_method": "OpenMaps WFS bbox fetch via femic data bcdc-fetch, exact AOI clip via geopandas",
+      "fetch_query": "Freshwater Atlas Wetlands",
+      "raw_layer": "Freshwater_Atlas_Wetlands",
+      "raw_feature_count": 1099,
+      "invalid_raw_geometries_repaired": 0,
+      "output_path": "data\\source\\tfl_6\\hydrology\\fwa_wetlands_tfl6.gpkg",
+      "output_layer": "fwa_wetlands_tfl6",
+      "output_format": "GPKG",
+      "output_crs": "EPSG:3005",
+      "output_geometry_types": {
+        "MultiPolygon": 572
+      },
+      "output_feature_count": 572,
+      "output_bounds": [
+        844079.9315859706,
+        585775.23,
+        928272.82,
+        639312.8389359113
+      ],
+      "output_metric_name": "area_ha",
+      "output_metric_value": 982.4237504073899,
+      "invalid_output_geometries_repaired": 0,
+      "sha256": "70228f65049f2d6ee26da1d8b033f9acd1fe916d424bef95d3a68a70047e26a0",
+      "read_smoke": "geopandas read_file succeeded after write",
+      "review_required_before_recipe": true,
+      "review_notes": "Materialized for source review only; riparian semantics and buffer rules remain unaccepted.",
+      "raw_runtime_path_used_for_materialization": "runtime\\bcdc_fetch\\p2_1_hydrology\\Freshwater_Atlas_Wetlands\\Freshwater_Atlas_Wetlands.gpkg",
+      "raw_runtime_artifact_retained": false,
+      "fetch_command_note": "Fetched to transient runtime cache with femic data bcdc-fetch, then clipped to exact TFL 6 AOI; runtime cache removed after curated outputs were written and read-smoked."
+    }
+  ]
+}
