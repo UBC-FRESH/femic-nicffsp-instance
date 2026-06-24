@@ -28,9 +28,9 @@
   - [x] P1.3e Record the accepted adaptation boundary and keep implementation
     in follow-on tasks.
 - [ ] P1.4 Split model-design work into follow-on issues (`#2`).
-  - [ ] P1.4a Open a cedar-signal design issue covering Cw cultural reserve,
+  - [x] P1.4a Open a cedar-signal design issue covering Cw cultural reserve,
     utility-pole-grade products, treatments, yield curves, accounts, and
-    reporting outputs.
+    reporting outputs (`#8`).
   - [ ] P1.4b Open a K3Z expansion candidate-area issue covering unallocated
     candidate-area pool construction, productivity screening, and AAC uplift
     constraints.
@@ -77,5 +77,8 @@
 
 ## Current Next Steps
 
-1. Continue `P1.4` / `#2`: split the cedar-signal, expansion-candidate, and
-   Patchworks runtime-package design lanes into their own follow-on issues.
+1. Continue `P1.4b` / `#2`: open a K3Z expansion candidate-area issue covering
+   unallocated candidate-area pool construction, productivity screening, and
+   AAC uplift constraints.
+2. Continue `P1.4c` / `#2`: open a Patchworks runtime-package issue once
+   source normalization and model-design boundaries are accepted.

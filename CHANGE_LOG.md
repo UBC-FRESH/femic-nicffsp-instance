@@ -423,3 +423,13 @@
 - updated `planning/vri_2025_data_collection.md` with the final publication
   and public-read smoke evidence; and
 - marked P1.5 complete.
+
+## 2026-06-23 - Opened cedar-signal design follow-on issue
+
+- opened `#8` as the P1.4a cedar-signal design follow-on issue;
+- scoped `#8` to Cw cultural reserve behavior, utility-pole-grade product
+  requirements, treatment implications, yield-curve implications, and
+  Patchworks-facing account/reporting outputs;
+- kept model-input bundle generation and Patchworks runtime-package compilation
+  out of the issue scope; and
+- updated `ROADMAP.md` so P1.4a is complete and P1.4b is the next Phase 1 edge.
