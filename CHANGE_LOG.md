@@ -638,3 +638,17 @@
   input; and
 - updated `ROADMAP.md` Current Next Steps to point at a P2.1
   source-materialization plan before any downloads or THLB execution.
+
+## 2026-06-24 - Split operability into its own P2.1a design lane
+
+- opened `#20` as `P2.1a` for operability netdown proxy and sensitivity design;
+- added `planning/tfl6_operability_netdown_proxy.md` with MP9/MP10 evidence for
+  physical/economic operability, yarding-system logic, slope classes, minimum
+  harvest criteria, and economic-access sensitivities;
+- updated `planning/tfl6_source_layer_dependency_inventory.md` so MP10 Table 8
+  / adjusted benchmarks remain calibration context rather than a final locked
+  aspatial fallback;
+- updated `ROADMAP.md` Current Next Steps so P2.1a design precedes the
+  source-materialization plan; and
+- performed no DEM materialization, slope-raster build, recipe YAML creation,
+  THLB execution, model-input generation, or Patchworks runtime work.

@@ -94,6 +94,7 @@ starts.
 
 - [ ] P2.1 Resolve and materialize public/reference source layers needed by the
   TFL 6 THLB skeleton (`#16`).
+- [ ] P2.1a Design operability netdown proxy and sensitivity lane (`#20`).
 - [ ] P2.2 Profile accepted 2025 R1 and VDYP7 fields for non-forest,
   non-productive, deciduous-leading, productivity, and join-key assumptions.
 - [ ] P2.3 Define reviewed current-AOI source-layer recipe contracts under the
@@ -195,17 +196,13 @@ The Phase 1 follow-on issues are placed into the future roadmap as follows:
 
 ## Current Next Steps
 
-1. Continue P2.1 / `#16`: resolve public/reference authorities for missing
-   source rows in `planning/tfl6_source_layer_dependency_inventory.md`. Roads
-   now have DRA MPAR as the first public authority candidate, while
-   FWA streams/lakes/wetlands, approved UWR, approved WHA, and current legal
-   OGMA now have first public authority candidates. Recreation features,
-   landscape units, and BEC now also have first public authority candidates.
-   Operability, shoreline rule choice, draft OGMA, RMZ schema, and cultural
-   heritage proxy handling now have provisional teaching fallback decisions.
-   The next bounded P2.1 slice should draft the source-materialization plan:
-   list which accepted candidates are safe to clip first and which fallback or
-   review items must stay out of the download/materialization pass.
+1. Continue P2.1a / `#20`: finish the operability netdown proxy and
+   sensitivity design before source-materialization planning treats
+   operability as resolved. `planning/tfl6_operability_netdown_proxy.md`
+   records the MP9/MP10 evidence that operability can be approximated from
+   VRI/VDYP inventory clues plus a future DEM-derived slope surface, while
+   keeping the MP10 Table 8 / adjusted benchmark as calibration context rather
+   than a permanently locked aspatial fallback.
 2. Keep P2.2 field profiling queued until the accepted local R1/VDYP7
    dependency rows from P2.1 are ready for review or the maintainer explicitly
    approves a parallel field-mapping slice.
