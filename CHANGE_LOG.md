@@ -507,3 +507,17 @@
 - opened P5.1 `#18` for deciding runtime artifact publication policy; and
 - kept implementation follow-on issues `#8`, `#9`, and `#10` idle until P1.8d
   and P1.8e finish dependency-order and placement synchronization.
+
+## 2026-06-23 - Recorded future-phase dependency order
+
+- completed P1.8d by adding an explicit `Dependency Order` section to
+  `ROADMAP.md`;
+- recorded that Phase 2 source-layer/THLB work must precede Phase 3
+  model-design assumptions, Phase 4 model-input/runtime-package work, and
+  Phase 5 publication/teaching release work;
+- recorded that cedar design `#8` and expansion design `#9` belong in the
+  model-design dependency layer, while runtime-package follow-on `#10` is
+  downstream of accepted inputs, THLB outputs, model design, and model-input
+  bundle construction; and
+- kept P1.8 open for P1.8e placement/defer synchronization of `#8`, `#9`, and
+  `#10`.

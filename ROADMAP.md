@@ -80,7 +80,7 @@
   - [x] P1.8b Create one GitHub parent issue per proposed phase.
   - [x] P1.8c Create linked child task issues for the first executable tasks in
     each proposed phase.
-  - [ ] P1.8d Record dependency order across source-layer/THLB work, cedar
+  - [x] P1.8d Record dependency order across source-layer/THLB work, cedar
     design, expansion design, model-input generation, Patchworks runtime build,
     QA/publication, and teaching docs.
   - [ ] P1.8e Place existing follow-on issues `#8`, `#9`, and `#10` into the
@@ -148,13 +148,45 @@ after the runtime package has passed direct artifact and launch smoke checks.
 - [ ] P5.4 Run final release QA across source materialization, instance rebuild,
   Patchworks launch smoke, and documentation checks.
 
+## Dependency Order
+
+The next phases must proceed in this order unless the maintainer explicitly
+approves a narrower independent slice:
+
+1. **Source-layer and THLB foundation**: Phase 2 (`#12`) resolves/materializes
+   source layers, profiles accepted 2025 VRI and VDYP7 fields, defines reviewed
+   source-layer recipe contracts, executes the first THLB netdown lane, and
+   records GLB/AFLB/LHLB/THLB benchmark tolerances before any model-input
+   generation starts.
+2. **Model-design assumptions**: Phase 3 (`#13`) depends on the accepted Phase 2
+   source-layer/THLB contracts. Cedar design (`#8`) and expansion candidate-area
+   design (`#9`) belong in this phase because they decide modeling semantics,
+   treatment/product/account/reporting behavior, and AAC-uplift assumptions
+   rather than source extraction mechanics.
+3. **Model-input generation**: Phase 4 (`#14`) starts only after Phase 2 source
+   and THLB outputs plus Phase 3 model-design assumptions are reviewed. P4.1
+   (`#17`) builds the model-input bundle from those accepted contracts.
+4. **Patchworks runtime build and QA**: ForestModel/XML generation, Matrix
+   Builder execution, runtime-package assembly, and runtime-package QA remain
+   Phase 4 work after P4.1. Runtime-package follow-on `#10` is downstream of
+   accepted source layers, THLB outputs, cedar design, expansion design, and
+   model-input bundle construction.
+5. **Publication and teaching release**: Phase 5 (`#15`) starts after the
+   runtime package passes direct artifact and launch smoke. P5.1 (`#18`) first
+   decides artifact publication policy, then later Phase 5 tasks publish
+   materializable artifacts, write teaching docs, and run final release QA.
+
+Guardrail: source extraction, THLB execution, cedar/expansion implementation,
+model-input generation, XML/Matrix Builder work, runtime packaging,
+publication, and teaching documentation should not be bundled into one
+"next slice" unless the maintainer explicitly broadens scope.
+
 ## Current Next Steps
 
-1. Continue `P1.8d` / `#11`: record dependency order across source-layer/THLB
-   work, cedar design, expansion design, model-input generation, Patchworks
-   runtime build, QA/publication, and teaching docs.
-2. Continue `P1.8e` / `#11`: place existing follow-on issues `#8`, `#9`, and
+1. Continue `P1.8e` / `#11`: place existing follow-on issues `#8`, `#9`, and
    `#10` into the planned phase structure or explicitly defer them.
+2. Synchronize P1.8 closeout state after `#8`, `#9`, and `#10` are placed or
+   explicitly deferred.
 3. Keep follow-on implementation issues `#8`, `#9`, and `#10` open but idle
    until P1.8 places them into the planned phase structure or the maintainer
    explicitly approves a parallel lane.
