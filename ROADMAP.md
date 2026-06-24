@@ -36,13 +36,13 @@
     constraints.
   - [ ] P1.4c Open a Patchworks runtime-package issue once source normalization
     and model-design boundaries are accepted.
-- [ ] P1.5 Materialize 2025 VRI source datasets for NICF base inventory (`#5`).
+- [x] P1.5 Materialize 2025 VRI source datasets for NICF base inventory (`#5`).
   - [x] P1.5a Record official 2025 R1 and VDYP7 polygon/layer package metadata.
   - [x] P1.5b Materialize the 2025 provincial source packages under the
     accepted `external/femic-public-data/data/bc/vri/2025/` convention.
   - [x] P1.5c Record file size, checksum, read-smoke, CRS, and layer-name
     evidence for both materialized packages.
-  - [ ] P1.5d Record DataLad/git-annex/public-data publication status and the
+  - [x] P1.5d Record DataLad/git-annex/public-data publication status and the
     downstream extraction handoff to the accepted active AOI issue, then publish
     any missing remote keys before closing P1.5.
 - [x] P1.6 Pivot active AOI to TFL 6 and clip 2025 VRI inputs (`#6`).
@@ -77,8 +77,5 @@
 
 ## Current Next Steps
 
-1. Continue `P1.5d` / `#5`: copy the two missing 2025 VRI archive annex keys to
-   `arbutus-s3`, push the resulting `git-annex` publication state, and record a
-   public-read materialization smoke.
-2. Continue `P1.4` / `#2`: split the cedar-signal, expansion-candidate, and
+1. Continue `P1.4` / `#2`: split the cedar-signal, expansion-candidate, and
    Patchworks runtime-package design lanes into their own follow-on issues.

@@ -111,12 +111,14 @@ First-field smoke:
   `SPECIES_CD_1`, `SPECIES_PCT_1`, `SPECIES_CD_2`, and `SPECIES_PCT_2`.
 
 The accepted downstream TFL 6 AOI extraction is already recorded under `#6` and
-uses the same source archives. `P1.5` still needs public-data remote
-publication status before the source-data collection task can close.
+uses the same source archives. The publication status section below records the
+public-data remote copy and no-credentials materialization smoke needed to close
+`P1.5`.
 
 ## Public-Data Publication Status
 
 Publication audit date: 2026-06-23.
+Publication completion date: 2026-06-23.
 
 The `arbutus-s3` special remote is configured for public FEMIC public-data
 reads:
@@ -127,28 +129,44 @@ reads:
 - public URL:
   `https://object-arbutus.cloud.computecanada.ca/ubc-fresh-femic-public-data`
 - `public: yes`
-- remote annex keys reported by `git annex info arbutus-s3`: `423`
-- remote annex size reported by `git annex info arbutus-s3`: `24.12 gigabytes`
+- remote annex keys reported by `git annex info arbutus-s3` after publication:
+  `427`
+- remote annex size reported by `git annex info arbutus-s3` after publication:
+  `38 gigabytes`
 
-The two 2025 VRI archive keys are not yet present on `arbutus-s3`.
+The two 2025 VRI archive keys are now present on `arbutus-s3`.
 
 Evidence:
 
-- `git annex whereis` reports only the local checkout copy for each archive.
-- `git annex find --not --in arbutus-s3` returns both 2025 VRI archive paths.
-- `git annex find --in arbutus-s3` returns no 2025 VRI archive paths.
+- `git annex copy --to arbutus-s3 -- <two 2025 archive paths>` completed.
+- `git annex find --not --in arbutus-s3` returns no 2025 VRI archive paths.
+- `git annex find --in arbutus-s3` returns both 2025 VRI archive paths.
+- `git annex whereis` reports two copies for each archive: the local checkout
+  and `arbutus-s3`.
+- The `git-annex` branch was merged with `origin/git-annex` and pushed to
+  `origin` after the copy.
 
-Unpublished archive paths:
+Published archive paths:
 
 - `data/bc/vri/2025/VEG_COMP_LYR_R1_POLY_2025.gdb.zip`
 - `data/bc/vri/2025/VEG_COMP_VDYP7_INPUT_POLY_AND_LAYER_2025.gdb.zip`
 
-This means the current local checkout can read and use the source archives, but
-a fresh environment cannot yet be expected to materialize these two files from
-the normal public-data remote. Closing `P1.5` should wait until the two annex
-keys are copied to `arbutus-s3`, the `git-annex` branch publication state is
-pushed, and a fresh no-credentials materialization smoke succeeds or an
-equivalent reviewed public-read proof is recorded.
+Public-read smoke:
+
+- A fresh temporary clone of `UBC-FRESH/femic-public-data` was created.
+- AWS/S3 environment variables were cleared before initializing annex.
+- `git annex info arbutus-s3` in the smoke clone reported `creds: not
+  available`, `public: yes`, and the expected public URL.
+- `git annex whereis` in the smoke clone reported `arbutus-s3` for both archive
+  paths.
+- `git annex get --from arbutus-s3 -- <two 2025 archive paths>` downloaded both
+  archives and completed checksum verification.
+- Read-back file sizes in the smoke clone matched the local materialization:
+  `4168172794` bytes for `VEG_COMP_LYR_R1_POLY_2025.gdb.zip` and `403304406`
+  bytes for `VEG_COMP_VDYP7_INPUT_POLY_AND_LAYER_2025.gdb.zip`.
+- The temporary smoke clone was removed after verification.
+
+This completes the public-data publication requirement for `P1.5`.
 
 ## Acceptance Boundary
 
@@ -161,7 +179,7 @@ equivalent reviewed public-read proof is recorded.
 - a read smoke records geodatabase/layer names, feature counts or equivalent
   read evidence, CRS, and any extraction/runtime path decision; (complete)
 - DataLad/git-annex publication status is recorded so a fresh environment can
-  materialize the same files; (status recorded; remote publication incomplete)
+  materialize the same files; (complete)
 - the downstream active-AOI extraction handoff is documented; the earlier FDU
   1/2/3 cookie-cutter boundary is superseded by the TFL 6 pivot in `#6`;
   (complete)

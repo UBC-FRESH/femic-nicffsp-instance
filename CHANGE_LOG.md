@@ -408,3 +408,18 @@
   two archives through the normal public-data workflow; and
 - left P1.5 open for remote key copy, `git-annex` publication-state push, and
   public-read materialization smoke.
+
+## 2026-06-23 - Published 2025 VRI source archives to public data
+
+- loaded the local Arbutus credential environment and copied only the two 2025
+  VRI source archive annex keys to the `arbutus-s3` public-data remote;
+- merged and pushed the `external/femic-public-data` `git-annex` publication
+  branch after the upload;
+- verified `git annex find --not --in arbutus-s3` no longer returns either
+  2025 VRI archive path;
+- verified a fresh no-credentials clone of `UBC-FRESH/femic-public-data` can
+  download both 2025 VRI archives from `arbutus-s3` and pass checksum
+  verification;
+- updated `planning/vri_2025_data_collection.md` with the final publication
+  and public-read smoke evidence; and
+- marked P1.5 complete.
