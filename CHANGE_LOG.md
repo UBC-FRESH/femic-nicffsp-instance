@@ -1003,3 +1003,15 @@
 - marked P2.2 complete in `ROADMAP.md` without fetching source layers, creating
   recipe YAML, executing THLB netdown, building DEM/slope products, generating
   model inputs, or starting XML, Matrix Builder, or Patchworks runtime work.
+
+## 2026-06-24 - Started P2.3 source-layer recipe-contract planning
+
+- opened child issue `#23` for P2.3 under Phase 2 parent `#12`;
+- added `planning/tfl6_source_layer_recipe_contracts.md` as the first
+  source-layer recipe-contract table for MP10 Table 4 rows;
+- classified each row as contract-draft-ready, review-required,
+  aspatial-fallback, QA-only, deferred-sensitivity, or context-only;
+- recorded P2.4 handoff boundaries for future executable recipe work; and
+- kept this slice planning-only, with no source fetch, executable recipe YAML,
+  THLB execution, DEM/slope materialization, model-input generation, XML,
+  Matrix Builder, or Patchworks runtime work.
