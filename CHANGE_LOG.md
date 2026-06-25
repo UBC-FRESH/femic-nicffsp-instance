@@ -910,3 +910,14 @@
   RMZ/LU/BEC overlay, rebuild the model, and rerun scenarios; and
 - kept the challenge scoped as an enhancement/sensitivity exercise rather than
   a base-case prerequisite.
+
+## 2026-06-24 - Added full Sphinx docs requirement to Phase 5 roadmap
+
+- tightened P5.3 so the release phase requires full Sphinx teaching
+  documentation modeled on `femic-k3z-instance` and `femic-tsa29-instance`;
+- listed the expected docs scope: quickstart, rebuild workflow, source-data
+  provenance, THLB validation notes, scenario teaching workflows, advanced
+  student challenges, known limitations, and warning-clean Sphinx build
+  evidence; and
+- kept the minimal current `docs/` tree as an early seed, not the final Phase 5
+  documentation deliverable.

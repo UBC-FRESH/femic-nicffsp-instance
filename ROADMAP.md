@@ -144,8 +144,11 @@ after the runtime package has passed direct artifact and launch smoke checks.
   published, or regenerated (`#18`).
 - [ ] P5.2 Publish required data/runtime artifacts through the accepted FEMIC
   public-data workflow and prove fresh-environment materialization.
-- [ ] P5.3 Write teaching workflow docs, quickstart instructions, validation
-  notes, and known-limitations notes.
+- [ ] P5.3 Build full Sphinx teaching documentation modeled on the
+  `femic-k3z-instance` and `femic-tsa29-instance` documentation surfaces,
+  including quickstart instructions, rebuild workflow, source-data provenance,
+  THLB validation notes, scenario teaching workflows, advanced student
+  challenges, known limitations, and warning-clean Sphinx build evidence.
 - [ ] P5.4 Run final release QA across source materialization, instance rebuild,
   Patchworks launch smoke, and documentation checks.
 
@@ -175,7 +178,8 @@ approves a narrower independent slice:
 5. **Publication and teaching release**: Phase 5 (`#15`) starts after the
    runtime package passes direct artifact and launch smoke. P5.1 (`#18`) first
    decides artifact publication policy, then later Phase 5 tasks publish
-   materializable artifacts, write teaching docs, and run final release QA.
+   materializable artifacts, build full K3Z/TSA29-style Sphinx teaching docs,
+   and run final release QA.
 
 Guardrail: source extraction, THLB execution, cedar/expansion implementation,
 model-input generation, XML/Matrix Builder work, runtime packaging,
