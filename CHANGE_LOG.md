@@ -922,6 +922,18 @@
 - kept the minimal current `docs/` tree as an early seed, not the final Phase 5
   documentation deliverable.
 
+## 2026-06-24 - Created Phase 5 full-docs child issue
+
+- opened P5.3 child issue `#21` for building the full Sphinx teaching
+  documentation package;
+- linked `#21` from the Phase 5 roadmap task and Phase 5 parent issue `#15`;
+- scoped the docs package to K3Z/TSA29-style coverage, including student
+  quickstart, rebuild workflow, source provenance, THLB validation, scenario
+  teaching workflows, advanced challenges, known limitations, and
+  warning-clean Sphinx build evidence; and
+- kept the issue explicitly downstream of Phase 4 runtime/package QA rather
+  than active Phase 2 work.
+
 ## 2026-06-24 - Promoted Phase 2 from proposed to active
 
 - updated `ROADMAP.md` so Phase 2 is no longer described as proposed now that

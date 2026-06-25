@@ -144,7 +144,7 @@ after the runtime package has passed direct artifact and launch smoke checks.
   published, or regenerated (`#18`).
 - [ ] P5.2 Publish required data/runtime artifacts through the accepted FEMIC
   public-data workflow and prove fresh-environment materialization.
-- [ ] P5.3 Build full Sphinx teaching documentation modeled on the
+- [ ] P5.3 Build full Sphinx teaching documentation (`#21`) modeled on the
   `femic-k3z-instance` and `femic-tsa29-instance` documentation surfaces,
   including quickstart instructions, rebuild workflow, source-data provenance,
   THLB validation notes, scenario teaching workflows, advanced student
