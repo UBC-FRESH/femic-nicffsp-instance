@@ -208,7 +208,10 @@ The Phase 1 follow-on issues are placed into the future roadmap as follows:
    and details/closures are materialized for review under
    `data/source/tfl_6/recreation/`, with recreation buffer/status/class
    semantics still unaccepted. LU/BEC strata are materialized for review under
-   `data/source/tfl_6/strata/`, with RMZ/Table 16 semantics still blocked.
+   `data/source/tfl_6/strata/`, with strategic Resource Management Zone/Table
+   16 semantics still blocked. Keep this Table 16 strategic RMZ blocker
+   separate from the operational riparian RMA/RRZ/RMZ rules needed for
+   `tfl6_nd_080`.
    DRA existing roads are materialized for review under
    `data/source/tfl_6/roads/`, with road-width/class/buffer semantics still
    unaccepted. The next bounded P2.1 slice should be a source-materialization

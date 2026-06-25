@@ -47,15 +47,15 @@ schemas beyond TSA identity assumptions.
 | `existing_roads` | `tfl6_nd_020` | Existing classified road lines/polygons and road-width assumptions. | BCDC/FEMIC resolve or reviewed local source | queries: `roads`, `forest service roads`, `digital road atlas`, `TFL 6 roads` | missing source layer |
 | `future_roads_allowance` | `tfl6_nd_200` | Future branch-road model-time allowance. | aspatial fallback from MP10 Table 17 unless projected-road geometry is accepted | MP10 assumes 1,947 km at 10 m width | context/fallback only |
 | `operability` | `tfl6_nd_060` | Operability classes `I`, `Ocm`, `Ohm`, and related conventional/heli/economic classes. | reviewed local source or proxy | candidate query: `TFL 6 operability` | missing source layer |
-| `hydrography_streams` | `tfl6_nd_080` | Classified streams for riparian buffers. | BCDC/FEMIC resolve | queries: `Freshwater Atlas streams`, `FWA streams` | missing source layer |
-| `lakes_wetlands_shoreline` | `tfl6_nd_080` | Lakes, wetlands, and ocean shoreline for riparian buffers. | BCDC/FEMIC resolve plus shoreline decision | queries: `Freshwater Atlas lakes`, `wetlands`, `shoreline` | missing source layer |
+| `hydrography_streams` | `tfl6_nd_080` | Classified streams for riparian RMA/RRZ/RMZ buffers. | BCDC/FEMIC resolve | queries: `Freshwater Atlas streams`, `FWA streams` | missing source layer |
+| `lakes_wetlands_shoreline` | `tfl6_nd_080` | Lakes, wetlands, and ocean shoreline for riparian RMA/RRZ/RMZ buffers. | BCDC/FEMIC resolve plus shoreline decision | queries: `Freshwater Atlas lakes`, `wetlands`, `shoreline` | missing source layer |
 | `uwr_orders` | `tfl6_nd_090` | Ungulate winter range polygons and order IDs. | BCDC/FEMIC resolve | queries: `Ungulate Winter Range U-1-010`, `U-1-011` | missing source layer |
 | `ogma_established` | `tfl6_nd_100` | Established OGMA polygons. | BCDC/FEMIC resolve with vintage warning | query: `Old Growth Management Areas` | missing source layer; vintage risk |
 | `ogma_draft_2011` | `tfl6_nd_110` | MP10 draft OGMA polygons. | historical/local source or aspatial fallback | Holberg, Keogh, Mahatta, Neroutsos draft OGMAs | missing historical source |
 | `wha_orders` | `tfl6_nd_120` | Wildlife habitat area polygons and IDs. | BCDC/FEMIC resolve | queries: `Wildlife Habitat Area`, listed WHA IDs | missing source layer |
 | `recreation_features` | `tfl6_nd_130` | Recreation sites and trails with 10 m buffer. | BCDC/FEMIC resolve | queries: `recreation sites`, `recreation trails` | missing source layer |
 | `cultural_heritage_proxy` | `tfl6_nd_150` | EFZ/ocean-proximity proxy or reviewed aspatial deduction. | reviewed proxy/aspatial fallback | no public sensitive-source assumption | fallback only |
-| `rmz_lu_bec_strata` | `tfl6_nd_180`, constraints | RMZ, LU, and BEC attribution for retention percentages. | mixed accepted/reference/public sources | LU/RMZ/BEC source decisions still required | missing source layer and schema work |
+| `strategic_rmz_lu_bec_strata` | `tfl6_nd_180`, constraints | Strategic Resource Management Zone, LU, and BEC attribution for retention percentages. | mixed accepted/reference/public sources | strategic RMZ/LU/BEC source decisions still required | missing source layer and schema work |
 | `instrument_101_context` | validation only | Boundary-vintage explanation for current-AOI scaling. | accepted planning context | `planning/tfl6_instrument_boundary_reconciliation.md` | not recipe input |
 | `adjusted_benchmarks` | validation only | Approximate current-AOI validation targets. | accepted planning context | `planning/tfl6_adjusted_thlb_benchmarks.json` | not recipe input |
 
@@ -81,7 +81,7 @@ schemas beyond TSA identity assumptions.
 | `tfl6_nd_150` | Apply cultural heritage proxy/aspatial deduction. | `cultural_heritage_proxy` | `aspatial_or_proxy_deduction` | fallback review required | scaled cumulative `143687.417 ha` |
 | `tfl6_nd_160` | Report total operable reductions. | prior steps | `reference_target` | report only | scaled cumulative `143686.151 ha` |
 | `tfl6_nd_170` | Report reduced landbase before stand-level retention. | prior steps | `reference_target` | report only | scaled cumulative `143686.151 ha` |
-| `tfl6_nd_180` | Apply stand-level retention percentage by RMZ/LU/BEC stratum. | `rmz_lu_bec_strata` | `aspatial_percent_by_stratum` | blocked on stratum/schema decision | scaled cumulative `136487.728 ha` |
+| `tfl6_nd_180` | Apply stand-level retention percentage by strategic RMZ/LU/BEC stratum. | `strategic_rmz_lu_bec_strata` | `aspatial_percent_by_stratum` | blocked on strategic RMZ stratum/schema decision | scaled cumulative `136487.728 ha` |
 | `tfl6_nd_190` | Report current THLB. | prior steps, `adjusted_benchmarks` | `reference_target` | report only | scaled current THLB `136487.728 ha` |
 | `tfl6_nd_200` | Apply future-road allowance only for long-term landbase context. | `future_roads_allowance` | `future_model_time_context` | keep out of current THLB execution | scaled cumulative `134598.870 ha` |
 | `tfl6_nd_210` | Report long-term landbase. | prior steps, `adjusted_benchmarks` | `reference_target` | report only | scaled long-term `134598.870 ha` |
@@ -94,16 +94,16 @@ The following blockers must remain visible in any later recipe YAML:
   deciduous-leading exclusions;
 - no accepted existing-road source exists;
 - no accepted operability source or proxy exists;
-- no accepted hydrology/wetland/shoreline bundle and MP10 riparian-rule mapping
-  exists;
+- no accepted hydrology/wetland/shoreline bundle and MP10 riparian
+  RMA/RRZ/RMZ rule mapping exists;
 - UWR, WHA, and established OGMA public-layer IDs/vintage still need BCDC/FEMIC
   resolution;
 - draft OGMAs likely need historical/local geometry or a reviewed aspatial
   fallback;
 - cultural heritage data are sensitive and should not be represented as public
   source geometry;
-- RMZ/LU/BEC stand-level retention attribution still needs source/schema
-  decisions; and
+- strategic Resource Management Zone/LU/BEC stand-level retention attribution
+  still needs source/schema decisions; and
 - adjusted benchmark values are validation targets only, not executable source
   rows.
 

@@ -82,7 +82,7 @@ unless otherwise noted. The cumulative remaining area follows the printed Table
 | tfl6_nd_050 | Total productive forest | reference_target / AFLB | 0 | 147059 | Table 4 | Proposed AFLB-style productive-forest checkpoint for FEMIC review. |
 | tfl6_nd_060 | Less inoperable, including uneconomic | aflb_to_lhlb | 12438 | 134621 | Table 4; Table 8 | Requires operability class source. MP10 classes include physical inoperable `I` and marginal/economic classes `Ocm` and `Ohm`; no additional terrain-stability netdown was applied beyond inoperability. |
 | tfl6_nd_070 | Total operable | reference_target / LHLB | 0 | 134621 | Table 4 | Proposed LHLB-style operable checkpoint for FEMIC review. |
-| tfl6_nd_080 | Riparian management | lhlb_to_thlb | 10632 | 123989 | Table 4; Table 9 | Spatial overlay/buffer candidate. MP10 applies FRPA RRZ widths plus assumed RMZ retention by stream/lake/wetland class and a 40 m ocean shoreline reserve. Requires hydrography, lakes/wetlands, shoreline, class fields, and horizontal-distance buffer rules. |
+| tfl6_nd_080 | Riparian management | lhlb_to_thlb | 10632 | 123989 | Table 4; Table 9 | Spatial overlay/buffer candidate. MP10 applies FRPA-style riparian management area logic, including RRZ widths plus operational RMZ retention by stream/lake/wetland class and a 40 m ocean shoreline reserve. Requires hydrography, lakes/wetlands, shoreline, class fields, and horizontal-distance buffer rules. |
 | tfl6_nd_090 | Ungulate winter ranges | lhlb_to_thlb | 1313 | 122676 | Table 4; Table 10 | Spatial overlay candidate from UWR order data. MP10 references U-1-010 plus 5.3 ha from U-1-011 inside TFL 6 analysis boundary. |
 | tfl6_nd_100 | Established OGMAs | lhlb_to_thlb | 3750 | 118926 | Table 4; Table 11 | Spatial overlay candidate. MP10 established OGMAs: Marble and San Josef. Current legal OGMA layer may differ from 2011 analysis state. |
 | tfl6_nd_110 | Draft OGMAs | lhlb_to_thlb | 3469 | 115457 | Table 4; Table 11 | Historical/local source likely required. MP10 draft OGMAs: Holberg, Keogh, Mahatta, Neroutsos. Current public legal layers may not include 2011 draft geometry. |
@@ -92,7 +92,7 @@ unless otherwise noted. The cumulative remaining area follows the printed Table
 | tfl6_nd_150 | Cultural heritage resources | lhlb_to_thlb | 132 | 113498 | Table 4; Table 15 | Likely reviewed/aspatial or proxy spatial deduction. MP10 uses a 1% incremental netdown for TFL 6 area both within an EFZ and within 1 km of ocean; detailed TUS/CMT data are not normally public. |
 | tfl6_nd_160 | Total operable reductions | reference_target | 21124 | 113497 | Table 4 | Milestone/check row. Small one-hectare discrepancy from sequential rounded reductions is from Table 4 rounding. |
 | tfl6_nd_170 | Reduced landbase | reference_target | 0 | 113497 | Table 4 | Pre-stand-level-retention checkpoint. |
-| tfl6_nd_180 | Less allowance for stand-level retention | lhlb_to_thlb | 5686 | 107811 | Table 4; Table 16 | Aspatial percent deduction by RMZ/LU/BEC stratum. MP10 distributes a 5.0% area-weighted THLB reduction rather than applying one uniform factor. Requires RMZ, LU, BEC attribution and Table 16 percentages. |
+| tfl6_nd_180 | Less allowance for stand-level retention | lhlb_to_thlb | 5686 | 107811 | Table 4; Table 16 | Aspatial percent deduction by strategic Resource Management Zone/LU/BEC stratum. MP10 distributes a 5.0% area-weighted THLB reduction rather than applying one uniform factor. Requires strategic RMZ, LU, BEC attribution and Table 16 percentages. Do not confuse this strategic RMZ use with operational riparian RMZ buffers in `tfl6_nd_080`. |
 | tfl6_nd_190 | Current THLB | reference_target / THLB | 0 | 107811 | Table 4 | Current MP10 THLB benchmark. |
 | tfl6_nd_200 | Less future roads | context / long_term_adjustment | 1491 | 106319 | Table 4; Table 17 | Future/model-time deduction. MP10 assumes 1,947 km of future branch road at 10 m width, reducing area as polygons are harvested. |
 | tfl6_nd_210 | Long-term landbase | reference_target | 0 | 106319 | Table 4 | Long-term benchmark after future roads; do not confuse with current THLB. |
@@ -114,8 +114,8 @@ executable TFL 6 netdown recipe can run.
 | WHA | tfl6_nd_120 | WHA polygons with order/species IDs | Public BCDC candidate; not yet resolved for listed IDs. |
 | Recreation features | tfl6_nd_130 | Recreation site/trail features | Missing source-layer decision; requires 10 m buffer rule. |
 | Deciduous-leading stand signal | tfl6_nd_140 | Inventory species-leading fields | Candidate R1/VDYP attributes; exact species-lead definition needs review. |
-| Cultural heritage resource proxy | tfl6_nd_150 | EFZ/RMZ plus 1 km ocean-proximity overlay, or reviewed aspatial deduction | Sensitive/local data likely unavailable; MP10 supports proxy/aspatial treatment. |
-| RMZ, LU, BEC attribution | tfl6_nd_180 plus constraints | Polygons/attributes for RMZ type, landscape unit, BEC subzone | Required for stand-level retention percentages and old-seral/green-up constraints. |
+| Cultural heritage resource proxy | tfl6_nd_150 | EFZ/strategic RMZ plus 1 km ocean-proximity overlay, or reviewed aspatial deduction | Sensitive/local data likely unavailable; MP10 supports proxy/aspatial treatment. |
+| Strategic RMZ, LU, BEC attribution | tfl6_nd_180 plus constraints | Polygons/attributes for strategic Resource Management Zone type, landscape unit, BEC subzone | Required for stand-level retention percentages and old-seral/green-up constraints. |
 
 ## Milestone Comparison Contract
 

@@ -871,3 +871,16 @@
 - updated `planning/tfl6_source_layer_dependency_inventory.md` and
   `ROADMAP.md` so the next P2.1 slice is a source-materialization
   closeout/review pass rather than another download.
+
+## 2026-06-24 - Clarified RMZ terminology in Phase 2 planning
+
+- split operational riparian RMA/RRZ/RMZ language for `tfl6_nd_080` from
+  strategic Resource Management Zone language for `tfl6_nd_180`;
+- clarified that MP10 Table 16 stand-level retention needs strategic
+  Resource Management Zone/LU/BEC attribution or an explicit
+  percent-by-stratum fallback, not streamside riparian RMZ geometry;
+- preserved the rejected North Coast riparian-management-zone resolver hit as a
+  false positive for the TFL 6 strategic RMZ need; and
+- kept both riparian-rule execution and Table 16 stand-level-retention
+  execution blocked until recipe-readiness review accepts the required schema
+  or fallback treatments.

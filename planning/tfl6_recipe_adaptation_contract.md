@@ -59,7 +59,7 @@ Use these classifications before drafting P1.7d recipe skeletons:
 | `tfl6_nd_150` | Cultural heritage resources | `aspatial_fallback_candidate` | `sensitive_data`, `proxy_overlay` | Use reviewed proxy/aspatial deduction for teaching if TUS/CMT geometry is unavailable; do not represent sensitive local data as public source. |
 | `tfl6_nd_160` | Total operable reductions | `reference_target_only` | `checkpoint`, `rounding_note` | Report-only check row; preserve the one-hectare rounding discrepancy noted in MP10 Table 4. |
 | `tfl6_nd_170` | Reduced landbase | `reference_target_only` | `checkpoint` | Report-only pre-stand-level-retention checkpoint. |
-| `tfl6_nd_180` | Less allowance for stand-level retention | `aspatial_fallback_candidate` | `tfl_adaptation`, `missing_source_layer`, `percent_by_stratum` | Draft as a reviewed percent-by-stratum fallback until RMZ/LU/BEC attribution and Table 16 strata are encoded. |
+| `tfl6_nd_180` | Less allowance for stand-level retention | `aspatial_fallback_candidate` | `tfl_adaptation`, `missing_source_layer`, `percent_by_stratum` | Draft as a reviewed percent-by-stratum fallback until strategic Resource Management Zone/LU/BEC attribution and Table 16 strata are encoded. Do not confuse this strategic RMZ use with operational riparian RMZ buffers. |
 | `tfl6_nd_190` | Current THLB | `reference_target_only` | `thlb_checkpoint`, `scaled_validation_target` | Use as final current-THLB validation checkpoint, including the scaled target; not an executable deduction. |
 | `tfl6_nd_200` | Less future roads | `tfl_adaptation` | `context_row`, `aspatial_fallback_candidate`, `future_model_time` | Keep out of current THLB reconstruction unless explicitly modelling long-term landbase; draft only as context/future-road allowance. |
 | `tfl6_nd_210` | Long-term landbase | `reference_target_only` | `long_term_checkpoint`, `scaled_validation_target` | Report-only long-term benchmark after future roads. |
@@ -73,7 +73,7 @@ P1.7d should not try to solve all sources at once. Use this priority order:
 | 1 | VRI/R1 attribute mapping for non-forest, non-productive, and deciduous-leading stands | These are the most direct carry-forward candidates and use accepted P1.6 inputs. |
 | 2 | Operability source or reviewed proxy | This defines the productive-to-operable checkpoint and has a large area effect. |
 | 3 | Roads and future-road treatment split | Existing roads affect early landbase; future roads are long-term/model-time context. |
-| 4 | Hydrology/wetland/shoreline source and MP10 riparian rules | Riparian is the largest LHLB-to-THLB reduction and needs TFL-specific rules. |
+| 4 | Hydrology/wetland/shoreline source and MP10 riparian RMA/RRZ/RMZ rules | Riparian is the largest LHLB-to-THLB reduction and needs TFL-specific operational buffer/retention rules. |
 | 5 | UWR, WHA, and established OGMA public layers | These are likely public spatial overlays but need vintage/ID checks. |
 | 6 | Draft OGMAs, cultural heritage, and stand-level retention | These likely need historical/local sources or reviewed fallback treatment. |
 
