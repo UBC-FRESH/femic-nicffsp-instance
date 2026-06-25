@@ -871,3 +871,42 @@ Recipe boundary:
 - No THLB netdown execution was run.
 - No model-input, ForestModel/XML, Matrix Builder, or Patchworks runtime work
   was started.
+
+## P2.1 Closeout Review
+
+P2.1 is complete as a source-layer materialization and fallback-decision lane.
+The first executable THLB lane now has each source dependency classified as one
+of: accepted local input, materialized-for-review source, P2.2 field-mapping
+work, accepted aspatial fallback, context-only row, or deferred enhancement.
+
+Closeout classification:
+
+| Step | Closeout classification | Next owner |
+| --- | --- | --- |
+| `tfl6_nd_000` | accepted local AOI input | later recipes |
+| `tfl6_nd_010` | accepted local VRI input; field mapping required | P2.2 / `#22` |
+| `tfl6_nd_020` | DRA roads materialized for review; width/class rules still unaccepted | recipe-readiness review after P2.2 |
+| `tfl6_nd_040` | accepted local VRI/VDYP input; field mapping required | P2.2 / `#22` |
+| `tfl6_nd_060` | operability design lane closed; no public TFL 6 operability geometry accepted | later recipe/proxy work from `#20` design |
+| `tfl6_nd_080` | FWA streams/lakes/wetlands materialized for review; shoreline precision and RMA/RRZ/RMZ rules still unaccepted | recipe-readiness review |
+| `tfl6_nd_090` | approved UWR materialized for review | recipe-readiness review |
+| `tfl6_nd_100` | legal-current OGMA materialized for review, with vintage warning | recipe-readiness review |
+| `tfl6_nd_110` | non-legal-current OGMA materialized as proxy candidate only; MP10 draft-OGMA fallback remains available | recipe-readiness review |
+| `tfl6_nd_120` | approved WHA materialized for review | recipe-readiness review |
+| `tfl6_nd_130` | recreation polygon/line/point/context layers materialized for review | recipe-readiness review |
+| `tfl6_nd_140` | accepted local VRI/VDYP input; species-leading field mapping required | P2.2 / `#22` |
+| `tfl6_nd_150` | accepted aspatial/proxy fallback; do not seek sensitive geometry | later recipe-readiness review |
+| `tfl6_nd_180` | accepted aspatial MP10 Table 16 stand-level-retention fallback | later recipe-readiness review |
+| `tfl6_nd_200` | context-only long-term future-road allowance | later scenario/model-time decision |
+
+P2.1 does not need another source-download child issue before P2.2. Remaining
+work is mapping, recipe-readiness review, and later enhancement/sensitivity
+design:
+
+- P2.2 / `#22` owns field profiling for the accepted 2025 R1 and VDYP7 inputs.
+- Strategic RMZ spatial replacement is documented as an advanced student
+  challenge and is not a base-lane blocker.
+- DEM/slope materialization for operability remains a later planned
+  materialization issue, not a P2.1 prerequisite.
+- No source layer has been promoted into executable THLB recipe YAML by this
+  closeout.

@@ -934,6 +934,22 @@
 - kept the issue explicitly downstream of Phase 4 runtime/package QA rather
   than active Phase 2 work.
 
+## 2026-06-24 - Closed P2.1 source-materialization review
+
+- audited the accepted local TFL 6 AOI/VRI/VDYP inputs and the materialized
+  hydrology, wildlife, OGMA, recreation, LU/BEC strata, and DRA roads source
+  manifests;
+- added a P2.1 closeout-review table to
+  `planning/tfl6_source_layer_dependency_inventory.md` classifying each MP10
+  netdown dependency as accepted local input, materialized-for-review source,
+  P2.2 field-mapping work, accepted aspatial fallback, context-only row, or
+  deferred enhancement/sensitivity lane;
+- marked P2.1 complete in `ROADMAP.md`;
+- opened P2.2 child issue `#22` for accepted 2025 R1/VDYP7 field profiling and
+  linked it from the roadmap; and
+- preserved the boundary that no THLB recipe YAML, THLB execution, model input,
+  XML, Matrix Builder, or Patchworks runtime work was started.
+
 ## 2026-06-24 - Promoted Phase 2 from proposed to active
 
 - updated `ROADMAP.md` so Phase 2 is no longer described as proposed now that

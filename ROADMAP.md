@@ -92,11 +92,12 @@ Goal: turn the TFL 6 source-layer and THLB planning surfaces into reviewed,
 executable FEMIC source-layer and netdown recipes before model-input generation
 starts.
 
-- [ ] P2.1 Resolve and materialize public/reference source layers needed by the
+- [x] P2.1 Resolve and materialize public/reference source layers needed by the
   TFL 6 THLB skeleton (`#16`).
 - [x] P2.1a Design operability netdown proxy and sensitivity lane (`#20`).
 - [ ] P2.2 Profile accepted 2025 R1 and VDYP7 fields for non-forest,
-  non-productive, deciduous-leading, productivity, and join-key assumptions.
+  non-productive, deciduous-leading, productivity, and join-key assumptions
+  (`#22`).
 - [ ] P2.3 Define reviewed current-AOI source-layer recipe contracts under the
   future TFL/general-FMU recipe path.
 - [ ] P2.4 Implement and smoke-test the first executable THLB netdown recipe
@@ -200,33 +201,14 @@ The Phase 1 follow-on issues are placed into the future roadmap as follows:
 
 ## Current Next Steps
 
-1. Continue P2.1 / `#16`: run the next approved source-materialization pass
-   from the accepted plan in `planning/tfl6_source_layer_dependency_inventory.md`.
-   The first FWA hydrology pass is materialized for review under
-   `data/source/tfl_6/hydrology/`, and the approved UWR/WHA wildlife pass is
-   materialized for review under `data/source/tfl_6/wildlife/`. Current
-   legal/non-legal OGMA overlays are materialized for review under
-   `data/source/tfl_6/ogma/`, with the non-legal current layer kept as a proxy
-   candidate only. Riparian, wildlife, established-OGMA, and draft-OGMA netdown
-   semantics are still unaccepted. Recreation polygons, trails, site points,
-   and details/closures are materialized for review under
-   `data/source/tfl_6/recreation/`, with recreation buffer/status/class
-   semantics still unaccepted. LU/BEC strata are materialized for review under
-   `data/source/tfl_6/strata/`. Strategic Resource Management Zone geometry
-   was rechecked with the current FEMIC resolver and remains non-materialized,
-   so `tfl6_nd_180` is accepted as an aspatial MP10 Table 16 stand-level
-   retention deduction for the base teaching lane. Keep that Table 16 fallback
-   separate from the operational riparian RMA/RRZ/RMZ rules needed for
-   `tfl6_nd_080`.
-   DRA existing roads are materialized for review under
-   `data/source/tfl_6/roads/`, with road-width/class/buffer semantics still
-   unaccepted. The next bounded P2.1 slice should be a source-materialization
-   closeout/review pass: reconcile the materialized manifests, confirm the
-   remaining rows are review/fallback-only or blocked, and decide whether P2.1
-   can close or needs targeted follow-up issues before P2.2 field profiling.
-2. Keep P2.2 field profiling queued until the accepted local R1/VDYP7
-   dependency rows from P2.1 are ready for review or the maintainer explicitly
-   approves a parallel field-mapping slice.
+1. P2.1 / `#16` is complete: accepted local inputs are distinguished from
+   materialized-for-review source layers, accepted fallbacks, context-only
+   rows, deferred enhancements, and P2.2 field-mapping work in
+   `planning/tfl6_source_layer_dependency_inventory.md`.
+2. Start P2.2 / `#22`: profile accepted 2025 R1 and VDYP7 fields for
+   non-forest, non-productive, deciduous-leading, productivity, join-key, and
+   operability-proxy assumptions. Do not fetch new source layers or execute
+   THLB recipes in this slice.
 3. Keep Phase 3 design issues `#8` and `#9` idle until Phase 2 source-layer and
    THLB dependencies are accepted or the maintainer explicitly approves a
    narrower parallel design slice.
