@@ -884,3 +884,20 @@
 - kept both riparian-rule execution and Table 16 stand-level-retention
   execution blocked until recipe-readiness review accepts the required schema
   or fallback treatments.
+
+## 2026-06-24 - Accepted aspatial Table 16 stand-level-retention fallback
+
+- ran a targeted strategic RMZ resolver recheck using the current FEMIC BCDC
+  resolver against VILUP, Vancouver Island strategic Resource Management Zone,
+  EFZ/GMZ/SMZ, TFL 6 resource-management-zone, and exact-object queries;
+- confirmed the only plausible public candidate remains
+  `WHSE_LAND_USE_PLANNING.RMP_STRGC_LAND_RSRCE_PLAN_SVW`, which exposes WMS,
+  KML ground-overlay, and custom-download resources but no usable WFS/direct
+  vector geometry for the automated P2.1 lane;
+- confirmed the KML path contains WMS overlays, including a Vancouver Island
+  Land Use Plan boundary overlay, but no materializable EFZ/GMZ/SMZ or
+  strategic RMZ vector polygons for TFL 6; and
+- accepted `tfl6_nd_180` as an aspatial MP10 Table 16 stand-level-retention
+  deduction for the teaching base case: `5686 ha` historical MP10 or
+  `7198.423 ha` scaled current-AOI validation target, with any later strategic
+  RMZ spatial treatment deferred to an enhancement/sensitivity lane.

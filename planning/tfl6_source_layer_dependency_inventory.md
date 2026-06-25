@@ -52,7 +52,7 @@ reviewed aspatial or proxy treatment instead of public geometry.
 | `tfl6_nd_150` | `cultural_heritage_proxy` | Sensitive/local TUS/CMT data not expected as public source; MP10 Table 15 supports EFZ plus 1 km ocean-proximity proxy/aspatial treatment | Aspatial/proxy deduction | Reviewed fallback accepted; no sensitive public geometry search | Do not seek sensitive TUS/CMT geometry; use MP10 Table 15 / adjusted benchmark deduction unless a reviewed EFZ plus 1 km ocean-proximity proxy is explicitly implemented later. |
 | `tfl6_nd_160` | prior-step checkpoint | MP10 Table 4 | Report-only total operable reductions checkpoint | No source needed | Keep as validation row only. |
 | `tfl6_nd_170` | prior-step checkpoint | MP10 Table 4 | Report-only reduced landbase checkpoint | No source needed | Keep as validation row only. |
-| `tfl6_nd_180` | `strategic_rmz_lu_bec_strata` | Landscape units `WHSE_LAND_USE_PLANNING.RMP_LANDSCAPE_UNIT_SVW`; BEC `WHSE_FOREST_VEGETATION.BEC_BIOGEOCLIMATIC_POLY`; strategic Resource Management Zone geometry/schema unresolved, with Strategic Land and Resource Plans `WHSE_LAND_USE_PLANNING.RMP_STRGC_LAND_RSRCE_PLAN_SVW` as a review clue only | Stand-level retention percent-by-stratum | LU/BEC materialized for review; strategic RMZ geometry/schema unresolved; Table 16 percent-by-stratum fallback accepted | Review LU/BEC clipped strata and keep strategic Resource Management Zone/Table 16 executable semantics blocked until strategic RMZ schema or fallback treatment is accepted. |
+| `tfl6_nd_180` | `stand_level_retention_aspatial` | MP10 Table 16 / adjusted current-AOI benchmark; LU/BEC materialized for review; Strategic Land and Resource Plans `WHSE_LAND_USE_PLANNING.RMP_STRGC_LAND_RSRCE_PLAN_SVW` is retained only as non-materialized review evidence | Stand-level retention aspatial deduction | Accepted as aspatial fallback for this teaching instance: use MP10 `5686 ha` historical deduction or scaled current-AOI `7198.423 ha` validation target until strategic RMZ geometry is supplied and reviewed | Encode the first executable recipe as an aspatial Table 16 stand-level-retention deduction. Do not block P2.1 on strategic RMZ geometry; keep any future strategic RMZ spatial implementation as an enhancement/sensitivity path. |
 | `tfl6_nd_190` | prior-step checkpoint | MP10 Table 4 / adjusted targets | Report-only current THLB checkpoint | No source needed | Keep as validation row only. |
 | `tfl6_nd_200` | `future_roads_allowance` | MP10 Table 17 aspatial future-road assumption | Long-term landbase context only | Fallback/context only | Keep out of current THLB lane unless long-term scenario work is explicitly opened. |
 | `tfl6_nd_210` | prior-step checkpoint | MP10 Table 4 / adjusted targets | Report-only long-term landbase checkpoint | No source needed | Keep as validation row only. |
@@ -311,6 +311,49 @@ source-materialization plan. They are not sufficient to execute the final THLB
 lane without later review of the resulting recipe behavior and benchmark
 tolerances.
 
+## Strategic RMZ Recheck and Teaching Fallback Decision
+
+After the RMZ terminology correction, a targeted resolver recheck was run using
+the current FEMIC BCDC resolver, including the Phase 75 free-text improvements.
+The query set covered Vancouver Island Land Use Plan, VILUP, strategic Resource
+Management Zones, EFZ/GMZ/SMZ, TFL 6 resource management zones, and the exact
+object name `WHSE_LAND_USE_PLANNING.RMP_STRGC_LAND_RSRCE_PLAN_SVW`.
+
+Runtime-only evidence:
+
+- `runtime/logs/p2_1_strategic_rmz_queries.txt`
+- `runtime/logs/p2_1_strategic_rmz_bcdc_summary.csv`
+- `runtime/logs/p2_1_strategic_rmz_bcdc_manifest.json`
+- `runtime/bcdc_fetch/p2_1_strategic_rmz/rmp_strgc_land_rsrce_plan_svw_loader.kml`
+- `runtime/bcdc_fetch/p2_1_strategic_rmz/rmp_strgc_land_rsrce_plan_svw.kml`
+
+Findings:
+
+- The only plausible public object-name hit remains `Strategic Land and
+  Resource Plans - Current`, object
+  `WHSE_LAND_USE_PLANNING.RMP_STRGC_LAND_RSRCE_PLAN_SVW`.
+- The EFZ/GMZ/SMZ free-text queries returned no better catalogue match.
+- The generic `TFL 6 resource management zones` query still returns the
+  unrelated North Coast riparian-management-zone dataset and remains rejected.
+- `femic data bcdc-fetch --plan-only` identified a possible WFS fetch, but the
+  actual fetch failed because the package does not expose a WFS-queryable
+  resource for this object.
+- The KML resources are WMS ground-overlay wrappers. They include a
+  `Vancouver_Island_Land_Use_Plan_Boundary` overlay, but do not provide
+  vector strategic RMZ polygons or EFZ/GMZ/SMZ attributes that can be clipped to
+  TFL 6.
+
+Decision for this teaching instance:
+
+- Do not block P2.1 or the first executable THLB lane on strategic RMZ geometry.
+- Implement `tfl6_nd_180` as an aspatial stand-level-retention deduction using
+  MP10 Table 16 / Table 4 evidence.
+- Use `5686 ha` for historical MP10 reporting and `7198.423 ha` as the scaled
+  current-AOI validation deduction from
+  `planning/tfl6_adjusted_thlb_benchmarks.json`.
+- Treat any later strategic RMZ spatial implementation as an enhancement or
+  sensitivity lane, not as a prerequisite for the base teaching model.
+
 ## Priority for Next P2.1 Slice
 
 The next P2.1 slice should move from authority discovery to materialization
@@ -376,7 +419,7 @@ the maintainer explicitly narrows or changes the scope.
 | --- | --- | --- |
 | Operability proxy / DEM slope | P2.1a design is complete; LidarBC/open LiDAR is preferred for future slope metrics, CDED is a coarse smoke-test fallback | DEM tile selection, size, storage, public-data suitability, slope processing, and zonal-stat QA need their own materialization plan before downloads. |
 | Shoreline / ocean precision | MP10 40 m ocean-shoreline rule is accepted as a teaching rule; public discovery found coarse NTS coastline candidates | precision and coastline geometry choice need maintainer review before a shoreline layer is treated as authoritative. |
-| Strategic RMZ schema | LU and BEC are materialization candidates; strategic Resource Management Zone geometry/schema is unresolved | no accepted TFL 6 strategic RMZ geometry exists yet; Table 16 remains a reviewed percent-by-stratum fallback until schema is accepted. |
+| Strategic RMZ schema | LU and BEC are materialized review candidates; strategic Resource Management Zone geometry/schema was rechecked and remains non-materialized | no accepted TFL 6 strategic RMZ vector geometry exists; Table 16 is accepted as an aspatial stand-level-retention fallback for the teaching instance. |
 | Cultural heritage | MP10 Table 15 / adjusted benchmark fallback accepted; sensitive TUS/CMT geometry should not be sought | public sensitive-source geometry is inappropriate for this teaching instance. |
 | Future roads | MP10 Table 17 is a long-term/aspatial assumption | keep separate from current existing-road overlay and out of current THLB lane unless long-term scenario work is opened. |
 | 1999 WFP operability geometry | preferred historical evidence if supplied locally | no reviewed local geometry has been materialized; do not fetch generic/non-local operability layers. |
@@ -749,10 +792,10 @@ Recipe boundary:
 - These layers are source-review artifacts only.
 - LU/BEC can support OGMA, strategic RMZ, and Table 16 review, but neither
   layer is a netdown by itself.
-- Strategic Resource Management Zone geometry/schema remains unresolved, and
-  Table 16 percent-by-stratum execution remains blocked until a later
-  recipe-readiness review accepts a strategic RMZ source/schema or an explicit
-  fallback treatment.
+- Strategic Resource Management Zone geometry/schema remains unresolved, but
+  Table 16 execution is no longer blocked on it for the base teaching model:
+  use the accepted aspatial stand-level-retention fallback, and reserve any
+  strategic RMZ spatial treatment for a later enhancement/sensitivity lane.
 
 ## First DRA Roads Materialization Pass
 

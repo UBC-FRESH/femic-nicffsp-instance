@@ -208,8 +208,10 @@ The Phase 1 follow-on issues are placed into the future roadmap as follows:
    and details/closures are materialized for review under
    `data/source/tfl_6/recreation/`, with recreation buffer/status/class
    semantics still unaccepted. LU/BEC strata are materialized for review under
-   `data/source/tfl_6/strata/`, with strategic Resource Management Zone/Table
-   16 semantics still blocked. Keep this Table 16 strategic RMZ blocker
+   `data/source/tfl_6/strata/`. Strategic Resource Management Zone geometry
+   was rechecked with the current FEMIC resolver and remains non-materialized,
+   so `tfl6_nd_180` is accepted as an aspatial MP10 Table 16 stand-level
+   retention deduction for the base teaching lane. Keep that Table 16 fallback
    separate from the operational riparian RMA/RRZ/RMZ rules needed for
    `tfl6_nd_080`.
    DRA existing roads are materialized for review under

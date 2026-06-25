@@ -55,7 +55,7 @@ schemas beyond TSA identity assumptions.
 | `wha_orders` | `tfl6_nd_120` | Wildlife habitat area polygons and IDs. | BCDC/FEMIC resolve | queries: `Wildlife Habitat Area`, listed WHA IDs | missing source layer |
 | `recreation_features` | `tfl6_nd_130` | Recreation sites and trails with 10 m buffer. | BCDC/FEMIC resolve | queries: `recreation sites`, `recreation trails` | missing source layer |
 | `cultural_heritage_proxy` | `tfl6_nd_150` | EFZ/ocean-proximity proxy or reviewed aspatial deduction. | reviewed proxy/aspatial fallback | no public sensitive-source assumption | fallback only |
-| `strategic_rmz_lu_bec_strata` | `tfl6_nd_180`, constraints | Strategic Resource Management Zone, LU, and BEC attribution for retention percentages. | mixed accepted/reference/public sources | strategic RMZ/LU/BEC source decisions still required | missing source layer and schema work |
+| `stand_level_retention_aspatial` | `tfl6_nd_180`, constraints | Aspatial stand-level-retention deduction from MP10 Table 16 / adjusted current-AOI benchmark. | reviewed aspatial fallback | MP10 `5686 ha`; scaled current-AOI `7198.423 ha` | accepted fallback for teaching instance |
 | `instrument_101_context` | validation only | Boundary-vintage explanation for current-AOI scaling. | accepted planning context | `planning/tfl6_instrument_boundary_reconciliation.md` | not recipe input |
 | `adjusted_benchmarks` | validation only | Approximate current-AOI validation targets. | accepted planning context | `planning/tfl6_adjusted_thlb_benchmarks.json` | not recipe input |
 
@@ -81,7 +81,7 @@ schemas beyond TSA identity assumptions.
 | `tfl6_nd_150` | Apply cultural heritage proxy/aspatial deduction. | `cultural_heritage_proxy` | `aspatial_or_proxy_deduction` | fallback review required | scaled cumulative `143687.417 ha` |
 | `tfl6_nd_160` | Report total operable reductions. | prior steps | `reference_target` | report only | scaled cumulative `143686.151 ha` |
 | `tfl6_nd_170` | Report reduced landbase before stand-level retention. | prior steps | `reference_target` | report only | scaled cumulative `143686.151 ha` |
-| `tfl6_nd_180` | Apply stand-level retention percentage by strategic RMZ/LU/BEC stratum. | `strategic_rmz_lu_bec_strata` | `aspatial_percent_by_stratum` | blocked on strategic RMZ stratum/schema decision | scaled cumulative `136487.728 ha` |
+| `tfl6_nd_180` | Apply stand-level retention as an aspatial MP10 Table 16 deduction. | `stand_level_retention_aspatial` | `aspatial_fixed_deduction` | accepted fallback for teaching instance | scaled cumulative `136487.728 ha`; scaled reduction `7198.423 ha` |
 | `tfl6_nd_190` | Report current THLB. | prior steps, `adjusted_benchmarks` | `reference_target` | report only | scaled current THLB `136487.728 ha` |
 | `tfl6_nd_200` | Apply future-road allowance only for long-term landbase context. | `future_roads_allowance` | `future_model_time_context` | keep out of current THLB execution | scaled cumulative `134598.870 ha` |
 | `tfl6_nd_210` | Report long-term landbase. | prior steps, `adjusted_benchmarks` | `reference_target` | report only | scaled long-term `134598.870 ha` |
@@ -102,8 +102,9 @@ The following blockers must remain visible in any later recipe YAML:
   fallback;
 - cultural heritage data are sensitive and should not be represented as public
   source geometry;
-- strategic Resource Management Zone/LU/BEC stand-level retention attribution
-  still needs source/schema decisions; and
+- strategic Resource Management Zone vector attribution is deferred; the base
+  teaching lane uses accepted aspatial stand-level retention for `tfl6_nd_180`;
+  and
 - adjusted benchmark values are validation targets only, not executable source
   rows.
 
