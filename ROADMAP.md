@@ -86,7 +86,7 @@
   - [x] P1.8e Place existing follow-on issues `#8`, `#9`, and `#10` into the
     planned phase structure or explicitly defer them.
 
-## Proposed Phase 2: Reviewed Source Layers and THLB Netdown (`#12`)
+## Phase 2: Reviewed Source Layers and THLB Netdown (`#12`)
 
 Goal: turn the TFL 6 source-layer and THLB planning surfaces into reviewed,
 executable FEMIC source-layer and netdown recipes before model-input generation

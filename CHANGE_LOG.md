@@ -921,3 +921,12 @@
   evidence; and
 - kept the minimal current `docs/` tree as an early seed, not the final Phase 5
   documentation deliverable.
+
+## 2026-06-24 - Promoted Phase 2 from proposed to active
+
+- updated `ROADMAP.md` so Phase 2 is no longer described as proposed now that
+  P2.1 source-layer and THLB-input work is active under parent issue `#12`;
+- left later Phase 3 through Phase 5 sections as proposed/future until their
+  dependency gates open; and
+- preserved older changelog wording about the original P1.8 proposal step as
+  historical provenance.
