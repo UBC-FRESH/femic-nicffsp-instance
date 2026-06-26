@@ -1733,3 +1733,12 @@
   package evidence exists; and
 - preserved the boundary that this publishes the current Phase 2/Phase 3 seed
   docs only and does not start Phase 4 model-input or runtime-package work.
+
+## 2026-06-26 - Switched standalone docs to RTD theme
+
+- updated `docs/conf.py` to use the same `sphinx_rtd_theme` configuration
+  pattern as the K3Z and MKRF instance docs, with an Alabaster fallback only if
+  the RTD theme package is unavailable;
+- updated `docs/requirements.txt` to install `sphinx-rtd-theme`; and
+- preserved the existing warning-clean Sphinx build and GitHub Pages
+  publication workflow.

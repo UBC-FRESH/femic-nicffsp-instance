@@ -271,6 +271,8 @@ after the runtime package has passed direct artifact and launch smoke checks.
   - [x] P5.3a Publish the current seed docs through a standalone GitHub Pages
     workflow so Phase 2/Phase 3 documentation is visible before the final
     Phase 5 teaching-docs expansion.
+    - [x] P5.3a.1 Use the same RTD Sphinx theme pattern as the K3Z and MKRF
+      instance documentation.
   - [ ] P5.3b Expand final K3Z/TSA29-style teaching docs after Phase 4 runtime
     package evidence exists.
 - [ ] P5.4 Run final release QA across source materialization, instance rebuild,
