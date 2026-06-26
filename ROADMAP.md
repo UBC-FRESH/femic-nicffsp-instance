@@ -140,6 +140,16 @@ starts.
 Goal: define the reviewed model-design assumptions that depend on the accepted
 source-layer and THLB surfaces, without compiling a Patchworks package.
 
+- [ ] P3.3 Define TFL 6 AU, yield-curve, and treatment-eligibility contract
+  (`#28`) before model-input bundle generation.
+  Priority note: P3.3 is listed first because the AU/yield contract is now the
+  top Phase 3 dependency. The `P3.3` identifier is retained to preserve the
+  existing issue/comment/commit audit trail.
+  - [x] P3.3a Add the first AU/yield-curve planning contract in
+    `planning/tfl6_au_yield_curve_contract.md`.
+  - [ ] P3.3b Review and lock the static AU identity, legacy MP10 TIPSY
+    parameter extraction boundary, curve-lane assumptions, and
+    operability/treatment-eligibility interaction.
 - [ ] P3.1 Complete cedar-signal design (`#8`) for Cw cultural reserve,
   utility-pole-grade products, treatments, yield implications, accounts, and
   reporting outputs.
@@ -151,13 +161,6 @@ source-layer and THLB surfaces, without compiling a Patchworks package.
     hooks, and report requirements for the first model-input bundle.
 - [ ] P3.2 Complete expansion candidate-area design (`#9`) for unallocated
   candidate pools, productivity screening, and AAC uplift constraints.
-- [ ] P3.3 Define TFL 6 AU, yield-curve, and treatment-eligibility contract
-  (`#28`) before model-input bundle generation.
-  - [x] P3.3a Add the first AU/yield-curve planning contract in
-    `planning/tfl6_au_yield_curve_contract.md`.
-  - [ ] P3.3b Review and lock the static AU identity, legacy MP10 TIPSY
-    parameter extraction boundary, curve-lane assumptions, and
-    operability/treatment-eligibility interaction.
 - [ ] P3.4 Update the TFL 6 run-profile/model-input contract with reviewed
   design decisions and explicit rejected/deferred assumptions.
 

@@ -1175,3 +1175,11 @@
 - moved the roadmap edge to P3.3 review while keeping cedar P3.1 open but
   paused and avoiding model-input generation, XML, Matrix Builder, and
   Patchworks runtime work.
+
+## 2026-06-25 - Moved AU/yield contract to top Phase 3 priority
+
+- reordered `ROADMAP.md` so P3.3 / `#28` appears first in the Phase 3 stack;
+- retained the `P3.3` identifier to preserve the already-created issue,
+  comments, and commit audit trail; and
+- recorded that cedar P3.1 and expansion P3.2 remain open but downstream of
+  the AU/yield contract review.
