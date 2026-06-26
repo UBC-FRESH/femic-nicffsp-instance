@@ -90,7 +90,7 @@ artifact_inventory:
           - LENGTH
 
 pending_runtime_surfaces:
-  - representative scenario-smoke evidence
+  - Phase 5 artifact publication policy
 
 runtime_launch_surfaces:
   baseline_pin:
@@ -117,6 +117,37 @@ runtime_launch_surfaces:
       saved_file_count: 903
       stage_dir: models/tfl6_patchworks_model/analysis/p44b_launch0
       scenario_mode: none
+  representative_scenario_smoke:
+    run_id: tfl6_p44d_harvest_smoke200
+    command: >
+      python -m femic patchworks run-headless
+      models/tfl6_patchworks_model/analysis/base.pin
+      --config config/patchworks.runtime.windows.yaml
+      --run-id tfl6_p44d_harvest_smoke200
+      --stage-label p44d_harvest_smoke200
+      --scenario-mode max-even-flow-smoke
+      --scenario-target product.HarvestedVolume.managed.Total.CC
+      --scenario-min-annual 1000 --iterations 200
+    qa_status: accepted_p4_4d
+    evidence:
+      raw_returncode: 0
+      returncode: 0
+      terminal_state: success
+      detected_marker: "[FEMIC headless] saveStage completed"
+      saved_file_count: 903
+      stage_dir: models/tfl6_patchworks_model/analysis/p44d_harvest_smoke200
+      scenario_mode: max-even-flow-smoke
+      scenario_target: product.HarvestedVolume.managed.Total.CC
+      scenario_min_annual: 1000
+      iterations: 200
+      active_targets:
+        - product.HarvestedVolume.managed.Total.CC
+        - flow.even.product.HarvestedVolume.managed.Total.CC
+      scheduled_rows: 801
+      scheduled_type: MANAGED
+      scheduled_treatment: CC
+      product_current_nonzero_periods: 30
+      product_current_sum: 1674405.726562
 
 provenance_policy:
   - generated blocks and tracks are ignored locally until Phase 5 publication policy is decided

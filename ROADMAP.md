@@ -270,14 +270,14 @@ exist.
   targets (`#37`).
 - [x] P4.3 Execute Matrix Builder and QA tracks, features, accounts,
   protoaccounts, products, targets, and reports (`#38`).
-- [ ] P4.4 Complete Patchworks runtime-package build/QA (`#10`) with
+- [x] P4.4 Complete Patchworks runtime-package build/QA (`#10`) with
   representative launch and scenario-smoke checks.
   - [x] P4.4a Build and inspect runtime block/topology artifacts from the
     accepted P4.2 fragments.
   - [x] P4.4b Add the `analysis/base.pin` launch surface and helper scripts.
   - [x] P4.4c Run direct Patchworks launch smoke and inspect saved-stage
     artifacts.
-  - [ ] P4.4d Run representative scenario smoke and record Phase 4 closeout
+  - [x] P4.4d Run representative scenario smoke and record Phase 4 closeout
     evidence.
 
 ## Proposed Phase 5: Publication, Teaching Docs, and Release QA (`#15`)
@@ -547,7 +547,15 @@ The Phase 1 follow-on issues are placed into the future roadmap as follows:
     `[FEMIC headless] saveStage completed`, and wrote `903` saved-stage files.
     P4.4d is the next bounded step: run representative scenario smoke against
     `product.HarvestedVolume.managed.Total.CC` and inspect target/schedule
-    outputs.
+    outputs. P4.4d is now complete: representative scenario smoke run
+    `tfl6_p44d_harvest_smoke200` returned `0`, detected
+    `[FEMIC headless] saveStage completed`, wrote `903` saved-stage files,
+    activated both `product.HarvestedVolume.managed.Total.CC` and
+    `flow.even.product.HarvestedVolume.managed.Total.CC`, produced `801`
+    scheduled managed `CC` rows, and generated nonzero harvested-volume current
+    in `30` periods. The remaining lifecycle step is Phase 4 closeout: update
+    Phase 4 parent `#14`, close the P4.4 child `#10`, and then move the
+    roadmap edge to Phase 5 publication policy.
 22. P5.3a / `#21` publication plumbing is complete for the current seed docs,
     but P5.3 stays open for final teaching-docs expansion after Phase 4 runtime
     package evidence exists.

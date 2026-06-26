@@ -114,5 +114,53 @@ P4.4d must run a representative scenario smoke:
 - confirm target status / target summary are written; and
 - confirm schedule evidence is non-empty if a scheduling scenario is claimed.
 
-Phase 4 closeout remains blocked until P4.4d produces representative scenario
-evidence.
+## P4.4d Representative Scenario Smoke
+
+Command:
+
+```powershell
+..\..\.venv\Scripts\python.exe -m femic patchworks run-headless `
+  models\tfl6_patchworks_model\analysis\base.pin `
+  --config config\patchworks.runtime.windows.yaml `
+  --run-id tfl6_p44d_harvest_smoke200 `
+  --stage-label p44d_harvest_smoke200 `
+  --scenario-mode max-even-flow-smoke `
+  --scenario-target product.HarvestedVolume.managed.Total.CC `
+  --scenario-min-annual 1000 `
+  --iterations 200
+```
+
+Result: accepted.
+
+Manifest evidence:
+
+| Field | Value |
+| --- | --- |
+| run id | `tfl6_p44d_harvest_smoke200` |
+| raw return code | `0` |
+| effective return code | `0` |
+| terminal state | `success` |
+| detected marker | `[FEMIC headless] saveStage completed` |
+| saved files | `903` |
+| scenario mode | `max-even-flow-smoke` |
+| scenario target | `product.HarvestedVolume.managed.Total.CC` |
+| scenario minimum annual | `1000` |
+| iterations | `200` |
+| stage directory | `models/tfl6_patchworks_model/analysis/p44d_harvest_smoke200` |
+
+Target/schedule inspection:
+
+| Check | Result |
+| --- | --- |
+| `scenario/targetStatus.csv` rows | `213` |
+| `product.HarvestedVolume.managed.Total.CC` active | yes |
+| `flow.even.product.HarvestedVolume.managed.Total.CC` active | yes |
+| `scenario/targetSummary.csv` rows | `6573` |
+| product current nonzero periods | `30` |
+| product current sum | `1674405.726562` |
+| `scenario/schedule.csv` rows | `801` |
+| scheduled type | `MANAGED` |
+| scheduled treatment | `CC` |
+
+P4.4d is accepted. The saved stage is generated output and remains ignored in
+Git. Phase 4 closeout can now proceed.

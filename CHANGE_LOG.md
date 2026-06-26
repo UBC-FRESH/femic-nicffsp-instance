@@ -2049,3 +2049,24 @@
   and
 - marked P4.4b/P4.4c complete in `ROADMAP.md`, leaving P4.4d representative
   scenario smoke as the remaining Phase 4 runtime-package gate.
+
+## 2026-06-26 - Completed P4.4d representative Patchworks scenario smoke
+
+- ran `femic patchworks run-headless` with run id
+  `tfl6_p44d_harvest_smoke200` against
+  `models/tfl6_patchworks_model/analysis/base.pin`;
+- used scenario mode `max-even-flow-smoke` with target
+  `product.HarvestedVolume.managed.Total.CC`, minimum annual target `1000`,
+  and `200` bounded scheduler iterations;
+- confirmed raw and effective return code `0`, terminal state `success`,
+  marker `[FEMIC headless] saveStage completed`, and `903` saved-stage files;
+- inspected `scenario/targetStatus.csv` and confirmed both
+  `product.HarvestedVolume.managed.Total.CC` and
+  `flow.even.product.HarvestedVolume.managed.Total.CC` are active;
+- inspected `scenario/targetSummary.csv` and confirmed
+  `product.HarvestedVolume.managed.Total.CC` has nonzero current values in
+  `30` periods and total current `1674405.726562`;
+- inspected `scenario/schedule.csv` and confirmed `801` scheduled rows, all
+  managed `CC`; and
+- marked P4.4d complete in `ROADMAP.md`, leaving Phase 4 closeout as the next
+  lifecycle step.
