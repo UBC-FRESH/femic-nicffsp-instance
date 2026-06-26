@@ -31,19 +31,19 @@ or regenerated.
 
 P4.1a found that the generated `data/tsr/*checkpoint*` files referenced by the
 Phase 2 THLB status report are not present in the clean checkout. P4.1b defines
-stable P4 input locations for the regenerated or rematerialized AFLB stand
-universe and final THLB overlay geometry:
+stable P4 input locations for the regenerated or rematerialized AFLB resultant
+fragment universe and final THLB/NTHLB state geometry:
 
 | Artifact | Path | Role |
 | --- | --- | --- |
-| Canonical AFLB stand universe | `data/model_input_bundle/input_geometry/aflb_current.feather` | P4.1c stand-table source for the forested model universe. Every row needs an untreated VDYP curve so retained/NTHLB forest can grow. |
-| Readable AFLB mirror | `data/model_input_bundle/input_geometry/aflb_current.gpkg` | GeoPackage mirror for GIS QA and maintainer inspection of the model stand universe. |
-| Final THLB overlay checkpoint | `data/model_input_bundle/input_geometry/thlb_current.feather` | P4.1c overlay source for managed THLB share, unmanaged/NTHLB retention share, and final THLB area reconciliation. It is not the complete stand-table universe. |
-| Readable final THLB mirror | `data/model_input_bundle/input_geometry/thlb_current.gpkg` | GeoPackage mirror for GIS QA and maintainer inspection of the THLB overlay/fragments. |
+| Canonical AFLB resultant-fragment universe | `data/model_input_bundle/input_geometry/aflb_current.feather` | P4.1c stand-table source for the forested model universe after accepted spatial netdown/resultant processing. Every row needs an untreated VDYP curve so retained/NTHLB forest can grow. |
+| Readable AFLB mirror | `data/model_input_bundle/input_geometry/aflb_current.gpkg` | GeoPackage mirror for GIS QA and maintainer inspection of the model resultant-fragment universe. |
+| Final THLB state checkpoint | `data/model_input_bundle/input_geometry/thlb_current.feather` | P4.1c source for managed THLB share, unmanaged/NTHLB retention share, and final THLB area reconciliation on AFLB resultant fragments. It is not a separate stand-table universe. |
+| Readable final THLB mirror | `data/model_input_bundle/input_geometry/thlb_current.gpkg` | GeoPackage mirror for GIS QA and maintainer inspection of THLB/NTHLB state on resultant fragments. |
 | Checkpoint manifest | `data/model_input_bundle/input_geometry/thlb_checkpoint_manifest.json` | Records source command, source audit, area metrics, checksums, and regeneration/rematerialization status. |
 
-The AFLB Feather checkpoint is the canonical stand-universe restart/read path.
-The THLB Feather checkpoint is a downstream overlay used to compute
+The AFLB Feather checkpoint is the canonical resultant-fragment restart/read
+path. The THLB Feather checkpoint is a downstream state surface used to compute
 `managed_share`, `thlb_fact`, `thlb_area_ha`, and `retention_share`.
 `NTHLB = AFLB - THLB` remains in the model as unmanaged/full-retention forest
 and still requires an untreated VDYP growth curve. P4.1c must create or
@@ -56,7 +56,7 @@ P4.1c should write these core tables under `data/model_input_bundle/`:
 | Table | Role |
 | --- | --- |
 | `bundle_manifest.json` | Bundle provenance, run metadata, source paths, row counts, checksums, and accepted caveats. |
-| `stand_table.csv` | One row per AFLB stand or accepted fragment with stable keys, area, THLB/NTHLB share, IFM, ORIGIN, AU, curve, treatment, transition, cedar, harvest-system, and embedded-identity fields. |
+| `stand_table.csv` | One row per AFLB resultant fragment with stable keys, area, THLB/NTHLB share, IFM, ORIGIN, AU, curve, treatment, transition, cedar, harvest-system, and embedded-identity fields. |
 | `au_table.csv` | Canonical Patchworks-facing AU table: static AU identity, selected top-area status, SI class, curve IDs, and remap family. |
 | `curve_table.csv` | Curve metadata for natural/untreated and treated/managed curve IDs. |
 | `curve_points_table.csv` | Age-by-curve yield points for Patchworks ForestModel export. |
@@ -111,8 +111,8 @@ P4.4 owns runtime-package QA and launch smoke.
 
 P4.1c may start only after it has a concrete plan for creating or
 rematerializing `data/model_input_bundle/input_geometry/aflb_current.feather`
-as the stand universe and
+as the resultant-fragment universe and
 `data/model_input_bundle/input_geometry/thlb_current.feather` as the managed
-share overlay. The first bundle build should then write the core generated
+share state surface. The first bundle build should then write the core generated
 tables and stop before ForestModel XML generation unless the maintainer
 explicitly broadens the scope.

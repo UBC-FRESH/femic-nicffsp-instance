@@ -43,20 +43,22 @@ Phase 4 may consume these reviewed artifacts:
 ## AFLB Stand Universe And THLB/NTHLB Split
 
 Phase 4 model-input generation must build the Patchworks stand universe from
-the accepted AFLB / forested model universe, not from final THLB fragments
-alone. THLB is the managed treatment-eligible subset of AFLB. The complement,
+the accepted AFLB / forested model universe after spatial netdown overlay has
+produced the resultant fragments. THLB is the managed treatment-eligible state
+assigned to those AFLB resultant fragments. The complement,
 `NTHLB = AFLB - THLB`, remains in the model as forested unmanaged/retention
 area.
 
 Implementation requirements:
 
-- `aflb_current` or an equivalent AFLB checkpoint is the canonical stand-table
-  universe for `stand_table.csv` / `stand_au_assignment.csv`.
-- Every AFLB row must receive an untreated VDYP curve assignment, including
+- `aflb_current` or an equivalent AFLB checkpoint is the canonical
+  resultant-fragment universe for `stand_table.csv` / `stand_au_assignment.csv`.
+- Every AFLB resultant fragment must receive an untreated VDYP curve assignment, including
   NTHLB rows, so retained forest continues to grow in the Patchworks model.
-- The final THLB geometry/checkpoint is an overlay used to compute
+- The final THLB geometry/checkpoint is a state surface used to compute
   `managed_share`, `thlb_fact`, `thlb_area_ha`, `retention_share`, and IFM
-  state. It is not by itself the complete stand-table universe.
+  state on AFLB resultant fragments. It is not by itself a separate
+  stand-table universe.
 - THLB share maps to managed treatment eligibility, subject to the other
   accepted treatment, operability, harvest-system, age, and group gates.
 - NTHLB share maps to unmanaged/full-retention area in Patchworks XML terms

@@ -40,15 +40,16 @@ Bundle Universe Contract
 ------------------------
 
 The Phase 4 Patchworks stand universe is the accepted AFLB / forested model
-universe, not only the final THLB fragments. THLB is a managed-treatment
-eligibility subset of that AFLB universe. The set complement,
-``NTHLB = AFLB - THLB``, remains in the model as forested retained area.
+universe after spatial netdown overlay has produced the resultant fragments.
+THLB is a managed-treatment eligibility state assigned to those AFLB resultant
+fragments. The set complement, ``NTHLB = AFLB - THLB``, remains in the model as
+forested retained area.
 
 Practical consequences for the first bundle:
 
 - the stand table must be built from the AFLB checkpoint or an equivalent
   AFLB-current handoff;
-- every AFLB stand or fragment needs an untreated VDYP curve so it can grow,
+- every AFLB resultant fragment needs an untreated VDYP curve so it can grow,
   including stands that are not in THLB;
 - the final THLB geometry/checkpoint is an overlay used to compute
   ``managed_share`` / ``thlb_fact`` and ``retention_share``;

@@ -1811,13 +1811,25 @@
 ## 2026-06-26 - Clarified AFLB universe versus THLB managed-share contract
 
 - amended instance model-input docs and planning metadata to state that the
-  Patchworks stand universe is AFLB, not final THLB fragments alone;
+  Patchworks stand universe is AFLB, not THLB area alone;
 - documented that THLB is the managed subset of AFLB and that
   `NTHLB = AFLB - THLB` remains in the model as unmanaged/full-retention forest
   requiring untreated VDYP growth curves;
 - updated the P4.1 bundle path contract so `aflb_current` is the future
-  stand-universe handoff and `thlb_current` is the managed-share overlay used
-  for `managed_share`, `thlb_fact`, `thlb_area_ha`, and `retention_share`; and
+  resultant-fragment handoff and `thlb_current` is the managed-share state
+  surface used for `managed_share`, `thlb_fact`, `thlb_area_ha`, and
+  `retention_share`; and
 - kept P4.1c.2 open because this was a documentation/metadata correction only,
   with no bundle table generation, ForestModel XML, Matrix Builder output, or
   Patchworks runtime package.
+
+## 2026-06-26 - Refined Patchworks resultant-fragment wording
+
+- amended instance model-input docs and bundle-path metadata to state that
+  accepted spatial netdown overlays intentionally produce AFLB resultant
+  fragments for Patchworks;
+- clarified that final THLB/NTHLB state is assigned to those resultant
+  fragments rather than being a separate stand universe or an error condition;
+  and
+- kept P4.1c.2 open for actual core bundle-table generation from the AFLB
+  resultant-fragment universe.

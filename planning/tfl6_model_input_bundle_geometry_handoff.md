@@ -8,12 +8,14 @@ geometry artifacts under `data/model_input_bundle/` are generated runtime
 outputs, while the planning surface needs a tracked audit trail explaining what
 was regenerated and how it should be consumed.
 
-Important correction for P4.1c.2: this final THLB geometry is an overlay for
-managed-share accounting, not the complete Patchworks stand universe. The
-downstream Patchworks model stand universe is AFLB. THLB is a managed subset of
-AFLB, and `NTHLB = AFLB - THLB` remains in the model as unmanaged/full-retention
-forest. Every AFLB stand still needs an untreated VDYP curve so retained forest
-can grow and report residual inventory through time.
+Important correction for P4.1c.2: this final THLB geometry is a state surface
+for managed-share accounting, not a separate Patchworks stand universe. The
+downstream Patchworks model stand universe is the AFLB resultant-fragment
+surface produced by the accepted spatial netdown overlays. THLB is a managed
+subset of AFLB, and `NTHLB = AFLB - THLB` remains in the model as
+unmanaged/full-retention forest. Every AFLB resultant fragment still needs an
+untreated VDYP curve so retained forest can grow and report residual inventory
+through time.
 
 ## Regeneration Command
 
@@ -64,8 +66,9 @@ The THLB runner also wrote companion AFLB and LHLB checkpoint partitions under
 `runtime/logs/tsr/lu_partitions/` and reported an AFLB checkpoint area of
 `196833.177 ha` in `config/tsr/thlb_reconstructed.status.md`. For P4.1c.2, the
 AFLB checkpoint or an equivalent rematerialized `aflb_current` handoff is the
-correct stand-table universe. The THLB checkpoint recorded above should be
-overlaid back onto that AFLB universe to compute managed and retained shares.
+correct resultant-fragment universe. The THLB checkpoint recorded above should
+be reconciled against that AFLB universe to compute managed and retained
+shares.
 
 If an AFLB or LHLB restart checkpoint is needed as a stable bundle artifact, it
 should be regenerated or reconstructed deliberately under
@@ -74,10 +77,12 @@ artifact policy or treated as local runtime cache.
 
 ## Scope Boundary
 
-This pass regenerated the final THLB overlay handoff only. It did not build the
-AFLB stand-universe handoff, bundle CSV tables, ForestModel XML, Matrix Builder
-outputs, a Patchworks runtime package, or Phase 5 publication policy work.
+This pass regenerated the final THLB/NTHLB state handoff only. It did not build
+the AFLB resultant-fragment handoff, bundle CSV tables, ForestModel XML, Matrix
+Builder outputs, a Patchworks runtime package, or Phase 5 publication policy
+work.
 
 The next P4.1c move is to build the first core model-input bundle tables from
-the AFLB stand universe, this THLB managed-share overlay, and the accepted AU,
-curve, treatment, transition, cedar, and embedded-identity contracts.
+the AFLB resultant-fragment universe, this THLB/NTHLB managed-share state
+surface, and the accepted AU, curve, treatment, transition, cedar, and
+embedded-identity contracts.
