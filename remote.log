@@ -1,0 +1,1 @@
+861b7dd7-fff0-4637-b0a2-b9b4668dca71 autoenable=true bucket=ubc-fresh-femic-tfl6-instance chunk=1GiB datacenter=US encryption=none host=object-arbutus.cloud.computecanada.ca name=arbutus-s3 port=443 protocol=https public=yes publicurl=https://object-arbutus.cloud.computecanada.ca/ubc-fresh-femic-tfl6-instance requeststyle=path storageclass=STANDARD type=S3 timestamp=1782518161s
