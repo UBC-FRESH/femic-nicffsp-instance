@@ -1257,3 +1257,18 @@
   crosswalk; and
 - marked P3.3 complete in `ROADMAP.md` and moved Current Next Steps to P3.4
   actual yield-curve build/QA without building model inputs or runtime files.
+
+## 2026-06-25 - Extracted MP10 TIPSY parameter tables for P3.4a
+
+- scraped MP10 Information Package Tables 27, 28, and 29 into reviewed planning
+  artifacts under `planning/tfl6_mp10_tipsy_parameter_library.{md,json,csv}`;
+- captured 90 legacy parameter rows: 60 from Table 27, 16 from Table 28, and
+  14 from Table 29;
+- preserved MP10 legacy AU codes, Table 29 footnote markers, age-band context,
+  SPH, species percentages, species site indexes, genetic worth, OAF,
+  utilization, regeneration-delay notes, THLB area evidence, and raw row text;
+- recorded accepted extraction caveats, including dash normalization, Table 27
+  genetic-worth handling, a repaired row-1221 text-extraction artifact, and
+  small accepted THLB-area deltas against printed totals; and
+- marked P3.4a complete in `ROADMAP.md` and moved Current Next Steps to P3.4b
+  static-AU-to-MP10-parameter crosswalk planning without generating curves.

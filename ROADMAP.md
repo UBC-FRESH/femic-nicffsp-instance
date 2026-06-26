@@ -152,7 +152,7 @@ source-layer and THLB surfaces, without compiling a Patchworks package.
     operability/treatment-eligibility interaction.
 - [ ] P3.4 Build and QA actual TFL 6 yield curves (`#29`) before Phase 4
   model-input bundle generation.
-  - [ ] P3.4a Scrape MP10 Tables 27, 28, and 29 into a reviewed TIPSY
+  - [x] P3.4a Scrape MP10 Tables 27, 28, and 29 into a reviewed TIPSY
     parameter library.
   - [ ] P3.4b Crosswalk static TFL 6 AUs to reviewed TIPSY parameter rows or
     explicit fallbacks.
@@ -312,13 +312,11 @@ The Phase 1 follow-on issues are placed into the future roadmap as follows:
    surfaces; the parent FEMIC submodule pointer has been updated to the merged
    closeout commit.
 2. Continue with Phase 3 / P3.4 on branch
-   `feature/p3-model-design-assumptions`: build and QA the actual TFL 6
-   natural/untreated VDYP and treated/managed BatchTIPSY yield curves before
-   model-input bundle generation. P3.3 has locked the AU/yield assignment
-   contract: K3Z-style static AU identity, the shared MKRF/TSA29
-   `smoothed_bin_pchip` first-growth curve family, MP10 Tables 27-29 as TIPSY
-   parameter evidence rather than canonical AU identity, and stand-level
-   operability/treatment eligibility filters outside AU identity.
+   `feature/p3-model-design-assumptions`: complete P3.4b by crosswalking the
+   locked static TFL 6 AU universe to the reviewed MP10 Tables 27-29 TIPSY
+   parameter library, with confidence flags and explicit fallback reasons.
+   P3.4a produced the reviewed parameter artifacts in
+   `planning/tfl6_mp10_tipsy_parameter_library.{md,json,csv}`.
 3. After P3.4, proceed in order through P3.5 treatment options and P3.6
    transition logic. Do not jump to cedar details, expansion options, or Phase
    4 until these base model mechanics are locked.
