@@ -173,13 +173,13 @@ source-layer and THLB surfaces, without compiling a Patchworks package.
     that the current VDYP smoothing/tail behavior is good enough to proceed
     with the rest of Phase 3, while reserving a later optional revisit before
     final model-input bundle lock.
-- [ ] P3.5 Define TFL 6 treatment options (`#30`) before transition logic and
+- [x] P3.5 Define TFL 6 treatment options (`#30`) before transition logic and
   Phase 4 model-input bundle generation.
-  - [ ] P3.5a Define treatment IDs, labels, eligibility filters, products,
+  - [x] P3.5a Define treatment IDs, labels, eligibility filters, products,
     accounts, and reporting hooks.
-  - [ ] P3.5b Verify natural/treated curve provenance remains separate from
+  - [x] P3.5b Verify natural/treated curve provenance remains separate from
     managed/unmanaged treatment eligibility.
-  - [ ] P3.5c Lock any deferred treatment semantics with explicit blockers or
+  - [x] P3.5c Lock any deferred treatment semantics with explicit blockers or
     review needs.
 - [ ] P3.6 Define TFL 6 state-transition logic (`#31`) before Phase 4
   model-input bundle generation.
@@ -353,9 +353,15 @@ The Phase 1 follow-on issues are placed into the future roadmap as follows:
    3 AU/yield surfaces in `docs/phase3-au-yield-curves.rst`, including the
    AU definition contract, strata plot, VDYP L/M/H plots, VDYP fit diagnostics,
    and treated TIPSY-vs-VDYP overlays.
-3. Continue Phase 3 in order with P3.5 treatment options, then P3.6 transition
-   logic. Do not jump to cedar details, expansion options, or Phase 4 until
-   these base model mechanics are locked.
+3. Continue Phase 3 in order with P3.6 transition logic. P3.5 locked the base
+   treatment-option vocabulary in `planning/tfl6_treatment_option_contract.md`
+   and `config/silviculture.tfl6.yaml`: `cc` is the only accepted base
+   scheduled treatment, `grow` is implicit state behavior, `regen_plant` is the
+   default managed post-harvest transition target, `regen_natural` is a
+   deferred/fallback transition target, and CT/PCT/fertilization/cedar/NICF
+   expansion actions remain deferred behind explicit review blockers. Do not
+   jump to cedar details, expansion options, or Phase 4 until P3.6 locks state
+   transitions against this treatment vocabulary.
 4. Keep P3.1 cedar design open but paused until P3.3-P3.6 are reviewed/locked
    or explicitly narrowed by the maintainer.
 5. Keep P3.2 embedded NICF/K3Z identity and expansion design idle until

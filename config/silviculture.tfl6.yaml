@@ -1,49 +1,94 @@
+metadata:
+  instance: "tfl6"
+  phase: "P3.5"
+  status: "planning_contract"
+  planning_note: "planning/tfl6_treatment_option_contract.md"
+  notes:
+    - "This file records the reviewed TFL 6 treatment vocabulary for P3.5."
+    - "P3.6 owns transition logic; Phase 4 owns Patchworks-facing table/XML generation."
+    - "managed/unmanaged treatment eligibility remains separate from natural/treated curve provenance."
+
+treatment_catalogue:
+  grow:
+    label: "Grow/no scheduled treatment"
+    status: "accepted_implicit_state_behavior"
+    scheduled_action: false
+    role: "Stand remains unscheduled in the period."
+  cc:
+    label: "Clearcut/final harvest"
+    status: "accepted_base_scheduled_treatment"
+    scheduled_action: true
+    role: "Primary timber-harvest treatment for eligible managed THLB stands."
+    eligibility_filters:
+      - "inside_tfl6_aoi"
+      - "thlb"
+      - "managed_treatment_eligible"
+      - "not_full_retention_or_reserve"
+      - "operable_under_scenario"
+      - "valid_static_au"
+      - "valid_yield_curve"
+      - "minimum_harvest_age_or_merchantability_rule"
+  regen_plant:
+    label: "Planted regeneration"
+    status: "accepted_post_harvest_transition_target"
+    scheduled_action: false
+    role: "Default managed post-harvest transition target using reviewed treated/managed TIPSY curves."
+  regen_natural:
+    label: "Natural regeneration"
+    status: "deferred_fallback_transition_target"
+    scheduled_action: false
+    role: "Fallback transition target where source evidence or scenario design requires natural regeneration."
+
+reporting_hooks:
+  groups:
+    - "tfl6"
+    - "thlb"
+    - "non_thlb"
+    - "managed_treatment_eligible"
+    - "unmanaged"
+    - "natural_curve_provenance"
+    - "treated_curve_provenance"
+    - "nicf_k3z_core"
+    - "nicf_expansion_candidate"
+    - "wfp_tfl6_remainder"
+    - "cedar_signal"
+    - "operability_or_slope_proxy"
+  products:
+    - "total_merchantable_volume"
+    - "species_or_species_group_volume_where_supported"
+    - "cedar_reporting_hooks_after_p3_1_review"
+    - "harvested_area"
+
+deferred_treatments:
+  pre_commercial_thinning:
+    status: "deferred"
+    blocker: "Needs reviewed stocking/age eligibility, response logic, and teaching purpose."
+  commercial_thinning:
+    status: "deferred"
+    blocker: "Needs merchantability thresholds, removal fractions, residual-state transitions, and products."
+  fertilization:
+    status: "deferred"
+    blocker: "Needs separation between TIPSY yield assumptions already embedded in curves and optional scheduled fertilization scenarios."
+  cedar_specific_treatments:
+    status: "deferred"
+    blocker: "Belongs to P3.1 cedar signal/product/treatment design."
+  nicf_expansion_actions:
+    status: "deferred"
+    blocker: "Belongs to P3.2 embedded identity and later scenario design."
+
+# Legacy FEMIC Patchworks silviculture knobs remain disabled until a later
+# implementation lane explicitly maps them to accepted TFL 6 treatment states.
 pre_commercial_thinning:
   enabled: false
-  state_field: "SILV_STATE"
-  from_state: "cc_pl"
-  to_state: "cc_pl_pct"
-  eligible_au_ids: []
-  min_origin: "planted"
-  age_by_au: {}
-  remove_species:
-    - "HW"
 
 commercial_thinning:
   enabled: false
-  state_field: "SILV_STATE"
-  from_state: "cc_pl"
-  to_state: "cc_pl_ct"
-  eligible_au_ids: []
-  min_origin: "planted"
-  age_by_au: {}
-  basal_area_removal_fraction: 0.30
-  basal_area_to_volume_ratio: 1.0
 
 fertilization:
   enabled: false
-  state_field: "SILV_STATE"
-  response_years: 10
-  growth_speedup_fraction: 0.10
-  first_application:
-    from_state: "cc_pl_ct"
-    to_state: "cc_pl_ct_f1"
-    timing_rule: "cai_argmax"
-  second_application:
-    enabled: true
-    from_state: "cc_pl_ct_f1"
-    to_state: "cc_pl_ct_f1_f2"
-    years_after_previous: 10
-  third_application:
-    enabled: true
-    from_state: "cc_pl_ct_f1_f2"
-    to_state: "cc_pl_ct_f1_f2_f3"
-    years_after_previous: 10
 
 qmd:
   enabled: false
-  source: "synthetic"
-  notes: "Replace provisional QMD curves with observed or Nemora-derived curves when available."
 
 retention:
   full_retention_au_ids: []

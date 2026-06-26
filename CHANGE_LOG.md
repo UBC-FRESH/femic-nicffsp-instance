@@ -1470,3 +1470,18 @@
   `77` `tipsy_vdyp_tfl6-*.png` treated-overlay panels; and
 - kept the optional VDYP smoothing revisit and small fallback `CWHvm1_DR`
   treated-curve caveats visible in the docs before P3.5 treatment-option work.
+
+## 2026-06-26 - Locked the P3.5 treatment-option vocabulary
+
+- added `planning/tfl6_treatment_option_contract.md` to define the first TFL 6
+  treatment catalogue, eligibility filters, product/account/reporting hooks,
+  and deferred treatment blockers before transition logic;
+- updated `config/silviculture.tfl6.yaml` from the copied scaffold into a
+  TFL 6 planning contract while keeping legacy FEMIC CT/PCT/fertilization knobs
+  disabled until a later implementation lane explicitly activates them;
+- accepted `cc` as the only base scheduled treatment, `grow` as implicit state
+  behavior, `regen_plant` as the default managed post-harvest transition
+  target, and `regen_natural` as a deferred/fallback transition target; and
+- recorded that managed/unmanaged treatment eligibility remains separate from
+  natural/treated curve provenance, with cedar and NICF expansion treatment
+  details deferred behind P3.1/P3.2 review blockers.
