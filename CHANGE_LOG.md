@@ -1995,3 +1995,19 @@
 - kept P4.3 open because `protoaccounts.csv` and `accounts.csv` are still
   missing from the generated tracks, leaving
   `accounts_sync: skipped_missing_protoaccounts`.
+
+## 2026-06-26 - Closed P4.3 Matrix Builder QA after account promotion
+
+- increased the TFL6 Windows Matrix Builder auto-close settle window to
+  `20.0` seconds so Matrix Builder can finish writing `protoaccounts.csv`
+  before FEMIC closes the spawned window;
+- reran Matrix Builder with run id `tfl6_p43_matrix_accounts_wait20`;
+- confirmed `accounts_sync: synced`, with `211` readable `protoaccounts.csv`
+  rows and `211` promoted `accounts.csv` rows;
+- confirmed final readable core tracks: `47218` block rows, `86574` feature
+  rows, `24879` group rows, `26085` product rows, `28858` strata rows, `14429`
+  trackname rows, and `17390` treatment rows;
+- verified generic `product.Treated.managed.CC` and
+  `product.HarvestedVolume.managed.Total.CC` account surfaces are present; and
+- marked P4.3 complete in `ROADMAP.md`, leaving P4.4 runtime-package build/QA
+  as the active Phase 4 lane.

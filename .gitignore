@@ -21,6 +21,7 @@ data/bc/
 # Generated model outputs
 output/
 models/tfl6_patchworks_model/tracks/
+models/tfl6_patchworks_model/patchworksLog.csv
 releases/
 plots/
 docs/_build/

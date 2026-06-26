@@ -268,7 +268,7 @@ exist.
 - [x] P4.2 Generate ForestModel/XML and inspect the semantics that affect
   Patchworks treatment eligibility, curve provenance, products, accounts, and
   targets (`#37`).
-- [ ] P4.3 Execute Matrix Builder and QA tracks, features, accounts,
+- [x] P4.3 Execute Matrix Builder and QA tracks, features, accounts,
   protoaccounts, products, targets, and reports (`#38`).
 - [ ] P4.4 Complete Patchworks runtime-package build/QA (`#10`) with
   representative launch and scenario-smoke checks.
@@ -494,8 +494,8 @@ The Phase 1 follow-on issues are placed into the future roadmap as follows:
     approximation. Harvest-system assignment remains deferred and will later
     split generic `CC` into ground/cable/heli classes after the DEM and
     inventory parsing logic is reviewed.
-19. P4.3 / `#38` is the active Phase 4 lane. It must run Matrix Builder from
-    the accepted P4.2 XML/fragments pair under
+19. P4.3 / `#38` was the Phase 4 Matrix Builder lane. It ran Matrix Builder
+    from the accepted P4.2 XML/fragments pair under
     `output/patchworks_tfl6_validated/`, then inspect generated tracks,
     features, accounts, protoaccounts, products, targets, and report surfaces.
     P4.3 must confirm that AFLB remains the fragment universe, THLB remains a
@@ -503,7 +503,7 @@ The Phase 1 follow-on issues are placed into the future roadmap as follows:
     untreated growth, and generic `CC` remains the accepted first-pass
     clearcut-and-plant lane. Runtime-package assembly remains downstream in
     P4.4.
-20. P4.3 first smoke is recorded in
+20. P4.3 / `#38` is complete and recorded in
     `planning/tfl6_matrix_builder_p43_smoke.md`. The instance runtime config
     was repaired from copied K3Z paths to TFL6 XML/fragments/tracks paths, and
     Patchworks preflight passed. The first Matrix Builder attempt exposed a
@@ -512,11 +512,21 @@ The Phase 1 follow-on issues are placed into the future roadmap as follows:
     regenerated, and the second Matrix Builder attempt produced readable core
     tracks: `33322` block rows, `55717` feature rows, `17173` group rows,
     `16379` product rows, `18447` strata rows, `9212` trackname rows, and
-    `10703` treatment rows. P4.3 remains open because the current XML output
-    contract does not request `protoaccounts.csv` or `accounts.csv`, leaving
-    `accounts_sync` at `skipped_missing_protoaccounts`. The next bounded P4.3
-    repair is to add/configure the account/protoaccount output contract, rerun
-    Matrix Builder, and verify `protoaccounts.csv -> accounts.csv` promotion.
-21. P5.3a / `#21` publication plumbing is complete for the current seed docs,
+    `10703` treatment rows. The missing `protoaccounts.csv` / `accounts.csv`
+    gap was repaired by increasing the Windows Matrix Builder settle window to
+    `20.0` seconds and rerunning. The accepted `tfl6_p43_matrix_accounts_wait20`
+    run produced readable final track tables: `47218` block rows, `86574`
+    feature rows, `24879` group rows, `26085` product rows, `28858` strata
+    rows, `14429` trackname rows, `17390` treatment rows, `211`
+    protoaccount rows, and `211` promoted account rows. Generic `CC` product
+    and harvested-volume account surfaces are present. Runtime-package
+    assembly, Patchworks launch smoke, scenario targets, and final report
+    surfaces remain downstream in P4.4/P5.
+21. P4.4 / `#10` is the active Phase 4 lane. It must assemble the first TFL6
+    Patchworks runtime package from the accepted P4.3 tracks and P4.2
+    XML/fragments, then run representative launch/scenario smoke before Phase 4
+    closeout. Do not move to final publication until runtime-package smoke
+    evidence exists.
+22. P5.3a / `#21` publication plumbing is complete for the current seed docs,
     but P5.3 stays open for final teaching-docs expansion after Phase 4 runtime
     package evidence exists.

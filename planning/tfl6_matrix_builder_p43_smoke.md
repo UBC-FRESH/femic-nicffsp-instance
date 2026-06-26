@@ -112,12 +112,66 @@ force-stopped the Matrix Builder process after outputs appeared. The generated
 core tables are therefore treated as smoke-pass evidence, not full P4.3
 closeout evidence.
 
-## Remaining P4.3 Gap
+## Account-Output Repair
 
-P4.3 remains open because the current FMG XML `<output>` contract does not
-request `protoaccounts.csv` or `accounts.csv`, so FEMIC reports
-`accounts_sync: skipped_missing_protoaccounts`.
+The missing account files were caused by premature Windows auto-close, not by
+the XML `<output>` contract. Existing K3Z/TSA29 XML examples also omit explicit
+`protoaccounts` / `accounts` output attributes; Matrix Builder writes those
+tables after the core track tables when it is allowed to settle long enough.
 
-Next bounded repair: add or configure the account/protoaccount output contract
-needed by TFL 6, regenerate XML, rerun Matrix Builder, and verify
-`protoaccounts.csv -> accounts.csv` promotion before P4.3 closes.
+P4.3 changed `config/patchworks.runtime.windows.yaml` from a `2.0` second
+settle window to `20.0` seconds, cleared the generated tracks directory, and
+reran Matrix Builder.
+
+Command:
+
+```powershell
+..\..\.venv\Scripts\python.exe -m femic patchworks matrix-build `
+  --config config\patchworks.runtime.windows.yaml `
+  --run-id tfl6_p43_matrix_accounts_wait20
+```
+
+Result: accepted.
+
+The manifest reports:
+
+- `accounts_sync.status`: `synced`
+- `protoaccounts_path`:
+  `models/tfl6_patchworks_model/tracks/protoaccounts.csv`
+- `accounts_path`: `models/tfl6_patchworks_model/tracks/accounts.csv`
+- warning: `Processing completed. Review warnings and exit when finished.`
+
+The raw Java return code remains nonzero because FEMIC force-stops the
+Matrix Builder window after the configured settle period, but the output tables
+and account promotion are complete. This is the same Windows automation seam
+used for other instance Matrix Builder smoke runs.
+
+Final generated track-table inspection:
+
+| Table | Rows | Status |
+| --- | ---: | --- |
+| `blocks.csv` | 47,218 | readable |
+| `features.csv` | 86,574 | readable |
+| `groups.csv` | 24,879 | readable |
+| `messages.csv` | 0 | readable |
+| `products.csv` | 26,085 | readable |
+| `strata.csv` | 28,858 | readable |
+| `tracknames.csv` | 14,429 | readable |
+| `treatments.csv` | 17,390 | readable |
+| `protoaccounts.csv` | 211 | readable |
+| `accounts.csv` | 211 | readable |
+
+Account samples confirmed expected first-pass surfaces:
+
+- managed area account rows exist;
+- unmanaged area account rows exist;
+- generic `product.Treated.managed.CC` exists;
+- generic `product.HarvestedVolume.managed.Total.CC` exists; and
+- no standalone seral account rows were emitted in this first Matrix Builder
+  track package.
+
+## P4.3 Closeout
+
+P4.3 is complete for Matrix Builder and track/account QA. Runtime-package
+assembly, Patchworks launch smoke, scenario targets, and final report surfaces
+remain downstream in P4.4/P5.
