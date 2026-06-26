@@ -1974,3 +1974,24 @@
   `output/patchworks_tfl6_validated/`; and
 - kept runtime-package assembly, launch smoke, and publication downstream of
   P4.3.
+
+## 2026-06-26 - Ran P4.3 Matrix Builder smoke and found account-output gap
+
+- repaired `config/patchworks.runtime.windows.yaml` so TFL6 Matrix Builder
+  points at `output/patchworks_tfl6_validated/forestmodel.xml`,
+  `output/patchworks_tfl6_validated/fragments/fragments.dbf`, and
+  `models/tfl6_patchworks_model/tracks`;
+- passed Patchworks preflight against the TFL6 runtime config;
+- found the first Matrix Builder attempt was invalid despite wrapper effective
+  return code `0`, because raw Matrix Builder return code was `1`, core track
+  CSVs were empty, and the log reported a succession-cycle failure from the
+  generic `1000 -> 1000` pass-through rule;
+- repaired the generic FEMIC FMG pass-through succession default to
+  `breakup=999` and `renew=0`, regenerated TFL6 XML/fragments, and reran
+  Matrix Builder;
+- confirmed readable core tracks after the rerun: `33322` block rows, `55717`
+  feature rows, `17173` group rows, `16379` product rows, `18447` strata rows,
+  `9212` trackname rows, and `10703` treatment rows; and
+- kept P4.3 open because `protoaccounts.csv` and `accounts.csv` are still
+  missing from the generated tracks, leaving
+  `accounts_sync: skipped_missing_protoaccounts`.

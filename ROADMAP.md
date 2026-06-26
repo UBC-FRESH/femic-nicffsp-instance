@@ -503,6 +503,20 @@ The Phase 1 follow-on issues are placed into the future roadmap as follows:
     untreated growth, and generic `CC` remains the accepted first-pass
     clearcut-and-plant lane. Runtime-package assembly remains downstream in
     P4.4.
-20. P5.3a / `#21` publication plumbing is complete for the current seed docs,
+20. P4.3 first smoke is recorded in
+    `planning/tfl6_matrix_builder_p43_smoke.md`. The instance runtime config
+    was repaired from copied K3Z paths to TFL6 XML/fragments/tracks paths, and
+    Patchworks preflight passed. The first Matrix Builder attempt exposed a
+    generic FEMIC FMG pass-through succession problem (`1000 -> 1000`); the
+    exporter was repaired to emit `999 -> 0`, the XML/fragments were
+    regenerated, and the second Matrix Builder attempt produced readable core
+    tracks: `33322` block rows, `55717` feature rows, `17173` group rows,
+    `16379` product rows, `18447` strata rows, `9212` trackname rows, and
+    `10703` treatment rows. P4.3 remains open because the current XML output
+    contract does not request `protoaccounts.csv` or `accounts.csv`, leaving
+    `accounts_sync` at `skipped_missing_protoaccounts`. The next bounded P4.3
+    repair is to add/configure the account/protoaccount output contract, rerun
+    Matrix Builder, and verify `protoaccounts.csv -> accounts.csv` promotion.
+21. P5.3a / `#21` publication plumbing is complete for the current seed docs,
     but P5.3 stays open for final teaching-docs expansion after Phase 4 runtime
     package evidence exists.

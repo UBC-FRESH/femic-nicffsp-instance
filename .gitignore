@@ -20,6 +20,7 @@ data/bc/
 
 # Generated model outputs
 output/
+models/tfl6_patchworks_model/tracks/
 releases/
 plots/
 docs/_build/
