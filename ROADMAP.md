@@ -188,7 +188,7 @@ source-layer and THLB surfaces, without compiling a Patchworks package.
   - [x] P3.6b Define transitions for base harvest, managed regeneration,
     retention/unmanaged movement, existing managed/natural origin handling,
     and operability-driven eligibility changes.
-  - [ ] P3.6c Verify transitions consume reviewed treatment options from P3.5
+  - [x] P3.6c Verify transitions consume reviewed treatment options from P3.5
     without redefining treatment semantics.
   - [ ] P3.6d Record cedar and expansion hook points without completing those
     detail lanes.
@@ -372,8 +372,14 @@ The Phase 1 follow-on issues are placed into the future roadmap as follows:
    `TFL6_GROUP` fields. P3.6b now defines transition rows for grow,
    `clearcut_and_plant`, retained/unmanaged movement, origin-provenance
    handling, operability sensitivity, and gated CT/fert hook points without
-   starting Phase 4. The next bounded tranche is P3.6c: verify the transition
-   rows consume P3.5 treatment options without redefining treatment semantics.
+   starting Phase 4. P3.6c verifies that those rows consume the P3.5 treatment
+   vocabulary without redefining treatment semantics: `clearcut_and_plant`
+   remains the only whole-TFL 6 base scheduled treatment, CT/fertilization
+   remain K3Z/NICF-gated hooks, `IFM` stays treatment eligibility, `ORIGIN`
+   stays curve provenance, harvest system stays operational/reporting context,
+   and cedar/expansion treatment details remain deferred. The next bounded
+   tranche is P3.6d: record cedar and expansion hook points without completing
+   those detail lanes.
 4. Keep P3.1 cedar design open but paused until P3.3-P3.6 are reviewed/locked
    or explicitly narrowed by the maintainer.
 5. Keep P3.2 embedded NICF/K3Z identity and expansion design idle until

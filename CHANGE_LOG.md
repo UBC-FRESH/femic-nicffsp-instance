@@ -1534,3 +1534,16 @@
   BatchTIPSY curve lane after planted regeneration; and
 - marked P3.6b complete in `ROADMAP.md`, leaving P3.6c as the next bounded
   verification step before any Phase 4 model-input generation.
+
+## 2026-06-26 - Verified P3.6c treatment-semantics consistency
+
+- added a P3.6c verification table to
+  `planning/tfl6_state_transition_contract.md` comparing transition rows
+  against the P3.5 treatment vocabulary;
+- confirmed that transition rows use only accepted P3.5 treatment IDs/triggers,
+  keep `clearcut_and_plant` as the only whole-TFL 6 base scheduled treatment,
+  retain CT/fertilization as K3Z/NICF-gated hooks, preserve `IFM` as treatment
+  eligibility and `ORIGIN` as curve provenance, and keep harvest system as
+  operational/reporting context; and
+- marked P3.6c complete in `ROADMAP.md`, leaving P3.6d cedar/expansion hook
+  point recording as the next bounded tranche.

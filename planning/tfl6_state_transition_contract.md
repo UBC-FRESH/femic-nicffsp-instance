@@ -123,6 +123,24 @@ remain available for account/reporting outputs. Changing `HARVEST_SYSTEM`
 thresholds in a scenario changes eligibility and cost/reporting signals; it
 does not redefine AU identity or curve provenance.
 
+## P3.6c Treatment-Semantics Verification
+
+This verification compares the P3.6 transition rows against the P3.5 treatment
+vocabulary in `planning/tfl6_treatment_option_contract.md`.
+
+| Check | Result | Evidence |
+| --- | --- | --- |
+| Transition rows use only accepted P3.5 treatment IDs/triggers. | Pass | Rows use `grow`, `clearcut_and_plant`, `commercial_thinning`, and `fertilization`. Reserve/operability/cedar-expansion rows are triggers or hook rows, not new scheduled treatment IDs. |
+| `clearcut_and_plant` remains the only whole-TFL 6 base scheduled treatment. | Pass | Only `tr_clearcut_plant_natural` and `tr_clearcut_plant_treated` implement base harvest/regeneration; CT/fertilization rows are hooks only. |
+| CT/fertilization remain K3Z/NICF-gated. | Pass | CT/fert hook rows require `nicf_k3z_core` or accepted future `nicf_expansion_candidate` group membership and reviewed response rules before activation. |
+| Transition rows preserve `managed` / `unmanaged` as treatment eligibility. | Pass | `IFM=managed` is required for scheduled treatment rows; reserve/non-THLB/retention rows move or hold stands as `IFM=unmanaged`. |
+| Transition rows preserve `natural` / `treated` as curve provenance. | Pass | `grow`, retention, operability masks, reporting groups, and harvest-system classes do not change `ORIGIN`. `clearcut_and_plant` is the only accepted base transition that changes `ORIGIN` to `treated`. |
+| Harvest system remains operational/reporting context. | Pass | `HARVEST_SYSTEM` is an eligibility/account/reporting field and does not alter AU identity or curve provenance. |
+| Cedar and expansion details remain deferred. | Pass | `tr_cedar_expansion_hook` carries future hook points only and does not implement cedar or expansion treatment semantics. |
+
+P3.6c therefore accepts the transition rows as consuming the P3.5 treatment
+contract without redefining treatment semantics.
+
 ## Deferred Transition Semantics
 
 | Deferred item | Blocker |
