@@ -269,7 +269,7 @@ exist.
   Patchworks treatment eligibility, curve provenance, products, accounts, and
   targets (`#37`).
 - [ ] P4.3 Execute Matrix Builder and QA tracks, features, accounts,
-  protoaccounts, products, targets, and reports.
+  protoaccounts, products, targets, and reports (`#38`).
 - [ ] P4.4 Complete Patchworks runtime-package build/QA (`#10`) with
   representative launch and scenario-smoke checks.
 
@@ -493,9 +493,16 @@ The Phase 1 follow-on issues are placed into the future roadmap as follows:
     treatment nodes are accepted as a generic Phase 4 clearcut-and-plant
     approximation. Harvest-system assignment remains deferred and will later
     split generic `CC` into ground/cable/heli classes after the DEM and
-    inventory parsing logic is reviewed. The next executable Phase 4 lane is
-    P4.3 Matrix Builder and track/account QA against the generated XML and
-    fragments.
-19. P5.3a / `#21` publication plumbing is complete for the current seed docs,
+    inventory parsing logic is reviewed.
+19. P4.3 / `#38` is the active Phase 4 lane. It must run Matrix Builder from
+    the accepted P4.2 XML/fragments pair under
+    `output/patchworks_tfl6_validated/`, then inspect generated tracks,
+    features, accounts, protoaccounts, products, targets, and report surfaces.
+    P4.3 must confirm that AFLB remains the fragment universe, THLB remains a
+    managed-share state, NTHLB remains unmanaged/full-retention forest with
+    untreated growth, and generic `CC` remains the accepted first-pass
+    clearcut-and-plant lane. Runtime-package assembly remains downstream in
+    P4.4.
+20. P5.3a / `#21` publication plumbing is complete for the current seed docs,
     but P5.3 stays open for final teaching-docs expansion after Phase 4 runtime
     package evidence exists.

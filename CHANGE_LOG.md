@@ -1963,3 +1963,14 @@
   XML/fragments; and
 - updated `planning/tfl6_forestmodel_xml_export_bridge.md` so the audit trail
   records the accepted generic-clearcut modeling assumption.
+
+## 2026-06-26 - Opened P4.3 Matrix Builder QA lane
+
+- opened child issue `#38` for P4.3 Matrix Builder execution and
+  tracks/features/accounts QA under Phase 4 parent `#14`;
+- linked P4.3 in `ROADMAP.md` and made it the active Phase 4 lane after P4.2
+  closeout;
+- defined the P4.3 inputs as the accepted P4.2 XML/fragments under ignored
+  `output/patchworks_tfl6_validated/`; and
+- kept runtime-package assembly, launch smoke, and publication downstream of
+  P4.3.
