@@ -96,9 +96,10 @@ P2.4c is complete:
 - no recipe execution, source fetch, DEM/slope derivation, model-input
   generation, XML, Matrix Builder, or Patchworks runtime work occurred.
 
-The next bounded slice is P2.4d validation/readiness: record the exact
-non-executing validation command set, the future smoke-run command, stop-line,
-expected outputs, and acceptance checks before P2.4e execution.
+P2.4d validation/readiness is complete. The next bounded slice is P2.4e:
+execute the exact command recorded below, then inspect the produced checkpoint,
+audit, status, and benchmark/tolerance artifacts before deciding whether P2.4
+is complete or needs another repair slice.
 
 ## P2.4d Checkpoint Input Format Note
 
@@ -122,8 +123,60 @@ GeoPackage directly as the explicit checkpoint/accounting surface:
   --parallel-mode serial
 ```
 
-P2.4d still needs to validate the scaffold and record acceptance checks before
-this command is executed in P2.4e.
+P2.4d validated this command boundary and the associated acceptance checks.
+
+## P2.4d Readiness Validation
+
+P2.4d is a non-executing readiness slice. It validates that the scaffold can be
+handed to P2.4e without changing the accepted smoke-run boundary.
+
+Validation evidence recorded for P2.4d:
+
+- `config/tsr/thlb_netdown.recipe.yaml` and
+  `config/tsr/source_layers.recipe.yaml` parse as YAML mappings.
+- `config/tsr/thlb_netdown.recipe.yaml` loads through
+  `femic.tsr_catalog.recipes.load_tsr_thlb_netdown_recipe`.
+- The loaded THLB recipe has schema version `1`, recipe kind `thlb_netdown`,
+  `22` parent rows, and `22` executable/reporting step records from
+  `tfl6_nd_000_reference` through `tfl6_nd_210_long_term_landbase`.
+- Every artifact path listed by `config/tsr/source_layers.recipe.yaml` exists
+  locally, including the accepted R1 GeoPackage checkpoint input.
+- The selected checkpoint path
+  `data/input/tfl_6/vri_2025_r1_poly_tfl6.gpkg` exists, reads as EPSG:3005
+  vector geometry, and remains the complete R1 accounting universe.
+- `config/tsr/` exists for tracked audit/status outputs. `data/tsr/` and
+  `runtime/logs/tsr/` are not pre-created, but FEMIC's THLB runner creates
+  output, audit, and status parent directories during execution.
+- The P2.4e command remains a serial reconstructed smoke run. It should not be
+  treated as a final THLB reconstruction or benchmark acceptance run.
+
+P2.4e should execute this exact command:
+
+```powershell
+& .\.venv\Scripts\python.exe -m femic tsr thlb-netdown-run `
+  --instance-root external/femic-tfl6-instance `
+  --thlb-netdown-recipe-path config/tsr/thlb_netdown.recipe.yaml `
+  --checkpoint-path data/input/tfl_6/vri_2025_r1_poly_tfl6.gpkg `
+  --output-path data/tsr/tfl6_thlb_smoke_checkpoint.feather `
+  --audit-path config/tsr/tfl6_thlb_smoke.audit.json `
+  --execution-mode reconstructed `
+  --parallel-mode serial
+```
+
+P2.4e acceptance checks after execution:
+
+- `data/tsr/tfl6_thlb_smoke_checkpoint.feather` exists and reads as a
+  GeoDataFrame.
+- `config/tsr/tfl6_thlb_smoke.audit.json` exists and records row-order,
+  gross-area, marginal-area, cumulative-area, fallback, and warning metadata.
+- `config/tsr/tfl6_thlb_smoke.status.md` and
+  `runtime/logs/tsr/tfl6_thlb_smoke_status_report.md` are produced if the
+  runner reaches status-report emission.
+- The audit/status output explicitly distinguishes attribute exclusions,
+  provisional spatial overlays, aspatial fallbacks, context rows, and deferred
+  sensitivity rows.
+- Any failure is recorded against the first failing row and does not trigger
+  downstream model-input, XML, Matrix Builder, or Patchworks work.
 
 ## Non-Goals
 

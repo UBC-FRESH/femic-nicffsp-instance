@@ -1071,3 +1071,17 @@
 - recorded the future P2.4e smoke-run command using the accepted R1 GeoPackage
   as the explicit checkpoint/accounting surface, while keeping P2.4d
   validation/readiness non-executing.
+
+## 2026-06-25 - Completed P2.4d THLB smoke scaffold readiness validation
+
+- validated that the THLB and source-layer recipe scaffolds parse as YAML and
+  that the THLB scaffold loads through FEMIC's recipe loader;
+- confirmed the scaffold contains `22` parent rows and `22` step records from
+  `tfl6_nd_000_reference` through `tfl6_nd_210_long_term_landbase`;
+- confirmed every source-layer artifact listed by
+  `config/tsr/source_layers.recipe.yaml` exists locally, including the accepted
+  R1 GeoPackage checkpoint input;
+- recorded that output, audit, and status parent directories are either already
+  present or created by the FEMIC THLB runner; and
+- moved the roadmap edge to P2.4e, the first bounded serial reconstructed smoke
+  run, without executing THLB netdown in this slice.

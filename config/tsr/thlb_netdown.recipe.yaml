@@ -13,7 +13,7 @@ instance_inputs:
   source_layer_recipe_path: config/tsr/source_layers.recipe.yaml
   source_layer_overrides_path: ""
 recipe_contract:
-  status: scaffolded_p2_4c
+  status: validated_p2_4d
   last_built_utc: ""
   last_run_utc: ""
   governing_issue: UBC-FRESH/femic-tfl6-instance#24
@@ -28,9 +28,10 @@ recipe_contract:
   benchmark_path: planning/tfl6_adjusted_thlb_benchmarks.json
   notes:
     - Hand-authored P2.4c scaffold preserving MP10 Table 4 row order for the first TFL 6 smoke lane.
-    - Do not execute this recipe until P2.4d records validation evidence, command, stop-line, outputs, and acceptance checks.
+    - Do not execute this recipe except through the bounded P2.4e smoke command recorded in planning/tfl6_thlb_smoke_lane_plan.md.
     - R1 geometry remains the complete accounting universe; VDYP7 tables are joined subsets and must not silently drop R1 polygons.
     - Aspatial fallback rows are explicit teaching-model assumptions, not recovered 2011 geometry.
+    - P2.4d validated YAML parsing, FEMIC recipe-loader compatibility, source artifact existence, and the GeoPackage checkpoint input boundary without executing THLB netdown.
 parent_steps:
   - parent_step_id: tfl6_nd_000
     parent_label: Total landbase
