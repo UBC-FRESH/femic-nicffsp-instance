@@ -245,7 +245,7 @@ exist.
 
 - [ ] P4.1 Build the reviewed model-input bundle from accepted TFL 6 source
   layers, THLB outputs, and model-design assumptions (`#17`).
-  - [ ] P4.1a Confirm the accepted Phase 2/3 prerequisite artifacts and record
+  - [x] P4.1a Confirm the accepted Phase 2/3 prerequisite artifacts and record
     the bundle input manifest.
   - [ ] P4.1b Define generated model-input bundle paths and table roles before
     writing bundle outputs.
@@ -397,10 +397,20 @@ The Phase 1 follow-on issues are placed into the future roadmap as follows:
 10. Phase 3 closeout is complete. PR `#33` was merged to instance `main`, the
     parent FEMIC submodule pointer was updated, and the standalone docs are
     published with the RTD theme.
-11. Phase 4 is now active on branch `feature/p4-model-input-bundle`. The
-    current executable edge is P4.1a / `#17`: confirm the accepted Phase 2/3
-    prerequisite artifacts and record the bundle input manifest before writing
-    any model-input bundle outputs.
-12. P5.3a / `#21` publication plumbing is complete for the current seed docs,
+11. P4.1a / `#17` is complete. The accepted Phase 2/3 prerequisite manifest is
+    recorded in `planning/tfl6_model_input_bundle_prerequisite_manifest.md` and
+    `planning/tfl6_model_input_bundle_prerequisite_manifest.json`. The manifest
+    confirms the accepted run profile, source-input layer manifest, AU/curve
+    tables, TIPSY/BTC outputs, treatment/transition contracts, cedar contract,
+    and embedded-identity contract are present. It also records that the
+    generated `data/tsr/*checkpoint*` THLB checkpoint files referenced by the
+    Phase 2 status report are missing from the current clean checkout and must
+    be rematerialized, regenerated, or explicitly waived before P4.1c consumes
+    final THLB geometry.
+12. Continue Phase 4 on branch `feature/p4-model-input-bundle`. The current
+    executable edge is P4.1b / `#17`: define generated model-input bundle paths
+    and table roles before writing any bundle outputs. P4.1b should also decide
+    the stable P4 input location/format for rematerialized final THLB geometry.
+13. P5.3a / `#21` publication plumbing is complete for the current seed docs,
     but P5.3 stays open for final teaching-docs expansion after Phase 4 runtime
     package evidence exists.

@@ -1753,3 +1753,21 @@
 - moved the current executable edge to P4.1a while preserving the boundary that
   no ForestModel XML, Matrix Builder, or Patchworks runtime-package work starts
   inside the first model-input bundle slice.
+
+## 2026-06-26 - Recorded P4.1a model-input prerequisites
+
+- added `planning/tfl6_model_input_bundle_prerequisite_manifest.md` and
+  `planning/tfl6_model_input_bundle_prerequisite_manifest.json` to inventory
+  the accepted Phase 2/3 inputs for the first TFL 6 model-input bundle;
+- confirmed the accepted run profile, clipped 2025 R1/VDYP inputs, THLB audit
+  and status files, AU/curve tables, BatchTIPSY outputs, treatment and
+  transition contracts, cedar contract, and embedded-identity contract are
+  present in the current checkout;
+- recorded the Phase 4 checkpoint availability gap: the generated
+  `data/tsr/*checkpoint*` THLB checkpoint files referenced by the Phase 2
+  status report are not present in the clean checkout and must be
+  rematerialized, regenerated, or explicitly waived before P4.1c consumes final
+  THLB geometry; and
+- moved the current executable edge to P4.1b, preserving the boundary that no
+  model-input bundle, ForestModel/XML, Matrix Builder output, or Patchworks
+  runtime package was generated in P4.1a.
