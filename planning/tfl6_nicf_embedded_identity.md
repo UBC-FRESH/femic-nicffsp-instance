@@ -13,6 +13,11 @@ This is a Phase 3 design contract for P3.2 / `#9`. It does not build geometry,
 model-input tables, ForestModel XML, Matrix Builder outputs, or Patchworks
 runtime files.
 
+Related stakeholder framing is recorded in
+`planning/tfl6_stakeholder_context.md`. The embedded identity contract should
+support NICF-facing community/expansion reporting and WFP-facing
+fibre-supply/value/cost comparison in the same runtime.
+
 ## Design Principle
 
 NICF/K3Z and expansion identity must be represented as stand-level or
@@ -70,12 +75,20 @@ The embedded identity contract must support:
   rejected candidates, and TFL 6 remainder;
 - matching targets that can compare NICF/K3Z core behavior against expansion
   candidate behavior;
+- matching targets and reports that compare NICF-preferred expansion outcomes
+  against broader TFL 6 and WFP-facing fibre-supply, value, and delivered-cost
+  signals where available;
 - area/yield/product reports split by embedded area class;
 - scenario toggles that add or exclude expansion candidates without altering
   base AU identity;
 - AAC-uplift reporting for expansion scenarios; and
 - continuity reports that help students compare the former K3Z teaching model
   with the embedded TFL 6 model.
+
+The reporting design should make tradeoffs visible. Expansion candidates that
+increase NICF opportunity may still affect WFP fibre supply, fibre value, or
+delivered unit cost in the TFL 6 remainder; those effects should be reportable
+rather than hidden inside a single whole-model total.
 
 ## Dependencies
 

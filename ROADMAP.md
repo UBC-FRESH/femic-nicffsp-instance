@@ -195,7 +195,8 @@ source-layer and THLB surfaces, without compiling a Patchworks package.
   - [ ] P3.1b Review and lock cedar source fields, derived signals, and
     provisional unresolved assumptions.
   - [ ] P3.1c Define Patchworks-facing cedar products, accounts, treatment
-    hooks, and report requirements for the first model-input bundle.
+    hooks, stakeholder-comparison signals, and report requirements for the
+    first model-input bundle.
 - [ ] P3.2 Complete embedded NICF/K3Z identity and expansion candidate-area
   design (`#9`) for group accounts, matching targets, reports, unallocated
   candidate pools, productivity screening, and AAC uplift constraints.
@@ -211,7 +212,8 @@ source-layer and THLB surfaces, without compiling a Patchworks package.
     remainder identity classes and source/provenance fields.
   - [ ] P3.2d Define Patchworks group accounts, matching targets, scenario
     toggles, and reports needed to track K3Z/NICF core and expansion
-    candidates separately.
+    candidates separately, including WFP-facing fibre supply, value, and
+    delivered-cost tradeoff signals where available.
   - [ ] P3.2e Lock dependency handoff to P3.7/P4.1 so embedded identity fields
     appear in the model-input bundle without changing AU identity.
 - [ ] P3.7 Update the TFL 6 run-profile/model-input contract with reviewed

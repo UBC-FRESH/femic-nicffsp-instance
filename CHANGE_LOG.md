@@ -1218,3 +1218,15 @@
 - recorded that embedded NICF/K3Z and expansion-candidate identities are
   stand/group attributes, not AU identity fields; and
 - kept P3.2 downstream of the base AU/yield/treatment/transition mechanics.
+
+## 2026-06-25 - Added NICF/WFP stakeholder framing
+
+- added `planning/tfl6_stakeholder_context.md` to record that NICF cedar and
+  expansion interests should be modeled alongside WFP-facing fibre supply,
+  fibre value, and delivered-cost implications;
+- updated cedar planning so cedar reserve or cedar-priority scenarios must
+  report broader TFL 6/WFP supply-chain tradeoffs where available;
+- updated embedded identity planning so K3Z/NICF core and expansion candidate
+  reports can be compared against whole-TFL and TFL 6 remainder outcomes; and
+- updated roadmap text so P3.1 and P3.2 carry stakeholder-comparison reporting
+  requirements into later model-input and Patchworks surfaces.

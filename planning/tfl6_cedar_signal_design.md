@@ -10,6 +10,12 @@ Governing issue: `#8`.
 This is a design note only. It does not generate model inputs, Patchworks XML,
 Matrix Builder outputs, or a runtime package.
 
+Related stakeholder framing is recorded in
+`planning/tfl6_stakeholder_context.md`. Cedar design should make NICF/community
+cedar interests visible while also reporting WFP-facing fibre supply, value,
+and delivered-cost implications where the teaching model can support those
+signals.
+
 ## Source Evidence
 
 ### Cultural Cedar Need
@@ -29,6 +35,11 @@ Design implication: cultural cedar must not be represented only as harvested
 volume. The model needs visible cedar availability and reserve/reporting
 signals that can distinguish old/large cedar and non-THLB reserve context from
 scheduled timber production.
+
+Stakeholder implication: cedar reserve or cedar-priority scenarios should also
+report consequences for whole-TFL and TFL 6 remainder fibre supply. The teaching
+model should not imply that NICF-preferred cedar outcomes are costless to WFP
+or to the broader TFL 6 fibre-supply system.
 
 ### Cedar Composition
 
@@ -169,6 +180,7 @@ Patchworks-facing surfaces later:
 | Feature/account | Area by cedar-leading, Cw-leading, Cy-leading, cedar-present, old cedar, and cedar cultural reserve context. |
 | Product | Generic harvested cedar volume plus a provisional utility-pole candidate product or reporting class if reviewed thresholds are available. |
 | Target/report | Residual old/large cedar context, scheduled cedar volume, and cedar harvest versus reserve tradeoff reports. |
+| Stakeholder comparison | NICF/K3Z cedar outcomes versus whole-TFL and WFP-facing fibre-supply/value/cost signals where available. |
 | Treatment hook | Optional cedar-oriented treatment family, only after P3.1c accepts a teaching treatment design. |
 | QA | Source species-area shares must be compared against MP10 forest-cover shares before accepting the first bundle. |
 
