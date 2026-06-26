@@ -1183,3 +1183,16 @@
   comments, and commit audit trail; and
 - recorded that cedar P3.1 and expansion P3.2 remain open but downstream of
   the AU/yield contract review.
+
+## 2026-06-25 - Added explicit pre-Phase-4 yield and transition tasks
+
+- opened P3.4 child issue `#29` for building and QAing the actual TFL 6
+  natural/untreated VDYP and treated/managed BatchTIPSY yield curves before
+  Phase 4 model-input bundle generation;
+- opened P3.5 child issue `#30` for defining treatment options, eligibility
+  filters, products/accounts/reporting hooks, and state-transition logic before
+  Phase 4;
+- shifted the run-profile/model-input contract update to P3.6 so it remains
+  downstream of the AU/yield, curve-build, and transition-logic locks; and
+- updated roadmap dependency text to make P3.3, P3.4, and P3.5 explicit
+  prerequisites for P4.1.

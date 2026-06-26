@@ -161,7 +161,31 @@ source-layer and THLB surfaces, without compiling a Patchworks package.
     hooks, and report requirements for the first model-input bundle.
 - [ ] P3.2 Complete expansion candidate-area design (`#9`) for unallocated
   candidate pools, productivity screening, and AAC uplift constraints.
-- [ ] P3.4 Update the TFL 6 run-profile/model-input contract with reviewed
+- [ ] P3.4 Build and QA actual TFL 6 yield curves (`#29`) before Phase 4
+  model-input bundle generation.
+  - [ ] P3.4a Scrape MP10 Tables 27, 28, and 29 into a reviewed TIPSY
+    parameter library.
+  - [ ] P3.4b Crosswalk static TFL 6 AUs to reviewed TIPSY parameter rows or
+    explicit fallbacks.
+  - [ ] P3.4c Generate and QA natural/untreated VDYP curves using the shared
+    `smoothed_bin_pchip` first-growth selector unless a reviewed TFL6-specific
+    override is accepted.
+  - [ ] P3.4d Generate and QA treated/managed BatchTIPSY curves from the
+    reviewed TIPSY parameter crosswalk.
+  - [ ] P3.4e Lock curve-selection, sparse-support, TIPSY/VDYP overlay, missing
+    mapping, and species-share QA artifacts for Phase 4.
+- [ ] P3.5 Define TFL 6 treatment options and transition logic (`#30`) before
+  Phase 4 model-input bundle generation.
+  - [ ] P3.5a Define treatment IDs, labels, eligibility filters, products,
+    accounts, and reporting hooks.
+  - [ ] P3.5b Define state transitions for base harvest, managed regeneration,
+    retention/unmanaged transitions, cedar treatments, and expansion-area
+    behavior.
+  - [ ] P3.5c Verify natural/treated curve provenance remains separate from
+    managed/unmanaged treatment eligibility.
+  - [ ] P3.5d Lock any deferred treatment or transition semantics with explicit
+    blockers or review needs.
+- [ ] P3.6 Update the TFL 6 run-profile/model-input contract with reviewed
   design decisions and explicit rejected/deferred assumptions.
 
 ## Proposed Phase 4: Model Inputs and Patchworks Runtime Package (`#14`)
@@ -213,7 +237,9 @@ approves a narrower independent slice:
    treatment/product/account/reporting behavior, and AAC-uplift assumptions
    rather than source extraction mechanics.
 3. **Model-input generation**: Phase 4 (`#14`) starts only after Phase 2 source
-   and THLB outputs plus Phase 3 model-design assumptions are reviewed. P4.1
+   and THLB outputs plus Phase 3 model-design assumptions are reviewed. Phase
+   3 must explicitly lock the AU/yield contract (`#28`), actual yield-curve
+   build and QA (`#29`), and treatment/transition logic (`#30`) before P4.1
    (`#17`) builds the model-input bundle from those accepted contracts.
 4. **Patchworks runtime build and QA**: ForestModel/XML generation, Matrix
    Builder execution, runtime-package assembly, and runtime-package QA remain
@@ -261,4 +287,6 @@ The Phase 1 follow-on issues are placed into the future roadmap as follows:
 4. Keep P3.2 expansion design idle until P3.3 and P3.1 are either complete or
    explicitly paused by the maintainer.
 5. Keep Phase 4 runtime issue `#10` idle until Phase 3 design assumptions and
-   P4.1 model-input bundle prerequisites are accepted.
+   P4.1 model-input bundle prerequisites are accepted. In particular, do not
+   start P4.1 until P3.3, P3.4, and P3.5 are reviewed/locked or explicitly
+   narrowed by the maintainer.
