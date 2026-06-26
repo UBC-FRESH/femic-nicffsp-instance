@@ -129,13 +129,13 @@ starts.
   current-AOI benchmark targets and record accepted teaching tolerances (`#25`).
   The accepted tolerance lock is recorded in
   `planning/tfl6_thlb_benchmark_tolerance.md`.
-- [ ] P2.6 Close out the Phase 2 branch/PR lifecycle before starting Phase 3
+- [x] P2.6 Close out the Phase 2 branch/PR lifecycle before starting Phase 3
   implementation (`#26`).
   - [x] P2.6a Add Phase 2 THLB Sphinx documentation covering design rationale,
     caveats, benchmark tolerance, and reproducibility audit trail.
-  - [ ] P2.6b Reconcile and merge the Phase 2 closeout PR.
+  - [x] P2.6b Reconcile and merge the Phase 2 closeout PR.
 
-## Proposed Phase 3: Model Design Assumptions (`#13`)
+## Phase 3: Model Design Assumptions (`#13`)
 
 Goal: define the reviewed model-design assumptions that depend on the accepted
 source-layer and THLB surfaces, without compiling a Patchworks package.
@@ -143,6 +143,12 @@ source-layer and THLB surfaces, without compiling a Patchworks package.
 - [ ] P3.1 Complete cedar-signal design (`#8`) for Cw cultural reserve,
   utility-pole-grade products, treatments, yield implications, accounts, and
   reporting outputs.
+  - [x] P3.1a Record the first cedar evidence/design note in
+    `planning/tfl6_cedar_signal_design.md` without generating model inputs.
+  - [ ] P3.1b Review and lock cedar source fields, derived signals, and
+    provisional unresolved assumptions.
+  - [ ] P3.1c Define Patchworks-facing cedar products, accounts, treatment
+    hooks, and report requirements for the first model-input bundle.
 - [ ] P3.2 Complete expansion candidate-area design (`#9`) for unallocated
   candidate pools, productivity screening, and AAC uplift constraints.
 - [ ] P3.3 Define yield-source, treatment, seral/objective, and account/report
@@ -231,17 +237,16 @@ The Phase 1 follow-on issues are placed into the future roadmap as follows:
 
 ## Current Next Steps
 
-1. Phase 2 implementation is functionally complete through P2.5: the P2.4e
-   final THLB result of `144203.485 ha` is accepted against the approximate
-   scaled current-AOI current-THLB benchmark of `136487.728 ha`; the
-   `+7715.757 ha` / `+5.65%` gap is locked as an acceptable base teaching-lane
-   tolerance in `planning/tfl6_thlb_benchmark_tolerance.md`.
-2. Continue with P2.6 / `#26`: close out the Phase 2 branch/PR lifecycle before
-   any Phase 3 implementation starts. P2.6a Sphinx documentation is complete;
-   next reconcile the `feature/p2-source-layer-thlb-inputs` PR against instance
-   `main` and update the parent FEMIC submodule pointer after the instance
-   closeout merge if `main` advances.
-3. Keep Phase 3 design issues `#8` and `#9` idle until P2.6 closeout is done
-   or the maintainer explicitly approves a narrower parallel design slice.
+1. Phase 2 is closed. The instance `main` branch contains the Phase 2
+   source-layer, THLB smoke, benchmark-tolerance, and Sphinx audit-trail
+   surfaces; the parent FEMIC submodule pointer has been updated to the merged
+   closeout commit.
+2. Continue with Phase 3 / P3.1b on branch
+   `feature/p3-model-design-assumptions`: review and lock cedar source fields,
+   derived signals, and provisional unresolved assumptions. Keep this slice
+   planning/design only: no model-input bundle, XML, Matrix Builder, or
+   Patchworks runtime work.
+3. Keep P3.2 expansion design idle until P3.1 cedar design is either complete
+   or explicitly paused by the maintainer.
 4. Keep Phase 4 runtime issue `#10` idle until Phase 3 design assumptions and
    P4.1 model-input bundle prerequisites are accepted.

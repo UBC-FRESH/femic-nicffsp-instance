@@ -1143,3 +1143,19 @@
   documentation before PR merge; and
 - kept full final teaching documentation under later P5.3, after runtime and
   publication surfaces exist.
+
+## 2026-06-25 - Started Phase 3 cedar-signal design
+
+- created branch `feature/p3-model-design-assumptions` from merged instance
+  `main`;
+- promoted Phase 3 to active in `ROADMAP.md` after Phase 2 closeout;
+- split P3.1 cedar-signal design into P3.1a evidence/design note, P3.1b field
+  and derived-signal review, and P3.1c Patchworks-facing product/account/report
+  requirements;
+- added `planning/tfl6_cedar_signal_design.md` with first-pass source evidence
+  for cultural cedar, Cw/Cy composition, Cw productivity/yield context, K3Z
+  carry-forward boundaries, candidate cedar signals, cultural-reserve behavior,
+  utility-pole product questions, treatment/yield implications, and
+  Patchworks-facing requirements; and
+- kept this slice planning/design only, with no model-input generation,
+  ForestModel XML, Matrix Builder, or Patchworks runtime work.
