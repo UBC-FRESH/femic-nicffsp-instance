@@ -109,3 +109,39 @@ P5.2 should decide whether to:
 
 Either path is acceptable only after a fresh-environment materialization check.
 Local-only availability is not release evidence.
+
+## Arbutus Special Remote Bootstrap
+
+P5.2 created the instance-local DataLad/git-annex special remote that will hold
+any selected large TFL 6 runtime artifacts:
+
+| Field | Value |
+| --- | --- |
+| remote name | `arbutus-s3` |
+| bucket | `ubc-fresh-femic-tfl6-instance` |
+| endpoint | `object-arbutus.cloud.computecanada.ca` |
+| protocol / port | `https` / `443` |
+| public URL | `https://object-arbutus.cloud.computecanada.ca/ubc-fresh-femic-tfl6-instance` |
+| remote UUID | `861b7dd7-fff0-4637-b0a2-b9b4668dca71` |
+| publication status | initialized, empty |
+
+Bootstrap evidence:
+
+- `git annex init` was required because the TFL 6 instance had not yet been
+  initialized as an annex dataset.
+- On Windows, git-annex required a local `annex.dbdir` workaround at
+  `%LOCALAPPDATA%\git-annex\femic-tfl6-instance`.
+- The submodule `.git` pointer needed local line-ending normalization before
+  `git annex init` would stop treating the carriage return as part of the gitdir
+  path.
+- `git annex initremote arbutus-s3 ...` succeeded after creating and probing the
+  bucket.
+- `git annex info arbutus-s3` reports `public: yes`, `available: true`, and
+  `remote annex keys: 0`.
+- The `git-annex` branch has been pushed to `origin` so fresh clones can
+  discover the special remote metadata.
+
+No payload keys have been copied to `arbutus-s3` yet. P5.2 still needs to choose
+the exact artifact set, annex it, copy selected keys to the remote, push the
+updated `git-annex` branch, and run a no-credential fresh-clone materialization
+smoke.

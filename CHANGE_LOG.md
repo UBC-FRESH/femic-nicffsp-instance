@@ -2104,3 +2104,16 @@
 - linked P5.2 under Phase 5 parent `#15` and the planning gate `#11`; and
 - updated `ROADMAP.md` so the next bounded Phase 5 lane is deciding and
   implementing the accepted publication path from the P5.1 artifact policy.
+
+## 2026-06-26 - Initialized TFL 6 Arbutus special remote
+
+- initialized git-annex for `femic-tfl6-instance` and created the instance-local
+  `arbutus-s3` special remote;
+- created and validated bucket `ubc-fresh-femic-tfl6-instance` using the local
+  FEMIC Arbutus authentication workflow;
+- recorded remote UUID `861b7dd7-fff0-4637-b0a2-b9b4668dca71`, public URL, and
+  empty publication status in
+  `planning/tfl6_runtime_artifact_publication_policy.md`;
+- pushed the `git-annex` branch so fresh clones can discover the special remote
+  metadata; and
+- left payload publication open for the next P5.2 slice.

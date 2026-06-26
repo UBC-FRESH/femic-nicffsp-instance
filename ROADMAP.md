@@ -576,3 +576,7 @@ The Phase 1 follow-on issues are placed into the future roadmap as follows:
     claiming release readiness. The first P5.2 decision is whether this release
     publishes only source data plus rebuild instructions or also publishes a
     reviewed ready-to-launch runtime archive for teaching users.
+    P5.2a is complete: the instance-local `arbutus-s3` git-annex special remote
+    has been initialized against bucket `ubc-fresh-femic-tfl6-instance`, the
+    remote metadata has been pushed on the `git-annex` branch, and the remote is
+    currently empty pending the artifact-set decision.
