@@ -481,6 +481,19 @@ The Phase 1 follow-on issues are placed into the future roadmap as follows:
     `planning/tfl6_forestmodel_xml_export_blocker.md`. The next bounded P4.2
     repair is to create an exporter-compatible schema bridge or deliberately
     extend the exporter; Matrix Builder and runtime work remain blocked.
-18. P5.3a / `#21` publication plumbing is complete for the current seed docs,
+18. The P4.2 exporter-compatible schema bridge is generated under ignored
+    `data/model_input_bundle/export_compat/` output space and audited in
+    `planning/tfl6_forestmodel_xml_export_bridge.md`. It maps reviewed TFL6
+    string AU/curve IDs to deterministic numeric IDs and allowed
+    `femic export patchworks --tsa tfl6` to produce XML/fragments under ignored
+    `output/patchworks_tfl6_validated/`. Structural inspection found
+    `373` XML curves, `2442` selects, `24879` fragments, `191168.566 ha`
+    exported fragment area, and `407` exported AUs. P4.2 remains blocked
+    semantically because the XML still emits `814` `CC` treatment nodes even
+    though harvest-system assignment is deferred and final
+    clearcut-and-plant eligibility is blocked in the reviewed bundle. The next
+    bounded repair is to preserve treatment-ineligibility/deferred
+    harvest-system state in XML before Matrix Builder starts.
+19. P5.3a / `#21` publication plumbing is complete for the current seed docs,
     but P5.3 stays open for final teaching-docs expansion after Phase 4 runtime
     package evidence exists.

@@ -1928,3 +1928,24 @@
   command, error, root cause, and next targeted repair. No ForestModel XML,
   fragments, Matrix Builder output, Patchworks runtime package, or publication
   artifact was generated.
+
+## 2026-06-26 - Built P4.2 exporter compatibility bridge and found treatment blocker
+
+- generated an ignored exporter-compatible schema bridge under
+  `data/model_input_bundle/export_compat/`, including numeric AU/curve tables,
+  an ID crosswalk, a compatibility AFLB checkpoint, and a bridge manifest;
+- preserved reviewed TFL6 bundle tables unchanged while mapping string AU and
+  curve IDs to deterministic numeric IDs required by the current generic FMG
+  exporter;
+- reran `femic export patchworks --tsa tfl6` against the compatibility bridge
+  and generated ignored `output/patchworks_tfl6_validated/forestmodel.xml` plus
+  fragments sidecars;
+- inspected the generated outputs and confirmed `373` XML curves, `2442`
+  selects, `24879` fragments, `191168.566 ha` exported fragment area, `407`
+  fragment AUs, and proportional IFM/RETENTION values derived from reviewed
+  managed-share state; and
+- recorded `planning/tfl6_forestmodel_xml_export_bridge.md` with the remaining
+  semantic blocker: XML currently emits `814` `CC` treatment nodes even though
+  harvest-system assignment is deferred and final clearcut-and-plant
+  eligibility is blocked. Matrix Builder and runtime work remain blocked until
+  P4.2 preserves that treatment-ineligibility state in XML.
