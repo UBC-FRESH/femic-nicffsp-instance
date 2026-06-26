@@ -1240,3 +1240,20 @@
   challenges page; and
 - updated Phase 3 and Phase 5 roadmap text so cedar, expansion, and final
   teaching docs carry the multi-perspective KPI interpretation requirement.
+
+## 2026-06-25 - Locked the P3.3 AU and yield-curve assignment contract
+
+- added a P3.3b accepted-contract lock to
+  `planning/tfl6_au_yield_curve_contract.md`;
+- accepted K3Z-style static AU identity while rejecting age, THLB status,
+  operability, treatment eligibility, curve provenance, cedar, retention, and
+  expansion fields as canonical AU identity fields;
+- locked MP10 Tables 27-29 as TFL 6 TIPSY parameter evidence only, with legacy
+  AU codes preserved as provenance/parameter keys;
+- locked the natural/untreated VDYP curve lane to the shared FEMIC
+  `smoothed_bin_pchip` default governed by `UBC-FRESH/femic#187`, with MKRF
+  as evidence and TSA29 as adoption evidence;
+- locked treated/managed curves to a reviewed TFL 6 BatchTIPSY parameter
+  crosswalk; and
+- marked P3.3 complete in `ROADMAP.md` and moved Current Next Steps to P3.4
+  actual yield-curve build/QA without building model inputs or runtime files.

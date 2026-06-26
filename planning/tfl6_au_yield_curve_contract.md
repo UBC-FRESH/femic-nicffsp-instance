@@ -207,3 +207,72 @@ behind untracked borrowed or synthetic curves.
   reviewed fallback.
 - Sparse VDYP support and TIPSY crosswalk fallbacks must be visible in tracked
   diagnostics before Patchworks runtime-package QA starts.
+
+## P3.3b Accepted Contract Lock
+
+This section records the reviewed P3.3b lock. It closes the AU/yield contract
+design lane and hands implementation to P3.4 without building model inputs in
+this slice.
+
+Accepted static AU identity:
+
+- BEC/subzone grouping.
+- Ordered top-two leading species combination.
+- `top_area_coverage = 0.90`.
+- L/M/H SI class after accepted VDYP/SiteProd field review.
+
+Rejected canonical AU identity fields:
+
+- stand age at time 0 or MP10 age-band class;
+- THLB status, operability, yarding, slope-proxy class, or treatment
+  eligibility;
+- natural/treated curve provenance;
+- managed/unmanaged treatment eligibility;
+- retention, cedar, cultural cedar, product-quality, or treatment-signal
+  fields; and
+- K3Z/NICF core, expansion-candidate, rejected-candidate, or TFL 6 remainder
+  identity.
+
+Accepted MP10 TIPSY boundary:
+
+- MP10 Tables 27, 28, and 29 are accepted as the initial TFL 6 TIPSY parameter
+  evidence library.
+- Legacy MP10 AU codes are preserved as provenance and parameter keys only.
+- MP10 age-at-time-0 AU splits are rejected as canonical Patchworks AU
+  identity.
+- P3.4 must scrape the tables into a structured parameter library before
+  generating treated/managed BatchTIPSY curves.
+
+Accepted curve-lane boundary:
+
+- Natural/untreated curves use accepted TFL 6 VDYP outputs and the shared
+  FEMIC `smoothed_bin_pchip` first-growth selector by default.
+- Parent FEMIC issue `UBC-FRESH/femic#187` is the governing shared/default
+  smoothing-method decision. MKRF issue `UBC-FRESH/femic#177` is the evidence
+  basis and TSA29 issue `UBC-FRESH/femic#188` is the adoption example.
+- Treated/managed curves use BatchTIPSY curves generated from the reviewed
+  TFL 6 TIPSY parameter crosswalk.
+- Unsupported or sparse curve families must be visible in tracked diagnostics;
+  silent curve borrowing or hidden fabrication is rejected.
+
+Accepted eligibility interaction:
+
+- Operability is a stand-level eligibility and scenario attribute, not an AU
+  key.
+- Managed/unmanaged treatment eligibility is separate from natural/treated
+  curve provenance.
+- Retention, cedar signals, expansion status, and stakeholder/KPI reporting
+  fields are stand/group/scenario attributes. They may affect treatment
+  eligibility, products, accounts, reports, or scenario membership, but not AU
+  identity.
+
+P3.4 implementation handoff:
+
+- scrape MP10 Tables 27-29 into a reviewed parameter library;
+- construct the static TFL 6 AU universe and stand-to-AU assignment surface;
+- generate and QA natural/untreated VDYP curves using the accepted smoothing
+  default;
+- generate and QA treated/managed BatchTIPSY curves from the reviewed
+  parameter crosswalk; and
+- emit curve-selection, sparse-support, missing-mapping, fallback-row,
+  TIPSY/VDYP overlay, and species-share diagnostics before Phase 4 starts.

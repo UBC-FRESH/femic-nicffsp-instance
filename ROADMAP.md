@@ -140,14 +140,14 @@ starts.
 Goal: define the reviewed model-design assumptions that depend on the accepted
 source-layer and THLB surfaces, without compiling a Patchworks package.
 
-- [ ] P3.3 Define TFL 6 AU, yield-curve, and treatment-eligibility contract
+- [x] P3.3 Define TFL 6 AU, yield-curve, and treatment-eligibility contract
   (`#28`) before model-input bundle generation.
   Priority note: P3.3 is listed first because the AU/yield contract is now the
   top Phase 3 dependency. The `P3.3` identifier is retained to preserve the
   existing issue/comment/commit audit trail.
   - [x] P3.3a Add the first AU/yield-curve planning contract in
     `planning/tfl6_au_yield_curve_contract.md`.
-  - [ ] P3.3b Review and lock the static AU identity, legacy MP10 TIPSY
+  - [x] P3.3b Review and lock the static AU identity, legacy MP10 TIPSY
     parameter extraction boundary, curve-lane assumptions, and
     operability/treatment-eligibility interaction.
 - [ ] P3.4 Build and QA actual TFL 6 yield curves (`#29`) before Phase 4
@@ -311,16 +311,17 @@ The Phase 1 follow-on issues are placed into the future roadmap as follows:
    source-layer, THLB smoke, benchmark-tolerance, and Sphinx audit-trail
    surfaces; the parent FEMIC submodule pointer has been updated to the merged
    closeout commit.
-2. Continue with Phase 3 / P3.3 on branch
-   `feature/p3-model-design-assumptions`: review and lock the AU/yield-curve
-   assignment contract before model-input bundle generation. This lane uses
-   K3Z-style static AU identity, the shared MKRF/TSA29 `smoothed_bin_pchip`
-   first-growth curve family, MP10 Tables 27-29 as TIPSY parameter evidence
-   rather than canonical AU identity, and stand-level operability/treatment
-   eligibility filters outside AU identity.
-3. After P3.3, proceed in order through P3.4 actual yield-curve build/QA, P3.5
-   treatment options, and P3.6 transition logic. Do not jump to cedar details,
-   expansion options, or Phase 4 until these base model mechanics are locked.
+2. Continue with Phase 3 / P3.4 on branch
+   `feature/p3-model-design-assumptions`: build and QA the actual TFL 6
+   natural/untreated VDYP and treated/managed BatchTIPSY yield curves before
+   model-input bundle generation. P3.3 has locked the AU/yield assignment
+   contract: K3Z-style static AU identity, the shared MKRF/TSA29
+   `smoothed_bin_pchip` first-growth curve family, MP10 Tables 27-29 as TIPSY
+   parameter evidence rather than canonical AU identity, and stand-level
+   operability/treatment eligibility filters outside AU identity.
+3. After P3.4, proceed in order through P3.5 treatment options and P3.6
+   transition logic. Do not jump to cedar details, expansion options, or Phase
+   4 until these base model mechanics are locked.
 4. Keep P3.1 cedar design open but paused until P3.3-P3.6 are reviewed/locked
    or explicitly narrowed by the maintainer.
 5. Keep P3.2 embedded NICF/K3Z identity and expansion design idle until
