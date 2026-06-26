@@ -1130,3 +1130,16 @@
   proposed until the Phase 2 closeout PR path is reconciled; and
 - kept the P2.5 THLB tolerance lock intact while correcting the lifecycle
   sequencing mistake.
+
+## 2026-06-25 - Added Phase 2 THLB Sphinx closeout documentation
+
+- added `docs/phase2-thlb-netdown.rst` to document the Phase 2 THLB base lane
+  for future maintainers and student users;
+- covered the current-AOI versus MP10 historical-boundary rationale, scaled
+  benchmark tolerance, accepted `+5.65%` THLB gap, fallback rows, and audit
+  trail artifacts;
+- linked the new page from `docs/index.rst`;
+- updated `ROADMAP.md` so P2.6 explicitly includes Phase 2 THLB Sphinx
+  documentation before PR merge; and
+- kept full final teaching documentation under later P5.3, after runtime and
+  publication surfaces exist.

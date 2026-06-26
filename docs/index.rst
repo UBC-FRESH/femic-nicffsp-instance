@@ -9,4 +9,5 @@ until the roadmap records a runnable Patchworks package.
    :maxdepth: 2
    :caption: Teaching Notes
 
+   phase2-thlb-netdown
    teaching-challenges

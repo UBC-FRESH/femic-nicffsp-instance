@@ -131,6 +131,9 @@ starts.
   `planning/tfl6_thlb_benchmark_tolerance.md`.
 - [ ] P2.6 Close out the Phase 2 branch/PR lifecycle before starting Phase 3
   implementation (`#26`).
+  - [x] P2.6a Add Phase 2 THLB Sphinx documentation covering design rationale,
+    caveats, benchmark tolerance, and reproducibility audit trail.
+  - [ ] P2.6b Reconcile and merge the Phase 2 closeout PR.
 
 ## Proposed Phase 3: Model Design Assumptions (`#13`)
 
@@ -234,10 +237,10 @@ The Phase 1 follow-on issues are placed into the future roadmap as follows:
    `+7715.757 ha` / `+5.65%` gap is locked as an acceptable base teaching-lane
    tolerance in `planning/tfl6_thlb_benchmark_tolerance.md`.
 2. Continue with P2.6 / `#26`: close out the Phase 2 branch/PR lifecycle before
-   any Phase 3 implementation starts. Open/reconcile the
-   `feature/p2-source-layer-thlb-inputs` PR against instance `main`, then update
-   the parent FEMIC submodule pointer after the instance closeout merge if
-   `main` advances.
+   any Phase 3 implementation starts. P2.6a Sphinx documentation is complete;
+   next reconcile the `feature/p2-source-layer-thlb-inputs` PR against instance
+   `main` and update the parent FEMIC submodule pointer after the instance
+   closeout merge if `main` advances.
 3. Keep Phase 3 design issues `#8` and `#9` idle until P2.6 closeout is done
    or the maintainer explicitly approves a narrower parallel design slice.
 4. Keep Phase 4 runtime issue `#10` idle until Phase 3 design assumptions and
