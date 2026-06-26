@@ -1085,3 +1085,21 @@
   present or created by the FEMIC THLB runner; and
 - moved the roadmap edge to P2.4e, the first bounded serial reconstructed smoke
   run, without executing THLB netdown in this slice.
+
+## 2026-06-25 - Completed P2.4e first THLB smoke run
+
+- executed the bounded serial reconstructed THLB smoke command against the
+  accepted TFL 6 R1 GeoPackage checkpoint input;
+- recorded tracked run evidence in `config/tsr/tfl6_thlb_smoke.audit.json` and
+  `config/tsr/thlb_reconstructed.status.md`;
+- inspected the generated checkpoint/status products and recorded the smoke
+  area signals: `217042.719 ha` GLB proxy, `196833.177 ha` AFLB checkpoint,
+  `174768.947 ha` LHLB checkpoint, and `144203.485 ha` final THLB;
+- confirmed the smoke run had `12` applied rows, `2` applied no-op rows, and
+  `8` unsupported milestone/reference rows, with no blocked exact-overlay
+  transformation rows;
+- kept bulky `data/tsr/` checkpoints and `runtime/logs/tsr/` products out of
+  normal tracked Git content for this closeout; and
+- marked P2.4 complete in `ROADMAP.md`, moving the next bounded slice to P2.5
+  benchmark/tolerance comparison without starting model-input generation, XML,
+  Matrix Builder, or Patchworks runtime work.

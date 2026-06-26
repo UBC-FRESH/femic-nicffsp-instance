@@ -1,0 +1,597 @@
+# THLB Netdown Status Report: TSA tfl6 (Tree Farm Licence 6)
+
+- Generated UTC: `2026-06-26T03:58:22.625492+00:00`
+- Execution mode: `reconstructed`
+- Debug stand-binary fallback: `disabled`
+- Baseline signal: `default_one`
+- Recipe path: `config/tsr/thlb_netdown.recipe.yaml`
+- Checkpoint input: `data/input/tfl_6/vri_2025_r1_poly_tfl6.gpkg`
+- Output checkpoint: `data/tsr/tfl6_thlb_smoke_checkpoint.feather`
+- Audit JSON: `config/tsr/tfl6_thlb_smoke.audit.json`
+- AFLB checkpoint Feather: `data/tsr/aflb_checkpoint.feather`
+- AFLB checkpoint GeoPackage: `data/tsr/aflb_checkpoint.gpkg`
+- LHLB checkpoint Feather: `data/tsr/lhlb_checkpoint.feather`
+- LHLB checkpoint GeoPackage: `data/tsr/lhlb_checkpoint.gpkg`
+- LHLB curve-ready checkpoint Feather: `not written`
+- LHLB curve-ready checkpoint GeoPackage: `not written`
+- Runtime history copy: `runtime/logs/tsr/thlb_reconstructed_status_report-20260626T035822Z.md`
+- Warm-start checklist: `not generated yet`
+- Reconstruction comparison: `not generated yet`
+
+## Review Dashboard
+
+- Selected MAP_ID subset: `full input`
+- Step count: `22`
+- Input checkpoint area: `217042.719 ha`
+- GLB / current input proxy: `217042.719 ha`
+- AFLB / baseline managed area: `217042.719 ha`
+- AFLB checkpoint area: `196833.177 ha`
+- LHLB checkpoint area: `174768.947 ha`
+- LHLB curve-ready checkpoint area: `not written`
+- THLB / final managed area: `144203.485 ha`
+- Exact fragment-overlay steps: `5` / `15285.193 ha net`
+- Explicit aspatial fallback steps: `4` / `27503.649 ha net`
+- Blocked exact-overlay steps: `0` / `0 candidate rows`
+- Debug stand-binary fallback steps: `0` / `0.000 ha net`
+- LU-wise exact-overlay chunks touched: `39`
+- LU-wise intersecting exclusion features: `1247`
+- LU-wise reconstructed runtime: `2.67 min`
+
+## Backbone Summary
+
+- GLB:AFLB current proxy = `1.0000 (100.00%)`
+- AFLB:LHLB current = `n/a yet`
+- AFLB:THLB current = `0.6644 (66.44%)`
+- GLB:THLB current proxy = `0.6644 (66.44%)`
+
+## Outcomes
+
+- `applied`: `12`
+- `applied_noop`: `2`
+- `unsupported`: `8`
+
+## Runtime Timing
+
+- Source-layer load time: `1.01 s`
+- Candidate-query time: `1.42 s`
+- Exact-overlay / fallback time: `43.07 s`
+- Chunk-write time: `17.53 s`
+- Final merge time: `0.71 s`
+
+### Slowest Steps
+
+- `tfl6_nd_100_established_ogma` | mode=`fragment_overlay` | status=`applied` | total=`21.63 s` | overlay=`18.31 s` | LU chunks=`9` | source features=`164`
+- `tfl6_nd_080_riparian` | mode=`fragment_overlay` | status=`applied` | total=`12.08 s` | overlay=`6.86 s` | LU chunks=`10` | source features=`991`
+- `tfl6_nd_120_wha` | mode=`fragment_overlay` | status=`applied` | total=`5.20 s` | overlay=`2.10 s` | LU chunks=`9` | source features=`45`
+- `tfl6_nd_090_uwr` | mode=`fragment_overlay` | status=`applied` | total=`4.49 s` | overlay=`1.48 s` | LU chunks=`6` | source features=`22`
+- `tfl6_nd_010_non_forest` | mode=`checkpoint_attribute_exclusion` | status=`applied` | total=`4.18 s` | overlay=`2.32 s` | LU chunks=`13` | source features=`0`
+
+## Locking / Convergence
+
+- AFLB lock state: `unlocked`
+- THLB lock state: `unlocked`
+- Lock dependency: cutting the AFLB lock automatically invalidates the THLB lock because THLB is downstream from the AFLB universe definition.
+
+## Interpretation
+
+- Non-AFLB polygons are excluded from the reconstruction universe before THLB logic applies.
+- Non-THLB polygons or fragments remain inside that working universe and are assigned THLB state downstream from AFLB initialization.
+- GLB -> AFLB rows define the modeled universe, AFLB -> LHLB rows define legal harvestability, and LHLB -> THLB rows define projected operational harvestability.
+- `data/tsr/aflb_checkpoint.feather` is the supported downstream restart checkpoint when you want to experiment below AFLB without rebuilding GLB -> AFLB.
+- `data/tsr/lhlb_checkpoint.feather` is the supported downstream restart checkpoint when you want to experiment below LHLB without rebuilding AFLB -> LHLB.
+- Review the exact FEMIC logic summaries before trusting raw TSR prose; the compiled logic is the executable contract.
+- In reconstructed mode, explicit aspatial fallback means a TSR area target was applied honestly as a deduction bridge; it is not the same thing as exact spatial reproduction.
+- Legacy raster THLB values are reference-only in reconstructed mode.
+
+## Backbone Milestones
+
+- `Total landbase` | stage=`Reference targets` | benchmark remaining area=`217042.719 ha`
+- `Total forested` | stage=`Reference targets` | benchmark remaining area=`194991.692 ha`
+- `Total productive forest` | stage=`Reference targets` | benchmark remaining area=`186175.333 ha`
+- `Total operable` | stage=`Reference targets` | benchmark remaining area=`170428.940 ha`
+- `Total operable reductions` | stage=`Reference targets` | benchmark remaining area=`143686.151 ha`
+- `Reduced landbase` | stage=`Reference targets` | benchmark remaining area=`143686.151 ha`
+- `Current THLB` | stage=`Reference targets` | benchmark remaining area=`136487.728 ha`
+
+## Stage-by-Stage THLB Steps
+
+### GLB -> AFLB
+
+### 10. Less non-forest
+
+- Parent step id: `tfl6_nd_010`
+- Stage: `GLB -> AFLB`
+- Execution class: `attribute_exclusion`
+- Ratchet state: `translated`
+- Table provenance: `reference/tfl_6_mngment_plan_2011_ip.pdf#table=4`
+- Benchmark marginal deduction: `17069.353 ha`
+- Benchmark cumulative remaining area: `199973.366 ha`
+- Review logic mode: `femic_core`
+- Exact FEMIC logic:
+  - `Less non-forest`: Apply checkpoint attribute filtering to the working land base. The active filter is `bclcs_level_2` in [`N`, `W`] or null.
+- Current compiled status summary: `applied`=1
+- Compiled logic:
+
+#### 10.1. Less non-forest
+
+- Step id: `tfl6_nd_010_non_forest`
+- Kind: `attribute_exclusion`
+- Stage: `GLB -> AFLB`
+- Execution class: `attribute_exclusion`
+- Run status: `applied`
+- TSR provenance: ``
+- Review logic mode: `femic_core`
+- Exact FEMIC logic: Apply checkpoint attribute filtering to the working land base. The active filter is `bclcs_level_2` in [`N`, `W`] or null.
+- FEMIC proposed logic: Exclude the linked polygons from THLB where they intersect the working land base; the exact execution mode depends on available data and current implementation support.
+- Linked source layers:
+  - `vri_2025_r1_tfl6` | query=`` | status=`` | strategy=`pre_materialized`
+    - artifact: `data/input/tfl_6/vri_2025_r1_poly_tfl6.gpkg`
+- Run notes:
+  - Applied checkpoint-attribute exclusion directly against LU chunk geometry without requiring fetched source polygons.
+
+### 20. Less existing roads
+
+- Parent step id: `tfl6_nd_020`
+- Stage: `GLB -> AFLB`
+- Execution class: `provisional_spatial_overlay`
+- Ratchet state: `translated`
+- Table provenance: `reference/tfl_6_mngment_plan_2011_ip.pdf#table=4`
+- Benchmark marginal deduction: `4981.674 ha`
+- Benchmark cumulative remaining area: `194991.692 ha`
+- Review logic mode: `femic_core`
+- Exact FEMIC logic:
+  - `Less existing roads`: Buffer the linked source geometry by the configured distance, then intersect the working land base.
+- Current compiled status summary: `applied_noop`=1
+- Compiled logic:
+
+#### 20.1. Less existing roads
+
+- Step id: `tfl6_nd_020_existing_roads`
+- Kind: `spatial_overlay`
+- Stage: `GLB -> AFLB`
+- Execution class: `provisional_spatial_overlay`
+- Run status: `applied_noop`
+- TSR provenance: ``
+- Review logic mode: `femic_core`
+- Exact FEMIC logic: Buffer the linked source geometry by the configured distance, then intersect the working land base.
+- FEMIC proposed logic: Exclude the linked polygons from THLB where they intersect the working land base; the exact execution mode depends on available data and current implementation support.
+- Linked source layers:
+  - `dra_roads_tfl6` | query=`` | status=`` | strategy=`pre_materialized`
+    - artifact: `data/source/tfl_6/roads/dra_roads_tfl6.gpkg`
+- Run notes:
+  - No active LU-clipped fragment geometries intersected the exclusion mask.
+
+### 40. Less non-productive forest
+
+- Parent step id: `tfl6_nd_040`
+- Stage: `GLB -> AFLB`
+- Execution class: `attribute_exclusion`
+- Ratchet state: `translated`
+- Table provenance: `reference/tfl_6_mngment_plan_2011_ip.pdf#table=4`
+- Benchmark marginal deduction: `8816.360 ha`
+- Benchmark cumulative remaining area: `186175.333 ha`
+- Review logic mode: `femic_core`
+- Exact FEMIC logic:
+  - `Less non-productive forest`: Apply checkpoint attribute filtering to the working land base. The active filter is `non_productive_descriptor_cd` is not null or `non_productive_cd` is not null or `site_index` < `5`.
+- Current compiled status summary: `applied`=1
+- Compiled logic:
+
+#### 40.1. Less non-productive forest
+
+- Step id: `tfl6_nd_040_non_productive`
+- Kind: `attribute_exclusion`
+- Stage: `GLB -> AFLB`
+- Execution class: `attribute_exclusion`
+- Run status: `applied`
+- TSR provenance: ``
+- Review logic mode: `femic_core`
+- Exact FEMIC logic: Apply checkpoint attribute filtering to the working land base. The active filter is `non_productive_descriptor_cd` is not null or `non_productive_cd` is not null or `site_index` < `5`.
+- FEMIC proposed logic: Exclude the linked polygons from THLB where they intersect the working land base; the exact execution mode depends on available data and current implementation support.
+- Linked source layers:
+  - `vri_2025_r1_tfl6` | query=`` | status=`` | strategy=`pre_materialized`
+    - artifact: `data/input/tfl_6/vri_2025_r1_poly_tfl6.gpkg`
+  - `vdyp7_2025_poly_tfl6` | query=`` | status=`` | strategy=`pre_materialized`
+    - artifact: `data/input/tfl_6/vdyp7_input_poly_2025_tfl6.parquet`
+- Run notes:
+  - Applied checkpoint-attribute exclusion directly against LU chunk geometry without requiring fetched source polygons.
+
+### AFLB -> LHLB
+
+### 60. Less inoperable, including uneconomic
+
+- Parent step id: `tfl6_nd_060`
+- Stage: `AFLB -> LHLB`
+- Execution class: `aspatial_fallback`
+- Ratchet state: `translated`
+- Table provenance: `reference/tfl_6_mngment_plan_2011_ip.pdf#table=4`
+- Benchmark marginal deduction: `15746.393 ha`
+- Benchmark cumulative remaining area: `170428.940 ha`
+- Review logic mode: `femic_core`
+- Exact FEMIC logic:
+  - `Less inoperable, including uneconomic`: TSR area target applied as a documented aspatial deduction because no exact spatial implementation is available in this lane using the TSR benchmark target of 15746.393 ha.
+- Current compiled status summary: `applied`=1
+- Compiled logic:
+
+#### 60.1. Less inoperable, including uneconomic
+
+- Step id: `tfl6_nd_060_inoperable`
+- Kind: `aspatial_fallback`
+- Stage: `AFLB -> LHLB`
+- Execution class: `aspatial_fallback`
+- Run status: `applied`
+- TSR provenance: ``
+- Review logic mode: `femic_core`
+- Exact FEMIC logic: TSR area target applied as a documented aspatial deduction because no exact spatial implementation is available in this lane using the TSR benchmark target of 15746.393 ha.
+- FEMIC proposed logic: TSR area target applied as a documented aspatial deduction because no exact spatial implementation is available in this lane.
+- Run notes:
+  - Applied the TSR area target as a documented reconstructed-mode aspatial fallback because no exact spatial implementation is available for this recipe row.
+  - The fallback was applied across the current LU-wise reconstructed state without changing the reviewed TSA29 parent-step lane.
+  - Applied a direct-target THLB rollback of 15746.393 ha within the checkpoint-filtered subset.
+
+### LHLB -> THLB
+
+### 80. Riparian management
+
+- Parent step id: `tfl6_nd_080`
+- Stage: `LHLB -> THLB`
+- Execution class: `provisional_spatial_overlay`
+- Ratchet state: `translated`
+- Table provenance: `reference/tfl_6_mngment_plan_2011_ip.pdf#table=4`
+- Benchmark marginal deduction: `13460.014 ha`
+- Benchmark cumulative remaining area: `156968.926 ha`
+- Review logic mode: `femic_core`
+- Exact FEMIC logic:
+  - `Riparian management`: Buffer the linked source geometry by the configured distance, then intersect the working land base.
+- Current compiled status summary: `applied`=1
+- Compiled logic:
+
+#### 80.1. Riparian management
+
+- Step id: `tfl6_nd_080_riparian`
+- Kind: `spatial_overlay`
+- Stage: `LHLB -> THLB`
+- Execution class: `provisional_spatial_overlay`
+- Run status: `applied`
+- TSR provenance: ``
+- Review logic mode: `femic_core`
+- Exact FEMIC logic: Buffer the linked source geometry by the configured distance, then intersect the working land base.
+- FEMIC proposed logic: Overlay the linked polygon layers onto the working land base, fragment intersected geometry, and assign binary THLB {0,1} so excluded fragments are 0 and retained fragments remain 1.
+- Linked source layers:
+  - `fwa_stream_networks_tfl6` | query=`` | status=`` | strategy=`pre_materialized`
+    - artifact: `data/source/tfl_6/hydrology/fwa_stream_networks_tfl6.gpkg`
+  - `fwa_lakes_tfl6` | query=`` | status=`` | strategy=`pre_materialized`
+    - artifact: `data/source/tfl_6/hydrology/fwa_lakes_tfl6.gpkg`
+  - `fwa_wetlands_tfl6` | query=`` | status=`` | strategy=`pre_materialized`
+    - artifact: `data/source/tfl_6/hydrology/fwa_wetlands_tfl6.gpkg`
+- Run notes:
+  - Applied exact LU-wise fragment/resultant exclusion with binary THLB output in EPSG:3005.
+  - The reconstructed lane now cuts one Landscape Unit chunk at a time instead of building one full-TSA exact-overlay workload.
+
+### 90. Ungulate winter ranges
+
+- Parent step id: `tfl6_nd_090`
+- Stage: `LHLB -> THLB`
+- Execution class: `provisional_spatial_overlay`
+- Ratchet state: `translated`
+- Table provenance: `reference/tfl_6_mngment_plan_2011_ip.pdf#table=4`
+- Benchmark marginal deduction: `1662.246 ha`
+- Benchmark cumulative remaining area: `155306.680 ha`
+- Review logic mode: `femic_core`
+- Exact FEMIC logic:
+  - `Ungulate winter ranges`: Intersect the working land base with the linked source geometry.
+- Current compiled status summary: `applied`=1
+- Compiled logic:
+
+#### 90.1. Ungulate winter ranges
+
+- Step id: `tfl6_nd_090_uwr`
+- Kind: `spatial_overlay`
+- Stage: `LHLB -> THLB`
+- Execution class: `provisional_spatial_overlay`
+- Run status: `applied`
+- TSR provenance: ``
+- Review logic mode: `femic_core`
+- Exact FEMIC logic: Intersect the working land base with the linked source geometry.
+- FEMIC proposed logic: Overlay the linked polygon layers onto the working land base, fragment intersected geometry, and assign binary THLB {0,1} so excluded fragments are 0 and retained fragments remain 1.
+- Linked source layers:
+  - `uwr_approved_tfl6` | query=`` | status=`` | strategy=`pre_materialized`
+    - artifact: `data/source/tfl_6/wildlife/uwr_approved_tfl6.gpkg`
+- Run notes:
+  - Applied exact LU-wise fragment/resultant exclusion with binary THLB output in EPSG:3005.
+  - The reconstructed lane now cuts one Landscape Unit chunk at a time instead of building one full-TSA exact-overlay workload.
+
+### 100. Established OGMAs
+
+- Parent step id: `tfl6_nd_100`
+- Stage: `LHLB -> THLB`
+- Execution class: `provisional_spatial_overlay`
+- Ratchet state: `translated`
+- Table provenance: `reference/tfl_6_mngment_plan_2011_ip.pdf#table=4`
+- Benchmark marginal deduction: `4747.465 ha`
+- Benchmark cumulative remaining area: `150559.215 ha`
+- Review logic mode: `femic_core`
+- Exact FEMIC logic:
+  - `Established OGMAs`: Intersect the working land base with the linked source geometry.
+- Current compiled status summary: `applied`=1
+- Compiled logic:
+
+#### 100.1. Established OGMAs
+
+- Step id: `tfl6_nd_100_established_ogma`
+- Kind: `spatial_overlay`
+- Stage: `LHLB -> THLB`
+- Execution class: `provisional_spatial_overlay`
+- Run status: `applied`
+- TSR provenance: ``
+- Review logic mode: `femic_core`
+- Exact FEMIC logic: Intersect the working land base with the linked source geometry.
+- FEMIC proposed logic: Overlay the linked polygon layers onto the working land base, fragment intersected geometry, and assign binary THLB {0,1} so excluded fragments are 0 and retained fragments remain 1.
+- Linked source layers:
+  - `ogma_legal_current_tfl6` | query=`` | status=`` | strategy=`pre_materialized`
+    - artifact: `data/source/tfl_6/ogma/ogma_legal_current_tfl6.gpkg`
+- Run notes:
+  - Applied exact LU-wise fragment/resultant exclusion with binary THLB output in EPSG:3005.
+  - The reconstructed lane now cuts one Landscape Unit chunk at a time instead of building one full-TSA exact-overlay workload.
+
+### 110. Draft OGMAs
+
+- Parent step id: `tfl6_nd_110`
+- Stage: `LHLB -> THLB`
+- Execution class: `aspatial_fallback`
+- Ratchet state: `translated`
+- Table provenance: `reference/tfl_6_mngment_plan_2011_ip.pdf#table=4`
+- Benchmark marginal deduction: `4391.722 ha`
+- Benchmark cumulative remaining area: `146167.493 ha`
+- Review logic mode: `femic_core`
+- Exact FEMIC logic:
+  - `Draft OGMAs`: TSR area target applied as a documented aspatial deduction because no exact spatial implementation is available in this lane using the TSR benchmark target of 4391.722 ha.
+- Current compiled status summary: `applied`=1
+- Compiled logic:
+
+#### 110.1. Draft OGMAs
+
+- Step id: `tfl6_nd_110_draft_ogma`
+- Kind: `aspatial_fallback`
+- Stage: `LHLB -> THLB`
+- Execution class: `aspatial_fallback`
+- Run status: `applied`
+- TSR provenance: ``
+- Review logic mode: `femic_core`
+- Exact FEMIC logic: TSR area target applied as a documented aspatial deduction because no exact spatial implementation is available in this lane using the TSR benchmark target of 4391.722 ha.
+- FEMIC proposed logic: TSR area target applied as a documented aspatial deduction because no exact spatial implementation is available in this lane.
+- Linked source layers:
+  - `ogma_non_legal_current_tfl6` | query=`` | status=`` | strategy=`pre_materialized`
+    - artifact: `data/source/tfl_6/ogma/ogma_non_legal_current_tfl6.gpkg`
+- Run notes:
+  - Applied the TSR area target as a documented reconstructed-mode aspatial fallback because no exact spatial implementation is available for this recipe row.
+  - The fallback was applied across the current LU-wise reconstructed state without changing the reviewed TSA29 parent-step lane.
+  - Applied a direct-target THLB rollback of 4391.722 ha within the checkpoint-filtered subset.
+
+### 120. Wildlife habitat areas
+
+- Parent step id: `tfl6_nd_120`
+- Stage: `LHLB -> THLB`
+- Execution class: `provisional_spatial_overlay`
+- Ratchet state: `translated`
+- Table provenance: `reference/tfl_6_mngment_plan_2011_ip.pdf#table=4`
+- Benchmark marginal deduction: `3.798 ha`
+- Benchmark cumulative remaining area: `146163.695 ha`
+- Review logic mode: `femic_core`
+- Exact FEMIC logic:
+  - `Wildlife habitat areas`: Intersect the working land base with the linked source geometry.
+- Current compiled status summary: `applied`=1
+- Compiled logic:
+
+#### 120.1. Wildlife habitat areas
+
+- Step id: `tfl6_nd_120_wha`
+- Kind: `spatial_overlay`
+- Stage: `LHLB -> THLB`
+- Execution class: `provisional_spatial_overlay`
+- Run status: `applied`
+- TSR provenance: ``
+- Review logic mode: `femic_core`
+- Exact FEMIC logic: Intersect the working land base with the linked source geometry.
+- FEMIC proposed logic: Overlay the linked polygon layers onto the working land base, fragment intersected geometry, and assign binary THLB {0,1} so excluded fragments are 0 and retained fragments remain 1.
+- Linked source layers:
+  - `wha_approved_tfl6` | query=`` | status=`` | strategy=`pre_materialized`
+    - artifact: `data/source/tfl_6/wildlife/wha_approved_tfl6.gpkg`
+- Run notes:
+  - Applied exact LU-wise fragment/resultant exclusion with binary THLB output in EPSG:3005.
+  - The reconstructed lane now cuts one Landscape Unit chunk at a time instead of building one full-TSA exact-overlay workload.
+
+### 130. Recreation sites and trails
+
+- Parent step id: `tfl6_nd_130`
+- Stage: `LHLB -> THLB`
+- Execution class: `provisional_spatial_overlay`
+- Ratchet state: `translated`
+- Table provenance: `reference/tfl_6_mngment_plan_2011_ip.pdf#table=4`
+- Benchmark marginal deduction: `63.300 ha`
+- Benchmark cumulative remaining area: `146100.396 ha`
+- Review logic mode: `femic_core`
+- Exact FEMIC logic:
+  - `Recreation sites and trails`: Buffer the linked source geometry by the configured distance, then intersect the working land base.
+- Current compiled status summary: `applied`=1
+- Compiled logic:
+
+#### 130.1. Recreation sites and trails
+
+- Step id: `tfl6_nd_130_recreation`
+- Kind: `spatial_overlay`
+- Stage: `LHLB -> THLB`
+- Execution class: `provisional_spatial_overlay`
+- Run status: `applied`
+- TSR provenance: ``
+- Review logic mode: `femic_core`
+- Exact FEMIC logic: Buffer the linked source geometry by the configured distance, then intersect the working land base.
+- FEMIC proposed logic: Overlay the linked polygon layers onto the working land base, fragment intersected geometry, and assign binary THLB {0,1} so excluded fragments are 0 and retained fragments remain 1.
+- Linked source layers:
+  - `recreation_polygons_tfl6` | query=`` | status=`` | strategy=`pre_materialized`
+    - artifact: `data/source/tfl_6/recreation/recreation_polygons_tfl6.gpkg`
+  - `recreation_trails_tfl6` | query=`` | status=`` | strategy=`pre_materialized`
+    - artifact: `data/source/tfl_6/recreation/recreation_trails_tfl6.gpkg`
+- Run notes:
+  - Applied exact LU-wise fragment/resultant exclusion with binary THLB output in EPSG:3005.
+  - The reconstructed lane now cuts one Landscape Unit chunk at a time instead of building one full-TSA exact-overlay workload.
+
+### 140. Deciduous-leading forest
+
+- Parent step id: `tfl6_nd_140`
+- Stage: `LHLB -> THLB`
+- Execution class: `attribute_exclusion`
+- Ratchet state: `translated`
+- Table provenance: `reference/tfl_6_mngment_plan_2011_ip.pdf#table=4`
+- Benchmark marginal deduction: `2245.868 ha`
+- Benchmark cumulative remaining area: `143854.528 ha`
+- Review logic mode: `femic_core`
+- Exact FEMIC logic:
+  - `Deciduous-leading forest`: Apply checkpoint attribute filtering to the working land base. The active filter is `species_cd_1` in [`DR`, `AC`, `MB`].
+- Current compiled status summary: `applied`=1
+- Compiled logic:
+
+#### 140.1. Deciduous-leading forest
+
+- Step id: `tfl6_nd_140_deciduous_leading`
+- Kind: `attribute_exclusion`
+- Stage: `LHLB -> THLB`
+- Execution class: `attribute_exclusion`
+- Run status: `applied`
+- TSR provenance: ``
+- Review logic mode: `femic_core`
+- Exact FEMIC logic: Apply checkpoint attribute filtering to the working land base. The active filter is `species_cd_1` in [`DR`, `AC`, `MB`].
+- FEMIC proposed logic: Exclude the linked polygons from THLB where they intersect the working land base; the exact execution mode depends on available data and current implementation support.
+- Linked source layers:
+  - `vri_2025_r1_tfl6` | query=`` | status=`` | strategy=`pre_materialized`
+    - artifact: `data/input/tfl_6/vri_2025_r1_poly_tfl6.gpkg`
+  - `vdyp7_2025_layer_tfl6` | query=`` | status=`` | strategy=`pre_materialized`
+    - artifact: `data/input/tfl_6/vdyp7_input_layer_2025_tfl6.parquet`
+- Run notes:
+  - Applied checkpoint-attribute exclusion directly against LU chunk geometry without requiring fetched source polygons.
+
+### 150. Cultural heritage resources
+
+- Parent step id: `tfl6_nd_150`
+- Stage: `LHLB -> THLB`
+- Execution class: `aspatial_fallback`
+- Ratchet state: `translated`
+- Table provenance: `reference/tfl_6_mngment_plan_2011_ip.pdf#table=4`
+- Benchmark marginal deduction: `167.111 ha`
+- Benchmark cumulative remaining area: `143687.417 ha`
+- Review logic mode: `femic_core`
+- Exact FEMIC logic:
+  - `Cultural heritage resources`: TSR area target applied as a documented aspatial deduction because no exact spatial implementation is available in this lane using the TSR benchmark target of 167.111 ha.
+- Current compiled status summary: `applied`=1
+- Compiled logic:
+
+#### 150.1. Cultural heritage resources
+
+- Step id: `tfl6_nd_150_cultural_heritage`
+- Kind: `aspatial_fallback`
+- Stage: `LHLB -> THLB`
+- Execution class: `aspatial_fallback`
+- Run status: `applied`
+- TSR provenance: ``
+- Review logic mode: `femic_core`
+- Exact FEMIC logic: TSR area target applied as a documented aspatial deduction because no exact spatial implementation is available in this lane using the TSR benchmark target of 167.111 ha.
+- FEMIC proposed logic: TSR area target applied as a documented aspatial deduction because no exact spatial implementation is available in this lane.
+- Run notes:
+  - Applied the TSR area target as a documented reconstructed-mode aspatial fallback because no exact spatial implementation is available for this recipe row.
+  - The fallback was applied across the current LU-wise reconstructed state without changing the reviewed TSA29 parent-step lane.
+  - Applied a direct-target THLB rollback of 167.111 ha within the checkpoint-filtered subset.
+
+### 180. Less allowance for stand-level retention
+
+- Parent step id: `tfl6_nd_180`
+- Stage: `LHLB -> THLB`
+- Execution class: `aspatial_fallback`
+- Ratchet state: `translated`
+- Table provenance: `reference/tfl_6_mngment_plan_2011_ip.pdf#table=4`
+- Benchmark marginal deduction: `7198.423 ha`
+- Benchmark cumulative remaining area: `136487.728 ha`
+- Review logic mode: `femic_core`
+- Exact FEMIC logic:
+  - `Less allowance for stand-level retention`: TSR area target applied as a documented aspatial deduction because no exact spatial implementation is available in this lane using the TSR benchmark target of 7198.423 ha.
+- Current compiled status summary: `applied`=1
+- Compiled logic:
+
+#### 180.1. Less allowance for stand-level retention
+
+- Step id: `tfl6_nd_180_stand_level_retention`
+- Kind: `aspatial_fallback`
+- Stage: `LHLB -> THLB`
+- Execution class: `aspatial_fallback`
+- Run status: `applied`
+- TSR provenance: ``
+- Review logic mode: `femic_core`
+- Exact FEMIC logic: TSR area target applied as a documented aspatial deduction because no exact spatial implementation is available in this lane using the TSR benchmark target of 7198.423 ha.
+- FEMIC proposed logic: TSR area target applied as a documented aspatial deduction because no exact spatial implementation is available in this lane.
+- Linked source layers:
+  - `landscape_units_tfl6` | query=`` | status=`` | strategy=`pre_materialized`
+    - artifact: `data/source/tfl_6/strata/landscape_units_tfl6.gpkg`
+  - `bec_tfl6` | query=`` | status=`` | strategy=`pre_materialized`
+    - artifact: `data/source/tfl_6/strata/bec_tfl6.gpkg`
+- Run notes:
+  - Applied the TSR area target as a documented reconstructed-mode aspatial fallback because no exact spatial implementation is available for this recipe row.
+  - The fallback was applied across the current LU-wise reconstructed state without changing the reviewed TSA29 parent-step lane.
+  - Applied a direct-target THLB rollback of 7198.423 ha within the checkpoint-filtered subset.
+
+### Context / interpretation
+
+### 200. Less future roads
+
+- Parent step id: `tfl6_nd_200`
+- Stage: `Context / interpretation`
+- Execution class: `context_only`
+- Ratchet state: `translated`
+- Table provenance: `reference/tfl_6_mngment_plan_2011_ip.pdf#table=4`
+- Benchmark marginal deduction: `1887.592 ha`
+- Benchmark cumulative remaining area: `134598.870 ha`
+- Review logic mode: `femic_core`
+- Exact FEMIC logic:
+  - `Less future roads`: Record this parent step as an explicit no-op: no executable land-base deduction is applied.
+- Current compiled status summary: `applied_noop`=1
+- Compiled logic:
+
+#### 200.1. Less future roads
+
+- Step id: `tfl6_nd_200_future_roads`
+- Kind: `context`
+- Stage: `Context / interpretation`
+- Execution class: `context_only`
+- Run status: `applied_noop`
+- TSR provenance: ``
+- Review logic mode: `femic_core`
+- Exact FEMIC logic: Record this parent step as an explicit no-op: no executable land-base deduction is applied.
+- FEMIC proposed logic: Apply no THLB deduction for this rule.
+- Run notes:
+  - No spatial deduction applied for this rule.
+
+### 210. Long-term landbase
+
+- Parent step id: `tfl6_nd_210`
+- Stage: `Context / interpretation`
+- Execution class: `context_only`
+- Ratchet state: `translated`
+- Table provenance: `reference/tfl_6_mngment_plan_2011_ip.pdf#table=4`
+- Benchmark cumulative remaining area: `134598.870 ha`
+- Review logic mode: `femic_core`
+- Exact FEMIC logic:
+  - `Long-term landbase`: No executable logic has been normalized for this row yet.
+- Current compiled status summary: `unsupported`=1
+- Compiled logic:
+
+#### 210.1. Long-term landbase
+
+- Step id: `tfl6_nd_210_long_term_landbase`
+- Kind: `context`
+- Stage: `Context / interpretation`
+- Execution class: `context_only`
+- Run status: `unsupported`
+- TSR provenance: ``
+- Review logic mode: `femic_core`
+- Exact FEMIC logic: No executable logic has been normalized for this row yet.
+- FEMIC proposed logic: No executable logic has been normalized for this row yet.
+- Run notes:
+  - Normalized action `reference_target` is not executable in v1.
+

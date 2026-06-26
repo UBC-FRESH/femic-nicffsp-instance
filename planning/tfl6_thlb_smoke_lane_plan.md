@@ -77,9 +77,9 @@ P2.4 should proceed in small slices:
    acceptance checks.
 5. **P2.4e**: execute the first bounded smoke run only after recording the
    exact command, stop-line, expected outputs, and acceptance checks.
-   Inspect the produced checkpoint/audit/status artifacts and record
-   benchmark/tolerance findings before deciding whether P2.4 is complete or
-   needs another repair slice.
+   Inspect the produced checkpoint/audit/status artifacts before deciding
+   whether P2.4 is complete or needs another repair slice. Benchmark/tolerance
+   interpretation belongs to P2.5.
 
 ## P2.4c Scaffold Status
 
@@ -96,10 +96,9 @@ P2.4c is complete:
 - no recipe execution, source fetch, DEM/slope derivation, model-input
   generation, XML, Matrix Builder, or Patchworks runtime work occurred.
 
-P2.4d validation/readiness is complete. The next bounded slice is P2.4e:
-execute the exact command recorded below, then inspect the produced checkpoint,
-audit, status, and benchmark/tolerance artifacts before deciding whether P2.4
-is complete or needs another repair slice.
+P2.4d validation/readiness is complete. P2.4e executed the exact command
+recorded below and inspected the produced checkpoint, audit, and status
+artifacts. P2.4 is complete; P2.5 owns benchmark/tolerance interpretation.
 
 ## P2.4d Checkpoint Input Format Note
 
@@ -169,19 +168,73 @@ P2.4e acceptance checks after execution:
   GeoDataFrame.
 - `config/tsr/tfl6_thlb_smoke.audit.json` exists and records row-order,
   gross-area, marginal-area, cumulative-area, fallback, and warning metadata.
-- `config/tsr/tfl6_thlb_smoke.status.md` and
-  `runtime/logs/tsr/tfl6_thlb_smoke_status_report.md` are produced if the
-  runner reaches status-report emission.
+- `config/tsr/thlb_reconstructed.status.md` and a timestamped runtime copy
+  under `runtime/logs/tsr/` are produced if the runner reaches status-report
+  emission.
 - The audit/status output explicitly distinguishes attribute exclusions,
   provisional spatial overlays, aspatial fallbacks, context rows, and deferred
   sensitivity rows.
 - Any failure is recorded against the first failing row and does not trigger
   downstream model-input, XML, Matrix Builder, or Patchworks work.
 
+## P2.4e Smoke-Run Result
+
+P2.4e is complete. The bounded serial reconstructed smoke command above ran
+successfully against `data/input/tfl_6/vri_2025_r1_poly_tfl6.gpkg`.
+
+Tracked review evidence:
+
+- `config/tsr/tfl6_thlb_smoke.audit.json`
+- `config/tsr/thlb_reconstructed.status.md`
+
+Inspected runtime/checkpoint products:
+
+- `data/tsr/tfl6_thlb_smoke_checkpoint.feather`
+- `data/tsr/aflb_checkpoint.feather`
+- `data/tsr/aflb_checkpoint.gpkg`
+- `data/tsr/lhlb_checkpoint.feather`
+- `data/tsr/lhlb_checkpoint.gpkg`
+- timestamped runtime report under `runtime/logs/tsr/`
+
+The bulky checkpoint and runtime products are not accepted as ordinary tracked
+Git content in this slice. They remain regenerable run products unless a later
+data-publication issue explicitly accepts or annexes them.
+
+Observed smoke-run signals:
+
+- input checkpoint / GLB proxy: `217042.719 ha`
+- AFLB checkpoint area: `196833.177 ha`
+- LHLB checkpoint area: `174768.947 ha`
+- final THLB managed area: `144203.485 ha`
+- exact fragment-overlay deductions: `5` steps / `15285.193 ha`
+- explicit aspatial fallback deductions: `4` steps / `27503.649 ha`
+- blocked exact-overlay steps: `0`
+- LU-wise chunks touched: `39`
+- LU-wise reconstructed runtime: `2.67 min`
+- step outcomes: `12` applied, `2` applied no-op, `8` unsupported
+
+The `unsupported` outcomes are the Table 4 milestone/reference rows, not failed
+transformation rows:
+
+- `tfl6_nd_000_reference`
+- `tfl6_nd_030_total_forested`
+- `tfl6_nd_050_total_productive`
+- `tfl6_nd_070_total_operable`
+- `tfl6_nd_160_total_operable_reductions`
+- `tfl6_nd_170_reduced_landbase`
+- `tfl6_nd_190_current_thlb`
+- `tfl6_nd_210_long_term_landbase`
+
+The status report records the adjusted current-AOI current-THLB benchmark as
+`136487.728 ha`; the first smoke result is `144203.485 ha`, or about
+`7715.757 ha` above that target. P2.5 should compare all GLB/AFLB/LHLB/THLB
+milestones and decide whether this gap is an acceptable teaching-model
+tolerance or needs a row-level repair issue.
+
 ## Non-Goals
 
 - No source fetches.
-- No THLB netdown execution in this slice.
+- No additional THLB netdown execution beyond the bounded P2.4e smoke run.
 - No DEM/slope materialization or operability zonal statistics.
 - No model-input, XML, Matrix Builder, or Patchworks runtime work.
 - No final THLB reconstruction claim from the first smoke lane.
