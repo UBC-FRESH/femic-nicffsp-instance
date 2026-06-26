@@ -267,7 +267,7 @@ exist.
     K3Z/NICF identity fields.
 - [ ] P4.2 Generate ForestModel/XML and inspect the semantics that affect
   Patchworks treatment eligibility, curve provenance, products, accounts, and
-  targets.
+  targets (`#37`).
 - [ ] P4.3 Execute Matrix Builder and QA tracks, features, accounts,
   protoaccounts, products, targets, and reports.
 - [ ] P4.4 Complete Patchworks runtime-package build/QA (`#10`) with
@@ -463,6 +463,24 @@ The Phase 1 follow-on issues are placed into the future roadmap as follows:
     but the exporter must preserve those warnings and must not silently convert
     deferred harvest-system rows into accepted operational treatment
     eligibility.
-16. P5.3a / `#21` publication plumbing is complete for the current seed docs,
+16. P4.2 / `#37` is the active Phase 4 lane. It must generate ForestModel XML
+    from the refreshed P4.1 bundle tables and corrected AFLB checkpoint, then
+    inspect XML semantics before Matrix Builder starts. The first bounded
+    command should use `femic export patchworks --tsa tfl6` with
+    `data/model_input_bundle/` as the bundle directory,
+    `data/model_input_bundle/input_geometry/aflb_current.feather` as the
+    checkpoint, and `output/patchworks_tfl6_validated/` as the output
+    directory. Any exporter failure should be recorded as a P4.2 blocker before
+    broad code changes.
+17. The first P4.2 export attempt failed before writing a usable XML package
+    because the reviewed TFL6 bundle uses string AU/curve IDs and audit-oriented
+    columns, while the current generic FMG Patchworks exporter still expects the
+    legacy numeric bundle schema with `tsa`, integer `au_id`,
+    `managed_curve_id`, `unmanaged_curve_id`, `si_level`, and curve point
+    columns `x`/`y`. The blocker is recorded in
+    `planning/tfl6_forestmodel_xml_export_blocker.md`. The next bounded P4.2
+    repair is to create an exporter-compatible schema bridge or deliberately
+    extend the exporter; Matrix Builder and runtime work remain blocked.
+18. P5.3a / `#21` publication plumbing is complete for the current seed docs,
     but P5.3 stays open for final teaching-docs expansion after Phase 4 runtime
     package evidence exists.

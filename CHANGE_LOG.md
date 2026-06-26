@@ -1912,3 +1912,19 @@
 - marked P4.1 complete while keeping ForestModel XML, Matrix Builder,
   Patchworks runtime packaging, and publication out of scope. P4.2 is the next
   executable Phase 4 task.
+
+## 2026-06-26 - Recorded first P4.2 ForestModel XML export blocker
+
+- opened P4.2 child issue `#37` and linked it under Phase 4 parent `#14`;
+- attempted the bounded `femic export patchworks --tsa tfl6` command against
+  the refreshed P4.1 bundle and corrected AFLB checkpoint;
+- confirmed the exporter failed before writing a usable XML package with
+  `au_table.csv missing required column: tsa`;
+- inspected the FMG adapter contract and recorded that the blocker is broader
+  than one missing column because the current exporter expects legacy numeric
+  AU/curve IDs, `si_level`, and `curve_points_table` columns `x`/`y`, while the
+  reviewed TFL6 bundle uses string AU/curve IDs and audit-oriented columns; and
+- added `planning/tfl6_forestmodel_xml_export_blocker.md` to preserve the
+  command, error, root cause, and next targeted repair. No ForestModel XML,
+  fragments, Matrix Builder output, Patchworks runtime package, or publication
+  artifact was generated.
