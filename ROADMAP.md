@@ -280,7 +280,7 @@ exist.
   - [x] P4.4d Run representative scenario smoke and record Phase 4 closeout
     evidence.
 
-## Proposed Phase 5: Publication, Teaching Docs, and Release QA (`#15`)
+## Phase 5: Publication, Teaching Docs, and Release QA (`#15`)
 
 Goal: make the teaching instance reproducible and usable by students/instructors
 after the runtime package has passed direct artifact and launch smoke checks.
@@ -529,11 +529,11 @@ The Phase 1 follow-on issues are placed into the future roadmap as follows:
     and harvested-volume account surfaces are present. Runtime-package
     assembly, Patchworks launch smoke, scenario targets, and final report
     surfaces remain downstream in P4.4/P5.
-21. P4.4 / `#10` is the active Phase 4 lane. It must assemble the first TFL6
-    Patchworks runtime package from the accepted P4.3 tracks and P4.2
-    XML/fragments, then run representative launch/scenario smoke before Phase 4
-    closeout. Do not move to final publication until runtime-package smoke
-    evidence exists. P4.4a is complete: `femic patchworks build-blocks`
+21. P4.4 / `#10` was the final Phase 4 runtime-package lane. It assembled the
+    first TFL6 Patchworks runtime package from the accepted P4.3 tracks and
+    P4.2 XML/fragments, then ran representative launch/scenario smoke before
+    Phase 4 closeout. Do not move to final publication until runtime-package
+    smoke evidence exists. P4.4a is complete: `femic patchworks build-blocks`
     generated `models/tfl6_patchworks_model/blocks/blocks.*` and
     `topology_blocks_200r.csv`; inspection found `24879` valid EPSG:3005 block
     rows, `191168.566 ha`, and `170759` topology edges. Generated blocks,
@@ -553,9 +553,15 @@ The Phase 1 follow-on issues are placed into the future roadmap as follows:
     activated both `product.HarvestedVolume.managed.Total.CC` and
     `flow.even.product.HarvestedVolume.managed.Total.CC`, produced `801`
     scheduled managed `CC` rows, and generated nonzero harvested-volume current
-    in `30` periods. The remaining lifecycle step is Phase 4 closeout: update
-    Phase 4 parent `#14`, close the P4.4 child `#10`, and then move the
-    roadmap edge to Phase 5 publication policy.
-22. P5.3a / `#21` publication plumbing is complete for the current seed docs,
+    in `30` periods. P4.4 child `#10` and Phase 4 parent `#14` are closed.
+22. Phase 4 is complete. The accepted runtime package has refreshed
+    ForestModel/XML, Matrix Builder tracks/accounts, block/topology artifacts,
+    direct launch smoke, and representative scenario-smoke evidence. Generated
+    blocks, tracks, and saved-stage outputs remain ignored locally until Phase
+    5 decides publication policy.
+23. Phase 5 / `#15` is now active. P5.1 / `#18` is the next bounded lane: decide
+    which TFL6 runtime artifacts are tracked, annexed, published, regenerated,
+    or excluded before any final publication/materialization claim is made.
+24. P5.3a / `#21` publication plumbing is complete for the current seed docs,
     but P5.3 stays open for final teaching-docs expansion after Phase 4 runtime
     package evidence exists.

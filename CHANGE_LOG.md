@@ -2070,3 +2070,15 @@
   managed `CC`; and
 - marked P4.4d complete in `ROADMAP.md`, leaving Phase 4 closeout as the next
   lifecycle step.
+
+## 2026-06-26 - Closed Phase 4 runtime-package build lane
+
+- confirmed every Phase 4 child lane is complete: P4.1 model-input bundle,
+  P4.2 ForestModel/XML export, P4.3 Matrix Builder/account QA, and P4.4
+  runtime-package build/launch/scenario smoke;
+- closed P4.4 child issue `#10` after representative Patchworks scenario smoke
+  passed and recorded direct artifact evidence;
+- updated `ROADMAP.md` so Phase 5 is active rather than proposed; and
+- moved the leading roadmap edge to P5.1 / `#18`, the runtime artifact
+  publication-policy decision required before final publication or
+  materialization claims.
