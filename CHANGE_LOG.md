@@ -1587,3 +1587,15 @@
 - marked P3.1b complete in `ROADMAP.md`, leaving P3.1c as the next bounded
   cedar design tranche for Patchworks-facing cedar products, accounts,
   treatment hooks, stakeholder-comparison signals, and report requirements.
+
+## 2026-06-26 - Closed P3.1 cedar Patchworks-facing design
+
+- extended `planning/tfl6_cedar_signal_design.md` with the P3.1c
+  Patchworks-facing contract for cedar product hooks, feature/account families,
+  report/target families, treatment-hook boundaries, yield-curve boundaries,
+  and Phase 4 cedar handoff fields;
+- accepted generic cedar/CW/YC reporting products and account/report surfaces
+  while keeping utility-pole grade, cedar-specific base treatments, hard cedar
+  reserve targets, and cedar-only yield-curve families deferred; and
+- marked P3.1 and P3.1c complete in `ROADMAP.md`, moving the next bounded
+  Phase 3 tranche to P3.2b embedded K3Z/NICF core AOI overlay identity.

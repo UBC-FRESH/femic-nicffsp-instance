@@ -174,17 +174,25 @@ Accepted first behavior:
 Utility-pole-grade cedar should be treated as a product/reporting design lane,
 not as a source-layer extraction step.
 
-Minimum first-bundle requirements:
+Accepted P3.1c first-bundle requirements:
 
 - cedar species signal;
-- old/large proxy or explicit diameter/height fields if available;
+- old-cedar proxy;
+- height/support fields carried for later review;
 - managed/unmanaged treatment eligibility;
 - natural/treated curve provenance;
 - cedar volume by analysis unit or curve group; and
 - a product/account surface that can distinguish generic cedar volume from
-  candidate high-value utility-pole potential.
+  candidate high-value utility-pole potential without pretending pole grade has
+  been field-verified.
 
-Open review questions for P3.1c:
+P3.1c does not accept a DBH, height, or log-grade threshold for utility poles.
+The first bundle should carry `utility_pole_candidate_unresolved` as a
+diagnostic/reporting placeholder only. It should not create a constrained
+harvest product, price premium, or hard target until a later reviewed threshold
+or local inventory source is accepted.
+
+Deferred review questions:
 
 - Which diameter, height, age, or volume thresholds are defensible as a first
   utility-pole proxy?
@@ -208,11 +216,121 @@ Treatment assumptions should stay separate from source extraction:
 
 P3.1c should define whether the first bundle needs:
 
-- cedar-specific products only;
-- cedar-specific accounts/reports only;
-- cedar-specific treatment eligibility;
-- cedar-specific yield-curve groupings; or
-- all of the above.
+- cedar-specific products only: accepted for generic cedar/CW/YC volume
+  reporting;
+- cedar-specific accounts/reports only: accepted for area, residual, scheduled
+  harvest, and stakeholder comparison;
+- cedar-specific treatment eligibility: accepted only as later scenario hooks,
+  not as a base treatment;
+- cedar-specific yield-curve groupings: rejected for the first bundle; cedar is
+  reported against the accepted static AU/yield surfaces; and
+- all of the above: rejected for the first bundle because it would conflate
+  source signals, products, treatments, and curve identity.
+
+## P3.1c Patchworks-Facing Contract
+
+P3.1c accepts the cedar surfaces that Phase 4 must carry into the first
+model-input bundle and Patchworks-facing build. These are contract requirements,
+not generated runtime artifacts in this slice.
+
+### Product Hooks
+
+| Product hook | First definition | Base-model behavior | Deferred blocker |
+| --- | --- | --- | --- |
+| `vol_total_merch` | Existing total merchantable volume surface from accepted curve lane. | Normal scheduling/product accounting input. | None beyond Phase 4 bundle QA. |
+| `vol_cedar` | Cedar-attributed volume for stands where `cedar_present` is true, reported from the accepted curve/product surface and species signal where available. | Reporting/product hook only; no separate curve family. | Phase 4 must define the exact volume allocation method from available curve/product tables. |
+| `vol_cw` | Western redcedar-attributed volume where `CW` is leading or component. | Reporting/product hook only. | Same allocation QA as `vol_cedar`. |
+| `vol_yc` | Yellow-cedar-attributed volume where `YC` is leading or component. | Reporting/product hook only. | Same allocation QA as `vol_cedar`. |
+| `utility_pole_candidate_unresolved` | Boolean/reporting placeholder for cedar-present or old-cedar stands that may warrant later pole-grade review. | Diagnostic only; no premium product, no target, no constraint. | Needs accepted DBH/height/log-grade/local inventory threshold before activation. |
+
+The first model should avoid a fake high-value utility-pole product. It is
+better to expose a transparent unresolved candidate surface than to encode a
+false precision price or grade rule.
+
+### Feature And Account Hooks
+
+Phase 4 should create Patchworks feature/account surfaces that can report area
+and volume by cedar signal and stakeholder group:
+
+| Account family | Required splits | Purpose |
+| --- | --- | --- |
+| Cedar area | `cedar_leading`, `western_redcedar_leading`, `yellow_cedar_leading`, `cedar_present`, `old_cedar`, `large_cedar_proxy` where available | Track residual and scheduled cedar-relevant area. |
+| Cedar volume | total cedar, `CW`, `YC`, old-cedar proxy, utility-pole unresolved candidates | Track scheduled and residual cedar supply without new curve identities. |
+| Cultural cedar context | `cedar_cultural_reserve_context` inside non-THLB, retained, reserve, or unmanaged contexts | Make cultural cedar availability outside scheduling visible. |
+| Harvest candidate | `cedar_harvest_candidate` by `IFM`, `ORIGIN`, AU, and harvest system | Show where cedar can enter scheduled harvest under base or scenario settings. |
+| Embedded group | whole TFL 6, `nicf_k3z_core`, future `nicf_expansion_candidate`, rejected candidates, and `wfp_tfl6_remainder` | Compare NICF/community cedar outcomes against broader TFL 6/WFP-facing outcomes. |
+| Cost/proxy context | `HARVEST_SYSTEM` with `ground_based`, `cable`, and `heli` | Support delivered-cost proxy comparisons for cedar-heavy scenarios. |
+
+These account families are additive reporting dimensions. They must not alter
+AU identity, curve provenance, or treatment eligibility unless a later reviewed
+scenario explicitly uses them as constraints.
+
+### Targets And Reports
+
+The first runtime package should be able to produce these cedar-facing reports
+once Phase 4 builds the model:
+
+| Report / target family | Required content | First behavior |
+| --- | --- | --- |
+| Cedar inventory baseline | gross and THLB-filtered area/volume by cedar signal, group, AU, harvest system, and origin | report-only |
+| Residual old cedar | remaining `old_cedar` area/volume through time by group and harvest system | report-only; no base target |
+| Scheduled cedar harvest | harvested area/volume for `cedar_present`, `CW`, and `YC` by period, group, and harvest system | report-only |
+| Cultural cedar reserve context | cedar signal in non-THLB, retained, reserve, or unmanaged context | report-only in base model |
+| Utility-pole candidate audit | unresolved candidate area/volume and missing threshold warnings | report-only |
+| Stakeholder comparison | NICF/K3Z and future expansion cedar outcomes versus WFP/TFL 6 remainder fibre supply, value proxy, and delivered-cost proxy outputs | report-only in base model; scenario interpretation surface |
+
+Hard cedar reserve targets, utility-pole targets, and cedar-priority scheduling
+targets are deferred scenario designs. They require explicit target levels and
+reviewed tradeoff framing before activation.
+
+### Treatment Hooks
+
+P3.1c keeps cedar treatment behavior deliberately narrow:
+
+- `clearcut_and_plant` remains the only whole-TFL 6 base scheduled treatment.
+- Cedar status does not create a new base treatment.
+- Cedar status does not automatically make a stand unmanaged.
+- Cedar status may be used later as a scenario constraint or target, for
+  example reserving a portion of `old_cedar` or limiting scheduled harvest of
+  `cedar_present` stands.
+- CT and fertilization remain group-gated to `nicf_k3z_core` and future
+  accepted `nicf_expansion_candidate` groups under the P3.5/P3.6 contracts.
+  Cedar status may be reported within those treatments, but it does not broaden
+  CT/fertilization eligibility.
+
+### Yield-Curve Boundary
+
+Cedar signals should be joined to existing AU/yield assignments for reporting.
+They must not create new AUs, split the selected top-area AU set, or create a
+new cedar-only curve lane in the first bundle. The existing static AU and
+VDYP/TIPSY curve surfaces already carry cedar-dominated strata where they are
+large enough to matter.
+
+If a later scenario needs cedar-specific response behavior, that belongs in a
+reviewed treatment/yield sensitivity lane after the first runnable package is
+stable.
+
+### Phase 4 Handoff Fields
+
+The first model-input bundle should carry these cedar fields, either directly
+or through equivalent generated columns:
+
+| Field | Required by P4? | Notes |
+| --- | --- | --- |
+| `cedar_leading` | yes | derived from P3.1b source fields |
+| `western_redcedar_leading` | yes | Cw-specific reports |
+| `yellow_cedar_leading` | yes | Cy/Yc-specific reports |
+| `cedar_present` | yes | `CW`/`YC` component share `>= 20%` |
+| `cedar_pct` | yes | numeric component share for audits and later threshold sensitivity |
+| `old_cedar` | yes | first proxy: `cedar_present` and age `>= 141` |
+| `large_cedar_proxy` | optional / null | carry only if a later accepted threshold exists |
+| `utility_pole_candidate_unresolved` | yes | warning/reporting flag, not a product-grade claim |
+| `cedar_cultural_reserve_context` | yes | depends on final THLB/IFM/retention fields |
+| `cedar_harvest_candidate` | yes | depends on final THLB/IFM fields |
+
+P4 QA should recompute the P3.1b gross diagnostics against the final bundle and
+explain differences caused by THLB filtering, retention, missing curves, or
+embedded NICF/K3Z group assignment.
 
 ## Patchworks-Facing Requirements
 
@@ -225,7 +343,7 @@ Patchworks-facing surfaces later:
 | Product | Generic harvested cedar volume plus a provisional utility-pole candidate product or reporting class if reviewed thresholds are available. |
 | Target/report | Residual old/large cedar context, scheduled cedar volume, and cedar harvest versus reserve tradeoff reports. |
 | Stakeholder comparison | NICF/K3Z cedar outcomes versus whole-TFL and WFP-facing fibre-supply/value/cost signals where available. |
-| Treatment hook | Optional cedar-oriented treatment family, only after P3.1c accepts a teaching treatment design. |
+| Treatment hook | Cedar status may inform later scenario constraints/targets, but no cedar-specific base treatment is accepted in P3.1c. |
 | QA | Source species-area shares must be compared against MP10 forest-cover shares before accepting the first bundle. |
 
 ## P3.1a Decision Boundary
@@ -236,3 +354,7 @@ lock source fields, thresholds, products, targets, or treatments.
 P3.1b accepts the first source fields and derived signals above. P3.1c should
 turn the accepted signals into explicit Patchworks-facing product, account,
 treatment-hook, stakeholder-comparison, and report requirements.
+
+P3.1c accepts those Patchworks-facing requirements while keeping cedar-specific
+treatments, hard reserve targets, utility-pole grade rules, and cedar-only
+yield-curve families deferred until a later reviewed scenario lane.

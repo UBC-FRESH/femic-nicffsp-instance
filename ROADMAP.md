@@ -194,7 +194,7 @@ source-layer and THLB surfaces, without compiling a Patchworks package.
     detail lanes.
   - [x] P3.6e Lock deferred transition semantics with explicit blockers or
     review needs.
-- [ ] P3.1 Complete cedar-signal design (`#8`) for Cw cultural reserve,
+- [x] P3.1 Complete cedar-signal design (`#8`) for Cw cultural reserve,
   utility-pole-grade products, treatments, yield implications, accounts, and
   reporting outputs.
   Priority note: P3.1 remains open with P3.1a already completed, but cedar
@@ -204,7 +204,7 @@ source-layer and THLB surfaces, without compiling a Patchworks package.
     `planning/tfl6_cedar_signal_design.md` without generating model inputs.
   - [x] P3.1b Review and lock cedar source fields, derived signals, and
     provisional unresolved assumptions.
-  - [ ] P3.1c Define Patchworks-facing cedar products, accounts, treatment
+  - [x] P3.1c Define Patchworks-facing cedar products, accounts, treatment
     hooks, stakeholder-comparison signals, and report requirements for the
     first model-input bundle, including student-facing KPI families for
     comparing cedar/community outcomes against broader TFL 6 fibre supply,
@@ -334,11 +334,17 @@ The Phase 1 follow-on issues are placed into the future roadmap as follows:
    `>= 141` age proxy for `old_cedar`. It leaves `large_cedar_proxy`,
    utility-pole thresholds, cedar-specific treatments, and cedar-specific
    products/accounts to P3.1c.
-4. The next bounded tranche is P3.1c: define Patchworks-facing cedar products,
-   accounts, treatment hooks, stakeholder-comparison signals, and report
-   requirements for the first model-input bundle. Keep this as design only:
-   no Phase 4 bundle generation, XML, Matrix Builder, or runtime package work.
-5. After P3.1 closes, continue with P3.2 embedded NICF/K3Z identity and
-   expansion design, then P3.7 run-profile/model-input contract reconciliation.
-   Phase 4 remains blocked until P3.1, P3.2, and P3.7 are complete or
+4. P3.1c and P3.1 are complete. The cedar design lane now defines
+   Patchworks-facing product hooks, feature/account families, report/target
+   families, treatment-hook boundaries, yield-curve boundaries, and Phase 4
+   handoff fields in `planning/tfl6_cedar_signal_design.md`. The first bundle
+   should carry cedar reporting surfaces, but it must not create cedar-specific
+   base treatments, hard cedar reserve targets, utility-pole grade claims, or
+   cedar-only yield-curve families.
+5. The next bounded tranche is P3.2b: define the accepted K3Z/NICF core AOI
+   overlay identity inside the larger TFL 6 model area. Keep this as design
+   and identity-contract work only: no Phase 4 bundle generation, XML, Matrix
+   Builder, or runtime package work.
+6. After P3.2 closes, continue with P3.7 run-profile/model-input contract
+   reconciliation. Phase 4 remains blocked until P3.2 and P3.7 are complete or
    explicitly narrowed by the maintainer.
