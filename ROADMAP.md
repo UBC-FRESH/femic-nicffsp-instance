@@ -190,7 +190,7 @@ source-layer and THLB surfaces, without compiling a Patchworks package.
     and operability-driven eligibility changes.
   - [x] P3.6c Verify transitions consume reviewed treatment options from P3.5
     without redefining treatment semantics.
-  - [ ] P3.6d Record cedar and expansion hook points without completing those
+  - [x] P3.6d Record cedar and expansion hook points without completing those
     detail lanes.
   - [ ] P3.6e Lock deferred transition semantics with explicit blockers or
     review needs.
@@ -377,9 +377,11 @@ The Phase 1 follow-on issues are placed into the future roadmap as follows:
    remains the only whole-TFL 6 base scheduled treatment, CT/fertilization
    remain K3Z/NICF-gated hooks, `IFM` stays treatment eligibility, `ORIGIN`
    stays curve provenance, harvest system stays operational/reporting context,
-   and cedar/expansion treatment details remain deferred. The next bounded
-   tranche is P3.6d: record cedar and expansion hook points without completing
-   those detail lanes.
+   and cedar/expansion treatment details remain deferred. P3.6d records cedar
+   and embedded NICF/K3Z expansion hook fields for P4 handoff while keeping
+   cedar treatment design in P3.1 and expansion-candidate design in P3.2. The
+   next bounded tranche is P3.6e: lock deferred transition semantics with
+   explicit blockers or review needs.
 4. Keep P3.1 cedar design open but paused until P3.3-P3.6 are reviewed/locked
    or explicitly narrowed by the maintainer.
 5. Keep P3.2 embedded NICF/K3Z identity and expansion design idle until

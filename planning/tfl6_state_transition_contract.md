@@ -141,6 +141,79 @@ vocabulary in `planning/tfl6_treatment_option_contract.md`.
 P3.6c therefore accepts the transition rows as consuming the P3.5 treatment
 contract without redefining treatment semantics.
 
+## P3.6d Cedar and Expansion Hook Points
+
+P3.6d records hook points only. It does not complete cedar design, expansion
+candidate design, products, accounts, targets, or scenario toggles.
+
+### Cedar Hooks
+
+P3.1 owns cedar signal design. The transition contract must carry cedar fields
+without making cedar a base treatment or an AU identity dimension.
+
+Required cedar hook fields for P4 handoff:
+
+| Hook field | Source design lane | Transition behavior |
+| --- | --- | --- |
+| `cedar_leading` | P3.1 | Preserve through `grow`, retention, operability masks, and `clearcut_and_plant`; may support reports/accounts. |
+| `western_redcedar_leading` | P3.1 | Preserve as a reporting/product signal; no base transition semantics. |
+| `yellow_cedar_leading` | P3.1 | Preserve as a reporting/product signal; no base transition semantics. |
+| `cedar_present` | P3.1 | Preserve as a reporting/product signal; no base transition semantics. |
+| `old_cedar` | P3.1 | Preserve for residual, reserve, and scheduled-harvest reporting; no automatic base exclusion. |
+| `large_cedar_proxy` | P3.1 | Preserve only after P3.1 accepts source fields/thresholds. |
+| `cedar_cultural_reserve_context` | P3.1 | Can inform reports or later scenario constraints; does not create a hidden THLB exclusion in this contract. |
+| `cedar_harvest_candidate` | P3.1 | Can inform scheduled cedar reports; does not define a cedar-specific treatment here. |
+
+Cedar hooks may affect Phase 4 accounts, products, reports, or later scenario
+constraints. They must not:
+
+- redefine static AU identity;
+- change `ORIGIN` except through accepted treatment transitions;
+- change `IFM` unless a later reviewed cedar scenario explicitly does so; or
+- introduce cedar-specific treatments before P3.1c accepts them.
+
+### Embedded NICF/K3Z and Expansion Hooks
+
+P3.2 owns embedded NICF/K3Z identity and expansion-candidate design. The
+transition contract must carry those identities as reporting/scenario fields,
+not AU fields.
+
+Required embedded-identity hook fields for P4 handoff:
+
+| Hook field | Source design lane | Transition behavior |
+| --- | --- | --- |
+| `embedded_area_class` | P3.2 | Preserve through all base transitions; drives group reports and scenario filters. |
+| `embedded_area_id` | P3.2 | Preserve for provenance and group/account traceability. |
+| `is_nicf_k3z_core` | P3.2 | Gates CT/fertilization hooks with `nicf_k3z_core`; supports separate reports. |
+| `is_nicf_expansion_candidate` | P3.2 | Gates future accepted expansion candidate CT/fertilization hooks; supports scenario toggles. |
+| `is_nicf_expansion_rejected` | P3.2 | Preserve for rejected-pool audit/reporting; not schedulable as expansion by default. |
+| `expansion_candidate_set` | P3.2 | Preserve for candidate-pool comparisons. |
+| `expansion_screen_status` | P3.2 | Preserve for scenario filtering and audit. |
+| `expansion_screen_reason` | P3.2 | Preserve for rejected/accepted candidate audit. |
+| `expansion_scenario_group` | P3.2 | Preserve for future scenario toggles; no base transition semantics. |
+
+Embedded identity hooks may affect group accounts, matching targets, reports,
+and CT/fertilization eligibility gates. They must not:
+
+- redefine static AU identity;
+- duplicate yield curves by group membership alone;
+- make NICF expansion a base treatment; or
+- complete expansion-candidate scenario logic before P3.2 accepts it.
+
+### Hook Handoff Rule
+
+`tr_cedar_expansion_hook` remains a placeholder row. Its purpose is to ensure
+Phase 4 carries the fields needed by P3.1/P3.2, while keeping the base
+transition contract unchanged:
+
+- `grow` preserves cedar and embedded-identity fields;
+- `clearcut_and_plant` preserves cedar and embedded-identity fields for
+  scheduled/residual reporting and moves only accepted state fields;
+- retention and operability masks preserve cedar and embedded-identity fields;
+- CT/fertilization hooks can use `nicf_k3z_core` and accepted future
+  `nicf_expansion_candidate` fields as gates; and
+- cedar/expansion treatment or scenario semantics remain deferred.
+
 ## Deferred Transition Semantics
 
 | Deferred item | Blocker |

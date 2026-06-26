@@ -1547,3 +1547,15 @@
   operational/reporting context; and
 - marked P3.6c complete in `ROADMAP.md`, leaving P3.6d cedar/expansion hook
   point recording as the next bounded tranche.
+
+## 2026-06-26 - Recorded P3.6d cedar and expansion hook points
+
+- extended `planning/tfl6_state_transition_contract.md` with P3.6d cedar hook
+  fields that preserve P3.1 cedar signals through grow, harvest, retention,
+  and operability transitions without creating cedar-specific base treatments
+  or AU identities;
+- added embedded NICF/K3Z and expansion-candidate hook fields from P3.2 so
+  Phase 4 can carry group identities, candidate pools, screen status, and
+  scenario-group fields through transition/account/report surfaces; and
+- marked P3.6d complete in `ROADMAP.md`, leaving P3.6e deferred-transition
+  blocker lock as the next bounded tranche.
