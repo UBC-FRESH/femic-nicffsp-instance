@@ -1103,3 +1103,20 @@
 - marked P2.4 complete in `ROADMAP.md`, moving the next bounded slice to P2.5
   benchmark/tolerance comparison without starting model-input generation, XML,
   Matrix Builder, or Patchworks runtime work.
+
+## 2026-06-25 - Locked P2.5 THLB benchmark tolerance
+
+- opened P2.5 child issue `#25` and recorded the benchmark/tolerance lock in
+  `planning/tfl6_thlb_benchmark_tolerance.md`;
+- accepted the P2.4e final current-THLB result of `144203.485 ha` against the
+  approximate scaled current-AOI benchmark of `136487.728 ha`;
+- recorded the `+7715.757 ha` / `+5.65%` gap as acceptable for the base
+  teaching lane because the scaled benchmark depends on the unverifiable
+  assumption that the post-2011 extension area has the same mean THLB netdown
+  rate as the pre-extension MP10 landbase;
+- updated `planning/tfl6_adjusted_thlb_benchmarks.md` with the same tolerance
+  lock and caveat;
+- marked P2.5 and Phase 2 complete in `ROADMAP.md`; and
+- moved the roadmap edge to Phase 3 model-design assumptions, with P3.1 cedar
+  signal design as the next default child lane unless the maintainer chooses
+  P3.2 expansion design first.

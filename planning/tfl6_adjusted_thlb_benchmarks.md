@@ -77,3 +77,20 @@ not as an accepted fact.
   targets in reports.
 - Do not use these scaled values as final lock values for legal/accounting
   reconciliation.
+
+## P2.5 Tolerance Lock
+
+P2.5 accepted the P2.4e current-THLB smoke result as close enough for the base
+teaching lane:
+
+- scaled current-AOI current-THLB benchmark: `136487.728 ha`;
+- P2.4e reconstructed current-THLB result: `144203.485 ha`;
+- difference: `+7715.757 ha`, or `+5.65%` relative to the scaled benchmark.
+
+The accepted rationale is that the scaled benchmark depends on an unverifiable
+assumption that the post-2011 extension area has the same mean THLB netdown rate
+as the pre-extension MP10 landbase. That assumption is reasonable for a
+teaching approximation but almost certainly not exactly true.
+
+The detailed P2.5 lock is recorded in
+`planning/tfl6_thlb_benchmark_tolerance.md`.

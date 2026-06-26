@@ -125,10 +125,12 @@ starts.
     command, stop-line, outputs, and acceptance checks.
   - [x] P2.4e Execute the first bounded smoke run and inspect checkpoint, audit,
     status, and benchmark/tolerance artifacts.
-- [ ] P2.5 Compare GLB/AFLB/LHLB/THLB milestones against the adjusted current-AOI
-  benchmark targets and record accepted teaching tolerances.
+- [x] P2.5 Compare GLB/AFLB/LHLB/THLB milestones against the adjusted
+  current-AOI benchmark targets and record accepted teaching tolerances (`#25`).
+  The accepted tolerance lock is recorded in
+  `planning/tfl6_thlb_benchmark_tolerance.md`.
 
-## Proposed Phase 3: Model Design Assumptions (`#13`)
+## Phase 3: Model Design Assumptions (`#13`)
 
 Goal: define the reviewed model-design assumptions that depend on the accepted
 source-layer and THLB surfaces, without compiling a Patchworks package.
@@ -224,17 +226,13 @@ The Phase 1 follow-on issues are placed into the future roadmap as follows:
 
 ## Current Next Steps
 
-1. P2.4 / `#24` is complete: the first bounded serial reconstructed THLB
-   smoke run executed against the accepted R1 GeoPackage checkpoint input and
-   produced tracked audit/status evidence in `config/tsr/`.
-2. Continue with P2.5: compare the P2.4e GLB, AFLB, LHLB, and final THLB
-   results against the adjusted current-AOI benchmark targets, decide which
-   gaps are acceptable teaching-model tolerances, and identify any row-level
-   repair issues that must happen before model-input generation. Do not fetch
-   new sources, build DEM/slope products, generate model inputs, or start
-   Patchworks work in this slice.
-3. Keep Phase 3 design issues `#8` and `#9` idle until Phase 2 source-layer and
-   THLB dependencies are accepted or the maintainer explicitly approves a
-   narrower parallel design slice.
-4. Keep Phase 4 runtime issue `#10` idle until Phase 2, Phase 3, and P4.1
-   prerequisites are accepted.
+1. Phase 2 / `#12` is complete: P2.5 accepted the P2.4e final THLB result of
+   `144203.485 ha` against the approximate scaled current-AOI current-THLB
+   benchmark of `136487.728 ha`. The `+7715.757 ha` / `+5.65%` gap is locked
+   as an acceptable base teaching-lane tolerance in
+   `planning/tfl6_thlb_benchmark_tolerance.md`.
+2. Continue with Phase 3 model-design assumptions. The next bounded child lane
+   is P3.1 / `#8` cedar-signal design unless the maintainer explicitly chooses
+   the P3.2 expansion candidate-area design lane first.
+3. Keep Phase 4 runtime issue `#10` idle until Phase 3 design assumptions and
+   P4.1 model-input bundle prerequisites are accepted.
