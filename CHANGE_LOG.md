@@ -2082,3 +2082,17 @@
 - moved the leading roadmap edge to P5.1 / `#18`, the runtime artifact
   publication-policy decision required before final publication or
   materialization claims.
+
+## 2026-06-26 - Decided P5.1 runtime artifact publication policy
+
+- added `planning/tfl6_runtime_artifact_publication_policy.md` to classify the
+  Phase 4 runtime artifacts into tracked contract surfaces, regenerated
+  generated outputs, optional P5.2 release-archive candidates, and excluded
+  saved-stage smoke outputs;
+- kept compact runtime controls in Git: the Patchworks package README, lineage
+  registry, `base.pin`, shared launch helpers, and flow-target helper scripts;
+- kept generated model-input bundles, XML/fragments, Matrix Builder tracks,
+  block/topology files, logs, and saved-stage outputs ignored by default; and
+- moved `ROADMAP.md` to P5.2, where the accepted publication path must be
+  implemented and fresh-environment materialization must be proven before
+  release readiness is claimed.

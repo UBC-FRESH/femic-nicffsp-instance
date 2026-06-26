@@ -89,8 +89,41 @@ artifact_inventory:
           - DISTANCE
           - LENGTH
 
-pending_runtime_surfaces:
-  - Phase 5 artifact publication policy
+publication_policy:
+  issue: 18
+  planning_note: planning/tfl6_runtime_artifact_publication_policy.md
+  tracked_in_git:
+    - models/tfl6_patchworks_model/README.md
+    - models/tfl6_patchworks_model/lineage_registry.yaml
+    - models/tfl6_patchworks_model/analysis/base.pin
+    - models/tfl6_patchworks_model/analysis/base_variant_common.bsh
+    - models/tfl6_patchworks_model/analysis/headless_runtime_common.bsh
+    - models/tfl6_patchworks_model/scripts/targets/flowtargets.bsh
+  regenerated_by_default:
+    - data/model_input_bundle/
+    - output/patchworks_tfl6_validated/
+    - models/tfl6_patchworks_model/tracks/
+    - models/tfl6_patchworks_model/blocks/
+    - models/tfl6_patchworks_model/patchworksLog.csv
+  candidate_p5_2_release_archive:
+    - output/patchworks_tfl6_validated/forestmodel.xml
+    - output/patchworks_tfl6_validated/fragments/fragments.*
+    - models/tfl6_patchworks_model/tracks/*.csv
+    - models/tfl6_patchworks_model/blocks/blocks.*
+    - models/tfl6_patchworks_model/blocks/topology_blocks_200r.csv
+    - models/tfl6_patchworks_model/analysis/base.pin
+    - models/tfl6_patchworks_model/analysis/*.bsh
+    - models/tfl6_patchworks_model/scripts/targets/flowtargets.bsh
+    - models/tfl6_patchworks_model/README.md
+    - models/tfl6_patchworks_model/lineage_registry.yaml
+  excluded_from_publication:
+    - models/tfl6_patchworks_model/analysis/p44*/
+    - models/tfl6_patchworks_model/analysis/headless_runs/
+    - runtime/
+  p5_2_requirement:
+    - decide whether to publish only source data plus rebuild instructions or
+      also publish a reviewed ready-to-launch runtime archive
+    - prove fresh-environment materialization before release readiness is claimed
 
 runtime_launch_surfaces:
   baseline_pin:

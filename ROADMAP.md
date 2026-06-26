@@ -285,7 +285,7 @@ exist.
 Goal: make the teaching instance reproducible and usable by students/instructors
 after the runtime package has passed direct artifact and launch smoke checks.
 
-- [ ] P5.1 Decide which compact runtime artifacts are tracked, annexed,
+- [x] P5.1 Decide which compact runtime artifacts are tracked, annexed,
   published, or regenerated (`#18`).
 - [ ] P5.2 Publish required data/runtime artifacts through the accepted FEMIC
   public-data workflow and prove fresh-environment materialization.
@@ -559,9 +559,18 @@ The Phase 1 follow-on issues are placed into the future roadmap as follows:
     direct launch smoke, and representative scenario-smoke evidence. Generated
     blocks, tracks, and saved-stage outputs remain ignored locally until Phase
     5 decides publication policy.
-23. Phase 5 / `#15` is now active. P5.1 / `#18` is the next bounded lane: decide
-    which TFL6 runtime artifacts are tracked, annexed, published, regenerated,
-    or excluded before any final publication/materialization claim is made.
+23. P5.1 / `#18` is complete. The runtime artifact publication policy is
+    recorded in `planning/tfl6_runtime_artifact_publication_policy.md`. Compact
+    contract and launch surfaces stay tracked in Git; generated model-input
+    bundles, XML/fragments, Matrix Builder tracks, blocks/topology, logs, and
+    saved-stage outputs remain ignored by default; and P5.2 must decide whether
+    to publish only source data plus rebuild instructions or also a reviewed
+    runtime archive. Any published runtime archive must be annexed or otherwise
+    released through an explicit public mechanism and proven materializable in a
+    fresh environment.
 24. P5.3a / `#21` publication plumbing is complete for the current seed docs,
     but P5.3 stays open for final teaching-docs expansion after Phase 4 runtime
     package evidence exists.
+25. P5.2 is the next bounded lane: implement the accepted publication path from
+    P5.1 and prove required fresh-environment materialization before claiming
+    release readiness.
