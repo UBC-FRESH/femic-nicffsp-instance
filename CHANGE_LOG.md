@@ -1272,3 +1272,25 @@
   small accepted THLB-area deltas against printed totals; and
 - marked P3.4a complete in `ROADMAP.md` and moved Current Next Steps to P3.4b
   static-AU-to-MP10-parameter crosswalk planning without generating curves.
+
+## 2026-06-25 - Compiled the first static AU review universe for P3.4b
+
+- compiled a review-only static TFL 6 AU/stratum universe from accepted R1
+  geometry and VDYP7 primary-layer attributes under
+  `planning/tfl6_static_au_universe.{md,json,csv}`;
+- wrote the stand-level review assignment table to
+  `planning/tfl6_stand_to_au_review.csv` and the top-strata summary to
+  `planning/tfl6_static_au_top_strata.csv`;
+- generated the standard FEMIC strata distribution diagnostic at
+  `plots/strata-tfl6.{png,pdf}` using
+  `femic.pipeline.plots.render_strata_distribution_plot`, matching the K3Z and
+  MKRF instance plot specification;
+- recorded 17,223 yieldable review rows, 136 static strata, 18 selected
+  top-area strata covering 90.267% of the yieldable review area, 297 total
+  review AU bins, and 53 selected top-area AU bins;
+- kept AU identity limited to BEC/subzone group, top-two species combo, and
+  L/M/H site-index review class, without encoding THLB, operability, treatment
+  eligibility, cedar, retention, or NICF expansion state; and
+- marked P3.4b complete in `ROADMAP.md` and moved Current Next Steps to P3.4c
+  MP10 TIPSY parameter crosswalk work without writing the model-input bundle or
+  generating curves.

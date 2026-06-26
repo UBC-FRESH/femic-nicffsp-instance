@@ -154,14 +154,17 @@ source-layer and THLB surfaces, without compiling a Patchworks package.
   model-input bundle generation.
   - [x] P3.4a Scrape MP10 Tables 27, 28, and 29 into a reviewed TIPSY
     parameter library.
-  - [ ] P3.4b Crosswalk static TFL 6 AUs to reviewed TIPSY parameter rows or
+  - [x] P3.4b Compile the first static TFL 6 AU/stratum universe and review
+    plots from accepted R1/VDYP source inputs, without writing the model-input
+    bundle.
+  - [ ] P3.4c Crosswalk static TFL 6 AUs to reviewed TIPSY parameter rows or
     explicit fallbacks.
-  - [ ] P3.4c Generate and QA natural/untreated VDYP curves using the shared
+  - [ ] P3.4d Generate and QA natural/untreated VDYP curves using the shared
     `smoothed_bin_pchip` first-growth selector unless a reviewed TFL6-specific
     override is accepted.
-  - [ ] P3.4d Generate and QA treated/managed BatchTIPSY curves from the
+  - [ ] P3.4e Generate and QA treated/managed BatchTIPSY curves from the
     reviewed TIPSY parameter crosswalk.
-  - [ ] P3.4e Lock curve-selection, sparse-support, TIPSY/VDYP overlay, missing
+  - [ ] P3.4f Lock curve-selection, sparse-support, TIPSY/VDYP overlay, missing
     mapping, and species-share QA artifacts for Phase 4.
 - [ ] P3.5 Define TFL 6 treatment options (`#30`) before transition logic and
   Phase 4 model-input bundle generation.
@@ -312,11 +315,11 @@ The Phase 1 follow-on issues are placed into the future roadmap as follows:
    surfaces; the parent FEMIC submodule pointer has been updated to the merged
    closeout commit.
 2. Continue with Phase 3 / P3.4 on branch
-   `feature/p3-model-design-assumptions`: complete P3.4b by crosswalking the
-   locked static TFL 6 AU universe to the reviewed MP10 Tables 27-29 TIPSY
-   parameter library, with confidence flags and explicit fallback reasons.
-   P3.4a produced the reviewed parameter artifacts in
-   `planning/tfl6_mp10_tipsy_parameter_library.{md,json,csv}`.
+   `feature/p3-model-design-assumptions`: complete P3.4c by crosswalking the
+   first review-only static TFL 6 AU/stratum universe to reviewed MP10 Tables
+   27-29 TIPSY parameter rows or explicit fallbacks. Keep this out of
+   `data/model_input_bundle/`; P3.4d/P3.4e own actual VDYP and BatchTIPSY curve
+   generation after the crosswalk is accepted.
 3. After P3.4, proceed in order through P3.5 treatment options and P3.6
    transition logic. Do not jump to cedar details, expansion options, or Phase
    4 until these base model mechanics are locked.
