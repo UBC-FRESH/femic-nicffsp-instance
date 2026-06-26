@@ -1771,3 +1771,22 @@
 - moved the current executable edge to P4.1b, preserving the boundary that no
   model-input bundle, ForestModel/XML, Matrix Builder output, or Patchworks
   runtime package was generated in P4.1a.
+
+## 2026-06-26 - Defined P4.1b model-input bundle paths
+
+- added `planning/tfl6_model_input_bundle_path_contract.md` and
+  `planning/tfl6_model_input_bundle_path_contract.json` to define generated
+  bundle paths and artifact roles before any model-input outputs are written;
+- kept the cross-instance FEMIC convention that generated bundle tables live
+  under `data/model_input_bundle/`, including `au_table.csv`,
+  `curve_table.csv`, and `curve_points_table.csv`;
+- reserved
+  `data/model_input_bundle/input_geometry/thlb_current.feather`,
+  `data/model_input_bundle/input_geometry/thlb_current.gpkg`, and
+  `data/model_input_bundle/input_geometry/thlb_checkpoint_manifest.json` as
+  the stable P4 input geometry handoff for regenerated or rematerialized final
+  THLB geometry; and
+- moved the current executable edge to P4.1c while preserving the boundary that
+  P4.1b did not create `data/model_input_bundle/`, write bundle tables,
+  generate ForestModel/XML, run Matrix Builder, or assemble a Patchworks
+  runtime package.

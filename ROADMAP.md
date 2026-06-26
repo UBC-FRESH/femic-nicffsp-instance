@@ -247,7 +247,7 @@ exist.
   layers, THLB outputs, and model-design assumptions (`#17`).
   - [x] P4.1a Confirm the accepted Phase 2/3 prerequisite artifacts and record
     the bundle input manifest.
-  - [ ] P4.1b Define generated model-input bundle paths and table roles before
+  - [x] P4.1b Define generated model-input bundle paths and table roles before
     writing bundle outputs.
   - [ ] P4.1c Build the first reviewed model-input bundle from the accepted
     THLB, AU, curve, treatment, transition, cedar, and embedded-identity
@@ -407,10 +407,18 @@ The Phase 1 follow-on issues are placed into the future roadmap as follows:
     Phase 2 status report are missing from the current clean checkout and must
     be rematerialized, regenerated, or explicitly waived before P4.1c consumes
     final THLB geometry.
-12. Continue Phase 4 on branch `feature/p4-model-input-bundle`. The current
-    executable edge is P4.1b / `#17`: define generated model-input bundle paths
-    and table roles before writing any bundle outputs. P4.1b should also decide
-    the stable P4 input location/format for rematerialized final THLB geometry.
-13. P5.3a / `#21` publication plumbing is complete for the current seed docs,
+12. P4.1b / `#17` is complete. The generated bundle path and table-role
+    contract is recorded in `planning/tfl6_model_input_bundle_path_contract.md`
+    and `planning/tfl6_model_input_bundle_path_contract.json`. The canonical
+    generated bundle root is `data/model_input_bundle/`, with final THLB
+    geometry staged as
+    `data/model_input_bundle/input_geometry/thlb_current.feather` plus a
+    readable GeoPackage mirror and checkpoint manifest. P4.1b did not create
+    the bundle root or write generated outputs.
+13. Continue Phase 4 on branch `feature/p4-model-input-bundle`. The current
+    executable edge is P4.1c / `#17`: build the first reviewed model-input
+    bundle from accepted THLB, AU, curve, treatment, transition, cedar, and
+    embedded-identity contracts.
+14. P5.3a / `#21` publication plumbing is complete for the current seed docs,
     but P5.3 stays open for final teaching-docs expansion after Phase 4 runtime
     package evidence exists.
