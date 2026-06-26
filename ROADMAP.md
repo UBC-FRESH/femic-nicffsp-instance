@@ -196,10 +196,24 @@ source-layer and THLB surfaces, without compiling a Patchworks package.
     provisional unresolved assumptions.
   - [ ] P3.1c Define Patchworks-facing cedar products, accounts, treatment
     hooks, and report requirements for the first model-input bundle.
-- [ ] P3.2 Complete expansion candidate-area design (`#9`) for unallocated
+- [ ] P3.2 Complete embedded NICF/K3Z identity and expansion candidate-area
+  design (`#9`) for group accounts, matching targets, reports, unallocated
   candidate pools, productivity screening, and AAC uplift constraints.
   Priority note: P3.2 remains open but sits downstream of the base AU, yield,
-  treatment, and transition contract lanes.
+  treatment, and transition contract lanes. It must preserve the embedded
+  K3Z/NICF core and expansion-candidate identities inside the larger TFL 6
+  model without redefining AUs.
+  - [x] P3.2a Record the embedded identity contract in
+    `planning/tfl6_nicf_embedded_identity.md`.
+  - [ ] P3.2b Define accepted K3Z/NICF core AOI overlay identity inside the
+    TFL 6 model area.
+  - [ ] P3.2c Define expansion candidate, rejected-candidate, and TFL 6
+    remainder identity classes and source/provenance fields.
+  - [ ] P3.2d Define Patchworks group accounts, matching targets, scenario
+    toggles, and reports needed to track K3Z/NICF core and expansion
+    candidates separately.
+  - [ ] P3.2e Lock dependency handoff to P3.7/P4.1 so embedded identity fields
+    appear in the model-input bundle without changing AU identity.
 - [ ] P3.7 Update the TFL 6 run-profile/model-input contract with reviewed
   design decisions and explicit rejected/deferred assumptions.
 
@@ -303,8 +317,11 @@ The Phase 1 follow-on issues are placed into the future roadmap as follows:
    expansion options, or Phase 4 until these base model mechanics are locked.
 4. Keep P3.1 cedar design open but paused until P3.3-P3.6 are reviewed/locked
    or explicitly narrowed by the maintainer.
-5. Keep P3.2 expansion design idle until P3.3-P3.6 and the necessary cedar
-   hooks are reviewed/locked or explicitly paused by the maintainer.
+5. Keep P3.2 embedded NICF/K3Z identity and expansion design idle until
+   P3.3-P3.6 and the necessary cedar hooks are reviewed/locked or explicitly
+   paused by the maintainer. When resumed, P3.2 must preserve K3Z/NICF core
+   and expansion-candidate identities as Patchworks grouping/reporting
+   attributes without redefining AU identity.
 6. Keep Phase 4 runtime issue `#10` idle until Phase 3 design assumptions and
    P4.1 model-input bundle prerequisites are accepted. In particular, do not
    start P4.1 until P3.3, P3.4, P3.5, and P3.6 are reviewed/locked or

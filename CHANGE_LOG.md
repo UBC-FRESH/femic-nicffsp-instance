@@ -1207,3 +1207,14 @@
 - moved the run-profile/model-input contract update to P3.7; and
 - updated Current Next Steps so cedar and expansion remain open but paused
   until the base AU/yield/treatment/transition mechanics are locked.
+
+## 2026-06-25 - Added embedded NICF/K3Z identity contract
+
+- added `planning/tfl6_nicf_embedded_identity.md` to require the original
+  K3Z/NICF core and expansion candidate areas to remain separately auditable
+  inside the larger TFL 6 model;
+- updated P3.2 / `#9` roadmap scope so embedded identity supports Patchworks
+  group accounts, matching targets, scenario toggles, and reports;
+- recorded that embedded NICF/K3Z and expansion-candidate identities are
+  stand/group attributes, not AU identity fields; and
+- kept P3.2 downstream of the base AU/yield/treatment/transition mechanics.
