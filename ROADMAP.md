@@ -430,13 +430,12 @@ The Phase 1 follow-on issues are placed into the future roadmap as follows:
     the full Patchworks stand universe. The stand universe is the AFLB
     resultant-fragment surface; THLB is the managed subset, and
     `NTHLB = AFLB - THLB` remains unmanaged/full-retention forest that still
-    needs untreated VDYP curves. The AFLB resultant-fragment handoff has been
-    materialized at `data/model_input_bundle/input_geometry/aflb_current.*`
-    with `26186` rows and `196833.177 ha`. The current executable edge remains
-    P4.1c.2: build the first core bundle tables from the AFLB
-    resultant-fragment universe, the THLB/NTHLB managed-share state surface,
-    and the accepted AU, curve, treatment, transition, cedar, and
-    embedded-identity contracts.
+    needs untreated VDYP curves. The attempted AFLB handoff from
+    `aflb_checkpoint.6a351f3a223a` was invalidated because the runner-labeled
+    AFLB checkpoint still contains non-treed/non-forested BCLCS rows. The
+    current executable edge is to repair and rerun the GLB-to-AFLB
+    non-forest/non-productive filter before resuming P4.1c.2 bundle CSV
+    generation.
 14. P5.3a / `#21` publication plumbing is complete for the current seed docs,
     but P5.3 stays open for final teaching-docs expansion after Phase 4 runtime
     package evidence exists.

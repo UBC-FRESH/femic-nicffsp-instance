@@ -1845,3 +1845,16 @@
   null/empty/invalid geometries; and
 - kept P4.1c.2 open because bundle CSV tables, ForestModel XML, Matrix Builder
   outputs, and Patchworks runtime packaging are still pending.
+
+## 2026-06-26 - Invalidated the attempted AFLB handoff
+
+- stopped P4.1c.2 bundle generation after direct inspection showed that the
+  runner-labeled `aflb_checkpoint.6a351f3a223a` still contains non-treed and
+  non-forested BCLCS rows;
+- removed the generated `aflb_current.feather`, `aflb_current.gpkg`, and
+  `aflb_checkpoint_manifest.json` outputs so downstream bundle code cannot use
+  the invalid handoff accidentally;
+- recorded that the GLB-to-AFLB non-forest/non-productive filter is too
+  permissive for the Patchworks stand universe; and
+- blocked core bundle CSV generation until the GLB-to-AFLB lane is corrected
+  and rerun.

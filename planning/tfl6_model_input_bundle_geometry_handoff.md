@@ -77,6 +77,9 @@ artifact policy or treated as local runtime cache.
 
 ## AFLB Resultant-Fragment Handoff
 
+Status: **invalidated on 2026-06-26**. Do not use the generated
+`aflb_current.*` handoff described below for bundle generation.
+
 P4.1c.2 rematerialized the accepted AFLB checkpoint partitions into the
 canonical generated input-geometry handoff:
 
@@ -113,14 +116,31 @@ resultant-fragment surface can split one source polygon into multiple
 Patchworks fragments. The generated `aflb_fragment_id` is therefore the stable
 P4.1c row key for bundle-table construction.
 
+### Invalidation Finding
+
+The generated handoff was removed after direct inspection showed that the
+runner-labeled `aflb_checkpoint.6a351f3a223a` still contained non-treed and
+non-forested BCLCS rows. Examples in the supposed AFLB checkpoint included:
+
+- `N/L/U` with `for_mgmt_land_base_ind=N`: `2850.573 ha`;
+- `N/L/U/EL/ES` with `for_mgmt_land_base_ind=N`: `2382.025 ha`; and
+- additional `N/L/U` rows with `for_mgmt_land_base_ind=Y`: `212.358 ha`.
+
+By definition, AFLB must be GLB net of non-treed, non-forested, and
+non-productive stands. Therefore the GLB-to-AFLB filter in the reviewed
+THLB recipe/runner output is too permissive for this model-building handoff.
+The immediate repair is to correct and rerun the GLB-to-AFLB lane before any
+bundle CSV generation resumes.
+
 ## Scope Boundary
 
-This pass regenerated the final THLB/NTHLB state handoff and materialized the
-AFLB resultant-fragment handoff. It did not build bundle CSV tables,
-ForestModel XML, Matrix Builder outputs, a Patchworks runtime package, or Phase
-5 publication policy work.
+This pass regenerated the final THLB/NTHLB state handoff, but the attempted
+AFLB resultant-fragment handoff was invalidated and removed. It did not build
+bundle CSV tables, ForestModel XML, Matrix Builder outputs, a Patchworks
+runtime package, or Phase 5 publication policy work.
 
-The next P4.1c move is to build the first core model-input bundle tables from
-the AFLB resultant-fragment universe, this THLB/NTHLB managed-share state
+The next P4.1c move is blocked by the GLB-to-AFLB filter repair: rebuild a
+valid AFLB resultant-fragment universe first, then build core model-input
+bundle tables from that universe, the corrected THLB/NTHLB managed-share state
 surface, and the accepted AU, curve, treatment, transition, cedar, and
 embedded-identity contracts.
