@@ -250,6 +250,38 @@ The first Patchworks-facing design should support these scenario controls:
        candidates
      - no CT/fert activation outside reviewed NICF groups
 
+P3.2e Handoff To P3.7 And P4.1
+------------------------------
+
+P3.2e closes the embedded identity design lane by defining what later contract
+and implementation lanes must carry forward. The handoff remains design-only:
+it does not materialize outside-AOI expansion geometry, run candidate screening,
+generate model-input tables, emit ForestModel XML, run Matrix Builder, or build
+a Patchworks runtime package.
+
+Required model-input contract fields:
+
+- ``embedded_area_class``;
+- ``embedded_area_id``;
+- ``inside_tfl6_aoi``;
+- ``outside_tfl6_aoi_expansion_source``;
+- ``is_nicf_k3z_core``;
+- ``nicf_k3z_core_external_reference``;
+- ``core_overlay_status``;
+- ``is_nicf_expansion_candidate``;
+- ``is_nicf_expansion_rejected``;
+- ``expansion_candidate_set``;
+- ``expansion_screen_status``;
+- ``expansion_screen_reason``; and
+- ``expansion_scenario_group``.
+
+Phase 4 model-input generation must keep current-AOI TFL 6 base stands
+separate from external expansion source geography. Rejected and unreviewed
+expansion pools are report/audit surfaces only. Embedded-area fields may split
+accounts, targets, toggles, reports, treatment eligibility, harvest-system
+summaries, cedar outputs, and THLB-equivalent summaries, but they must not
+become AU keys, curve-family keys, or hidden THLB deductions.
+
 Reproducibility Trail
 ---------------------
 

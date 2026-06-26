@@ -1664,3 +1664,18 @@
 - updated `docs/teaching-challenges.rst` so outside-AOI NICF expansion source
   lands are clearly separated from current-AOI TFL 6 base geography; and
 - rebuilt the instance Sphinx docs with warnings treated as errors.
+
+## 2026-06-26 - Closed P3.2 embedded identity handoff
+
+- added a P3.2e handoff section to
+  `planning/tfl6_nicf_embedded_identity.md` defining the embedded identity
+  fields that P3.7/P4.1 must carry into the run-profile and model-input
+  contract;
+- locked dependency boundaries showing that embedded identity may split
+  accounts, targets, toggles, reports, treatment gates, harvest-system
+  summaries, cedar outputs, and THLB-equivalent summaries, but must not become
+  an AU key, curve-family key, or hidden THLB deduction;
+- updated `docs/phase3-cedar-nicf-expansion.rst` with the P3.2e handoff field
+  list for student and maintainer visibility; and
+- marked P3.2e and P3.2 complete in `ROADMAP.md`, moving the next bounded
+  Phase 3 tranche to P3.7 run-profile/model-input contract reconciliation.

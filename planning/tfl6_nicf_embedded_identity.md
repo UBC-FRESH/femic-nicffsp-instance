@@ -292,16 +292,82 @@ Rejected P3.2d shortcuts:
   constraint.
 - Do not treat delivered-cost proxy accounts as real delivered-cost forecasts.
 
+## P3.2e Dependency Handoff To P3.7/P4.1
+
+P3.2e locks what later contract and implementation lanes must carry forward.
+This is still design-only. It does not materialize outside-AOI expansion
+geometry, run candidate screening, generate the model-input bundle, emit XML,
+run Matrix Builder, or assemble a Patchworks runtime package.
+
+Required P3.7 run-profile/model-input contract fields:
+
+| Field / family | Required handoff | P3.7/P4.1 expectation |
+| --- | --- | --- |
+| `embedded_area_class` | canonical group class from P3.2c | required field in the model-input contract |
+| `embedded_area_id` | source/provenance ID for TFL 6, K3Z reference, or candidate pool | required field where source attribution exists |
+| `inside_tfl6_aoi` | boolean AOI membership | required field; current-AOI TFL 6 base area must remain separable |
+| `outside_tfl6_aoi_expansion_source` | boolean expansion-source membership | required field for any external candidate materialization lane |
+| `is_nicf_k3z_core` | material intersection with accepted K3Z tenure source | required QA field; expected current-AOI area remains effectively zero |
+| `nicf_k3z_core_external_reference` | K3Z tenure reported as external/reference identity | required if K3Z is reported beside current-AOI TFL 6 outputs |
+| `core_overlay_status` | `inside_current_tfl6`, `outside_current_tfl6`, or `tiny_boundary_overlap` | required QA field if K3Z overlay is carried |
+| `is_nicf_expansion_candidate` | accepted outside-AOI candidate flag | required only after a reviewed external candidate screen exists |
+| `is_nicf_expansion_rejected` | rejected outside-AOI candidate flag | required only after a reviewed external candidate screen exists |
+| `expansion_candidate_set` | candidate-pool identifier | required for any accepted, rejected, or unreviewed candidate pool |
+| `expansion_screen_status` | P3.2c status code | required for candidate audit and rejected-pool reporting |
+| `expansion_screen_reason` | human-readable or coded screen reason | required for rejected and reviewed candidates |
+| `expansion_scenario_group` | scenario/toggle group label | required before activating expansion scenarios |
+
+Required P4.1 model-input behavior:
+
+- Carry current-AOI TFL 6 base stands as `wfp_tfl6_remainder` unless a later
+  reviewed overlay assigns a more specific current-AOI reporting class.
+- Keep original K3Z tenure identity as external/reference provenance unless a
+  later broadened-geometry lane explicitly activates it.
+- Treat outside-AOI expansion candidates as external source geography. They
+  must not inflate base current-AOI TFL 6 area accounts.
+- Carry rejected and unreviewed expansion pools as report/audit surfaces only.
+  They are not schedulable and must not contribute to active expansion scenario
+  area.
+- Keep embedded-area fields out of AU keys, curve-family keys, and base THLB
+  netdown rules.
+- Join embedded-area fields to treatment eligibility, harvest-system, cedar,
+  and THLB/THLB-equivalent fields only as reporting, account, target, or
+  scenario-filter dimensions.
+
+Dependency boundaries:
+
+| Lane | Handoff from P3.2 | Boundary |
+| --- | --- | --- |
+| P3.3 AU contract | embedded identity is explicitly not an AU key | no AU rebuild solely for K3Z/NICF or expansion status |
+| P3.4 yield curves | embedded identity may split reports, not curve families | no duplicate curve families solely for embedded groups |
+| P3.5 treatments | CT/fertilization hooks can be gated to K3Z/NICF and accepted expansion groups | no activation outside reviewed NICF groups |
+| P3.6 transitions | preserve embedded fields through grow, retention, harvest, and scenario hooks | no base transition changes caused only by embedded identity |
+| P3.1 cedar design | cedar reports split by embedded group | no cedar hard target or cedar-only treatment created by P3.2 |
+| P2 THLB/source layers | use accepted TFL 6 THLB for current-AOI stands and THLB-equivalent fields for external candidates | no new THLB source-layer work in P3.2 |
+| P3.7 run profile | name and require the fields above | no runtime build |
+| P4.1 model-input bundle | implement field generation and QA from reviewed sources | first implementation lane for bundle tables |
+| Phase 4 Patchworks build | consume generated fields for accounts, targets, toggles, and reports | no Matrix Builder or runtime package in P3.2 |
+
+P3.2 is complete when this handoff is recorded, roadmap and issue state are
+synchronized, and the governing issue is closed with an explicit closeout
+comment.
+
 ## Dependencies
 
-- P3.3 / `#28` owns AU identity and curve-lane semantics.
-- P3.4 / `#29` owns actual yield-curve build and QA.
-- P3.5 / `#30` owns treatment options.
-- P3.6 / `#31` owns base state-transition logic and should expose hook points
-  for embedded-area groups without completing expansion details.
+- P3.3 / `#28` owns AU identity and curve-lane semantics; P3.2 fields are not
+  AU keys.
+- P3.4 / `#29` owns actual yield-curve build and QA; P3.2 fields are report
+  splits, not curve-family keys.
+- P3.5 / `#30` owns treatment options; P3.2 provides group gates for
+  NICF-specific CT/fertilization hooks.
+- P3.6 / `#31` owns base state-transition logic; P3.2 fields must be preserved
+  through transitions without changing base state semantics.
+- P3.1 / `#8` owns cedar signals; P3.2 provides embedded group splits for
+  cedar reports and stakeholder comparisons.
 - P3.2 / `#9` owns the embedded NICF/K3Z and expansion-candidate identity
-  design.
-- P3.7 owns final run-profile/model-input field naming after P3.2 is reviewed.
+  design, and hands implementation naming to P3.7/P4.1.
+- P3.7 owns final run-profile/model-input field naming before Phase 4 starts.
+- P4.1 owns executable field generation and QA in the model-input bundle.
 
 ## Acceptance Checks
 
@@ -315,3 +381,5 @@ Rejected P3.2d shortcuts:
 - Embedded identity fields do not change AU assignment or curve family.
 - Expansion scenarios can change inclusion/eligibility/reporting without
   redefining AUs.
+- P3.7/P4.1 handoff fields and dependency boundaries are explicit before P3.2
+  closes.

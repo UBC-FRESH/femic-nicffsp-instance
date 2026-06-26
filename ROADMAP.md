@@ -209,7 +209,7 @@ source-layer and THLB surfaces, without compiling a Patchworks package.
     first model-input bundle, including student-facing KPI families for
     comparing cedar/community outcomes against broader TFL 6 fibre supply,
     value, and delivered-cost proxies.
-- [ ] P3.2 Complete embedded NICF/K3Z identity and expansion candidate-area
+- [x] P3.2 Complete embedded NICF/K3Z identity and expansion candidate-area
   design (`#9`) for group accounts, matching targets, reports, unallocated
   candidate pools, productivity screening, and AAC uplift constraints.
   Priority note: P3.2 remains open but sits downstream of the base AU, yield,
@@ -227,7 +227,7 @@ source-layer and THLB surfaces, without compiling a Patchworks package.
     candidates separately, including WFP-facing fibre supply, value, and
     delivered-cost tradeoff signals where available and multi-perspective KPI
     outputs for student scenario projects.
-  - [ ] P3.2e Lock dependency handoff to P3.7/P4.1 so embedded identity fields
+  - [x] P3.2e Lock dependency handoff to P3.7/P4.1 so embedded identity fields
     appear in the model-input bundle without changing AU identity.
 - [ ] P3.7 Update the TFL 6 run-profile/model-input contract with reviewed
   design decisions and explicit rejected/deferred assumptions.
@@ -361,9 +361,12 @@ The Phase 1 follow-on issues are placed into the future roadmap as follows:
    reports needed to compare K3Z/NICF reference identity, outside-AOI expansion
    candidates, rejected/unreviewed pools, WFP TFL 6 remainder, and whole-model
    teaching outcomes without changing AU identity.
-8. The next bounded tranche is P3.2e: lock the dependency handoff to P3.7/P4.1
-   so the embedded identity fields enter the model-input contract without
-   starting bundle generation, XML, Matrix Builder, or runtime-package work.
-9. After P3.2 closes, continue with P3.7 run-profile/model-input contract
-   reconciliation. Phase 4 remains blocked until P3.2 and P3.7 are complete or
-   explicitly narrowed by the maintainer.
+8. P3.2e and P3.2 are complete. The embedded identity contract now hands
+   required field families and dependency boundaries to P3.7/P4.1 so
+   current-AOI TFL 6 base geography, K3Z reference identity, outside-AOI
+   expansion candidates, rejected/unreviewed pools, and Patchworks comparison
+   surfaces can enter the model-input contract without changing AU identity.
+9. The next bounded tranche is P3.7: reconcile the TFL 6 run-profile and
+   model-input contract with all reviewed Phase 3 design decisions. Phase 4
+   remains blocked until P3.7 is complete or explicitly narrowed by the
+   maintainer.
