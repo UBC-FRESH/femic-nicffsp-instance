@@ -129,8 +129,10 @@ starts.
   current-AOI benchmark targets and record accepted teaching tolerances (`#25`).
   The accepted tolerance lock is recorded in
   `planning/tfl6_thlb_benchmark_tolerance.md`.
+- [ ] P2.6 Close out the Phase 2 branch/PR lifecycle before starting Phase 3
+  implementation (`#26`).
 
-## Phase 3: Model Design Assumptions (`#13`)
+## Proposed Phase 3: Model Design Assumptions (`#13`)
 
 Goal: define the reviewed model-design assumptions that depend on the accepted
 source-layer and THLB surfaces, without compiling a Patchworks package.
@@ -226,13 +228,17 @@ The Phase 1 follow-on issues are placed into the future roadmap as follows:
 
 ## Current Next Steps
 
-1. Phase 2 / `#12` is complete: P2.5 accepted the P2.4e final THLB result of
-   `144203.485 ha` against the approximate scaled current-AOI current-THLB
-   benchmark of `136487.728 ha`. The `+7715.757 ha` / `+5.65%` gap is locked
-   as an acceptable base teaching-lane tolerance in
-   `planning/tfl6_thlb_benchmark_tolerance.md`.
-2. Continue with Phase 3 model-design assumptions. The next bounded child lane
-   is P3.1 / `#8` cedar-signal design unless the maintainer explicitly chooses
-   the P3.2 expansion candidate-area design lane first.
-3. Keep Phase 4 runtime issue `#10` idle until Phase 3 design assumptions and
+1. Phase 2 implementation is functionally complete through P2.5: the P2.4e
+   final THLB result of `144203.485 ha` is accepted against the approximate
+   scaled current-AOI current-THLB benchmark of `136487.728 ha`; the
+   `+7715.757 ha` / `+5.65%` gap is locked as an acceptable base teaching-lane
+   tolerance in `planning/tfl6_thlb_benchmark_tolerance.md`.
+2. Continue with P2.6 / `#26`: close out the Phase 2 branch/PR lifecycle before
+   any Phase 3 implementation starts. Open/reconcile the
+   `feature/p2-source-layer-thlb-inputs` PR against instance `main`, then update
+   the parent FEMIC submodule pointer after the instance closeout merge if
+   `main` advances.
+3. Keep Phase 3 design issues `#8` and `#9` idle until P2.6 closeout is done
+   or the maintainer explicitly approves a narrower parallel design slice.
+4. Keep Phase 4 runtime issue `#10` idle until Phase 3 design assumptions and
    P4.1 model-input bundle prerequisites are accepted.

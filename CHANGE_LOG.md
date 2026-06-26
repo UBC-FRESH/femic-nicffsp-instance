@@ -1120,3 +1120,13 @@
 - moved the roadmap edge to Phase 3 model-design assumptions, with P3.1 cedar
   signal design as the next default child lane unless the maintainer chooses
   P3.2 expansion design first.
+
+## 2026-06-25 - Restored explicit Phase 2 closeout gate
+
+- reopened Phase 2 parent issue `#12` because the branch/PR lifecycle closeout
+  must happen before Phase 3 implementation starts;
+- opened P2.6 child issue `#26` for the Phase 2 branch/PR closeout;
+- updated `ROADMAP.md` so P2.6 is the active Current Next Step and Phase 3 is
+  proposed until the Phase 2 closeout PR path is reconciled; and
+- kept the P2.5 THLB tolerance lock intact while correcting the lifecycle
+  sequencing mistake.
