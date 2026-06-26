@@ -243,7 +243,7 @@ Goal: generate, inspect, and QA the first runnable TFL 6 Patchworks teaching
 package only after the reviewed source-layer, THLB, and model-design contracts
 exist.
 
-- [ ] P4.1 Build the reviewed model-input bundle from accepted TFL 6 source
+- [x] P4.1 Build the reviewed model-input bundle from accepted TFL 6 source
   layers, THLB outputs, and model-design assumptions (`#17`).
   - [x] P4.1a Confirm the accepted Phase 2/3 prerequisite artifacts and record
     the bundle input manifest.
@@ -262,7 +262,7 @@ exist.
     - [x] P4.1c.2 Build the first core bundle tables from the AFLB
       resultant-fragment universe, the regenerated THLB/NTHLB managed-share
       state surface, and the accepted Phase 3 model-design contracts.
-  - [ ] P4.1d Run lightweight bundle QA for readability, required fields,
+  - [x] P4.1d Run lightweight bundle QA for readability, required fields,
     missing AU/curve mappings, treatment eligibility flags, and embedded
     K3Z/NICF identity fields.
 - [ ] P4.2 Generate ForestModel/XML and inspect the semantics that affect
@@ -451,6 +451,18 @@ The Phase 1 follow-on issues are placed into the future roadmap as follows:
     executable edge is P4.1d lightweight bundle QA; do not start ForestModel
     XML, Matrix Builder, or Patchworks runtime work until P4.1d passes or the
     maintainer explicitly narrows the gate.
-15. P5.3a / `#21` publication plumbing is complete for the current seed docs,
+15. P4.1d / `#17` is complete. Lightweight bundle QA is recorded in
+    `planning/tfl6_model_input_bundle_qa.md`. Required generated tables are
+    readable; area reconciliation passes; stand IDs are unique; all AU,
+    natural-curve, and treated-curve mappings are non-null; all stand-level
+    curve IDs exist in the curve metadata table; every curve has point rows;
+    and cedar/embedded/harvest-system support tables match the stand count. The
+    accepted warning gates are `136` sparse treated-curve fallback rows and
+    harvest-system assignment deferred as `unassigned_review_required` for all
+    rows. P4.2 may start ForestModel/XML generation from the reviewed bundle,
+    but the exporter must preserve those warnings and must not silently convert
+    deferred harvest-system rows into accepted operational treatment
+    eligibility.
+16. P5.3a / `#21` publication plumbing is complete for the current seed docs,
     but P5.3 stays open for final teaching-docs expansion after Phase 4 runtime
     package evidence exists.

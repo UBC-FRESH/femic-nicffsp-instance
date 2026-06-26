@@ -1894,3 +1894,21 @@
   publication out of scope. P4.1d lightweight bundle QA is the next gate, with
   harvest-system assignment still explicitly deferred as
   `unassigned_review_required`.
+
+## 2026-06-26 - Completed P4.1d model-input bundle QA
+
+- added `planning/tfl6_model_input_bundle_qa.md` as the tracked QA audit for
+  the first generated model-input bundle;
+- confirmed required generated tables are readable, stand IDs are unique, area
+  reconciliation passes, and all AU, natural-curve, and treated-curve mappings
+  are non-null;
+- confirmed every stand-level curve ID exists in `curve_table.csv`, every curve
+  has point rows, cedar/embedded/harvest-system support tables match the stand
+  count, and the bundle keeps the AFLB stand universe separate from THLB/NTHLB
+  managed-share state;
+- accepted warning-only gates for `136` sparse treated-curve fallback rows and
+  deferred harvest-system assignment as `unassigned_review_required` for all
+  stands; and
+- marked P4.1 complete while keeping ForestModel XML, Matrix Builder,
+  Patchworks runtime packaging, and publication out of scope. P4.2 is the next
+  executable Phase 4 task.
