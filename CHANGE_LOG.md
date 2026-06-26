@@ -1721,3 +1721,15 @@
   have not started; and
 - prepared the `feature/p3-model-design-assumptions` branch for the instance
   PR/merge workflow.
+
+## 2026-06-26 - Added standalone docs publication workflow
+
+- added `.github/workflows/docs-pages.yml` so the TFL 6 instance repository can
+  publish its Sphinx docs to GitHub Pages;
+- added `docs/requirements.txt` with the minimal Sphinx build dependency for
+  the Pages workflow;
+- marked P5.3a as complete in `ROADMAP.md` while keeping P5.3 and issue `#21`
+  open for the later full teaching-docs expansion after Phase 4 runtime
+  package evidence exists; and
+- preserved the boundary that this publishes the current Phase 2/Phase 3 seed
+  docs only and does not start Phase 4 model-input or runtime-package work.

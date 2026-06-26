@@ -268,6 +268,11 @@ after the runtime package has passed direct artifact and launch smoke checks.
   THLB validation notes, scenario teaching workflows, advanced student
   challenges, multi-perspective stakeholder/KPI scenario interpretation, known
   limitations, and warning-clean Sphinx build evidence.
+  - [x] P5.3a Publish the current seed docs through a standalone GitHub Pages
+    workflow so Phase 2/Phase 3 documentation is visible before the final
+    Phase 5 teaching-docs expansion.
+  - [ ] P5.3b Expand final K3Z/TSA29-style teaching docs after Phase 4 runtime
+    package evidence exists.
 - [ ] P5.4 Run final release QA across source materialization, instance rebuild,
   Patchworks launch smoke, and documentation checks.
 
@@ -378,6 +383,9 @@ The Phase 1 follow-on issues are placed into the future roadmap as follows:
    environment and materializing/unlocking the public-data `FADM_TSA.gdb`
    payload.
 10. Phase 3 closeout is complete once parent issue `#13` is closed and the
-   instance feature branch is handed to the prescribed PR/merge workflow. Phase
-   4 must not start until the Phase 3 PR is reviewed/merged or explicitly
-   narrowed by the maintainer.
+    instance feature branch is handed to the prescribed PR/merge workflow. Phase
+    4 must not start until the Phase 3 PR is reviewed/merged or explicitly
+    narrowed by the maintainer.
+11. P5.3a / `#21` publication plumbing is in progress to make the current
+    Phase 2/Phase 3 seed Sphinx docs available at the standalone instance
+    GitHub Pages URL. This does not close P5.3 or start Phase 4 runtime work.
