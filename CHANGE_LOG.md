@@ -1679,3 +1679,30 @@
   list for student and maintainer visibility; and
 - marked P3.2e and P3.2 complete in `ROADMAP.md`, moving the next bounded
   Phase 3 tranche to P3.7 run-profile/model-input contract reconciliation.
+
+## 2026-06-26 - Started P3.7 model-input contract reconciliation
+
+- opened P3.7 child issue `#32` and linked it from `ROADMAP.md`;
+- added `planning/tfl6_model_input_contract.md` to collect accepted Phase 2/3
+  artifacts, required model-input field families, Phase 4 QA checks, and
+  rejected/deferred assumptions before bundle generation starts;
+- updated `config/run_profile.tfl6.yaml` with Phase 3 contract metadata,
+  accepted artifact paths, required field families, and explicit P3.7
+  non-goals;
+- updated `config/tipsy/tfl6.yaml` so the reviewed P3.4 BTC handoff and
+  managed-curve artifacts supersede the bootstrap fallback rule metadata; and
+- added `docs/phase3-model-input-contract.rst` to the Sphinx toctree.
+
+## 2026-06-26 - Locked P3.7 model-input contract
+
+- marked P3.7 and its subtasks complete in `ROADMAP.md`, moving the next
+  bounded tranche to Phase 3 closeout rather than Phase 4 implementation;
+- recorded the P3.7 validation state in
+  `planning/tfl6_model_input_contract.md`: YAML parsing and warning-clean
+  Sphinx passed, while full `femic prep validate-case` remains blocked by
+  local Arbutus/DataLad public-data materialization and auth state;
+- preserved the Phase 4 boundary that no model-input bundle, outside-AOI
+  expansion screening, ForestModel XML, Matrix Builder output, or runtime
+  package is generated inside P3.7; and
+- prepared issue `#32` and Phase 3 parent `#13` for final P3.7 status
+  synchronization.

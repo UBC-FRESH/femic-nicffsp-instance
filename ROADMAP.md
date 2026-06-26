@@ -229,8 +229,13 @@ source-layer and THLB surfaces, without compiling a Patchworks package.
     outputs for student scenario projects.
   - [x] P3.2e Lock dependency handoff to P3.7/P4.1 so embedded identity fields
     appear in the model-input bundle without changing AU identity.
-- [ ] P3.7 Update the TFL 6 run-profile/model-input contract with reviewed
-  design decisions and explicit rejected/deferred assumptions.
+- [x] P3.7 Update the TFL 6 run-profile/model-input contract (`#32`) with
+  reviewed design decisions and explicit rejected/deferred assumptions.
+  - [x] P3.7a Record the Phase 4 model-input contract field families and
+    accepted source artifacts.
+  - [x] P3.7b Reconcile `config/run_profile.tfl6.yaml` and
+    `config/tipsy/tfl6.yaml` metadata with accepted Phase 3 artifacts.
+  - [x] P3.7c Lock rejected/deferred assumptions and Phase 4 entry guardrails.
 
 ## Proposed Phase 4: Model Inputs and Patchworks Runtime Package (`#14`)
 
@@ -366,7 +371,13 @@ The Phase 1 follow-on issues are placed into the future roadmap as follows:
    current-AOI TFL 6 base geography, K3Z reference identity, outside-AOI
    expansion candidates, rejected/unreviewed pools, and Patchworks comparison
    surfaces can enter the model-input contract without changing AU identity.
-9. The next bounded tranche is P3.7: reconcile the TFL 6 run-profile and
-   model-input contract with all reviewed Phase 3 design decisions. Phase 4
-   remains blocked until P3.7 is complete or explicitly narrowed by the
-   maintainer.
+9. P3.7 / `#32` is complete. The TFL 6 run-profile and model-input contract
+   now point at the reviewed Phase 2/3 artifacts, required field families, and
+   explicit Phase 4 entry guardrails. YAML parsing and Sphinx passed; the
+   full `femic prep validate-case` preflight remains blocked by local
+   Arbutus/DataLad public-data materialization/auth state, not by the P3.7
+   config syntax.
+10. The next bounded tranche is Phase 3 closeout: verify issue/roadmap/docs
+   synchronization, close or comment on Phase 3 parent `#13` as appropriate,
+   and prepare the branch for the prescribed PR/merge workflow before Phase 4
+   starts.

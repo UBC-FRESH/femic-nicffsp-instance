@@ -1,5 +1,6 @@
 selection:
-  # FMU/code mode (legacy field name: selection.tsa):
+  # FMU/code mode. The FEMIC schema still uses the legacy key name
+  # `selection.tsa`; for this instance the value is the TFL code.
   tsa:
     - "tfl6"
 
@@ -8,16 +9,17 @@ selection:
   boundary_layer: "tfl_6_boundary"
   boundary_code: "tfl6"
 
-  # Source context paths tracked for P1.2 provenance. FEMIC currently consumes
-  # boundary_path directly; LU reference context is carried here as historical
-  # NICF FSP context while TFL 6 is the active AOI.
+  # Source context paths tracked for provenance only. FEMIC consumes
+  # boundary_path directly; NICF FSP LU/PDF context is historical pre-pivot
+  # evidence, not the active AOI or K3Z tenure identity.
   source_context:
     lu_reference_path: "data/source/nicf_fsp/lu_reference/nicf_lu_reference.shp"
     fsp_pdf_path: "data/source/nicf_fsp/nicf_forest_stewardship_plan_2020.pdf"
 
-  # First bootstrap defaults follow the K3Z teaching-template structure, but
-  # not K3Z's generated AU identities or treatment/product semantics. Reconfirm
-  # these after the TFL 6-clipped VRI input layers exist.
+  # Accepted P3 static-AU identity boundary: BEC zone/subzone/variant/phase
+  # where present, top-two species, and local L/M/H site-index class. Cedar,
+  # embedded NICF/K3Z identity, expansion status, THLB, operability, treatment
+  # eligibility, and scenario state stay out of AU keys.
   stratification:
     bec_grouping: "subzone"
     species_combo_count: 2
@@ -37,6 +39,50 @@ source_paths:
     - "bc/vri/2024/VEG_COMP_VDYP7_INPUT_POLY_AND_LAYER_2024.gdb"
     - "bc/vri/2019/VEG_COMP_VDYP7_INPUT_POLY_AND_LAYER_2019.gdb"
 
+phase3_contract:
+  model_input_contract_path: "planning/tfl6_model_input_contract.md"
+  au_contract_path: "planning/tfl6_au_yield_curve_contract.md"
+  treatment_contract_path: "planning/tfl6_treatment_option_contract.md"
+  transition_contract_path: "planning/tfl6_state_transition_contract.md"
+  cedar_contract_path: "planning/tfl6_cedar_signal_design.md"
+  embedded_identity_contract_path: "planning/tfl6_nicf_embedded_identity.md"
+  accepted_artifacts:
+    static_au_universe: "planning/tfl6_static_au_universe.csv"
+    stand_to_au_review: "planning/tfl6_stand_to_au_review.csv"
+    natural_curves: "planning/tfl6_first_growth_au_curves.csv"
+    natural_curve_diagnostics: "planning/tfl6_first_growth_shape_diagnostics.csv"
+    natural_curve_remap_audit: "planning/tfl6_first_growth_au_remap_audit.csv"
+    tipsy_parameter_library: "planning/tfl6_mp10_tipsy_parameter_library.csv"
+    tipsy_parameter_crosswalk: "planning/tfl6_tipsy_parameter_crosswalk.csv"
+    btc_input: "data/03_input-tfl6.csv"
+    btc_output: "data/04_output-tfl6.csv"
+    btc_error: "data/04_error-tfl6.csv"
+    treated_curves: "planning/tfl6_tipsy_managed_curves.csv"
+    treated_curve_diagnostics: "planning/tfl6_tipsy_managed_curve_diagnostics.csv"
+  required_field_families:
+    - stand_identity
+    - area_accounting
+    - thlb_ifm
+    - curve_provenance
+    - static_au
+    - au_remap
+    - yield_curves
+    - treatment_options
+    - transitions
+    - harvest_system
+    - cedar
+    - embedded_identity
+    - k3z_reference
+    - outside_aoi_expansion
+    - reporting_groups
+  rejected_in_p3_7:
+    - model_input_bundle_generation
+    - outside_aoi_expansion_geometry_materialization
+    - candidate_screen_execution
+    - forestmodel_xml_generation
+    - matrix_builder
+    - patchworks_runtime_package
+
 modes:
   resume: false
   dry_run: false
@@ -44,15 +90,16 @@ modes:
   skip_checks: false
   debug_rows: null
 
-  # First compile boundary: generate a complete teaching baseline rather than
-  # sampled diagnostics, then revisit performance after the first source-derived
-  # bundle exists.
+  # Accepted P3 curve build boundary: all reviewed TFL 6 records are eligible
+  # for curve construction; selected top-area AU families get source-derived
+  # curves, and non-selected AU bins use the recorded lexicographic remap audit.
   vdyp_sampling_mode: all
   vdyp_two_pass_rebin: true
   vdyp_min_stands_per_si_bin: 10
   managed_curve_mode: tipsy
 
-  # Optional managed-curve synthesis controls for a later review slice:
+  # Deferred managed-curve sensitivity controls. Do not activate silently in
+  # P3.7 or P4.1; any use requires an explicit reviewed scenario lane.
   # managed_curve_x_scale: 0.8
   # managed_curve_y_scale: 1.2
   # managed_curve_truncate_at_culm: true

@@ -1,19 +1,33 @@
-# Bootstrap TIPSY rule configuration for the TFL 6 case.
-# This file is intentionally provisional until the AOI source inspection and
-# K3Z-template adaptation pass establish real managed-AU families.
+# TFL 6 BatchTIPSY rule/config metadata.
+# P3.4 generated the accepted BTC handoff and managed curve artifacts from the
+# reviewed MP10 Tables 27-29 parameter library and TFL 6 AU crosswalk. This YAML
+# remains a metadata/compatibility surface for FEMIC config discovery; the
+# authoritative Phase 3 managed-curve inputs are listed under metadata below.
 
 schema_version: 1
 tsa_code: "tfl6"  # legacy key name; use as the case/FMU code where applicable
 
 metadata:
   source_tsr:
-    - title: ""
-      year: null
-      url: ""
-      notes: ""
+    - title: "Tree Farm Licence 6 Management Plan 10 information package"
+      year: 2011
+      url: "reference/tfl_6_mngment_plan_2011_ip.pdf"
+      notes: "Source for reviewed MP10 Tables 27, 28, and 29 parameter extraction."
   author: "UBC FRESH"
   created_utc: "2026-06-23T00:00:00Z"
-  notes: "Bootstrap placeholder; replace rules after source/AU inspection."
+  notes: "Reviewed P3.4 artifacts supersede the bootstrap fallback rule below."
+  accepted_artifacts:
+    parameter_library: "planning/tfl6_mp10_tipsy_parameter_library.csv"
+    parameter_crosswalk: "planning/tfl6_tipsy_parameter_crosswalk.csv"
+    btc_input: "data/03_input-tfl6.csv"
+    btc_output: "data/04_output-tfl6.csv"
+    btc_error: "data/04_error-tfl6.csv"
+    managed_curves: "planning/tfl6_tipsy_managed_curves.csv"
+    managed_curve_diagnostics: "planning/tfl6_tipsy_managed_curve_diagnostics.csv"
+  boundaries:
+    - "MP10 AU codes are parameter evidence, not canonical TFL 6 AU identity."
+    - "Static TFL 6 AUs remain BEC/species/SI classes from P3.3/P3.4."
+    - "Scheduled fertilization scenarios are not implied by TIPSY yield assumptions."
 
 defaults:
   e:
@@ -29,7 +43,8 @@ defaults:
     SI_c1: 1.0
     SI_c2: 0.0
 
-# Rule order is first-match-wins.
+# Legacy fallback rule order is first-match-wins. These rules are retained only
+# for schema compatibility and must not override the accepted P3.4 BTC handoff.
 rules:
   - id: "bootstrap_softwood_rule"
     when:
