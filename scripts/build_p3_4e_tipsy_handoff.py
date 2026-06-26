@@ -111,6 +111,10 @@ def _site_index_for_species(
     site_index = _float_or_zero(value)
     if site_index <= 0:
         site_index = _float_or_zero(crosswalk_row.get("mp10_weighted_si"))
+    if site_index <= 0:
+        site_index = _float_or_zero(crosswalk_row.get("mean_si"))
+    if site_index <= 0:
+        site_index = _float_or_zero(crosswalk_row.get("median_si"))
     return round(site_index, 2)
 
 
@@ -248,7 +252,9 @@ def build_handoff() -> tuple[pd.DataFrame, pd.DataFrame, dict[str, object]]:
         ),
         "other_species_policy": (
             "MP10 other species share is encoded as Dr for this executable review "
-            "handoff and flagged in the curve-id map."
+            "handoff and flagged in the curve-id map. If the matched MP10 row has "
+            "no deciduous/other site-index value, the static TFL 6 AU mean SI is "
+            "used as the BTC Dr SI fallback."
         ),
         "planted_percent_policy": (
             "Rows are emitted as 100 percent planted/managed because the reviewed "

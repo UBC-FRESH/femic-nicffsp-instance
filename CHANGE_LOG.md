@@ -1436,3 +1436,21 @@
 - updated `ROADMAP.md` so P3.4e1 is complete while P3.4e2 remains the next
   bounded step: run BTC/BatchTIPSY from `data/03_input-tfl6.csv`, parse
   `04_output-tfl6.csv`, and generate treated/managed curve QA overlays.
+
+## 2026-06-26 - Ran and QAed P3.4e treated/managed BatchTIPSY curves
+
+- ran BTC/BatchTIPSY from the TFL 6 handoff `data/03_input-tfl6.csv` and wrote
+  the cleaned output `data/04_output-tfl6.csv` plus `data/04_error-tfl6.csv`;
+- fixed the P3.4e handoff builder so MP10 `other` species rows encoded as `Dr`
+  use the static TFL 6 AU mean SI when the matched MP10 row has no usable
+  deciduous/other SI value, removing the initial BTC `Dr` site-index errors;
+- added `scripts/build_p3_4e_tipsy_qa.py`, parsed `8316` treated-curve rows to
+  `planning/tfl6_tipsy_managed_curves.csv`, and wrote
+  `planning/tfl6_tipsy_managed_curve_diagnostics.{csv,md}`;
+- generated `77` treated-vs-natural overlay plots with the manifest in
+  `planning/tfl6_tipsy_vdyp_overlay_manifest.{csv,md}`;
+- recorded that the cleaned BTC error file has `0` error rows and complete
+  coverage of the `231` selected AU/lane handoff rows; and
+- marked P3.4 complete in `ROADMAP.md`, with the remaining treated-curve caveat
+  limited to small fallback `CWHvm1_DR` rows that show high treated-to-natural
+  max-volume ratios and should remain visible during later bundle QA.

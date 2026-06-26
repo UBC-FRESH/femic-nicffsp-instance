@@ -150,7 +150,7 @@ source-layer and THLB surfaces, without compiling a Patchworks package.
   - [x] P3.3b Review and lock the static AU identity, legacy MP10 TIPSY
     parameter extraction boundary, curve-lane assumptions, and
     operability/treatment-eligibility interaction.
-- [ ] P3.4 Build and QA actual TFL 6 yield curves (`#29`) before Phase 4
+- [x] P3.4 Build and QA actual TFL 6 yield curves (`#29`) before Phase 4
   model-input bundle generation.
   - [x] P3.4a Scrape MP10 Tables 27, 28, and 29 into a reviewed TIPSY
     parameter library.
@@ -163,11 +163,11 @@ source-layer and THLB surfaces, without compiling a Patchworks package.
     top-area AU set using the shared `smoothed_bin_pchip` first-growth
     selector, with selected-AU L/M/H comparison plots, fit-diagnostic plots,
     and a lexicographic remap audit for non-selected AU bins.
-  - [ ] P3.4e Generate and QA treated/managed BatchTIPSY curves from the
+  - [x] P3.4e Generate and QA treated/managed BatchTIPSY curves from the
     reviewed TIPSY parameter crosswalk.
     - [x] P3.4e1 Emit the selected-AU BTC handoff as `data/03_input-tfl6.csv`
       with curve-ID mapping and translation-policy manifest.
-    - [ ] P3.4e2 Run BTC/BatchTIPSY from the `tfl6` handoff, parse
+    - [x] P3.4e2 Run BTC/BatchTIPSY from the `tfl6` handoff, parse
       `04_output-tfl6.csv`, and build treated/managed curve QA overlays.
   - [x] P3.4f Review selected-set natural-curve shape diagnostics and document
     that the current VDYP smoothing/tail behavior is good enough to proceed
@@ -340,13 +340,19 @@ The Phase 1 follow-on issues are placed into the future roadmap as follows:
    P3.5, or P3.6. P3.4e1 emitted the selected-AU BTC handoff at
    `data/03_input-tfl6.csv` with curve-ID mapping in
    `planning/tfl6_tipsy_btc_curve_id_map.csv` and translation-policy review in
-   `planning/tfl6_tipsy_btc_handoff_manifest.{json,md}`. The next bounded
-   P3.4e step is to run BTC/BatchTIPSY from the `tfl6` handoff, parse
-   `04_output-tfl6.csv`, and generate treated/managed curve QA overlays.
-3. Continue Phase 3 in order through P3.4e treated/managed curves, P3.5
-   treatment options, and P3.6
-   transition logic. Do not jump to cedar details, expansion options, or Phase
-   4 until these base model mechanics are locked.
+   `planning/tfl6_tipsy_btc_handoff_manifest.{json,md}`. P3.4e2 ran BTC from
+   that handoff, wrote `data/04_output-tfl6.csv` and `data/04_error-tfl6.csv`,
+   parsed `8316` treated-curve rows to
+   `planning/tfl6_tipsy_managed_curves.csv`, and generated `77`
+   treated-vs-natural overlay plots with diagnostics in
+   `planning/tfl6_tipsy_managed_curve_diagnostics.{csv,md}`. The cleaned BTC
+   error file has `0` error rows. The remaining treated-curve caveat is
+   row-level: high treated-to-natural ratios are concentrated in small
+   fallback `CWHvm1_DR` rows, while dominant selected strata are good enough to
+   proceed with treatment-option design.
+3. Continue Phase 3 in order with P3.5 treatment options, then P3.6 transition
+   logic. Do not jump to cedar details, expansion options, or Phase 4 until
+   these base model mechanics are locked.
 4. Keep P3.1 cedar design open but paused until P3.3-P3.6 are reviewed/locked
    or explicitly narrowed by the maintainer.
 5. Keep P3.2 embedded NICF/K3Z identity and expansion design idle until

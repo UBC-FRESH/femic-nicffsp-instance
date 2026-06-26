@@ -20,7 +20,7 @@ or emit Patchworks runtime files.
 - Feature IDs: 600000 + selected_AU_area_rank * 10 + lane_code.
 - OAF: MP10 percent reductions are converted to BTC factors.
 - Regen delay: Use first numeric MP10 delay where present; otherwise existing-managed lanes use 0 and future-managed uses 1.
-- Other species: MP10 other species share is encoded as Dr for this executable review handoff and flagged in the curve-id map.
+- Other species: MP10 other species share is encoded as Dr for this executable review handoff and flagged in the curve-id map. If the matched MP10 row has no deciduous/other site-index value, the static TFL 6 AU mean SI is used as the BTC Dr SI fallback.
 - Planted percent: Rows are emitted as 100 percent planted/managed because the reviewed MP10 rows provide one managed species composition; the MP10 future row text is treated as delay context, not planted-area proportion.
 
 ## Confidence Counts
