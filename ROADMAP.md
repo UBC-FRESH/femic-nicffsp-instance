@@ -237,7 +237,7 @@ source-layer and THLB surfaces, without compiling a Patchworks package.
     `config/tipsy/tfl6.yaml` metadata with accepted Phase 3 artifacts.
   - [x] P3.7c Lock rejected/deferred assumptions and Phase 4 entry guardrails.
 
-## Proposed Phase 4: Model Inputs and Patchworks Runtime Package (`#14`)
+## Phase 4: Model Inputs and Patchworks Runtime Package (`#14`)
 
 Goal: generate, inspect, and QA the first runnable TFL 6 Patchworks teaching
 package only after the reviewed source-layer, THLB, and model-design contracts
@@ -245,6 +245,16 @@ exist.
 
 - [ ] P4.1 Build the reviewed model-input bundle from accepted TFL 6 source
   layers, THLB outputs, and model-design assumptions (`#17`).
+  - [ ] P4.1a Confirm the accepted Phase 2/3 prerequisite artifacts and record
+    the bundle input manifest.
+  - [ ] P4.1b Define generated model-input bundle paths and table roles before
+    writing bundle outputs.
+  - [ ] P4.1c Build the first reviewed model-input bundle from the accepted
+    THLB, AU, curve, treatment, transition, cedar, and embedded-identity
+    contracts.
+  - [ ] P4.1d Run lightweight bundle QA for readability, required fields,
+    missing AU/curve mappings, treatment eligibility flags, and embedded
+    K3Z/NICF identity fields.
 - [ ] P4.2 Generate ForestModel/XML and inspect the semantics that affect
   Patchworks treatment eligibility, curve provenance, products, accounts, and
   targets.
@@ -384,10 +394,13 @@ The Phase 1 follow-on issues are placed into the future roadmap as follows:
    `femic prep validate-case` all passed after loading the local Arbutus
    environment and materializing/unlocking the public-data `FADM_TSA.gdb`
    payload.
-10. Phase 3 closeout is complete once parent issue `#13` is closed and the
-    instance feature branch is handed to the prescribed PR/merge workflow. Phase
-    4 must not start until the Phase 3 PR is reviewed/merged or explicitly
-    narrowed by the maintainer.
-11. P5.3a / `#21` publication plumbing is in progress to make the current
-    Phase 2/Phase 3 seed Sphinx docs available at the standalone instance
-    GitHub Pages URL. This does not close P5.3 or start Phase 4 runtime work.
+10. Phase 3 closeout is complete. PR `#33` was merged to instance `main`, the
+    parent FEMIC submodule pointer was updated, and the standalone docs are
+    published with the RTD theme.
+11. Phase 4 is now active on branch `feature/p4-model-input-bundle`. The
+    current executable edge is P4.1a / `#17`: confirm the accepted Phase 2/3
+    prerequisite artifacts and record the bundle input manifest before writing
+    any model-input bundle outputs.
+12. P5.3a / `#21` publication plumbing is complete for the current seed docs,
+    but P5.3 stays open for final teaching-docs expansion after Phase 4 runtime
+    package evidence exists.

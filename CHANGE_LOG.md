@@ -1742,3 +1742,14 @@
 - updated `docs/requirements.txt` to install `sphinx-rtd-theme`; and
 - preserved the existing warning-clean Sphinx build and GitHub Pages
   publication workflow.
+
+## 2026-06-26 - Started Phase 4 model-input bundle lane
+
+- created the `feature/p4-model-input-bundle` branch from merged instance
+  `main`;
+- changed Phase 4 from proposed to active in `ROADMAP.md`;
+- decomposed P4.1 / `#17` into prerequisite-manifest, bundle-path,
+  first-bundle-build, and lightweight-QA subtasks; and
+- moved the current executable edge to P4.1a while preserving the boundary that
+  no ForestModel XML, Matrix Builder, or Patchworks runtime-package work starts
+  inside the first model-input bundle slice.
