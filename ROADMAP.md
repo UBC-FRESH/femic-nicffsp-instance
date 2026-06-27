@@ -289,7 +289,7 @@ after the runtime package has passed direct artifact and launch smoke checks.
   published, or regenerated (`#18`).
 - [x] P5.2 Publish required data/runtime artifacts through the accepted FEMIC
   public-data workflow and prove fresh-environment materialization (`#39`).
-- [ ] P5.3 Build full Sphinx teaching documentation (`#21`) modeled on the
+- [x] P5.3 Build full Sphinx teaching documentation (`#21`) modeled on the
   `femic-k3z-instance` and `femic-tsa29-instance` documentation surfaces,
   including quickstart instructions, rebuild workflow, source-data provenance,
   THLB validation notes, scenario teaching workflows, advanced student
@@ -300,7 +300,7 @@ after the runtime package has passed direct artifact and launch smoke checks.
     Phase 5 teaching-docs expansion.
     - [x] P5.3a.1 Use the same RTD Sphinx theme pattern as the K3Z and MKRF
       instance documentation.
-  - [ ] P5.3b Expand final K3Z/TSA29-style teaching docs after Phase 4 runtime
+  - [x] P5.3b Expand final K3Z/TSA29-style teaching docs after Phase 4 runtime
     package evidence exists.
     - [x] P5.3b.1 Add the Phase 5 runtime-release page covering the published
       archive, DataLad/git-annex materialization commands, Arbutus remote
@@ -319,6 +319,9 @@ after the runtime package has passed direct artifact and launch smoke checks.
       students to the baseline runtime package, stakeholder/KPI families,
       first outputs to inspect, starter exercises, advanced project prompts,
       reporting rules, and first-release scenario limits.
+    - [x] P5.3b.5 Add known-limitations and release-readiness documentation
+      that consolidates first-release caveats, clarifies what does and does not
+      block the teaching release, and defines the P5.4 final QA checklist.
 - [ ] P5.4 Run final release QA across source materialization, instance rebuild,
   Patchworks launch smoke, and documentation checks.
 
@@ -634,3 +637,7 @@ The Phase 1 follow-on issues are placed into the future roadmap as follows:
     families, first Patchworks outputs to inspect, starter exercises, advanced
     project prompts, reporting rules, and first-release limits for generic
     `CC`, deferred harvest-system splits, and outside-AOI NICF expansion.
+    P5.3b.5 is complete: `docs/phase5-known-limitations-release-readiness.rst`
+    now consolidates first-release caveats, release-readiness boundaries, and
+    the P5.4 final QA checklist. P5.3 / `#21` is complete and the next bounded
+    Phase 5 lane is P5.4 release QA.

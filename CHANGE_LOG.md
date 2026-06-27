@@ -2206,3 +2206,15 @@
   splits, and outside-AOI NICF expansion; and
 - marked P5.3b.4 complete in `ROADMAP.md` while leaving the broader final
   teaching-docs expansion open.
+
+## 2026-06-26 - Added Phase 5 known-limitations and release-readiness docs
+
+- added `docs/phase5-known-limitations-release-readiness.rst` to consolidate
+  first-release caveats, release-readiness boundaries, and the final P5.4 QA
+  checklist;
+- documented that generic `CC`, deferred harvest-system splits, strategic RMZ
+  spatial replacement, outside-AOI NICF expansion implementation, cedar-specific
+  reserve/utility-pole policy, and VDYP/TIPSY sensitivity work are follow-on
+  tasks rather than blockers for the first teaching release; and
+- marked P5.3b and P5.3 complete in `ROADMAP.md`, leaving P5.4 final release QA
+  as the next Phase 5 lane.

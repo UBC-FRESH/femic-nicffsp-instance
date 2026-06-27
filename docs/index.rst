@@ -18,4 +18,5 @@ trail used to create it.
    phase5-runtime-quickstart
    phase5-rebuild-provenance
    phase5-scenario-teaching-workflows
+   phase5-known-limitations-release-readiness
    teaching-challenges
