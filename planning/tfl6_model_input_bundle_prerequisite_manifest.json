@@ -1,0 +1,206 @@
+{
+  "case_id": "tfl6",
+  "phase_task": "P4.1a",
+  "status": "prerequisite_manifest_recorded",
+  "created_date": "2026-06-26",
+  "scope": "Accepted Phase 2 and Phase 3 prerequisite inventory for the first TFL 6 model-input bundle. This manifest does not generate model-input tables, ForestModel XML, Matrix Builder outputs, or a Patchworks runtime package.",
+  "accepted_metrics": {
+    "glb_proxy_area_ha": 217042.7189502805,
+    "aflb_checkpoint_area_ha": 196833.17664564302,
+    "lhlb_checkpoint_area_ha": 174768.94714385076,
+    "thlb_final_managed_area_ha": 144203.48477359748,
+    "thlb_benchmark_gap_status": "accepted_within_teaching_tolerance",
+    "source": "config/tsr/tfl6_thlb_smoke.audit.json"
+  },
+  "accepted_prerequisites": [
+    {
+      "id": "run_profile",
+      "path": "config/run_profile.tfl6.yaml",
+      "role": "active TFL 6 run profile and Phase 3 artifact registry",
+      "availability": "present"
+    },
+    {
+      "id": "input_layer_manifest",
+      "path": "data/input/tfl_6/input_layers_manifest.json",
+      "role": "accepted clipped 2025 VRI/VDYP input-layer manifest",
+      "availability": "present"
+    },
+    {
+      "id": "r1_current_aoi",
+      "path": "data/input/tfl_6/vri_2025_r1_poly_tfl6.gpkg",
+      "role": "accepted clipped 2025 R1 geometry and stand attribution source",
+      "availability": "present"
+    },
+    {
+      "id": "vdyp_poly_current_aoi",
+      "path": "data/input/tfl_6/vdyp7_input_poly_2025_tfl6.parquet",
+      "role": "accepted 2025 VDYP7 polygon table filtered to TFL 6 feature IDs",
+      "availability": "present"
+    },
+    {
+      "id": "vdyp_layer_current_aoi",
+      "path": "data/input/tfl_6/vdyp7_input_layer_2025_tfl6.parquet",
+      "role": "accepted 2025 VDYP7 layer table filtered to TFL 6 feature IDs",
+      "availability": "present"
+    },
+    {
+      "id": "thlb_recipe",
+      "path": "config/tsr/thlb_netdown.recipe.yaml",
+      "role": "accepted Phase 2 THLB recipe surface",
+      "availability": "present"
+    },
+    {
+      "id": "thlb_status",
+      "path": "config/tsr/thlb_reconstructed.status.md",
+      "role": "accepted Phase 2 THLB status and benchmark-tolerance summary",
+      "availability": "present"
+    },
+    {
+      "id": "thlb_audit",
+      "path": "config/tsr/tfl6_thlb_smoke.audit.json",
+      "role": "accepted Phase 2 THLB execution audit and milestone metrics",
+      "availability": "present"
+    },
+    {
+      "id": "aflb_checkpoint_feather",
+      "path": "data/tsr/aflb_checkpoint.feather",
+      "role": "AFLB restart checkpoint expected by the THLB status report",
+      "availability": "missing_in_checkout",
+      "p4_implication": "Must be rematerialized or regenerated before a bundle build consumes checkpoint geometry."
+    },
+    {
+      "id": "lhlb_checkpoint_feather",
+      "path": "data/tsr/lhlb_checkpoint.feather",
+      "role": "LHLB restart checkpoint expected by the THLB status report",
+      "availability": "missing_in_checkout",
+      "p4_implication": "Must be rematerialized or regenerated before a bundle build consumes checkpoint geometry."
+    },
+    {
+      "id": "thlb_final_checkpoint",
+      "path": "data/tsr/tfl6_thlb_smoke_checkpoint.feather",
+      "role": "final THLB checkpoint expected by the THLB status report",
+      "availability": "missing_in_checkout",
+      "p4_implication": "Must be rematerialized or regenerated before a bundle build consumes final THLB geometry."
+    },
+    {
+      "id": "au_contract",
+      "path": "planning/tfl6_au_yield_curve_contract.md",
+      "role": "accepted static AU and yield-curve assignment contract",
+      "availability": "present"
+    },
+    {
+      "id": "static_au_universe",
+      "path": "planning/tfl6_static_au_universe.csv",
+      "role": "reviewed static AU universe",
+      "availability": "present"
+    },
+    {
+      "id": "selected_top_strata",
+      "path": "planning/tfl6_static_au_top_strata.csv",
+      "role": "selected top-area stratum set used for source-derived curve compilation",
+      "availability": "present"
+    },
+    {
+      "id": "stand_to_au_review",
+      "path": "planning/tfl6_stand_to_au_review.csv",
+      "role": "reviewed stand-to-AU attribution surface used by Phase 3 diagnostics",
+      "availability": "present"
+    },
+    {
+      "id": "natural_curves",
+      "path": "planning/tfl6_first_growth_au_curves.csv",
+      "role": "accepted natural/untreated VDYP curve table for selected AU families",
+      "availability": "present"
+    },
+    {
+      "id": "natural_curve_shape_diagnostics",
+      "path": "planning/tfl6_first_growth_shape_diagnostics.csv",
+      "role": "accepted natural-curve shape diagnostics with smoothing revisit caveat",
+      "availability": "present"
+    },
+    {
+      "id": "nonselected_au_remap",
+      "path": "planning/tfl6_first_growth_au_remap_audit.csv",
+      "role": "lexicographic remap audit for non-selected AU bins",
+      "availability": "present"
+    },
+    {
+      "id": "tipsy_parameter_library",
+      "path": "planning/tfl6_mp10_tipsy_parameter_library.csv",
+      "role": "MP10 Tables 27-29 TIPSY parameter evidence",
+      "availability": "present"
+    },
+    {
+      "id": "tipsy_crosswalk",
+      "path": "planning/tfl6_tipsy_parameter_crosswalk.csv",
+      "role": "selected-AU to MP10 parameter-row/fallback mapping",
+      "availability": "present"
+    },
+    {
+      "id": "btc_input",
+      "path": "data/03_input-tfl6.csv",
+      "role": "reviewed selected-AU BatchTIPSY input",
+      "availability": "present"
+    },
+    {
+      "id": "btc_output",
+      "path": "data/04_output-tfl6.csv",
+      "role": "reviewed BatchTIPSY output",
+      "availability": "present"
+    },
+    {
+      "id": "treated_curves",
+      "path": "planning/tfl6_tipsy_managed_curves.csv",
+      "role": "accepted treated/managed BatchTIPSY curve table",
+      "availability": "present"
+    },
+    {
+      "id": "treated_curve_diagnostics",
+      "path": "planning/tfl6_tipsy_managed_curve_diagnostics.csv",
+      "role": "accepted treated-curve QA diagnostics",
+      "availability": "present"
+    },
+    {
+      "id": "treatment_contract",
+      "path": "planning/tfl6_treatment_option_contract.md",
+      "role": "accepted treatment IDs, eligibility filters, harvest-system classes, and reporting hooks",
+      "availability": "present"
+    },
+    {
+      "id": "silviculture_config",
+      "path": "config/silviculture.tfl6.yaml",
+      "role": "TFL 6 silviculture/treatment config handoff",
+      "availability": "present"
+    },
+    {
+      "id": "transition_contract",
+      "path": "planning/tfl6_state_transition_contract.md",
+      "role": "accepted state-transition contract",
+      "availability": "present"
+    },
+    {
+      "id": "cedar_contract",
+      "path": "planning/tfl6_cedar_signal_design.md",
+      "role": "accepted cedar signal, product/account/reporting handoff",
+      "availability": "present"
+    },
+    {
+      "id": "embedded_identity_contract",
+      "path": "planning/tfl6_nicf_embedded_identity.md",
+      "role": "accepted K3Z/NICF reference and outside-AOI expansion identity handoff",
+      "availability": "present"
+    }
+  ],
+  "blocked_for_bundle_build_until": [
+    "Final THLB checkpoint geometry is rematerialized or regenerated at a stable P4 input path.",
+    "P4.1b defines the generated bundle paths and table roles.",
+    "P4.1c writes the first reviewed bundle only after the checkpoint availability gap is closed or explicitly waived."
+  ],
+  "not_started_in_p4_1a": [
+    "model_input_bundle_generation",
+    "outside_aoi_expansion_geometry_materialization",
+    "forestmodel_xml_generation",
+    "matrix_builder",
+    "patchworks_runtime_package"
+  ]
+}

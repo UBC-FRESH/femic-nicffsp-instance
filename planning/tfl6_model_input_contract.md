@@ -40,6 +40,34 @@ Phase 4 may consume these reviewed artifacts:
 | Cedar design | `planning/tfl6_cedar_signal_design.md` | accepted cedar signal/account/report handoff |
 | Embedded identity design | `planning/tfl6_nicf_embedded_identity.md` | accepted K3Z/NICF reference and outside-AOI expansion handoff |
 
+## AFLB Stand Universe And THLB/NTHLB Split
+
+Phase 4 model-input generation must build the Patchworks stand universe from
+the accepted AFLB / forested model universe after spatial netdown overlay has
+produced the resultant fragments. THLB is the managed treatment-eligible state
+assigned to those AFLB resultant fragments. The complement,
+`NTHLB = AFLB - THLB`, remains in the model as forested unmanaged/retention
+area.
+
+Implementation requirements:
+
+- `aflb_current` or an equivalent AFLB checkpoint is the canonical
+  resultant-fragment universe for `stand_table.csv` / `stand_au_assignment.csv`.
+- Every AFLB resultant fragment must receive an untreated VDYP curve assignment, including
+  NTHLB rows, so retained forest continues to grow in the Patchworks model.
+- The final THLB geometry/checkpoint is a state surface used to compute
+  `managed_share`, `thlb_fact`, `thlb_area_ha`, `retention_share`, and IFM
+  state on AFLB resultant fragments. It is not by itself a separate
+  stand-table universe.
+- THLB share maps to managed treatment eligibility, subject to the other
+  accepted treatment, operability, harvest-system, age, and group gates.
+- NTHLB share maps to unmanaged/full-retention area in Patchworks XML terms
+  (`UNMANAGEDAREA` after compilation) while preserving `ORIGIN`, AU, curve,
+  cedar, embedded-identity, and reporting attributes.
+
+Do not drop NTHLB stands from the bundle. They are excluded from active
+management, not excluded from the forest estate model.
+
 ## Required Model-Input Field Families
 
 Phase 4 bundle generation should produce or preserve these field families.
@@ -49,8 +77,8 @@ must be present and auditable.
 | Field family | Required content |
 | --- | --- |
 | Stand identity | `feature_id`, `map_id`, `polygon_id`, stable fragment/block key, source layer, source vintage |
-| Area accounting | `area_ha`, current-AOI membership, geometry/source QA flags |
-| THLB / IFM | accepted THLB flag, `IFM`/managed treatment eligibility, unmanaged/retention/reserve context |
+| Area accounting | AFLB `area_ha`, managed THLB share, NTHLB/retention share, current-AOI membership, geometry/source QA flags |
+| THLB / IFM | accepted THLB share/flag, `IFM`/managed treatment eligibility, unmanaged/retention/reserve context |
 | Curve provenance | `ORIGIN`, natural/untreated curve ID, treated/managed curve ID, curve source, curve QA status |
 | Static AU | `au_id`, stratum code, BEC zone/subzone/variant/phase, top-two species combo, L/M/H SI class, selected top-area flag |
 | AU remap | selected curve family, non-selected AU remap target, remap confidence/reason |
@@ -74,7 +102,9 @@ Before P4.1 can hand the bundle to XML/Matrix Builder work, it must check:
 - embedded identity and cedar status are not AU keys or curve-family keys;
 - managed/unmanaged treatment eligibility is separate from natural/treated
   curve provenance;
-- natural and treated curve IDs are present for every schedulable AU family or
+- every AFLB row has an untreated/natural curve assignment or an explicit fatal
+  missing-curve rationale, because NTHLB forest still has to grow;
+- treated curve IDs are present for every schedulable selected AU family or
   have explicit fallback/missing rationale;
 - non-selected AU bins map to selected curve families through the recorded
   lexicographic remap audit;

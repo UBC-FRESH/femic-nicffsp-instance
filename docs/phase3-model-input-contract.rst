@@ -36,6 +36,33 @@ The Phase 4 bundle build should start from these reviewed sources:
 - ``planning/tfl6_cedar_signal_design.md``; and
 - ``planning/tfl6_nicf_embedded_identity.md``.
 
+Bundle Universe Contract
+------------------------
+
+The Phase 4 Patchworks stand universe is the accepted AFLB / forested model
+universe after spatial netdown overlay has produced the resultant fragments.
+THLB is a managed-treatment eligibility state assigned to those AFLB resultant
+fragments. The set complement, ``NTHLB = AFLB - THLB``, remains in the model as
+forested retained area.
+
+Practical consequences for the first bundle:
+
+- the stand table must be built from the AFLB checkpoint or an equivalent
+  AFLB-current handoff;
+- every AFLB resultant fragment needs an untreated VDYP curve so it can grow,
+  including stands that are not in THLB;
+- the final THLB geometry/checkpoint is an overlay used to compute
+  ``managed_share`` / ``thlb_fact`` and ``retention_share``;
+- THLB area becomes Patchworks managed area, subject to treatment eligibility
+  gates; and
+- NTHLB area becomes unmanaged or full-retention area in Patchworks XML terms
+  while preserving curve provenance and growth.
+
+Do not drop NTHLB forested stands from the bundle just because they are outside
+active timber harvesting. Dropping them would remove retained forest from
+growth, residual inventory, cedar, old-forest, embedded-identity, and teaching
+KPI reports.
+
 Required Field Families
 -----------------------
 
@@ -49,7 +76,8 @@ P4.1 should produce or preserve these semantic field families:
    * - Stand identity
      - stable source and fragment keys for joins and QA
    * - Area accounting
-     - hectares and current-AOI membership
+     - AFLB hectares, managed THLB share, NTHLB / retention share, and
+       current-AOI membership
    * - THLB / IFM
      - THLB status, managed treatment eligibility, retention, reserve, and
        unmanaged context

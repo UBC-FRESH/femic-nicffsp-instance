@@ -2,8 +2,9 @@ TFL 6 Teaching Instance
 =======================
 
 This documentation records teaching-facing notes for the standalone TFL 6 FEMIC
-instance. The repository remains in source-layer and model-design development
-until the roadmap records a runnable Patchworks package.
+instance. The repository now includes a reviewed, ready-to-launch Patchworks
+runtime archive for the first teaching release, plus the rebuild/provenance
+trail used to create it.
 
 .. toctree::
    :maxdepth: 2
@@ -13,4 +14,9 @@ until the roadmap records a runnable Patchworks package.
    phase3-au-yield-curves
    phase3-cedar-nicf-expansion
    phase3-model-input-contract
+   phase5-runtime-release
+   phase5-runtime-quickstart
+   phase5-rebuild-provenance
+   phase5-scenario-teaching-workflows
+   phase5-known-limitations-release-readiness
    teaching-challenges

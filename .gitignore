@@ -20,6 +20,11 @@ data/bc/
 
 # Generated model outputs
 output/
+models/tfl6_patchworks_model/blocks/
+models/tfl6_patchworks_model/tracks/
+models/tfl6_patchworks_model/patchworksLog.csv
+models/tfl6_patchworks_model/analysis/p44*/
+models/tfl6_patchworks_model/analysis/headless_runs/
 releases/
 plots/
 docs/_build/

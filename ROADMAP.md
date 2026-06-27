@@ -237,32 +237,59 @@ source-layer and THLB surfaces, without compiling a Patchworks package.
     `config/tipsy/tfl6.yaml` metadata with accepted Phase 3 artifacts.
   - [x] P3.7c Lock rejected/deferred assumptions and Phase 4 entry guardrails.
 
-## Proposed Phase 4: Model Inputs and Patchworks Runtime Package (`#14`)
+## Phase 4: Model Inputs and Patchworks Runtime Package (`#14`)
 
 Goal: generate, inspect, and QA the first runnable TFL 6 Patchworks teaching
 package only after the reviewed source-layer, THLB, and model-design contracts
 exist.
 
-- [ ] P4.1 Build the reviewed model-input bundle from accepted TFL 6 source
+- [x] P4.1 Build the reviewed model-input bundle from accepted TFL 6 source
   layers, THLB outputs, and model-design assumptions (`#17`).
-- [ ] P4.2 Generate ForestModel/XML and inspect the semantics that affect
+  - [x] P4.1a Confirm the accepted Phase 2/3 prerequisite artifacts and record
+    the bundle input manifest.
+  - [x] P4.1b Define generated model-input bundle paths and table roles before
+    writing bundle outputs.
+  - [x] P4.1c Build the first reviewed model-input bundle from the accepted
+    THLB, AU, curve, treatment, transition, cedar, and embedded-identity
+    contracts.
+    - [x] P4.1c.1 Regenerate the final THLB geometry handoff at
+      `data/model_input_bundle/input_geometry/thlb_current.feather`, write the
+      GeoPackage mirror and checkpoint manifest, and record the inspection
+      summary in `planning/tfl6_model_input_bundle_geometry_handoff.md`.
+    - [x] P4.1c.2a Repair the GLB-to-AFLB non-forest filter and rerun the
+      corrected AFLB/THLB/NTHLB geometry handoffs before bundle CSV generation
+      resumes (`#36`).
+    - [x] P4.1c.2 Build the first core bundle tables from the AFLB
+      resultant-fragment universe, the regenerated THLB/NTHLB managed-share
+      state surface, and the accepted Phase 3 model-design contracts.
+  - [x] P4.1d Run lightweight bundle QA for readability, required fields,
+    missing AU/curve mappings, treatment eligibility flags, and embedded
+    K3Z/NICF identity fields.
+- [x] P4.2 Generate ForestModel/XML and inspect the semantics that affect
   Patchworks treatment eligibility, curve provenance, products, accounts, and
-  targets.
-- [ ] P4.3 Execute Matrix Builder and QA tracks, features, accounts,
-  protoaccounts, products, targets, and reports.
-- [ ] P4.4 Complete Patchworks runtime-package build/QA (`#10`) with
+  targets (`#37`).
+- [x] P4.3 Execute Matrix Builder and QA tracks, features, accounts,
+  protoaccounts, products, targets, and reports (`#38`).
+- [x] P4.4 Complete Patchworks runtime-package build/QA (`#10`) with
   representative launch and scenario-smoke checks.
+  - [x] P4.4a Build and inspect runtime block/topology artifacts from the
+    accepted P4.2 fragments.
+  - [x] P4.4b Add the `analysis/base.pin` launch surface and helper scripts.
+  - [x] P4.4c Run direct Patchworks launch smoke and inspect saved-stage
+    artifacts.
+  - [x] P4.4d Run representative scenario smoke and record Phase 4 closeout
+    evidence.
 
-## Proposed Phase 5: Publication, Teaching Docs, and Release QA (`#15`)
+## Phase 5: Publication, Teaching Docs, and Release QA (`#15`)
 
 Goal: make the teaching instance reproducible and usable by students/instructors
 after the runtime package has passed direct artifact and launch smoke checks.
 
-- [ ] P5.1 Decide which compact runtime artifacts are tracked, annexed,
+- [x] P5.1 Decide which compact runtime artifacts are tracked, annexed,
   published, or regenerated (`#18`).
-- [ ] P5.2 Publish required data/runtime artifacts through the accepted FEMIC
-  public-data workflow and prove fresh-environment materialization.
-- [ ] P5.3 Build full Sphinx teaching documentation (`#21`) modeled on the
+- [x] P5.2 Publish required data/runtime artifacts through the accepted FEMIC
+  public-data workflow and prove fresh-environment materialization (`#39`).
+- [x] P5.3 Build full Sphinx teaching documentation (`#21`) modeled on the
   `femic-k3z-instance` and `femic-tsa29-instance` documentation surfaces,
   including quickstart instructions, rebuild workflow, source-data provenance,
   THLB validation notes, scenario teaching workflows, advanced student
@@ -273,10 +300,36 @@ after the runtime package has passed direct artifact and launch smoke checks.
     Phase 5 teaching-docs expansion.
     - [x] P5.3a.1 Use the same RTD Sphinx theme pattern as the K3Z and MKRF
       instance documentation.
-  - [ ] P5.3b Expand final K3Z/TSA29-style teaching docs after Phase 4 runtime
+  - [x] P5.3b Expand final K3Z/TSA29-style teaching docs after Phase 4 runtime
     package evidence exists.
-- [ ] P5.4 Run final release QA across source materialization, instance rebuild,
-  Patchworks launch smoke, and documentation checks.
+    - [x] P5.3b.1 Add the Phase 5 runtime-release page covering the published
+      archive, DataLad/git-annex materialization commands, Arbutus remote
+      metadata, no-credential proof, launch boundary, rebuild anchors, and
+      caveats.
+    - [x] P5.3b.2 Add a student/maintainer runtime quickstart that starts from
+      the published archive, materializes it from `arbutus-s3`, unpacks it,
+      opens `base.pin`, verifies the core baseline teaching signals, and points
+      back to rebuild/provenance docs without requiring students to rebuild
+      first.
+    - [x] P5.3b.3 Add a maintainer rebuild/provenance guide that maps canonical
+      configs, planning notes, generated artifacts, lineage commands, release
+      archive metadata, and dependency order from source/THLB through runtime
+      publication.
+    - [x] P5.3b.4 Add scenario teaching-workflow documentation that orients
+      students to the baseline runtime package, stakeholder/KPI families,
+      first outputs to inspect, starter exercises, advanced project prompts,
+      reporting rules, and first-release scenario limits.
+    - [x] P5.3b.5 Add known-limitations and release-readiness documentation
+      that consolidates first-release caveats, clarifies what does and does not
+      block the teaching release, and defines the P5.4 final QA checklist.
+- [x] P5.4 Run final release QA across source materialization, instance rebuild,
+  Patchworks launch smoke, and documentation checks (`#40`).
+  - [x] P5.4a Create the release-QA child issue and checklist surface before
+    running executable QA checks.
+  - [x] P5.4b Verify archive, manifest, and public materialization.
+  - [x] P5.4c Verify Patchworks launch and baseline signal smoke evidence.
+  - [x] P5.4d Verify docs build, docs links, and published Pages surface.
+  - [x] P5.4e Close Phase 5 after QA evidence is recorded.
 
 ## Dependency Order
 
@@ -384,10 +437,251 @@ The Phase 1 follow-on issues are placed into the future roadmap as follows:
    `femic prep validate-case` all passed after loading the local Arbutus
    environment and materializing/unlocking the public-data `FADM_TSA.gdb`
    payload.
-10. Phase 3 closeout is complete once parent issue `#13` is closed and the
-    instance feature branch is handed to the prescribed PR/merge workflow. Phase
-    4 must not start until the Phase 3 PR is reviewed/merged or explicitly
-    narrowed by the maintainer.
-11. P5.3a / `#21` publication plumbing is in progress to make the current
-    Phase 2/Phase 3 seed Sphinx docs available at the standalone instance
-    GitHub Pages URL. This does not close P5.3 or start Phase 4 runtime work.
+10. Phase 3 closeout is complete. PR `#33` was merged to instance `main`, the
+    parent FEMIC submodule pointer was updated, and the standalone docs are
+    published with the RTD theme.
+11. P4.1a / `#17` is complete. The accepted Phase 2/3 prerequisite manifest is
+    recorded in `planning/tfl6_model_input_bundle_prerequisite_manifest.md` and
+    `planning/tfl6_model_input_bundle_prerequisite_manifest.json`. The manifest
+    confirms the accepted run profile, source-input layer manifest, AU/curve
+    tables, TIPSY/BTC outputs, treatment/transition contracts, cedar contract,
+    and embedded-identity contract are present. It also records that the
+    generated `data/tsr/*checkpoint*` THLB checkpoint files referenced by the
+    Phase 2 status report are missing from the current clean checkout and must
+    be rematerialized, regenerated, or explicitly waived before P4.1c consumes
+    final THLB geometry.
+12. P4.1b / `#17` is complete. The generated bundle path and table-role
+    contract is recorded in `planning/tfl6_model_input_bundle_path_contract.md`
+    and `planning/tfl6_model_input_bundle_path_contract.json`. The canonical
+    generated bundle root is `data/model_input_bundle/`, with final THLB
+    geometry staged as
+    `data/model_input_bundle/input_geometry/thlb_current.feather` plus a
+    readable GeoPackage mirror and checkpoint manifest. P4.1b did not create
+    the bundle root or write generated outputs.
+13. Continue Phase 4 on branch `feature/p4-model-input-bundle`. P4.1c.1 /
+    `#17` regenerated the final THLB geometry handoff at
+    `data/model_input_bundle/input_geometry/thlb_current.feather`, wrote the
+    GeoPackage mirror and manifest. P4.1c.2a / `#36` then repaired the
+    GLB-to-AFLB non-forest filter after the attempted AFLB handoff from
+    `aflb_checkpoint.6a351f3a223a` was invalidated. The corrected AFLB handoff
+    has `25019` rows, `191168.597 ha`, and `0.000 ha` of
+    `bclcs_level_1 in {N, U}` contamination. The corrected weighted
+    `thlb_fact` THLB area is `139995.798 ha`, `2.57%` above the scaled current
+    benchmark and inside the accepted teaching tolerance. P4.1c.2 must not
+    treat THLB area alone as the full Patchworks stand universe. The stand
+    universe is the AFLB resultant-fragment surface; THLB is the managed
+    subset, and `NTHLB = AFLB - THLB` remains unmanaged/full-retention forest
+    that still needs untreated VDYP curves.
+14. P4.1c.2 / `#17` is complete. The first generated core bundle tables are
+    written under ignored `data/model_input_bundle/` output space and audited in
+    `planning/tfl6_model_input_bundle_core_tables.md`. The bundle contains
+    `25019` AFLB stand rows, `191168.597 ha` AFLB, `139995.798 ha` THLB,
+    `51172.799 ha` NTHLB, no missing natural or treated curve assignments, and
+    warning-only sparse TIPSY fallback for `136` rows / `749.396 ha`. All
+    harvest-system classes remain explicit `unassigned_review_required`
+    placeholders pending reviewed operability/ground-cable-heli assignment. The
+    first Phase 4 ForestModel may still use a generic `CC` treatment across
+    eligible managed area; ground/cable/heli splitting is a later refinement
+    for costs, operability reporting, and scenario interpretation. The current
+    executable edge is P4.1d lightweight bundle QA; do not start ForestModel
+    XML, Matrix Builder, or Patchworks runtime work until P4.1d passes or the
+    maintainer explicitly narrows the gate.
+15. P4.1d / `#17` is complete. Lightweight bundle QA is recorded in
+    `planning/tfl6_model_input_bundle_qa.md`. Required generated tables are
+    readable; area reconciliation passes; stand IDs are unique; all AU,
+    natural-curve, and treated-curve mappings are non-null; all stand-level
+    curve IDs exist in the curve metadata table; every curve has point rows;
+    and cedar/embedded/harvest-system support tables match the stand count. The
+    accepted warning gates are `136` sparse treated-curve fallback rows and
+    harvest-system assignment deferred as `unassigned_review_required` for all
+    rows. P4.2 may start ForestModel/XML generation from the reviewed bundle.
+    Generic `CC` treatment emission is acceptable for the first ForestModel
+    package; reviewed ground/cable/heli harvest-system assignment is deferred
+    to a later operability and delivered-cost refinement.
+16. P4.2 / `#37` is complete. It generated ForestModel XML from the refreshed
+    P4.1 bundle tables and corrected AFLB checkpoint, then inspected XML
+    semantics before Matrix Builder. The direct first attempt used
+    `femic export patchworks --tsa tfl6` with `data/model_input_bundle/` as the
+    bundle directory,
+    `data/model_input_bundle/input_geometry/aflb_current.feather` as the
+    checkpoint, and `output/patchworks_tfl6_validated/` as the output
+    directory. That attempt exposed the schema mismatch recorded below.
+17. The first P4.2 export attempt failed before writing a usable XML package
+    because the reviewed TFL6 bundle uses string AU/curve IDs and audit-oriented
+    columns, while the current generic FMG Patchworks exporter still expects the
+    legacy numeric bundle schema with `tsa`, integer `au_id`,
+    `managed_curve_id`, `unmanaged_curve_id`, `si_level`, and curve point
+    columns `x`/`y`. The blocker is recorded in
+    `planning/tfl6_forestmodel_xml_export_blocker.md`. That numeric-schema
+    blocker was repaired by the exporter-compatible bridge recorded in item 18.
+18. P4.2 / `#37` is complete. The exporter-compatible schema bridge is
+    generated under ignored
+    `data/model_input_bundle/export_compat/` output space and audited in
+    `planning/tfl6_forestmodel_xml_export_bridge.md`. It maps reviewed TFL6
+    string AU/curve IDs to deterministic numeric IDs and allowed
+    `femic export patchworks --tsa tfl6` to produce XML/fragments under ignored
+    `output/patchworks_tfl6_validated/`. Structural inspection found
+    `373` XML curves, `2442` selects, `24879` fragments, `191168.566 ha`
+    exported fragment area, and `407` exported AUs. The `814` emitted `CC`
+    treatment nodes are accepted as a generic Phase 4 clearcut-and-plant
+    approximation. Harvest-system assignment remains deferred and will later
+    split generic `CC` into ground/cable/heli classes after the DEM and
+    inventory parsing logic is reviewed.
+19. P4.3 / `#38` was the Phase 4 Matrix Builder lane. It ran Matrix Builder
+    from the accepted P4.2 XML/fragments pair under
+    `output/patchworks_tfl6_validated/`, then inspect generated tracks,
+    features, accounts, protoaccounts, products, targets, and report surfaces.
+    P4.3 must confirm that AFLB remains the fragment universe, THLB remains a
+    managed-share state, NTHLB remains unmanaged/full-retention forest with
+    untreated growth, and generic `CC` remains the accepted first-pass
+    clearcut-and-plant lane. Runtime-package assembly remains downstream in
+    P4.4.
+20. P4.3 / `#38` is complete and recorded in
+    `planning/tfl6_matrix_builder_p43_smoke.md`. The instance runtime config
+    was repaired from copied K3Z paths to TFL6 XML/fragments/tracks paths, and
+    Patchworks preflight passed. The first Matrix Builder attempt exposed a
+    generic FEMIC FMG pass-through succession problem (`1000 -> 1000`); the
+    exporter was repaired to emit `999 -> 0`, the XML/fragments were
+    regenerated, and the second Matrix Builder attempt produced readable core
+    tracks: `33322` block rows, `55717` feature rows, `17173` group rows,
+    `16379` product rows, `18447` strata rows, `9212` trackname rows, and
+    `10703` treatment rows. The missing `protoaccounts.csv` / `accounts.csv`
+    gap was repaired by increasing the Windows Matrix Builder settle window to
+    `20.0` seconds and rerunning. The accepted `tfl6_p43_matrix_accounts_wait20`
+    run produced readable final track tables: `47218` block rows, `86574`
+    feature rows, `24879` group rows, `26085` product rows, `28858` strata
+    rows, `14429` trackname rows, `17390` treatment rows, `211`
+    protoaccount rows, and `211` promoted account rows. Generic `CC` product
+    and harvested-volume account surfaces are present. Runtime-package
+    assembly, Patchworks launch smoke, scenario targets, and final report
+    surfaces remain downstream in P4.4/P5.
+21. P4.4 / `#10` was the final Phase 4 runtime-package lane. It assembled the
+    first TFL6 Patchworks runtime package from the accepted P4.3 tracks and
+    P4.2 XML/fragments, then ran representative launch/scenario smoke before
+    Phase 4 closeout. Do not move to final publication until runtime-package
+    smoke evidence exists. P4.4a is complete: `femic patchworks build-blocks`
+    generated `models/tfl6_patchworks_model/blocks/blocks.*` and
+    `topology_blocks_200r.csv`; inspection found `24879` valid EPSG:3005 block
+    rows, `191168.566 ha`, and `170759` topology edges. Generated blocks,
+    tracks, and `patchworksLog.csv` remain ignored until Phase 5 decides the
+    publication policy. P4.4b is the next bounded step: add
+    `models/tfl6_patchworks_model/analysis/base.pin` and its helper scripts so
+    direct launch smoke can run. P4.4b and P4.4c are now complete: the TFL6
+    runtime package has a baseline `analysis/base.pin`, shared headless helper,
+    and `flowtargets.bsh` keyed to `product.HarvestedVolume.managed.*`; direct
+    headless launch run `tfl6_p44b_launch0` returned `0`, detected
+    `[FEMIC headless] saveStage completed`, and wrote `903` saved-stage files.
+    P4.4d is the next bounded step: run representative scenario smoke against
+    `product.HarvestedVolume.managed.Total.CC` and inspect target/schedule
+    outputs. P4.4d is now complete: representative scenario smoke run
+    `tfl6_p44d_harvest_smoke200` returned `0`, detected
+    `[FEMIC headless] saveStage completed`, wrote `903` saved-stage files,
+    activated both `product.HarvestedVolume.managed.Total.CC` and
+    `flow.even.product.HarvestedVolume.managed.Total.CC`, produced `801`
+    scheduled managed `CC` rows, and generated nonzero harvested-volume current
+    in `30` periods. P4.4 child `#10` and Phase 4 parent `#14` are closed.
+22. Phase 4 is complete. The accepted runtime package has refreshed
+    ForestModel/XML, Matrix Builder tracks/accounts, block/topology artifacts,
+    direct launch smoke, and representative scenario-smoke evidence. Generated
+    blocks, tracks, and saved-stage outputs remain ignored locally until Phase
+    5 decides publication policy.
+23. P5.1 / `#18` is complete. The runtime artifact publication policy is
+    recorded in `planning/tfl6_runtime_artifact_publication_policy.md`. Compact
+    contract and launch surfaces stay tracked in Git; generated model-input
+    bundles, XML/fragments, Matrix Builder tracks, blocks/topology, logs, and
+    saved-stage outputs remain ignored by default; and P5.2 must decide whether
+    to publish only source data plus rebuild instructions or also a reviewed
+    runtime archive. Any published runtime archive must be annexed or otherwise
+    released through an explicit public mechanism and proven materializable in a
+    fresh environment.
+24. P5.3a / `#21` publication plumbing is complete for the current seed docs,
+    but P5.3 stays open for final teaching-docs expansion after Phase 4 runtime
+    package evidence exists.
+25. P5.2 / `#39` is the next bounded lane: implement the accepted publication
+    path from P5.1 and prove required fresh-environment materialization before
+    claiming release readiness. The first P5.2 decision is whether this release
+    publishes only source data plus rebuild instructions or also publishes a
+    reviewed ready-to-launch runtime archive for teaching users.
+    P5.2a is complete: the instance-local `arbutus-s3` git-annex special remote
+    has been initialized against bucket `ubc-fresh-femic-tfl6-instance`, the
+    remote metadata has been pushed on the `git-annex` branch, and the remote is
+    currently empty pending the artifact-set decision.
+    P5.2b is complete: the release mode is a reviewed ready-to-launch
+    Patchworks runtime archive plus rebuild instructions, and
+    `planning/tfl6_runtime_release_archive_manifest.md` defines the archive
+    contents, manifest schema, annex publication commands, and no-credential
+    fresh-clone proof.
+    P5.2c is complete: `releases/tfl6_patchworks_runtime_p5_2.zip`
+    and `releases/tfl6_patchworks_runtime_p5_2_manifest.yaml` were generated
+    from the accepted Phase 4 runtime inputs, annexed, and copied to
+    `arbutus-s3`; `git annex whereis` reports both the local repository and the
+    remote, and `git annex info arbutus-s3` reports `2` remote keys / `28.01`
+    MB. The next verification edge is the no-credential fresh-clone
+    materialization proof.
+    P5.2d is complete: a fresh temp clone of `feature/p5-publication-release`
+    with AWS/S3 environment variables cleared enabled `arbutus-s3` with
+    `creds: not available`, fetched both release files from the public remote,
+    and verified the archive SHA256 against the manifest. P5.2 child `#39` is
+    closed. The next bounded Phase 5 lane is P5.3b / `#21`: expand the final
+    K3Z/TSA29-style teaching docs now that the runtime archive exists and is
+    publicly materializable.
+    P5.3b.1 is complete: `docs/phase5-runtime-release.rst` now documents the
+    published runtime archive, `arbutus-s3` materialization commands and remote
+    metadata, no-credential proof, launch boundary, rebuild anchors, and known
+    caveats; `docs/index.rst` links the page and no longer describes the package
+    as not runnable.
+    P5.3b.2 is complete: `docs/phase5-runtime-quickstart.rst` now gives
+    teaching users a runtime-first path from public archive materialization to
+    `base.pin` launch and baseline signal checks, while keeping rebuild work
+    pointed at the provenance and model-building documentation.
+    P5.3b.3 is complete: `docs/phase5-rebuild-provenance.rst` now maps the
+    canonical planning/config/docs surfaces, generated artifact boundaries,
+    accepted Phase 2-5 rebuild anchors, lineage-registry commands, release
+    archive/manifest surfaces, and maintainer rebuild checklist.
+    P5.3b.4 is complete: `docs/phase5-scenario-teaching-workflows.rst` now
+    documents the baseline scenario orientation, stakeholder-style KPI
+    families, first Patchworks outputs to inspect, starter exercises, advanced
+    project prompts, reporting rules, and first-release limits for generic
+    `CC`, deferred harvest-system splits, and outside-AOI NICF expansion.
+    P5.3b.5 is complete: `docs/phase5-known-limitations-release-readiness.rst`
+    now consolidates first-release caveats, release-readiness boundaries, and
+    the P5.4 final QA checklist. P5.3 / `#21` is complete and the next bounded
+    Phase 5 lane is P5.4 release QA.
+    P5.4a is complete: P5.4 child issue `#40` is open and
+    `planning/tfl6_phase5_release_qa.md` records the final release-QA checklist.
+    The next bounded QA slice is P5.4b archive, manifest, and public
+    materialization verification.
+    P5.4b is complete: a fresh no-credential clone on
+    `feature/p5-publication-release` enabled `arbutus-s3` with
+    `creds: not available`, fetched the runtime archive and manifest, passed
+    git-annex checksum verification, matched archive SHA256
+    `17f56d11faeba89170fc48e202d1bfe83c2dd40b53e7409d8cdb8c1c487c2f9f` and
+    size `28000736` against the manifest, and confirmed required ZIP members
+    are present. The next bounded QA slice is P5.4c Patchworks launch and
+    baseline signal smoke evidence.
+    P5.4c is complete: accepted lineage evidence records direct launch smoke
+    `tfl6_p44b_launch0` and scenario smoke `tfl6_p44d_harvest_smoke200`, both
+    with return code `0`, `[FEMIC headless] saveStage completed`, and `903`
+    saved-stage files. The scenario schedule has `801` managed `CC` rows, and
+    saved target CSVs carry nonzero managed `CC` harvested-volume,
+    managed `CC` treated-area, managed/unmanaged area, and managed/unmanaged
+    yield signals. Release ZIP inspection confirmed required launch helpers,
+    ForestModel XML, track tables, and baseline signal names are included. The
+    next bounded QA slice is P5.4d docs build, docs links, and published Pages
+    verification.
+    P5.4d is complete: local Sphinx built warning-clean, generated HTML uses
+    the RTD theme and links the Phase 5 pages, and public Pages now serves the
+    Phase 5 release docs. The first public check exposed stale Pages content
+    because deployment was still `main`-only; the workflow now permits manual
+    `workflow_dispatch` deployment while keeping automatic deployment restricted
+    to `main`, and the `github-pages` environment has a narrow branch policy for
+    `feature/p5-publication-release`. The manual deploy succeeded, the public
+    root returns `200` with Phase 5 content, and the five Phase 5 pages return
+    `200`.
+    P5.4e and Phase 5 are complete: the release-QA checklist records archive
+    materialization, manifest/SHA verification, Patchworks launch and baseline
+    signal smoke evidence, warning-clean Sphinx build, public Pages checks, and
+    explicit deferred follow-on scope. The P5.4 child issue `#40` and Phase 5
+    parent `#15` are closed. Future work should be opened as new follow-on
+    phase/task issues rather than reopening this first teaching-release
+    closeout.

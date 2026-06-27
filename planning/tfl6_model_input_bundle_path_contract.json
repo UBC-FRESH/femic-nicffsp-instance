@@ -1,0 +1,156 @@
+{
+  "case_id": "tfl6",
+  "phase_task": "P4.1b",
+  "status": "path_and_table_role_contract",
+  "created_date": "2026-06-26",
+  "scope": "Defines generated model-input bundle paths and artifact roles before any bundle outputs are written.",
+  "bundle_root": "data/model_input_bundle",
+  "notes": [
+    "The bundle root follows existing FEMIC instance convention.",
+    "The bundle root is generated-output space. P4.1b does not create the directory or write outputs.",
+    "P4.1c must use AFLB resultant fragments as the stand-table universe and final THLB/NTHLB state as managed-share assignment.",
+    "NTHLB equals AFLB minus THLB and remains unmanaged/full-retention forest that still needs untreated VDYP growth curves."
+  ],
+  "input_geometry": {
+    "canonical_aflb_resultant_fragment_universe": {
+      "path": "data/model_input_bundle/input_geometry/aflb_current.feather",
+      "role": "canonical AFLB resultant-fragment universe for P4.1c bundle generation",
+      "source": "regenerated or rematerialized from the accepted Phase 2 AFLB checkpoint/partitions",
+      "required_before": "P4.1c stand table generation"
+    },
+    "readable_aflb_checkpoint": {
+      "path": "data/model_input_bundle/input_geometry/aflb_current.gpkg",
+      "role": "readable GeoPackage mirror for AFLB resultant-fragment GIS QA and maintainer inspection",
+      "source": "same regenerated/rematerialized AFLB state as the Feather checkpoint",
+      "required_before": "P4.1c QA"
+    },
+    "final_thlb_overlay_checkpoint": {
+      "path": "data/model_input_bundle/input_geometry/thlb_current.feather",
+      "role": "final THLB/NTHLB state surface for managed share, unmanaged/NTHLB retention share, and final THLB area reconciliation on AFLB resultant fragments",
+      "source": "regenerated or rematerialized from the accepted Phase 2 THLB recipe/audit",
+      "required_before": "P4.1c managed-share assignment"
+    },
+    "readable_final_thlb_checkpoint": {
+      "path": "data/model_input_bundle/input_geometry/thlb_current.gpkg",
+      "role": "readable GeoPackage mirror for THLB/NTHLB state on resultant fragments for GIS QA and maintainer inspection",
+      "source": "same regenerated/rematerialized final THLB state as the Feather checkpoint",
+      "required_before": "P4.1c QA"
+    },
+    "source_checkpoint_manifest": {
+      "path": "data/model_input_bundle/input_geometry/thlb_checkpoint_manifest.json",
+      "role": "records source command, source audit, area metrics, checksums, and regeneration/rematerialization status",
+      "required_before": "P4.1c"
+    }
+  },
+  "generated_tables": [
+    {
+      "path": "data/model_input_bundle/bundle_manifest.json",
+      "role": "bundle provenance, run metadata, source paths, row counts, checksums, and accepted caveats"
+    },
+    {
+      "path": "data/model_input_bundle/stand_table.csv",
+      "role": "one row per AFLB resultant fragment with stable keys, area, THLB/NTHLB share, IFM, ORIGIN, AU, curve, treatment, transition, cedar, harvest-system, and embedded-identity fields"
+    },
+    {
+      "path": "data/model_input_bundle/au_table.csv",
+      "role": "canonical Patchworks-facing AU table; static AU identity and selected/remapped curve families"
+    },
+    {
+      "path": "data/model_input_bundle/curve_table.csv",
+      "role": "curve metadata table for natural/untreated and treated/managed curve IDs"
+    },
+    {
+      "path": "data/model_input_bundle/curve_points_table.csv",
+      "role": "age-by-curve yield points for Patchworks ForestModel export"
+    },
+    {
+      "path": "data/model_input_bundle/stand_au_assignment.csv",
+      "role": "AFLB resultant-fragment-to-AU and selected curve-family remap audit table; every AFLB row must have an untreated curve or explicit fatal missing-curve rationale"
+    },
+    {
+      "path": "data/model_input_bundle/stand_origin_assignment.csv",
+      "role": "stand-level natural/treated ORIGIN and curve-provenance assignment audit"
+    },
+    {
+      "path": "data/model_input_bundle/treatment_table.csv",
+      "role": "accepted treatment IDs and eligibility gates for base and NICF-gated scenario hooks"
+    },
+    {
+      "path": "data/model_input_bundle/transition_table.csv",
+      "role": "accepted state-transition rows and source/destination state semantics"
+    },
+    {
+      "path": "data/model_input_bundle/group_table.csv",
+      "role": "reporting and scenario group membership for TFL 6 base, WFP remainder, K3Z reference, expansion pools, cedar signals, harvest systems, and THLB/IFM classes"
+    },
+    {
+      "path": "data/model_input_bundle/cedar_signal_table.csv",
+      "role": "cedar-leading, Cw/Yc, cedar-present, old-cedar, unresolved utility-pole, reserve-context, and harvest-candidate signals"
+    },
+    {
+      "path": "data/model_input_bundle/embedded_identity_table.csv",
+      "role": "K3Z/NICF reference, outside-AOI expansion candidate/rejected/unreviewed, and WFP/TFL6 remainder identity fields"
+    },
+    {
+      "path": "data/model_input_bundle/harvest_system_table.csv",
+      "role": "ground-based, cable, heli, and operability/slope proxy assignments and reporting classes"
+    }
+  ],
+  "qa_tables": [
+    {
+      "path": "data/model_input_bundle/qa/bundle_qa_summary.json",
+      "role": "P4.1d summary of readability, row counts, required fields, and fatal/warn QA results"
+    },
+    {
+      "path": "data/model_input_bundle/qa/area_reconciliation.csv",
+      "role": "area checks across source input, THLB audit, final bundle, IFM, embedded identity, and reporting groups"
+    },
+    {
+      "path": "data/model_input_bundle/qa/missing_mapping_report.csv",
+      "role": "missing AU, curve, treatment, transition, harvest-system, cedar, and embedded-identity mappings"
+    },
+    {
+      "path": "data/model_input_bundle/qa/curve_assignment_summary.csv",
+      "role": "natural/treated curve coverage and AU remap diagnostics"
+    },
+    {
+      "path": "data/model_input_bundle/qa/treatment_eligibility_summary.csv",
+      "role": "IFM, THLB, harvest-system, K3Z/NICF, expansion, and deferred treatment eligibility checks"
+    },
+    {
+      "path": "data/model_input_bundle/qa/cedar_signal_summary.csv",
+      "role": "cedar signal area/volume checks against P3.1b gross diagnostics and final THLB/IFM filtering"
+    },
+    {
+      "path": "data/model_input_bundle/qa/embedded_identity_summary.csv",
+      "role": "K3Z reference, current-AOI TFL6, WFP remainder, outside-AOI expansion candidate, rejected, and unreviewed pool checks"
+    }
+  ],
+  "downstream_phase4_paths": {
+    "forestmodel_output_dir": "output/patchworks_tfl6_validated",
+    "forestmodel_xml": "output/patchworks_tfl6_validated/forestmodel.xml",
+    "forestmodel_fragments_dir": "output/patchworks_tfl6_validated/fragments",
+    "patchworks_model_root": "models/tfl6_patchworks_model",
+    "patchworks_blocks_dir": "models/tfl6_patchworks_model/blocks",
+    "patchworks_tracks_dir": "models/tfl6_patchworks_model/tracks",
+    "patchworks_analysis_dir": "models/tfl6_patchworks_model/analysis"
+  },
+  "non_goals": [
+    "create data/model_input_bundle outputs in P4.1b",
+    "generate ForestModel XML in P4.1b",
+    "run Matrix Builder in P4.1b",
+    "assemble Patchworks runtime package in P4.1b",
+    "drop NTHLB forested rows from the model-input bundle",
+    "treat final THLB area alone as the complete Patchworks stand universe"
+  ],
+  "stand_universe_contract": {
+    "stand_universe": "AFLB resultant fragments",
+    "managed_subset": "THLB",
+    "unmanaged_retention_subset": "NTHLB = AFLB - THLB",
+    "growth_curve_requirement": "Every AFLB resultant fragment needs an untreated VDYP curve, including NTHLB rows.",
+    "patchworks_semantics": {
+      "THLB": "managed treatment-eligible share subject to additional treatment gates",
+      "NTHLB": "unmanaged/full-retention share; compiles to UNMANAGEDAREA semantics downstream while preserving growth and reporting attributes"
+    }
+  }
+}

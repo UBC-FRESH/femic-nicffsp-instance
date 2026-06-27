@@ -1,20 +1,20 @@
 # THLB Netdown Status Report: TSA tfl6 (Tree Farm Licence 6)
 
-- Generated UTC: `2026-06-26T03:58:22.625492+00:00`
+- Generated UTC: `2026-06-26T15:44:37.891352+00:00`
 - Execution mode: `reconstructed`
 - Debug stand-binary fallback: `disabled`
 - Baseline signal: `default_one`
 - Recipe path: `config/tsr/thlb_netdown.recipe.yaml`
 - Checkpoint input: `data/input/tfl_6/vri_2025_r1_poly_tfl6.gpkg`
-- Output checkpoint: `data/tsr/tfl6_thlb_smoke_checkpoint.feather`
-- Audit JSON: `config/tsr/tfl6_thlb_smoke.audit.json`
-- AFLB checkpoint Feather: `data/tsr/aflb_checkpoint.feather`
-- AFLB checkpoint GeoPackage: `data/tsr/aflb_checkpoint.gpkg`
-- LHLB checkpoint Feather: `data/tsr/lhlb_checkpoint.feather`
-- LHLB checkpoint GeoPackage: `data/tsr/lhlb_checkpoint.gpkg`
+- Output checkpoint: `data/model_input_bundle/input_geometry/thlb_current.feather`
+- Audit JSON: `data/model_input_bundle/input_geometry/thlb_checkpoint_manifest.json`
+- AFLB checkpoint Feather: `not retained in P4 handoff`
+- AFLB checkpoint GeoPackage: `not retained in P4 handoff`
+- LHLB checkpoint Feather: `not retained in P4 handoff`
+- LHLB checkpoint GeoPackage: `not retained in P4 handoff`
 - LHLB curve-ready checkpoint Feather: `not written`
 - LHLB curve-ready checkpoint GeoPackage: `not written`
-- Runtime history copy: `runtime/logs/tsr/thlb_reconstructed_status_report-20260626T035822Z.md`
+- Runtime history copy: `runtime/logs/tsr/thlb_reconstructed_status_report-20260626T154437Z.md`
 - Warm-start checklist: `not generated yet`
 - Reconstruction comparison: `not generated yet`
 
@@ -25,24 +25,24 @@
 - Input checkpoint area: `217042.719 ha`
 - GLB / current input proxy: `217042.719 ha`
 - AFLB / baseline managed area: `217042.719 ha`
-- AFLB checkpoint area: `196833.177 ha`
-- LHLB checkpoint area: `174768.947 ha`
+- AFLB checkpoint area: `191168.597 ha`
+- LHLB checkpoint area: `169921.632 ha`
 - LHLB curve-ready checkpoint area: `not written`
-- THLB / final managed area: `144203.485 ha`
-- Exact fragment-overlay steps: `5` / `15285.193 ha net`
+- THLB / final managed area: `139995.798 ha`
+- Exact fragment-overlay steps: `5` / `14656.586 ha net`
 - Explicit aspatial fallback steps: `4` / `27503.649 ha net`
 - Blocked exact-overlay steps: `0` / `0 candidate rows`
 - Debug stand-binary fallback steps: `0` / `0.000 ha net`
 - LU-wise exact-overlay chunks touched: `39`
-- LU-wise intersecting exclusion features: `1247`
-- LU-wise reconstructed runtime: `2.67 min`
+- LU-wise intersecting exclusion features: `1235`
+- LU-wise reconstructed runtime: `1.91 min`
 
 ## Backbone Summary
 
 - GLB:AFLB current proxy = `1.0000 (100.00%)`
 - AFLB:LHLB current = `n/a yet`
-- AFLB:THLB current = `0.6644 (66.44%)`
-- GLB:THLB current proxy = `0.6644 (66.44%)`
+- AFLB:THLB current = `0.6450 (64.50%)`
+- GLB:THLB current proxy = `0.6450 (64.50%)`
 
 ## Outcomes
 
@@ -52,19 +52,19 @@
 
 ## Runtime Timing
 
-- Source-layer load time: `1.01 s`
-- Candidate-query time: `1.42 s`
-- Exact-overlay / fallback time: `43.07 s`
-- Chunk-write time: `17.53 s`
-- Final merge time: `0.71 s`
+- Source-layer load time: `1.16 s`
+- Candidate-query time: `1.59 s`
+- Exact-overlay / fallback time: `58.11 s`
+- Chunk-write time: `23.89 s`
+- Final merge time: `1.31 s`
 
 ### Slowest Steps
 
-- `tfl6_nd_100_established_ogma` | mode=`fragment_overlay` | status=`applied` | total=`21.63 s` | overlay=`18.31 s` | LU chunks=`9` | source features=`164`
-- `tfl6_nd_080_riparian` | mode=`fragment_overlay` | status=`applied` | total=`12.08 s` | overlay=`6.86 s` | LU chunks=`10` | source features=`991`
-- `tfl6_nd_120_wha` | mode=`fragment_overlay` | status=`applied` | total=`5.20 s` | overlay=`2.10 s` | LU chunks=`9` | source features=`45`
-- `tfl6_nd_090_uwr` | mode=`fragment_overlay` | status=`applied` | total=`4.49 s` | overlay=`1.48 s` | LU chunks=`6` | source features=`22`
-- `tfl6_nd_010_non_forest` | mode=`checkpoint_attribute_exclusion` | status=`applied` | total=`4.18 s` | overlay=`2.32 s` | LU chunks=`13` | source features=`0`
+- `tfl6_nd_100_established_ogma` | mode=`fragment_overlay` | status=`applied` | total=`31.43 s` | overlay=`26.38 s` | LU chunks=`9` | source features=`164`
+- `tfl6_nd_080_riparian` | mode=`fragment_overlay` | status=`applied` | total=`11.70 s` | overlay=`6.32 s` | LU chunks=`10` | source features=`979`
+- `tfl6_nd_120_wha` | mode=`fragment_overlay` | status=`applied` | total=`7.97 s` | overlay=`3.47 s` | LU chunks=`9` | source features=`45`
+- `tfl6_nd_090_uwr` | mode=`fragment_overlay` | status=`applied` | total=`5.98 s` | overlay=`2.15 s` | LU chunks=`6` | source features=`22`
+- `tfl6_nd_130_recreation` | mode=`fragment_overlay` | status=`applied` | total=`5.66 s` | overlay=`1.79 s` | LU chunks=`5` | source features=`25`
 
 ## Locking / Convergence
 
@@ -77,8 +77,9 @@
 - Non-AFLB polygons are excluded from the reconstruction universe before THLB logic applies.
 - Non-THLB polygons or fragments remain inside that working universe and are assigned THLB state downstream from AFLB initialization.
 - GLB -> AFLB rows define the modeled universe, AFLB -> LHLB rows define legal harvestability, and LHLB -> THLB rows define projected operational harvestability.
-- `data/tsr/aflb_checkpoint.feather` is the supported downstream restart checkpoint when you want to experiment below AFLB without rebuilding GLB -> AFLB.
-- `data/tsr/lhlb_checkpoint.feather` is the supported downstream restart checkpoint when you want to experiment below LHLB without rebuilding AFLB -> LHLB.
+- AFLB/LHLB companion checkpoints were generated by the runner but are not part
+  of the P4 handoff contract. The corrected P4 AFLB handoff was promoted to
+  `data/model_input_bundle/input_geometry/aflb_current.feather`.
 - Review the exact FEMIC logic summaries before trusting raw TSR prose; the compiled logic is the executable contract.
 - In reconstructed mode, explicit aspatial fallback means a TSR area target was applied honestly as a deduction bridge; it is not the same thing as exact spatial reproduction.
 - Legacy raster THLB values are reference-only in reconstructed mode.
@@ -108,7 +109,7 @@
 - Benchmark cumulative remaining area: `199973.366 ha`
 - Review logic mode: `femic_core`
 - Exact FEMIC logic:
-  - `Less non-forest`: Apply checkpoint attribute filtering to the working land base. The active filter is `bclcs_level_2` in [`N`, `W`] or null.
+  - `Less non-forest`: Apply checkpoint attribute filtering to the working land base. The active filter is `bclcs_level_1` in [`N`, `U`] or `bclcs_level_2` in [`N`, `W`] or null.
 - Current compiled status summary: `applied`=1
 - Compiled logic:
 
@@ -121,7 +122,7 @@
 - Run status: `applied`
 - TSR provenance: ``
 - Review logic mode: `femic_core`
-- Exact FEMIC logic: Apply checkpoint attribute filtering to the working land base. The active filter is `bclcs_level_2` in [`N`, `W`] or null.
+- Exact FEMIC logic: Apply checkpoint attribute filtering to the working land base. The active filter is `bclcs_level_1` in [`N`, `U`] or `bclcs_level_2` in [`N`, `W`] or null.
 - FEMIC proposed logic: Exclude the linked polygons from THLB where they intersect the working land base; the exact execution mode depends on available data and current implementation support.
 - Linked source layers:
   - `vri_2025_r1_tfl6` | query=`` | status=`` | strategy=`pre_materialized`

@@ -406,15 +406,21 @@ steps:
     compiled_operation_type: select_attribute
     normalized_action: exclude
     normalized_subject: Non-forest R1 polygons
-    normalized_predicate: Review envelope uses BCLCS and non-vegetated fields; first candidate is bclcs_level_2 in N/W or null.
+    normalized_predicate: Review envelope removes BCLCS level 1 non-treed/unclassified rows and BCLCS level 2 non-vegetated, water, or unreported rows.
     linked_source_entry_ids:
       - vri_2025_r1_tfl6
     checkpoint_attribute_filters:
+      - field: bclcs_level_1
+        operator: in
+        values:
+          - N
+          - U
       - field: bclcs_level_2
         operator: in_or_null
         values:
           - N
           - W
+    checkpoint_attribute_mode: any
     step_status: scaffolded_review_required
     required: true
     benchmark_marginal_area_ha: 17069.353
@@ -422,6 +428,7 @@ steps:
     contract_status: contract_draft_ready
     notes:
       - Use for_mgmt_land_base_ind only as QA, not as the base rule.
+      - "P4.1c blocker #36 corrected the executable rule after the prior bclcs_level_2-only filter left non-treed/non-forested rows in the AFLB checkpoint."
   - step_id: tfl6_nd_020_existing_roads
     parent_step_id: tfl6_nd_020
     order_index: 20
