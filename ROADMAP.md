@@ -326,7 +326,7 @@ after the runtime package has passed direct artifact and launch smoke checks.
   Patchworks launch smoke, and documentation checks (`#40`).
   - [x] P5.4a Create the release-QA child issue and checklist surface before
     running executable QA checks.
-  - [ ] P5.4b Verify archive, manifest, and public materialization.
+  - [x] P5.4b Verify archive, manifest, and public materialization.
   - [ ] P5.4c Verify Patchworks launch and baseline signal smoke evidence.
   - [ ] P5.4d Verify docs build, docs links, and published Pages surface.
   - [ ] P5.4e Close Phase 5 after QA evidence is recorded.
@@ -651,3 +651,11 @@ The Phase 1 follow-on issues are placed into the future roadmap as follows:
     `planning/tfl6_phase5_release_qa.md` records the final release-QA checklist.
     The next bounded QA slice is P5.4b archive, manifest, and public
     materialization verification.
+    P5.4b is complete: a fresh no-credential clone on
+    `feature/p5-publication-release` enabled `arbutus-s3` with
+    `creds: not available`, fetched the runtime archive and manifest, passed
+    git-annex checksum verification, matched archive SHA256
+    `17f56d11faeba89170fc48e202d1bfe83c2dd40b53e7409d8cdb8c1c487c2f9f` and
+    size `28000736` against the manifest, and confirmed required ZIP members
+    are present. The next bounded QA slice is P5.4c Patchworks launch and
+    baseline signal smoke evidence.

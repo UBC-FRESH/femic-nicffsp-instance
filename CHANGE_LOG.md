@@ -2227,3 +2227,17 @@
   and issue-hygiene checks; and
 - updated `ROADMAP.md` so P5.4 is split into bounded QA slices before Phase 5
   closeout.
+
+## 2026-06-26 - Verified P5.4b archive and public materialization
+
+- reran the release archive public-materialization proof from a fresh clone with
+  AWS/S3 credential environment variables cleared;
+- enabled the `arbutus-s3` special remote and confirmed it reported
+  `creds: not available`, `public: yes`, and `2` remote annex keys;
+- fetched `releases/tfl6_patchworks_runtime_p5_2.zip` and
+  `releases/tfl6_patchworks_runtime_p5_2_manifest.yaml` from `arbutus-s3`;
+- confirmed `git annex fsck` checksum verification passed for both files; and
+- verified the archive SHA256
+  `17f56d11faeba89170fc48e202d1bfe83c2dd40b53e7409d8cdb8c1c487c2f9f`, size
+  `28000736`, ZIP member count `31`, and required launch/XML/tracks/block
+  members against the manifest.
