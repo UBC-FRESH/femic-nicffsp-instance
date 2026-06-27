@@ -580,3 +580,8 @@ The Phase 1 follow-on issues are placed into the future roadmap as follows:
     has been initialized against bucket `ubc-fresh-femic-tfl6-instance`, the
     remote metadata has been pushed on the `git-annex` branch, and the remote is
     currently empty pending the artifact-set decision.
+    P5.2b is complete: the release mode is a reviewed ready-to-launch
+    Patchworks runtime archive plus rebuild instructions, and
+    `planning/tfl6_runtime_release_archive_manifest.md` defines the archive
+    contents, manifest schema, annex publication commands, and no-credential
+    fresh-clone proof.

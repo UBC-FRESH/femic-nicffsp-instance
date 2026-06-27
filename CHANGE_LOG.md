@@ -2117,3 +2117,14 @@
 - pushed the `git-annex` branch so fresh clones can discover the special remote
   metadata; and
 - left payload publication open for the next P5.2 slice.
+
+## 2026-06-26 - Defined P5.2 runtime release archive manifest contract
+
+- accepted the P5.2 release mode: publish a reviewed ready-to-launch Patchworks
+  runtime archive plus rebuild instructions;
+- added `planning/tfl6_runtime_release_archive_manifest.md` with the archive
+  naming convention, required included paths, excluded saved-stage/log/scratch
+  paths, YAML manifest schema, annex copy commands, and no-credential
+  fresh-clone validation commands; and
+- left archive construction, annex copy to `arbutus-s3`, `git-annex` branch
+  push, and fresh-clone materialization proof for the next P5.2 slice.
