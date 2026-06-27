@@ -331,6 +331,80 @@ after the runtime package has passed direct artifact and launch smoke checks.
   - [x] P5.4d Verify docs build, docs links, and published Pages surface.
   - [x] P5.4e Close Phase 5 after QA evidence is recorded.
 
+## Phase 6: MP11 Ingestion, Extraction, and Model-Overhaul Planning (`#42`)
+
+Goal: ingest Western Forest Products' June 2026 TFL 6 Management Plan 11
+package as the new public planning source, extract its timber-supply metadata,
+compare it against the completed Phase 5 MP10-derived teaching prototype, and
+write the follow-on implementation roadmap for an MP11-aligned public FEMIC
+model overhaul.
+
+Phase 6 is a planning and evidence-extraction lane. It does not invalidate the
+Phase 5 runtime package retroactively, and it must not rebuild THLB, yield
+curves, ForestModel XML, Matrix Builder tracks, Patchworks runtime artifacts, or
+published release assets unless a later implementation phase explicitly
+authorizes that work.
+
+- [ ] P6.1 Archive MP11 source package and extraction manifest (`#43`).
+  - [ ] P6.1a Record the source URL, access context, document identity, package
+    components, and page-count expectation for the MP11 PDF bundle.
+  - [ ] P6.1b Define the source-copy/provenance convention before accepting any
+    derived extraction artifacts.
+  - [ ] P6.1c Define the extraction-manifest schema for page anchors, document
+    components, sections, tables, figures, assumptions, sensitivity analyses,
+    and review status.
+  - [ ] P6.1d State explicitly that MP11 analysis informs the Chief Forester's
+    AAC determination and is not treated here as a final approved AAC decision.
+- [ ] P6.2 Extract MP11 tables, figures, sections, assumptions, and metadata
+  (`#44`).
+  - [ ] P6.2a Extract the Management Plan front matter, Appendix A Timber
+    Supply Analysis report, and Appendix B Information Package as separate
+    document layers.
+  - [ ] P6.2b Inventory section headings, tables, figures, appendices,
+    references, model-input descriptions, assumptions, and sensitivity-analysis
+    items with page/section anchors.
+  - [ ] P6.2c Record extraction method, tool versions, failures, and
+    manual-review flags.
+  - [ ] P6.2d Keep raw extraction separate from reviewed/adopted model
+    assumptions.
+- [ ] P6.3 Compare MP11 land base and THLB assumptions against the Phase 5
+  prototype (`#45`).
+  - [ ] P6.3a Crosswalk MP11 total TFL area, productive forest, THLB, and NCLB
+    values against the Phase 5 benchmark and THLB surfaces.
+  - [ ] P6.3b Identify changed netdown categories, source-layer definitions,
+    boundary assumptions, tenure assumptions, and benchmark implications.
+  - [ ] P6.3c Classify each delta as directly reproducible from public layers,
+    model-parameter work, sensitivity-only, or unresolved WFP-model gap.
+- [ ] P6.4 Compare MP11 inventory, LiDAR/ITI, yield, operability, and
+  harvest-system assumptions (`#46`).
+  - [ ] P6.4a Inspect VRI, LiDAR, ITI, operability, riparian, OGMA/WHA,
+    economic operability, terrain, karst, future retention, and other
+    land-base sections.
+  - [ ] P6.4b Inspect analysis units, natural and managed yields, OAF,
+    utilization, non-recoverable losses, forest-cover constraints, minimum
+    harvest age, harvest rules, silvicultural systems, and harvest-flow
+    objectives.
+  - [ ] P6.4c Compare MP11 assumptions against Phase 5 AU/yield, treatment,
+    transition, cedar, expansion, and runtime-package contracts.
+- [ ] P6.5 Compare MP11 model behavior, sensitivities, AAC recommendation, and
+  KPI outputs (`#47`).
+  - [ ] P6.5a Inventory MP11 base case, alternate harvest flows, sensitivity
+    analyses, AAC recommendation, harvest systems, age/volume classes, cedar
+    inventory, old cedar, elevation bands, species composition, and reported
+    output surfaces.
+  - [ ] P6.5b Compare the available Phase 5 Patchworks evidence against those
+    MP11 outputs without claiming equivalence to WFP's unpublished forest
+    estate model.
+  - [ ] P6.5c Produce a prioritized model-gap list for Phase 7+ planning.
+- [ ] P6.6 Write the Phase 7+ implementation roadmap for the MP11-aligned
+  model overhaul (`#48`).
+  - [ ] P6.6a Define follow-on lanes for source layers, THLB, AU/yield,
+    Patchworks runtime, scenario/KPI surfaces, docs, QA, and publication.
+  - [ ] P6.6b Preserve the Phase 5 prototype as the baseline until replacement
+    artifacts pass direct inspection and QA.
+  - [ ] P6.6c Draft the Phase 7+ issue structure without beginning the
+    overhaul implementation.
+
 ## Dependency Order
 
 The next phases must proceed in this order unless the maintainer explicitly
@@ -362,6 +436,11 @@ approves a narrower independent slice:
    decides artifact publication policy, then later Phase 5 tasks publish
    materializable artifacts, build full K3Z/TSA29-style Sphinx teaching docs,
    and run final release QA.
+6. **MP11 ingestion and overhaul planning**: Phase 6 (`#42`) starts after the
+   Phase 5 first teaching release is closed. It extracts and reviews the new
+   public MP11 package before any model-overhaul implementation begins. Phase
+   7+ implementation must depend on Phase 6's reviewed crosswalks rather than
+   direct, unreviewed PDF extraction.
 
 Guardrail: source extraction, THLB execution, cedar/expansion implementation,
 model-input generation, XML/Matrix Builder work, runtime packaging,
@@ -685,3 +764,10 @@ The Phase 1 follow-on issues are placed into the future roadmap as follows:
     parent `#15` are closed. Future work should be opened as new follow-on
     phase/task issues rather than reopening this first teaching-release
     closeout.
+26. Phase 6 is open as the MP11 ingestion and model-overhaul planning lane.
+    The parent issue is `#42`; child issues `#43` through `#48` cover source
+    archiving, full PDF metadata extraction, land-base/THLB crosswalk,
+    inventory/yield/operability/harvest-system comparison, model-behavior and
+    KPI comparison, and the Phase 7+ implementation roadmap. The next bounded
+    step is P6.1: archive the source-package/provenance surface and extraction
+    manifest requirements without changing model inputs or runtime artifacts.

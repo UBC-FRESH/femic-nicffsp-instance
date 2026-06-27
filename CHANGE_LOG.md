@@ -2286,3 +2286,18 @@
   and public Pages checks have all passed; and
 - closed P5.4 child issue `#40` and Phase 5 parent issue `#15` after posting
   final closeout comments.
+
+## 2026-06-27 - Opened Phase 6 MP11 ingestion planning
+
+- opened Phase 6 parent issue `#42` and child issues `#43` through `#48` for
+  MP11 source archiving, full PDF extraction, land-base/THLB comparison,
+  inventory/yield/operability/harvest-system comparison, model-behavior and KPI
+  comparison, and Phase 7+ implementation-roadmap planning;
+- added `planning/tfl6_mp11_ingestion_overhaul_plan.md` to record the MP11
+  source URL, public-release context, extraction scope, issue tree, Phase 5
+  baseline surfaces, and non-goals;
+- updated `ROADMAP.md` with Phase 6 as the active MP11 ingestion and
+  model-overhaul planning lane; and
+- kept the completed Phase 5 runtime package as the baseline prototype until
+  MP11 deltas are extracted, page-anchored, reviewed, and scoped into a later
+  implementation phase.
