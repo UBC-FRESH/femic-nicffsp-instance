@@ -123,7 +123,7 @@ any selected large TFL 6 runtime artifacts:
 | protocol / port | `https` / `443` |
 | public URL | `https://object-arbutus.cloud.computecanada.ca/ubc-fresh-femic-tfl6-instance` |
 | remote UUID | `861b7dd7-fff0-4637-b0a2-b9b4668dca71` |
-| publication status | initialized, empty |
+| publication status | release archive and manifest copied |
 
 Bootstrap evidence:
 
@@ -141,7 +141,11 @@ Bootstrap evidence:
 - The `git-annex` branch has been pushed to `origin` so fresh clones can
   discover the special remote metadata.
 
-No payload keys have been copied to `arbutus-s3` yet. P5.2 still needs to choose
-the exact artifact set, annex it, copy selected keys to the remote, push the
-updated `git-annex` branch, and run a no-credential fresh-clone materialization
-smoke.
+P5.2c copied the first payload keys to `arbutus-s3`:
+
+- `releases/tfl6_patchworks_runtime_p5_2.zip`
+- `releases/tfl6_patchworks_runtime_p5_2_manifest.yaml`
+
+`git annex info arbutus-s3` reports `2` remote keys / `28.01` MB. P5.2 still
+needs to push the updated `git-annex` branch and run a no-credential fresh-clone
+materialization smoke.

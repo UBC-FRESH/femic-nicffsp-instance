@@ -2129,7 +2129,7 @@
 - left archive construction, annex copy to `arbutus-s3`, `git-annex` branch
   push, and fresh-clone materialization proof for the next P5.2 slice.
 
-## 2026-06-26 - Built and annexed P5.2 runtime release archive
+## 2026-06-26 - Built, annexed, and published P5.2 runtime release archive
 
 - generated `releases/tfl6_patchworks_runtime_p5_2.zip` from the accepted Phase
   4 XML/fragments, Matrix Builder tracks, blocks/topology, launch scripts,
@@ -2137,5 +2137,9 @@
 - generated `releases/tfl6_patchworks_runtime_p5_2_manifest.yaml` with archive
   SHA256, archive size, source commits, Arbutus remote metadata, and per-file
   SHA256/size/source-step entries for `31` included files;
-- validated that the ZIP contents match the manifest exactly; and
-- annexed both release files locally before copying them to `arbutus-s3`.
+- validated that the ZIP contents match the manifest exactly;
+- annexed both release files locally;
+- copied both annex keys to `arbutus-s3`;
+- confirmed `git annex whereis` reports both the local repository and
+  `arbutus-s3` for both release files; and
+- confirmed `git annex info arbutus-s3` reports `2` remote keys / `28.01` MB.

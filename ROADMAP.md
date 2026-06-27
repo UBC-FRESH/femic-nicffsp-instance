@@ -585,8 +585,10 @@ The Phase 1 follow-on issues are placed into the future roadmap as follows:
     `planning/tfl6_runtime_release_archive_manifest.md` defines the archive
     contents, manifest schema, annex publication commands, and no-credential
     fresh-clone proof.
-    P5.2c is complete locally: `releases/tfl6_patchworks_runtime_p5_2.zip`
+    P5.2c is complete: `releases/tfl6_patchworks_runtime_p5_2.zip`
     and `releases/tfl6_patchworks_runtime_p5_2_manifest.yaml` were generated
-    from the accepted Phase 4 runtime inputs and annexed. The next verification
-    edge is confirming both annex keys are on `arbutus-s3` and then running the
-    no-credential fresh-clone materialization proof.
+    from the accepted Phase 4 runtime inputs, annexed, and copied to
+    `arbutus-s3`; `git annex whereis` reports both the local repository and the
+    remote, and `git annex info arbutus-s3` reports `2` remote keys / `28.01`
+    MB. The next verification edge is the no-credential fresh-clone
+    materialization proof.
