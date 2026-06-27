@@ -287,7 +287,7 @@ after the runtime package has passed direct artifact and launch smoke checks.
 
 - [x] P5.1 Decide which compact runtime artifacts are tracked, annexed,
   published, or regenerated (`#18`).
-- [ ] P5.2 Publish required data/runtime artifacts through the accepted FEMIC
+- [x] P5.2 Publish required data/runtime artifacts through the accepted FEMIC
   public-data workflow and prove fresh-environment materialization (`#39`).
 - [ ] P5.3 Build full Sphinx teaching documentation (`#21`) modeled on the
   `femic-k3z-instance` and `femic-tsa29-instance` documentation surfaces,
@@ -592,3 +592,10 @@ The Phase 1 follow-on issues are placed into the future roadmap as follows:
     remote, and `git annex info arbutus-s3` reports `2` remote keys / `28.01`
     MB. The next verification edge is the no-credential fresh-clone
     materialization proof.
+    P5.2d is complete: a fresh temp clone of `feature/p5-publication-release`
+    with AWS/S3 environment variables cleared enabled `arbutus-s3` with
+    `creds: not available`, fetched both release files from the public remote,
+    and verified the archive SHA256 against the manifest. P5.2 child `#39` is
+    closed. The next bounded Phase 5 lane is P5.3b / `#21`: expand the final
+    K3Z/TSA29-style teaching docs now that the runtime archive exists and is
+    publicly materializable.

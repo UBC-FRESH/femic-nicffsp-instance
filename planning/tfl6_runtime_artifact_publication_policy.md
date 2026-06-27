@@ -146,6 +146,32 @@ P5.2c copied the first payload keys to `arbutus-s3`:
 - `releases/tfl6_patchworks_runtime_p5_2.zip`
 - `releases/tfl6_patchworks_runtime_p5_2_manifest.yaml`
 
-`git annex info arbutus-s3` reports `2` remote keys / `28.01` MB. P5.2 still
-needs to push the updated `git-annex` branch and run a no-credential fresh-clone
-materialization smoke.
+`git annex info arbutus-s3` reports `2` remote keys / `28.01` MB. The updated
+`git-annex` branch has been pushed, and P5.2d completed the no-credential
+fresh-clone materialization smoke.
+
+## Fresh-Clone Materialization Proof
+
+P5.2d completed the no-credential materialization proof from a fresh temporary
+clone of `feature/p5-publication-release`.
+
+Proof summary:
+
+- AWS/S3 credential environment variables were cleared before enabling
+  `arbutus-s3`.
+- `git annex info arbutus-s3` reported:
+  - `creds: not available`;
+  - `public: yes`;
+  - `publicurl: https://object-arbutus.cloud.computecanada.ca/ubc-fresh-femic-tfl6-instance`;
+  - `remote annex keys: 2`; and
+  - `remote annex size: 28.01 megabytes`.
+- `git annex get` fetched both release files from `arbutus-s3` and reported
+  checksum `ok`:
+  - `releases/tfl6_patchworks_runtime_p5_2.zip`;
+  - `releases/tfl6_patchworks_runtime_p5_2_manifest.yaml`.
+- A Python standard-library SHA256 check confirmed the archive hash matches the
+  manifest value:
+  `17f56d11faeba89170fc48e202d1bfe83c2dd40b53e7409d8cdb8c1c487c2f9f`.
+
+The temporary clone path is deliberately not recorded because it is
+machine-specific. This proof is sufficient for the P5.2 materialization gate.

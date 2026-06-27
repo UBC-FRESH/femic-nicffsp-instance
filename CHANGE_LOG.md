@@ -2143,3 +2143,21 @@
 - confirmed `git annex whereis` reports both the local repository and
   `arbutus-s3` for both release files; and
 - confirmed `git annex info arbutus-s3` reports `2` remote keys / `28.01` MB.
+
+## 2026-06-26 - Proved P5.2 fresh-clone runtime archive materialization
+
+- cloned `UBC-FRESH/femic-tfl6-instance` on branch
+  `feature/p5-publication-release` into a fresh temporary directory;
+- cleared AWS/S3 credential environment variables before enabling the
+  `arbutus-s3` special remote;
+- confirmed `git annex info arbutus-s3` reported `creds: not available`,
+  `public: yes`, the expected public URL, and `2` remote keys / `28.01` MB;
+- fetched both release files from `arbutus-s3`:
+  `releases/tfl6_patchworks_runtime_p5_2.zip` and
+  `releases/tfl6_patchworks_runtime_p5_2_manifest.yaml`;
+- confirmed git-annex checksum verification passed for both files;
+- verified the archive SHA256 with Python standard-library code against the
+  manifest value
+  `17f56d11faeba89170fc48e202d1bfe83c2dd40b53e7409d8cdb8c1c487c2f9f`; and
+- closed P5.2 as materializable, leaving final teaching-docs expansion and
+  release QA as the remaining Phase 5 work.
