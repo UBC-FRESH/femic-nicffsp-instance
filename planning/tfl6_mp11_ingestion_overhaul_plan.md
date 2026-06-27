@@ -17,9 +17,11 @@ reviewed evidence base needed before a future MP11-aligned overhaul can begin.
 - Source URL:
   `https://www.westernforest.com/wp-content/uploads/2026/06/TFL6_MP_11_202606_w_Appendices_Web-compressed.pdf`
 - Public-release context: June 2026 WFP TFL 6 Management Plan 11 package.
-- Expected package size: 475 pages, to be verified in P6.1 from the actual PDF
-  metadata and extraction manifest.
-- Expected document layers, to be verified during P6.1/P6.2:
+- Source-access smoke on 2026-06-27: the public PDF responded as an
+  `application/pdf` and reported 475 pages. P6.1 still needs the local
+  source/provenance manifest, checksum, and extraction-readiness record.
+- Expected document layers, to be verified in the P6.1/P6.2 extraction
+  manifest:
   - Management Plan front matter;
   - Appendix A: Timber Supply Analysis report; and
   - Appendix B: Information Package.
