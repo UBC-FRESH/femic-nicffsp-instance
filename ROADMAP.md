@@ -306,6 +306,11 @@ after the runtime package has passed direct artifact and launch smoke checks.
       archive, DataLad/git-annex materialization commands, Arbutus remote
       metadata, no-credential proof, launch boundary, rebuild anchors, and
       caveats.
+    - [x] P5.3b.2 Add a student/maintainer runtime quickstart that starts from
+      the published archive, materializes it from `arbutus-s3`, unpacks it,
+      opens `base.pin`, verifies the core baseline teaching signals, and points
+      back to rebuild/provenance docs without requiring students to rebuild
+      first.
 - [ ] P5.4 Run final release QA across source materialization, instance rebuild,
   Patchworks launch smoke, and documentation checks.
 
@@ -608,3 +613,7 @@ The Phase 1 follow-on issues are placed into the future roadmap as follows:
     metadata, no-credential proof, launch boundary, rebuild anchors, and known
     caveats; `docs/index.rst` links the page and no longer describes the package
     as not runnable.
+    P5.3b.2 is complete: `docs/phase5-runtime-quickstart.rst` now gives
+    teaching users a runtime-first path from public archive materialization to
+    `base.pin` launch and baseline signal checks, while keeping rebuild work
+    pointed at the provenance and model-building documentation.

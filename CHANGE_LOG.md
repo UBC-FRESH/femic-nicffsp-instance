@@ -2172,3 +2172,13 @@
   describing the package as not yet runnable; and
 - marked P5.3b.1 complete in `ROADMAP.md` while leaving the broader final
   teaching-docs expansion open.
+
+## 2026-06-26 - Added Phase 5 runtime quickstart teaching docs
+
+- added `docs/phase5-runtime-quickstart.rst` as a runtime-first quickstart for
+  students and maintainers;
+- documented public `arbutus-s3` materialization, archive unpacking, `base.pin`
+  launch, baseline teaching signal checks, AFLB/THLB/NTHLB interpretation, and
+  the boundary between consuming the runtime package and rebuilding it; and
+- marked P5.3b.2 complete in `ROADMAP.md` while leaving the broader final
+  teaching-docs expansion open.

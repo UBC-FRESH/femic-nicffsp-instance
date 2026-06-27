@@ -15,4 +15,5 @@ trail used to create it.
    phase3-cedar-nicf-expansion
    phase3-model-input-contract
    phase5-runtime-release
+   phase5-runtime-quickstart
    teaching-challenges
