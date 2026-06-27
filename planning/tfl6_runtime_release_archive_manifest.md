@@ -134,7 +134,7 @@ Each `included_files` entry must include:
 P5.2c should build the archive and manifest, then annex them:
 
 ```powershell
-git annex add -f releases\tfl6_patchworks_runtime_p5_2.zip `
+git annex add --force releases\tfl6_patchworks_runtime_p5_2.zip `
   releases\tfl6_patchworks_runtime_p5_2_manifest.yaml
 git commit -m "P5.2 publish TFL6 runtime archive manifest"
 git annex copy --to arbutus-s3 -- releases\tfl6_patchworks_runtime_p5_2.zip `
