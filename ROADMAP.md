@@ -322,14 +322,14 @@ after the runtime package has passed direct artifact and launch smoke checks.
     - [x] P5.3b.5 Add known-limitations and release-readiness documentation
       that consolidates first-release caveats, clarifies what does and does not
       block the teaching release, and defines the P5.4 final QA checklist.
-- [ ] P5.4 Run final release QA across source materialization, instance rebuild,
+- [x] P5.4 Run final release QA across source materialization, instance rebuild,
   Patchworks launch smoke, and documentation checks (`#40`).
   - [x] P5.4a Create the release-QA child issue and checklist surface before
     running executable QA checks.
   - [x] P5.4b Verify archive, manifest, and public materialization.
   - [x] P5.4c Verify Patchworks launch and baseline signal smoke evidence.
   - [x] P5.4d Verify docs build, docs links, and published Pages surface.
-  - [ ] P5.4e Close Phase 5 after QA evidence is recorded.
+  - [x] P5.4e Close Phase 5 after QA evidence is recorded.
 
 ## Dependency Order
 
@@ -677,4 +677,11 @@ The Phase 1 follow-on issues are placed into the future roadmap as follows:
     to `main`, and the `github-pages` environment has a narrow branch policy for
     `feature/p5-publication-release`. The manual deploy succeeded, the public
     root returns `200` with Phase 5 content, and the five Phase 5 pages return
-    `200`. The next bounded QA slice is P5.4e Phase 5 closeout.
+    `200`.
+    P5.4e and Phase 5 are complete: the release-QA checklist records archive
+    materialization, manifest/SHA verification, Patchworks launch and baseline
+    signal smoke evidence, warning-clean Sphinx build, public Pages checks, and
+    explicit deferred follow-on scope. The P5.4 child issue `#40` and Phase 5
+    parent `#15` are closed. Future work should be opened as new follow-on
+    phase/task issues rather than reopening this first teaching-release
+    closeout.

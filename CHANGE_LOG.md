@@ -2275,3 +2275,14 @@
   successfully; and
 - verified the public root returns `200` with Phase 5 content and RTD theme
   markup, and the five Phase 5 documentation pages return `200`.
+
+## 2026-06-26 - Closed Phase 5 first teaching release QA
+
+- marked P5.4e and P5.4 complete in `ROADMAP.md`;
+- marked the final P5.4e closeout row pass in
+  `planning/tfl6_phase5_release_qa.md`;
+- recorded that public archive materialization, manifest/SHA verification,
+  Patchworks launch and baseline signal smoke evidence, warning-clean Sphinx,
+  and public Pages checks have all passed; and
+- closed P5.4 child issue `#40` and Phase 5 parent issue `#15` after posting
+  final closeout comments.
