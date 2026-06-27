@@ -16,4 +16,5 @@ trail used to create it.
    phase3-model-input-contract
    phase5-runtime-release
    phase5-runtime-quickstart
+   phase5-rebuild-provenance
    teaching-challenges

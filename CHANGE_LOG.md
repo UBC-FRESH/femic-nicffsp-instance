@@ -2182,3 +2182,15 @@
   the boundary between consuming the runtime package and rebuilding it; and
 - marked P5.3b.2 complete in `ROADMAP.md` while leaving the broader final
   teaching-docs expansion open.
+
+## 2026-06-26 - Added Phase 5 rebuild provenance teaching docs
+
+- added `docs/phase5-rebuild-provenance.rst` as a maintainer-facing map from
+  reviewed source/THLB contracts through AU/yield curves, model-input bundle,
+  ForestModel XML/fragments, Matrix Builder tracks, block/topology outputs,
+  launch smoke, and release archive publication;
+- documented canonical versus generated surfaces, accepted lineage-registry
+  commands, key planning-note anchors, release archive/manifest surfaces, and a
+  maintainer rebuild checklist; and
+- marked P5.3b.3 complete in `ROADMAP.md` while leaving the broader final
+  teaching-docs expansion open.

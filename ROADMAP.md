@@ -311,6 +311,10 @@ after the runtime package has passed direct artifact and launch smoke checks.
       opens `base.pin`, verifies the core baseline teaching signals, and points
       back to rebuild/provenance docs without requiring students to rebuild
       first.
+    - [x] P5.3b.3 Add a maintainer rebuild/provenance guide that maps canonical
+      configs, planning notes, generated artifacts, lineage commands, release
+      archive metadata, and dependency order from source/THLB through runtime
+      publication.
 - [ ] P5.4 Run final release QA across source materialization, instance rebuild,
   Patchworks launch smoke, and documentation checks.
 
@@ -617,3 +621,7 @@ The Phase 1 follow-on issues are placed into the future roadmap as follows:
     teaching users a runtime-first path from public archive materialization to
     `base.pin` launch and baseline signal checks, while keeping rebuild work
     pointed at the provenance and model-building documentation.
+    P5.3b.3 is complete: `docs/phase5-rebuild-provenance.rst` now maps the
+    canonical planning/config/docs surfaces, generated artifact boundaries,
+    accepted Phase 2-5 rebuild anchors, lineage-registry commands, release
+    archive/manifest surfaces, and maintainer rebuild checklist.
