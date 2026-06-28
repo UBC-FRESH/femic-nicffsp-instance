@@ -14,7 +14,7 @@ current THLB target.
 ## Branch And Issue Tree
 
 - Branch: `feature/p9-mp11-source-layer-thlb-rebuild`
-- Pull request: pending at initial closeout
+- Pull request: `#78`
 - Parent issue: `#66`
 - Child issues:
   - P9.1 launch source-layer THLB rebuild execution plan: `#72`;
