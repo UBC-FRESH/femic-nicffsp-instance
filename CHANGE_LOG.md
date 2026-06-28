@@ -1,5 +1,20 @@
 # Change Log
 
+## 2026-06-28 - Launched Phase 10 MP11 AU/yield curve rebuild
+
+- created Phase 10 child issues `#79` through `#84` for launch planning,
+  managed-yield parameter extraction, AU/curve-lane crosswalk refresh, natural
+  curve diagnostics, managed curve diagnostics, and phase closeout;
+- added `planning/tfl6_mp11_phase10_execution_plan.md` to record the Phase 10
+  branch, issue tree, artifact layout, governing contracts, parameter-library
+  gates, curve-lane gates, no-fabrication rules, and validation expectations;
+- marked Phase 10 active and P10.1 complete in `ROADMAP.md`;
+- preserved MP10/Phase 5 curve artifacts as baseline and fallback/comparison
+  evidence only; and
+- did not generate or track new natural curves, managed curves, model-input
+  tables, XML, Matrix Builder outputs, Patchworks runtime artifacts, private
+  WFP curves, or proprietary LEFI/ITI/LiDAR assumptions.
+
 ## 2026-06-28 - Closed Phase 9 MP11 source-layer and THLB rebuild
 
 - added `planning/tfl6_mp11_phase9_closeout.md` to summarize the completed
