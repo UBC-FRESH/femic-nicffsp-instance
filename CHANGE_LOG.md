@@ -37,6 +37,22 @@
 - marked P7.2 complete in `ROADMAP.md`, advancing the active edge to P7.3
   crop/classification/calibration work.
 
+## 2026-06-28 - Started the MP11 high-priority crop queue
+
+- generated a preliminary high-priority `figrecover` candidate manifest under
+  ignored `runtime/document_ingestion/tfl6-mp11-full-figures/` for the `36`
+  figures marked `high` in the MP11 figure inventory;
+- wrote `36` preliminary full-content crops under ignored
+  `runtime/document_ingestion/tfl6-mp11-full-figures/crops/priority_high_preliminary/`;
+- added `planning/tfl6_mp11_priority_figure_crop_queue.csv` and
+  `planning/tfl6_mp11_priority_crop_queue.md` as compact tracked review
+  surfaces;
+- explicitly marked the preliminary crops as `needs_manual_crop_review` and
+  calibration as `not_started`, so they are not accepted plot-area crops or
+  recovered evidence; and
+- marked P7.3a and P7.3b complete in `ROADMAP.md`, leaving P7.3c-P7.3e open
+  for manual crop review, calibration specs, and issue/comment closeout.
+
 ## 2026-06-23 - Bootstrapped the NICF FSP FRST 558 instance repository
 
 - created the FEMIC instance scaffold for `femic-tfl6-instance`;

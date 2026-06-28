@@ -381,8 +381,8 @@ model-upgrade work.
   - [x] P7.2d Write corpus source/candidate manifests and record checksums.
   - [x] P7.2e Update roadmap, changelog, planning notes, and issue comments.
 - [ ] P7.3 Crop, classify, and calibrate MP11 figure candidates (`#52`).
-  - [ ] P7.3a Crop selected figure candidates under ignored runtime paths.
-  - [ ] P7.3b Classify extraction method and support status.
+  - [x] P7.3a Crop selected figure candidates under ignored runtime paths.
+  - [x] P7.3b Classify extraction method and support status.
   - [ ] P7.3c Create calibration specs for high-priority numeric charts.
   - [ ] P7.3d Record crop checksums and calibration-review status.
   - [ ] P7.3e Update roadmap, changelog, planning notes, and issue comments.
@@ -474,8 +474,11 @@ The Phase 1 follow-on issues are placed into the future roadmap as follows:
    inventory from Appendix A's list of figures, and
    `planning/tfl6_mp11_figrecover_corpus_summary.md` /
    `planning/tfl6_mp11_figrecover_corpus_summary.json` record the ignored
-   runtime corpus preparation. The active edge is P7.3: crop, classify, and
-   calibrate MP11 figure candidates.
+   runtime corpus preparation, and
+   `planning/tfl6_mp11_priority_figure_crop_queue.csv` records the first 36
+   high-priority preliminary crop queue. The active edge remains P7.3:
+   manually review crop boxes and create calibration specs for the first
+   extraction batch.
 1. Phase 2 is closed. The instance `main` branch contains the Phase 2
    source-layer, THLB smoke, benchmark-tolerance, and Sphinx audit-trail
    surfaces; the parent FEMIC submodule pointer has been updated to the merged

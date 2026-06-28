@@ -63,6 +63,18 @@ The ignored runtime corpus is:
 It renders the `58` unique PDF pages referenced by the `61` figure inventory
 rows at `150` DPI with `figrecover 0.1.0a1` and PyMuPDF `1.27.2.3`.
 
+## Priority Crop Queue
+
+The compact P7.3 priority crop queue is:
+
+- `planning/tfl6_mp11_priority_crop_queue.md`
+- `planning/tfl6_mp11_priority_figure_crop_queue.csv`
+
+It creates ignored preliminary full-content crops for the `36` high-priority
+figures. These crops are marked `needs_manual_crop_review`, and calibration is
+explicitly `not_started`. They are a review queue, not accepted plot-area crops
+or recovered data.
+
 ## Runtime Artifact Boundary
 
 Generated figure-recovery artifacts belong under ignored runtime paths such as:
