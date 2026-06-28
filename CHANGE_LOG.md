@@ -1,5 +1,21 @@
 # Change Log
 
+## 2026-06-28 - Completed P10.4 MP11 natural-curve diagnostics
+
+- added `scripts/build_p10_mp11_natural_curve_diagnostics.py` to repackage the
+  accepted Phase 3/5 public VDYP first-growth evidence for the MP11 natural
+  curve lane;
+- added `planning/tfl6_mp11_natural_curve_diagnostics.md` with matching
+  CSV/JSON outputs covering `384` canonical AUs;
+- recorded the `77` selected top-area natural curve families, remap status for
+  non-selected AU bins, existing plot references, curve maxima, and review
+  statuses;
+- preserved existing Phase 5 curve values without rerunning VDYP or generating
+  new managed curves; and
+- kept every P10.4 row as `not_model_input`, with no model-input tables, XML,
+  Matrix Builder outputs, Patchworks runtime artifacts, private WFP curves, or
+  proprietary LEFI/ITI/LiDAR assumptions tracked.
+
 ## 2026-06-28 - Completed P10.3 MP11 AU and curve-lane crosswalk
 
 - added `scripts/build_p10_mp11_au_curve_lane_crosswalk.py` to map the stable

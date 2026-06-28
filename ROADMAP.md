@@ -556,12 +556,12 @@ QA diagnostics, and isolate unavailable LEFI/ITI/LiDAR assumptions.
   - [x] P10.3b Build MP11 AU/curve-lane crosswalk generator.
   - [x] P10.3c Emit crosswalk Markdown/CSV/JSON and fallback diagnostics.
   - [x] P10.3d Flag unsupported and non-public dependency mappings.
-- [ ] P10.4 Regenerate MP11 natural curve diagnostics (`#82`).
-  - [ ] P10.4a Review VDYP source/version and existing natural curve scripts.
-  - [ ] P10.4b Run or adapt natural curve generation for MP11 crosswalks.
-  - [ ] P10.4c Emit natural curve diagnostics, plots/manifests, and comparison
+- [x] P10.4 Regenerate MP11 natural curve diagnostics (`#82`).
+  - [x] P10.4a Review VDYP source/version and existing natural curve scripts.
+  - [x] P10.4b Run or adapt natural curve generation for MP11 crosswalks.
+  - [x] P10.4c Emit natural curve diagnostics, plots/manifests, and comparison
     summaries.
-  - [ ] P10.4d Flag sparse-support, fallback, or unsupported curve families.
+  - [x] P10.4d Flag sparse-support, fallback, or unsupported curve families.
 - [ ] P10.5 Generate MP11 managed curve diagnostics (`#83`).
   - [ ] P10.5a Build reviewed MP11 BatchTIPSY/TIPSY handoff from P10.2/P10.3
     outputs.
@@ -676,10 +676,10 @@ The Phase 1 follow-on issues are placed into the future roadmap as follows:
 ## Current Next Steps
 
 0. Phase 10 is active on branch
-   `feature/p10-mp11-au-yield-curve-rebuild`. P10.1 through P10.3 are
-   complete. `planning/tfl6_mp11_au_curve_lane_crosswalk.md` maps the stable
-   FEMIC canonical AU universe to MP11 curve lanes and parameter gates. The
-   active edge is P10.4: regenerate MP11 natural curve diagnostics (`#82`).
+   `feature/p10-mp11-au-yield-curve-rebuild`. P10.1 through P10.4 are
+   complete. `planning/tfl6_mp11_natural_curve_diagnostics.md` records the
+   MP11 natural-curve diagnostic surface from existing public VDYP evidence.
+   The active edge is P10.5: generate MP11 managed curve diagnostics (`#83`).
 1. Phase 7 is closed. PR `#56` merged the MP11 figure-extraction test
    closeout into `main`. The final closeout surface is
    `planning/tfl6_mp11_figure_extraction_closeout.md` with matching CSV/JSON.
