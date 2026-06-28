@@ -161,6 +161,21 @@ The promotion is limited to `accepted_for_comparison` with downstream use
 `phase6_mp11_comparison_only`. The outputs remain explicitly
 `not_model_input`.
 
+## Cedar Inventory Extraction Batch
+
+The first cedar inventory stacked-area extraction batch is recorded in:
+
+- `planning/tfl6_mp11_cedar_inventory_extraction_summary.md`
+- `planning/tfl6_mp11_cedar_inventory_extraction_summary.csv`
+- `planning/tfl6_mp11_cedar_inventory_extraction_summary.json`
+- `planning/tfl6_mp11_cedar_inventory_series_summary.csv`
+
+The batch extracts Figures `14`, `15`, `51`, and `52`. It recovers THLB cedar
+volume, total productive cedar volume, and implied NCLB cedar volume from
+stacked-area boundaries. The first QA check confirms nonnegative
+`total - THLB` values for all recovered points. The batch remains
+`raw_extraction` pending full-resolution overlay review.
+
 ## Runtime Artifact Boundary
 
 Generated figure-recovery artifacts belong under ignored runtime paths such as:

@@ -1,5 +1,25 @@
 # Change Log
 
+## 2026-06-28 - Extracted MP11 cedar inventory stacked-area charts
+
+- added `scripts/build_p7_mp11_cedar_inventory_extractions.py` for the first
+  cedar inventory stacked-area extraction batch;
+- extracted Figures `14`, `15`, `51`, and `52`, recovering THLB cedar, total
+  cedar, and implied NCLB cedar series from stacked-area boundaries;
+- wrote ignored detailed result JSON, recovered-point CSV, overlay PNG, and
+  metrics JSON artifacts under
+  `runtime/document_ingestion/tfl6-mp11-full-figures/`;
+- added compact public-safe summary outputs in
+  `planning/tfl6_mp11_cedar_inventory_extraction_summary.md`,
+  `planning/tfl6_mp11_cedar_inventory_extraction_summary.csv`,
+  `planning/tfl6_mp11_cedar_inventory_extraction_summary.json`, and
+  `planning/tfl6_mp11_cedar_inventory_series_summary.csv`;
+- corrected the sampler to use separate y-bands for total-boundary and
+  THLB-boundary extraction after overlay review showed legend/axis
+  contamination in the first attempt; and
+- kept the batch status as `raw_extraction`, pending maintainer overlay/value
+  review before Phase 6 comparison acceptance.
+
 ## 2026-06-28 - Reviewed MP11 growing-stock charts for comparison use
 
 - added `scripts/build_p7_mp11_growing_stock_review_manifest.py` to produce a
