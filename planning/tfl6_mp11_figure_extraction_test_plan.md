@@ -133,6 +133,24 @@ The promotion is limited to `accepted_for_comparison` with downstream use
 `phase6_mp11_comparison_only`. The outputs remain explicitly
 `not_model_input`.
 
+## Growing-Stock Extraction Batch
+
+The first multi-series growing-stock extraction batch is recorded in:
+
+- `planning/tfl6_mp11_growing_stock_extraction_summary.md`
+- `planning/tfl6_mp11_growing_stock_extraction_summary.csv`
+- `planning/tfl6_mp11_growing_stock_extraction_summary.json`
+- `planning/tfl6_mp11_growing_stock_series_summary.csv`
+
+The batch extracts `Figure 3` and `Figure 40`, each with `THLB GS total`,
+`THLB GS <= 120 years`, and `THLB GS > 120 years` series. It uses deterministic
+colour/y-band sampling with nearest-y continuity tracking. Internal consistency
+QA checks whether the two age-class component series sum to the total series.
+
+Both figures have maximum absolute component-sum residuals below `1%`, but the
+batch remains `raw_extraction` because it lacks the independent adjacent table
+cross-check used for the first harvest-sensitivity review pass.
+
 ## Runtime Artifact Boundary
 
 Generated figure-recovery artifacts belong under ignored runtime paths such as:

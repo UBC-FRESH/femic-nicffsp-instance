@@ -1,5 +1,24 @@
 # Change Log
 
+## 2026-06-28 - Extracted MP11 growing-stock multi-series charts
+
+- added `scripts/build_p7_mp11_growing_stock_extractions.py` for the first
+  multi-series THLB growing-stock extraction batch;
+- extracted `Figure 3` and `Figure 40`, each with `THLB GS total`,
+  `THLB GS <= 120 years`, and `THLB GS > 120 years` series;
+- wrote ignored detailed result JSON, recovered-point CSV, overlay PNG, and
+  metrics JSON artifacts under
+  `runtime/document_ingestion/tfl6-mp11-full-figures/`;
+- added compact public-safe summary outputs in
+  `planning/tfl6_mp11_growing_stock_extraction_summary.md`,
+  `planning/tfl6_mp11_growing_stock_extraction_summary.csv`,
+  `planning/tfl6_mp11_growing_stock_extraction_summary.json`, and
+  `planning/tfl6_mp11_growing_stock_series_summary.csv`;
+- used component-sum residual QA, confirming maximum absolute residuals below
+  `1%` for both figures; and
+- kept the batch status as `raw_extraction`, pending maintainer overlay/value
+  review before Phase 6 comparison acceptance.
+
 ## 2026-06-28 - Reviewed first MP11 extraction batch for comparison use
 
 - added `scripts/build_p7_mp11_review_manifest.py` to produce a compact review

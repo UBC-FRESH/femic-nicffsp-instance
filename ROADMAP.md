@@ -492,9 +492,12 @@ The Phase 1 follow-on issues are placed into the future roadmap as follows:
    `planning/tfl6_mp11_reviewed_extraction_manifest.md` promotes Figures `29`,
    `30`, `31`, `35`, `36`, and `39` to `accepted_for_comparison` with
    downstream use `phase6_mp11_comparison_only`; all rows remain
-   `not_model_input`. The active edge returns to P7.4 for the next chart class:
-   extract and review more complex line, cedar, age-class, and waterfall
-   figures.
+   `not_model_input`. The next P7.4 chart class is also started:
+   `planning/tfl6_mp11_growing_stock_extraction_summary.md` records raw
+   extraction of Figures `3` and `40`, with component-sum residuals below `1%`.
+   The active edge remains P7.4/P7.5: review the growing-stock overlays and
+   decide whether those two raw extractions can be promoted, then continue to
+   cedar, age-class, and waterfall figures.
 1. Phase 2 is closed. The instance `main` branch contains the Phase 2
    source-layer, THLB smoke, benchmark-tolerance, and Sphinx audit-trail
    surfaces; the parent FEMIC submodule pointer has been updated to the merged
