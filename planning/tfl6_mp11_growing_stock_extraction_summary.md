@@ -89,3 +89,12 @@ Unlike the first harvest-sensitivity batch, these figures do not have adjacent
 table values for an independent exact cross-check. The internal residuals are
 strong enough to justify review, but a maintainer should inspect full-resolution
 overlays before promoting the batch to Phase 6 comparison evidence.
+
+The batch was subsequently reviewed in:
+
+- `planning/tfl6_mp11_growing_stock_review_manifest.md`
+- `planning/tfl6_mp11_growing_stock_review_manifest.csv`
+- `planning/tfl6_mp11_growing_stock_review_manifest.json`
+
+Both figures were promoted to `accepted_for_comparison` with downstream use
+`phase6_mp11_comparison_only`, while remaining explicitly `not_model_input`.

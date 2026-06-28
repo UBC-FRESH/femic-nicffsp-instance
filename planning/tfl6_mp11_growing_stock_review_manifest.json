@@ -1,0 +1,59 @@
+{
+  "review_manifest": "planning/tfl6_mp11_growing_stock_review_manifest.csv",
+  "reviewed_at_utc": "2026-06-28T00:00:00Z",
+  "reviewer": "codex_agent_overlay_and_internal_consistency_review",
+  "residual_threshold_percent": 1.0,
+  "figure_count": 2,
+  "status_counts": {
+    "accepted_for_comparison": 2
+  },
+  "downstream_use_counts": {
+    "phase6_mp11_comparison_only": 2
+  },
+  "figures": [
+    {
+      "figure_id": "Figure 3",
+      "caption": "Base Case THLB Growing Stock By 1-120 Years Old And 120+ Years Old Categories",
+      "pdf_page": 83,
+      "review_status": "accepted_for_comparison",
+      "downstream_use": "phase6_mp11_comparison_only",
+      "review_basis": "deterministic extraction; overlay contact-sheet inspection; component series sum to total growing-stock series within 1.0%",
+      "reviewer": "codex_agent_overlay_and_internal_consistency_review",
+      "reviewed_at_utc": "2026-06-28T00:00:00Z",
+      "residual_metric": "abs((le_120_plus_gt_120) - total) / total * 100",
+      "residual_threshold_percent": 1.0,
+      "mean_abs_residual_percent": 0.2683311817583846,
+      "max_abs_residual_percent": 0.8379888268156518,
+      "internal_consistency_status": "passed",
+      "overlay_review_status": "contact_sheet_passed",
+      "model_input_status": "not_model_input",
+      "result_json_path": "runtime/document_ingestion/tfl6-mp11-full-figures/recovered/growing_stock_batch/figure-3-result.json",
+      "points_csv_path": "runtime/document_ingestion/tfl6-mp11-full-figures/recovered/growing_stock_batch/figure-3-points.csv",
+      "overlay_path": "runtime/document_ingestion/tfl6-mp11-full-figures/overlays/growing_stock_batch/figure-3-overlay.png",
+      "metrics_json_path": "runtime/document_ingestion/tfl6-mp11-full-figures/overlays/growing_stock_batch/figure-3-metrics.json",
+      "notes": "Accepted only for MP11 growing-stock comparison planning. The QA basis is internal consistency, not an independent table cross-check; do not use as model input without later promotion."
+    },
+    {
+      "figure_id": "Figure 40",
+      "caption": "AAC Recommendation THLB Growing Stock By 1-120 Years Old Categories",
+      "pdf_page": 143,
+      "review_status": "accepted_for_comparison",
+      "downstream_use": "phase6_mp11_comparison_only",
+      "review_basis": "deterministic extraction; overlay contact-sheet inspection; component series sum to total growing-stock series within 1.0%",
+      "reviewer": "codex_agent_overlay_and_internal_consistency_review",
+      "reviewed_at_utc": "2026-06-28T00:00:00Z",
+      "residual_metric": "abs((le_120_plus_gt_120) - total) / total * 100",
+      "residual_threshold_percent": 1.0,
+      "mean_abs_residual_percent": 0.18006418199840507,
+      "max_abs_residual_percent": 0.74257425742574,
+      "internal_consistency_status": "passed",
+      "overlay_review_status": "contact_sheet_passed",
+      "model_input_status": "not_model_input",
+      "result_json_path": "runtime/document_ingestion/tfl6-mp11-full-figures/recovered/growing_stock_batch/figure-40-result.json",
+      "points_csv_path": "runtime/document_ingestion/tfl6-mp11-full-figures/recovered/growing_stock_batch/figure-40-points.csv",
+      "overlay_path": "runtime/document_ingestion/tfl6-mp11-full-figures/overlays/growing_stock_batch/figure-40-overlay.png",
+      "metrics_json_path": "runtime/document_ingestion/tfl6-mp11-full-figures/overlays/growing_stock_batch/figure-40-metrics.json",
+      "notes": "Accepted only for MP11 growing-stock comparison planning. The QA basis is internal consistency, not an independent table cross-check; do not use as model input without later promotion."
+    }
+  ]
+}

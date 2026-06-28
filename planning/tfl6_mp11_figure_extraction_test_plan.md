@@ -151,6 +151,16 @@ Both figures have maximum absolute component-sum residuals below `1%`, but the
 batch remains `raw_extraction` because it lacks the independent adjacent table
 cross-check used for the first harvest-sensitivity review pass.
 
+The growing-stock batch was later promoted in:
+
+- `planning/tfl6_mp11_growing_stock_review_manifest.md`
+- `planning/tfl6_mp11_growing_stock_review_manifest.csv`
+- `planning/tfl6_mp11_growing_stock_review_manifest.json`
+
+The promotion is limited to `accepted_for_comparison` with downstream use
+`phase6_mp11_comparison_only`. The outputs remain explicitly
+`not_model_input`.
+
 ## Runtime Artifact Boundary
 
 Generated figure-recovery artifacts belong under ignored runtime paths such as:
