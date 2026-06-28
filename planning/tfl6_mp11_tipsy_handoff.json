@@ -1,9 +1,9 @@
 {
   "summary": {
-    "generated_at_utc": "2026-06-28T22:20:35.592205+00:00",
-    "input_rows": "planning/tfl6_mp11_tipsy_row_parse.csv",
-    "output_handoff_csv": "planning/tfl6_mp11_tipsy_handoff.csv",
-    "output_handoff_map_csv": "planning/tfl6_mp11_tipsy_handoff_map.csv",
+    "generated_at_utc": "2026-06-28T22:36:05.437676+00:00",
+    "input_rows": "planning\\tfl6_mp11_tipsy_row_parse.csv",
+    "output_handoff_csv": "planning\\tfl6_mp11_tipsy_handoff.csv",
+    "output_handoff_map_csv": "planning\\tfl6_mp11_tipsy_handoff_map.csv",
     "parsed_row_count": 141,
     "handoff_candidate_count": 27,
     "status_counts": {

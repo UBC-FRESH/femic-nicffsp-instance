@@ -10,8 +10,8 @@ not run curve-generation tools and does not promote any row to model input.
 
 - Parsed input rows: `141`
 - Handoff candidate rows: `27`
-- Handoff CSV: `planning/tfl6_mp11_tipsy_handoff.csv`
-- Handoff map CSV: `planning/tfl6_mp11_tipsy_handoff_map.csv`
+- Handoff CSV: `planning\tfl6_mp11_tipsy_handoff.csv`
+- Handoff map CSV: `planning\tfl6_mp11_tipsy_handoff_map.csv`
 
 ## Status Counts
 

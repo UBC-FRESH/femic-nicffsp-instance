@@ -3113,3 +3113,20 @@
   and public Pages checks have all passed; and
 - closed P5.4 child issue `#40` and Phase 5 parent issue `#15` after posting
   final closeout comments.
+
+## 2026-06-28 - Detected Windows TIPSY runtime for P10R.4
+
+- materialized the public MP11 PDF in ignored runtime source space and reran
+  the P10R parser, handoff, and managed-curve blocker scripts;
+- confirmed the parser still emits `141` MP11 rows and the handoff still emits
+  `27` future-managed curve-generation candidates, with `105` existing/recent
+  rows blocked pending public AU-code mapping and `9` parser-review rows;
+- updated `scripts/build_p10r_mp11_managed_curve_rebuild_blocker.py` so
+  executable discovery delegates to FEMIC's parent-package BTC API, which
+  resolves the documented Windows default
+  `C:\Program Files\TIPSY 4.7\BTC\TIPSYbtc.exe`;
+- regenerated `planning/tfl6_mp11_managed_curve_rebuild.{csv,json,md}` with
+  `ready_for_manual_tool_execution_review` instead of a missing-executable
+  blocker; and
+- left P10R.4 open because no MP11 managed curves have been generated, parsed,
+  inspected, compared, or promoted.

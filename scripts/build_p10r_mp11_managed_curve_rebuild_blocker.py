@@ -3,39 +3,43 @@
 from __future__ import annotations
 
 import json
-import shutil
 from datetime import UTC, datetime
 from pathlib import Path
 
 import pandas as pd
 
+from femic.pipeline.tipsy import (
+    DEFAULT_BATCHTIPSY_EXE_ENV,
+    DEFAULT_BATCHTIPSY_WINDOWS_EXE,
+    resolve_btc_executable,
+)
+
 
 INSTANCE_ROOT = Path(__file__).resolve().parents[1]
+PARENT_REPO_ROOT = INSTANCE_ROOT.parents[1]
 HANDOFF_CSV = INSTANCE_ROOT / "planning" / "tfl6_mp11_tipsy_handoff.csv"
 HANDOFF_MAP_CSV = INSTANCE_ROOT / "planning" / "tfl6_mp11_tipsy_handoff_map.csv"
 OUTPUT_CSV = INSTANCE_ROOT / "planning" / "tfl6_mp11_managed_curve_rebuild.csv"
 OUTPUT_JSON = INSTANCE_ROOT / "planning" / "tfl6_mp11_managed_curve_rebuild.json"
 OUTPUT_MD = INSTANCE_ROOT / "planning" / "tfl6_mp11_managed_curve_rebuild.md"
 
-EXECUTABLE_CANDIDATES = [
-    INSTANCE_ROOT / "runtime" / "mp11_yield" / "TIPSYbtc.exe",
-    INSTANCE_ROOT / "runtime" / "mp11_yield" / "tipsy" / "TIPSYbtc.exe",
-    INSTANCE_ROOT / "data" / "downloads" / "tipsy" / "TIPSYbtc.exe",
-    INSTANCE_ROOT.parent / "femic" / "reference" / "tipsy" / "TIPSYbtc.exe",
-    INSTANCE_ROOT.parent / "femic" / "tipsy_io" / "TIPSYbtc.exe",
-]
+def _portable_path(path: str | Path) -> str:
+    resolved = Path(path)
+    try:
+        return str(resolved.relative_to(INSTANCE_ROOT))
+    except ValueError:
+        try:
+            return str(resolved.relative_to(PARENT_REPO_ROOT))
+        except ValueError:
+            return str(resolved)
 
 
 def _existing_executables() -> list[str]:
-    found: list[str] = []
-    for candidate in EXECUTABLE_CANDIDATES:
-        if candidate.exists():
-            found.append(str(candidate))
-    for name in ["TIPSYbtc.exe", "tipsybtc", "tipsy", "wine"]:
-        resolved = shutil.which(name)
-        if resolved:
-            found.append(resolved)
-    return sorted(set(found))
+    try:
+        discovery = resolve_btc_executable()
+    except FileNotFoundError:
+        return []
+    return [f"{_portable_path(discovery.executable_path)} ({discovery.source})"]
 
 
 def build_blocker() -> tuple[pd.DataFrame, dict[str, object]]:
@@ -49,9 +53,11 @@ def build_blocker() -> tuple[pd.DataFrame, dict[str, object]]:
     if found:
         status = "ready_for_manual_tool_execution_review"
         note = (
-            "A possible executable/runtime command exists, but this script does "
-            "not invoke it automatically. Review licensing, command syntax, and "
-            "runtime isolation before running P10R.4 curve generation."
+            "FEMIC resolved a BatchTIPSY/TIPSY executable. This script does not "
+            "invoke it automatically; P10R.4 curve generation must use the "
+            "existing FEMIC BTC runner so command construction, scratch/log "
+            "layout, report-template handling, and provenance stay on the "
+            "supported parent-package contract."
         )
     else:
         status = "blocked_missing_batchtipsy_executable"
@@ -82,14 +88,19 @@ def build_blocker() -> tuple[pd.DataFrame, dict[str, object]]:
         "input_handoff_map_csv": str(HANDOFF_MAP_CSV.relative_to(INSTANCE_ROOT)),
         "handoff_candidate_count": int(len(handoff)),
         "blocked_or_review_rows": int(len(handoff_map) - len(handoff)),
-        "searched_executable_candidates": [str(path) for path in EXECUTABLE_CANDIDATES],
+        "searched_executable_candidates": [
+            f"explicit --btc-exe / {DEFAULT_BATCHTIPSY_EXE_ENV}",
+            str(DEFAULT_BATCHTIPSY_WINDOWS_EXE),
+        ],
         "found_executables_or_runners": found,
         "curve_generation_status": status,
         "curve_generation_note": note,
         "accepted_next_action": (
-            "Supply an accepted local BatchTIPSY/TIPSY runtime under an ignored "
-            "runtime or data/download path, document licensing and command "
-            "syntax, then rerun P10R.4 on candidate rows."
+            "Run P10R.4 through FEMIC's existing BTC runner, e.g. "
+            "`python -m femic tipsy run-btc <candidate-input.csv> --run-id "
+            "p10r_mp11_candidate --instance-root .`, then inspect the generated "
+            "04_output/04_error CSVs and BTC manifest before parsing or "
+            "promoting curve outputs."
         ),
         "use_boundary": (
             "This artifact is a blocker package. It does not contain generated "

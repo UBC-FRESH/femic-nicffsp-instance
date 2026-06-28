@@ -611,9 +611,9 @@ natural/managed curve plots or a maintainer-reviewable blocker package.
     utilization, and site assumptions.
   - [x] P10R.3c Emit handoff CSV/JSON/Markdown manifests.
   - [x] P10R.3d Record unsupported rows and maintainer decisions required.
-- [ ] P10R.4 Run and parse MP11 managed curve generation (`#96`) - blocked
-  pending an accepted BatchTIPSY/TIPSY runtime in the Windows toolchain
-  environment.
+- [ ] P10R.4 Run and parse MP11 managed curve generation (`#96`) - Windows
+  BatchTIPSY/TIPSY executable detected through FEMIC's BTC discovery API; still
+  pending a FEMIC-native BTC run, parsed curve outputs, and output inspection.
   - [ ] P10R.4a Run accepted BatchTIPSY/TIPSY or local-equivalent commands.
   - [x] P10R.4b Capture tool versions, commands, inputs, outputs, and failures.
   - [ ] P10R.4c Parse output curves to normalized tables.
@@ -876,13 +876,16 @@ The Phase 1 follow-on issues are placed into the future roadmap as follows:
    `planning/tfl6_mp11_tipsy_handoff_map.csv`: `27` future-managed candidate
    rows are handoff-ready, `105` existing/recent rows are blocked pending a
    public MP11 AU-code to BEC/site-series mapping, and `9` rows remain parser
-   review-required. P10R.4 emitted
-   `planning/tfl6_mp11_managed_curve_rebuild.{csv,json,md}` as a blocker
-   package: no accepted BatchTIPSY/TIPSY executable is available in configured
-   local paths, so generated MP11 managed curves cannot be claimed yet. The
-   active edge remains P10R.4: run real curve generation in the Windows
-   toolchain environment, inspect generated outputs, then update `#96`. Phase
-   11 is planned and blocked until Phase 10R closes.
+   review-required. P10R.4 now uses FEMIC's parent-package BTC discovery API to
+   resolve the Windows default executable at
+   `C:\Program Files\TIPSY 4.7\BTC\TIPSYbtc.exe` and regenerates
+   `planning/tfl6_mp11_managed_curve_rebuild.{csv,json,md}` with
+   `ready_for_manual_tool_execution_review`. This is not a curve rebuild: no
+   MP11 managed curves have been generated, parsed, inspected, compared, or
+   promoted. The active edge remains P10R.4: run the candidate input through
+   FEMIC's existing `python -m femic tipsy run-btc ...` surface, inspect the
+   generated `04_output` / `04_error` CSVs and BTC manifest, then update `#96`.
+   Phase 11 is planned and blocked until Phase 10R closes.
 2. Phase 7 is closed. PR `#56` merged the MP11 figure-extraction test
    closeout into `main`. The final closeout surface is
    `planning/tfl6_mp11_figure_extraction_closeout.md` with matching CSV/JSON.
