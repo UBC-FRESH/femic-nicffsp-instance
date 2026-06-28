@@ -1,5 +1,21 @@
 # Change Log
 
+## 2026-06-28 - Completed P9.5 MP11 public-data THLB diagnostic rebuild
+
+- added `scripts/run_p9_mp11_public_thlb_rebuild.py` to execute a compact
+  public-data diagnostic rebuild from the P9.4 ordered overlay scaffold;
+- added `planning/tfl6_mp11_phase9_thlb_rebuild_summary.md` with matching
+  CSV/JSON outputs covering `13` ordered rebuild/checkpoint rows;
+- recorded a diagnostic current THLB of `24,762.768 ha` versus the MP11
+  comparison target of `120,099 ha`;
+- documented that this large negative residual is driven by intentionally
+  conservative full-stand-intersection road/riparian diagnostics, unresolved
+  shoreline and DEM/slope gaps, unavailable WFP LBB/ITI/LEFI dependencies, and
+  deferred WTRA/retention policy treatment; and
+- kept every P9.5 output as `not_model_input`, with no accepted THLB surface,
+  model-input table, XML, Matrix Builder output, or Patchworks runtime artifact
+  generated.
+
 ## 2026-06-28 - Completed P9.4 MP11 ordered overlay scaffold
 
 - added `config/tsr/mp11_thlb_rebuild.recipe.yaml` as the MP11 public-data

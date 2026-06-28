@@ -520,11 +520,11 @@ checkpoints without force-fitting.
   - [x] P9.4b Implement or wire bounded smoke-lane execution logic.
   - [x] P9.4c Emit checkpoint, overlap, diagnostic, and provenance outputs.
   - [x] P9.4d Run bounded smoke tests after source/profile gates pass.
-- [ ] P9.5 Execute and compare public-data THLB rebuild (`#76`).
-  - [ ] P9.5a Execute accepted THLB rebuild lane.
-  - [ ] P9.5b Build checkpoint and residual comparison summaries.
-  - [ ] P9.5c Build provenance and diagnostic manifests.
-  - [ ] P9.5d Classify residual gaps and candidate outputs.
+- [x] P9.5 Execute and compare public-data THLB rebuild (`#76`).
+  - [x] P9.5a Execute accepted THLB rebuild lane.
+  - [x] P9.5b Build checkpoint and residual comparison summaries.
+  - [x] P9.5c Build provenance and diagnostic manifests.
+  - [x] P9.5d Classify residual gaps and candidate outputs.
 - [ ] P9.6 Close Phase 9 and hand off rebuild outputs (`#77`).
   - [ ] P9.6a Audit Phase 9 artifacts and generated-output hygiene.
   - [ ] P9.6b Write Phase 9 closeout and Phase 10/11 handoff note.
@@ -640,12 +640,14 @@ The Phase 1 follow-on issues are placed into the future roadmap as follows:
 ## Current Next Steps
 
 0. Phase 9 is active on branch
-   `feature/p9-mp11-source-layer-thlb-rebuild`. P9.1 through P9.4 are
-   complete. `config/tsr/mp11_thlb_rebuild.recipe.yaml` and
-   `planning/tfl6_mp11_phase9_ordered_overlay_scaffold.md` define and validate
-   a `13`-row ordered overlay scaffold with all source and candidate references
-   resolving against P9.2/P9.3 manifests. The active edge is P9.5: execute and
-   compare the public-data THLB rebuild (`#76`).
+   `feature/p9-mp11-source-layer-thlb-rebuild`. P9.1 through P9.5 are
+   complete. `planning/tfl6_mp11_phase9_thlb_rebuild_summary.md` records a
+   compact diagnostic public-data rebuild. The smoke result is a deliberately
+   conservative full-stand-intersection diagnostic and is not an accepted THLB
+   surface; it confirms that partial-area overlay optimization and unresolved
+   shoreline, DEM/slope, WFP LBB/ITI/LEFI, and policy gaps must be handled
+   before model-input promotion. The active edge is P9.6: close Phase 9 and
+   hand off rebuild outputs (`#77`).
 1. Phase 7 is closed. PR `#56` merged the MP11 figure-extraction test
    closeout into `main`. The final closeout surface is
    `planning/tfl6_mp11_figure_extraction_closeout.md` with matching CSV/JSON.
