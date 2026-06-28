@@ -1,5 +1,23 @@
 # Change Log
 
+## 2026-06-28 - Closed Phase 8 MP11 implementation foundation
+
+- added `planning/tfl6_mp11_phase8_closeout.md` to summarize the completed
+  Phase 8 contract set, validation, baseline boundary, and follow-on phase
+  split;
+- created follow-on parent issues for Phase 9 MP11 source-layer/THLB rebuild
+  (`#66`), Phase 10 AU/yield curve rebuild (`#67`), Phase 11 model-input/XML
+  rebuild (`#68`), Phase 12 Patchworks runtime/scenario smoke (`#69`), and
+  Phase 13 comparison documentation/release QA (`#70`);
+- marked P8.6 complete in `ROADMAP.md` and added planned Phase 9-13 roadmap
+  sections with dependency order;
+- preserved the Phase 5 teaching runtime as the accepted baseline until a
+  future MP11-aligned replacement passes direct source, model-input, XML,
+  Matrix Builder, runtime, docs, archive, and scenario-output QA; and
+- kept Phase 8 as a contracts-only phase with no generated THLB, curve,
+  model-input, XML, Matrix Builder, Patchworks runtime, or report artifacts
+  tracked.
+
 ## 2026-06-28 - Completed P8.5 MP11 KPI, QA, and reporting contract
 
 - added `planning/tfl6_mp11_kpi_qa_reporting_contract.md` to define MP11
