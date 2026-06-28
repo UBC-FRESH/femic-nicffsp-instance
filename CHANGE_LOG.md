@@ -3147,3 +3147,16 @@
   per-candidate max-volume and representative-age summaries; and
 - kept every parsed row `not_model_input`, leaving P10R.4e comparison against
   Phase 5 fallback curves as the next review step.
+
+## 2026-06-28 - Compared P10R.4 MP11 managed curves to Phase 5 fallbacks
+
+- added `scripts/build_p10r_mp11_managed_curve_comparison.py` to compare the
+  generated MP11 Table 57 future-managed candidates against nearest Phase 5
+  future-managed fallback curves;
+- matched all `27` generated candidates to Phase 5 comparison references using
+  BEC zone/subzone, species overlap, and weighted site-index proximity;
+- emitted `planning/tfl6_mp11_managed_curve_comparison.{csv,json,md}`;
+- classified `13` candidates as large-difference review rows, `11` as
+  moderate-difference review rows, and `3` as low-difference rows; and
+- marked P10R.4 complete in `ROADMAP.md` while keeping every comparison row
+  `not_model_input` and leaving P10R.5 plot refresh as the next edge.

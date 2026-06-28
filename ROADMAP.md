@@ -611,15 +611,15 @@ natural/managed curve plots or a maintainer-reviewable blocker package.
     utilization, and site assumptions.
   - [x] P10R.3c Emit handoff CSV/JSON/Markdown manifests.
   - [x] P10R.3d Record unsupported rows and maintainer decisions required.
-- [ ] P10R.4 Run and parse MP11 managed curve generation (`#96`) - Windows
-  BatchTIPSY/TIPSY execution and output parsing complete for the `27`
-  future-managed candidates; still pending Phase 5 fallback comparison and
-  review-gated acceptance decision.
+- [x] P10R.4 Run and parse MP11 managed curve generation (`#96`) - Windows
+  BatchTIPSY/TIPSY execution, output parsing, inspection, and Phase 5 fallback
+  comparison complete for the `27` future-managed candidates. Every row remains
+  review-gated as `not_model_input`.
   - [x] P10R.4a Run accepted BatchTIPSY/TIPSY or local-equivalent commands.
   - [x] P10R.4b Capture tool versions, commands, inputs, outputs, and failures.
   - [x] P10R.4c Parse output curves to normalized tables.
   - [x] P10R.4d Emit diagnostics for failed or unsupported rows.
-  - [ ] P10R.4e Compare candidate outputs against Phase 5 fallback curves.
+  - [x] P10R.4e Compare candidate outputs against Phase 5 fallback curves.
 - [ ] P10R.5 Regenerate natural and managed curve plots and overlays (`#97`).
   - [ ] P10R.5a Inventory existing curve plot locations.
   - [ ] P10R.5b Generate refreshed natural curve review plots where inputs
@@ -883,11 +883,14 @@ The Phase 1 follow-on issues are placed into the future roadmap as follows:
    under ignored `runtime/mp11_yield/`. The parsed review surfaces are
    `planning/tfl6_mp11_managed_curves.{csv,json}` with `972` age-by-curve rows
    and regenerated `planning/tfl6_mp11_managed_curve_rebuild.{csv,json,md}`
-   with `generated_curve_output_inspected`. Every parsed row remains
-   `not_model_input`. The active edge remains P10R.4e: compare candidate
-   outputs against Phase 5 fallback curves where useful, then keep any
-   promotion decision review-gated. Phase 11 is planned and blocked until Phase
-   10R closes.
+   with `generated_curve_output_inspected`. P10R.4e emitted
+   `planning/tfl6_mp11_managed_curve_comparison.{csv,json,md}`: all `27`
+   candidates matched to Phase 5 future-managed fallback references, with `13`
+   large-difference, `11` moderate-difference, and `3` low-difference rows.
+   Every parsed and compared row remains `not_model_input`. The active edge
+   moves to P10R.5: regenerate natural and managed curve plots and overlays
+   from the accepted review surfaces. Phase 11 is planned and blocked until
+   Phase 10R closes.
 2. Phase 7 is closed. PR `#56` merged the MP11 figure-extraction test
    closeout into `main`. The final closeout surface is
    `planning/tfl6_mp11_figure_extraction_closeout.md` with matching CSV/JSON.

@@ -146,9 +146,12 @@ present, parses generated curves, and emits:
 
 - `planning/tfl6_mp11_managed_curve_rebuild.csv`;
 - `planning/tfl6_mp11_managed_curve_rebuild.json`;
-- `planning/tfl6_mp11_managed_curve_rebuild.md`.
+- `planning/tfl6_mp11_managed_curve_rebuild.md`;
 - `planning/tfl6_mp11_managed_curves.csv`;
-- `planning/tfl6_mp11_managed_curves.json`.
+- `planning/tfl6_mp11_managed_curves.json`;
+- `planning/tfl6_mp11_managed_curve_comparison.csv`;
+- `planning/tfl6_mp11_managed_curve_comparison.json`;
+- `planning/tfl6_mp11_managed_curve_comparison.md`.
 
 The accepted FEMIC-native BTC run used `python -m femic tipsy run-btc ...`
 against `planning/tfl6_mp11_tipsy_handoff.csv` and wrote raw outputs under
@@ -157,10 +160,12 @@ ignored `runtime/mp11_yield/`. Inspected runtime evidence shows manifest status
 surface contains `972` age-by-curve rows across all `27` future-managed
 candidate feature IDs.
 
-This is still a review surface, not model input. Every parsed row remains
-`not_model_input`. P10R.4e remains open for Phase 5 fallback comparison and
-review-gated acceptance/defer decisions before any downstream plot, model-input,
-or XML promotion.
+P10R.4e compared all `27` generated future-managed candidates against nearest
+Phase 5 future-managed fallback references. The comparison classified `13`
+large-difference rows, `11` moderate-difference rows, and `3` low-difference
+rows. This remains a review surface, not model input. Every parsed and compared
+row remains `not_model_input` before any downstream plot, model-input, or XML
+promotion.
 
 ## Plot-Refresh Requirement
 
