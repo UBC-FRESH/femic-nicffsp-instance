@@ -1,5 +1,19 @@
 # Change Log
 
+## 2026-06-28 - Recorded MP11 managed curve-generation blocker
+
+- added `scripts/build_p10r_mp11_managed_curve_rebuild_blocker.py` to inspect
+  P10R.3 handoff candidates and record whether managed curve generation can
+  run;
+- emitted `planning/tfl6_mp11_managed_curve_rebuild.{csv,json,md}` as a
+  blocker package;
+- confirmed `27` future-managed handoff candidate rows exist, but no accepted
+  BatchTIPSY/TIPSY executable is available in configured local paths or `PATH`;
+- recorded that P10R.4 does not generate curves, does not parse rebuilt curve
+  outputs, and must not be treated as an MP11 managed-curve rebuild; and
+- left P10R.4 open as a real toolchain blocker pending an accepted Windows
+  TIPSY/BatchTIPSY runtime and inspected generated outputs.
+
 ## 2026-06-28 - Built MP11 TIPSY handoff candidates and blockers
 
 - added `scripts/build_p10r_mp11_tipsy_handoff.py` to convert P10R.2 parser

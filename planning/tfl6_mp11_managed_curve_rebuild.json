@@ -1,0 +1,320 @@
+{
+  "summary": {
+    "generated_at_utc": "2026-06-28T22:29:52.467063+00:00",
+    "input_handoff_csv": "planning/tfl6_mp11_tipsy_handoff.csv",
+    "input_handoff_map_csv": "planning/tfl6_mp11_tipsy_handoff_map.csv",
+    "handoff_candidate_count": 27,
+    "blocked_or_review_rows": 114,
+    "searched_executable_candidates": [
+      "/home/gep/projects/femic-tfl6-instance/runtime/mp11_yield/TIPSYbtc.exe",
+      "/home/gep/projects/femic-tfl6-instance/runtime/mp11_yield/tipsy/TIPSYbtc.exe",
+      "/home/gep/projects/femic-tfl6-instance/data/downloads/tipsy/TIPSYbtc.exe",
+      "/home/gep/projects/femic/reference/tipsy/TIPSYbtc.exe",
+      "/home/gep/projects/femic/tipsy_io/TIPSYbtc.exe"
+    ],
+    "found_executables_or_runners": [],
+    "curve_generation_status": "blocked_missing_batchtipsy_executable",
+    "curve_generation_note": "No accepted BatchTIPSY/TIPSY executable was found in configured public-safe local paths or PATH. Managed curve generation cannot be claimed until the executable/toolchain is supplied and command provenance is captured.",
+    "accepted_next_action": "Supply an accepted local BatchTIPSY/TIPSY runtime under an ignored runtime or data/download path, document licensing and command syntax, then rerun P10R.4 on candidate rows.",
+    "use_boundary": "This artifact is a blocker package. It does not contain generated curves and must not be treated as an MP11 managed-curve rebuild."
+  },
+  "rows": [
+    {
+      "feature_id": 611143,
+      "mp11_au_code": "Fvh101",
+      "source_table": "Table 57",
+      "curve_lane": "future_managed",
+      "handoff_status": "candidate_for_curve_generation",
+      "curve_generation_status": "blocked_missing_batchtipsy_executable",
+      "curve_generation_note": "No accepted BatchTIPSY/TIPSY executable was found in configured public-safe local paths or PATH. Managed curve generation cannot be claimed until the executable/toolchain is supplied and command provenance is captured.",
+      "output_curve_rows": 0,
+      "model_input_status": "not_model_input"
+    },
+    {
+      "feature_id": 611153,
+      "mp11_au_code": "Fvh103",
+      "source_table": "Table 57",
+      "curve_lane": "future_managed",
+      "handoff_status": "candidate_for_curve_generation",
+      "curve_generation_status": "blocked_missing_batchtipsy_executable",
+      "curve_generation_note": "No accepted BatchTIPSY/TIPSY executable was found in configured public-safe local paths or PATH. Managed curve generation cannot be claimed until the executable/toolchain is supplied and command provenance is captured.",
+      "output_curve_rows": 0,
+      "model_input_status": "not_model_input"
+    },
+    {
+      "feature_id": 611163,
+      "mp11_au_code": "Fvh104",
+      "source_table": "Table 57",
+      "curve_lane": "future_managed",
+      "handoff_status": "candidate_for_curve_generation",
+      "curve_generation_status": "blocked_missing_batchtipsy_executable",
+      "curve_generation_note": "No accepted BatchTIPSY/TIPSY executable was found in configured public-safe local paths or PATH. Managed curve generation cannot be claimed until the executable/toolchain is supplied and command provenance is captured.",
+      "output_curve_rows": 0,
+      "model_input_status": "not_model_input"
+    },
+    {
+      "feature_id": 611173,
+      "mp11_au_code": "Fvh104s",
+      "source_table": "Table 57",
+      "curve_lane": "future_managed",
+      "handoff_status": "candidate_for_curve_generation",
+      "curve_generation_status": "blocked_missing_batchtipsy_executable",
+      "curve_generation_note": "No accepted BatchTIPSY/TIPSY executable was found in configured public-safe local paths or PATH. Managed curve generation cannot be claimed until the executable/toolchain is supplied and command provenance is captured.",
+      "output_curve_rows": 0,
+      "model_input_status": "not_model_input"
+    },
+    {
+      "feature_id": 611183,
+      "mp11_au_code": "Fvh106",
+      "source_table": "Table 57",
+      "curve_lane": "future_managed",
+      "handoff_status": "candidate_for_curve_generation",
+      "curve_generation_status": "blocked_missing_batchtipsy_executable",
+      "curve_generation_note": "No accepted BatchTIPSY/TIPSY executable was found in configured public-safe local paths or PATH. Managed curve generation cannot be claimed until the executable/toolchain is supplied and command provenance is captured.",
+      "output_curve_rows": 0,
+      "model_input_status": "not_model_input"
+    },
+    {
+      "feature_id": 611193,
+      "mp11_au_code": "Fvh108",
+      "source_table": "Table 57",
+      "curve_lane": "future_managed",
+      "handoff_status": "candidate_for_curve_generation",
+      "curve_generation_status": "blocked_missing_batchtipsy_executable",
+      "curve_generation_note": "No accepted BatchTIPSY/TIPSY executable was found in configured public-safe local paths or PATH. Managed curve generation cannot be claimed until the executable/toolchain is supplied and command provenance is captured.",
+      "output_curve_rows": 0,
+      "model_input_status": "not_model_input"
+    },
+    {
+      "feature_id": 611203,
+      "mp11_au_code": "Fvh113",
+      "source_table": "Table 57",
+      "curve_lane": "future_managed",
+      "handoff_status": "candidate_for_curve_generation",
+      "curve_generation_status": "blocked_missing_batchtipsy_executable",
+      "curve_generation_note": "No accepted BatchTIPSY/TIPSY executable was found in configured public-safe local paths or PATH. Managed curve generation cannot be claimed until the executable/toolchain is supplied and command provenance is captured.",
+      "output_curve_rows": 0,
+      "model_input_status": "not_model_input"
+    },
+    {
+      "feature_id": 611213,
+      "mp11_au_code": "Fvm101",
+      "source_table": "Table 57",
+      "curve_lane": "future_managed",
+      "handoff_status": "candidate_for_curve_generation",
+      "curve_generation_status": "blocked_missing_batchtipsy_executable",
+      "curve_generation_note": "No accepted BatchTIPSY/TIPSY executable was found in configured public-safe local paths or PATH. Managed curve generation cannot be claimed until the executable/toolchain is supplied and command provenance is captured.",
+      "output_curve_rows": 0,
+      "model_input_status": "not_model_input"
+    },
+    {
+      "feature_id": 611223,
+      "mp11_au_code": "Fvm101s",
+      "source_table": "Table 57",
+      "curve_lane": "future_managed",
+      "handoff_status": "candidate_for_curve_generation",
+      "curve_generation_status": "blocked_missing_batchtipsy_executable",
+      "curve_generation_note": "No accepted BatchTIPSY/TIPSY executable was found in configured public-safe local paths or PATH. Managed curve generation cannot be claimed until the executable/toolchain is supplied and command provenance is captured.",
+      "output_curve_rows": 0,
+      "model_input_status": "not_model_input"
+    },
+    {
+      "feature_id": 611233,
+      "mp11_au_code": "Fvm103",
+      "source_table": "Table 57",
+      "curve_lane": "future_managed",
+      "handoff_status": "candidate_for_curve_generation",
+      "curve_generation_status": "blocked_missing_batchtipsy_executable",
+      "curve_generation_note": "No accepted BatchTIPSY/TIPSY executable was found in configured public-safe local paths or PATH. Managed curve generation cannot be claimed until the executable/toolchain is supplied and command provenance is captured.",
+      "output_curve_rows": 0,
+      "model_input_status": "not_model_input"
+    },
+    {
+      "feature_id": 611243,
+      "mp11_au_code": "Fvm104",
+      "source_table": "Table 57",
+      "curve_lane": "future_managed",
+      "handoff_status": "candidate_for_curve_generation",
+      "curve_generation_status": "blocked_missing_batchtipsy_executable",
+      "curve_generation_note": "No accepted BatchTIPSY/TIPSY executable was found in configured public-safe local paths or PATH. Managed curve generation cannot be claimed until the executable/toolchain is supplied and command provenance is captured.",
+      "output_curve_rows": 0,
+      "model_input_status": "not_model_input"
+    },
+    {
+      "feature_id": 611253,
+      "mp11_au_code": "Fvm105",
+      "source_table": "Table 57",
+      "curve_lane": "future_managed",
+      "handoff_status": "candidate_for_curve_generation",
+      "curve_generation_status": "blocked_missing_batchtipsy_executable",
+      "curve_generation_note": "No accepted BatchTIPSY/TIPSY executable was found in configured public-safe local paths or PATH. Managed curve generation cannot be claimed until the executable/toolchain is supplied and command provenance is captured.",
+      "output_curve_rows": 0,
+      "model_input_status": "not_model_input"
+    },
+    {
+      "feature_id": 611263,
+      "mp11_au_code": "Fvm106",
+      "source_table": "Table 57",
+      "curve_lane": "future_managed",
+      "handoff_status": "candidate_for_curve_generation",
+      "curve_generation_status": "blocked_missing_batchtipsy_executable",
+      "curve_generation_note": "No accepted BatchTIPSY/TIPSY executable was found in configured public-safe local paths or PATH. Managed curve generation cannot be claimed until the executable/toolchain is supplied and command provenance is captured.",
+      "output_curve_rows": 0,
+      "model_input_status": "not_model_input"
+    },
+    {
+      "feature_id": 611273,
+      "mp11_au_code": "Fvm106s",
+      "source_table": "Table 57",
+      "curve_lane": "future_managed",
+      "handoff_status": "candidate_for_curve_generation",
+      "curve_generation_status": "blocked_missing_batchtipsy_executable",
+      "curve_generation_note": "No accepted BatchTIPSY/TIPSY executable was found in configured public-safe local paths or PATH. Managed curve generation cannot be claimed until the executable/toolchain is supplied and command provenance is captured.",
+      "output_curve_rows": 0,
+      "model_input_status": "not_model_input"
+    },
+    {
+      "feature_id": 611283,
+      "mp11_au_code": "Fvm107",
+      "source_table": "Table 57",
+      "curve_lane": "future_managed",
+      "handoff_status": "candidate_for_curve_generation",
+      "curve_generation_status": "blocked_missing_batchtipsy_executable",
+      "curve_generation_note": "No accepted BatchTIPSY/TIPSY executable was found in configured public-safe local paths or PATH. Managed curve generation cannot be claimed until the executable/toolchain is supplied and command provenance is captured.",
+      "output_curve_rows": 0,
+      "model_input_status": "not_model_input"
+    },
+    {
+      "feature_id": 611293,
+      "mp11_au_code": "Fvm109",
+      "source_table": "Table 57",
+      "curve_lane": "future_managed",
+      "handoff_status": "candidate_for_curve_generation",
+      "curve_generation_status": "blocked_missing_batchtipsy_executable",
+      "curve_generation_note": "No accepted BatchTIPSY/TIPSY executable was found in configured public-safe local paths or PATH. Managed curve generation cannot be claimed until the executable/toolchain is supplied and command provenance is captured.",
+      "output_curve_rows": 0,
+      "model_input_status": "not_model_input"
+    },
+    {
+      "feature_id": 611303,
+      "mp11_au_code": "Fvm111",
+      "source_table": "Table 57",
+      "curve_lane": "future_managed",
+      "handoff_status": "candidate_for_curve_generation",
+      "curve_generation_status": "blocked_missing_batchtipsy_executable",
+      "curve_generation_note": "No accepted BatchTIPSY/TIPSY executable was found in configured public-safe local paths or PATH. Managed curve generation cannot be claimed until the executable/toolchain is supplied and command provenance is captured.",
+      "output_curve_rows": 0,
+      "model_input_status": "not_model_input"
+    },
+    {
+      "feature_id": 611313,
+      "mp11_au_code": "Fvm114",
+      "source_table": "Table 57",
+      "curve_lane": "future_managed",
+      "handoff_status": "candidate_for_curve_generation",
+      "curve_generation_status": "blocked_missing_batchtipsy_executable",
+      "curve_generation_note": "No accepted BatchTIPSY/TIPSY executable was found in configured public-safe local paths or PATH. Managed curve generation cannot be claimed until the executable/toolchain is supplied and command provenance is captured.",
+      "output_curve_rows": 0,
+      "model_input_status": "not_model_input"
+    },
+    {
+      "feature_id": 611323,
+      "mp11_au_code": "Fvm131",
+      "source_table": "Table 57",
+      "curve_lane": "future_managed",
+      "handoff_status": "candidate_for_curve_generation",
+      "curve_generation_status": "blocked_missing_batchtipsy_executable",
+      "curve_generation_note": "No accepted BatchTIPSY/TIPSY executable was found in configured public-safe local paths or PATH. Managed curve generation cannot be claimed until the executable/toolchain is supplied and command provenance is captured.",
+      "output_curve_rows": 0,
+      "model_input_status": "not_model_input"
+    },
+    {
+      "feature_id": 611333,
+      "mp11_au_code": "Fvm133",
+      "source_table": "Table 57",
+      "curve_lane": "future_managed",
+      "handoff_status": "candidate_for_curve_generation",
+      "curve_generation_status": "blocked_missing_batchtipsy_executable",
+      "curve_generation_note": "No accepted BatchTIPSY/TIPSY executable was found in configured public-safe local paths or PATH. Managed curve generation cannot be claimed until the executable/toolchain is supplied and command provenance is captured.",
+      "output_curve_rows": 0,
+      "model_input_status": "not_model_input"
+    },
+    {
+      "feature_id": 611343,
+      "mp11_au_code": "Fvm201",
+      "source_table": "Table 57",
+      "curve_lane": "future_managed",
+      "handoff_status": "candidate_for_curve_generation",
+      "curve_generation_status": "blocked_missing_batchtipsy_executable",
+      "curve_generation_note": "No accepted BatchTIPSY/TIPSY executable was found in configured public-safe local paths or PATH. Managed curve generation cannot be claimed until the executable/toolchain is supplied and command provenance is captured.",
+      "output_curve_rows": 0,
+      "model_input_status": "not_model_input"
+    },
+    {
+      "feature_id": 611353,
+      "mp11_au_code": "Fvm203",
+      "source_table": "Table 57",
+      "curve_lane": "future_managed",
+      "handoff_status": "candidate_for_curve_generation",
+      "curve_generation_status": "blocked_missing_batchtipsy_executable",
+      "curve_generation_note": "No accepted BatchTIPSY/TIPSY executable was found in configured public-safe local paths or PATH. Managed curve generation cannot be claimed until the executable/toolchain is supplied and command provenance is captured.",
+      "output_curve_rows": 0,
+      "model_input_status": "not_model_input"
+    },
+    {
+      "feature_id": 611373,
+      "mp11_au_code": "Fvm207",
+      "source_table": "Table 57",
+      "curve_lane": "future_managed",
+      "handoff_status": "candidate_for_curve_generation",
+      "curve_generation_status": "blocked_missing_batchtipsy_executable",
+      "curve_generation_note": "No accepted BatchTIPSY/TIPSY executable was found in configured public-safe local paths or PATH. Managed curve generation cannot be claimed until the executable/toolchain is supplied and command provenance is captured.",
+      "output_curve_rows": 0,
+      "model_input_status": "not_model_input"
+    },
+    {
+      "feature_id": 611383,
+      "mp11_au_code": "Fvm208",
+      "source_table": "Table 57",
+      "curve_lane": "future_managed",
+      "handoff_status": "candidate_for_curve_generation",
+      "curve_generation_status": "blocked_missing_batchtipsy_executable",
+      "curve_generation_note": "No accepted BatchTIPSY/TIPSY executable was found in configured public-safe local paths or PATH. Managed curve generation cannot be claimed until the executable/toolchain is supplied and command provenance is captured.",
+      "output_curve_rows": 0,
+      "model_input_status": "not_model_input"
+    },
+    {
+      "feature_id": 611393,
+      "mp11_au_code": "Fvm211",
+      "source_table": "Table 57",
+      "curve_lane": "future_managed",
+      "handoff_status": "candidate_for_curve_generation",
+      "curve_generation_status": "blocked_missing_batchtipsy_executable",
+      "curve_generation_note": "No accepted BatchTIPSY/TIPSY executable was found in configured public-safe local paths or PATH. Managed curve generation cannot be claimed until the executable/toolchain is supplied and command provenance is captured.",
+      "output_curve_rows": 0,
+      "model_input_status": "not_model_input"
+    },
+    {
+      "feature_id": 611403,
+      "mp11_au_code": "FMH01",
+      "source_table": "Table 57",
+      "curve_lane": "future_managed",
+      "handoff_status": "candidate_for_curve_generation",
+      "curve_generation_status": "blocked_missing_batchtipsy_executable",
+      "curve_generation_note": "No accepted BatchTIPSY/TIPSY executable was found in configured public-safe local paths or PATH. Managed curve generation cannot be claimed until the executable/toolchain is supplied and command provenance is captured.",
+      "output_curve_rows": 0,
+      "model_input_status": "not_model_input"
+    },
+    {
+      "feature_id": 611413,
+      "mp11_au_code": "FMH22",
+      "source_table": "Table 57",
+      "curve_lane": "future_managed",
+      "handoff_status": "candidate_for_curve_generation",
+      "curve_generation_status": "blocked_missing_batchtipsy_executable",
+      "curve_generation_note": "No accepted BatchTIPSY/TIPSY executable was found in configured public-safe local paths or PATH. Managed curve generation cannot be claimed until the executable/toolchain is supplied and command provenance is captured.",
+      "output_curve_rows": 0,
+      "model_input_status": "not_model_input"
+    }
+  ]
+}

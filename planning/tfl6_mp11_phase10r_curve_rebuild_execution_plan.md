@@ -136,6 +136,27 @@ The P10R.3 output is intentionally partial and auditable: P10R.4 may run only
 accepted candidate rows unless a maintainer accepts an additional public
 mapping or repair for blocked rows. No row is promoted to model input.
 
+## P10R.4 Curve-Generation Blocker Status
+
+P10R.4 is blocked at the toolchain boundary. The useful pre-blocker status
+script is `scripts/build_p10r_mp11_managed_curve_rebuild_blocker.py`, which
+reads the P10R.3 handoff candidates and emits:
+
+- `planning/tfl6_mp11_managed_curve_rebuild.csv`;
+- `planning/tfl6_mp11_managed_curve_rebuild.json`;
+- `planning/tfl6_mp11_managed_curve_rebuild.md`.
+
+The script found `27` future-managed handoff candidate rows but no accepted
+BatchTIPSY/TIPSY executable in configured local paths or `PATH`. Therefore
+P10R.4 does not generate curves, does not parse rebuilt curve outputs, and does
+not compare rebuilt MP11 managed curves against Phase 5 fallback curves. This
+is an explicit blocker, not a successful curve-rebuild claim.
+
+Accepted next action: supply an accepted local BatchTIPSY/TIPSY runtime under
+an ignored runtime or data-download path, document licensing and command
+syntax, then rerun P10R.4 on candidate rows. The Windows toolchain handoff is
+written to `tmp/p10r_windows_curve_toolchain_handoff.md`.
+
 ## Plot-Refresh Requirement
 
 P10R.5 is the task that updates curve plots. Plot outputs must distinguish:

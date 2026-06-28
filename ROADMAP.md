@@ -611,11 +611,13 @@ natural/managed curve plots or a maintainer-reviewable blocker package.
     utilization, and site assumptions.
   - [x] P10R.3c Emit handoff CSV/JSON/Markdown manifests.
   - [x] P10R.3d Record unsupported rows and maintainer decisions required.
-- [ ] P10R.4 Run and parse MP11 managed curve generation (`#96`).
+- [ ] P10R.4 Run and parse MP11 managed curve generation (`#96`) - blocked
+  pending an accepted BatchTIPSY/TIPSY runtime in the Windows toolchain
+  environment.
   - [ ] P10R.4a Run accepted BatchTIPSY/TIPSY or local-equivalent commands.
-  - [ ] P10R.4b Capture tool versions, commands, inputs, outputs, and failures.
+  - [x] P10R.4b Capture tool versions, commands, inputs, outputs, and failures.
   - [ ] P10R.4c Parse output curves to normalized tables.
-  - [ ] P10R.4d Emit diagnostics for failed or unsupported rows.
+  - [x] P10R.4d Emit diagnostics for failed or unsupported rows.
   - [ ] P10R.4e Compare candidate outputs against Phase 5 fallback curves.
 - [ ] P10R.5 Regenerate natural and managed curve plots and overlays (`#97`).
   - [ ] P10R.5a Inventory existing curve plot locations.
@@ -874,9 +876,13 @@ The Phase 1 follow-on issues are placed into the future roadmap as follows:
    `planning/tfl6_mp11_tipsy_handoff_map.csv`: `27` future-managed candidate
    rows are handoff-ready, `105` existing/recent rows are blocked pending a
    public MP11 AU-code to BEC/site-series mapping, and `9` rows remain parser
-   review-required. The active edge is P10R.4: run and parse MP11 managed curve
-   generation (`#96`) for accepted candidate rows or record toolchain
-   blockers. Phase 11 is planned and blocked until Phase 10R closes.
+   review-required. P10R.4 emitted
+   `planning/tfl6_mp11_managed_curve_rebuild.{csv,json,md}` as a blocker
+   package: no accepted BatchTIPSY/TIPSY executable is available in configured
+   local paths, so generated MP11 managed curves cannot be claimed yet. The
+   active edge remains P10R.4: run real curve generation in the Windows
+   toolchain environment, inspect generated outputs, then update `#96`. Phase
+   11 is planned and blocked until Phase 10R closes.
 2. Phase 7 is closed. PR `#56` merged the MP11 figure-extraction test
    closeout into `main`. The final closeout surface is
    `planning/tfl6_mp11_figure_extraction_closeout.md` with matching CSV/JSON.
