@@ -1,0 +1,60 @@
+{
+  "review_manifest": "planning/tfl6_mp11_impact_chart_review_manifest.csv",
+  "reviewed_at_utc": "2026-06-28T00:00:00Z",
+  "reviewer": "codex_agent_overlay_arithmetic_and_geometry_review",
+  "arithmetic_threshold_m3_per_year": 1.0,
+  "geometry_threshold_m3_per_year": 10000.0,
+  "figure_count": 2,
+  "status_counts": {
+    "accepted_for_comparison": 2
+  },
+  "downstream_use_counts": {
+    "phase6_mp11_comparison_only": 2
+  },
+  "figures": [
+    {
+      "figure_id": "Figure 20",
+      "caption": "Timber Supply Impacts since MP #10 to Base Case",
+      "pdf_page": 101,
+      "review_status": "accepted_for_comparison",
+      "downstream_use": "phase6_mp11_comparison_only",
+      "review_basis": "printed chart-label transcription; deterministic coloured-component geometry check; zero waterfall arithmetic residual; overlay inspection",
+      "reviewer": "codex_agent_overlay_arithmetic_and_geometry_review",
+      "reviewed_at_utc": "2026-06-28T00:00:00Z",
+      "step_count": 6,
+      "accepted_printed_total_m3_per_year": 1061600.0,
+      "max_abs_geometry_minus_printed_m3_per_year": 4608.771929824725,
+      "max_abs_geometry_minus_printed_percent": 5.352812926625697,
+      "arithmetic_residual_m3_per_year": 0.0,
+      "arithmetic_status": "passed",
+      "geometry_check_status": "passed",
+      "overlay_review_status": "contact_sheet_passed",
+      "model_input_status": "not_model_input",
+      "rows_csv_path": "runtime/document_ingestion/tfl6-mp11-full-figures/recovered/impact_batch/figure-20-impact-steps.csv",
+      "overlay_path": "runtime/document_ingestion/tfl6-mp11-full-figures/overlays/impact_batch/figure-20-overlay.png",
+      "notes": "Accepted only for MP10-to-MP11 comparison planning. The accepted values are printed chart labels checked against bar geometry; do not treat as model input without later maintainer promotion."
+    },
+    {
+      "figure_id": "Figure 57",
+      "caption": "Updated Timber Supply Impacts Since MP #10",
+      "pdf_page": 158,
+      "review_status": "accepted_for_comparison",
+      "downstream_use": "phase6_mp11_comparison_only",
+      "review_basis": "printed chart-label transcription; deterministic coloured-component geometry check; zero waterfall arithmetic residual; overlay inspection",
+      "reviewer": "codex_agent_overlay_arithmetic_and_geometry_review",
+      "reviewed_at_utc": "2026-06-28T00:00:00Z",
+      "step_count": 9,
+      "accepted_printed_total_m3_per_year": 1252700.0,
+      "max_abs_geometry_minus_printed_m3_per_year": 6261.122661122587,
+      "max_abs_geometry_minus_printed_percent": 6.114377598752526,
+      "arithmetic_residual_m3_per_year": 0.0,
+      "arithmetic_status": "passed",
+      "geometry_check_status": "passed",
+      "overlay_review_status": "contact_sheet_passed",
+      "model_input_status": "not_model_input",
+      "rows_csv_path": "runtime/document_ingestion/tfl6-mp11-full-figures/recovered/impact_batch/figure-57-impact-steps.csv",
+      "overlay_path": "runtime/document_ingestion/tfl6-mp11-full-figures/overlays/impact_batch/figure-57-overlay.png",
+      "notes": "Accepted only for MP10-to-MP11 comparison planning. The accepted values are printed chart labels checked against bar geometry; do not treat as model input without later maintainer promotion."
+    }
+  ]
+}
