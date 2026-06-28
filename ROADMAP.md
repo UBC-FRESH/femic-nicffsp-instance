@@ -532,15 +532,19 @@ checkpoints without force-fitting.
   - [x] P9.6d Open and merge Phase 9 PR.
   - [x] P9.6e Close parent and child issues with final links.
 
-## Phase 10: MP11 AU/Yield Curve Rebuild (`#67`)
+## Phase 10: MP11 AU/Yield Readiness And Curve-Rebuild Scoping (`#67`)
 
 Status: closed.
 
-Goal: extract reviewed MP11 managed-yield parameters, refresh AU/yield
-crosswalk surfaces, regenerate natural and managed curves with provenance and
-QA diagnostics, and isolate unavailable LEFI/ITI/LiDAR assumptions.
+Goal: extract reviewed MP11 managed-yield parameter evidence, refresh AU/yield
+crosswalk surfaces, repackage existing natural and managed curve diagnostics,
+and isolate the blockers that prevent an actual MP11 curve rebuild.
 
-- [x] P10.1 Launch MP11 AU/yield rebuild execution plan (`#79`).
+Phase 10 did **not** rebuild AU/yield curves or update curve plots. It produced
+readiness evidence and blocker diagnostics. The actual curve rebuild is Phase
+10R.
+
+- [x] P10.1 Launch MP11 AU/yield readiness execution plan (`#79`).
   - [x] P10.1a Audit governing contracts and existing curve artifacts.
   - [x] P10.1b Define Phase 10 artifact layout and generated-output hygiene.
   - [x] P10.1c Define curve-lane and parameter-library gates.
@@ -556,33 +560,116 @@ QA diagnostics, and isolate unavailable LEFI/ITI/LiDAR assumptions.
   - [x] P10.3b Build MP11 AU/curve-lane crosswalk generator.
   - [x] P10.3c Emit crosswalk Markdown/CSV/JSON and fallback diagnostics.
   - [x] P10.3d Flag unsupported and non-public dependency mappings.
-- [x] P10.4 Regenerate MP11 natural curve diagnostics (`#82`).
+- [x] P10.4 Repackage MP11 natural curve diagnostics (`#82`).
   - [x] P10.4a Review VDYP source/version and existing natural curve scripts.
-  - [x] P10.4b Run or adapt natural curve generation for MP11 crosswalks.
-  - [x] P10.4c Emit natural curve diagnostics, plots/manifests, and comparison
+  - [x] P10.4b Repackage existing public VDYP evidence for MP11 review.
+  - [x] P10.4c Emit natural curve diagnostics, existing plot references, and comparison
     summaries.
   - [x] P10.4d Flag sparse-support, fallback, or unsupported curve families.
-- [x] P10.5 Generate MP11 managed curve diagnostics (`#83`).
-  - [x] P10.5a Build reviewed MP11 BatchTIPSY/TIPSY handoff from P10.2/P10.3
-    outputs.
-  - [x] P10.5b Generate managed curve diagnostics for supported rows.
-  - [x] P10.5c Emit curve tables, diagnostics, plots/manifests, and fallback
+- [x] P10.5 Record MP11 managed curve blocker diagnostics (`#83`).
+  - [x] P10.5a Join managed-lane gates to existing Phase 5 comparison
+    diagnostics.
+  - [x] P10.5b Record parser-review blockers for Tables 54, 55, and 57.
+  - [x] P10.5c Emit diagnostics, existing comparison references, and fallback
     reports.
   - [x] P10.5d Classify unsupported and unavailable-dependency rows.
-- [x] P10.6 Close Phase 10 and hand off curve artifacts (`#84`).
+- [x] P10.6 Close Phase 10 and hand off curve-readiness artifacts (`#84`).
   - [x] P10.6a Audit Phase 10 artifacts and generated-output hygiene.
   - [x] P10.6b Write Phase 10 closeout and Phase 11 handoff note.
-  - [x] P10.6c Run final validation and curve QA checks.
+  - [x] P10.6c Run final validation and readiness QA checks.
   - [x] P10.6d Open and merge Phase 10 PR.
   - [x] P10.6e Close parent and child issues with final links.
 
+## Phase 10R: MP11 Curve Parser And Curve Rebuild (`#92`)
+
+Status: active.
+
+Goal: execute the actual MP11 curve rebuild that Phase 10 scoped but did not
+complete. This phase owns reviewed parsing of MP11 Tables 54, 55, and 57,
+BatchTIPSY/TIPSY handoff inputs, managed-curve execution/parsing, and refreshed
+natural/managed curve plots or a maintainer-reviewable blocker package.
+
+- [x] P10R.1 Launch MP11 curve-rebuild execution plan (`#93`).
+  - [x] P10R.1a Amend Phase 10 wording to readiness/scoping rather than
+    completed curve rebuild.
+  - [x] P10R.1b Add Phase 10R roadmap and issue references.
+  - [x] P10R.1c Add the Phase 10R execution plan.
+  - [x] P10R.1d Mark Phase 11 blocked pending accepted Phase 10R outputs.
+- [ ] P10R.2 Parse MP11 Tables 54, 55, and 57 per-AU TIPSY rows (`#94`).
+  - [ ] P10R.2a Locate source pages and table boundaries for Tables 54, 55,
+    and 57.
+  - [ ] P10R.2b Implement parser/extraction script.
+  - [ ] P10R.2c Emit public-safe row tables with page/table provenance.
+  - [ ] P10R.2d Add QA summaries for missing, wrapped, or ambiguous rows.
+  - [ ] P10R.2e Review row counts and representative rows manually.
+- [ ] P10R.3 QA managed-yield rows and build BatchTIPSY handoff inputs (`#95`).
+  - [ ] P10R.3a Join parsed rows to the AU/curve-lane crosswalk.
+  - [ ] P10R.3b Validate density, regeneration delay, genetic gain, VRAF,
+    utilization, and site assumptions.
+  - [ ] P10R.3c Emit handoff CSV/JSON/Markdown manifests.
+  - [ ] P10R.3d Record unsupported rows and maintainer decisions required.
+- [ ] P10R.4 Run and parse MP11 managed curve generation (`#96`).
+  - [ ] P10R.4a Run accepted BatchTIPSY/TIPSY or local-equivalent commands.
+  - [ ] P10R.4b Capture tool versions, commands, inputs, outputs, and failures.
+  - [ ] P10R.4c Parse output curves to normalized tables.
+  - [ ] P10R.4d Emit diagnostics for failed or unsupported rows.
+  - [ ] P10R.4e Compare candidate outputs against Phase 5 fallback curves.
+- [ ] P10R.5 Regenerate natural and managed curve plots and overlays (`#97`).
+  - [ ] P10R.5a Inventory existing curve plot locations.
+  - [ ] P10R.5b Generate refreshed natural curve review plots where inputs
+    support it.
+  - [ ] P10R.5c Generate rebuilt managed curve plots from P10R.4 outputs.
+  - [ ] P10R.5d Emit plot manifests with source/provenance links.
+  - [ ] P10R.5e Update review/planning references to the new plot library.
+- [ ] P10R.6 Close curve-rebuild phase and hand off accepted curve candidates
+  (`#98`).
+  - [ ] P10R.6a Audit Phase 10R artifacts and generated-output hygiene.
+  - [ ] P10R.6b Write Phase 10R closeout.
+  - [ ] P10R.6c Update roadmap, changelog, and issue statuses.
+  - [ ] P10R.6d Run final validation.
+  - [ ] P10R.6e Unblock or explicitly defer Phase 11 based on accepted outputs.
+
 ## Phase 11: MP11 Model-Input Bundle And ForestModel XML Rebuild (`#68`)
 
-Status: planned.
+Status: planned and blocked.
 
 Goal: build the MP11-aligned model-input bundle and ForestModel XML from
 accepted source-layer, THLB, AU/yield, treatment, transition, MHA,
 harvest-system, and reporting contracts.
+
+Phase 11 must not proceed until Phase 10R closes with accepted curve candidates
+or an explicit maintainer-approved blocker path. Existing P11 issues `#86`
+through `#91` are retained as the future model-input/XML issue tree, but they
+are not active work.
+
+- [ ] P11.1 Launch MP11 model-input/XML rebuild execution plan (`#86`).
+  - [ ] P11.1a Audit governing contracts and handoff blockers.
+  - [ ] P11.1b Inventory existing Phase 5 model-input/XML provenance surfaces.
+  - [ ] P11.1c Define Phase 11 artifact layout and generated-output hygiene.
+  - [ ] P11.1d Define promotion gates and stop conditions.
+- [ ] P11.2 Audit MP11 model-input promotion readiness (`#87`).
+  - [ ] P11.2a Build promotion-readiness audit generator.
+  - [ ] P11.2b Emit readiness Markdown/CSV/JSON outputs.
+  - [ ] P11.2c Classify blockers and required maintainer decisions.
+  - [ ] P11.2d Decide whether P11.3 may build a candidate scaffold or must
+    remain blocked.
+- [ ] P11.3 Build MP11 model-input candidate manifest or stop report (`#88`).
+  - [ ] P11.3a Consume P11.2 readiness manifest.
+  - [ ] P11.3b Build candidate table/schema manifest or blocked stop report.
+  - [ ] P11.3c Record provenance and fallback policy for each candidate table.
+- [ ] P11.4 Build ForestModel XML readiness manifest or stop report (`#89`).
+  - [ ] P11.4a Audit existing Phase 5 XML provenance and bridge notes.
+  - [ ] P11.4b Build XML readiness manifest or stop report.
+  - [ ] P11.4c Define parse/check commands for any future XML generation.
+- [ ] P11.5 Define Phase 12 runtime handoff or blocker package (`#90`).
+  - [ ] P11.5a Build Phase 12 handoff or blocker summary.
+  - [ ] P11.5b Post/update Phase 12 issue handoff.
+- [ ] P11.6 Close Phase 11 and hand off model-input/XML status (`#91`).
+  - [ ] P11.6a Audit Phase 11 artifacts and generated-output hygiene.
+  - [ ] P11.6b Write Phase 11 closeout and Phase 12/13 handoff note.
+  - [ ] P11.6c Run final validation and model-input/XML checks.
+  - [ ] P11.6d Open and merge Phase 11 PR.
+  - [ ] P11.6e Close parent and child issues with final links.
 
 ## Phase 12: MP11 Patchworks Runtime And Scenario Smoke (`#69`)
 
@@ -645,14 +732,19 @@ approves a narrower independent slice:
    XML, Matrix Builder, or runtime rebuild begins.
 9. **MP11 source-layer and THLB rebuild**: Phase 9 (`#66`) executes the
    accepted source-layer and THLB contract.
-10. **MP11 AU/yield curve rebuild**: Phase 10 (`#67`) executes the accepted
-    AU/yield and managed-stand parameter contract.
-11. **MP11 model-input/XML rebuild**: Phase 11 (`#68`) promotes accepted
+10. **MP11 AU/yield readiness and blocker scoping**: Phase 10 (`#67`) extracts
+    managed-yield parameter evidence, refreshes crosswalks, and records the
+    blockers that prevent immediate curve rebuilding.
+11. **MP11 curve parser and curve rebuild**: Phase 10R (`#92`) parses MP11
+    Tables 54, 55, and 57, builds BatchTIPSY/TIPSY handoff inputs, runs/parses
+    managed curves where supported, and refreshes curve plots or records a
+    blocker package.
+12. **MP11 model-input/XML rebuild**: Phase 11 (`#68`) promotes accepted
     source, curve, rule, and reporting contracts into model-input and
     ForestModel XML artifacts.
-12. **MP11 runtime smoke**: Phase 12 (`#69`) builds and smoke-tests Matrix
+13. **MP11 runtime smoke**: Phase 12 (`#69`) builds and smoke-tests Matrix
     Builder and Patchworks runtime artifacts.
-13. **MP11 comparison/release QA**: Phase 13 (`#70`) documents comparisons,
+14. **MP11 comparison/release QA**: Phase 13 (`#70`) documents comparisons,
     release readiness, and whether an MP11-aligned package replaces or
     supplements the Phase 5 teaching baseline.
 
@@ -675,12 +767,13 @@ The Phase 1 follow-on issues are placed into the future roadmap as follows:
 
 ## Current Next Steps
 
-0. Phase 10 is closed. `planning/tfl6_mp11_phase10_closeout.md` records the
-   AU/yield handoff. Natural curves remain Phase 5 public VDYP comparison
-   candidates, and MP11 managed curve generation remains blocked pending
-   reviewed per-AU parsers for Tables 54, 55, and 57. The next MP11 rebuild
-   edge is Phase 11: MP11 model-input bundle and ForestModel XML rebuild
-   (`#68`).
+0. Phase 10R is active on branch
+   `feature/p10r-curve-rebuild-roadmap-correction`. P10R.1 is complete.
+   `planning/tfl6_mp11_phase10r_curve_rebuild_execution_plan.md` records the
+   actual curve-rebuild issue tree, artifact layout, parser gates,
+   curve-generation gates, plot refresh expectations, and Phase 11 blocker.
+   The active edge is P10R.2: parse MP11 Tables 54, 55, and 57 per-AU TIPSY
+   rows (`#94`). Phase 11 is planned and blocked until Phase 10R closes.
 1. Phase 7 is closed. PR `#56` merged the MP11 figure-extraction test
    closeout into `main`. The final closeout surface is
    `planning/tfl6_mp11_figure_extraction_closeout.md` with matching CSV/JSON.

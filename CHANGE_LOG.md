@@ -1,6 +1,24 @@
 # Change Log
 
-## 2026-06-28 - Closed Phase 10 MP11 AU/yield curve rebuild
+## 2026-06-28 - Corrected Phase 10 wording and launched Phase 10R curve rebuild
+
+- corrected Phase 10 wording from "MP11 AU/yield curve rebuild" to
+  "MP11 AU/yield readiness and curve-rebuild scoping";
+- recorded explicitly that Phase 10 did not rebuild all AUs/yield curves and
+  did not update curve plots;
+- created Phase 10R parent issue `#92` and child issues `#93` through `#98`
+  for the actual curve parser, curve-generation, plot-refresh, and handoff
+  work;
+- added `planning/tfl6_mp11_phase10r_curve_rebuild_execution_plan.md` as the
+  concrete execution plan for the actual curve rebuild;
+- marked Phase 11 planned and blocked until Phase 10R closes with accepted
+  curve candidates or a maintainer-approved blocker path; and
+- did not generate or track model-input bundles, ForestModel XML, Matrix
+  Builder outputs, Patchworks runtime artifacts, private WFP layers, private
+  curves, proprietary LEFI/ITI/LiDAR assumptions, or new curve plots in this
+  correction task.
+
+## 2026-06-28 - Closed Phase 10 MP11 AU/yield readiness and blocker review
 
 - added `planning/tfl6_mp11_phase10_closeout.md` to summarize the completed
   Phase 10 issue tree, tracked outputs, validation, and Phase 11 handoff;
@@ -8,6 +26,8 @@
 - recorded that natural curves remain Phase 5 public VDYP comparison
   candidates and that MP11 managed curve generation remains blocked pending
   reviewed per-AU parsers for Tables 54, 55, and 57;
+- recorded that Phase 10 did not rebuild all AUs/yield curves and did not
+  update curve plots;
 - preserved the Phase 5 teaching runtime as the accepted baseline until future
   MP11 source-layer, curve, model-input, XML, Matrix Builder, runtime, docs,
   archive, and scenario-output gates pass; and
@@ -79,7 +99,7 @@
   artifacts, private WFP curves, or proprietary LEFI/ITI/LiDAR assumptions
   tracked.
 
-## 2026-06-28 - Launched Phase 10 MP11 AU/yield curve rebuild
+## 2026-06-28 - Launched Phase 10 MP11 AU/yield readiness review
 
 - created Phase 10 child issues `#79` through `#84` for launch planning,
   managed-yield parameter extraction, AU/curve-lane crosswalk refresh, natural
@@ -190,9 +210,10 @@
   Phase 8 contract set, validation, baseline boundary, and follow-on phase
   split;
 - created follow-on parent issues for Phase 9 MP11 source-layer/THLB rebuild
-  (`#66`), Phase 10 AU/yield curve rebuild (`#67`), Phase 11 model-input/XML
-  rebuild (`#68`), Phase 12 Patchworks runtime/scenario smoke (`#69`), and
-  Phase 13 comparison documentation/release QA (`#70`);
+  (`#66`), Phase 10 AU/yield readiness and curve-rebuild scoping (`#67`),
+  Phase 11 model-input/XML rebuild (`#68`), Phase 12 Patchworks
+  runtime/scenario smoke (`#69`), and Phase 13 comparison
+  documentation/release QA (`#70`);
 - marked P8.6 complete in `ROADMAP.md` and added planned Phase 9-13 roadmap
   sections with dependency order;
 - preserved the Phase 5 teaching runtime as the accepted baseline until a

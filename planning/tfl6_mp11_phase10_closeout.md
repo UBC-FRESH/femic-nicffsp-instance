@@ -1,17 +1,18 @@
-# TFL 6 MP11 Phase 10 Closeout
+# TFL 6 MP11 Phase 10 Readiness And Blocker Review Closeout
 
 ## Purpose
 
-This note closes Phase 10: MP11 AU/yield curve rebuild. Phase 10 launched the
-MP11 curve-rebuild issue tree, extracted public-safe managed-yield parameter
-evidence, mapped canonical AUs to MP11 curve lanes, repackaged the accepted
-public VDYP natural-curve diagnostics, and recorded managed-curve generation
-blockers.
+This note closes Phase 10: MP11 AU/yield readiness and curve-rebuild scoping.
+Phase 10 extracted public-safe managed-yield parameter evidence, mapped
+canonical AUs to MP11 curve lanes, repackaged the accepted public VDYP
+natural-curve diagnostics, and recorded managed-curve generation blockers.
 
-Phase 10 did not produce accepted replacement model-input curves. Natural
-curves remain Phase 5 public VDYP comparison candidates, and MP11 managed
-curves remain blocked until Tables 54, 55, and 57 have reviewed per-AU TIPSY
-row parsers.
+Phase 10 did **not** rebuild all AUs/yield curves, did **not** regenerate
+managed curves, and did **not** update curve plots. Natural curves remain Phase
+5 public VDYP comparison candidates, and MP11 managed curves remain blocked
+until Tables 54, 55, and 57 have reviewed per-AU TIPSY row parsers.
+
+The actual curve rebuild is Phase 10R (`#92`).
 
 ## Branch And Issue Tree
 
@@ -19,12 +20,12 @@ row parsers.
 - Pull request: `#85`
 - Parent issue: `#67`
 - Child issues:
-  - P10.1 launch MP11 AU/yield rebuild execution plan: `#79`;
+  - P10.1 launch MP11 AU/yield readiness execution plan: `#79`;
   - P10.2 extract MP11 managed-yield parameter library: `#80`;
   - P10.3 refresh MP11 AU and curve-lane crosswalk: `#81`;
-  - P10.4 regenerate MP11 natural curve diagnostics: `#82`;
-  - P10.5 generate MP11 managed curve diagnostics: `#83`;
-  - P10.6 close Phase 10 and hand off curve artifacts: `#84`.
+  - P10.4 repackage MP11 natural curve diagnostics: `#82`;
+  - P10.5 record MP11 managed curve blocker diagnostics: `#83`;
+  - P10.6 close Phase 10 and hand off curve-readiness artifacts: `#84`.
 
 ## Tracked Outputs
 
@@ -40,6 +41,21 @@ row parsers.
 | Managed-curve diagnostic generator | `scripts/build_p10_mp11_managed_curve_diagnostics.py` | Joins MP11 managed-lane gates to Phase 5 managed-curve comparison diagnostics. |
 | Managed-curve diagnostics | `planning/tfl6_mp11_managed_curve_diagnostics.md` | Records `1,152` managed AU/lane rows, all blocked pending parser review. |
 
+## What Was Not Done
+
+Phase 10 did not:
+
+- rebuild AU/yield curves;
+- run BatchTIPSY/TIPSY for MP11 managed rows;
+- parse MP11 Tables 54, 55, and 57 into reviewed per-AU curve-generation
+  inputs;
+- regenerate natural curve plots;
+- regenerate managed curve plots;
+- update the curve plot library; or
+- promote any curve artifact to `accepted_model_input`.
+
+Those tasks are assigned to Phase 10R.
+
 ## Headline Findings
 
 - The stable FEMIC canonical AU universe remains `384` AUs.
@@ -54,10 +70,27 @@ row parsers.
   are large, multi-page, line-wrapped TIPSY tables that require reviewed
   per-AU row parsers before BatchTIPSY handoff.
 
-## Phase 11 Handoff
+## Actual Curve-Rebuild Reference
 
-Phase 11 may use the Phase 10 artifacts as review inputs, but it must not treat
-them as accepted model-input curves without explicit promotion.
+The actual curve rebuild is now tracked as Phase 10R: MP11 curve parser and
+curve rebuild (`#92`).
+
+- P10R.1 launch MP11 curve-rebuild execution plan: `#93`;
+- P10R.2 parse MP11 Tables 54, 55, and 57 per-AU TIPSY rows: `#94`;
+- P10R.3 QA managed-yield rows and build BatchTIPSY handoff inputs: `#95`;
+- P10R.4 run and parse MP11 managed curve generation: `#96`;
+- P10R.5 regenerate natural and managed curve plots and overlays: `#97`;
+- P10R.6 close curve-rebuild phase and hand off accepted curve candidates:
+  `#98`.
+
+Phase 11 is blocked until Phase 10R closes with accepted curve candidates or a
+maintainer-approved blocker path.
+
+## Phase 10R And Phase 11 Handoff
+
+Phase 10R may use Phase 10 artifacts as review inputs, but it must not treat
+them as rebuilt curves. Phase 11 must not treat them as accepted model-input
+curves without explicit promotion after Phase 10R closeout.
 
 Ready as comparison or review evidence:
 
