@@ -1,5 +1,20 @@
 # Change Log
 
+## 2026-06-28 - Built first P6.2 MP11 raw extraction inventory
+
+- added `scripts/build_p6_mp11_extraction_inventory.py` to extract raw heading,
+  table, figure, and high-priority claim candidates from the MP11 PDF using the
+  P6.1 document-component and manifest-field contracts;
+- added `planning/tfl6_mp11_extraction_inventory.csv` with `1870` raw
+  candidate rows, all carrying source SHA256, document component, one-based PDF
+  page, extraction method, review status, downstream use, and model-input
+  status;
+- added `planning/tfl6_mp11_extraction_inventory_summary.md` and JSON with
+  object-type, comparison-topic, component, review-status, and model-input
+  status counts; and
+- kept the inventory as raw triage evidence only: every row remains
+  `raw_extraction`, `phase6_inventory_triage_only`, and `not_model_input`.
+
 ## 2026-06-28 - Completed P6.1 MP11 source package manifest
 
 - restored the Phase 6 ingestion/overhaul planning note as

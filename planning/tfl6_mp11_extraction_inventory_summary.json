@@ -1,0 +1,33 @@
+{
+  "source_package_id": "tfl6_mp11_202606_public_pdf",
+  "source_sha256": "44591c1024254e36d8989df45a2b489a624d5669c5ae01a6ebfd961b50a7321b",
+  "source_pdf": "/home/gep/projects/figrecover/examples/TFL6_MP_11_202606_w_Appendices_Web-compressed.pdf",
+  "extracted_at_utc": "2026-06-28T00:00:00Z",
+  "inventory_csv": "planning/tfl6_mp11_extraction_inventory.csv",
+  "row_count": 1870,
+  "object_type_counts": {
+    "claim_candidate": 1094,
+    "figure": 244,
+    "heading": 245,
+    "table": 287
+  },
+  "comparison_topic_counts": {
+    "aac": 131,
+    "inventory_yield": 815,
+    "land_base": 225,
+    "metadata": 458,
+    "model_behavior": 241
+  },
+  "document_component_counts": {
+    "appendix_a_timber_supply_analysis": 935,
+    "appendix_b_acceptance_letter": 2,
+    "appendix_b_information_package": 827,
+    "management_plan_main": 106
+  },
+  "review_status_counts": {
+    "raw_extraction": 1870
+  },
+  "model_input_status_counts": {
+    "not_model_input": 1870
+  }
+}

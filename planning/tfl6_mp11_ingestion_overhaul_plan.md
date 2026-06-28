@@ -77,6 +77,25 @@ auditable later:
 - adoption status: raw extraction, reviewed evidence, accepted model contract,
   rejected/deferred, or unresolved.
 
+The first P6.2 raw extraction inventory is:
+
+- `planning/tfl6_mp11_extraction_inventory.csv`
+- `planning/tfl6_mp11_extraction_inventory_summary.json`
+- `planning/tfl6_mp11_extraction_inventory_summary.md`
+
+It contains `1870` raw candidate rows:
+
+- `245` heading candidates;
+- `287` table candidates;
+- `244` figure candidates; and
+- `1094` high-priority claim candidates.
+
+The rows are intentionally conservative: `review_status` is `raw_extraction`,
+downstream use is `phase6_inventory_triage_only`, and `model_input_status` is
+`not_model_input`. Table-of-contents/list entries and repeated references may
+appear in this queue; those are expected to be filtered during the next
+P6.2/P6.3-P6.5 review and crosswalk passes.
+
 At minimum, P6.2 should inventory:
 
 - section headings and appendices;

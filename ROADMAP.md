@@ -348,10 +348,10 @@ before the MP11 evidence is extracted, reviewed, and crosswalked.
     AAC determination and is not treated here as a final approved AAC decision.
 - [ ] P6.2 Extract MP11 tables, figures, sections, assumptions, and metadata
   (`#44`).
-  - [ ] P6.2a Inventory section headings, tables, figures, appendices,
+  - [x] P6.2a Inventory section headings, tables, figures, appendices,
     references, assumptions, model-input descriptions, and sensitivity items.
-  - [ ] P6.2b Attach every extracted claim to a page/section anchor.
-  - [ ] P6.2c Record extraction method, tool versions, failures, and manual
+  - [x] P6.2b Attach every extracted claim to a page/section anchor.
+  - [x] P6.2c Record extraction method, tool versions, failures, and manual
     review flags.
 - [ ] P6.3 Compare MP11 land base and THLB assumptions against the Phase 5
   prototype (`#45`).
@@ -471,9 +471,10 @@ The Phase 1 follow-on issues are placed into the future roadmap as follows:
    P6.1 is complete: `planning/tfl6_mp11_source_package_manifest.md` records
    the public MP11 source identity, verified SHA256, 475-page PDF structure,
    document-component ranges, ignored source-copy policy, governance caveat,
-   and extraction-manifest field contract. The active edge is P6.2 extraction
-   of MP11 tables, figures, sections, assumptions, and metadata using page
-   anchors and review-status fields.
+   and extraction-manifest field contract. The first P6.2 raw extraction
+   inventory is also recorded in `planning/tfl6_mp11_extraction_inventory.csv`
+   with `1870` candidate rows. The active edge is P6.2 review/normalization of
+   high-priority table and claim rows into the P6.3-P6.5 comparison lanes.
 1. Phase 7 is closed. PR `#56` merged the MP11 figure-extraction test
    closeout into `main`. The final closeout surface is
    `planning/tfl6_mp11_figure_extraction_closeout.md` with matching CSV/JSON.
