@@ -1,5 +1,23 @@
 # Change Log
 
+## 2026-06-28 - Extracted MP11 age-class distribution charts
+
+- added `scripts/build_p7_mp11_age_class_extractions.py` for the first
+  age-class stacked-bar extraction batch;
+- extracted Figures `6` and `45`, recovering THLB area, total area, and implied
+  NCLB area for six subplot years and nine age classes per figure;
+- wrote ignored detailed per-figure age-class CSV and overlay PNG artifacts
+  under `runtime/document_ingestion/tfl6-mp11-full-figures/`;
+- added compact public-safe summary outputs in
+  `planning/tfl6_mp11_age_class_extraction_summary.md`,
+  `planning/tfl6_mp11_age_class_extraction_summary.csv`,
+  `planning/tfl6_mp11_age_class_extraction_summary.json`, and
+  `planning/tfl6_mp11_age_class_rows.csv`;
+- corrected initial panel-border and legend-swath contamination by adding
+  top-row exclusion bands; and
+- kept the batch status as `raw_extraction`, with panel-total deviations of up
+  to `7.23%` for Figure `6` and `10.31%` for Figure `45`.
+
 ## 2026-06-28 - Reviewed MP11 cedar inventory charts for planning use
 
 - added `scripts/build_p7_mp11_cedar_inventory_review_manifest.py` to produce

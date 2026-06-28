@@ -186,6 +186,21 @@ The promotion is limited to `reviewed_for_planning` with downstream use
 `phase6_mp11_cedar_planning_only`. The outputs remain explicitly
 `not_model_input` and are not `accepted_for_comparison`.
 
+## Age-Class Extraction Batch
+
+The first age-class distribution extraction batch is recorded in:
+
+- `planning/tfl6_mp11_age_class_extraction_summary.md`
+- `planning/tfl6_mp11_age_class_extraction_summary.csv`
+- `planning/tfl6_mp11_age_class_extraction_summary.json`
+- `planning/tfl6_mp11_age_class_rows.csv`
+
+The batch extracts Figures `6` and `45`, each with six subplot years and nine
+stacked age-class bars per subplot. It recovers THLB area, total area, and
+implied NCLB area. The batch remains `raw_extraction`; panel-total deviations
+from the stated `187,425 ha` productive forest area reach `7.23%` for Figure
+`6` and `10.31%` for Figure `45`.
+
 ## Runtime Artifact Boundary
 
 Generated figure-recovery artifacts belong under ignored runtime paths such as:

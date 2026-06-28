@@ -503,8 +503,11 @@ The Phase 1 follow-on issues are placed into the future roadmap as follows:
    `planning/tfl6_mp11_cedar_inventory_review_manifest.md` promotes those rows
    to `reviewed_for_planning` with downstream use
    `phase6_mp11_cedar_planning_only`; they are not
-   `accepted_for_comparison`. The active edge remains P7.4 for age-class,
-   waterfall, old-seral, and remaining hybrid figures.
+   `accepted_for_comparison`. `planning/tfl6_mp11_age_class_extraction_summary.md`
+   records raw extraction of age-class Figures `6` and `45`; those remain
+   `raw_extraction` because panel-total deviations reach `7.23%` and `10.31%`.
+   The active edge remains P7.4/P7.5 for age-class review, then waterfall,
+   old-seral, and remaining hybrid figures.
 1. Phase 2 is closed. The instance `main` branch contains the Phase 2
    source-layer, THLB smoke, benchmark-tolerance, and Sphinx audit-trail
    surfaces; the parent FEMIC submodule pointer has been updated to the merged
