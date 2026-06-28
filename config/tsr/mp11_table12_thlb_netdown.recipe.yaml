@@ -86,7 +86,7 @@ steps:
     schedule_b_net_ha: 8289
     grand_total_net_ha: 8808
     implementation_lane: attribute_rule
-    public_data_status: public_proxy_plus_unavailable_gap
+    public_data_status: public_proxy_available_with_coverage_gap
     validation_role: direct_line_item
     source_anchor: "Appendix B Table 12, PDF page 284"
     source_ids: ["vri_2025_r1_tfl6", "vdyp7_2025_poly_tfl6", "wfp_lbb_iti_lefi_unavailable"]
@@ -344,9 +344,9 @@ steps:
     public_data_status: public_proxy_plus_unavailable_gap
     validation_role: direct_line_item
     source_anchor: "Appendix B Table 12, PDF page 285; Appendix B Table 37"
-    source_ids: ["terrain_stability_source_unavailable"]
-    p9r_status: deferred_p9rf_step210_public_terrain_stability_source_needed
-    notes: "No accepted public DTSM terrain-stability Class 5 source is materialized in the current source stack. P9RF carries the row as a zero-deduction deferred public-source placeholder until a reviewed terrain materialization lane exists."
+    source_ids: ["WHSE_TERRESTRIAL_ECOLOGY.STE_TER_STABILITY_POLYS_SVW", "tsm_detailed_polygons_tfl6"]
+    p9r_status: locked_p9rf_step210_public_tsm_class_v_proxy_with_coverage_gap
+    notes: "Accepted strict public TSM Class V proxy for MP11 Step 210 using `data/source/tfl_6/terrain/tsm_detailed_polygons_tfl6.gpkg`, filtered to `slope_stability_class_w_roads == 'V'`. This applies the newly identified public terrain-stability source instead of skipping the row. The resulting deduction is much smaller than MP11, so the residual remains an explicit public-source coverage/semantic gap rather than a WFP DTSM equivalence claim."
   - step_id: mp11_t12_220
     order: 220
     table12_classification: "Terrain Stability - LiDAR 90% + Slope"

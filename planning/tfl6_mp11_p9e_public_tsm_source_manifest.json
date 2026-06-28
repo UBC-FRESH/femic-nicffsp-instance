@@ -1,0 +1,40 @@
+{
+  "generated_at_utc": "2026-06-28T21:44:22.423661+00:00",
+  "catalogue_url": "https://catalogue.data.gov.bc.ca/dataset/terrain-stability-mapping-tsm-detailed-polygons-with-short-attribute-table-spatial-view",
+  "arcgis_layer_url": "https://delivery.maps.gov.bc.ca/arcgis/rest/services/whse/bcgw_pub_whse_terrestrial_ecology/MapServer/18",
+  "arcgis_query_url": "https://delivery.maps.gov.bc.ca/arcgis/rest/services/whse/bcgw_pub_whse_terrestrial_ecology/MapServer/18/query",
+  "source_feature_class": "WHSE_TERRESTRIAL_ECOLOGY.STE_TER_STABILITY_POLYS_SVW",
+  "output_gpkg": "data/source/tfl_6/terrain/tsm_detailed_polygons_tfl6.gpkg",
+  "raw_bbox_feature_count": 1433,
+  "tfl6_clipped_feature_count": 274,
+  "tfl6_clipped_area_ha": 21852.48376393843,
+  "field_counts": {
+    "slope_stability_class_txt": {
+      "Stable: low landslide potential": 96,
+      "Stable: negligible landslide potential": 82,
+      "NULL": 55,
+      "Potentially unstable": 36,
+      "Unstable": 5
+    },
+    "slope_stability_class_w_roads": {
+      "III": 96,
+      "I": 82,
+      "NULL": 55,
+      "P": 31,
+      "IV": 5,
+      "V": 5
+    },
+    "polygon_stability_class_type": {
+      "D": 188,
+      "NULL": 55,
+      "R": 31
+    },
+    "project_name": {
+      "NorthIsland Terrain": 188,
+      "Fpc 21 Campbell River FD": 48,
+      "Fpc 22 Campbell River FD": 22,
+      "Fpc 19 Campbell River FD": 16
+    }
+  },
+  "caveat": "This public TSM layer is a provincial terrain-stability mapping source. It is not guaranteed to match WFP's private DTSM/Patchworks processing, but it is a real public candidate for MP11 Table 12 Step 210 and must not be treated as unavailable."
+}

@@ -24,6 +24,7 @@ OGMA_LEGAL_PATH = INSTANCE_ROOT / "data/source/tfl_6/ogma/ogma_legal_current_tfl
 WHA_LEGAL_PATH = INSTANCE_ROOT / "data/source/tfl_6/wildlife/wha_approved_tfl6.gpkg"
 RECREATION_POLYGONS_PATH = INSTANCE_ROOT / "data/source/tfl_6/recreation/recreation_polygons_tfl6.gpkg"
 PSP_ACTIVE_PUBLIC_PATH = INSTANCE_ROOT / "data/source/tfl_6/psp/psp_active_sites_public_tfl6.gpkg"
+TSM_PATH = INSTANCE_ROOT / "data/source/tfl_6/terrain/tsm_detailed_polygons_tfl6.gpkg"
 P9D_SLOPE_ZONAL_CSV = INSTANCE_ROOT / "planning/tfl6_mp11_p9d_public_dem_slope_zonal_stats.csv"
 OUTPUT_PREFIX = INSTANCE_ROOT / "planning/tfl6_mp11_p9rf_table12"
 COMPARISON_CSV = INSTANCE_ROOT / "planning/tfl6_mp11_p9rf_table12_resultant_vs_p9r_comparison.csv"
@@ -409,6 +410,12 @@ def _public_dem_step220_index(active: gpd.GeoDataFrame) -> pd.Index:
             "P9D Step 220 zonal statistics are missing required columns: "
             + ", ".join(sorted(missing))
         )
+    if len(zonal) != len(active):
+        raise RuntimeError(
+            "P9D Step 220 zonal statistics were not generated for the current "
+            f"Step 210 surface: zonal rows={len(zonal):,}, active fragments={len(active):,}. "
+            "Rerun `scripts/run_p9d_public_dem_slope_zonal.py` after changing Step 210."
+        )
     selected_ids = set(
         zonal.loc[
             zonal[prop_col].fillna(0.0) >= STEP220_PUBLIC_DEM_MIN_STEEP_PROPORTION,
@@ -631,6 +638,12 @@ def _riparian_overlay(crs) -> gpd.GeoDataFrame:
 def _public_overlay(path: Path, crs) -> gpd.GeoDataFrame:
     frame = gpd.read_file(path).to_crs(crs)
     return _overlay_mask(frame.geometry, crs)
+
+
+def _public_tsm_step210_overlay(crs) -> gpd.GeoDataFrame:
+    frame = gpd.read_file(TSM_PATH).to_crs(crs)
+    selected = frame[frame["slope_stability_class_w_roads"].eq("V")].copy()
+    return _overlay_mask(selected.geometry, crs)
 
 
 def _recreation_overlay(crs) -> gpd.GeoDataFrame:
@@ -986,14 +999,21 @@ def run_rebuild() -> list[StepSummary]:
         active,
         "mp11_t12_210",
         "Terrain Stability - Class 5",
-        "deduction_deferred_public_source",
-        lambda frame: _split_unavailable_source(frame, "mp11_t12_210"),
-        "deferred_p9rf_step210_public_terrain_stability_source_needed",
+        "deduction_proxy",
+        lambda frame: _split_by_overlay(
+            frame,
+            _public_tsm_step210_overlay(frame.crs),
+            "mp11_t12_210",
+            "deducted_public_tsm_class_v_proxy",
+        ),
+        "locked_p9rf_step210_public_tsm_class_v_proxy_with_coverage_gap",
         (
-            "No accepted public DTSM terrain-stability Class 5 source is materialized in the current source "
-            "stack. P9RF carries this row as a zero-deduction deferred public-source placeholder. A later "
-            "public DEM/terrain materialization lane may replace this row, but no non-terrain proxy is used "
-            "for the unrestricted teaching model."
+            "Accepted strict public TSM Class V proxy for MP11 Step 210 using "
+            "`data/source/tfl_6/terrain/tsm_detailed_polygons_tfl6.gpkg`, filtered to "
+            "`slope_stability_class_w_roads == 'V'`. This applies the newly identified public "
+            "terrain-stability source instead of skipping the row. The resulting deduction is much smaller "
+            "than MP11, so the residual remains an explicit public-source coverage/semantic gap rather than "
+            "a WFP DTSM equivalence claim."
         ),
     )
     summaries.append(summary)

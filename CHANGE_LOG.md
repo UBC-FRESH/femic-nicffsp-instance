@@ -3000,6 +3000,33 @@
   stability Class 5, karst, big-tree reserves, and sensitive cultural/TUS
   features.
 
+## 2026-06-28 - Applied public TSM terrain-stability source to Step 210
+
+- opened Phase 9E issue `#106` and child issues `#107` and `#108` after
+  identifying the BC Terrain Stability Mapping detailed polygon layer as a
+  public candidate for MP11 Table 12 Step 210;
+- added `scripts/run_p9e_public_tsm_step210.py` to fetch
+  `WHSE_TERRESTRIAL_ECOLOGY.STE_TER_STABILITY_POLYS_SVW` from the public BC
+  ArcGIS service, clip it to TFL 6, and test Step 210 candidate rules;
+- materialized `data/source/tfl_6/terrain/tsm_detailed_polygons_tfl6.gpkg`
+  with `274` TFL6-clipped public TSM polygons covering `21,852.484 ha`;
+- generated `planning/tfl6_mp11_p9e_public_tsm_source_manifest.{md,csv,json}`
+  and `planning/tfl6_mp11_p9e_step210_tsm_scenarios.{md,csv,json}`;
+- accepted the strict public `slope_stability_class_w_roads == "V"` proxy for
+  Step 210, deducting `1.425 ha` against the MP11 target `1,993.000 ha`;
+- updated `config/tsr/mp11_table12_thlb_netdown.recipe.yaml` and
+  `scripts/run_p9rf_mp11_table12_resultant_rebuild.py` so Step 210 is no
+  longer skipped;
+- added a hard guard so Step 220 CDED zonal statistics must match the current
+  Step 210 fragment surface before the rebuild can proceed;
+- regenerated Step 220 CDED zonal/scenario evidence on the TSM-adjusted Step
+  210 surface;
+- reran P9RF through Step 310, yielding Step 290 Current THLB
+  `122,763.421 ha` (`+2,664.421 ha` versus MP11) and Step 310 Long-term Land
+  Base `121,336.593 ha` (`+2,664.593 ha` versus MP11); and
+- documented the remaining Step 210 difference as a public-source
+  coverage/semantic gap rather than a rejected or unavailable source.
+
 ## 2026-06-26 - Verified P5.4d Sphinx and public Pages docs
 
 - rebuilt the instance Sphinx documentation warning-clean with

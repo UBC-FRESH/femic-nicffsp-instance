@@ -9,11 +9,11 @@
 
 ## Summary
 
-- Fragment count: `43530`
-- Fragments with valid DEM pixels: `39239`
+- Fragment count: `43531`
+- Fragments with valid DEM pixels: `39240`
 - Fragments without valid DEM pixels: `4291`
-- Source area: `129210.103 ha`
-- Source area with valid pixels: `129142.501 ha`
+- Source area: `129208.678 ha`
+- Source area with valid pixels: `129141.076 ha`
 - Source area without valid pixels: `67.602 ha`
 - Maximum slope: `259.745%`
 
@@ -21,10 +21,10 @@
 
 | Threshold | Area with any steep pixel | Area majority steep |
 | ---: | ---: | ---: |
-| `60%` | `72920.224 ha` | `12756.774 ha` |
-| `70%` | `57742.849 ha` | `5648.937 ha` |
-| `80%` | `43247.586 ha` | `1915.000 ha` |
-| `90%` | `30373.444 ha` | `631.379 ha` |
+| `60%` | `72919.850 ha` | `12756.701 ha` |
+| `70%` | `57741.851 ha` | `5646.183 ha` |
+| `80%` | `43248.307 ha` | `1915.000 ha` |
+| `90%` | `30371.681 ha` | `631.379 ha` |
 
 ## Caveat
 

@@ -675,6 +675,38 @@ model-input work.
     notes.
   - [x] P9D.5e Run validation and close the phase.
 
+## Phase 9E: Public TSM Terrain-Stability Step 210 Repair (`#106`)
+
+Status: complete.
+
+Goal: correct the Step 210 source gap after identifying the public BC Terrain
+Stability Mapping detailed polygon layer as a real candidate source for MP11
+Table 12 Step 210.
+
+This phase applies the public TSM source transparently but does not claim WFP
+DTSM/Patchworks equivalence. The result proves that the public layer exists and
+should not be skipped, while also showing that strict public Class V terrain
+coverage explains only a very small portion of the MP11 Step 210 netdown.
+
+- [x] P9E.1 Materialize public TSM source and evaluate Step 210 scenarios
+  (`#107`).
+  - [x] P9E.1a Fetch public TSM polygons from the BC ArcGIS REST layer.
+  - [x] P9E.1b Clip to TFL 6 and write
+    `data/source/tfl_6/terrain/tsm_detailed_polygons_tfl6.gpkg`.
+  - [x] P9E.1c Write source manifest Markdown/CSV/JSON.
+  - [x] P9E.1d Test strict Class V and broader diagnostic rules against the
+    Step 200 active P9RF surface.
+  - [x] P9E.1e Select strict `slope_stability_class_w_roads == "V"` as the
+    accepted public proxy.
+- [x] P9E.2 Apply public TSM Step 210 proxy and rerun P9RF (`#108`).
+  - [x] P9E.2a Patch Table 12 recipe and P9RF rebuild.
+  - [x] P9E.2b Add guard against stale Step 220 zonal tables after Step 210
+    geometry changes.
+  - [x] P9E.2c Regenerate Step 220 CDED zonal/scenario evidence on the
+    TSM-adjusted Step 210 surface.
+  - [x] P9E.2d Rerun P9RF through Step 310.
+  - [x] P9E.2e Record final endpoint deltas.
+
 ## Phase 11: MP11 Model-Input Bundle And ForestModel XML Rebuild (`#68`)
 
 Status: planned and blocked.
@@ -817,13 +849,14 @@ The Phase 1 follow-on issues are placed into the future roadmap as follows:
 
 ## Current Next Steps
 
-0. Phase 9D is complete. The accepted public CDED Step 220 proxy deducts
-   fragments where `slope >= 70%` on at least `75%` of valid CDED pixels in a
-   Step 210 resultant fragment, yielding `1,801.705 ha` against the MP11
-   Step 220 target `1,820.000 ha` (`-18.295 ha`, `-1.005%`). After the full
-   P9RF rerun, Step 290 Current THLB is `122,764.836 ha` (`+2,665.836 ha`
-   versus MP11), and Step 310 Long-term Land Base is `121,338.039 ha`
-   (`+2,666.039 ha` versus MP11).
+0. Phase 9D and Phase 9E are complete. Step 210 now applies the public TSM
+   strict Class V proxy, deducting `1.425 ha` against the MP11 Step 210 target
+   `1,993.000 ha`; this is an explicit public-source coverage/semantic gap, not
+   a skipped row. Step 220 applies the public CDED proxy, deducting
+   `1,801.705 ha` against the MP11 Step 220 target `1,820.000 ha`. After the
+   full P9RF rerun, Step 290 Current THLB is `122,763.421 ha` (`+2,664.421 ha`
+   versus MP11), and Step 310 Long-term Land Base is `121,336.593 ha`
+   (`+2,664.593 ha` versus MP11).
 1. Phase 10R is active on branch
    `feature/p10r-curve-rebuild-roadmap-correction`. P10R.1 is complete.
    `planning/tfl6_mp11_phase10r_curve_rebuild_execution_plan.md` records the

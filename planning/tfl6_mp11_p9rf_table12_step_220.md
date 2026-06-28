@@ -3,15 +3,15 @@
 ## Result
 
 - Step kind: `deduction_proxy`
-- Source area: `129,210.103 ha`
+- Source area: `129,208.678 ha`
 - Deducted area: `1,801.705 ha`
-- Retained area: `127,408.398 ha`
+- Retained area: `127,406.973 ha`
 - MP11 comparison target: `1,820.000 ha`
 - Delta to MP11: `-18.295 ha` (`-1.0052%`)
-- Input fragments: `43,530`
-- Active fragments: `42,599`
+- Input fragments: `43,531`
+- Active fragments: `42,600`
 - Deducted fragments: `931`
-- Balance error: `0.000000000 ha`
+- Balance error: `-0.000000000 ha`
 - Checkpoint status: `locked_p9rf_step220_public_cded_steep_slope_proxy`
 
 ## Notes

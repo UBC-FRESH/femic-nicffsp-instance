@@ -3,15 +3,15 @@
 ## Result
 
 - Step kind: `deduction_proxy`
-- Source area: `122,764.836 ha`
-- Deducted area: `1,426.797 ha`
-- Retained area: `121,338.039 ha`
+- Source area: `122,763.421 ha`
+- Deducted area: `1,426.829 ha`
+- Retained area: `121,336.593 ha`
 - MP11 comparison target: `1,427.000 ha`
-- Delta to MP11: `-0.203 ha` (`-0.0142%`)
-- Input fragments: `40,528`
+- Delta to MP11: `-0.171 ha` (`-0.0120%`)
+- Input fragments: `40,529`
 - Active fragments: `23,245`
-- Deducted fragments: `17,283`
-- Balance error: `0.000000000 ha`
+- Deducted fragments: `17,284`
+- Balance error: `-0.000000000 ha`
 - Checkpoint status: `locked_p9rf_step300_aspatial_future_roads_proxy`
 
 ## Notes

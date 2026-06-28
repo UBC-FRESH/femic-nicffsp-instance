@@ -24,17 +24,17 @@ partial-area-accounting P9R lane where a comparable retained area exists.
 | `mp11_t12_180` | Known Archaeological Sites | 132,297.495 | 0.000 |  |  | 527.000 | -527.000 | `skipped_p9rf_step180_public_data_only_sensitive_source_excluded` |
 | `mp11_t12_190` | Existing Stand-level Reserves | 129,210.103 | 3,087.393 |  |  | 3,089.000 | -1.607 | `locked_p9rf_resultant_step190` |
 | `mp11_t12_200` | Research Site | 129,210.103 | 0.000 |  |  | 13.000 | -13.000 | `skipped_p9rf_step200_public_data_only_sensitive_source_excluded` |
-| `mp11_t12_210` | Terrain Stability - Class 5 | 129,210.103 | 0.000 |  |  | 1,993.000 | -1,993.000 | `deferred_p9rf_step210_public_terrain_stability_source_needed` |
-| `mp11_t12_220` | Terrain Stability - LiDAR 90% + Slope | 127,408.398 | 1,801.705 |  |  | 1,820.000 | -18.295 | `locked_p9rf_step220_public_cded_steep_slope_proxy` |
-| `mp11_t12_230` | Permanent Sample Plots | 127,249.492 | 158.906 |  |  | 134.000 | 24.906 | `locked_p9rf_step230_public_active_psp_proxy` |
-| `mp11_t12_240` | Big Tree Reserves | 127,249.492 | 0.000 |  |  | 42.000 | -42.000 | `deferred_p9rf_step240_public_big_tree_source_needed` |
-| `mp11_t12_250` | Karst | 127,249.492 | 0.000 |  |  | 3,721.000 | -3,721.000 | `deferred_p9rf_step250_public_karst_source_needed` |
-| `mp11_t12_260` | Unknown Cultural Features within Quatsino TUS Zone | 127,249.492 | 0.000 |  |  | 453.000 | -453.000 | `skipped_p9rf_step260_public_data_only_sensitive_source_excluded` |
-| `mp11_t12_270` | Future Stand-level Reserves | 122,764.836 | 4,484.656 |  |  | 4,483.000 | 1.656 | `review_required_p9rf_step270_future_stand_reserve_old_seral_proxy_candidate` |
-| `mp11_t12_280` | Total Operable Reductions | 122,764.836 | 34,283.334 |  |  | 36,216.000 | -1,932.666 | `p9rf_total_operable_reductions_checkpoint` |
-| `mp11_t12_290` | Current THLB | 122,764.836 | 0.000 |  |  | 120,099.000 | 2,665.836 | `p9rf_resultant_checkpoint` |
-| `mp11_t12_300` | Less future roads | 121,338.039 | 1,426.797 |  |  | 1,427.000 | -0.203 | `locked_p9rf_step300_aspatial_future_roads_proxy` |
-| `mp11_t12_310` | Long-term Land Base | 121,338.039 | 0.000 |  |  | 118,672.000 | 2,666.039 | `p9rf_long_term_land_base_checkpoint_reached` |
+| `mp11_t12_210` | Terrain Stability - Class 5 | 129,208.678 | 1.425 |  |  | 1,993.000 | -1,991.575 | `locked_p9rf_step210_public_tsm_class_v_proxy_with_coverage_gap` |
+| `mp11_t12_220` | Terrain Stability - LiDAR 90% + Slope | 127,406.973 | 1,801.705 |  |  | 1,820.000 | -18.295 | `locked_p9rf_step220_public_cded_steep_slope_proxy` |
+| `mp11_t12_230` | Permanent Sample Plots | 127,248.067 | 158.906 |  |  | 134.000 | 24.906 | `locked_p9rf_step230_public_active_psp_proxy` |
+| `mp11_t12_240` | Big Tree Reserves | 127,248.067 | 0.000 |  |  | 42.000 | -42.000 | `deferred_p9rf_step240_public_big_tree_source_needed` |
+| `mp11_t12_250` | Karst | 127,248.067 | 0.000 |  |  | 3,721.000 | -3,721.000 | `deferred_p9rf_step250_public_karst_source_needed` |
+| `mp11_t12_260` | Unknown Cultural Features within Quatsino TUS Zone | 127,248.067 | 0.000 |  |  | 453.000 | -453.000 | `skipped_p9rf_step260_public_data_only_sensitive_source_excluded` |
+| `mp11_t12_270` | Future Stand-level Reserves | 122,763.421 | 4,484.646 |  |  | 4,483.000 | 1.646 | `review_required_p9rf_step270_future_stand_reserve_old_seral_proxy_candidate` |
+| `mp11_t12_280` | Total Operable Reductions | 122,763.421 | 34,284.748 |  |  | 36,216.000 | -1,931.252 | `p9rf_total_operable_reductions_checkpoint` |
+| `mp11_t12_290` | Current THLB | 122,763.421 | 0.000 |  |  | 120,099.000 | 2,664.421 | `p9rf_resultant_checkpoint` |
+| `mp11_t12_300` | Less future roads | 121,336.593 | 1,426.829 |  |  | 1,427.000 | -0.171 | `locked_p9rf_step300_aspatial_future_roads_proxy` |
+| `mp11_t12_310` | Long-term Land Base | 121,336.593 | 0.000 |  |  | 118,672.000 | 2,664.593 | `p9rf_long_term_land_base_checkpoint_reached` |
 
 ## Interpretation
 

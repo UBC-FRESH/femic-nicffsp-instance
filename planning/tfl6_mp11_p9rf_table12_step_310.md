@@ -3,11 +3,11 @@
 ## Result
 
 - Step kind: `checkpoint`
-- Source area: `121,338.039 ha`
+- Source area: `121,336.593 ha`
 - Deducted area: `0.000 ha`
-- Retained area: `121,338.039 ha`
+- Retained area: `121,336.593 ha`
 - MP11 comparison target: `118,672.000 ha`
-- Delta to MP11: `2,666.039 ha` (`2.2466%`)
+- Delta to MP11: `2,664.593 ha` (`2.2453%`)
 - Input fragments: `23,245`
 - Active fragments: `23,245`
 - Deducted fragments: `0`

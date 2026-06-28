@@ -3,13 +3,13 @@
 ## Result
 
 - Step kind: `checkpoint`
-- Source area: `122,764.836 ha`
+- Source area: `122,763.421 ha`
 - Deducted area: `0.000 ha`
-- Retained area: `122,764.836 ha`
+- Retained area: `122,763.421 ha`
 - MP11 comparison target: `120,099.000 ha`
-- Delta to MP11: `2,665.836 ha` (`2.2197%`)
-- Input fragments: `40,528`
-- Active fragments: `40,528`
+- Delta to MP11: `2,664.421 ha` (`2.2185%`)
+- Input fragments: `40,529`
+- Active fragments: `40,529`
 - Deducted fragments: `0`
 - Balance error: `0.000000000 ha`
 - Checkpoint status: `p9rf_resultant_checkpoint`

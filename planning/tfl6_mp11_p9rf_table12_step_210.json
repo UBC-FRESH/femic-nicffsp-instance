@@ -1,0 +1,26 @@
+{
+  "generated_at_utc": "2026-06-28T21:54:23.257011+00:00",
+  "summary": {
+    "step_id": "mp11_t12_210",
+    "label": "Terrain Stability - Class 5",
+    "step_kind": "deduction_proxy",
+    "source_area_ha": 129210.10262294936,
+    "deducted_area_ha": 1.4246179140296769,
+    "retained_area_ha": 129208.67800503531,
+    "mp11_target_ha": 1993.0,
+    "delta_to_mp11_ha": -1991.5753820859704,
+    "delta_to_mp11_pct": -99.92851892052035,
+    "input_fragment_count": 43530,
+    "active_fragment_count": 43531,
+    "deducted_fragment_count": 10,
+    "balance_error_ha": 1.6716850126385907e-11,
+    "checkpoint_status": "locked_p9rf_step210_public_tsm_class_v_proxy_with_coverage_gap",
+    "artifact_gpkg": "planning/tfl6_mp11_p9rf_table12_step_210.gpkg",
+    "notes": "Accepted strict public TSM Class V proxy for MP11 Step 210 using `data/source/tfl_6/terrain/tsm_detailed_polygons_tfl6.gpkg`, filtered to `slope_stability_class_w_roads == 'V'`. This applies the newly identified public terrain-stability source instead of skipping the row. The resulting deduction is much smaller than MP11, so the residual remains an explicit public-source coverage/semantic gap rather than a WFP DTSM equivalence claim."
+  },
+  "area_balance_passed": true,
+  "layers": {
+    "active_fragments": "retained resultant fragments after this step",
+    "deducted_fragments": "fragments removed by this step"
+  }
+}

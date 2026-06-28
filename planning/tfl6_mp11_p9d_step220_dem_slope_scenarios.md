@@ -7,8 +7,7 @@ Compare public CDED steep-slope rules against MP11 Table 12 Step 220 before deci
 ## Benchmark
 
 - MP11 Step 220 target deduction: `1820.000 ha`
-- Step 210 source area: `129210.103 ha`
-- Existing P9RF Step 290 Current THLB before Step 220 repair: `124568.765 ha`
+- Step 210 source area: `129208.678 ha`
 
 ## Best Whole-Fragment Candidate
 
@@ -16,13 +15,12 @@ Compare public CDED steep-slope rules against MP11 Table 12 Step 220 before deci
 - Deduction: `1801.705 ha`
 - Delta to MP11 Step 220: `-18.295 ha`
 - Percent delta: `-1.005%`
-- Direct Step 290 proxy delta if applied without downstream overlap rebuild: `2668.060 ha`
 
 ## Best Partial-Area Diagnostic
 
 - Scenario: `slope_ge_90_prop_ge_0.25_partial_area_diagnostic`
-- Deduction: `2445.462 ha`
-- Delta to MP11 Step 220: `625.462 ha`
+- Deduction: `2445.433 ha`
+- Delta to MP11 Step 220: `625.433 ha`
 
 ## Top Whole-Fragment Scenarios
 
@@ -43,4 +41,4 @@ Prefer whole-fragment scenarios for the resultant-fragment netdown. The partial-
 
 CDED-derived thresholds are public-data proxies. A lower CDED slope threshold may be defensible because coarse DEM smoothing suppresses local LiDAR-grade slopes, but this must be recorded as a proxy rule, not as WFP LiDAR equivalence.
 
-The direct Step 290 proxy is only a triage number. Final Current THLB deltas must come from rerunning the P9RF resultant-fragment netdown with the selected Step 220 rule physically applied.
+Final Current THLB and Long-term Land Base deltas must come from rerunning the P9RF resultant-fragment netdown with the selected Step 220 rule physically applied.
