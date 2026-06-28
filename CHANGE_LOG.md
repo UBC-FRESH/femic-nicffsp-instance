@@ -1,5 +1,19 @@
 # Change Log
 
+## 2026-06-28 - Reviewed first MP11 extraction batch for comparison use
+
+- added `scripts/build_p7_mp11_review_manifest.py` to produce a compact review
+  manifest from the first harvest-sensitivity extraction batch;
+- promoted Figures `29`, `30`, `31`, `35`, `36`, and `39` from
+  `raw_extraction` to `accepted_for_comparison`;
+- assigned downstream use `phase6_mp11_comparison_only` and model-input status
+  `not_model_input` to every reviewed row;
+- added `planning/tfl6_mp11_reviewed_extraction_manifest.md`,
+  `planning/tfl6_mp11_reviewed_extraction_manifest.csv`, and
+  `planning/tfl6_mp11_reviewed_extraction_manifest.json`; and
+- recorded the Phase 6 handoff boundary for MP11 sensitivity and
+  model-overhaul planning without promoting recovered values to model inputs.
+
 ## 2026-06-28 - Extracted the first MP11 harvest sensitivity batch
 
 - added `scripts/build_p7_mp11_harvest_sensitivity_extractions.py` for the

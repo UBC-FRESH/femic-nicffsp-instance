@@ -392,12 +392,12 @@ model-upgrade work.
   - [ ] P7.4c Generate QA overlays and diagnostics.
   - [ ] P7.4d Register raw extraction outputs with provenance and checksums.
   - [ ] P7.4e Update roadmap, changelog, planning notes, and issue comments.
-- [ ] P7.5 Review recovered outputs and classify downstream use (`#54`).
-  - [ ] P7.5a Review high-priority extraction overlays.
-  - [ ] P7.5b Cross-check against related MP11 tables/text when available.
-  - [ ] P7.5c Assign review status and downstream-use classification.
-  - [ ] P7.5d Write compact reviewed summary manifests.
-  - [ ] P7.5e Update roadmap, changelog, planning notes, and Phase 6 handoff
+- [x] P7.5 Review recovered outputs and classify downstream use (`#54`).
+  - [x] P7.5a Review high-priority extraction overlays.
+  - [x] P7.5b Cross-check against related MP11 tables/text when available.
+  - [x] P7.5c Assign review status and downstream-use classification.
+  - [x] P7.5d Write compact reviewed summary manifests.
+  - [x] P7.5e Update roadmap, changelog, planning notes, and Phase 6 handoff
     comments.
 - [ ] P7.6 Close out docs, validation, and model-upgrade handoff (`#55`).
   - [ ] P7.6a Write the phase closeout summary and model-upgrade handoff note.
@@ -488,10 +488,13 @@ The Phase 1 follow-on issues are placed into the future roadmap as follows:
    still marked `needs_manual_crop_review`. The first repeatable six-figure
    harvest-sensitivity extraction batch is recorded in
    `planning/tfl6_mp11_harvest_sensitivity_extraction_summary.md` and related
-   CSV/JSON summaries; it remains `raw_extraction` evidence with a maximum
-   table cross-check error of `0.503%`. The active edge remains P7.4/P7.5:
-   review overlays, classify downstream use, and decide which raw extractions
-   can be promoted to Phase 6 comparison evidence.
+   CSV/JSON summaries. The reviewed manifest
+   `planning/tfl6_mp11_reviewed_extraction_manifest.md` promotes Figures `29`,
+   `30`, `31`, `35`, `36`, and `39` to `accepted_for_comparison` with
+   downstream use `phase6_mp11_comparison_only`; all rows remain
+   `not_model_input`. The active edge returns to P7.4 for the next chart class:
+   extract and review more complex line, cedar, age-class, and waterfall
+   figures.
 1. Phase 2 is closed. The instance `main` branch contains the Phase 2
    source-layer, THLB smoke, benchmark-tolerance, and Sphinx audit-trail
    surfaces; the parent FEMIC submodule pointer has been updated to the merged

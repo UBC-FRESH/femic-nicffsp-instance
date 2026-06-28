@@ -123,8 +123,15 @@ and a long colour-component filter to avoid legend swatches and body text. The
 maximum absolute percent error against the adjacent MP11 table values is
 `0.503%`.
 
-These outputs remain `raw_extraction` evidence. The next step is full overlay
-review and reviewer provenance before any Phase 6 comparison handoff.
+These outputs were later promoted to comparison-ready evidence in:
+
+- `planning/tfl6_mp11_reviewed_extraction_manifest.md`
+- `planning/tfl6_mp11_reviewed_extraction_manifest.csv`
+- `planning/tfl6_mp11_reviewed_extraction_manifest.json`
+
+The promotion is limited to `accepted_for_comparison` with downstream use
+`phase6_mp11_comparison_only`. The outputs remain explicitly
+`not_model_input`.
 
 ## Runtime Artifact Boundary
 
