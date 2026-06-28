@@ -1,5 +1,19 @@
 # Change Log
 
+## 2026-06-28 - Completed P10.3 MP11 AU and curve-lane crosswalk
+
+- added `scripts/build_p10_mp11_au_curve_lane_crosswalk.py` to map the stable
+  FEMIC canonical AU universe to MP11 natural, early managed, recent managed,
+  and future managed curve lanes;
+- added `planning/tfl6_mp11_au_curve_lane_crosswalk.md` with matching CSV/JSON
+  outputs covering `384` canonical AUs and `1,536` AU/lane rows;
+- preserved existing Phase 5 natural-curve availability and MP10 managed-curve
+  fallback confidence as comparison evidence only;
+- flagged managed Table 54, 55, and 57 lanes as `parser_review_required` until
+  the large per-AU TIPSY tables are parsed and reviewed; and
+- kept treatment, operability, THLB status, and scenario membership out of
+  canonical AU identity, with every P10.3 row remaining `not_model_input`.
+
 ## 2026-06-28 - Completed P10.2 MP11 managed-yield parameter library
 
 - added `scripts/build_p10_mp11_managed_yield_parameter_library.py` to extract

@@ -551,11 +551,11 @@ QA diagnostics, and isolate unavailable LEFI/ITI/LiDAR assumptions.
   - [x] P10.2b Build reviewed MP11 managed-yield parameter library generator.
   - [x] P10.2c Emit Markdown/CSV/JSON parameter-library outputs.
   - [x] P10.2d Classify row confidence and public/private dependency status.
-- [ ] P10.3 Refresh MP11 AU and curve-lane crosswalk (`#81`).
-  - [ ] P10.3a Audit existing Phase 3 static AU and curve crosswalk artifacts.
-  - [ ] P10.3b Build MP11 AU/curve-lane crosswalk generator.
-  - [ ] P10.3c Emit crosswalk Markdown/CSV/JSON and fallback diagnostics.
-  - [ ] P10.3d Flag unsupported and non-public dependency mappings.
+- [x] P10.3 Refresh MP11 AU and curve-lane crosswalk (`#81`).
+  - [x] P10.3a Audit existing Phase 3 static AU and curve crosswalk artifacts.
+  - [x] P10.3b Build MP11 AU/curve-lane crosswalk generator.
+  - [x] P10.3c Emit crosswalk Markdown/CSV/JSON and fallback diagnostics.
+  - [x] P10.3d Flag unsupported and non-public dependency mappings.
 - [ ] P10.4 Regenerate MP11 natural curve diagnostics (`#82`).
   - [ ] P10.4a Review VDYP source/version and existing natural curve scripts.
   - [ ] P10.4b Run or adapt natural curve generation for MP11 crosswalks.
@@ -676,10 +676,10 @@ The Phase 1 follow-on issues are placed into the future roadmap as follows:
 ## Current Next Steps
 
 0. Phase 10 is active on branch
-   `feature/p10-mp11-au-yield-curve-rebuild`. P10.1 and P10.2 are complete.
-   `planning/tfl6_mp11_managed_yield_parameter_library.md` records the
-   public-safe MP11 managed-yield parameter library for Tables 54-60. The
-   active edge is P10.3: refresh MP11 AU and curve-lane crosswalk (`#81`).
+   `feature/p10-mp11-au-yield-curve-rebuild`. P10.1 through P10.3 are
+   complete. `planning/tfl6_mp11_au_curve_lane_crosswalk.md` maps the stable
+   FEMIC canonical AU universe to MP11 curve lanes and parameter gates. The
+   active edge is P10.4: regenerate MP11 natural curve diagnostics (`#82`).
 1. Phase 7 is closed. PR `#56` merged the MP11 figure-extraction test
    closeout into `main`. The final closeout surface is
    `planning/tfl6_mp11_figure_extraction_closeout.md` with matching CSV/JSON.
