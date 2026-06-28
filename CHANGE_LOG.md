@@ -1,5 +1,20 @@
 # Change Log
 
+## 2026-06-28 - Recorded figrecover deployment feedback from MP11 extraction
+
+- added `planning/tfl6_mp11_figrecover_deployment_feedback.md` as a
+  public-safe summary of package-development lessons from the Phase 7 MP11
+  figure-extraction deployment;
+- recorded the current reviewed evidence surface: `10` figures accepted for
+  comparison, `14` figures reviewed for planning only, and `0` figures accepted
+  as model inputs;
+- summarized successful validation patterns including adjacent-table
+  cross-checks, component-sum checks, printed-label plus geometry checks, and
+  overlay review; and
+- mapped deployment friction into upstream `figrecover` backlog items covering
+  calibration records, chart-family extractors, review manifests, validation
+  strength, visual QA, corpus summaries, and public-safe artifact hygiene.
+
 ## 2026-06-28 - Reviewed MP11 age-class charts for planning use
 
 - added `scripts/build_p7_mp11_age_class_review_manifest.py` to produce a
