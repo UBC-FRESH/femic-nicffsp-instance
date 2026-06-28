@@ -1,32 +1,36 @@
-# TFL 6 MP11 Phase 10 AU/Yield Rebuild Execution Plan
+# TFL 6 MP11 Phase 10 AU/Yield Readiness Execution Plan
 
 ## Purpose
 
 This P10.1 plan launches Phase 10 and turns the accepted MP11 AU/yield
-strategy contract into an executable rebuild sequence. It defines the issue
-tree, branch, artifact layout, curve-lane gates, parameter-library gates,
-generated-output hygiene, and validation expectations before any new
+strategy contract into a readiness and blocker-review sequence. It defines the
+issue tree, branch, artifact layout, curve-lane gates, parameter-library gates,
+generated-output hygiene, and validation expectations before any future
 MP11-aligned curves are generated.
 
 This plan does not generate natural curves, managed curves, model-input
 bundles, ForestModel XML, Matrix Builder outputs, or Patchworks runtime
 artifacts.
 
+Phase 10 did not ultimately rebuild all AUs/yield curves or update curve
+plots. The actual curve rebuild is assigned to Phase 10R: MP11 curve parser and
+curve rebuild (`#92`).
+
 ## Branch And Issue Tree
 
 - Branch: `feature/p10-mp11-au-yield-curve-rebuild`
 - Parent issue: `#67`
 - Child issues:
-  - P10.1 launch MP11 AU/yield rebuild execution plan: `#79`;
+  - P10.1 launch MP11 AU/yield readiness execution plan: `#79`;
   - P10.2 extract MP11 managed-yield parameter library: `#80`;
   - P10.3 refresh MP11 AU and curve-lane crosswalk: `#81`;
-  - P10.4 regenerate MP11 natural curve diagnostics: `#82`;
-  - P10.5 generate MP11 managed curve diagnostics: `#83`;
-  - P10.6 close Phase 10 and hand off curve artifacts: `#84`.
+  - P10.4 repackage MP11 natural curve diagnostics: `#82`;
+  - P10.5 record MP11 managed curve blocker diagnostics: `#83`;
+  - P10.6 close Phase 10 and hand off curve-readiness artifacts: `#84`.
 
 ## Governing Contracts
 
-Phase 10 executes these accepted planning contracts:
+Phase 10 reviews these accepted planning contracts:
 
 - `planning/tfl6_mp11_baseline_and_promotion_contract.md`;
 - `planning/tfl6_mp11_au_yield_strategy_contract.md`;
@@ -126,14 +130,24 @@ Phase 10 must proceed through these gates:
 2. P10.2 parameter extraction creates reviewed public-safe parameter surfaces.
 3. P10.3 curve-lane crosswalks resolve supported, fallback, deferred, and
    unavailable mappings.
-4. P10.4 natural curve diagnostics run only after P10.3 gates pass.
-5. P10.5 managed curve diagnostics run only for supported reviewed parameter
-   and crosswalk rows.
+4. P10.4 natural curve diagnostics repackage existing public VDYP evidence
+   only after P10.3 gates pass.
+5. P10.5 managed curve diagnostics record blockers for unsupported or
+   unparsed managed rows rather than generating new managed curves.
 6. P10.6 closes the phase only after validation, PR merge, and Phase 11
    handoff notes.
 
 No step may skip directly from MP11 summary prose to generated model-input
 curves.
+
+## Deferred Actual Curve-Rebuild Tasks
+
+The following tasks are not Phase 10 work and are tracked in Phase 10R:
+
+- P10R.2 parse MP11 Tables 54, 55, and 57 per-AU TIPSY rows (`#94`);
+- P10R.3 QA managed-yield rows and build BatchTIPSY handoff inputs (`#95`);
+- P10R.4 run and parse MP11 managed curve generation (`#96`);
+- P10R.5 regenerate natural and managed curve plots and overlays (`#97`).
 
 ## No-Fabrication Rules
 
