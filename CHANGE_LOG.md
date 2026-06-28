@@ -1,5 +1,23 @@
 # Change Log
 
+## 2026-06-28 - Completed P8.4 MP11 operability, harvest-system, MHA, and scenario contract
+
+- added `planning/tfl6_mp11_operability_harvest_mha_scenario_contract.md` to
+  define the MP11 rule boundary before any transition, XML, or Patchworks
+  runtime rebuild;
+- separated physical operability, harvest-system class, helicopter economic
+  operability, minimum harvest age, and scenario policy from canonical AU
+  identity;
+- defined public harvest-system classifier candidates, helicopter
+  economic-operability sensitivity rules, MHA extraction requirements, and
+  scenario-policy families for base case, maintain-current-AAC,
+  maximum-short-term, AAC recommendation, THLB, genetic-gain, and
+  helicopter-exclusion sensitivities;
+- recorded MP11 aggregate harvest-system percentages and scenario endpoints as
+  comparison targets only, not stand-level assignments or model inputs; and
+- kept all P8.4 work in the planning/contract layer with no runtime, XML,
+  transition, or Patchworks artifacts modified.
+
 ## 2026-06-28 - Completed P8.3 MP11 AU/yield strategy contract
 
 - added `planning/tfl6_mp11_au_yield_strategy_contract.md` to decide the MP11

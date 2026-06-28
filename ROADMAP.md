@@ -466,12 +466,12 @@ Phase 5 runtime as the accepted baseline.
   - [x] P8.3b Define MP11 managed-yield table extraction requirements.
   - [x] P8.3c Define public/private SI and inventory dependency boundaries.
   - [x] P8.3d Define yield-adjustment parameter surfaces.
-- [ ] P8.4 Define operability, harvest-system, MHA, and scenario rules (`#62`).
-  - [ ] P8.4a Define harvest-system classifier candidates and required public
+- [x] P8.4 Define operability, harvest-system, MHA, and scenario rules (`#62`).
+  - [x] P8.4a Define harvest-system classifier candidates and required public
     inputs.
-  - [ ] P8.4b Define economic-operability sensitivity logic.
-  - [ ] P8.4c Define MHA extraction and contract requirements.
-  - [ ] P8.4d Define base-case, max-short-term, AAC recommendation, and
+  - [x] P8.4b Define economic-operability sensitivity logic.
+  - [x] P8.4c Define MHA extraction and contract requirements.
+  - [x] P8.4d Define base-case, max-short-term, AAC recommendation, and
     sensitivity scenario policies.
 - [ ] P8.5 Define MP11 KPI, QA, and reporting targets (`#63`).
   - [ ] P8.5a Define accepted comparison targets and planning-only target
@@ -550,13 +550,13 @@ The Phase 1 follow-on issues are placed into the future roadmap as follows:
 ## Current Next Steps
 
 0. Phase 8 is active on branch
-   `feature/p8-mp11-public-data-implementation-foundation`. P8.1, P8.2, and
-   P8.3 are complete. The newest contract,
-   `planning/tfl6_mp11_au_yield_strategy_contract.md`, preserves stable FEMIC
-   canonical AU identity while adding MP11 AU-era, site-series, treatment,
-   site-productivity, managed-yield, OAF/VRAF, utilization, and NRL surfaces as
-   reviewed crosswalk/parameter layers. The active edge is P8.4: define
-   operability, harvest-system, MHA, and scenario rules.
+   `feature/p8-mp11-public-data-implementation-foundation`. P8.1 through P8.4
+   are complete. The newest contract,
+   `planning/tfl6_mp11_operability_harvest_mha_scenario_contract.md`, separates
+   physical operability, harvest-system class, helicopter economic
+   operability, MHA, and scenario policy from AU identity and keeps aggregate
+   MP11 behavior values as comparison targets. The active edge is P8.5: define
+   MP11 KPI, QA, and reporting targets.
 1. Phase 7 is closed. PR `#56` merged the MP11 figure-extraction test
    closeout into `main`. The final closeout surface is
    `planning/tfl6_mp11_figure_extraction_closeout.md` with matching CSV/JSON.
