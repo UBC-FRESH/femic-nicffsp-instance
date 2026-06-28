@@ -97,3 +97,13 @@ These figures do not have adjacent table values for an independent exact
 cross-check. The current evidence is appropriate for review and planning, but a
 maintainer should inspect full-resolution overlays before promoting the batch
 to Phase 6 comparison evidence.
+
+The batch was subsequently reviewed in:
+
+- `planning/tfl6_mp11_cedar_inventory_review_manifest.md`
+- `planning/tfl6_mp11_cedar_inventory_review_manifest.csv`
+- `planning/tfl6_mp11_cedar_inventory_review_manifest.json`
+
+All four figures were promoted to `reviewed_for_planning` with downstream use
+`phase6_mp11_cedar_planning_only`, while remaining explicitly
+`not_model_input`. They were not promoted to `accepted_for_comparison`.

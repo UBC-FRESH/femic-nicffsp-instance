@@ -1,5 +1,21 @@
 # Change Log
 
+## 2026-06-28 - Reviewed MP11 cedar inventory charts for planning use
+
+- added `scripts/build_p7_mp11_cedar_inventory_review_manifest.py` to produce
+  a compact review manifest for the MP11 cedar inventory extraction batch;
+- promoted Figures `14`, `15`, `51`, and `52` from `raw_extraction` to
+  `reviewed_for_planning`;
+- assigned downstream use `phase6_mp11_cedar_planning_only` and model-input
+  status `not_model_input` to all four reviewed rows;
+- added `planning/tfl6_mp11_cedar_inventory_review_manifest.md`,
+  `planning/tfl6_mp11_cedar_inventory_review_manifest.csv`, and
+  `planning/tfl6_mp11_cedar_inventory_review_manifest.json`; and
+- explicitly did not promote the cedar batch to `accepted_for_comparison`
+  because the QA basis is overlay inspection plus a nonnegative
+  total-minus-THLB sanity check, not an independent table or component-sum
+  cross-check.
+
 ## 2026-06-28 - Extracted MP11 cedar inventory stacked-area charts
 
 - added `scripts/build_p7_mp11_cedar_inventory_extractions.py` for the first

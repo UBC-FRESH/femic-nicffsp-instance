@@ -176,6 +176,16 @@ stacked-area boundaries. The first QA check confirms nonnegative
 `total - THLB` values for all recovered points. The batch remains
 `raw_extraction` pending full-resolution overlay review.
 
+The cedar batch was later reviewed in:
+
+- `planning/tfl6_mp11_cedar_inventory_review_manifest.md`
+- `planning/tfl6_mp11_cedar_inventory_review_manifest.csv`
+- `planning/tfl6_mp11_cedar_inventory_review_manifest.json`
+
+The promotion is limited to `reviewed_for_planning` with downstream use
+`phase6_mp11_cedar_planning_only`. The outputs remain explicitly
+`not_model_input` and are not `accepted_for_comparison`.
+
 ## Runtime Artifact Boundary
 
 Generated figure-recovery artifacts belong under ignored runtime paths such as:
