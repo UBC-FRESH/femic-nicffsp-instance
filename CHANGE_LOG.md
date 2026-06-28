@@ -1,5 +1,21 @@
 # Change Log
 
+## 2026-06-28 - Closed Phase 10 MP11 AU/yield curve rebuild
+
+- added `planning/tfl6_mp11_phase10_closeout.md` to summarize the completed
+  Phase 10 issue tree, tracked outputs, validation, and Phase 11 handoff;
+- confirmed P10.1-P10.6 are complete and linked to issues `#79` through `#84`;
+- recorded that natural curves remain Phase 5 public VDYP comparison
+  candidates and that MP11 managed curve generation remains blocked pending
+  reviewed per-AU parsers for Tables 54, 55, and 57;
+- preserved the Phase 5 teaching runtime as the accepted baseline until future
+  MP11 source-layer, curve, model-input, XML, Matrix Builder, runtime, docs,
+  archive, and scenario-output gates pass; and
+- kept every Phase 10 generated surface public-safe and `not_model_input`, with
+  no private WFP curves, unpublished parameter tables, proprietary
+  LEFI/ITI/LiDAR attributes, XML, Matrix Builder outputs, Patchworks runtime
+  artifacts, or generated private scratch outputs tracked.
+
 ## 2026-06-28 - Completed P10.5 MP11 managed-curve diagnostics
 
 - added `scripts/build_p10_mp11_managed_curve_diagnostics.py` to join the

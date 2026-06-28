@@ -534,7 +534,7 @@ checkpoints without force-fitting.
 
 ## Phase 10: MP11 AU/Yield Curve Rebuild (`#67`)
 
-Status: active.
+Status: closed.
 
 Goal: extract reviewed MP11 managed-yield parameters, refresh AU/yield
 crosswalk surfaces, regenerate natural and managed curves with provenance and
@@ -569,12 +569,12 @@ QA diagnostics, and isolate unavailable LEFI/ITI/LiDAR assumptions.
   - [x] P10.5c Emit curve tables, diagnostics, plots/manifests, and fallback
     reports.
   - [x] P10.5d Classify unsupported and unavailable-dependency rows.
-- [ ] P10.6 Close Phase 10 and hand off curve artifacts (`#84`).
-  - [ ] P10.6a Audit Phase 10 artifacts and generated-output hygiene.
-  - [ ] P10.6b Write Phase 10 closeout and Phase 11 handoff note.
-  - [ ] P10.6c Run final validation and curve QA checks.
-  - [ ] P10.6d Open and merge Phase 10 PR.
-  - [ ] P10.6e Close parent and child issues with final links.
+- [x] P10.6 Close Phase 10 and hand off curve artifacts (`#84`).
+  - [x] P10.6a Audit Phase 10 artifacts and generated-output hygiene.
+  - [x] P10.6b Write Phase 10 closeout and Phase 11 handoff note.
+  - [x] P10.6c Run final validation and curve QA checks.
+  - [x] P10.6d Open and merge Phase 10 PR.
+  - [x] P10.6e Close parent and child issues with final links.
 
 ## Phase 11: MP11 Model-Input Bundle And ForestModel XML Rebuild (`#68`)
 
@@ -675,13 +675,12 @@ The Phase 1 follow-on issues are placed into the future roadmap as follows:
 
 ## Current Next Steps
 
-0. Phase 10 is active on branch
-   `feature/p10-mp11-au-yield-curve-rebuild`. P10.1 through P10.5 are
-   complete. `planning/tfl6_mp11_managed_curve_diagnostics.md` records that
-   MP11 managed curve generation is blocked pending reviewed per-AU parsers for
-   Tables 54, 55, and 57, while Phase 5 managed curves remain comparison
-   baselines. The active edge is P10.6: close Phase 10 and hand off curve
-   artifacts (`#84`).
+0. Phase 10 is closed. `planning/tfl6_mp11_phase10_closeout.md` records the
+   AU/yield handoff. Natural curves remain Phase 5 public VDYP comparison
+   candidates, and MP11 managed curve generation remains blocked pending
+   reviewed per-AU parsers for Tables 54, 55, and 57. The next MP11 rebuild
+   edge is Phase 11: MP11 model-input bundle and ForestModel XML rebuild
+   (`#68`).
 1. Phase 7 is closed. PR `#56` merged the MP11 figure-extraction test
    closeout into `main`. The final closeout surface is
    `planning/tfl6_mp11_figure_extraction_closeout.md` with matching CSV/JSON.
