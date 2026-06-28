@@ -1,0 +1,44 @@
+{
+  "summary_csv": "planning/tfl6_mp11_impact_chart_extraction_summary.csv",
+  "rows_csv": "planning/tfl6_mp11_impact_chart_rows.csv",
+  "figure_count": 2,
+  "row_count": 15,
+  "figures": [
+    {
+      "figure_id": "Figure 20",
+      "caption": "Timber Supply Impacts since MP #10 to Base Case",
+      "pdf_page": 101,
+      "source_sha256": "44591c1024254e36d8989df45a2b489a624d5669c5ae01a6ebfd961b50a7321b",
+      "source_url": "https://www.westernforest.com/wp-content/uploads/2026/06/TFL6_MP_11_202606_w_Appendices_Web-compressed.pdf",
+      "image_path": "runtime/document_ingestion/tfl6-mp11-full-figures/crops/priority_high_proposals/figure-20-proposal.png",
+      "rows_csv_path": "runtime/document_ingestion/tfl6-mp11-full-figures/recovered/impact_batch/figure-20-impact-steps.csv",
+      "overlay_path": "runtime/document_ingestion/tfl6-mp11-full-figures/overlays/impact_batch/figure-20-overlay.png",
+      "step_count": 6,
+      "accepted_printed_total_m3_per_year": 1061600.0,
+      "max_abs_geometry_minus_printed_m3_per_year": 4608.771929824725,
+      "max_abs_geometry_minus_printed_percent": 5.352812926625697,
+      "arithmetic_residual_m3_per_year": 0.0,
+      "review_status": "raw_extraction",
+      "downstream_use": "needs_p7_5_review",
+      "notes": "Waterfall step values are transcribed from printed chart labels and checked against deterministic coloured-component geometry. Detailed step rows and overlays remain under ignored runtime paths."
+    },
+    {
+      "figure_id": "Figure 57",
+      "caption": "Updated Timber Supply Impacts Since MP #10",
+      "pdf_page": 158,
+      "source_sha256": "44591c1024254e36d8989df45a2b489a624d5669c5ae01a6ebfd961b50a7321b",
+      "source_url": "https://www.westernforest.com/wp-content/uploads/2026/06/TFL6_MP_11_202606_w_Appendices_Web-compressed.pdf",
+      "image_path": "runtime/document_ingestion/tfl6-mp11-full-figures/crops/priority_high_proposals/figure-57-proposal.png",
+      "rows_csv_path": "runtime/document_ingestion/tfl6-mp11-full-figures/recovered/impact_batch/figure-57-impact-steps.csv",
+      "overlay_path": "runtime/document_ingestion/tfl6-mp11-full-figures/overlays/impact_batch/figure-57-overlay.png",
+      "step_count": 9,
+      "accepted_printed_total_m3_per_year": 1252700.0,
+      "max_abs_geometry_minus_printed_m3_per_year": 6261.122661122587,
+      "max_abs_geometry_minus_printed_percent": 6.114377598752526,
+      "arithmetic_residual_m3_per_year": 0.0,
+      "review_status": "raw_extraction",
+      "downstream_use": "needs_p7_5_review",
+      "notes": "Waterfall step values are transcribed from printed chart labels and checked against deterministic coloured-component geometry. Detailed step rows and overlays remain under ignored runtime paths."
+    }
+  ]
+}

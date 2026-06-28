@@ -1,0 +1,918 @@
+{
+  "batch": "age_class",
+  "status": "raw_extraction",
+  "productive_forest_area_ha": 187425.0,
+  "figure_count": 2,
+  "row_count": 108,
+  "runtime_root": "runtime/document_ingestion/tfl6-mp11-full-figures",
+  "figure_summaries": [
+    {
+      "figure_id": "Figure 6",
+      "caption": "Base Case Age Class Distribution of Productive Forest Area (187,425 ha)",
+      "pdf_page": 88,
+      "source_sha256": "44591c1024254e36d8989df45a2b489a624d5669c5ae01a6ebfd961b50a7321b",
+      "source_url": "https://www.westernforest.com/wp-content/uploads/2026/06/TFL6_MP_11_202606_w_Appendices_Web-compressed.pdf",
+      "image_path": "runtime/document_ingestion/tfl6-mp11-full-figures/crops/priority_high_proposals/figure-6-proposal.png",
+      "table_csv_path": "runtime/document_ingestion/tfl6-mp11-full-figures/recovered/age_class_batch/figure-6-age-class.csv",
+      "overlay_path": "runtime/document_ingestion/tfl6-mp11-full-figures/overlays/age_class_batch/figure-6-overlay.png",
+      "panel_count": 6,
+      "age_class_count": 9,
+      "row_count": 54,
+      "min_total_minus_thlb_ha": 0.0,
+      "max_total_ha": 64682.92682926829,
+      "min_panel_total_ha": 183314.6853146853,
+      "max_panel_total_ha": 200982.93515358362,
+      "max_abs_panel_total_deviation_percent": 7.233792265484124,
+      "review_status": "raw_extraction",
+      "downstream_use": "not_yet_accepted",
+      "notes": "Stacked bar extraction from fixed panel and age-class slots; requires overlay review before planning or comparison use."
+    },
+    {
+      "figure_id": "Figure 45",
+      "caption": "AAC Recommendation Age Class Distribution of Productive Forest Area (187,425 ha)",
+      "pdf_page": 158,
+      "source_sha256": "44591c1024254e36d8989df45a2b489a624d5669c5ae01a6ebfd961b50a7321b",
+      "source_url": "https://www.westernforest.com/wp-content/uploads/2026/06/TFL6_MP_11_202606_w_Appendices_Web-compressed.pdf",
+      "image_path": "runtime/document_ingestion/tfl6-mp11-full-figures/crops/priority_high_proposals/figure-45-proposal.png",
+      "table_csv_path": "runtime/document_ingestion/tfl6-mp11-full-figures/recovered/age_class_batch/figure-45-age-class.csv",
+      "overlay_path": "runtime/document_ingestion/tfl6-mp11-full-figures/overlays/age_class_batch/figure-45-overlay.png",
+      "panel_count": 6,
+      "age_class_count": 9,
+      "row_count": 54,
+      "min_total_minus_thlb_ha": 249.08424908424786,
+      "max_total_ha": 64460.96654275093,
+      "min_panel_total_ha": 192118.95910780667,
+      "max_panel_total_ha": 206739.92673992674,
+      "max_abs_panel_total_deviation_percent": 10.305416427865408,
+      "review_status": "raw_extraction",
+      "downstream_use": "not_yet_accepted",
+      "notes": "Stacked bar extraction from fixed panel and age-class slots; requires overlay review before planning or comparison use."
+    }
+  ],
+  "age_class_rows": [
+    {
+      "figure_id": "Figure 6",
+      "year": 2023,
+      "age_class": "0-20",
+      "thlb_ha": 27818.18181818182,
+      "nclb_ha": 3566.4335664335667,
+      "total_ha": 31384.615384615387
+    },
+    {
+      "figure_id": "Figure 6",
+      "year": 2023,
+      "age_class": "21-40",
+      "thlb_ha": 30909.090909090908,
+      "nclb_ha": 6895.104895104898,
+      "total_ha": 37804.195804195806
+    },
+    {
+      "figure_id": "Figure 6",
+      "year": 2023,
+      "age_class": "41-60",
+      "thlb_ha": 28055.944055944055,
+      "nclb_ha": 9748.25174825175,
+      "total_ha": 37804.195804195806
+    },
+    {
+      "figure_id": "Figure 6",
+      "year": 2023,
+      "age_class": "61-80",
+      "thlb_ha": 9986.013986013986,
+      "nclb_ha": 5468.531468531468,
+      "total_ha": 15454.545454545454
+    },
+    {
+      "figure_id": "Figure 6",
+      "year": 2023,
+      "age_class": "81-100",
+      "thlb_ha": 2615.3846153846157,
+      "nclb_ha": 3328.671328671328,
+      "total_ha": 5944.055944055944
+    },
+    {
+      "figure_id": "Figure 6",
+      "year": 2023,
+      "age_class": "101-120",
+      "thlb_ha": 1188.811188811189,
+      "nclb_ha": 1902.097902097902,
+      "total_ha": 3090.909090909091
+    },
+    {
+      "figure_id": "Figure 6",
+      "year": 2023,
+      "age_class": "121-140",
+      "thlb_ha": 951.048951048951,
+      "nclb_ha": 1426.5734265734268,
+      "total_ha": 2377.622377622378
+    },
+    {
+      "figure_id": "Figure 6",
+      "year": 2023,
+      "age_class": "141-250",
+      "thlb_ha": 6419.580419580419,
+      "nclb_ha": 13790.209790209788,
+      "total_ha": 20209.790209790208
+    },
+    {
+      "figure_id": "Figure 6",
+      "year": 2023,
+      "age_class": "251+",
+      "thlb_ha": 8797.202797202797,
+      "nclb_ha": 20447.552447552447,
+      "total_ha": 29244.755244755244
+    },
+    {
+      "figure_id": "Figure 6",
+      "year": 2073,
+      "age_class": "0-20",
+      "thlb_ha": 34580.204778157,
+      "nclb_ha": 464.1638225255956,
+      "total_ha": 35044.368600682596
+    },
+    {
+      "figure_id": "Figure 6",
+      "year": 2073,
+      "age_class": "21-40",
+      "thlb_ha": 34580.204778157,
+      "nclb_ha": 464.1638225255956,
+      "total_ha": 35044.368600682596
+    },
+    {
+      "figure_id": "Figure 6",
+      "year": 2073,
+      "age_class": "41-60",
+      "thlb_ha": 26457.337883959044,
+      "nclb_ha": 1392.4914675767905,
+      "total_ha": 27849.829351535835
+    },
+    {
+      "figure_id": "Figure 6",
+      "year": 2073,
+      "age_class": "61-80",
+      "thlb_ha": 22279.86348122867,
+      "nclb_ha": 4409.556313993173,
+      "total_ha": 26689.419795221842
+    },
+    {
+      "figure_id": "Figure 6",
+      "year": 2073,
+      "age_class": "81-100",
+      "thlb_ha": 9051.194539249147,
+      "nclb_ha": 8819.11262798635,
+      "total_ha": 17870.307167235496
+    },
+    {
+      "figure_id": "Figure 6",
+      "year": 2073,
+      "age_class": "101-120",
+      "thlb_ha": 3017.0648464163824,
+      "nclb_ha": 7658.703071672355,
+      "total_ha": 10675.767918088737
+    },
+    {
+      "figure_id": "Figure 6",
+      "year": 2073,
+      "age_class": "121-140",
+      "thlb_ha": 0.0,
+      "nclb_ha": 5105.802047781571,
+      "total_ha": 5105.802047781571
+    },
+    {
+      "figure_id": "Figure 6",
+      "year": 2073,
+      "age_class": "141-250",
+      "thlb_ha": 2088.7372013651875,
+      "nclb_ha": 6034.129692832765,
+      "total_ha": 8122.866894197952
+    },
+    {
+      "figure_id": "Figure 6",
+      "year": 2073,
+      "age_class": "251+",
+      "thlb_ha": 3249.146757679181,
+      "nclb_ha": 31331.05802047782,
+      "total_ha": 34580.204778157
+    },
+    {
+      "figure_id": "Figure 6",
+      "year": 2123,
+      "age_class": "0-20",
+      "thlb_ha": 30801.393728222996,
+      "nclb_ha": 473.86759581881415,
+      "total_ha": 31275.26132404181
+    },
+    {
+      "figure_id": "Figure 6",
+      "year": 2123,
+      "age_class": "21-40",
+      "thlb_ha": 27958.188153310104,
+      "nclb_ha": 473.8675958188178,
+      "total_ha": 28432.055749128922
+    },
+    {
+      "figure_id": "Figure 6",
+      "year": 2123,
+      "age_class": "41-60",
+      "thlb_ha": 28905.923344947736,
+      "nclb_ha": 473.86759581881415,
+      "total_ha": 29379.79094076655
+    },
+    {
+      "figure_id": "Figure 6",
+      "year": 2123,
+      "age_class": "61-80",
+      "thlb_ha": 17533.101045296167,
+      "nclb_ha": 473.86759581881415,
+      "total_ha": 18006.96864111498
+    },
+    {
+      "figure_id": "Figure 6",
+      "year": 2123,
+      "age_class": "81-100",
+      "thlb_ha": 3317.0731707317073,
+      "nclb_ha": 473.8675958188155,
+      "total_ha": 3790.9407665505228
+    },
+    {
+      "figure_id": "Figure 6",
+      "year": 2123,
+      "age_class": "101-120",
+      "thlb_ha": 4264.808362369338,
+      "nclb_ha": 3317.0731707317073,
+      "total_ha": 7581.8815331010455
+    },
+    {
+      "figure_id": "Figure 6",
+      "year": 2123,
+      "age_class": "121-140",
+      "thlb_ha": 2132.404181184669,
+      "nclb_ha": 6634.1463414634145,
+      "total_ha": 8766.550522648084
+    },
+    {
+      "figure_id": "Figure 6",
+      "year": 2123,
+      "age_class": "141-250",
+      "thlb_ha": 1895.4703832752614,
+      "nclb_ha": 21324.04181184669,
+      "total_ha": 23219.51219512195
+    },
+    {
+      "figure_id": "Figure 6",
+      "year": 2123,
+      "age_class": "251+",
+      "thlb_ha": 1421.602787456446,
+      "nclb_ha": 32459.930313588848,
+      "total_ha": 33881.533101045294
+    },
+    {
+      "figure_id": "Figure 6",
+      "year": 2173,
+      "age_class": "0-20",
+      "thlb_ha": 30090.592334494773,
+      "nclb_ha": 473.8675958188178,
+      "total_ha": 30564.45993031359
+    },
+    {
+      "figure_id": "Figure 6",
+      "year": 2173,
+      "age_class": "21-40",
+      "thlb_ha": 29853.658536585364,
+      "nclb_ha": 710.8013937282267,
+      "total_ha": 30564.45993031359
+    },
+    {
+      "figure_id": "Figure 6",
+      "year": 2173,
+      "age_class": "41-60",
+      "thlb_ha": 28195.12195121951,
+      "nclb_ha": 473.8675958188178,
+      "total_ha": 28668.989547038327
+    },
+    {
+      "figure_id": "Figure 6",
+      "year": 2173,
+      "age_class": "61-80",
+      "thlb_ha": 18480.836236933796,
+      "nclb_ha": 0.0,
+      "total_ha": 18480.836236933796
+    },
+    {
+      "figure_id": "Figure 6",
+      "year": 2173,
+      "age_class": "81-100",
+      "thlb_ha": 3790.9407665505228,
+      "nclb_ha": 473.8675958188155,
+      "total_ha": 4264.808362369338
+    },
+    {
+      "figure_id": "Figure 6",
+      "year": 2173,
+      "age_class": "101-120",
+      "thlb_ha": 947.7351916376307,
+      "nclb_ha": 710.8013937282229,
+      "total_ha": 1658.5365853658536
+    },
+    {
+      "figure_id": "Figure 6",
+      "year": 2173,
+      "age_class": "121-140",
+      "thlb_ha": 947.7351916376307,
+      "nclb_ha": 473.8675958188154,
+      "total_ha": 1421.602787456446
+    },
+    {
+      "figure_id": "Figure 6",
+      "year": 2173,
+      "age_class": "141-250",
+      "thlb_ha": 5686.411149825784,
+      "nclb_ha": 28195.12195121951,
+      "total_ha": 33881.533101045294
+    },
+    {
+      "figure_id": "Figure 6",
+      "year": 2173,
+      "age_class": "251+",
+      "thlb_ha": 1421.602787456446,
+      "nclb_ha": 35066.202090592335,
+      "total_ha": 36487.80487804878
+    },
+    {
+      "figure_id": "Figure 6",
+      "year": 2223,
+      "age_class": "0-20",
+      "thlb_ha": 30801.393728222996,
+      "nclb_ha": 473.86759581881415,
+      "total_ha": 31275.26132404181
+    },
+    {
+      "figure_id": "Figure 6",
+      "year": 2223,
+      "age_class": "21-40",
+      "thlb_ha": 29142.85714285714,
+      "nclb_ha": 473.86759581881415,
+      "total_ha": 29616.724738675955
+    },
+    {
+      "figure_id": "Figure 6",
+      "year": 2223,
+      "age_class": "41-60",
+      "thlb_ha": 27247.38675958188,
+      "nclb_ha": 473.86759581881415,
+      "total_ha": 27721.254355400695
+    },
+    {
+      "figure_id": "Figure 6",
+      "year": 2223,
+      "age_class": "61-80",
+      "thlb_ha": 18243.90243902439,
+      "nclb_ha": 473.8675958188178,
+      "total_ha": 18717.770034843208
+    },
+    {
+      "figure_id": "Figure 6",
+      "year": 2223,
+      "age_class": "81-100",
+      "thlb_ha": 3554.0069686411152,
+      "nclb_ha": 710.801393728223,
+      "total_ha": 4264.808362369338
+    },
+    {
+      "figure_id": "Figure 6",
+      "year": 2223,
+      "age_class": "101-120",
+      "thlb_ha": 1658.5365853658536,
+      "nclb_ha": 236.93379790940776,
+      "total_ha": 1895.4703832752614
+    },
+    {
+      "figure_id": "Figure 6",
+      "year": 2223,
+      "age_class": "121-140",
+      "thlb_ha": 1184.6689895470383,
+      "nclb_ha": 473.8675958188153,
+      "total_ha": 1658.5365853658536
+    },
+    {
+      "figure_id": "Figure 6",
+      "year": 2223,
+      "age_class": "141-250",
+      "thlb_ha": 5686.411149825784,
+      "nclb_ha": 16348.43205574913,
+      "total_ha": 22034.843205574914
+    },
+    {
+      "figure_id": "Figure 6",
+      "year": 2223,
+      "age_class": "251+",
+      "thlb_ha": 1421.602787456446,
+      "nclb_ha": 46912.89198606272,
+      "total_ha": 48334.49477351917
+    },
+    {
+      "figure_id": "Figure 6",
+      "year": 2273,
+      "age_class": "0-20",
+      "thlb_ha": 31275.26132404181,
+      "nclb_ha": 473.8675958188178,
+      "total_ha": 31749.12891986063
+    },
+    {
+      "figure_id": "Figure 6",
+      "year": 2273,
+      "age_class": "21-40",
+      "thlb_ha": 31275.26132404181,
+      "nclb_ha": 473.8675958188178,
+      "total_ha": 31749.12891986063
+    },
+    {
+      "figure_id": "Figure 6",
+      "year": 2273,
+      "age_class": "41-60",
+      "thlb_ha": 28668.989547038327,
+      "nclb_ha": 710.801393728223,
+      "total_ha": 29379.79094076655
+    },
+    {
+      "figure_id": "Figure 6",
+      "year": 2273,
+      "age_class": "61-80",
+      "thlb_ha": 16585.365853658535,
+      "nclb_ha": 473.8675958188178,
+      "total_ha": 17059.233449477353
+    },
+    {
+      "figure_id": "Figure 6",
+      "year": 2273,
+      "age_class": "81-100",
+      "thlb_ha": 3080.1393728222997,
+      "nclb_ha": 236.93379790940753,
+      "total_ha": 3317.0731707317073
+    },
+    {
+      "figure_id": "Figure 6",
+      "year": 2273,
+      "age_class": "101-120",
+      "thlb_ha": 1895.4703832752614,
+      "nclb_ha": 473.8675958188153,
+      "total_ha": 2369.3379790940767
+    },
+    {
+      "figure_id": "Figure 6",
+      "year": 2273,
+      "age_class": "121-140",
+      "thlb_ha": 1184.6689895470383,
+      "nclb_ha": 710.801393728223,
+      "total_ha": 1895.4703832752614
+    },
+    {
+      "figure_id": "Figure 6",
+      "year": 2273,
+      "age_class": "141-250",
+      "thlb_ha": 2606.271777003484,
+      "nclb_ha": 2843.2055749128913,
+      "total_ha": 5449.4773519163755
+    },
+    {
+      "figure_id": "Figure 6",
+      "year": 2273,
+      "age_class": "251+",
+      "thlb_ha": 4738.675958188153,
+      "nclb_ha": 59944.250871080134,
+      "total_ha": 64682.92682926829
+    },
+    {
+      "figure_id": "Figure 45",
+      "year": 2023,
+      "age_class": "0-20",
+      "thlb_ha": 29070.631970260223,
+      "nclb_ha": 3539.0334572490683,
+      "total_ha": 32609.66542750929
+    },
+    {
+      "figure_id": "Figure 45",
+      "year": 2023,
+      "age_class": "21-40",
+      "thlb_ha": 32356.877323420074,
+      "nclb_ha": 7078.06691449814,
+      "total_ha": 39434.944237918215
+    },
+    {
+      "figure_id": "Figure 45",
+      "year": 2023,
+      "age_class": "41-60",
+      "thlb_ha": 29323.420074349444,
+      "nclb_ha": 10111.52416356877,
+      "total_ha": 39434.944237918215
+    },
+    {
+      "figure_id": "Figure 45",
+      "year": 2023,
+      "age_class": "61-80",
+      "thlb_ha": 10869.888475836431,
+      "nclb_ha": 5814.126394052046,
+      "total_ha": 16684.014869888477
+    },
+    {
+      "figure_id": "Figure 45",
+      "year": 2023,
+      "age_class": "81-100",
+      "thlb_ha": 3286.2453531598517,
+      "nclb_ha": 3286.2453531598517,
+      "total_ha": 6572.490706319703
+    },
+    {
+      "figure_id": "Figure 45",
+      "year": 2023,
+      "age_class": "101-120",
+      "thlb_ha": 2022.3048327137546,
+      "nclb_ha": 1769.5167286245353,
+      "total_ha": 3791.82156133829
+    },
+    {
+      "figure_id": "Figure 45",
+      "year": 2023,
+      "age_class": "121-140",
+      "thlb_ha": 1769.5167286245353,
+      "nclb_ha": 1263.9405204460966,
+      "total_ha": 3033.457249070632
+    },
+    {
+      "figure_id": "Figure 45",
+      "year": 2023,
+      "age_class": "141-250",
+      "thlb_ha": 7330.855018587361,
+      "nclb_ha": 14156.133828996284,
+      "total_ha": 21486.988847583645
+    },
+    {
+      "figure_id": "Figure 45",
+      "year": 2023,
+      "age_class": "251+",
+      "thlb_ha": 9605.947955390335,
+      "nclb_ha": 20981.412639405207,
+      "total_ha": 30587.36059479554
+    },
+    {
+      "figure_id": "Figure 45",
+      "year": 2073,
+      "age_class": "0-20",
+      "thlb_ha": 35120.87912087912,
+      "nclb_ha": 498.1684981684957,
+      "total_ha": 35619.04761904762
+    },
+    {
+      "figure_id": "Figure 45",
+      "year": 2073,
+      "age_class": "21-40",
+      "thlb_ha": 34871.79487179487,
+      "nclb_ha": 747.2527472527509,
+      "total_ha": 35619.04761904762
+    },
+    {
+      "figure_id": "Figure 45",
+      "year": 2073,
+      "age_class": "41-60",
+      "thlb_ha": 27897.435897435895,
+      "nclb_ha": 1494.505494505498,
+      "total_ha": 29391.941391941393
+    },
+    {
+      "figure_id": "Figure 45",
+      "year": 2073,
+      "age_class": "61-80",
+      "thlb_ha": 22666.666666666664,
+      "nclb_ha": 4732.600732600735,
+      "total_ha": 27399.2673992674
+    },
+    {
+      "figure_id": "Figure 45",
+      "year": 2073,
+      "age_class": "81-100",
+      "thlb_ha": 9465.201465201466,
+      "nclb_ha": 8967.032967032967,
+      "total_ha": 18432.234432234432
+    },
+    {
+      "figure_id": "Figure 45",
+      "year": 2073,
+      "age_class": "101-120",
+      "thlb_ha": 2490.842490842491,
+      "nclb_ha": 8219.78021978022,
+      "total_ha": 10710.62271062271
+    },
+    {
+      "figure_id": "Figure 45",
+      "year": 2073,
+      "age_class": "121-140",
+      "thlb_ha": 1494.5054945054947,
+      "nclb_ha": 3736.263736263737,
+      "total_ha": 5230.769230769231
+    },
+    {
+      "figure_id": "Figure 45",
+      "year": 2073,
+      "age_class": "141-250",
+      "thlb_ha": 2241.7582417582416,
+      "nclb_ha": 6227.106227106227,
+      "total_ha": 8468.864468864469
+    },
+    {
+      "figure_id": "Figure 45",
+      "year": 2073,
+      "age_class": "251+",
+      "thlb_ha": 3238.095238095238,
+      "nclb_ha": 32630.03663003663,
+      "total_ha": 35868.131868131866
+    },
+    {
+      "figure_id": "Figure 45",
+      "year": 2123,
+      "age_class": "0-20",
+      "thlb_ha": 33128.205128205125,
+      "nclb_ha": 498.168498168503,
+      "total_ha": 33626.37362637363
+    },
+    {
+      "figure_id": "Figure 45",
+      "year": 2123,
+      "age_class": "21-40",
+      "thlb_ha": 33128.205128205125,
+      "nclb_ha": 498.168498168503,
+      "total_ha": 33626.37362637363
+    },
+    {
+      "figure_id": "Figure 45",
+      "year": 2123,
+      "age_class": "41-60",
+      "thlb_ha": 31384.615384615387,
+      "nclb_ha": 498.1684981684957,
+      "total_ha": 31882.783882783882
+    },
+    {
+      "figure_id": "Figure 45",
+      "year": 2123,
+      "age_class": "61-80",
+      "thlb_ha": 17435.897435897434,
+      "nclb_ha": 498.16849816849935,
+      "total_ha": 17934.065934065933
+    },
+    {
+      "figure_id": "Figure 45",
+      "year": 2123,
+      "age_class": "81-100",
+      "thlb_ha": 6227.1062271062265,
+      "nclb_ha": 498.16849816849845,
+      "total_ha": 6725.274725274725
+    },
+    {
+      "figure_id": "Figure 45",
+      "year": 2123,
+      "age_class": "101-120",
+      "thlb_ha": 4483.516483516483,
+      "nclb_ha": 3238.0952380952385,
+      "total_ha": 7721.611721611722
+    },
+    {
+      "figure_id": "Figure 45",
+      "year": 2123,
+      "age_class": "121-140",
+      "thlb_ha": 2739.92673992674,
+      "nclb_ha": 6725.274725274726,
+      "total_ha": 9465.201465201466
+    },
+    {
+      "figure_id": "Figure 45",
+      "year": 2123,
+      "age_class": "141-250",
+      "thlb_ha": 2739.92673992674,
+      "nclb_ha": 21421.24542124542,
+      "total_ha": 24161.172161172162
+    },
+    {
+      "figure_id": "Figure 45",
+      "year": 2123,
+      "age_class": "251+",
+      "thlb_ha": 2739.92673992674,
+      "nclb_ha": 33128.205128205125,
+      "total_ha": 35868.131868131866
+    },
+    {
+      "figure_id": "Figure 45",
+      "year": 2173,
+      "age_class": "0-20",
+      "thlb_ha": 32630.03663003663,
+      "nclb_ha": 498.1684981684957,
+      "total_ha": 33128.205128205125
+    },
+    {
+      "figure_id": "Figure 45",
+      "year": 2173,
+      "age_class": "21-40",
+      "thlb_ha": 32380.952380952378,
+      "nclb_ha": 747.2527472527472,
+      "total_ha": 33128.205128205125
+    },
+    {
+      "figure_id": "Figure 45",
+      "year": 2173,
+      "age_class": "41-60",
+      "thlb_ha": 29391.941391941393,
+      "nclb_ha": 249.08424908424786,
+      "total_ha": 29641.02564102564
+    },
+    {
+      "figure_id": "Figure 45",
+      "year": 2173,
+      "age_class": "61-80",
+      "thlb_ha": 19677.65567765568,
+      "nclb_ha": 498.1684981684957,
+      "total_ha": 20175.824175824175
+    },
+    {
+      "figure_id": "Figure 45",
+      "year": 2173,
+      "age_class": "81-100",
+      "thlb_ha": 4732.600732600733,
+      "nclb_ha": 498.16849816849845,
+      "total_ha": 5230.769230769231
+    },
+    {
+      "figure_id": "Figure 45",
+      "year": 2173,
+      "age_class": "101-120",
+      "thlb_ha": 2241.7582417582416,
+      "nclb_ha": 747.2527472527477,
+      "total_ha": 2989.0109890109893
+    },
+    {
+      "figure_id": "Figure 45",
+      "year": 2173,
+      "age_class": "121-140",
+      "thlb_ha": 1992.6739926739926,
+      "nclb_ha": 498.1684981684982,
+      "total_ha": 2490.842490842491
+    },
+    {
+      "figure_id": "Figure 45",
+      "year": 2173,
+      "age_class": "141-250",
+      "thlb_ha": 4981.684981684982,
+      "nclb_ha": 28146.520146520143,
+      "total_ha": 33128.205128205125
+    },
+    {
+      "figure_id": "Figure 45",
+      "year": 2173,
+      "age_class": "251+",
+      "thlb_ha": 2989.0109890109893,
+      "nclb_ha": 35369.96336996337,
+      "total_ha": 38358.97435897436
+    },
+    {
+      "figure_id": "Figure 45",
+      "year": 2223,
+      "age_class": "0-20",
+      "thlb_ha": 32356.877323420074,
+      "nclb_ha": 505.5762081784378,
+      "total_ha": 32862.45353159851
+    },
+    {
+      "figure_id": "Figure 45",
+      "year": 2223,
+      "age_class": "21-40",
+      "thlb_ha": 32356.877323420074,
+      "nclb_ha": 505.5762081784378,
+      "total_ha": 32862.45353159851
+    },
+    {
+      "figure_id": "Figure 45",
+      "year": 2223,
+      "age_class": "41-60",
+      "thlb_ha": 29323.420074349444,
+      "nclb_ha": 505.5762081784378,
+      "total_ha": 29828.99628252788
+    },
+    {
+      "figure_id": "Figure 45",
+      "year": 2223,
+      "age_class": "61-80",
+      "thlb_ha": 19717.472118959107,
+      "nclb_ha": 252.78810408922072,
+      "total_ha": 19970.260223048328
+    },
+    {
+      "figure_id": "Figure 45",
+      "year": 2223,
+      "age_class": "81-100",
+      "thlb_ha": 4802.973977695167,
+      "nclb_ha": 505.5762081784387,
+      "total_ha": 5308.550185873606
+    },
+    {
+      "figure_id": "Figure 45",
+      "year": 2223,
+      "age_class": "101-120",
+      "thlb_ha": 1011.1524163568773,
+      "nclb_ha": 505.5762081784386,
+      "total_ha": 1516.728624535316
+    },
+    {
+      "figure_id": "Figure 45",
+      "year": 2223,
+      "age_class": "121-140",
+      "thlb_ha": 505.57620817843866,
+      "nclb_ha": 505.57620817843866,
+      "total_ha": 1011.1524163568773
+    },
+    {
+      "figure_id": "Figure 45",
+      "year": 2223,
+      "age_class": "141-250",
+      "thlb_ha": 2527.8810408921936,
+      "nclb_ha": 16684.014869888477,
+      "total_ha": 19211.89591078067
+    },
+    {
+      "figure_id": "Figure 45",
+      "year": 2223,
+      "age_class": "251+",
+      "thlb_ha": 1769.5167286245353,
+      "nclb_ha": 47776.95167286246,
+      "total_ha": 49546.46840148699
+    },
+    {
+      "figure_id": "Figure 45",
+      "year": 2273,
+      "age_class": "0-20",
+      "thlb_ha": 32356.877323420074,
+      "nclb_ha": 252.7881040892171,
+      "total_ha": 32609.66542750929
+    },
+    {
+      "figure_id": "Figure 45",
+      "year": 2273,
+      "age_class": "21-40",
+      "thlb_ha": 32356.877323420074,
+      "nclb_ha": 252.7881040892171,
+      "total_ha": 32609.66542750929
+    },
+    {
+      "figure_id": "Figure 45",
+      "year": 2273,
+      "age_class": "41-60",
+      "thlb_ha": 29323.420074349444,
+      "nclb_ha": 505.5762081784378,
+      "total_ha": 29828.99628252788
+    },
+    {
+      "figure_id": "Figure 45",
+      "year": 2273,
+      "age_class": "61-80",
+      "thlb_ha": 20223.04832713755,
+      "nclb_ha": 505.5762081784342,
+      "total_ha": 20728.624535315983
+    },
+    {
+      "figure_id": "Figure 45",
+      "year": 2273,
+      "age_class": "81-100",
+      "thlb_ha": 4044.6096654275093,
+      "nclb_ha": 505.57620817843826,
+      "total_ha": 4550.185873605948
+    },
+    {
+      "figure_id": "Figure 45",
+      "year": 2273,
+      "age_class": "101-120",
+      "thlb_ha": 1263.9405204460968,
+      "nclb_ha": 758.3643122676579,
+      "total_ha": 2022.3048327137546
+    },
+    {
+      "figure_id": "Figure 45",
+      "year": 2273,
+      "age_class": "121-140",
+      "thlb_ha": 758.364312267658,
+      "nclb_ha": 505.57620817843883,
+      "total_ha": 1263.9405204460968
+    },
+    {
+      "figure_id": "Figure 45",
+      "year": 2273,
+      "age_class": "141-250",
+      "thlb_ha": 758.364312267658,
+      "nclb_ha": 3286.245353159851,
+      "total_ha": 4044.6096654275093
+    },
+    {
+      "figure_id": "Figure 45",
+      "year": 2273,
+      "age_class": "251+",
+      "thlb_ha": 3033.457249070632,
+      "nclb_ha": 61427.5092936803,
+      "total_ha": 64460.96654275093
+    }
+  ]
+}

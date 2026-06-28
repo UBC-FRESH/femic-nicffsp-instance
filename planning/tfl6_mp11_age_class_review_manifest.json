@@ -1,0 +1,53 @@
+{
+  "review_manifest": "planning/tfl6_mp11_age_class_review_manifest.csv",
+  "reviewed_at_utc": "2026-06-28T00:00:00Z",
+  "reviewer": "codex_agent_overlay_and_panel_total_review",
+  "panel_deviation_threshold_percent": 5.0,
+  "figure_count": 2,
+  "status_counts": {
+    "reviewed_for_planning": 2
+  },
+  "downstream_use_counts": {
+    "phase6_mp11_age_class_planning_only": 2
+  },
+  "figures": [
+    {
+      "figure_id": "Figure 6",
+      "caption": "Base Case Age Class Distribution of Productive Forest Area (187,425 ha)",
+      "pdf_page": 88,
+      "review_status": "reviewed_for_planning",
+      "downstream_use": "phase6_mp11_age_class_planning_only",
+      "review_basis": "deterministic fixed-slot stacked-bar extraction; overlay contact-sheet inspection; nonnegative total-minus-THLB check; panel-total deviation recorded against the stated 187,425 ha productive forest area",
+      "reviewer": "codex_agent_overlay_and_panel_total_review",
+      "reviewed_at_utc": "2026-06-28T00:00:00Z",
+      "max_panel_total_deviation_percent": 7.233792265484124,
+      "min_total_minus_thlb_ha": 0.0,
+      "panel_total_deviation_status": "warning",
+      "nonnegative_total_minus_thlb_status": "passed",
+      "overlay_review_status": "contact_sheet_passed",
+      "model_input_status": "not_model_input",
+      "table_csv_path": "runtime/document_ingestion/tfl6-mp11-full-figures/recovered/age_class_batch/figure-6-age-class.csv",
+      "overlay_path": "runtime/document_ingestion/tfl6-mp11-full-figures/overlays/age_class_batch/figure-6-overlay.png",
+      "notes": "Reviewed only for MP11 age-class planning. Panel-total deviation is 7.23%, so this is not comparison-accepted and must not be used as model input without a stronger manual review."
+    },
+    {
+      "figure_id": "Figure 45",
+      "caption": "AAC Recommendation Age Class Distribution of Productive Forest Area (187,425 ha)",
+      "pdf_page": 158,
+      "review_status": "reviewed_for_planning",
+      "downstream_use": "phase6_mp11_age_class_planning_only",
+      "review_basis": "deterministic fixed-slot stacked-bar extraction; overlay contact-sheet inspection; nonnegative total-minus-THLB check; panel-total deviation recorded against the stated 187,425 ha productive forest area",
+      "reviewer": "codex_agent_overlay_and_panel_total_review",
+      "reviewed_at_utc": "2026-06-28T00:00:00Z",
+      "max_panel_total_deviation_percent": 10.305416427865408,
+      "min_total_minus_thlb_ha": 249.08424908424786,
+      "panel_total_deviation_status": "warning",
+      "nonnegative_total_minus_thlb_status": "passed",
+      "overlay_review_status": "contact_sheet_passed",
+      "model_input_status": "not_model_input",
+      "table_csv_path": "runtime/document_ingestion/tfl6-mp11-full-figures/recovered/age_class_batch/figure-45-age-class.csv",
+      "overlay_path": "runtime/document_ingestion/tfl6-mp11-full-figures/overlays/age_class_batch/figure-45-overlay.png",
+      "notes": "Reviewed only for MP11 age-class planning. Panel-total deviation is 10.31%, so this is not comparison-accepted and must not be used as model input without a stronger manual review."
+    }
+  ]
+}

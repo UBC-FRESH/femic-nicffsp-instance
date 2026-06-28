@@ -1,0 +1,38 @@
+{
+  "review_manifest": "planning/tfl6_mp11_figure2_review_manifest.csv",
+  "reviewed_at_utc": "2026-06-28T00:00:00Z",
+  "reviewer": "codex_agent_overlay_and_base_case_crosscheck_review",
+  "reference_value_m3_per_year": 1061600.0,
+  "figure_count": 1,
+  "status_counts": {
+    "accepted_for_comparison": 1
+  },
+  "figures": [
+    {
+      "figure_id": "Figure 2",
+      "caption": "Base Case Harvest Level",
+      "pdf_page": 82,
+      "review_status": "accepted_for_comparison",
+      "downstream_use": "phase6_mp11_comparison_only",
+      "review_basis": "deterministic top-edge extraction; overlay inspection; mean harvest level cross-check against MP11 base-case reference value",
+      "reviewer": "codex_agent_overlay_and_base_case_crosscheck_review",
+      "reviewed_at_utc": "2026-06-28T00:00:00Z",
+      "point_count": 161,
+      "x_min": 1.4869888475836432,
+      "x_max": 298.8847583643123,
+      "y_min": 1047682.1192052981,
+      "y_max": 1056953.6423841058,
+      "y_mean": 1056896.0552836165,
+      "reference_value_m3_per_year": 1061600.0,
+      "mean_abs_percent_error": 0.44309953997583557,
+      "validation_strength": "overlay_plus_base_case_reference_crosscheck",
+      "overlay_review_status": "overlay_passed",
+      "model_input_status": "not_model_input",
+      "result_json_path": "runtime/document_ingestion/tfl6-mp11-full-figures/recovered/pilot/figure-2-result.json",
+      "points_csv_path": "runtime/document_ingestion/tfl6-mp11-full-figures/recovered/pilot/figure-2-points.csv",
+      "overlay_path": "runtime/document_ingestion/tfl6-mp11-full-figures/overlays/pilot/figure-2-overlay.png",
+      "metrics_json_path": "runtime/document_ingestion/tfl6-mp11-full-figures/overlays/pilot/figure-2-metrics.json",
+      "notes": "Accepted only for MP11 comparison planning. This flat base-case harvest trajectory is useful for comparison context, but it is not model input without later maintainer promotion."
+    }
+  ]
+}

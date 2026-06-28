@@ -19,4 +19,5 @@ trail used to create it.
    phase5-rebuild-provenance
    phase5-scenario-teaching-workflows
    phase5-known-limitations-release-readiness
+   phase7-mp11-figure-extraction
    teaching-challenges

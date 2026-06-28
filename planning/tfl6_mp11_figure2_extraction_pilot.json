@@ -1,0 +1,72 @@
+{
+  "corpus_id": "tfl6-mp11-full-figures",
+  "figure_id": "Figure 2",
+  "caption": "Base Case Harvest Level",
+  "report_component": "Appendix A Timber Supply Analysis",
+  "report_page": 18,
+  "pdf_page": 82,
+  "source_url": "https://www.westernforest.com/wp-content/uploads/2026/06/TFL6_MP_11_202606_w_Appendices_Web-compressed.pdf",
+  "source_sha256": "44591c1024254e36d8989df45a2b489a624d5669c5ae01a6ebfd961b50a7321b",
+  "runtime_root": "runtime/document_ingestion/tfl6-mp11-full-figures",
+  "artifacts": {
+    "source_page_image": "runtime/document_ingestion/tfl6-mp11-full-figures/pages/TFL6_MP_11_202606_w_Appendices_Web-compressed-p0082.png",
+    "manual_plot_crop": "runtime/document_ingestion/tfl6-mp11-full-figures/crops/calibrated_pilot/figure-2-plot.png",
+    "raw_extraction_json": "runtime/document_ingestion/tfl6-mp11-full-figures/recovered/pilot/figure-2-result.json",
+    "raw_points_csv": "runtime/document_ingestion/tfl6-mp11-full-figures/recovered/pilot/figure-2-points.csv",
+    "qa_overlay": "runtime/document_ingestion/tfl6-mp11-full-figures/overlays/pilot/figure-2-overlay.png",
+    "qa_metrics": "runtime/document_ingestion/tfl6-mp11-full-figures/overlays/pilot/figure-2-metrics.json"
+  },
+  "crop": {
+    "source_page_bbox_px": [155, 145, 1115, 682],
+    "width_px": 960,
+    "height_px": 537
+  },
+  "calibration": {
+    "plot_left_px": 128,
+    "plot_right_px": 935,
+    "plot_top_px": 18,
+    "plot_bottom_px": 471,
+    "x_min": 0,
+    "x_max": 300,
+    "x_scale": "linear",
+    "y_min": 0,
+    "y_max": 1400000,
+    "y_scale": "linear",
+    "y_axis_inverted": true
+  },
+  "extraction": {
+    "tool": "figrecover.digitize",
+    "tool_version": "0.1.0a1",
+    "series_name": "base_case_green_top_edge",
+    "series_colour": "#4cff00",
+    "mode": "line",
+    "tolerance": 80,
+    "sample_every_px": 5,
+    "line_aggregation": "min"
+  },
+  "result_summary": {
+    "series_count": 1,
+    "point_count": 161,
+    "x_min": 1.4869888475836432,
+    "x_max": 298.8847583643123,
+    "y_min": 1047682.1192052981,
+    "y_max": 1056953.6423841058,
+    "y_mean": 1056896.0552836165,
+    "mean_confidence": 1.0,
+    "metrics_review_priority": "low",
+    "metrics_diagnostics_by_level": {
+      "info": 1
+    }
+  },
+  "review": {
+    "status": "raw_extraction",
+    "downstream_use": "not_yet_accepted",
+    "required_next_review": [
+      "confirm crop excludes caption and unrelated page text",
+      "confirm plot-frame bounds against tick marks",
+      "confirm axis units and horizon length against MP11 text/tables",
+      "inspect QA overlay for edge-tracking artifacts",
+      "decide whether the output can be promoted to reviewed_for_planning or accepted_for_comparison"
+    ]
+  }
+}

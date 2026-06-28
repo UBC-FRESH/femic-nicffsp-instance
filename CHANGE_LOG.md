@@ -1,5 +1,257 @@
 # Change Log
 
+## 2026-06-28 - Closed the MP11 high-priority figure extraction evidence pass
+
+- added `scripts/build_p7_mp11_figure2_review_manifest.py` and promoted the
+  Figure `2` base-case harvest-level pilot to `accepted_for_comparison` with
+  downstream use `phase6_mp11_comparison_only`;
+- added `scripts/build_p7_mp11_closeout_summary.py` to join the 61-row MP11
+  figure inventory with every reviewed extraction manifest;
+- added `planning/tfl6_mp11_figure_extraction_closeout.md`,
+  `planning/tfl6_mp11_figure_extraction_closeout.csv`, and
+  `planning/tfl6_mp11_figure_extraction_closeout.json`;
+- recorded the final Phase 7 evidence surface: `22` figures accepted for
+  comparison, `14` figures reviewed for planning only, `20` medium-priority
+  figures deferred, `5` context figures inventory-only, and `0` figures
+  accepted as model input; and
+- added `docs/phase7-mp11-figure-extraction.rst` to document the source,
+  artifact boundary, reviewed evidence surface, validation pattern, and Phase 6
+  handoff rules.
+
+## 2026-06-28 - Recorded figrecover deployment feedback from MP11 extraction
+
+- added `planning/tfl6_mp11_figrecover_deployment_feedback.md` as a
+  public-safe summary of package-development lessons from the Phase 7 MP11
+  figure-extraction deployment;
+- recorded the current reviewed evidence surface: `10` figures accepted for
+  comparison, `14` figures reviewed for planning only, and `0` figures accepted
+  as model inputs;
+- summarized successful validation patterns including adjacent-table
+  cross-checks, component-sum checks, printed-label plus geometry checks, and
+  overlay review; and
+- mapped deployment friction into upstream `figrecover` backlog items covering
+  calibration records, chart-family extractors, review manifests, validation
+  strength, visual QA, corpus summaries, and public-safe artifact hygiene.
+
+## 2026-06-28 - Reviewed MP11 age-class charts for planning use
+
+- added `scripts/build_p7_mp11_age_class_review_manifest.py` to produce a
+  compact review manifest for the MP11 age-class extraction batch;
+- promoted Figures `6` and `45` from `raw_extraction` to
+  `reviewed_for_planning`;
+- assigned downstream use `phase6_mp11_age_class_planning_only` and
+  model-input status `not_model_input` to both reviewed rows;
+- added `planning/tfl6_mp11_age_class_review_manifest.md`,
+  `planning/tfl6_mp11_age_class_review_manifest.csv`, and
+  `planning/tfl6_mp11_age_class_review_manifest.json`; and
+- explicitly did not promote the age-class batch to `accepted_for_comparison`
+  because panel-total deviations from the stated `187,425 ha` productive forest
+  area reach `7.23%` for Figure `6` and `10.31%` for Figure `45`.
+
+## 2026-06-28 - Extracted MP11 age-class distribution charts
+
+- added `scripts/build_p7_mp11_age_class_extractions.py` for the first
+  age-class stacked-bar extraction batch;
+- extracted Figures `6` and `45`, recovering THLB area, total area, and implied
+  NCLB area for six subplot years and nine age classes per figure;
+- wrote ignored detailed per-figure age-class CSV and overlay PNG artifacts
+  under `runtime/document_ingestion/tfl6-mp11-full-figures/`;
+- added compact public-safe summary outputs in
+  `planning/tfl6_mp11_age_class_extraction_summary.md`,
+  `planning/tfl6_mp11_age_class_extraction_summary.csv`,
+  `planning/tfl6_mp11_age_class_extraction_summary.json`, and
+  `planning/tfl6_mp11_age_class_rows.csv`;
+- corrected initial panel-border and legend-swath contamination by adding
+  top-row exclusion bands; and
+- kept the batch status as `raw_extraction`, with panel-total deviations of up
+  to `7.23%` for Figure `6` and `10.31%` for Figure `45`.
+
+## 2026-06-28 - Reviewed MP11 cedar inventory charts for planning use
+
+- added `scripts/build_p7_mp11_cedar_inventory_review_manifest.py` to produce
+  a compact review manifest for the MP11 cedar inventory extraction batch;
+- promoted Figures `14`, `15`, `51`, and `52` from `raw_extraction` to
+  `reviewed_for_planning`;
+- assigned downstream use `phase6_mp11_cedar_planning_only` and model-input
+  status `not_model_input` to all four reviewed rows;
+- added `planning/tfl6_mp11_cedar_inventory_review_manifest.md`,
+  `planning/tfl6_mp11_cedar_inventory_review_manifest.csv`, and
+  `planning/tfl6_mp11_cedar_inventory_review_manifest.json`; and
+- explicitly did not promote the cedar batch to `accepted_for_comparison`
+  because the QA basis is overlay inspection plus a nonnegative
+  total-minus-THLB sanity check, not an independent table or component-sum
+  cross-check.
+
+## 2026-06-28 - Extracted MP11 cedar inventory stacked-area charts
+
+- added `scripts/build_p7_mp11_cedar_inventory_extractions.py` for the first
+  cedar inventory stacked-area extraction batch;
+- extracted Figures `14`, `15`, `51`, and `52`, recovering THLB cedar, total
+  cedar, and implied NCLB cedar series from stacked-area boundaries;
+- wrote ignored detailed result JSON, recovered-point CSV, overlay PNG, and
+  metrics JSON artifacts under
+  `runtime/document_ingestion/tfl6-mp11-full-figures/`;
+- added compact public-safe summary outputs in
+  `planning/tfl6_mp11_cedar_inventory_extraction_summary.md`,
+  `planning/tfl6_mp11_cedar_inventory_extraction_summary.csv`,
+  `planning/tfl6_mp11_cedar_inventory_extraction_summary.json`, and
+  `planning/tfl6_mp11_cedar_inventory_series_summary.csv`;
+- corrected the sampler to use separate y-bands for total-boundary and
+  THLB-boundary extraction after overlay review showed legend/axis
+  contamination in the first attempt; and
+- kept the batch status as `raw_extraction`, pending maintainer overlay/value
+  review before Phase 6 comparison acceptance.
+
+## 2026-06-28 - Reviewed MP11 growing-stock charts for comparison use
+
+- added `scripts/build_p7_mp11_growing_stock_review_manifest.py` to produce a
+  compact review manifest for the MP11 growing-stock extraction batch;
+- promoted `Figure 3` and `Figure 40` from `raw_extraction` to
+  `accepted_for_comparison`;
+- assigned downstream use `phase6_mp11_comparison_only` and model-input status
+  `not_model_input` to both reviewed rows;
+- added `planning/tfl6_mp11_growing_stock_review_manifest.md`,
+  `planning/tfl6_mp11_growing_stock_review_manifest.csv`, and
+  `planning/tfl6_mp11_growing_stock_review_manifest.json`; and
+- recorded that the acceptance basis is overlay inspection plus internal
+  component-sum consistency, not an independent adjacent-table cross-check.
+
+## 2026-06-28 - Extracted MP11 growing-stock multi-series charts
+
+- added `scripts/build_p7_mp11_growing_stock_extractions.py` for the first
+  multi-series THLB growing-stock extraction batch;
+- extracted `Figure 3` and `Figure 40`, each with `THLB GS total`,
+  `THLB GS <= 120 years`, and `THLB GS > 120 years` series;
+- wrote ignored detailed result JSON, recovered-point CSV, overlay PNG, and
+  metrics JSON artifacts under
+  `runtime/document_ingestion/tfl6-mp11-full-figures/`;
+- added compact public-safe summary outputs in
+  `planning/tfl6_mp11_growing_stock_extraction_summary.md`,
+  `planning/tfl6_mp11_growing_stock_extraction_summary.csv`,
+  `planning/tfl6_mp11_growing_stock_extraction_summary.json`, and
+  `planning/tfl6_mp11_growing_stock_series_summary.csv`;
+- used component-sum residual QA, confirming maximum absolute residuals below
+  `1%` for both figures; and
+- kept the batch status as `raw_extraction`, pending maintainer overlay/value
+  review before Phase 6 comparison acceptance.
+
+## 2026-06-28 - Reviewed first MP11 extraction batch for comparison use
+
+- added `scripts/build_p7_mp11_review_manifest.py` to produce a compact review
+  manifest from the first harvest-sensitivity extraction batch;
+- promoted Figures `29`, `30`, `31`, `35`, `36`, and `39` from
+  `raw_extraction` to `accepted_for_comparison`;
+- assigned downstream use `phase6_mp11_comparison_only` and model-input status
+  `not_model_input` to every reviewed row;
+- added `planning/tfl6_mp11_reviewed_extraction_manifest.md`,
+  `planning/tfl6_mp11_reviewed_extraction_manifest.csv`, and
+  `planning/tfl6_mp11_reviewed_extraction_manifest.json`; and
+- recorded the Phase 6 handoff boundary for MP11 sensitivity and
+  model-overhaul planning without promoting recovered values to model inputs.
+
+## 2026-06-28 - Extracted the first MP11 harvest sensitivity batch
+
+- added `scripts/build_p7_mp11_harvest_sensitivity_extractions.py` for the
+  first repeatable multi-figure extraction batch;
+- extracted six simple MP11 harvest-level sensitivity line charts: Figures
+  `29`, `30`, `31`, `35`, `36`, and `39`;
+- wrote ignored detailed result JSON, recovered-point CSV, overlay PNG, and
+  metrics JSON artifacts under
+  `runtime/document_ingestion/tfl6-mp11-full-figures/`;
+- added compact public-safe summary outputs in
+  `planning/tfl6_mp11_harvest_sensitivity_extraction_summary.md`,
+  `planning/tfl6_mp11_harvest_sensitivity_extraction_summary.csv`,
+  `planning/tfl6_mp11_harvest_sensitivity_extraction_summary.json`, and
+  `planning/tfl6_mp11_harvest_sensitivity_series_summary.csv`;
+- cross-checked extracted mean series values against adjacent MP11 table values
+  and recorded a maximum absolute percent error of `0.503%`; and
+- kept the batch status as `raw_extraction`, requiring full overlay/value
+  review before Phase 6 comparison or model-upgrade use.
+
+## 2026-06-28 - Added repeatable MP11 crop proposal generation
+
+- added `scripts/build_p7_mp11_crop_proposals.py` to generate first-pass
+  high-priority chart crop proposals from the ignored preliminary crop queue;
+- ran the script across all `36` high-priority MP11 figures and wrote proposed
+  crop images under ignored
+  `runtime/document_ingestion/tfl6-mp11-full-figures/crops/priority_high_proposals/`;
+- added compact tracked proposal summaries in
+  `planning/tfl6_mp11_priority_crop_proposals.md`,
+  `planning/tfl6_mp11_priority_crop_proposals.csv`, and
+  `planning/tfl6_mp11_priority_crop_proposals.json`;
+- recorded proposed bboxes, dimensions, checksums, proposal status, and manual
+  review status for every high-priority row; and
+- kept all generated crop images and contact sheets out of tracked source
+  control.
+
+## 2026-06-28 - Recorded the first MP11 Figure 2 extraction pilot
+
+- manually cropped and calibrated MP11 `Figure 2 Base Case Harvest Level` under
+  the ignored Phase 7 runtime artifact tree;
+- ran a deterministic `figrecover.digitize` line extraction on the top edge of
+  the green harvest-level chart area;
+- generated ignored raw extraction, recovered-point, QA overlay, and metrics
+  artifacts under `runtime/document_ingestion/tfl6-mp11-full-figures/`;
+- added compact public-safe pilot summaries in
+  `planning/tfl6_mp11_figure2_extraction_pilot.md` and
+  `planning/tfl6_mp11_figure2_extraction_pilot.json`, recording 161 raw points
+  and a mean recovered level of approximately `1,056,896 m3/year`; and
+- kept the pilot status as `raw_extraction`, requiring crop, calibration,
+  overlay, and value review before any Phase 6 comparison or model-upgrade use.
+
+## 2026-06-28 - Launched Phase 7 MP11 figure extraction test
+
+- opened Phase 7 parent issue `#49` and child issues `#50` through `#55` for a
+  full `figrecover`-backed MP11 figure-extraction test upstream of any
+  MP10-to-MP11 model upgrade;
+- added Phase 6 and Phase 7 sections to `ROADMAP.md`, linking the existing
+  MP11 ingestion issue tree and the new figure-extraction issue tree;
+- added `planning/tfl6_mp11_figure_extraction_test_plan.md` to define the
+  source package, runtime artifact boundary, review-status contract, Phase 6
+  handoff, first extraction priorities, and validation expectations;
+- added `planning/tfl6_mp11_full_figure_inventory.csv` with the 61 figures
+  listed in Appendix A's list of figures, including source SHA256, report/PDF
+  page anchors, captions, chart-family triage, extraction-priority tiers, and
+  downstream relevance notes; and
+- kept the first tranche public-safe: no rendered pages, crops, overlays, raw
+  recovered tables, prompt logs, or review bundles were tracked; and
+- marked P7.1 complete in `ROADMAP.md`, advancing the active edge to P7.2
+  ignored `figrecover` corpus preparation.
+
+## 2026-06-28 - Prepared the ignored MP11 figrecover runtime corpus
+
+- installed the local `figrecover[pdf,cv]` package into the active environment,
+  moving the environment from `figrecover 0.1.0a0` without OpenCV/scikit-image
+  to `figrecover 0.1.0a1` with PDF and deterministic CV dependencies
+  importable;
+- reran `femic doc figures preflight` through the FEMIC Typer app and confirmed
+  `figrecover`, PyMuPDF, pypdf, OpenCV, scikit-image, and httpx are importable;
+- rendered the 58 unique PDF pages referenced by the 61-row MP11 figure
+  inventory at 150 DPI under ignored
+  `runtime/document_ingestion/tfl6-mp11-full-figures/`;
+- added `planning/tfl6_mp11_figrecover_corpus_summary.md` and
+  `planning/tfl6_mp11_figrecover_corpus_summary.json` as compact public-safe
+  records of the corpus ID, page selection, render settings, versions,
+  checksum, and ignored artifact paths; and
+- marked P7.2 complete in `ROADMAP.md`, advancing the active edge to P7.3
+  crop/classification/calibration work.
+
+## 2026-06-28 - Started the MP11 high-priority crop queue
+
+- generated a preliminary high-priority `figrecover` candidate manifest under
+  ignored `runtime/document_ingestion/tfl6-mp11-full-figures/` for the `36`
+  figures marked `high` in the MP11 figure inventory;
+- wrote `36` preliminary full-content crops under ignored
+  `runtime/document_ingestion/tfl6-mp11-full-figures/crops/priority_high_preliminary/`;
+- added `planning/tfl6_mp11_priority_figure_crop_queue.csv` and
+  `planning/tfl6_mp11_priority_crop_queue.md` as compact tracked review
+  surfaces;
+- explicitly marked the preliminary crops as `needs_manual_crop_review` and
+  calibration as `not_started`, so they are not accepted plot-area crops or
+  recovered evidence; and
+- marked P7.3a and P7.3b complete in `ROADMAP.md`, leaving P7.3c-P7.3e open
+  for manual crop review, calibration specs, and issue/comment closeout.
+
 ## 2026-06-23 - Bootstrapped the NICF FSP FRST 558 instance repository
 
 - created the FEMIC instance scaffold for `femic-tfl6-instance`;

@@ -1,0 +1,19 @@
+{
+  "corpus_id": "tfl6-mp11-full-figures",
+  "source_url": "https://www.westernforest.com/wp-content/uploads/2026/06/TFL6_MP_11_202606_w_Appendices_Web-compressed.pdf",
+  "source_sha256": "44591c1024254e36d8989df45a2b489a624d5669c5ae01a6ebfd961b50a7321b",
+  "pdf_page_count": 475,
+  "figure_inventory_path": "planning/tfl6_mp11_full_figure_inventory.csv",
+  "figure_inventory_count": 61,
+  "unique_figure_pdf_pages": 58,
+  "page_selection": "66,82-93,95,97-101,103-104,107,109-110,112,115-117,120,122-124,126,129,131-133,136,143-158,172-175",
+  "render_dpi": 150,
+  "image_format": "png",
+  "figrecover_version": "0.1.0a1",
+  "pymupdf_renderer_version": "1.27.2.3",
+  "runtime_corpus_root": "runtime/document_ingestion/tfl6-mp11-full-figures",
+  "runtime_source_manifest": "runtime/document_ingestion/tfl6-mp11-full-figures/source_manifest.yaml",
+  "runtime_pages_dir": "runtime/document_ingestion/tfl6-mp11-full-figures/pages",
+  "rendered_page_count": 58,
+  "tracked_artifact_policy": "runtime pages/source manifests are ignored; this compact summary is the tracked public-safe record"
+}

@@ -331,6 +331,81 @@ after the runtime package has passed direct artifact and launch smoke checks.
   - [x] P5.4d Verify docs build, docs links, and published Pages surface.
   - [x] P5.4e Close Phase 5 after QA evidence is recorded.
 
+## Phase 6: MP11 Ingestion And Model-Overhaul Planning (`#42`)
+
+Goal: ingest the public TFL 6 Management Plan 11 source package and plan the
+MP10-derived teaching model overhaul without changing accepted model inputs
+before the MP11 evidence is extracted, reviewed, and crosswalked.
+
+- [ ] P6.1 Archive MP11 source package and extraction manifest (`#43`).
+  - [ ] P6.1a Record source URL, access date, document identity, page count,
+    and package components.
+  - [ ] P6.1b Define source-copy and provenance conventions before accepting
+    derived extraction artifacts.
+  - [ ] P6.1c Record extraction-manifest requirements for sections, tables,
+    figures, assumptions, metadata, and page anchors.
+- [ ] P6.2 Extract MP11 tables, figures, sections, assumptions, and metadata
+  (`#44`).
+  - [ ] P6.2a Inventory section headings, tables, figures, appendices,
+    references, assumptions, model-input descriptions, and sensitivity items.
+  - [ ] P6.2b Attach every extracted claim to a page/section anchor.
+  - [ ] P6.2c Record extraction method, tool versions, failures, and manual
+    review flags.
+- [ ] P6.3 Compare MP11 land base and THLB assumptions against the Phase 5
+  prototype (`#45`).
+- [ ] P6.4 Compare MP11 inventory, LiDAR/ITI, yield, operability, and
+  harvest-system assumptions (`#46`).
+- [ ] P6.5 Compare MP11 model behavior, sensitivities, AAC recommendation, and
+  KPI outputs (`#47`).
+- [ ] P6.6 Write the Phase 7+ implementation roadmap for the MP11-aligned
+  model overhaul (`#48`).
+
+## Phase 7: MP11 Figure Extraction Test Harness (`#49`)
+
+Goal: run a full, auditable figure-extraction test on the public MP11 PDF
+package before recovered figure evidence is used to guide any MP10-to-MP11
+model-upgrade work.
+
+- [x] P7.1 Create MP11 source and figure inventory (`#50`).
+  - [x] P7.1a Record MP11 source metadata and checksum.
+  - [x] P7.1b Build the figure inventory with page anchors and captions.
+  - [x] P7.1c Add chart-family and downstream-use candidate fields.
+  - [x] P7.1d Identify extraction priority tiers and figures excluded from
+    digitization.
+  - [x] P7.1e Update roadmap, changelog, planning notes, and issue comments.
+- [x] P7.2 Prepare `figrecover` corpus and artifact conventions (`#51`).
+  - [x] P7.2a Confirm local optional dependency preflight.
+  - [x] P7.2b Prepare ignored runtime corpus paths.
+  - [x] P7.2c Render required MP11 figure pages with documented DPI and page
+    selection.
+  - [x] P7.2d Write corpus source/candidate manifests and record checksums.
+  - [x] P7.2e Update roadmap, changelog, planning notes, and issue comments.
+- [x] P7.3 Crop, classify, and calibrate MP11 figure candidates (`#52`).
+  - [x] P7.3a Crop selected figure candidates under ignored runtime paths.
+  - [x] P7.3b Classify extraction method and support status.
+  - [x] P7.3c Create calibration specs for high-priority numeric charts.
+  - [x] P7.3d Record crop checksums and calibration-review status.
+  - [x] P7.3e Update roadmap, changelog, planning notes, and issue comments.
+- [x] P7.4 Extract priority MP11 figure tables and QA overlays (`#53`).
+  - [x] P7.4a Extract line-chart priority figures.
+  - [x] P7.4b Extract bar/stacked/mixed-chart priority figures where feasible.
+  - [x] P7.4c Generate QA overlays and diagnostics.
+  - [x] P7.4d Register raw extraction outputs with provenance and checksums.
+  - [x] P7.4e Update roadmap, changelog, planning notes, and issue comments.
+- [x] P7.5 Review recovered outputs and classify downstream use (`#54`).
+  - [x] P7.5a Review high-priority extraction overlays.
+  - [x] P7.5b Cross-check against related MP11 tables/text when available.
+  - [x] P7.5c Assign review status and downstream-use classification.
+  - [x] P7.5d Write compact reviewed summary manifests.
+  - [x] P7.5e Update roadmap, changelog, planning notes, and Phase 6 handoff
+    comments.
+- [ ] P7.6 Close out docs, validation, and model-upgrade handoff (`#55`).
+  - [x] P7.6a Write the phase closeout summary and model-upgrade handoff note.
+  - [x] P7.6b Add or update Sphinx docs if the workflow should be user-facing.
+  - [x] P7.6c Run final validation checks.
+  - [ ] P7.6d Open and merge the Phase 7 PR.
+  - [ ] P7.6e Close parent and child issues with final links.
+
 ## Dependency Order
 
 The next phases must proceed in this order unless the maintainer explicitly
@@ -362,6 +437,14 @@ approves a narrower independent slice:
    decides artifact publication policy, then later Phase 5 tasks publish
    materializable artifacts, build full K3Z/TSA29-style Sphinx teaching docs,
    and run final release QA.
+6. **MP11 ingestion and comparison planning**: Phase 6 (`#42`) starts after the
+   Phase 5 teaching release and extracts the MP11 source package before any
+   model-upgrade implementation.
+7. **MP11 figure extraction test**: Phase 7 (`#49`) is a bounded evidence
+   lane upstream of MP10-to-MP11 model upgrades. It may run in parallel with
+   Phase 6 extraction planning, but recovered figure values cannot become model
+   inputs until reviewed and handed off through the relevant Phase 6 comparison
+   lanes.
 
 Guardrail: source extraction, THLB execution, cedar/expansion implementation,
 model-input generation, XML/Matrix Builder work, runtime packaging,
@@ -382,6 +465,16 @@ The Phase 1 follow-on issues are placed into the future roadmap as follows:
 
 ## Current Next Steps
 
+0. Phase 7 is active on branch `feature/p7-mp11-figure-extraction-test`.
+   Parent issue `#49` and child issues `#50` through `#55` define the full MP11
+   figure-extraction test upstream of any MP10-to-MP11 model upgrade. The final
+   closeout surface is `planning/tfl6_mp11_figure_extraction_closeout.md` with
+   matching CSV/JSON. Phase 7 inventoried `61` figures, reviewed all `36`
+   high-priority figures, promoted `22` figures to `accepted_for_comparison`,
+   assigned `14` figures to `reviewed_for_planning`, deferred `20`
+   medium-priority figures, and kept `5` context figures as inventory-only.
+   Every row remains `not_model_input`. The active edge is P7.6 final
+   validation, issue closeout, and PR merge.
 1. Phase 2 is closed. The instance `main` branch contains the Phase 2
    source-layer, THLB smoke, benchmark-tolerance, and Sphinx audit-trail
    surfaces; the parent FEMIC submodule pointer has been updated to the merged
