@@ -399,12 +399,12 @@ model-upgrade work.
   - [x] P7.5d Write compact reviewed summary manifests.
   - [x] P7.5e Update roadmap, changelog, planning notes, and Phase 6 handoff
     comments.
-- [ ] P7.6 Close out docs, validation, and model-upgrade handoff (`#55`).
+- [x] P7.6 Close out docs, validation, and model-upgrade handoff (`#55`).
   - [x] P7.6a Write the phase closeout summary and model-upgrade handoff note.
   - [x] P7.6b Add or update Sphinx docs if the workflow should be user-facing.
   - [x] P7.6c Run final validation checks.
-  - [ ] P7.6d Open and merge the Phase 7 PR.
-  - [ ] P7.6e Close parent and child issues with final links.
+  - [x] P7.6d Open and merge the Phase 7 PR.
+  - [x] P7.6e Close parent and child issues with final links.
 
 ## Dependency Order
 
@@ -465,16 +465,15 @@ The Phase 1 follow-on issues are placed into the future roadmap as follows:
 
 ## Current Next Steps
 
-0. Phase 7 is active on branch `feature/p7-mp11-figure-extraction-test`.
-   Parent issue `#49` and child issues `#50` through `#55` define the full MP11
-   figure-extraction test upstream of any MP10-to-MP11 model upgrade. The final
-   closeout surface is `planning/tfl6_mp11_figure_extraction_closeout.md` with
-   matching CSV/JSON. Phase 7 inventoried `61` figures, reviewed all `36`
-   high-priority figures, promoted `22` figures to `accepted_for_comparison`,
-   assigned `14` figures to `reviewed_for_planning`, deferred `20`
-   medium-priority figures, and kept `5` context figures as inventory-only.
-   Every row remains `not_model_input`. The active edge is P7.6 final
-   validation, issue closeout, and PR merge.
+0. Phase 7 is closed. PR `#56` merged the MP11 figure-extraction test
+   closeout into `main`. The final closeout surface is
+   `planning/tfl6_mp11_figure_extraction_closeout.md` with matching CSV/JSON.
+   Phase 7 inventoried `61` figures, reviewed all `36` high-priority figures,
+   promoted `22` figures to `accepted_for_comparison`, assigned `14` figures
+   to `reviewed_for_planning`, deferred `20` medium-priority figures, and kept
+   `5` context figures as inventory-only. Every row remains
+   `not_model_input`. The next active edge is Phase 6 MP11 extraction and
+   model-overhaul planning from the reviewed figure evidence.
 1. Phase 2 is closed. The instance `main` branch contains the Phase 2
    source-layer, THLB smoke, benchmark-tolerance, and Sphinx audit-trail
    surfaces; the parent FEMIC submodule pointer has been updated to the merged
