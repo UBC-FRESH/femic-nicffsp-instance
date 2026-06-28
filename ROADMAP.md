@@ -402,7 +402,7 @@ model-upgrade work.
 - [ ] P7.6 Close out docs, validation, and model-upgrade handoff (`#55`).
   - [x] P7.6a Write the phase closeout summary and model-upgrade handoff note.
   - [x] P7.6b Add or update Sphinx docs if the workflow should be user-facing.
-  - [ ] P7.6c Run final validation checks.
+  - [x] P7.6c Run final validation checks.
   - [ ] P7.6d Open and merge the Phase 7 PR.
   - [ ] P7.6e Close parent and child issues with final links.
 
