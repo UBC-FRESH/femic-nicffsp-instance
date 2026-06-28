@@ -473,12 +473,12 @@ Phase 5 runtime as the accepted baseline.
   - [x] P8.4c Define MHA extraction and contract requirements.
   - [x] P8.4d Define base-case, max-short-term, AAC recommendation, and
     sensitivity scenario policies.
-- [ ] P8.5 Define MP11 KPI, QA, and reporting targets (`#63`).
-  - [ ] P8.5a Define accepted comparison targets and planning-only target
+- [x] P8.5 Define MP11 KPI, QA, and reporting targets (`#63`).
+  - [x] P8.5a Define accepted comparison targets and planning-only target
     families.
-  - [ ] P8.5b Define KPI output schemas and report groups.
-  - [ ] P8.5c Define comparison tolerances and validation-strength labels.
-  - [ ] P8.5d Write the KPI/QA/reporting contract.
+  - [x] P8.5b Define KPI output schemas and report groups.
+  - [x] P8.5c Define comparison tolerances and validation-strength labels.
+  - [x] P8.5d Write the KPI/QA/reporting contract.
 - [ ] P8.6 Close Phase 8 and split rebuild phases (`#64`).
   - [ ] P8.6a Audit Phase 8 child issues and artifacts.
   - [ ] P8.6b Draft follow-on rebuild phase issue tree.
@@ -550,13 +550,12 @@ The Phase 1 follow-on issues are placed into the future roadmap as follows:
 ## Current Next Steps
 
 0. Phase 8 is active on branch
-   `feature/p8-mp11-public-data-implementation-foundation`. P8.1 through P8.4
+   `feature/p8-mp11-public-data-implementation-foundation`. P8.1 through P8.5
    are complete. The newest contract,
-   `planning/tfl6_mp11_operability_harvest_mha_scenario_contract.md`, separates
-   physical operability, harvest-system class, helicopter economic
-   operability, MHA, and scenario policy from AU identity and keeps aggregate
-   MP11 behavior values as comparison targets. The active edge is P8.5: define
-   MP11 KPI, QA, and reporting targets.
+   `planning/tfl6_mp11_kpi_qa_reporting_contract.md`, defines MP11 comparison
+   targets, validation-strength labels, mandatory scenario output groups,
+   KPI/reporting surfaces, tolerance guidance, and required QA outputs. The
+   active edge is P8.6: close Phase 8 and split rebuild phases.
 1. Phase 7 is closed. PR `#56` merged the MP11 figure-extraction test
    closeout into `main`. The final closeout surface is
    `planning/tfl6_mp11_figure_extraction_closeout.md` with matching CSV/JSON.

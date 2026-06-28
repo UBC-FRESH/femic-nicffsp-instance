@@ -1,5 +1,22 @@
 # Change Log
 
+## 2026-06-28 - Completed P8.5 MP11 KPI, QA, and reporting contract
+
+- added `planning/tfl6_mp11_kpi_qa_reporting_contract.md` to define MP11
+  comparison targets, validation-strength labels, KPI/reporting surfaces, and
+  QA expectations for future model-output comparisons;
+- separated source text/table targets, accepted figure comparisons,
+  planning-only figure context, deferred optional figures, qualitative context,
+  and unavailable-non-public targets;
+- defined mandatory scenario output groups for base case, maintain-current-AAC,
+  maximum-short-term, yield sensitivities, policy sensitivities, and AAC
+  recommendation comparisons;
+- recorded required KPI surfaces for harvest flow, growing stock,
+  harvest-system, harvested area, volume per hectare, harvest age, block size,
+  species, elevation, age class, cedar, old cedar, and old seral reporting; and
+- kept all P8.5 work in the planning/contract layer with no runtime reports
+  generated and no planning-only figure evidence promoted.
+
 ## 2026-06-28 - Completed P8.4 MP11 operability, harvest-system, MHA, and scenario contract
 
 - added `planning/tfl6_mp11_operability_harvest_mha_scenario_contract.md` to
