@@ -1,0 +1,26 @@
+{
+  "generated_at_utc": "2026-06-28T21:35:42.514363+00:00",
+  "summary": {
+    "step_id": "mp11_t12_290",
+    "label": "Current THLB",
+    "step_kind": "checkpoint",
+    "source_area_ha": 122764.83599793361,
+    "deducted_area_ha": 0.0,
+    "retained_area_ha": 122764.83599793361,
+    "mp11_target_ha": 120099.0,
+    "delta_to_mp11_ha": 2665.835997933609,
+    "delta_to_mp11_pct": 2.219698746811888,
+    "input_fragment_count": 40528,
+    "active_fragment_count": 40528,
+    "deducted_fragment_count": 0,
+    "balance_error_ha": 0.0,
+    "checkpoint_status": "p9rf_resultant_checkpoint",
+    "artifact_gpkg": "planning/tfl6_mp11_p9rf_table12_step_290.gpkg",
+    "notes": "Checkpoint only; no deduction at this Table 12 row."
+  },
+  "area_balance_passed": true,
+  "layers": {
+    "active_fragments": "retained resultant fragments after this step",
+    "deducted_fragments": "fragments removed by this step"
+  }
+}

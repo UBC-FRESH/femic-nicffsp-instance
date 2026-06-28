@@ -667,13 +667,13 @@ model-input work.
     residuals.
   - [x] P9D.4d Emit Markdown/CSV/JSON scenario reports.
   - [x] P9D.4e Recommend lock/defer with rationale.
-- [ ] P9D.5 Lock or defer Step 220 and refresh P9RF outputs (`#105`).
-  - [ ] P9D.5a Decide lock/defer for Step 220 with maintainer rationale.
-  - [ ] P9D.5b Patch P9RF rebuild and contract if accepted.
-  - [ ] P9D.5c Rerun P9RF and compare Steps 220, 280, 290, and 310.
-  - [ ] P9D.5d Update generated reports, roadmap, changelog, and planning
+- [x] P9D.5 Lock or defer Step 220 and refresh P9RF outputs (`#105`).
+  - [x] P9D.5a Decide lock/defer for Step 220 with maintainer rationale.
+  - [x] P9D.5b Patch P9RF rebuild and contract if accepted.
+  - [x] P9D.5c Rerun P9RF and compare Steps 220, 280, 290, and 310.
+  - [x] P9D.5d Update generated reports, roadmap, changelog, and planning
     notes.
-  - [ ] P9D.5e Run validation and close the phase.
+  - [x] P9D.5e Run validation and close the phase.
 
 ## Phase 11: MP11 Model-Input Bundle And ForestModel XML Rebuild (`#68`)
 
@@ -684,12 +684,10 @@ accepted source-layer, THLB, AU/yield, treatment, transition, MHA,
 harvest-system, and reporting contracts.
 
 Phase 11 must not proceed until Phase 10R closes with accepted curve candidates
-or an explicit maintainer-approved blocker path. Phase 9D must also close with
-either an accepted public DEM Step 220 proxy or an explicit maintainer-approved
-deferral, because the THLB surface is not final while the known public DEM
-steep-slope proxy remains untested. Existing P11 issues `#86` through `#91`
-are retained as the future model-input/XML issue tree, but they are not active
-work.
+or an explicit maintainer-approved blocker path. Phase 9D is complete and
+Step 220 now has an accepted public CDED steep-slope proxy in the P9RF THLB
+surface. Existing P11 issues `#86` through `#91` are retained as the future
+model-input/XML issue tree, but they are not active work.
 
 - [ ] P11.1 Launch MP11 model-input/XML rebuild execution plan (`#86`).
   - [ ] P11.1a Audit governing contracts and handoff blockers.
@@ -819,13 +817,13 @@ The Phase 1 follow-on issues are placed into the future roadmap as follows:
 
 ## Current Next Steps
 
-0. Phase 9D is active on the current P9RF branch as an urgent THLB
-   residual-repair lane. P9D.1-P9D.4 (`#101`-`#104`) are complete. The active
-   edge is P9D.5 (`#105`): decide whether to lock the recommended public CDED
-   candidate for MP11 Table 12 Step 220. The current recommended
-   whole-fragment proxy is `slope >= 70%` on at least `75%` of valid CDED
-   pixels in a Step 210 resultant fragment, yielding `1,801.705 ha` against
-   the MP11 Step 220 target `1,820.000 ha` (`-18.295 ha`, `-1.005%`).
+0. Phase 9D is complete. The accepted public CDED Step 220 proxy deducts
+   fragments where `slope >= 70%` on at least `75%` of valid CDED pixels in a
+   Step 210 resultant fragment, yielding `1,801.705 ha` against the MP11
+   Step 220 target `1,820.000 ha` (`-18.295 ha`, `-1.005%`). After the full
+   P9RF rerun, Step 290 Current THLB is `122,764.836 ha` (`+2,665.836 ha`
+   versus MP11), and Step 310 Long-term Land Base is `121,338.039 ha`
+   (`+2,666.039 ha` versus MP11).
 1. Phase 10R is active on branch
    `feature/p10r-curve-rebuild-roadmap-correction`. P10R.1 is complete.
    `planning/tfl6_mp11_phase10r_curve_rebuild_execution_plan.md` records the

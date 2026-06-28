@@ -1,0 +1,26 @@
+{
+  "generated_at_utc": "2026-06-28T21:35:30.032217+00:00",
+  "summary": {
+    "step_id": "mp11_t12_220",
+    "label": "Terrain Stability - LiDAR 90% + Slope",
+    "step_kind": "deduction_proxy",
+    "source_area_ha": 129210.10262294936,
+    "deducted_area_ha": 1801.7045786667948,
+    "retained_area_ha": 127408.39804428256,
+    "mp11_target_ha": 1820.0,
+    "delta_to_mp11_ha": -18.29542133320524,
+    "delta_to_mp11_pct": -1.0052429303958923,
+    "input_fragment_count": 43530,
+    "active_fragment_count": 42599,
+    "deducted_fragment_count": 931,
+    "balance_error_ha": 7.503331289626658e-12,
+    "checkpoint_status": "locked_p9rf_step220_public_cded_steep_slope_proxy",
+    "artifact_gpkg": "planning/tfl6_mp11_p9rf_table12_step_220.gpkg",
+    "notes": "Accepted public CDED steep-slope proxy for MP11 Step 220. The rule deducts true Step 210 resultant fragments where at least 75% of valid CDED pixels are >=70% slope, based on `planning/tfl6_mp11_p9d_public_dem_slope_zonal_stats.csv` and scenario report `planning/tfl6_mp11_p9d_step220_dem_slope_scenarios.md`. CDED is coarser and smoother than LiDAR, so this is a public-data teaching/research proxy, not WFP LiDAR equivalence."
+  },
+  "area_balance_passed": true,
+  "layers": {
+    "active_fragments": "retained resultant fragments after this step",
+    "deducted_fragments": "fragments removed by this step"
+  }
+}

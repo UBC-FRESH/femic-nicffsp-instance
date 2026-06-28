@@ -1,0 +1,499 @@
+schema_version: 1
+recipe_kind: mp11_table12_thlb_netdown_contract
+phase: P9R
+contract:
+  status: p9r_active_validation_backbone
+  source_table: Appendix B Table 12 Timber Harvesting Land Base Netdown (ha) for TFL 6
+  source_pdf_pages: [284, 285]
+  planning_contract: planning/tfl6_mp11_p9r_table12_netdown_step_contract.md
+  notes:
+    - Each active P9R validation step maps to one MP11 Table 12 line item or checkpoint.
+    - The prior grouped mp11_nd_060 conservation overlay is exploratory and invalid for validation.
+comparison_targets:
+  total_landbase_ha: 217197.0
+  total_forested_ha: 196233.0
+  productive_forest_ha: 187425.0
+  total_operable_ha: 156305.0
+  current_thlb_ha: 120099.0
+  long_term_landbase_ha: 118672.0
+steps:
+  - step_id: mp11_t12_000
+    order: 0
+    table12_classification: "Total Land Base"
+    row_type: checkpoint
+    total_area_ha: 217197
+    schedule_a_net_ha: 23578
+    schedule_b_net_ha: 193619
+    grand_total_net_ha: 217197
+    implementation_lane: accounting_universe
+    public_data_status: public_rebuild
+    validation_role: direct_checkpoint
+    source_anchor: "Appendix B Table 12, PDF page 284"
+    source_ids: ["tfl6_aoi_current", "vri_2025_r1_tfl6"]
+    p9r_status: implemented_p9r_step_000
+    notes: "Boundary/accounting checkpoint before deductions."
+  - step_id: mp11_t12_010
+    order: 10
+    table12_classification: "Less Non-forest"
+    row_type: deduction
+    total_area_ha: 15943
+    schedule_a_net_ha: 231
+    schedule_b_net_ha: 15712
+    grand_total_net_ha: 15943
+    implementation_lane: attribute_rule
+    public_data_status: public_proxy
+    validation_role: direct_line_item
+    source_anchor: "Appendix B Table 12, PDF page 284"
+    source_ids: ["vri_2025_r1_tfl6"]
+    p9r_status: implemented_p9r_step_010a_010b
+    notes: "P9R split this into audited non-forest and non-treed candidate components to match the forested checkpoint."
+  - step_id: mp11_t12_020
+    order: 20
+    table12_classification: "Less Existing Roads & Powerlines"
+    row_type: deduction
+    total_area_ha: 5261
+    schedule_a_net_ha: 705
+    schedule_b_net_ha: 4316
+    grand_total_net_ha: 5021
+    implementation_lane: overlay_rule
+    public_data_status: public_proxy
+    validation_role: direct_line_item
+    source_anchor: "Appendix B Table 12, PDF page 284; Appendix A Table 4"
+    source_ids: ["dra_roads_tfl6", "powerline_source_missing"]
+    p9r_status: implemented_p9r_step_020_roads_only
+    notes: "P9R has road-buffer net area accounting only. Powerline contribution is not separately materialized."
+  - step_id: mp11_t12_030
+    order: 30
+    table12_classification: "Total Forested"
+    row_type: checkpoint
+    total_area_ha: null
+    schedule_a_net_ha: 22643
+    schedule_b_net_ha: 173590
+    grand_total_net_ha: 196233
+    implementation_lane: checkpoint
+    public_data_status: public_rebuild
+    validation_role: direct_checkpoint
+    source_anchor: "Appendix B Table 12, PDF page 284"
+    source_ids: []
+    p9r_status: implemented_p9r_step_030
+    notes: "Checkpoint after non-forest and existing roads/powerlines."
+  - step_id: mp11_t12_040
+    order: 40
+    table12_classification: "Less Non-productive"
+    row_type: deduction
+    total_area_ha: 14939
+    schedule_a_net_ha: 519
+    schedule_b_net_ha: 8289
+    grand_total_net_ha: 8808
+    implementation_lane: attribute_rule
+    public_data_status: public_proxy_plus_unavailable_gap
+    validation_role: direct_line_item
+    source_anchor: "Appendix B Table 12, PDF page 284"
+    source_ids: ["vri_2025_r1_tfl6", "vdyp7_2025_poly_tfl6", "wfp_lbb_iti_lefi_unavailable"]
+    p9r_status: implemented_p9r_step_040_locked_public_proxy
+    notes: "P9R locked the closest auditable public-data proxy and retained the residual benchmark gap."
+  - step_id: mp11_t12_050
+    order: 50
+    table12_classification: "Total Productive"
+    row_type: checkpoint
+    total_area_ha: null
+    schedule_a_net_ha: 22123
+    schedule_b_net_ha: 165301
+    grand_total_net_ha: 187425
+    implementation_lane: checkpoint
+    public_data_status: public_rebuild
+    validation_role: direct_checkpoint
+    source_anchor: "Appendix B Table 12, PDF page 284"
+    source_ids: []
+    p9r_status: implemented_p9r_step_050_aflb_checkpoint
+    notes: "AFLB/PFLB checkpoint. P9R saved a GeoPackage milestone artifact."
+  - step_id: mp11_t12_060
+    order: 60
+    table12_classification: "Low Sites"
+    row_type: deduction
+    total_area_ha: 20484
+    schedule_a_net_ha: 913
+    schedule_b_net_ha: 9013
+    grand_total_net_ha: 9927
+    implementation_lane: attribute_or_lidar_proxy
+    public_data_status: public_proxy_plus_unavailable_gap
+    validation_role: direct_line_item
+    source_anchor: "Appendix B Table 12, PDF page 284"
+    source_ids: ["vri_2025_r1_tfl6", "public_dem_slope_candidate_missing", "wfp_lbb_iti_lefi_unavailable"]
+    p9r_status: locked_p9r_public_proxy_step_060
+    notes: "Locked P9R public-data proxy is site_index <= 9. MP11 uses LiDAR/LEFI/ITI-style evidence not available in public data."
+  - step_id: mp11_t12_070
+    order: 70
+    table12_classification: "Less Inoperable"
+    row_type: deduction
+    total_area_ha: 52405
+    schedule_a_net_ha: 1974
+    schedule_b_net_ha: 19218
+    grand_total_net_ha: 21193
+    implementation_lane: operability_proxy
+    public_data_status: public_proxy_plus_unavailable_gap
+    validation_role: direct_line_item
+    source_anchor: "Appendix B Table 12, PDF page 284; Appendix B Table 19"
+    source_ids: ["public_dem_slope_candidate_missing", "wfp_lbb_iti_lefi_unavailable"]
+    p9r_status: locked_p9r_public_proxy_step_070
+    notes: "Locked P9R public-data proxy is live_stand_volume_125 < 85. Requires WFP LBB/physical operability evidence for direct MP11 equivalence."
+  - step_id: mp11_t12_080
+    order: 80
+    table12_classification: "Total Operable"
+    row_type: checkpoint
+    total_area_ha: null
+    schedule_a_net_ha: 19236
+    schedule_b_net_ha: 137069
+    grand_total_net_ha: 156305
+    implementation_lane: checkpoint
+    public_data_status: comparison_target
+    validation_role: direct_checkpoint
+    source_anchor: "Appendix B Table 12, PDF page 284"
+    source_ids: []
+    p9r_status: implemented_p9r_step_080_total_operable_checkpoint
+    notes: "Checkpoint after locked public-data low-sites and inoperable proxy deductions."
+  - step_id: mp11_t12_090
+    order: 90
+    table12_classification: "Riparian Management"
+    row_type: deduction
+    total_area_ha: 57033
+    schedule_a_net_ha: 535
+    schedule_b_net_ha: 4945
+    grand_total_net_ha: 5479
+    implementation_lane: overlay_rule
+    public_data_status: public_proxy_plus_lidar_gap
+    validation_role: direct_line_item
+    source_anchor: "Appendix B Table 12, PDF page 284; Appendix B Table 21"
+    source_ids: ["fwa_stream_networks_tfl6", "fwa_lakes_tfl6", "fwa_wetlands_tfl6", "shoreline_candidate_missing"]
+    p9r_status: locked_p9rf_resultant_step090
+    notes: "P9RF resultant-fragment public-data proxy uses FWA streams buffered 10 m plus FWA lake/wetland footprints. This is accepted for the teaching/research public-data lane but is not WFP LiDAR riparian equivalence."
+  - step_id: mp11_t12_100
+    order: 100
+    table12_classification: "Ungulate Winter Ranges"
+    row_type: deduction
+    total_area_ha: 2366
+    schedule_a_net_ha: 1
+    schedule_b_net_ha: 1618
+    grand_total_net_ha: 1619
+    implementation_lane: overlay_rule
+    public_data_status: public_rebuild
+    validation_role: direct_line_item
+    source_anchor: "Appendix B Table 12, PDF page 284; Appendix B Table 22"
+    source_ids: ["uwr_approved_tfl6"]
+    p9r_status: locked_p9rf_resultant_step100
+    notes: "P9RF resultant-fragment public-data rebuild uses approved public UWR polygons after Step 090. Accepted for the teaching/research public-data lane with current-vintage caveat."
+  - step_id: mp11_t12_110
+    order: 110
+    table12_classification: "Old Growth Management Areas"
+    row_type: deduction
+    total_area_ha: 16146
+    schedule_a_net_ha: 7
+    schedule_b_net_ha: 5485
+    grand_total_net_ha: 5491
+    implementation_lane: overlay_rule
+    public_data_status: public_rebuild_with_vintage_caveat
+    validation_role: direct_line_item
+    source_anchor: "Appendix B Table 12, PDF page 284"
+    source_ids: ["ogma_legal_current_tfl6"]
+    p9r_status: locked_p9rf_resultant_step110
+    notes: "P9RF resultant-fragment public-data rebuild uses current legal public OGMA polygons after Step 100. Accepted for the teaching/research public-data lane because gross legal OGMA geometry closely matches MP11; ordered net residual remains a documented WFP private-data/upstream-overlap gap."
+  - step_id: mp11_t12_120
+    order: 120
+    table12_classification: "Old Growth Management Areas - Proposed"
+    row_type: deduction
+    total_area_ha: 17609
+    schedule_a_net_ha: 447
+    schedule_b_net_ha: 4870
+    grand_total_net_ha: 5317
+    implementation_lane: overlay_or_aspatial_proxy
+    public_data_status: public_proxy_plus_unavailable_gap
+    validation_role: direct_line_item
+    source_anchor: "Appendix B Table 12, PDF page 284"
+    source_ids: ["ogma_non_legal_current_tfl6_proxy", "proposed_ogma_source_unavailable"]
+    p9r_status: locked_p9rf_resultant_step120
+    notes: "P9RF Step 120 uses an oldest-remaining-fragment benchmark proxy because proposed OGMA geometry is unavailable and current non-legal OGMA is only proxy evidence, not a direct source. Accepted for the teaching/research public-data lane because the resultant net deduction is within 3 ha of MP11 while the source-availability caveat remains explicit."
+  - step_id: mp11_t12_130
+    order: 130
+    table12_classification: "Wildlife Habitat Areas - Legal"
+    row_type: deduction
+    total_area_ha: 2760
+    schedule_a_net_ha: 1
+    schedule_b_net_ha: 413
+    grand_total_net_ha: 414
+    implementation_lane: overlay_rule
+    public_data_status: public_rebuild_with_vintage_caveat
+    validation_role: direct_line_item
+    source_anchor: "Appendix B Table 12, PDF page 284; Appendix B Table 24"
+    source_ids: ["wha_approved_tfl6"]
+    p9r_status: locked_p9rf_resultant_step130
+    notes: "P9RF Step 130 uses approved public WHA polygons as a separate resultant-fragment overlay after Step 120. Accepted for the teaching/research public-data lane as a defensible public legal-WHA overlay with explicit current-vintage and private-upstream-overlap caveats; the high net delta is documented rather than tuned away."
+  - step_id: mp11_t12_140
+    order: 140
+    table12_classification: "Wildlife Habitat Areas - Proposed"
+    row_type: deduction
+    total_area_ha: 676
+    schedule_a_net_ha: 1
+    schedule_b_net_ha: 16
+    grand_total_net_ha: 17
+    implementation_lane: overlay_or_aspatial_proxy
+    public_data_status: unavailable_non_public_or_proxy
+    validation_role: direct_line_item
+    source_anchor: "Appendix B Table 12, PDF page 284; Appendix B Table 25"
+    source_ids: ["proposed_wha_source_unavailable"]
+    p9r_status: review_required_p9rf_step140_proposed_wha_source_unavailable
+    notes: "No separate public proposed-WHA geometry is available in the current source stack. P9RF Step 140 is carried forward as an explicit zero-deduction source-unavailable placeholder rather than an arbitrary benchmark-tuned proxy for the small MP11 17 ha net deduction."
+  - step_id: mp11_t12_150
+    order: 150
+    table12_classification: "Uneconomic"
+    row_type: deduction
+    total_area_ha: 86
+    schedule_a_net_ha: 0
+    schedule_b_net_ha: 20
+    grand_total_net_ha: 20
+    implementation_lane: economic_operability_proxy
+    public_data_status: public_proxy_plus_unavailable_gap
+    validation_role: direct_line_item
+    source_anchor: "Appendix B Table 12, PDF page 284"
+    source_ids: ["wfp_lbb_iti_lefi_unavailable"]
+    p9r_status: review_required_p9rf_step150_wfp_economic_operability_source_unavailable
+    notes: "MP11 Step 150 is a small uneconomic deduction tied to WFP LBB/ITI/LEFI/economic-operability evidence that is unavailable in the public source stack. P9RF carries it forward as an explicit zero-deduction source-unavailable placeholder rather than an arbitrary 20 ha proxy."
+  - step_id: mp11_t12_160
+    order: 160
+    table12_classification: "Deciduous-leading"
+    row_type: deduction
+    total_area_ha: 4294
+    schedule_a_net_ha: 41
+    schedule_b_net_ha: 1536
+    grand_total_net_ha: 1576
+    implementation_lane: attribute_rule
+    public_data_status: public_rebuild
+    validation_role: direct_line_item
+    source_anchor: "Appendix B Table 12, PDF page 284"
+    source_ids: ["vri_2025_r1_tfl6", "vdyp7_2025_poly_tfl6"]
+    p9r_status: locked_p9rf_resultant_step160
+    notes: "P9RF Step 160 applies a calibrated public inventory rule: remove whole resultant fragments where `species_cd_1` is one of DR, AC, or MB and `species_pct_1 >= 90`. This keeps the rule focused on deciduous-dominant leading-species stands without removing deciduous secondary components in conifer-leading stands."
+  - step_id: mp11_t12_170
+    order: 170
+    table12_classification: "Recreation"
+    row_type: deduction
+    total_area_ha: 20
+    schedule_a_net_ha: 0
+    schedule_b_net_ha: 6
+    grand_total_net_ha: 6
+    implementation_lane: overlay_rule
+    public_data_status: public_rebuild
+    validation_role: direct_line_item
+    source_anchor: "Appendix B Table 12, PDF page 284"
+    source_ids: ["recreation_trails_tfl6", "recreation_polygons_tfl6", "recreation_site_points_tfl6"]
+    p9r_status: locked_p9rf_resultant_step170
+    notes: "P9RF Step 170 uses active public recreation polygon features where `RECREATION_FEATURE_CODE` is L5. Accepted for the teaching/research public-data lane as a small, field-driven recreation-feature proxy with gross area close to MP11; broader recreation polygons materially overstate the row and trails/points remain context-only unless separately accepted."
+  - step_id: mp11_t12_180
+    order: 180
+    table12_classification: "Known Archaeological Sites"
+    row_type: deduction
+    total_area_ha: 893
+    schedule_a_net_ha: 186
+    schedule_b_net_ha: 341
+    grand_total_net_ha: 527
+    implementation_lane: sensitive_overlay_or_aspatial_policy
+    public_data_status: unavailable_sensitive_data
+    validation_role: direct_line_item
+    source_anchor: "Appendix B Table 12, PDF page 284"
+    source_ids: ["archaeology_source_unavailable"]
+    p9r_status: skipped_p9rf_step180_public_data_only_sensitive_source_excluded
+    notes: "Known archaeological-site geometry is sensitive/source-restricted and unavailable in the public source stack. P9RF intentionally skips this row because the unrestricted teaching and learning model instance uses only publicly available data; do not infer geometry from aggregate area."
+  - step_id: mp11_t12_190
+    order: 190
+    table12_classification: "Existing Stand-level Reserves"
+    row_type: deduction
+    total_area_ha: 7747
+    schedule_a_net_ha: 598
+    schedule_b_net_ha: 2491
+    grand_total_net_ha: 3089
+    implementation_lane: overlay_or_aspatial_proxy
+    public_data_status: public_proxy_plus_unavailable_gap
+    validation_role: direct_line_item
+    source_anchor: "Appendix B Table 12, PDF page 284; Appendix B Table 34"
+    source_ids: ["existing_wtra_source_unavailable"]
+    p9r_status: locked_p9rf_resultant_step190
+    notes: "Existing WTRA spatial inventory is not available in the public source stack. P9RF Step 190 uses an oldest-remaining-whole-fragment proxy candidate to approximate the MP11 net target for the public teaching lane. Accepted as an old-seral reserve proxy, not a reconstruction of WFP operational WTRA geometry."
+  - step_id: mp11_t12_200
+    order: 200
+    table12_classification: "Research Site"
+    row_type: deduction
+    total_area_ha: 112
+    schedule_a_net_ha: null
+    schedule_b_net_ha: 13
+    grand_total_net_ha: 13
+    implementation_lane: sensitive_overlay_or_aspatial_policy
+    public_data_status: unavailable_sensitive_data
+    validation_role: direct_line_item
+    source_anchor: "Appendix B Table 12, PDF page 284; Appendix A Table 7"
+    source_ids: ["research_site_source_unavailable"]
+    p9r_status: skipped_p9rf_step200_public_data_only_sensitive_source_excluded
+    notes: "Research-site and PSP-style location geometry is sensitive or source-restricted and unavailable in the public source stack. P9RF intentionally skips this row because the unrestricted teaching and learning model instance uses only publicly available data; do not infer geometry from aggregate area."
+  - step_id: mp11_t12_210
+    order: 210
+    table12_classification: "Terrain Stability - Class 5"
+    row_type: deduction
+    total_area_ha: 9257
+    schedule_a_net_ha: 300
+    schedule_b_net_ha: 1693
+    grand_total_net_ha: 1993
+    implementation_lane: terrain_overlay_proxy
+    public_data_status: public_proxy_plus_unavailable_gap
+    validation_role: direct_line_item
+    source_anchor: "Appendix B Table 12, PDF page 285; Appendix B Table 37"
+    source_ids: ["terrain_stability_source_unavailable"]
+    p9r_status: deferred_p9rf_step210_public_terrain_stability_source_needed
+    notes: "No accepted public DTSM terrain-stability Class 5 source is materialized in the current source stack. P9RF carries the row as a zero-deduction deferred public-source placeholder until a reviewed terrain materialization lane exists."
+  - step_id: mp11_t12_220
+    order: 220
+    table12_classification: "Terrain Stability - LiDAR 90% + Slope"
+    row_type: deduction
+    total_area_ha: 10020
+    schedule_a_net_ha: 273
+    schedule_b_net_ha: 1547
+    grand_total_net_ha: 1820
+    implementation_lane: terrain_overlay_proxy
+    public_data_status: public_proxy_plus_lidar_gap
+    validation_role: direct_line_item
+    source_anchor: "Appendix B Table 12, PDF page 285; Appendix B Table 37"
+    source_ids: ["public_cded_1_250000_dem_slope_proxy", "lidar_slope_source_unavailable"]
+    p9r_status: locked_p9rf_step220_public_cded_steep_slope_proxy
+    notes: "Accepted public CDED steep-slope proxy for MP11 Step 220. P9RF deducts true Step 210 resultant fragments where at least 75% of valid CDED pixels are >=70% slope, based on `planning/tfl6_mp11_p9d_public_dem_slope_zonal_stats.csv` and `planning/tfl6_mp11_p9d_step220_dem_slope_scenarios.md`. This is a public-data teaching/research proxy and not WFP LiDAR equivalence."
+  - step_id: mp11_t12_230
+    order: 230
+    table12_classification: "Permanent Sample Plots"
+    row_type: deduction
+    total_area_ha: 180
+    schedule_a_net_ha: null
+    schedule_b_net_ha: 134
+    grand_total_net_ha: 134
+    implementation_lane: public_vector_overlay
+    public_data_status: public_proxy_available
+    validation_role: direct_line_item
+    source_anchor: "Appendix B Table 12, PDF page 285; Appendix A Table 7"
+    source_ids: ["WHSE_FOREST_VEGETATION.ISMC_PSP_ACTIVE_SITES_SP", "psp_active_sites_public_tfl6"]
+    p9r_status: locked_p9rf_step230_public_active_psp_proxy
+    notes: "Public BC Data Catalogue active PSP polygons are available for TFL6. The P9RF public-data lane uses all TFL6-clipped active PSP polygons from `WHSE_FOREST_VEGETATION.ISMC_PSP_ACTIVE_SITES_SP`, accepting the public geometry as-is rather than filtering lower-coordinate-confidence 300 m buffers. This is a reproducible public-data proxy, not a WFP private Patchworks source-layer equivalent."
+  - step_id: mp11_t12_240
+    order: 240
+    table12_classification: "Big Tree Reserves"
+    row_type: deduction
+    total_area_ha: 85
+    schedule_a_net_ha: 18
+    schedule_b_net_ha: 24
+    grand_total_net_ha: 42
+    implementation_lane: overlay_or_aspatial_proxy
+    public_data_status: public_proxy_plus_unavailable_gap
+    validation_role: direct_line_item
+    source_anchor: "Appendix B Table 12, PDF page 285; Appendix A Table 7"
+    source_ids: ["big_tree_registry_or_wfp_big_tree_source_needed"]
+    p9r_status: deferred_p9rf_step240_public_big_tree_source_needed
+    notes: "No accepted public big-tree reserve or registry-derived geometry is materialized in the current source stack. P9RF carries the row as a zero-deduction deferred public-source placeholder until a reviewed public source exists."
+  - step_id: mp11_t12_250
+    order: 250
+    table12_classification: "Karst"
+    row_type: deduction
+    total_area_ha: 26673
+    schedule_a_net_ha: 577
+    schedule_b_net_ha: 3144
+    grand_total_net_ha: 3721
+    implementation_lane: overlay_or_aspatial_proxy
+    public_data_status: public_proxy_plus_unavailable_gap
+    validation_role: direct_line_item
+    source_anchor: "Appendix B Table 12, PDF page 285; Appendix A Table 7"
+    source_ids: ["karst_public_source_needed"]
+    p9r_status: deferred_p9rf_step250_public_karst_source_needed
+    notes: "No accepted public karst likelihood, karst protection, or operational karst reserve geometry is materialized in the current source stack. P9RF carries the row as a zero-deduction deferred public-source placeholder until a reviewed karst source exists."
+  - step_id: mp11_t12_260
+    order: 260
+    table12_classification: "Unknown Cultural Features within Quatsino TUS Zone"
+    row_type: deduction
+    total_area_ha: 57909
+    schedule_a_net_ha: 67
+    schedule_b_net_ha: 385
+    grand_total_net_ha: 453
+    implementation_lane: sensitive_overlay_or_aspatial_policy
+    public_data_status: unavailable_sensitive_data
+    validation_role: direct_line_item
+    source_anchor: "Appendix B Table 12, PDF page 285"
+    source_ids: ["tus_cultural_source_unavailable"]
+    p9r_status: skipped_p9rf_step260_public_data_only_sensitive_source_excluded
+    notes: "Unknown cultural-feature and TUS-zone geometry is sensitive or source-restricted and unavailable in the public source stack. P9RF intentionally skips this row because the unrestricted teaching and learning model instance uses only publicly available data; do not infer geometry from aggregate area."
+  - step_id: mp11_t12_270
+    order: 270
+    table12_classification: "Future Stand-level Reserves"
+    row_type: deduction
+    total_area_ha: null
+    schedule_a_net_ha: 470
+    schedule_b_net_ha: 4013
+    grand_total_net_ha: 4483
+    implementation_lane: aspatial_policy
+    public_data_status: public_parameter_rebuild
+    validation_role: direct_line_item
+    source_anchor: "Appendix B Table 12, PDF page 285; Appendix B Tables 41-43"
+    source_ids: ["bec_tfl6", "landscape_units_tfl6", "wscp_zone_source_needed"]
+    p9r_status: review_required_p9rf_step270_future_stand_reserve_old_seral_proxy_candidate
+    notes: "Future stand-level reserve geometry is a policy/model-time assumption rather than a public current-condition overlay. P9RF Step 270 uses an oldest-remaining-whole-fragment proxy candidate to approximate the MP11 net target for the public teaching lane. This is an old-seral retention proxy, not a reconstruction of WFP Patchworks future WTRA placement."
+  - step_id: mp11_t12_280
+    order: 280
+    table12_classification: "Total Operable Reductions"
+    row_type: checkpoint
+    total_area_ha: null
+    schedule_a_net_ha: 3521
+    schedule_b_net_ha: 32695
+    grand_total_net_ha: 36216
+    implementation_lane: checkpoint
+    public_data_status: comparison_target
+    validation_role: direct_checkpoint
+    source_anchor: "Appendix B Table 12, PDF page 285"
+    source_ids: []
+    p9r_status: p9rf_total_operable_reductions_checkpoint
+    notes: "P9RF checkpoint reached. Reports cumulative P9RF operable reductions from Step 090 through Step 270 against the MP11 total-operable-reductions target. Table 12 rounded total; individual rounded rows sum to 36,214 ha."
+  - step_id: mp11_t12_290
+    order: 290
+    table12_classification: "Current THLB"
+    row_type: checkpoint
+    total_area_ha: null
+    schedule_a_net_ha: 15717
+    schedule_b_net_ha: 104382
+    grand_total_net_ha: 120099
+    implementation_lane: checkpoint
+    public_data_status: comparison_target
+    validation_role: direct_checkpoint
+    source_anchor: "Appendix B Table 12, PDF page 285"
+    source_ids: []
+    p9r_status: p9rf_current_thlb_checkpoint_reached
+    notes: "Central MP11 THLB validation target reached as a public-data checkpoint, not a force-fit constant."
+  - step_id: mp11_t12_300
+    order: 300
+    table12_classification: "Less future roads"
+    row_type: deduction
+    total_area_ha: 2136
+    schedule_a_net_ha: 158
+    schedule_b_net_ha: 1269
+    grand_total_net_ha: 1427
+    implementation_lane: future_context
+    public_data_status: public_proxy_plus_lbb_gap
+    validation_role: direct_line_item
+    source_anchor: "Appendix B Table 12, PDF page 285; Appendix B Table 44"
+    source_ids: ["aspatial_future_roads_area_proxy"]
+    p9r_status: locked_p9rf_step300_aspatial_future_roads_proxy
+    notes: "Long-term land-base context, not current THLB. Because future road alignments are unknown, P9RF implements this row as an aspatial area netdown proxy using smallest-current resultant fragments to approximate the MP11 net deduction. The deducted fragments are an area accounting placeholder and must not be interpreted as predicted future road locations."
+  - step_id: mp11_t12_310
+    order: 310
+    table12_classification: "Long-term Land Base"
+    row_type: checkpoint
+    total_area_ha: null
+    schedule_a_net_ha: 15559
+    schedule_b_net_ha: 103113
+    grand_total_net_ha: 118672
+    implementation_lane: checkpoint
+    public_data_status: comparison_target
+    validation_role: direct_checkpoint
+    source_anchor: "Appendix B Table 12, PDF page 285"
+    source_ids: []
+    p9r_status: p9rf_long_term_land_base_checkpoint_reached
+    notes: "Context checkpoint after future roads; keep separate from current THLB. Step 300 is implemented as an aspatial future-road area proxy, not mapped future-road geometry."

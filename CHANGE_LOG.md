@@ -2978,6 +2978,28 @@
   are complete and P9D.5 remains the maintainer lock/defer decision and P9RF
   rerun edge.
 
+## 2026-06-28 - Locked Step 220 public CDED proxy and reran P9RF
+
+- accepted the `slope_ge_70_prop_ge_0.75_whole_fragment` public CDED
+  steep-slope proxy for MP11 Table 12 Step 220;
+- updated `config/tsr/mp11_table12_thlb_netdown.recipe.yaml` and
+  `scripts/run_p9rf_mp11_table12_resultant_rebuild.py` so Step 220 is no
+  longer a zero-deduction deferred placeholder;
+- reran the P9RF resultant-fragment THLB pipeline from the top;
+- generated Step 220 output deducting `1,801.705 ha` against the MP11 Step 220
+  target `1,820.000 ha` (`-18.295 ha`, `-1.005%`);
+- regenerated downstream P9RF outputs through Step 310;
+- reduced Step 290 Current THLB from the prior `124,568.765 ha` result to
+  `122,764.836 ha`, leaving a `+2,665.836 ha` delta to the MP11 current THLB
+  target `120,099.000 ha`;
+- reduced Step 310 Long-term Land Base from the prior `123,141.894 ha` result
+  to `121,338.039 ha`, leaving a `+2,666.039 ha` delta to the MP11 long-term
+  target `118,672.000 ha`; and
+- marked Phase 9D complete in `ROADMAP.md`, leaving remaining THLB residuals
+  attributable mainly to still-deferred public-source gaps such as terrain
+  stability Class 5, karst, big-tree reserves, and sensitive cultural/TUS
+  features.
+
 ## 2026-06-26 - Verified P5.4d Sphinx and public Pages docs
 
 - rebuilt the instance Sphinx documentation warning-clean with

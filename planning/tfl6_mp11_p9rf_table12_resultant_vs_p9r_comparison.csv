@@ -1,0 +1,31 @@
+step_id,label,p9rf_retained_area_ha,p9rf_deducted_area_ha,old_p9r_retained_area_ha,p9rf_minus_old_p9r_area_ha,mp11_target_ha,delta_to_mp11_ha,delta_to_mp11_pct,checkpoint_status,artifact_gpkg
+mp11_t12_020,Less Existing Roads & Powerlines,196232.9905678668,3161.0601047326372,196232.99056786209,4.71482053399086e-09,5021.0,-1859.9398952673628,-37.04321639648203,locked_p9rf_resultant_step020,planning/tfl6_mp11_p9rf_table12_step_020.gpkg
+mp11_t12_030,Total Forested,196232.9905678668,0.0,,,196233.0,-0.0094321331998799,-4.8065988900337355e-06,p9rf_resultant_checkpoint,planning/tfl6_mp11_p9rf_table12_step_030.gpkg
+mp11_t12_040,Less Non-productive,188144.6649513257,8088.325616541067,,,8808.0,-719.6743834589333,-8.170690093766272,locked_p9rf_resultant_step040,planning/tfl6_mp11_p9rf_table12_step_040.gpkg
+mp11_t12_050,Total Productive,188144.6649513257,0.0,188144.66495132097,4.743924364447594e-09,187425.0,719.6649513257144,0.3839748973326474,p9rf_resultant_checkpoint,planning/tfl6_mp11_p9rf_table12_step_050.gpkg
+mp11_t12_060,Low Sites,178194.4969333941,9950.168017931617,178194.49693338934,4.773028194904327e-09,9927.0,23.168017931617214,0.23338388165223345,locked_p9rf_resultant_step060,planning/tfl6_mp11_p9rf_table12_step_060.gpkg
+mp11_t12_070,Less Inoperable,157048.16938576676,21146.327547627363,157048.16938576207,4.685716703534126e-09,21193.0,-46.67245237263705,-0.22022579329324332,locked_p9rf_resultant_step070,planning/tfl6_mp11_p9rf_table12_step_070.gpkg
+mp11_t12_080,Total Operable,157048.16938576676,0.0,157048.16938576207,4.685716703534126e-09,156305.0,743.169385766756,0.4754610446030236,p9rf_resultant_checkpoint,planning/tfl6_mp11_p9rf_table12_step_080.gpkg
+mp11_t12_090,Riparian Management,152218.33197585604,4829.83740991072,152237.46569401643,-19.133718160388526,5479.0,-649.1625900892795,-11.848194745195832,locked_p9rf_resultant_step090,planning/tfl6_mp11_p9rf_table12_step_090.gpkg
+mp11_t12_100,Ungulate Winter Ranges,150173.75114307014,2044.5808327858929,150193.85662332765,-20.105480257509043,1619.0,425.5808327858929,26.28664810289641,locked_p9rf_resultant_step100,planning/tfl6_mp11_p9rf_table12_step_100.gpkg
+mp11_t12_110,Old Growth Management Areas,140600.98552695944,9572.765616110715,140534.7771223843,66.20840457515442,5491.0,4081.765616110715,74.33556030068685,locked_p9rf_resultant_step110,planning/tfl6_mp11_p9rf_table12_step_110.gpkg
+mp11_t12_120,Old Growth Management Areas - Proposed,135281.00717794104,5319.978349018424,,,5317.0,2.9783490184236143,0.056015591845469524,locked_p9rf_resultant_step120,planning/tfl6_mp11_p9rf_table12_step_120.gpkg
+mp11_t12_130,Wildlife Habitat Areas - Legal,133998.6584186552,1282.3488861524113,,,414.0,868.3488861524113,209.7461077662829,locked_p9rf_resultant_step130,planning/tfl6_mp11_p9rf_table12_step_130.gpkg
+mp11_t12_140,Wildlife Habitat Areas - Proposed,133998.6584186552,0.0,,,17.0,-17.0,-100.0,review_required_p9rf_step140_proposed_wha_source_unavailable,planning/tfl6_mp11_p9rf_table12_step_140.gpkg
+mp11_t12_150,Uneconomic,133998.6584186552,0.0,,,20.0,-20.0,-100.0,review_required_p9rf_step150_wfp_economic_operability_source_unavailable,planning/tfl6_mp11_p9rf_table12_step_150.gpkg
+mp11_t12_160,Deciduous-leading,132307.0812481895,1691.5771704657286,,,1576.0,115.57717046572861,7.333576806201054,locked_p9rf_resultant_step160,planning/tfl6_mp11_p9rf_table12_step_160.gpkg
+mp11_t12_170,Recreation,132297.49513474628,9.586113443226099,,,6.0,3.5861134432260986,59.76855738710164,locked_p9rf_resultant_step170,planning/tfl6_mp11_p9rf_table12_step_170.gpkg
+mp11_t12_180,Known Archaeological Sites,132297.49513474628,0.0,,,527.0,-527.0,-100.0,skipped_p9rf_step180_public_data_only_sensitive_source_excluded,planning/tfl6_mp11_p9rf_table12_step_180.gpkg
+mp11_t12_190,Existing Stand-level Reserves,129210.10262294936,3087.3925117969125,,,3089.0,-1.6074882030875415,-0.05203911308150021,locked_p9rf_resultant_step190,planning/tfl6_mp11_p9rf_table12_step_190.gpkg
+mp11_t12_200,Research Site,129210.10262294936,0.0,,,13.0,-13.0,-100.0,skipped_p9rf_step200_public_data_only_sensitive_source_excluded,planning/tfl6_mp11_p9rf_table12_step_200.gpkg
+mp11_t12_210,Terrain Stability - Class 5,129210.10262294936,0.0,,,1993.0,-1993.0,-100.0,deferred_p9rf_step210_public_terrain_stability_source_needed,planning/tfl6_mp11_p9rf_table12_step_210.gpkg
+mp11_t12_220,Terrain Stability - LiDAR 90% + Slope,127408.39804428256,1801.7045786667948,,,1820.0,-18.29542133320524,-1.0052429303958923,locked_p9rf_step220_public_cded_steep_slope_proxy,planning/tfl6_mp11_p9rf_table12_step_220.gpkg
+mp11_t12_230,Permanent Sample Plots,127249.49164453335,158.90639974922203,,,134.0,24.906399749222032,18.58686548449405,locked_p9rf_step230_public_active_psp_proxy,planning/tfl6_mp11_p9rf_table12_step_230.gpkg
+mp11_t12_240,Big Tree Reserves,127249.49164453335,0.0,,,42.0,-42.0,-100.0,deferred_p9rf_step240_public_big_tree_source_needed,planning/tfl6_mp11_p9rf_table12_step_240.gpkg
+mp11_t12_250,Karst,127249.49164453335,0.0,,,3721.0,-3721.0,-100.0,deferred_p9rf_step250_public_karst_source_needed,planning/tfl6_mp11_p9rf_table12_step_250.gpkg
+mp11_t12_260,Unknown Cultural Features within Quatsino TUS Zone,127249.49164453335,0.0,,,453.0,-453.0,-100.0,skipped_p9rf_step260_public_data_only_sensitive_source_excluded,planning/tfl6_mp11_p9rf_table12_step_260.gpkg
+mp11_t12_270,Future Stand-level Reserves,122764.83599793361,4484.65564659972,,,4483.0,1.6556465997200576,0.036931666288647275,review_required_p9rf_step270_future_stand_reserve_old_seral_proxy_candidate,planning/tfl6_mp11_p9rf_table12_step_270.gpkg
+mp11_t12_280,Total Operable Reductions,122764.83599793361,34283.33351469977,,,36216.0,-1932.6664853002294,-5.336499020599264,p9rf_total_operable_reductions_checkpoint,planning/tfl6_mp11_p9rf_table12_step_280.gpkg
+mp11_t12_290,Current THLB,122764.83599793361,0.0,,,120099.0,2665.835997933609,2.219698746811888,p9rf_resultant_checkpoint,planning/tfl6_mp11_p9rf_table12_step_290.gpkg
+mp11_t12_300,Less future roads,121338.03921850822,1426.7967794253866,,,1427.0,-0.20322057461339682,-0.01424110543892059,locked_p9rf_step300_aspatial_future_roads_proxy,planning/tfl6_mp11_p9rf_table12_step_300.gpkg
+mp11_t12_310,Long-term Land Base,121338.03921850822,0.0,,,118672.0,2666.0392185082164,2.246561293740913,p9rf_long_term_land_base_checkpoint_reached,planning/tfl6_mp11_p9rf_table12_step_310.gpkg

@@ -199,3 +199,33 @@ Generated evidence:
 - `planning/tfl6_mp11_p9d_public_dem_source_manifest.{md,csv,json}`
 - `planning/tfl6_mp11_p9d_public_dem_slope_zonal_stats.{md,csv,json}`
 - `planning/tfl6_mp11_p9d_step220_dem_slope_scenarios.{md,csv,json}`
+
+## Closeout Result
+
+The recommended public CDED proxy was accepted and locked into the P9RF Table
+12 rebuild.
+
+Accepted rule:
+
+- Step: `mp11_t12_220`
+- Status: `locked_p9rf_step220_public_cded_steep_slope_proxy`
+- Rule: deduct Step 210 resultant fragments where at least `75%` of valid
+  CDED pixels are `>=70%` slope.
+- Deducted area: `1,801.705 ha`
+- MP11 Step 220 benchmark: `1,820.000 ha`
+- Delta: `-18.295 ha` (`-1.005%`)
+
+Full P9RF rerun endpoint after locking Step 220:
+
+- Step 290 Current THLB: `122,764.836 ha`
+- MP11 Step 290 benchmark: `120,099.000 ha`
+- Step 290 delta: `+2,665.836 ha` (`+2.2197%`)
+- Step 310 Long-term Land Base: `121,338.039 ha`
+- MP11 Step 310 benchmark: `118,672.000 ha`
+- Step 310 delta: `+2,666.039 ha` (`+2.2466%`)
+
+Interpretation: the public DEM repair materially improved the final endpoint
+delta while preserving an explicit non-equivalence caveat relative to WFP
+LiDAR. Remaining residual is dominated by still-unavailable public-source rows,
+especially terrain-stability Class 5, karst, big-tree reserves, and sensitive
+cultural/TUS features.

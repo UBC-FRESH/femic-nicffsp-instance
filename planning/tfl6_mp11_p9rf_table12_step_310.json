@@ -1,0 +1,26 @@
+{
+  "generated_at_utc": "2026-06-28T21:35:45.137857+00:00",
+  "summary": {
+    "step_id": "mp11_t12_310",
+    "label": "Long-term Land Base",
+    "step_kind": "checkpoint",
+    "source_area_ha": 121338.03921850822,
+    "deducted_area_ha": 0.0,
+    "retained_area_ha": 121338.03921850822,
+    "mp11_target_ha": 118672.0,
+    "delta_to_mp11_ha": 2666.0392185082164,
+    "delta_to_mp11_pct": 2.246561293740913,
+    "input_fragment_count": 23245,
+    "active_fragment_count": 23245,
+    "deducted_fragment_count": 0,
+    "balance_error_ha": 0.0,
+    "checkpoint_status": "p9rf_long_term_land_base_checkpoint_reached",
+    "artifact_gpkg": "planning/tfl6_mp11_p9rf_table12_step_310.gpkg",
+    "notes": "Context checkpoint after future roads; keep separate from current THLB. Step 300 is implemented as an aspatial future-road area proxy, not mapped future-road geometry."
+  },
+  "area_balance_passed": true,
+  "layers": {
+    "active_fragments": "retained resultant fragments after this step",
+    "deducted_fragments": "fragments removed by this step"
+  }
+}
