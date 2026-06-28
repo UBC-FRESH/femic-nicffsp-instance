@@ -1,5 +1,104 @@
 # Change Log
 
+## 2026-06-28 - Closed Phase 8 MP11 implementation foundation
+
+- added `planning/tfl6_mp11_phase8_closeout.md` to summarize the completed
+  Phase 8 contract set, validation, baseline boundary, and follow-on phase
+  split;
+- created follow-on parent issues for Phase 9 MP11 source-layer/THLB rebuild
+  (`#66`), Phase 10 AU/yield curve rebuild (`#67`), Phase 11 model-input/XML
+  rebuild (`#68`), Phase 12 Patchworks runtime/scenario smoke (`#69`), and
+  Phase 13 comparison documentation/release QA (`#70`);
+- marked P8.6 complete in `ROADMAP.md` and added planned Phase 9-13 roadmap
+  sections with dependency order;
+- preserved the Phase 5 teaching runtime as the accepted baseline until a
+  future MP11-aligned replacement passes direct source, model-input, XML,
+  Matrix Builder, runtime, docs, archive, and scenario-output QA; and
+- kept Phase 8 as a contracts-only phase with no generated THLB, curve,
+  model-input, XML, Matrix Builder, Patchworks runtime, or report artifacts
+  tracked.
+
+## 2026-06-28 - Completed P8.5 MP11 KPI, QA, and reporting contract
+
+- added `planning/tfl6_mp11_kpi_qa_reporting_contract.md` to define MP11
+  comparison targets, validation-strength labels, KPI/reporting surfaces, and
+  QA expectations for future model-output comparisons;
+- separated source text/table targets, accepted figure comparisons,
+  planning-only figure context, deferred optional figures, qualitative context,
+  and unavailable-non-public targets;
+- defined mandatory scenario output groups for base case, maintain-current-AAC,
+  maximum-short-term, yield sensitivities, policy sensitivities, and AAC
+  recommendation comparisons;
+- recorded required KPI surfaces for harvest flow, growing stock,
+  harvest-system, harvested area, volume per hectare, harvest age, block size,
+  species, elevation, age class, cedar, old cedar, and old seral reporting; and
+- kept all P8.5 work in the planning/contract layer with no runtime reports
+  generated and no planning-only figure evidence promoted.
+
+## 2026-06-28 - Completed P8.4 MP11 operability, harvest-system, MHA, and scenario contract
+
+- added `planning/tfl6_mp11_operability_harvest_mha_scenario_contract.md` to
+  define the MP11 rule boundary before any transition, XML, or Patchworks
+  runtime rebuild;
+- separated physical operability, harvest-system class, helicopter economic
+  operability, minimum harvest age, and scenario policy from canonical AU
+  identity;
+- defined public harvest-system classifier candidates, helicopter
+  economic-operability sensitivity rules, MHA extraction requirements, and
+  scenario-policy families for base case, maintain-current-AAC,
+  maximum-short-term, AAC recommendation, THLB, genetic-gain, and
+  helicopter-exclusion sensitivities;
+- recorded MP11 aggregate harvest-system percentages and scenario endpoints as
+  comparison targets only, not stand-level assignments or model inputs; and
+- kept all P8.4 work in the planning/contract layer with no runtime, XML,
+  transition, or Patchworks artifacts modified.
+
+## 2026-06-28 - Completed P8.3 MP11 AU/yield strategy contract
+
+- added `planning/tfl6_mp11_au_yield_strategy_contract.md` to decide the MP11
+  AU/yield and managed-stand parameter strategy before any curve regeneration;
+- preserved FEMIC's stable static canonical AU identity while adding MP11
+  AU-era, site-series, treatment, managed-stand, site-productivity, and
+  curve-parameter fields as reviewed crosswalk attributes;
+- defined public/private boundaries for public VRI/R1/VDYP, SIBEC/TEM,
+  RESULTS-derived site index, VDYP, BatchTIPSY, and unavailable LEFI/ITI/LiDAR
+  assumptions;
+- scoped MP11 managed-yield parameter-library requirements, OAF/VRAF,
+  utilization, genetic-gain, fertilization, spacing, and NRL surfaces; and
+- kept all P8.3 work in the planning/contract layer with no generated curves,
+  model-input bundle changes, or MP11 model-input promotion.
+
+## 2026-06-28 - Completed P8.2 MP11 source-layer and THLB rebuild contract
+
+- added `planning/tfl6_mp11_source_layer_thlb_rebuild_contract.md` to convert
+  reviewed MP11 land-base and netdown evidence into a public-data rebuild
+  strategy for a future THLB implementation phase;
+- classified MP11 netdown/source-layer categories into public rebuild,
+  public-proxy, public-proxy-plus-unavailable-gap, aspatial-policy,
+  model-parameter, and model-constraint lanes;
+- defined public source candidates, WFP/LiDAR/LBB unavailable dependencies,
+  MP11 benchmark checkpoints, tolerance guidance, and ordered-overlay
+  requirements;
+- recorded that MP11 current THLB `120,099 ha` remains a comparison target,
+  not a forced output or accepted model input; and
+- kept all P8.2 work in the planning/contract layer with no generated THLB
+  outputs tracked.
+
+## 2026-06-28 - Completed P8.1 MP11 baseline and promotion contract
+
+- added `planning/tfl6_mp11_baseline_and_promotion_contract.md` to preserve
+  the Phase 5 teaching runtime as the accepted baseline;
+- defined MP11 promotion states from `planning_only` through
+  `accepted_model_input`, plus `rejected`, `deferred`, and
+  `unavailable_non_public`;
+- defined evidence classes and promotion requirements for MP11 text claims,
+  table values, recovered figures, public spatial layers, public proxies,
+  generated outputs, and non-public WFP references;
+- recorded figure-evidence rules, non-public-data rules, replacement gates,
+  rollback rules, and required issue closeout language; and
+- kept every current MP11 evidence surface as planning/comparison evidence,
+  with no promotion to model-input status.
+
 ## 2026-06-28 - Closed Phase 6 MP11 ingestion and overhaul planning
 
 - added `planning/tfl6_mp11_phase6_closeout.md` summarizing the completed

@@ -450,41 +450,83 @@ Goal: convert Phase 6/7 MP11 evidence into reviewed public-data contracts and
 implementation-ready recipes for the next model rebuild, while preserving the
 Phase 5 runtime as the accepted baseline.
 
-- [ ] P8.1 Preserve Phase 5 baseline and lock MP11 promotion rules (`#59`).
-  - [ ] P8.1a Summarize Phase 5 accepted baseline artifacts and QA evidence.
-  - [ ] P8.1b Define MP11 evidence-promotion states.
-  - [ ] P8.1c Define promotion requirements for text/table/figure-derived
+- [x] P8.1 Preserve Phase 5 baseline and lock MP11 promotion rules (`#59`).
+  - [x] P8.1a Summarize Phase 5 accepted baseline artifacts and QA evidence.
+  - [x] P8.1b Define MP11 evidence-promotion states.
+  - [x] P8.1c Define promotion requirements for text/table/figure-derived
     evidence.
-  - [ ] P8.1d Define rollback and non-replacement rules.
-- [ ] P8.2 Design MP11 public source-layer and THLB rebuild contract (`#60`).
-  - [ ] P8.2a Classify source-layer categories by public reproducibility.
-  - [ ] P8.2b Define public proxy candidates and sensitivity lanes.
-  - [ ] P8.2c Define benchmark checkpoints and tolerances.
-  - [ ] P8.2d Write the reviewed source-layer/THLB rebuild contract.
-- [ ] P8.3 Decide MP11 AU/yield and managed-stand parameter strategy (`#61`).
-  - [ ] P8.3a Decide AU identity strategy.
-  - [ ] P8.3b Define MP11 managed-yield table extraction requirements.
-  - [ ] P8.3c Define public/private SI and inventory dependency boundaries.
-  - [ ] P8.3d Define yield-adjustment parameter surfaces.
-- [ ] P8.4 Define operability, harvest-system, MHA, and scenario rules (`#62`).
-  - [ ] P8.4a Define harvest-system classifier candidates and required public
+  - [x] P8.1d Define rollback and non-replacement rules.
+- [x] P8.2 Design MP11 public source-layer and THLB rebuild contract (`#60`).
+  - [x] P8.2a Classify source-layer categories by public reproducibility.
+  - [x] P8.2b Define public proxy candidates and sensitivity lanes.
+  - [x] P8.2c Define benchmark checkpoints and tolerances.
+  - [x] P8.2d Write the reviewed source-layer/THLB rebuild contract.
+- [x] P8.3 Decide MP11 AU/yield and managed-stand parameter strategy (`#61`).
+  - [x] P8.3a Decide AU identity strategy.
+  - [x] P8.3b Define MP11 managed-yield table extraction requirements.
+  - [x] P8.3c Define public/private SI and inventory dependency boundaries.
+  - [x] P8.3d Define yield-adjustment parameter surfaces.
+- [x] P8.4 Define operability, harvest-system, MHA, and scenario rules (`#62`).
+  - [x] P8.4a Define harvest-system classifier candidates and required public
     inputs.
-  - [ ] P8.4b Define economic-operability sensitivity logic.
-  - [ ] P8.4c Define MHA extraction and contract requirements.
-  - [ ] P8.4d Define base-case, max-short-term, AAC recommendation, and
+  - [x] P8.4b Define economic-operability sensitivity logic.
+  - [x] P8.4c Define MHA extraction and contract requirements.
+  - [x] P8.4d Define base-case, max-short-term, AAC recommendation, and
     sensitivity scenario policies.
-- [ ] P8.5 Define MP11 KPI, QA, and reporting targets (`#63`).
-  - [ ] P8.5a Define accepted comparison targets and planning-only target
+- [x] P8.5 Define MP11 KPI, QA, and reporting targets (`#63`).
+  - [x] P8.5a Define accepted comparison targets and planning-only target
     families.
-  - [ ] P8.5b Define KPI output schemas and report groups.
-  - [ ] P8.5c Define comparison tolerances and validation-strength labels.
-  - [ ] P8.5d Write the KPI/QA/reporting contract.
-- [ ] P8.6 Close Phase 8 and split rebuild phases (`#64`).
-  - [ ] P8.6a Audit Phase 8 child issues and artifacts.
-  - [ ] P8.6b Draft follow-on rebuild phase issue tree.
-  - [ ] P8.6c Run validation checks.
-  - [ ] P8.6d Open and merge the Phase 8 PR.
-  - [ ] P8.6e Close parent and child issues with final links.
+  - [x] P8.5b Define KPI output schemas and report groups.
+  - [x] P8.5c Define comparison tolerances and validation-strength labels.
+  - [x] P8.5d Write the KPI/QA/reporting contract.
+- [x] P8.6 Close Phase 8 and split rebuild phases (`#64`).
+  - [x] P8.6a Audit Phase 8 child issues and artifacts.
+  - [x] P8.6b Draft follow-on rebuild phase issue tree.
+  - [x] P8.6c Run validation checks.
+  - [x] P8.6d Open and merge the Phase 8 PR.
+  - [x] P8.6e Close parent and child issues with final links.
+
+## Phase 9: MP11 Source-Layer And THLB Rebuild (`#66`)
+
+Status: planned.
+
+Goal: execute the accepted public-data source-layer and THLB rebuild contract,
+materialize/review public sources, implement ordered overlay and proxy logic,
+and compare GLB/AFLB/operable/THLB outputs against MP11 and Phase 5
+checkpoints without force-fitting.
+
+## Phase 10: MP11 AU/Yield Curve Rebuild (`#67`)
+
+Status: planned.
+
+Goal: extract reviewed MP11 managed-yield parameters, refresh AU/yield
+crosswalk surfaces, regenerate natural and managed curves with provenance and
+QA diagnostics, and isolate unavailable LEFI/ITI/LiDAR assumptions.
+
+## Phase 11: MP11 Model-Input Bundle And ForestModel XML Rebuild (`#68`)
+
+Status: planned.
+
+Goal: build the MP11-aligned model-input bundle and ForestModel XML from
+accepted source-layer, THLB, AU/yield, treatment, transition, MHA,
+harvest-system, and reporting contracts.
+
+## Phase 12: MP11 Patchworks Runtime And Scenario Smoke (`#69`)
+
+Status: planned.
+
+Goal: run Matrix Builder, assemble an MP11-aligned Patchworks runtime package,
+and smoke-test direct launch plus representative base and sensitivity
+scenarios before any release claim.
+
+## Phase 13: MP11 Comparison Documentation And Release QA (`#70`)
+
+Status: planned.
+
+Goal: publish MP11 comparison documentation, teaching updates, release archive
+QA, and replacement/supplement decision evidence after a rebuilt runtime passes
+direct source, model-input, XML, Matrix Builder, Patchworks, scenario, docs,
+archive, and manifest checks.
 
 ## Dependency Order
 
@@ -525,10 +567,21 @@ approves a narrower independent slice:
    Phase 6 extraction planning, but recovered figure values cannot become model
    inputs until reviewed and handed off through the relevant Phase 6 comparison
    lanes.
-8. **MP11 implementation foundation**: Phase 8 (`#58`) starts only after
-   Phase 6 closes or after explicit maintainer approval. It should lock
-   public-data contracts and promotion rules before any source-layer, yield,
-   model-input, XML, Matrix Builder, or runtime rebuild begins.
+8. **MP11 implementation foundation**: Phase 8 (`#58`) locks public-data
+   contracts and promotion rules before any source-layer, yield, model-input,
+   XML, Matrix Builder, or runtime rebuild begins.
+9. **MP11 source-layer and THLB rebuild**: Phase 9 (`#66`) executes the
+   accepted source-layer and THLB contract.
+10. **MP11 AU/yield curve rebuild**: Phase 10 (`#67`) executes the accepted
+    AU/yield and managed-stand parameter contract.
+11. **MP11 model-input/XML rebuild**: Phase 11 (`#68`) promotes accepted
+    source, curve, rule, and reporting contracts into model-input and
+    ForestModel XML artifacts.
+12. **MP11 runtime smoke**: Phase 12 (`#69`) builds and smoke-tests Matrix
+    Builder and Patchworks runtime artifacts.
+13. **MP11 comparison/release QA**: Phase 13 (`#70`) documents comparisons,
+    release readiness, and whether an MP11-aligned package replaces or
+    supplements the Phase 5 teaching baseline.
 
 Guardrail: source extraction, THLB execution, cedar/expansion implementation,
 model-input generation, XML/Matrix Builder work, runtime packaging,
@@ -549,29 +602,9 @@ The Phase 1 follow-on issues are placed into the future roadmap as follows:
 
 ## Current Next Steps
 
-0. Phase 6 is complete and ready to merge from branch
-   `feature/p6-mp11-ingestion-model-overhaul`.
-   P6.1 is complete: `planning/tfl6_mp11_source_package_manifest.md` records
-   the public MP11 source identity, verified SHA256, 475-page PDF structure,
-   document-component ranges, ignored source-copy policy, governance caveat,
-   and extraction-manifest field contract. The first P6.2 raw extraction
-   inventory is also recorded in `planning/tfl6_mp11_extraction_inventory.csv`
-   with `1870` candidate rows. P6.3 is complete:
-   `planning/tfl6_mp11_land_base_crosswalk.md` records the headline land-base
-   deltas and `planning/tfl6_mp11_netdown_delta_crosswalk.md` records the
-   source-layer/netdown reproducibility split. P6.4 is complete:
-   `planning/tfl6_mp11_inventory_yield_operability_crosswalk.md` records the
-   reviewed inventory, LiDAR/ITI, yield, operability, harvest-system,
-   harvest-rule, and model-constraint deltas. P6.5 is complete:
-   `planning/tfl6_mp11_model_behavior_crosswalk.md` records the reviewed
-   model-behavior, sensitivity, AAC recommendation, and KPI comparison, with
-   `planning/tfl6_mp11_model_behavior_scenario_endpoints.csv` carrying the
-   comparison-ready scenario endpoint table. P6.6 is complete:
-   `planning/tfl6_mp11_phase8_implementation_roadmap.md` defines the Phase 8+
-   implementation roadmap and issue tree. The final closeout note is
-   `planning/tfl6_mp11_phase6_closeout.md`. After the Phase 6 PR merges, the
-   next active edge is Phase 8 P8.1 on branch
-   `feature/p8-mp11-public-data-implementation-foundation`.
+0. Phase 8 is closed. PR `#71` merges the MP11 implementation-foundation
+   contracts and closeout note to `main`. The next planned edge is Phase 9:
+   MP11 source-layer and THLB rebuild (`#66`).
 1. Phase 7 is closed. PR `#56` merged the MP11 figure-extraction test
    closeout into `main`. The final closeout surface is
    `planning/tfl6_mp11_figure_extraction_closeout.md` with matching CSV/JSON.
