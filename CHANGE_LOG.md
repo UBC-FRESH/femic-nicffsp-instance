@@ -1,5 +1,16 @@
 # Change Log
 
+## 2026-06-28 - Closed Phase 7 MP11 figure extraction test
+
+- merged PR `#56`, bringing the Phase 7 MP11 figure-extraction closeout,
+  reviewed manifests, reproducibility helpers, and Sphinx documentation onto
+  `main`;
+- closed the completed P7.3 and P7.4 child issues after posting detailed
+  evidence summaries;
+- marked P7.6 complete in `ROADMAP.md`; and
+- recorded that the next active edge is Phase 6 MP11 extraction and
+  model-overhaul planning from the reviewed figure evidence.
+
 ## 2026-06-28 - Closed the MP11 high-priority figure extraction evidence pass
 
 - added `scripts/build_p7_mp11_figure2_review_manifest.py` and promoted the
