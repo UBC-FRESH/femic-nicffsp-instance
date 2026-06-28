@@ -2934,6 +2934,50 @@
   launch helpers, ForestModel XML, track tables, and required baseline signal
   names.
 
+## 2026-06-28 - Launched Phase 9D public DEM steep-slope repair lane
+
+- opened Phase 9D parent issue `#100` and child issues `#101`-`#105` for an
+  immediate public DEM steep-slope proxy repair of MP11 Table 12 Step 220;
+- recorded that the known public CDED DEM fallback must be tested before the
+  P9RF THLB surface is treated as promotion-ready;
+- completed P9D.1 by adding
+  `planning/tfl6_mp11_public_dem_steep_slope_execution_plan.md`, which defines
+  the CDED smoke-test source boundary, future LidarBC/open LiDAR handoff,
+  artifact layout, scenario grid, lock/defer gates, validation commands, and
+  Phase 11 promotion boundary;
+- updated `ROADMAP.md` so Phase 11 model-input/XML promotion remains blocked
+  until Phase 9D either locks a public DEM Step 220 proxy or records an
+  explicit maintainer-approved deferral; and
+- linked the future parent FEMIC open LiDAR package-functionality phase as the
+  reusable long-term solution for LiDAR tile materialization, terrain products,
+  slope analysis, and terrain-derived stream evidence.
+
+## 2026-06-28 - Generated Phase 9D public DEM Step 220 evidence
+
+- added `scripts/run_p9d_public_dem_materialization.py` and materialized the
+  public CDED source lane for TFL 6;
+- downloaded and extracted `44` public CDED DEM archives for letterblocks
+  `092L` and `102I`, with `44` matching remote MD5 checks and `44` readable
+  DEM readbacks;
+- built `runtime/dem/p9d_public_dem/processed/tfl6_cded_dem.tif` as an
+  `EPSG:3005` TFL 6 DEM mosaic and documented it in
+  `planning/tfl6_mp11_p9d_public_dem_source_manifest.{md,csv,json}`;
+- added `scripts/run_p9d_public_dem_slope_zonal.py`, derived
+  `runtime/dem/p9d_public_dem/processed/tfl6_cded_slope_pct.tif`, and computed
+  Step 210 active-fragment zonal slope statistics in
+  `planning/tfl6_mp11_p9d_public_dem_slope_zonal_stats.{md,csv,json}`;
+- added `scripts/run_p9d_step220_dem_slope_scenarios.py` and compared
+  whole-fragment and partial-area diagnostics in
+  `planning/tfl6_mp11_p9d_step220_dem_slope_scenarios.{md,csv,json}`;
+- identified `slope_ge_70_prop_ge_0.75_whole_fragment` as the recommended
+  public CDED whole-fragment review candidate, deducting `1,801.705 ha`
+  against the MP11 Step 220 target `1,820.000 ha` (`-18.295 ha`, `-1.005%`);
+  and
+- updated `ROADMAP.md` and
+  `planning/tfl6_mp11_public_dem_steep_slope_execution_plan.md` so P9D.2-P9D.4
+  are complete and P9D.5 remains the maintainer lock/defer decision and P9RF
+  rerun edge.
+
 ## 2026-06-26 - Verified P5.4d Sphinx and public Pages docs
 
 - rebuilt the instance Sphinx documentation warning-clean with
