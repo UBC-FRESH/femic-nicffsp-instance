@@ -1,5 +1,20 @@
 # Change Log
 
+## 2026-06-28 - Closed Phase 9 MP11 source-layer and THLB rebuild
+
+- added `planning/tfl6_mp11_phase9_closeout.md` to summarize the completed
+  Phase 9 issue tree, tracked outputs, validation, and Phase 10/11 handoff;
+- confirmed P9.1-P9.6 are complete and linked to issues `#72` through `#77`;
+- recorded the main Phase 9 conclusion that the public-data rebuild is a
+  diagnostic result, not an accepted replacement THLB surface or model input;
+- preserved the Phase 5 teaching runtime as the accepted baseline until a
+  future MP11-aligned replacement passes direct source-layer, partial-area
+  overlay, model-input, XML, Matrix Builder, runtime, docs, archive, and
+  scenario-output QA; and
+- kept every Phase 9 generated surface public-safe and `not_model_input`, with
+  no private WFP layers, unpublished source tables, XML, Matrix Builder output,
+  Patchworks runtime artifact, or proprietary assumption tracked.
+
 ## 2026-06-28 - Completed P9.5 MP11 public-data THLB diagnostic rebuild
 
 - added `scripts/run_p9_mp11_public_thlb_rebuild.py` to execute a compact

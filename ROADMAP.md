@@ -488,7 +488,7 @@ Phase 5 runtime as the accepted baseline.
 
 ## Phase 9: MP11 Source-Layer And THLB Rebuild (`#66`)
 
-Status: active.
+Status: closed.
 
 Goal: execute the accepted public-data source-layer and THLB rebuild contract,
 materialize/review public sources, implement ordered overlay and proxy logic,
@@ -525,12 +525,12 @@ checkpoints without force-fitting.
   - [x] P9.5b Build checkpoint and residual comparison summaries.
   - [x] P9.5c Build provenance and diagnostic manifests.
   - [x] P9.5d Classify residual gaps and candidate outputs.
-- [ ] P9.6 Close Phase 9 and hand off rebuild outputs (`#77`).
-  - [ ] P9.6a Audit Phase 9 artifacts and generated-output hygiene.
-  - [ ] P9.6b Write Phase 9 closeout and Phase 10/11 handoff note.
-  - [ ] P9.6c Run final validation and THLB QA checks.
-  - [ ] P9.6d Open and merge Phase 9 PR.
-  - [ ] P9.6e Close parent and child issues with final links.
+- [x] P9.6 Close Phase 9 and hand off rebuild outputs (`#77`).
+  - [x] P9.6a Audit Phase 9 artifacts and generated-output hygiene.
+  - [x] P9.6b Write Phase 9 closeout and Phase 10/11 handoff note.
+  - [x] P9.6c Run final validation and THLB QA checks.
+  - [x] P9.6d Open and merge Phase 9 PR.
+  - [x] P9.6e Close parent and child issues with final links.
 
 ## Phase 10: MP11 AU/Yield Curve Rebuild (`#67`)
 
@@ -639,15 +639,13 @@ The Phase 1 follow-on issues are placed into the future roadmap as follows:
 
 ## Current Next Steps
 
-0. Phase 9 is active on branch
-   `feature/p9-mp11-source-layer-thlb-rebuild`. P9.1 through P9.5 are
-   complete. `planning/tfl6_mp11_phase9_thlb_rebuild_summary.md` records a
-   compact diagnostic public-data rebuild. The smoke result is a deliberately
-   conservative full-stand-intersection diagnostic and is not an accepted THLB
-   surface; it confirms that partial-area overlay optimization and unresolved
-   shoreline, DEM/slope, WFP LBB/ITI/LEFI, and policy gaps must be handled
-   before model-input promotion. The active edge is P9.6: close Phase 9 and
-   hand off rebuild outputs (`#77`).
+0. Phase 9 is closed. `planning/tfl6_mp11_phase9_closeout.md` records the
+   public-data source-layer and THLB handoff. P9.5 produced a compact
+   diagnostic public-data rebuild, not an accepted THLB replacement surface.
+   The diagnostic result confirms that partial-area overlay implementation and
+   unresolved shoreline, DEM/slope, WFP LBB/ITI/LEFI, and policy gaps must be
+   handled before model-input promotion. The next MP11 rebuild edge is Phase
+   10: MP11 AU/yield curve rebuild (`#67`).
 1. Phase 7 is closed. PR `#56` merged the MP11 figure-extraction test
    closeout into `main`. The final closeout surface is
    `planning/tfl6_mp11_figure_extraction_closeout.md` with matching CSV/JSON.
