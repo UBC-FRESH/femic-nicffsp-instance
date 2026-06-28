@@ -96,6 +96,30 @@ downstream use is `phase6_inventory_triage_only`, and `model_input_status` is
 appear in this queue; those are expected to be filtered during the next
 P6.2/P6.3-P6.5 review and crosswalk passes.
 
+## P6.3 Land-Base And THLB Comparison
+
+The P6.3 comparison surfaces are:
+
+- `planning/tfl6_mp11_land_base_crosswalk.md`
+- `planning/tfl6_mp11_land_base_crosswalk.csv`
+- `planning/tfl6_mp11_land_base_crosswalk.json`
+- `planning/tfl6_mp11_netdown_delta_crosswalk.md`
+- `planning/tfl6_mp11_netdown_delta_crosswalk.csv`
+- `planning/tfl6_mp11_netdown_delta_crosswalk.json`
+
+The headline P6.3 finding is that MP11 total land base is effectively aligned
+with the Phase 5 FADM-derived AOI after rounding, but MP11 current THLB is
+substantially lower:
+
+- MP11 current THLB: `120,099 ha`;
+- Phase 5 accepted weighted THLB: `139,995.798 ha`;
+- delta: `-19,896.798 ha`, or `-14.21%`.
+
+The netdown/source-layer crosswalk separates public-layer rebuild candidates
+from proxy/sensitivity assumptions and model-constraint changes. This makes the
+future MP11-aligned implementation lane a source-layer/THLB overhaul, not a
+small parameter tweak to the Phase 5 teaching package.
+
 At minimum, P6.2 should inventory:
 
 - section headings and appendices;

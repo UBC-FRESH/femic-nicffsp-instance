@@ -346,15 +346,22 @@ before the MP11 evidence is extracted, reviewed, and crosswalked.
     figures, assumptions, metadata, and page anchors.
   - [x] P6.1d State clearly that MP11 analysis informs the Chief Forester's
     AAC determination and is not treated here as a final approved AAC decision.
-- [ ] P6.2 Extract MP11 tables, figures, sections, assumptions, and metadata
+- [x] P6.2 Extract MP11 tables, figures, sections, assumptions, and metadata
   (`#44`).
   - [x] P6.2a Inventory section headings, tables, figures, appendices,
     references, assumptions, model-input descriptions, and sensitivity items.
   - [x] P6.2b Attach every extracted claim to a page/section anchor.
   - [x] P6.2c Record extraction method, tool versions, failures, and manual
     review flags.
-- [ ] P6.3 Compare MP11 land base and THLB assumptions against the Phase 5
+- [x] P6.3 Compare MP11 land base and THLB assumptions against the Phase 5
   prototype (`#45`).
+  - [x] P6.3a Crosswalk MP11 total TFL area, productive forest, THLB, NCLB,
+    total operable, and long-term land-base values against Phase 5 benchmark
+    and bundle surfaces.
+  - [x] P6.3b Identify changed netdown categories, source-layer definitions,
+    and boundary/tenure assumptions.
+  - [x] P6.3c Separate directly reproducible public-layer deltas from
+    proxy/sensitivity and model-constraint assumptions.
 - [ ] P6.4 Compare MP11 inventory, LiDAR/ITI, yield, operability, and
   harvest-system assumptions (`#46`).
 - [ ] P6.5 Compare MP11 model behavior, sensitivities, AAC recommendation, and
@@ -473,8 +480,12 @@ The Phase 1 follow-on issues are placed into the future roadmap as follows:
    document-component ranges, ignored source-copy policy, governance caveat,
    and extraction-manifest field contract. The first P6.2 raw extraction
    inventory is also recorded in `planning/tfl6_mp11_extraction_inventory.csv`
-   with `1870` candidate rows. The active edge is P6.2 review/normalization of
-   high-priority table and claim rows into the P6.3-P6.5 comparison lanes.
+   with `1870` candidate rows. P6.3 is complete:
+   `planning/tfl6_mp11_land_base_crosswalk.md` records the headline land-base
+   deltas and `planning/tfl6_mp11_netdown_delta_crosswalk.md` records the
+   source-layer/netdown reproducibility split. The active edge is P6.4
+   inventory, LiDAR/ITI, yield, operability, and harvest-system assumption
+   comparison.
 1. Phase 7 is closed. PR `#56` merged the MP11 figure-extraction test
    closeout into `main`. The final closeout surface is
    `planning/tfl6_mp11_figure_extraction_closeout.md` with matching CSV/JSON.

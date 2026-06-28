@@ -1,5 +1,21 @@
 # Change Log
 
+## 2026-06-28 - Completed P6.3 MP11 land-base comparison
+
+- added `scripts/build_p6_mp11_land_base_crosswalk.py` and
+  `planning/tfl6_mp11_land_base_crosswalk.md` with CSV/JSON outputs comparing
+  MP11 total land base, productive forest, operable area, THLB, NCLB,
+  long-term land base, and previous-MP current-AAC-supporting THLB against
+  Phase 5 benchmark and bundle surfaces;
+- added `scripts/build_p6_mp11_netdown_delta_crosswalk.py` and
+  `planning/tfl6_mp11_netdown_delta_crosswalk.md` with CSV/JSON outputs
+  classifying changed MP11 netdown/source-layer categories by likely public
+  reproducibility, proxy needs, WFP-model gaps, and model-constraint lanes;
+- recorded that MP11 current THLB is `120,099 ha`, compared with the Phase 5
+  accepted weighted THLB of `139,995.798 ha`; and
+- kept every P6.3 row as `reviewed_evidence`,
+  `phase6_land_base_comparison_only`, and `not_model_input`.
+
 ## 2026-06-28 - Built first P6.2 MP11 raw extraction inventory
 
 - added `scripts/build_p6_mp11_extraction_inventory.py` to extract raw heading,
