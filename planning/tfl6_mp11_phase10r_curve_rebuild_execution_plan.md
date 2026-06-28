@@ -91,6 +91,30 @@ Phase 10R must proceed through these gates:
 
 No step may silently substitute MP10/Phase 5 curves as MP11 rebuilt curves.
 
+## P10R.2 Parser Closeout
+
+P10R.2 is complete as a parser-candidate gate, not as model-input promotion.
+The implemented parser is
+`scripts/build_p10r_mp11_tipsy_row_parse.py`, which reads the public MP11 PDF
+from an ignored source-input location and emits:
+
+- `planning/tfl6_mp11_tipsy_row_parse.csv`;
+- `planning/tfl6_mp11_tipsy_row_parse.json`;
+- `planning/tfl6_mp11_tipsy_row_parse.md`.
+
+The parser extracted `141` per-AU TIPSY rows:
+
+- Table 54 early managed rows: `79`;
+- Table 55 recent managed rows: `34`;
+- Table 57 future managed rows: `28`.
+
+The QA split is `132` high-confidence parser candidates and `9`
+review-required rows. Review-required rows include seven species-percentage
+totals above 100 in the visible table text and two known page-break repairs
+(`R301` and `Fvm205`). These rows remain `not_model_input`; P10R.3 must join
+the parsed rows to AU/curve lanes and either accept, repair, or explicitly
+quarantine review-required rows before handoff generation.
+
 ## Plot-Refresh Requirement
 
 P10R.5 is the task that updates curve plots. Plot outputs must distinguish:

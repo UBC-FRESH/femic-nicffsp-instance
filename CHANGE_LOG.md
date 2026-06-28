@@ -1,5 +1,20 @@
 # Change Log
 
+## 2026-06-28 - Parsed MP11 TIPSY row tables for Phase 10R
+
+- added `scripts/build_p10r_mp11_tipsy_row_parse.py` to parse public MP11
+  Tables 54, 55, and 57 into per-AU TIPSY row candidates;
+- emitted `planning/tfl6_mp11_tipsy_row_parse.{csv,json,md}` with page/table
+  provenance, parser confidence, raw-cell evidence, species composition, site
+  index fields, genetic-gain fields, and area fields;
+- recorded `141` parsed rows: `79` Table 54 early managed rows, `34` Table 55
+  recent managed rows, and `28` Table 57 future managed rows;
+- retained `9` review-required rows, including known PDF page-break repairs for
+  `R301` and `Fvm205`, so later handoff work cannot silently promote ambiguous
+  parser outputs; and
+- marked P10R.2 complete and moved the active roadmap edge to P10R.3 handoff
+  QA.
+
 ## 2026-06-28 - Added missing P9RF THLB Sphinx closeout documentation
 
 - amended `AGENTS.md` to make phase-closeout documentation mandatory: affected

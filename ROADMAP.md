@@ -598,13 +598,13 @@ natural/managed curve plots or a maintainer-reviewable blocker package.
   - [x] P10R.1b Add Phase 10R roadmap and issue references.
   - [x] P10R.1c Add the Phase 10R execution plan.
   - [x] P10R.1d Mark Phase 11 blocked pending accepted Phase 10R outputs.
-- [ ] P10R.2 Parse MP11 Tables 54, 55, and 57 per-AU TIPSY rows (`#94`).
-  - [ ] P10R.2a Locate source pages and table boundaries for Tables 54, 55,
+- [x] P10R.2 Parse MP11 Tables 54, 55, and 57 per-AU TIPSY rows (`#94`).
+  - [x] P10R.2a Locate source pages and table boundaries for Tables 54, 55,
     and 57.
-  - [ ] P10R.2b Implement parser/extraction script.
-  - [ ] P10R.2c Emit public-safe row tables with page/table provenance.
-  - [ ] P10R.2d Add QA summaries for missing, wrapped, or ambiguous rows.
-  - [ ] P10R.2e Review row counts and representative rows manually.
+  - [x] P10R.2b Implement parser/extraction script.
+  - [x] P10R.2c Emit public-safe row tables with page/table provenance.
+  - [x] P10R.2d Add QA summaries for missing, wrapped, or ambiguous rows.
+  - [x] P10R.2e Review row counts and representative rows manually.
 - [ ] P10R.3 QA managed-yield rows and build BatchTIPSY handoff inputs (`#95`).
   - [ ] P10R.3a Join parsed rows to the AU/curve-lane crosswalk.
   - [ ] P10R.3b Validate density, regeneration delay, genetic gain, VRAF,
@@ -865,8 +865,13 @@ The Phase 1 follow-on issues are placed into the future roadmap as follows:
    `planning/tfl6_mp11_phase10r_curve_rebuild_execution_plan.md` records the
    actual curve-rebuild issue tree, artifact layout, parser gates,
    curve-generation gates, plot refresh expectations, and Phase 11 blocker.
-   The active edge is P10R.2: parse MP11 Tables 54, 55, and 57 per-AU TIPSY
-   rows (`#94`). Phase 11 is planned and blocked until Phase 10R closes.
+   P10R.2 parsed MP11 Tables 54, 55, and 57 into
+   `planning/tfl6_mp11_tipsy_row_parse.{csv,json,md}`: `141` rows total
+   (`79` Table 54, `34` Table 55, `28` Table 57), with `132`
+   high-confidence parser candidates and `9` rows retained as
+   review-required. The active edge is P10R.3: QA managed-yield rows and build
+   BatchTIPSY handoff inputs (`#95`). Phase 11 is planned and blocked until
+   Phase 10R closes.
 2. Phase 7 is closed. PR `#56` merged the MP11 figure-extraction test
    closeout into `main`. The final closeout surface is
    `planning/tfl6_mp11_figure_extraction_closeout.md` with matching CSV/JSON.
