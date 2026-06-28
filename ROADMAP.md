@@ -366,13 +366,13 @@ Goal: run a full, auditable figure-extraction test on the public MP11 PDF
 package before recovered figure evidence is used to guide any MP10-to-MP11
 model-upgrade work.
 
-- [ ] P7.1 Create MP11 source and figure inventory (`#50`).
+- [x] P7.1 Create MP11 source and figure inventory (`#50`).
   - [x] P7.1a Record MP11 source metadata and checksum.
   - [x] P7.1b Build the figure inventory with page anchors and captions.
   - [x] P7.1c Add chart-family and downstream-use candidate fields.
   - [x] P7.1d Identify extraction priority tiers and figures excluded from
     digitization.
-  - [ ] P7.1e Update roadmap, changelog, planning notes, and issue comments.
+  - [x] P7.1e Update roadmap, changelog, planning notes, and issue comments.
 - [ ] P7.2 Prepare `figrecover` corpus and artifact conventions (`#51`).
   - [ ] P7.2a Confirm local optional dependency preflight.
   - [ ] P7.2b Prepare ignored runtime corpus paths.
@@ -468,10 +468,11 @@ The Phase 1 follow-on issues are placed into the future roadmap as follows:
 0. Phase 7 is active on branch `feature/p7-mp11-figure-extraction-test`.
    Parent issue `#49` and child issues `#50` through `#55` define the full MP11
    figure-extraction test upstream of any MP10-to-MP11 model upgrade. P7.1 is
-   underway: `planning/tfl6_mp11_figure_extraction_test_plan.md` defines the
+   complete: `planning/tfl6_mp11_figure_extraction_test_plan.md` defines the
    extraction-test boundary and
    `planning/tfl6_mp11_full_figure_inventory.csv` records the first 61-figure
-   inventory from Appendix A's list of figures.
+   inventory from Appendix A's list of figures. The active edge is P7.2:
+   prepare the ignored `figrecover` runtime corpus and artifact conventions.
 1. Phase 2 is closed. The instance `main` branch contains the Phase 2
    source-layer, THLB smoke, benchmark-tolerance, and Sphinx audit-trail
    surfaces; the parent FEMIC submodule pointer has been updated to the merged

@@ -15,7 +15,9 @@
   page anchors, captions, chart-family triage, extraction-priority tiers, and
   downstream relevance notes; and
 - kept the first tranche public-safe: no rendered pages, crops, overlays, raw
-  recovered tables, prompt logs, or review bundles were tracked.
+  recovered tables, prompt logs, or review bundles were tracked; and
+- marked P7.1 complete in `ROADMAP.md`, advancing the active edge to P7.2
+  ignored `figrecover` corpus preparation.
 
 ## 2026-06-23 - Bootstrapped the NICF FSP FRST 558 instance repository
 
