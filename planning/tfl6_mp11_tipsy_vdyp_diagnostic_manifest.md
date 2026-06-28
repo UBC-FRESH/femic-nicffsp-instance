@@ -60,6 +60,17 @@ curve surface, not a model-input promotion. Every row remains
 | Fvm208         | cwhvm1_hw_cw_m  | tipsy_substantially_above_vdyp |                     1.627 |                         1.293 |           434.432 | plots/mp11_tipsy_vdyp_diagnostics/mp11-fvm208_tipsy-vs-vdyp-cwhvm1-hw-cw-m.png  |
 | Fvm211         | cwhvm1_hw_cw_l  | tipsy_substantially_below_vdyp |                     0.996 |                         0.649 |           148.808 | plots/mp11_tipsy_vdyp_diagnostics/mp11-fvm211_tipsy-vs-vdyp-cwhvm1-hw-cw-l.png  |
 
+## Maintainer Plot Review
+
+- Passed TIPSY-vs-VDYP sanity rows: `24`
+- Failed TIPSY-vs-VDYP sanity rows: `3`
+- Failed AU codes: `FMH01`, `FMH22`, `Fvh103`
+- Failed review status: `failed_tipsy_below_vdyp_sanity_review`
+- Passed review status: `passed_tipsy_vdyp_sanity_review`
+- Model-input status: `not_model_input`
+- Review timestamp UTC: `2026-06-28T23:13:35+00:00`
+- Failed-row rationale: Maintainer plot review rejected this generated TIPSY curve because plantation yield should meet or beat the matched natural VDYP curve; observed TIPSY is substantially below VDYP.
+
 ## Use Boundary
 
 - TIPSY-vs-VDYP differences are diagnostic evidence for review, not

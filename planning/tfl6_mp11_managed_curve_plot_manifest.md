@@ -60,3 +60,14 @@ or regenerated value into model input contracts.
 | Fvm109         | cwhvm1_hw_fdc_l | moderate_difference_review_required |                -21.106 |                     -5.323 | plots/mp11_managed_curve_comparison/mp11-fvm109_vs_phase5-cwhvm1-hw-fdc-l.png |
 | Fvm111         | cwhvm1_hw_ss_m  | moderate_difference_review_required |                -16.136 |                      8.663 | plots/mp11_managed_curve_comparison/mp11-fvm111_vs_phase5-cwhvm1-hw-ss-m.png  |
 | Fvm114         | cwhvm2_yc_hw_h  | moderate_difference_review_required |                -11.189 |                     12.538 | plots/mp11_managed_curve_comparison/mp11-fvm114_vs_phase5-cwhvm2-yc-hw-h.png  |
+
+## Maintainer Plot Review
+
+- Passed TIPSY-vs-VDYP sanity rows: `24`
+- Failed TIPSY-vs-VDYP sanity rows: `3`
+- Failed AU codes: `FMH01`, `FMH22`, `Fvh103`
+- Failed review status: `failed_tipsy_below_vdyp_sanity_review`
+- Passed review status: `passed_tipsy_vdyp_sanity_review`
+- Model-input status: `not_model_input`
+- Review timestamp UTC: `2026-06-28T23:13:35+00:00`
+- Failed-row rationale: Maintainer plot review rejected this generated TIPSY curve because plantation yield should meet or beat the matched natural VDYP curve; observed TIPSY is substantially below VDYP.

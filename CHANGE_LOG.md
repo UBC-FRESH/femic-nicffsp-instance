@@ -3213,3 +3213,21 @@
   `not_model_input`; and
 - marked P10R.5 complete, leaving P10R.6 closeout and Phase 11 unblock/defer
   decision as the next edge.
+
+## 2026-06-28 - Recorded P10R TIPSY-vs-VDYP plot review failures
+
+- added `scripts/mark_p10r_tipsy_vdyp_plot_review.py` to record maintainer
+  review of the AU-wise TIPSY-vs-VDYP diagnostic plots;
+- marked `24` generated MP11 managed curves as
+  `passed_tipsy_vdyp_sanity_review`;
+- marked `FMH01`, `FMH22`, and `Fvh103` as
+  `failed_tipsy_below_vdyp_sanity_review` because their generated TIPSY
+  plantation curves sit substantially below matched public VDYP natural curves;
+- propagated the review result through
+  `planning/tfl6_mp11_managed_curves.{csv,json}`,
+  `planning/tfl6_mp11_managed_curve_comparison.{csv,json,md}`,
+  `planning/tfl6_mp11_managed_curve_plot_manifest.{csv,json,md}`, and
+  `planning/tfl6_mp11_tipsy_vdyp_diagnostic_manifest.{csv,json,md}`;
+- kept every row `not_model_input`; and
+- moved P10R.6 toward an explicit repair-or-exclude decision for the three
+  failed managed curves before any Phase 11 handoff.

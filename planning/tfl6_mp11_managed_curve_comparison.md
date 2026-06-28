@@ -70,6 +70,17 @@ Nearest Phase 5 future-managed comparison row selected by matching BEC zone/subz
 | Fvm207         | cwhvm1_hw_cw_m | high                      |             -165.7 |                 -8.846 |                  -22.7 |                     -2.111 |           85.29  | low_difference                   |
 | Fvm208         | cwhvm1_hw_cw_m | high                      |             -165.7 |                 -8.846 |                  -22.7 |                     -2.111 |           85.29  | low_difference                   |
 
+## Maintainer Plot Review
+
+- Passed TIPSY-vs-VDYP sanity rows: `24`
+- Failed TIPSY-vs-VDYP sanity rows: `3`
+- Failed AU codes: `FMH01`, `FMH22`, `Fvh103`
+- Failed review status: `failed_tipsy_below_vdyp_sanity_review`
+- Passed review status: `passed_tipsy_vdyp_sanity_review`
+- Model-input status: `not_model_input`
+- Review timestamp UTC: `2026-06-28T23:13:35+00:00`
+- Failed-row rationale: Maintainer plot review rejected this generated TIPSY curve because plantation yield should meet or beat the matched natural VDYP curve; observed TIPSY is substantially below VDYP.
+
 ## Use Boundary
 
 - Phase 5 curves are comparison/fallback evidence, not MP11-equivalent

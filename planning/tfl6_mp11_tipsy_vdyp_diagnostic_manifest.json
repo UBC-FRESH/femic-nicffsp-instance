@@ -11,7 +11,8 @@
     "tipsy_vdyp_moderate_difference": 8
   },
   "review_status_counts": {
-    "p10r5_tipsy_vdyp_diagnostic_review_required": 27
+    "passed_tipsy_vdyp_sanity_review": 24,
+    "failed_tipsy_below_vdyp_sanity_review": 3
   },
   "model_input_status_counts": {
     "not_model_input": 27
@@ -37,11 +38,12 @@
       "common_age_rmse": 294.635,
       "common_age_mean_delta": -221.935,
       "diagnostic_class": "tipsy_substantially_below_vdyp",
-      "review_status": "p10r5_tipsy_vdyp_diagnostic_review_required",
+      "review_status": "failed_tipsy_below_vdyp_sanity_review",
       "model_input_status": "not_model_input",
       "plot_path": "plots/mp11_tipsy_vdyp_diagnostics/mp11-fmh01_tipsy-vs-vdyp-cwhvm2-hw-ba-l.png",
       "plot_exists": true,
-      "plot_size_bytes": 100586
+      "plot_size_bytes": 100586,
+      "plot_review_note": "Maintainer plot review rejected this generated TIPSY curve because plantation yield should meet or beat the matched natural VDYP curve; observed TIPSY is substantially below VDYP."
     },
     {
       "mp11_au_code": "FMH22",
@@ -63,11 +65,12 @@
       "common_age_rmse": 317.305,
       "common_age_mean_delta": -246.732,
       "diagnostic_class": "tipsy_substantially_below_vdyp",
-      "review_status": "p10r5_tipsy_vdyp_diagnostic_review_required",
+      "review_status": "failed_tipsy_below_vdyp_sanity_review",
       "model_input_status": "not_model_input",
       "plot_path": "plots/mp11_tipsy_vdyp_diagnostics/mp11-fmh22_tipsy-vs-vdyp-cwhvm2-hw-ba-l.png",
       "plot_exists": true,
-      "plot_size_bytes": 100584
+      "plot_size_bytes": 100584,
+      "plot_review_note": "Maintainer plot review rejected this generated TIPSY curve because plantation yield should meet or beat the matched natural VDYP curve; observed TIPSY is substantially below VDYP."
     },
     {
       "mp11_au_code": "Fvh101",
@@ -89,11 +92,12 @@
       "common_age_rmse": 101.369,
       "common_age_mean_delta": 47.297,
       "diagnostic_class": "tipsy_vdyp_moderate_difference",
-      "review_status": "p10r5_tipsy_vdyp_diagnostic_review_required",
+      "review_status": "passed_tipsy_vdyp_sanity_review",
       "model_input_status": "not_model_input",
       "plot_path": "plots/mp11_tipsy_vdyp_diagnostics/mp11-fvh101_tipsy-vs-vdyp-cwhvh1-cw-hw-m.png",
       "plot_exists": true,
-      "plot_size_bytes": 98790
+      "plot_size_bytes": 98790,
+      "plot_review_note": "Maintainer plot review found no TIPSY-vs-VDYP sanity objection for this diagnostic plot."
     },
     {
       "mp11_au_code": "Fvh103",
@@ -115,11 +119,12 @@
       "common_age_rmse": 336.857,
       "common_age_mean_delta": -309.94,
       "diagnostic_class": "tipsy_substantially_below_vdyp",
-      "review_status": "p10r5_tipsy_vdyp_diagnostic_review_required",
+      "review_status": "failed_tipsy_below_vdyp_sanity_review",
       "model_input_status": "not_model_input",
       "plot_path": "plots/mp11_tipsy_vdyp_diagnostics/mp11-fvh103_tipsy-vs-vdyp-cwhvh1-cw-hw-l.png",
       "plot_exists": true,
-      "plot_size_bytes": 94335
+      "plot_size_bytes": 94335,
+      "plot_review_note": "Maintainer plot review rejected this generated TIPSY curve because plantation yield should meet or beat the matched natural VDYP curve; observed TIPSY is substantially below VDYP."
     },
     {
       "mp11_au_code": "Fvh104",
@@ -141,11 +146,12 @@
       "common_age_rmse": 250.429,
       "common_age_mean_delta": 169.274,
       "diagnostic_class": "tipsy_vdyp_moderate_difference",
-      "review_status": "p10r5_tipsy_vdyp_diagnostic_review_required",
+      "review_status": "passed_tipsy_vdyp_sanity_review",
       "model_input_status": "not_model_input",
       "plot_path": "plots/mp11_tipsy_vdyp_diagnostics/mp11-fvh104_tipsy-vs-vdyp-cwhvh1-hw-ss-m.png",
       "plot_exists": true,
-      "plot_size_bytes": 98979
+      "plot_size_bytes": 98979,
+      "plot_review_note": "Maintainer plot review found no TIPSY-vs-VDYP sanity objection for this diagnostic plot."
     },
     {
       "mp11_au_code": "Fvh104s",
@@ -167,11 +173,12 @@
       "common_age_rmse": 287.486,
       "common_age_mean_delta": 239.479,
       "diagnostic_class": "tipsy_substantially_above_vdyp",
-      "review_status": "p10r5_tipsy_vdyp_diagnostic_review_required",
+      "review_status": "passed_tipsy_vdyp_sanity_review",
       "model_input_status": "not_model_input",
       "plot_path": "plots/mp11_tipsy_vdyp_diagnostics/mp11-fvh104s_tipsy-vs-vdyp-cwhvh1-cw-hw-h.png",
       "plot_exists": true,
-      "plot_size_bytes": 96122
+      "plot_size_bytes": 96122,
+      "plot_review_note": "Maintainer plot review found no TIPSY-vs-VDYP sanity objection for this diagnostic plot."
     },
     {
       "mp11_au_code": "Fvh106",
@@ -193,11 +200,12 @@
       "common_age_rmse": 387.909,
       "common_age_mean_delta": 297.923,
       "diagnostic_class": "tipsy_substantially_above_vdyp",
-      "review_status": "p10r5_tipsy_vdyp_diagnostic_review_required",
+      "review_status": "passed_tipsy_vdyp_sanity_review",
       "model_input_status": "not_model_input",
       "plot_path": "plots/mp11_tipsy_vdyp_diagnostics/mp11-fvh106_tipsy-vs-vdyp-cwhvh1-hw-ba-h.png",
       "plot_exists": true,
-      "plot_size_bytes": 99301
+      "plot_size_bytes": 99301,
+      "plot_review_note": "Maintainer plot review found no TIPSY-vs-VDYP sanity objection for this diagnostic plot."
     },
     {
       "mp11_au_code": "Fvh108",
@@ -219,11 +227,12 @@
       "common_age_rmse": 252.236,
       "common_age_mean_delta": 198.472,
       "diagnostic_class": "tipsy_vdyp_moderate_difference",
-      "review_status": "p10r5_tipsy_vdyp_diagnostic_review_required",
+      "review_status": "passed_tipsy_vdyp_sanity_review",
       "model_input_status": "not_model_input",
       "plot_path": "plots/mp11_tipsy_vdyp_diagnostics/mp11-fvh108_tipsy-vs-vdyp-cwhvh1-hw-cw-h.png",
       "plot_exists": true,
-      "plot_size_bytes": 98245
+      "plot_size_bytes": 98245,
+      "plot_review_note": "Maintainer plot review found no TIPSY-vs-VDYP sanity objection for this diagnostic plot."
     },
     {
       "mp11_au_code": "Fvh113",
@@ -245,11 +254,12 @@
       "common_age_rmse": 91.89,
       "common_age_mean_delta": 35.811,
       "diagnostic_class": "tipsy_vdyp_close",
-      "review_status": "p10r5_tipsy_vdyp_diagnostic_review_required",
+      "review_status": "passed_tipsy_vdyp_sanity_review",
       "model_input_status": "not_model_input",
       "plot_path": "plots/mp11_tipsy_vdyp_diagnostics/mp11-fvh113_tipsy-vs-vdyp-cwhvh1-cw-hw-m.png",
       "plot_exists": true,
-      "plot_size_bytes": 96721
+      "plot_size_bytes": 96721,
+      "plot_review_note": "Maintainer plot review found no TIPSY-vs-VDYP sanity objection for this diagnostic plot."
     },
     {
       "mp11_au_code": "Fvm101",
@@ -271,11 +281,12 @@
       "common_age_rmse": 233.398,
       "common_age_mean_delta": 184.626,
       "diagnostic_class": "tipsy_vdyp_moderate_difference",
-      "review_status": "p10r5_tipsy_vdyp_diagnostic_review_required",
+      "review_status": "passed_tipsy_vdyp_sanity_review",
       "model_input_status": "not_model_input",
       "plot_path": "plots/mp11_tipsy_vdyp_diagnostics/mp11-fvm101_tipsy-vs-vdyp-cwhvm2-ba-hw-h.png",
       "plot_exists": true,
-      "plot_size_bytes": 96483
+      "plot_size_bytes": 96483,
+      "plot_review_note": "Maintainer plot review found no TIPSY-vs-VDYP sanity objection for this diagnostic plot."
     },
     {
       "mp11_au_code": "Fvm101s",
@@ -297,11 +308,12 @@
       "common_age_rmse": 367.948,
       "common_age_mean_delta": 316.915,
       "diagnostic_class": "tipsy_substantially_above_vdyp",
-      "review_status": "p10r5_tipsy_vdyp_diagnostic_review_required",
+      "review_status": "passed_tipsy_vdyp_sanity_review",
       "model_input_status": "not_model_input",
       "plot_path": "plots/mp11_tipsy_vdyp_diagnostics/mp11-fvm101s_tipsy-vs-vdyp-cwhvm1-cw-hw-h.png",
       "plot_exists": true,
-      "plot_size_bytes": 97139
+      "plot_size_bytes": 97139,
+      "plot_review_note": "Maintainer plot review found no TIPSY-vs-VDYP sanity objection for this diagnostic plot."
     },
     {
       "mp11_au_code": "Fvm103",
@@ -323,11 +335,12 @@
       "common_age_rmse": 88.501,
       "common_age_mean_delta": 29.189,
       "diagnostic_class": "tipsy_vdyp_close",
-      "review_status": "p10r5_tipsy_vdyp_diagnostic_review_required",
+      "review_status": "passed_tipsy_vdyp_sanity_review",
       "model_input_status": "not_model_input",
       "plot_path": "plots/mp11_tipsy_vdyp_diagnostics/mp11-fvm103_tipsy-vs-vdyp-cwhvm2-yc-hw-h.png",
       "plot_exists": true,
-      "plot_size_bytes": 94733
+      "plot_size_bytes": 94733,
+      "plot_review_note": "Maintainer plot review found no TIPSY-vs-VDYP sanity objection for this diagnostic plot."
     },
     {
       "mp11_au_code": "Fvm104",
@@ -349,11 +362,12 @@
       "common_age_rmse": 323.892,
       "common_age_mean_delta": 237.675,
       "diagnostic_class": "tipsy_substantially_above_vdyp",
-      "review_status": "p10r5_tipsy_vdyp_diagnostic_review_required",
+      "review_status": "passed_tipsy_vdyp_sanity_review",
       "model_input_status": "not_model_input",
       "plot_path": "plots/mp11_tipsy_vdyp_diagnostics/mp11-fvm104_tipsy-vs-vdyp-cwhvm1-ss-hw-l.png",
       "plot_exists": true,
-      "plot_size_bytes": 98574
+      "plot_size_bytes": 98574,
+      "plot_review_note": "Maintainer plot review found no TIPSY-vs-VDYP sanity objection for this diagnostic plot."
     },
     {
       "mp11_au_code": "Fvm105",
@@ -375,11 +389,12 @@
       "common_age_rmse": 253.463,
       "common_age_mean_delta": 220.895,
       "diagnostic_class": "tipsy_vdyp_moderate_difference",
-      "review_status": "p10r5_tipsy_vdyp_diagnostic_review_required",
+      "review_status": "passed_tipsy_vdyp_sanity_review",
       "model_input_status": "not_model_input",
       "plot_path": "plots/mp11_tipsy_vdyp_diagnostics/mp11-fvm105_tipsy-vs-vdyp-cwhvm1-hw-ss-m.png",
       "plot_exists": true,
-      "plot_size_bytes": 97875
+      "plot_size_bytes": 97875,
+      "plot_review_note": "Maintainer plot review found no TIPSY-vs-VDYP sanity objection for this diagnostic plot."
     },
     {
       "mp11_au_code": "Fvm106",
@@ -401,11 +416,12 @@
       "common_age_rmse": 335.933,
       "common_age_mean_delta": 262.318,
       "diagnostic_class": "tipsy_substantially_above_vdyp",
-      "review_status": "p10r5_tipsy_vdyp_diagnostic_review_required",
+      "review_status": "passed_tipsy_vdyp_sanity_review",
       "model_input_status": "not_model_input",
       "plot_path": "plots/mp11_tipsy_vdyp_diagnostics/mp11-fvm106_tipsy-vs-vdyp-cwhvm1-hw-ss-l.png",
       "plot_exists": true,
-      "plot_size_bytes": 98938
+      "plot_size_bytes": 98938,
+      "plot_review_note": "Maintainer plot review found no TIPSY-vs-VDYP sanity objection for this diagnostic plot."
     },
     {
       "mp11_au_code": "Fvm106s",
@@ -427,11 +443,12 @@
       "common_age_rmse": 395.184,
       "common_age_mean_delta": 342.515,
       "diagnostic_class": "tipsy_substantially_above_vdyp",
-      "review_status": "p10r5_tipsy_vdyp_diagnostic_review_required",
+      "review_status": "passed_tipsy_vdyp_sanity_review",
       "model_input_status": "not_model_input",
       "plot_path": "plots/mp11_tipsy_vdyp_diagnostics/mp11-fvm106s_tipsy-vs-vdyp-cwhvm1-cw-hw-h.png",
       "plot_exists": true,
-      "plot_size_bytes": 98116
+      "plot_size_bytes": 98116,
+      "plot_review_note": "Maintainer plot review found no TIPSY-vs-VDYP sanity objection for this diagnostic plot."
     },
     {
       "mp11_au_code": "Fvm107",
@@ -453,11 +470,12 @@
       "common_age_rmse": 353.175,
       "common_age_mean_delta": 311.755,
       "diagnostic_class": "tipsy_substantially_above_vdyp",
-      "review_status": "p10r5_tipsy_vdyp_diagnostic_review_required",
+      "review_status": "passed_tipsy_vdyp_sanity_review",
       "model_input_status": "not_model_input",
       "plot_path": "plots/mp11_tipsy_vdyp_diagnostics/mp11-fvm107_tipsy-vs-vdyp-cwhvm1-hw-cw-h.png",
       "plot_exists": true,
-      "plot_size_bytes": 100093
+      "plot_size_bytes": 100093,
+      "plot_review_note": "Maintainer plot review found no TIPSY-vs-VDYP sanity objection for this diagnostic plot."
     },
     {
       "mp11_au_code": "Fvm109",
@@ -479,11 +497,12 @@
       "common_age_rmse": 288.659,
       "common_age_mean_delta": 233.772,
       "diagnostic_class": "tipsy_substantially_above_vdyp",
-      "review_status": "p10r5_tipsy_vdyp_diagnostic_review_required",
+      "review_status": "passed_tipsy_vdyp_sanity_review",
       "model_input_status": "not_model_input",
       "plot_path": "plots/mp11_tipsy_vdyp_diagnostics/mp11-fvm109_tipsy-vs-vdyp-cwhvm1-hw-fdc-l.png",
       "plot_exists": true,
-      "plot_size_bytes": 98622
+      "plot_size_bytes": 98622,
+      "plot_review_note": "Maintainer plot review found no TIPSY-vs-VDYP sanity objection for this diagnostic plot."
     },
     {
       "mp11_au_code": "Fvm111",
@@ -505,11 +524,12 @@
       "common_age_rmse": 349.988,
       "common_age_mean_delta": 303.34,
       "diagnostic_class": "tipsy_substantially_above_vdyp",
-      "review_status": "p10r5_tipsy_vdyp_diagnostic_review_required",
+      "review_status": "passed_tipsy_vdyp_sanity_review",
       "model_input_status": "not_model_input",
       "plot_path": "plots/mp11_tipsy_vdyp_diagnostics/mp11-fvm111_tipsy-vs-vdyp-cwhvm1-hw-ss-m.png",
       "plot_exists": true,
-      "plot_size_bytes": 98866
+      "plot_size_bytes": 98866,
+      "plot_review_note": "Maintainer plot review found no TIPSY-vs-VDYP sanity objection for this diagnostic plot."
     },
     {
       "mp11_au_code": "Fvm114",
@@ -531,11 +551,12 @@
       "common_age_rmse": 201.979,
       "common_age_mean_delta": 149.979,
       "diagnostic_class": "tipsy_vdyp_moderate_difference",
-      "review_status": "p10r5_tipsy_vdyp_diagnostic_review_required",
+      "review_status": "passed_tipsy_vdyp_sanity_review",
       "model_input_status": "not_model_input",
       "plot_path": "plots/mp11_tipsy_vdyp_diagnostics/mp11-fvm114_tipsy-vs-vdyp-cwhvm2-yc-hw-h.png",
       "plot_exists": true,
-      "plot_size_bytes": 95042
+      "plot_size_bytes": 95042,
+      "plot_review_note": "Maintainer plot review found no TIPSY-vs-VDYP sanity objection for this diagnostic plot."
     },
     {
       "mp11_au_code": "Fvm131",
@@ -557,11 +578,12 @@
       "common_age_rmse": 265.282,
       "common_age_mean_delta": 197.163,
       "diagnostic_class": "tipsy_substantially_above_vdyp",
-      "review_status": "p10r5_tipsy_vdyp_diagnostic_review_required",
+      "review_status": "passed_tipsy_vdyp_sanity_review",
       "model_input_status": "not_model_input",
       "plot_path": "plots/mp11_tipsy_vdyp_diagnostics/mp11-fvm131_tipsy-vs-vdyp-cwhvm1-hw-dr-l.png",
       "plot_exists": true,
-      "plot_size_bytes": 92587
+      "plot_size_bytes": 92587,
+      "plot_review_note": "Maintainer plot review found no TIPSY-vs-VDYP sanity objection for this diagnostic plot."
     },
     {
       "mp11_au_code": "Fvm133",
@@ -583,11 +605,12 @@
       "common_age_rmse": 136.572,
       "common_age_mean_delta": 89.841,
       "diagnostic_class": "tipsy_vdyp_moderate_difference",
-      "review_status": "p10r5_tipsy_vdyp_diagnostic_review_required",
+      "review_status": "passed_tipsy_vdyp_sanity_review",
       "model_input_status": "not_model_input",
       "plot_path": "plots/mp11_tipsy_vdyp_diagnostics/mp11-fvm133_tipsy-vs-vdyp-cwhvm1-cw-hw-m.png",
       "plot_exists": true,
-      "plot_size_bytes": 95807
+      "plot_size_bytes": 95807,
+      "plot_review_note": "Maintainer plot review found no TIPSY-vs-VDYP sanity objection for this diagnostic plot."
     },
     {
       "mp11_au_code": "Fvm201",
@@ -609,11 +632,12 @@
       "common_age_rmse": 323.779,
       "common_age_mean_delta": 264.246,
       "diagnostic_class": "tipsy_substantially_above_vdyp",
-      "review_status": "p10r5_tipsy_vdyp_diagnostic_review_required",
+      "review_status": "passed_tipsy_vdyp_sanity_review",
       "model_input_status": "not_model_input",
       "plot_path": "plots/mp11_tipsy_vdyp_diagnostics/mp11-fvm201_tipsy-vs-vdyp-cwhvm1-cw-hw-h.png",
       "plot_exists": true,
-      "plot_size_bytes": 97301
+      "plot_size_bytes": 97301,
+      "plot_review_note": "Maintainer plot review found no TIPSY-vs-VDYP sanity objection for this diagnostic plot."
     },
     {
       "mp11_au_code": "Fvm203",
@@ -635,11 +659,12 @@
       "common_age_rmse": 136.396,
       "common_age_mean_delta": 32.568,
       "diagnostic_class": "tipsy_vdyp_moderate_difference",
-      "review_status": "p10r5_tipsy_vdyp_diagnostic_review_required",
+      "review_status": "passed_tipsy_vdyp_sanity_review",
       "model_input_status": "not_model_input",
       "plot_path": "plots/mp11_tipsy_vdyp_diagnostics/mp11-fvm203_tipsy-vs-vdyp-cwhvm2-cw-hw-m.png",
       "plot_exists": true,
-      "plot_size_bytes": 105431
+      "plot_size_bytes": 105431,
+      "plot_review_note": "Maintainer plot review found no TIPSY-vs-VDYP sanity objection for this diagnostic plot."
     },
     {
       "mp11_au_code": "Fvm207",
@@ -661,11 +686,12 @@
       "common_age_rmse": 434.432,
       "common_age_mean_delta": 363.001,
       "diagnostic_class": "tipsy_substantially_above_vdyp",
-      "review_status": "p10r5_tipsy_vdyp_diagnostic_review_required",
+      "review_status": "passed_tipsy_vdyp_sanity_review",
       "model_input_status": "not_model_input",
       "plot_path": "plots/mp11_tipsy_vdyp_diagnostics/mp11-fvm207_tipsy-vs-vdyp-cwhvm1-hw-cw-m.png",
       "plot_exists": true,
-      "plot_size_bytes": 99573
+      "plot_size_bytes": 99573,
+      "plot_review_note": "Maintainer plot review found no TIPSY-vs-VDYP sanity objection for this diagnostic plot."
     },
     {
       "mp11_au_code": "Fvm208",
@@ -687,11 +713,12 @@
       "common_age_rmse": 434.432,
       "common_age_mean_delta": 363.001,
       "diagnostic_class": "tipsy_substantially_above_vdyp",
-      "review_status": "p10r5_tipsy_vdyp_diagnostic_review_required",
+      "review_status": "passed_tipsy_vdyp_sanity_review",
       "model_input_status": "not_model_input",
       "plot_path": "plots/mp11_tipsy_vdyp_diagnostics/mp11-fvm208_tipsy-vs-vdyp-cwhvm1-hw-cw-m.png",
       "plot_exists": true,
-      "plot_size_bytes": 100166
+      "plot_size_bytes": 100166,
+      "plot_review_note": "Maintainer plot review found no TIPSY-vs-VDYP sanity objection for this diagnostic plot."
     },
     {
       "mp11_au_code": "Fvm211",
@@ -713,11 +740,17 @@
       "common_age_rmse": 148.808,
       "common_age_mean_delta": -90.761,
       "diagnostic_class": "tipsy_substantially_below_vdyp",
-      "review_status": "p10r5_tipsy_vdyp_diagnostic_review_required",
+      "review_status": "passed_tipsy_vdyp_sanity_review",
       "model_input_status": "not_model_input",
       "plot_path": "plots/mp11_tipsy_vdyp_diagnostics/mp11-fvm211_tipsy-vs-vdyp-cwhvm1-hw-cw-l.png",
       "plot_exists": true,
-      "plot_size_bytes": 104040
+      "plot_size_bytes": 104040,
+      "plot_review_note": "Maintainer plot review found no TIPSY-vs-VDYP sanity objection for this diagnostic plot."
     }
+  ],
+  "failed_plot_review_au_codes": [
+    "FMH01",
+    "FMH22",
+    "Fvh103"
   ]
 }

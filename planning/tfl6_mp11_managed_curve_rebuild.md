@@ -18,7 +18,7 @@ keeping every row review-gated as `not_model_input`.
 - BTC error rows: `0`
 - Parsed curve rows: `972`
 - Parsed curve feature count: `27`
-- Review status: `tentatively_passed_review`
+- Review status: `passed_tipsy_vdyp_sanity_review` for `24` candidate curves; `failed_tipsy_below_vdyp_sanity_review` for `3` candidate curves (`FMH01`, `FMH22`, `Fvh103`).
 - Model-input status: `not_model_input`
 
 ## Toolchain Finding

@@ -614,8 +614,8 @@ natural/managed curve plots or a maintainer-reviewable blocker package.
 - [x] P10R.4 Run and parse MP11 managed curve generation (`#96`) - Windows
   BatchTIPSY/TIPSY execution, output parsing, inspection, and Phase 5 fallback
   comparison complete for the `27` future-managed candidates. Every row remains
-  review-gated as `not_model_input`, with a later maintainer status of
-  `tentatively_passed_review`.
+  review-gated as `not_model_input`; later plot review passed `24` candidates
+  and failed `3` below-VDYP sanity rows.
   - [x] P10R.4a Run accepted BatchTIPSY/TIPSY or local-equivalent commands.
   - [x] P10R.4b Capture tool versions, commands, inputs, outputs, and failures.
   - [x] P10R.4c Parse output curves to normalized tables.
@@ -624,7 +624,8 @@ natural/managed curve plots or a maintainer-reviewable blocker package.
 - [x] P10R.5 Regenerate natural and managed curve plots and overlays (`#97`) -
   managed Phase 10R-vs-Phase 5 overlays, public VDYP curve slices, and
   AU-wise MP11 TIPSY-vs-VDYP diagnostic plots complete. All rows remain
-  `not_model_input`.
+  `not_model_input`; `FMH01`, `FMH22`, and `Fvh103` are failed
+  TIPSY-below-VDYP sanity rows.
   - [x] P10R.5a Inventory existing curve plot locations.
   - [x] P10R.5b Generate updated VDYP/natural curves and AU-wise
     TIPSY-vs-VDYP diagnostic plots where inputs support it.
@@ -901,9 +902,15 @@ The Phase 1 follow-on issues are placed into the future roadmap as follows:
    `planning/tfl6_mp11_vdyp_natural_curve_slice.{csv,json}` and
    `planning/tfl6_mp11_tipsy_vdyp_diagnostic_manifest.{csv,json,md}` with
    `27` AU-wise MP11 TIPSY-vs-public-VDYP diagnostic plots under ignored
-   `plots/mp11_tipsy_vdyp_diagnostics/`. The active edge moves to P10R.6:
-   close the curve-rebuild phase and decide whether Phase 11 remains blocked
-   or may start from the accepted/tentative curve handoff.
+   `plots/mp11_tipsy_vdyp_diagnostics/`. Maintainer plot review passed `24`
+   generated managed curves and failed `3` curves (`FMH01`, `FMH22`, `Fvh103`)
+   because the generated TIPSY plantation curve sits substantially below the
+   matched public VDYP natural curve. The failed rows carry
+   `failed_tipsy_below_vdyp_sanity_review`; the passed rows carry
+   `passed_tipsy_vdyp_sanity_review`; every row remains `not_model_input`. The
+   active edge moves to P10R.6: close the curve-rebuild phase with an explicit
+   repair-or-exclude decision for those `3` failed managed curves before any
+   Phase 11 handoff.
 2. Phase 7 is closed. PR `#56` merged the MP11 figure-extraction test
    closeout into `main`. The final closeout surface is
    `planning/tfl6_mp11_figure_extraction_closeout.md` with matching CSV/JSON.
