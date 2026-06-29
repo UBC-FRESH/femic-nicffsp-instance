@@ -3928,3 +3928,21 @@
   treatments; and
 - marked P14.7 complete in `ROADMAP.md`, leaving P14.8 Phase 14 caveats,
   comparison results, and closeout documentation as the next bounded task.
+
+## 2026-06-29 - Closed MP11 Phase 14 harvest-system documentation lane
+
+- added `planning/tfl6_mp11_phase14_closeout.md` with the final Phase 14
+  closeout boundary, evidence basis, classification comparison, runtime/smoke
+  results, caveats, and release-language guidance;
+- added `docs/phase14-mp11-harvest-system-operability.rst` and linked it from
+  the Sphinx index;
+- documented that WFP LBB remains unavailable/private and that the Phase 14
+  ground/cable/heli lanes are public-proxy assignments, not WFP-model
+  equivalence;
+- recorded the P14.4 normalized area-share comparison against MP11 Table 73,
+  the P14.5 split-lane XML result, the P14.6 Matrix Builder/runtime evidence,
+  and the P14.7 all-system/no-heli smoke results;
+- preserved Phase 5 as the accepted public teaching/runtime baseline and
+  described the Phase 14 runtime as a caveated MP11 candidate supplement for
+  comparison and advanced teaching; and
+- marked P14.8 and Phase 14 complete in `ROADMAP.md`.

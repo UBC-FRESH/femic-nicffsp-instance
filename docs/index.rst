@@ -22,4 +22,5 @@ trail used to create it.
    phase7-mp11-figure-extraction
    phase9-mp11-thlb-netdown
    phase13-mp11-candidate-runtime
+   phase14-mp11-harvest-system-operability
    teaching-challenges

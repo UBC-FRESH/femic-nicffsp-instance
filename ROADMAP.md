@@ -891,11 +891,11 @@ Execution plan:
 
 ## Phase 14: MP11 Harvest-System Operability Integration (`#138`)
 
-Status: active. Phase 14 converts the deferred MP11 harvest-system caveat into
-a runtime-visible public-proxy implementation lane. It starts from the Phase 13
-`supplement_phase5` decision: Phase 5 remains the accepted public
-teaching/runtime baseline, while the smoke-tested MP11 candidate is the working
-supplement for comparison and advanced teaching.
+Status: complete. Phase 14 converted the deferred MP11 harvest-system caveat
+into a runtime-visible public-proxy implementation lane. It starts from the
+Phase 13 `supplement_phase5` decision: Phase 5 remains the accepted public
+teaching/runtime baseline, while the smoke-tested MP11 harvest-system candidate
+is a working supplement for comparison and advanced teaching.
 
 Evidence basis:
 
@@ -995,8 +995,15 @@ Planning note:
   - [x] P14.7d Emit
     `planning/tfl6_mp11_phase14_no_heli_tracks.{csv,json,md}` and
     `planning/tfl6_mp11_phase14_scenario_smoke_qa.{csv,json,md}`.
-- [ ] P14.8 Document Phase 14 caveats, comparison results, and closeout status
+- [x] P14.8 Document Phase 14 caveats, comparison results, and closeout status
   (`#146`).
+  - [x] P14.8a Add
+    `planning/tfl6_mp11_phase14_closeout.md`.
+  - [x] P14.8b Add
+    `docs/phase14-mp11-harvest-system-operability.rst` and link it from the
+    Sphinx index.
+  - [x] P14.8c Preserve Phase 5 as the accepted public teaching/runtime
+    baseline and describe Phase 14 as a caveated MP11 candidate supplement.
 
 ## Dependency Order
 
@@ -1150,11 +1157,18 @@ The Phase 1 follow-on issues are placed into the future roadmap as follows:
    200,000-iteration harvest smoke all passed. The all-system schedule recorded
    `76,635` rows across `CC_CABLE`, `CC_GROUND`, and `CC_HELI`; the no-heli
    schedule recorded `75,086` rows across `CC_CABLE` and `CC_GROUND`, with no
-   `CC_HELI` scheduled treatments. The next bounded task is P14.8 (`#146`):
-   document Phase 14 caveats, comparison results, and closeout status.
+   `CC_HELI` scheduled treatments. P14.8 (`#146`) is complete:
+   `planning/tfl6_mp11_phase14_closeout.md` and
+   `docs/phase14-mp11-harvest-system-operability.rst` document the Phase 14
+   caveats, comparison evidence, runtime status, teaching use, and closeout
+   boundary. Phase 14 is complete. Phase 5 remains the accepted public
+   teaching/runtime baseline; the MP11 harvest-system runtime is a caveated
+   candidate supplement. Future archive publication, clean-checkout
+   materialization, broader KPI calibration, or Phase 5 replacement work should
+   open a new issue or phase.
 
 Historical leading-edge notes below are retained for audit context only; the
-active next step is P14.8.
+Phase 14 lane has no active next step.
 
 0. Phase 11 is active on branch
    `feature/p11-model-input-xml-rebuild-plan`. P11.1 and P11.2 are complete.
