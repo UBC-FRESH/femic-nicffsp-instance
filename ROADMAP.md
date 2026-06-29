@@ -783,7 +783,8 @@ public CDED steep-slope proxy in the P9RF THLB surface.
 Status: active. P12.1 launched the runtime-build issue tree and added the MP11
 candidate Matrix Builder config. P12.2 generated and inspected Matrix Builder
 tracks. P12.3 assembled the candidate runtime package. P12.4 passed direct
-launch smoke. P12.5 is the next representative scenario-smoke step.
+launch smoke. P12.5 passed representative scenario smoke. P12.6 is the next
+runtime-smoke closeout and Phase 13 handoff step.
 
 Goal: run Matrix Builder, assemble an MP11-aligned Patchworks runtime package,
 and smoke-test direct launch plus representative base and sensitivity
@@ -821,7 +822,14 @@ candidate runtime package.
     and warning/error surfaces.
   - [x] P12.4c Record launch QA in
     `planning/tfl6_mp11_direct_launch_qa.{csv,json,md}`.
-- [ ] P12.5 Smoke-test representative base and sensitivity scenarios (`#118`).
+- [x] P12.5 Smoke-test representative base and sensitivity scenarios (`#118`).
+  - [x] P12.5a Patch candidate scenario helper to prime harvested volume before
+    even-flow activation.
+  - [x] P12.5b Run 200,000-iteration max-even-flow scenario smoke.
+  - [x] P12.5c Inspect target status, target summary, schedule, trace, and log
+    surfaces.
+  - [x] P12.5d Record scenario QA in
+    `planning/tfl6_mp11_scenario_smoke_qa.{csv,json,md}`.
 - [ ] P12.6 Close runtime smoke phase and hand off Phase 13 release/docs QA
   (`#119`).
 
@@ -1045,6 +1053,18 @@ The Phase 1 follow-on issues are placed into the future roadmap as follows:
    `schedule.csv` rows for the no-iteration launch, and no stdout/stderr
    warning or error matches. The next bounded move is P12.5: representative
    base/sensitivity scenario smoke.
+   P12.5 is complete on branch `feature/p12-5-mp11-scenario-smoke`: the
+   candidate headless scenario helper now activates the base harvested-volume
+   target with a linear `20,000,000` per-period minimum, runs 1,000 seed
+   iterations plus a 5-second active dwell before even-flow activation, then
+   runs the even-flow target with default non-linear penalty shape and
+   min/max weights `10,000` for `200,000` iterations. Scenario run
+   `tfl6_mp11_candidate_p12_5_harvest_smoke200k` returned code `0`, saved
+   `3,359` files, wrote `76,726` managed `CC` schedule rows, retained nonzero
+   final-period base harvested volume `14,104,784`, and recorded
+   `planning/tfl6_mp11_scenario_smoke_qa.{csv,json,md}` with status
+   `scenario_smoke_pass`. The next bounded move is P12.6: close runtime smoke
+   and hand off Phase 13 release/docs QA.
 0. Phase 9D and Phase 9E are complete. Step 210 now applies the public TSM
    strict Class V proxy, deducting `1.425 ha` against the MP11 Step 210 target
    `1,993.000 ha`; this is an explicit public-source coverage/semantic gap, not

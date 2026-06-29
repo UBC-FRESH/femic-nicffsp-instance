@@ -126,8 +126,38 @@ runtime_launch_surfaces:
       scenario_mode: none
       iterations: 0
   representative_scenario_smoke:
-    qa_status: not_performed
+    run_id: tfl6_mp11_candidate_p12_5_harvest_smoke200k
+    command: >
+      python -m femic patchworks run-headless
+      models/tfl6_patchworks_model_mp11_candidate/analysis/base.pin
+      --instance-root external/femic-tfl6-instance
+      --config config/patchworks.runtime.mp11_candidate.windows.yaml
+      --run-id tfl6_mp11_candidate_p12_5_harvest_smoke200k
+      --stage-label p12_5_harvest_smoke200k
+      --scenario-mode max-even-flow-smoke
+      --scenario-target product.HarvestedVolume.managed.Total.CC
+      --scenario-min-annual 20000000
+      --iterations 200000
+    qa_status: candidate_p12_5
     owner: P12.5
+    evidence:
+      planning_note: planning/tfl6_mp11_scenario_smoke_qa.md
+      raw_returncode: 0
+      returncode: 0
+      terminal_state: success
+      detected_marker: "[FEMIC headless] saveStage completed"
+      saved_file_count: 3359
+      stage_dir: models/tfl6_patchworks_model_mp11_candidate/analysis/p12_5_harvest_smoke200k
+      scenario_mode: max-even-flow-smoke
+      scenario_target: product.HarvestedVolume.managed.Total.CC
+      scenario_min_annual: 20000000
+      iterations: 200000
+      schedule_rows: 76726
+      scheduled_type: MANAGED
+      scheduled_treatment: CC
+      base_final_period_current: 14104784.0
+      flow_weights_all_10000: true
+      trace_order_ok: true
 
 publication_policy:
   tracked_in_git:

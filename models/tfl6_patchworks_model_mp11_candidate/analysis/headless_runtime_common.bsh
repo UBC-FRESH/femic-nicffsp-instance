@@ -10,6 +10,10 @@ String femicHeadlessTraceLogPath = null;
 String femicHeadlessScenarioMode = "none";
 String femicHeadlessScenarioTargetLabel = null;
 Double femicHeadlessScenarioMinAnnual = null;
+double femicHeadlessPrimingMinimumPerPeriod = 20000000.0d;
+long femicHeadlessPrimingMillis = 5000L;
+int femicHeadlessSeedIterations = 1000;
+double femicHeadlessEvenFlowWeight = 10000.0d;
 
 String femicThrowableToString(Throwable ex) {
    java.io.StringWriter sw = new java.io.StringWriter();
@@ -126,14 +130,19 @@ void femicConfigureHeadlessBaseHarvestTarget(String targetLabel, double minAnnua
 
    target.setActive(true);
    target.setMinActive(true);
-   target.setMaxActive(true);
+   target.setMaxActive(false);
    target.setLinear(true);
 
-   target.setMaximum(200000f, 0);
-   for (int i = 1; i < Horizon.periods; i++) {
-      target.setMinimum((float)(minAnnual * Horizon.intervals[i]), i);
-      target.setMaximum(200000f, i);
+   for (int i = 0; i < Horizon.periods; i++) {
+      target.setMinimum((float)femicHeadlessPrimingMinimumPerPeriod, i);
    }
+
+   femicHeadlessTrace("configured base harvest target="
+                      + targetLabel
+                      + " min_per_period="
+                      + femicHeadlessPrimingMinimumPerPeriod
+                      + " linear=true max_active=false requested_minAnnual="
+                      + minAnnual);
 }
 
 void femicConfigureHeadlessEvenFlowTarget(String targetLabel) {
@@ -148,9 +157,40 @@ void femicConfigureHeadlessEvenFlowTarget(String targetLabel) {
    for (int i = 0; i < Horizon.periods; i++) {
       target.setMinimum(0f, i);
       target.setMaximum(0f, i);
-      target.setMinWeight(100f, i);
-      target.setMaxWeight(100f, i);
+      target.setMinWeight((float)femicHeadlessEvenFlowWeight, i);
+      target.setMaxWeight((float)femicHeadlessEvenFlowWeight, i);
    }
+
+   femicHeadlessTrace("configured even-flow target="
+                      + targetLabel
+                      + " default_penalty_shape=true minmax_weight="
+                      + femicHeadlessEvenFlowWeight);
+}
+
+void femicPrimeHeadlessHarvestTarget(String targetLabel) {
+   femicHeadlessTrace("priming base harvest target before even-flow activation: target="
+                      + targetLabel
+                      + " seed_iterations="
+                      + femicHeadlessSeedIterations);
+   femicWaitHeadlessIterations(femicHeadlessSeedIterations);
+   if (!control.isSuspended()) {
+      femicHeadlessTrace("base harvest target active dwell started: target="
+                         + targetLabel
+                         + " dwell_ms="
+                         + femicHeadlessPrimingMillis);
+      try {
+         Thread.sleep(femicHeadlessPrimingMillis);
+      } catch (InterruptedException ex) {
+         femicHeadlessTrace("priming dwell interrupted: " + ex);
+      }
+      femicHeadlessTrace("base harvest target active dwell completed: target="
+                         + targetLabel
+                         + " isSuspended="
+                         + control.isSuspended());
+   } else {
+      femicHeadlessTrace("base harvest target dwell skipped because scheduler is suspended");
+   }
+   femicHeadlessTrace("base harvest target priming completed: target=" + targetLabel);
 }
 
 void femicWaitHeadlessIterations(int waitCount) {
@@ -187,22 +227,14 @@ void femicRunHeadlessStage() {
             minAnnual = femicHeadlessScenarioMinAnnual.doubleValue();
 
          femicConfigureHeadlessBaseHarvestTarget(baseTargetLabel, minAnnual);
+         femicPrimeHeadlessHarvestTarget(baseTargetLabel);
 
-         int seedIterations = femicHeadlessIterations;
-         int flowIterations = 0;
-         if (control.getTarget(flowTargetLabel) != null && femicHeadlessIterations > 1) {
-            seedIterations = Math.max(1, femicHeadlessIterations / 2);
-            flowIterations = femicHeadlessIterations - seedIterations;
-         }
-
-         femicWaitHeadlessIterations(seedIterations);
-
-         if (flowIterations > 0) {
+         if (control.getTarget(flowTargetLabel) != null && femicHeadlessIterations > 0) {
             if (!control.isSuspended())
                control.suspend();
 
             femicConfigureHeadlessEvenFlowTarget(flowTargetLabel);
-            femicWaitHeadlessIterations(flowIterations);
+            femicWaitHeadlessIterations(femicHeadlessIterations);
          }
       } else if (femicHeadlessIterations > 0) {
          femicWaitHeadlessIterations(femicHeadlessIterations);

@@ -1,0 +1,144 @@
+{
+  "summary": {
+    "generated_at_utc": "2026-06-29T04:52:48+00:00",
+    "qa_status": "scenario_smoke_pass",
+    "run_id": "tfl6_mp11_candidate_p12_5_harvest_smoke200k",
+    "raw_returncode": 0,
+    "returncode": 0,
+    "terminal_state": "success",
+    "detected_marker": "[FEMIC headless] saveStage completed",
+    "scenario_mode": "max-even-flow-smoke",
+    "scenario_target": "product.HarvestedVolume.managed.Total.CC",
+    "flow_target": "flow.even.product.HarvestedVolume.managed.Total.CC",
+    "iterations": 200000,
+    "scenario_min_annual": 20000000.0,
+    "stage_dir": "models/tfl6_patchworks_model_mp11_candidate/analysis/p12_5_harvest_smoke200k",
+    "saved_file_count": 3359,
+    "stage_file_count": 3359,
+    "target_status_rows": 824,
+    "target_summary_rows": 25544,
+    "schedule_rows": 76726,
+    "scheduled_types": "MANAGED",
+    "scheduled_treatments": "CC",
+    "base_target_active": true,
+    "base_target_minactive": true,
+    "base_target_maxactive": false,
+    "base_target_linear": true,
+    "base_minimum_all_20m": true,
+    "base_final_period_current": 14104784.0,
+    "flow_target_active": true,
+    "flow_target_minactive": true,
+    "flow_target_maxactive": true,
+    "flow_target_linear": false,
+    "flow_weights_all_10000": true,
+    "trace_order_ok": true,
+    "stdout_error_count": 0,
+    "stderr_error_count": 0,
+    "stdout_warning_count": 0,
+    "stderr_warning_count": 0,
+    "release_qa": "not_performed"
+  },
+  "manifest": {
+    "run_id": "tfl6_mp11_candidate_p12_5_harvest_smoke200k",
+    "raw_returncode": 0,
+    "returncode": 0,
+    "mode": "headless_pin",
+    "failures": [],
+    "headless_automation": {
+      "terminal_state": "success",
+      "detected_marker": "[FEMIC headless] saveStage completed"
+    },
+    "inputs": {
+      "stage_label": "p12_5_harvest_smoke200k",
+      "iterations": 200000,
+      "scenario_mode": "max-even-flow-smoke",
+      "scenario_target": "product.HarvestedVolume.managed.Total.CC",
+      "scenario_min_annual": 20000000.0
+    },
+    "outputs": {
+      "stage_dir": "models/tfl6_patchworks_model_mp11_candidate/analysis/p12_5_harvest_smoke200k",
+      "saved_file_count": 3359
+    }
+  },
+  "target_status": {
+    "base": {
+      "target": "product.HarvestedVolume.managed.Total.CC",
+      "periods": 31,
+      "active": true,
+      "minactive": true,
+      "maxactive": false,
+      "linear": true,
+      "premultiply": false
+    },
+    "flow": {
+      "target": "flow.even.product.HarvestedVolume.managed.Total.CC",
+      "periods": 31,
+      "active": true,
+      "minactive": true,
+      "maxactive": true,
+      "linear": false,
+      "premultiply": false
+    }
+  },
+  "target_summary": {
+    "base_final_period": {
+      "TARGET": "product.HarvestedVolume.managed.Total.CC",
+      "PERIOD": 30,
+      "YEAR": 300,
+      "PERIODWIDTH": 10,
+      "MINIMUM": 20000000.0,
+      "MAXIMUM": 20000000.0,
+      "MINWEIGHT": 1.0,
+      "MAXWEIGHT": 1.0,
+      "CURRENT": 14104784.0,
+      "INITIAL": 0.0,
+      "OBJECTIVE": 589521.5579
+    },
+    "base_minimum_unique": [
+      20000000.0
+    ],
+    "flow_minweight_unique": [
+      10000.0
+    ],
+    "flow_maxweight_unique": [
+      10000.0
+    ]
+  },
+  "schedule": {
+    "rows": 76726,
+    "types": [
+      "MANAGED"
+    ],
+    "treatments": [
+      "CC"
+    ]
+  },
+  "trace_checks": {
+    "base_config": true,
+    "priming": true,
+    "evenflow": true,
+    "order_ok": true
+  },
+  "log_scan": {
+    "stdout": {
+      "path": "runtime/logs/patchworks_headless_stdout-tfl6_mp11_candidate_p12_5_harvest_smoke200k.log",
+      "bytes": 155,
+      "error": 0,
+      "warning": 0,
+      "exception": 0,
+      "failed": 0
+    },
+    "stderr": {
+      "path": "runtime/logs/patchworks_headless_stderr-tfl6_mp11_candidate_p12_5_harvest_smoke200k.log",
+      "bytes": 86,
+      "error": 0,
+      "warning": 0,
+      "exception": 0,
+      "failed": 0
+    }
+  },
+  "source_manifests": {
+    "headless_manifest": "runtime/logs/patchworks_headless_manifest-tfl6_mp11_candidate_p12_5_harvest_smoke200k.json",
+    "direct_launch_qa": "planning/tfl6_mp11_direct_launch_qa.json"
+  }
+}
