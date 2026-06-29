@@ -3383,3 +3383,19 @@
   an MP11 candidate runtime passes downstream QA; and
 - marked P11.1b complete in `ROADMAP.md`, leaving P11.1c artifact layout and
   generated-output hygiene as the next bounded move.
+
+## 2026-06-28 - Defined Phase 11 artifact layout
+
+- added `planning/tfl6_mp11_phase11_artifact_layout.{csv,json,md}` as the
+  P11.1c generated-output hygiene contract;
+- defined MP11 candidate generated roots under `data/mp11_model_input_bundle/`,
+  `output/patchworks_tfl6_mp11_candidate/`, `runtime/mp11_model_input_xml/`,
+  `plots/mp11_model_input_xml/`, and
+  `models/tfl6_patchworks_model_mp11_candidate/`;
+- added explicit `.gitignore` rules for the MP11 candidate model-input bundle
+  and candidate Patchworks runtime generated-output subdirectories;
+- locked the rule that Phase 11 must not overwrite accepted Phase 5 payloads
+  before downstream model-input, XML, Matrix Builder, runtime, docs, and release
+  QA pass; and
+- marked P11.1c complete in `ROADMAP.md`, leaving P11.1d promotion gates and
+  stop conditions as the next bounded move.

@@ -25,6 +25,11 @@ models/tfl6_patchworks_model/tracks/
 models/tfl6_patchworks_model/patchworksLog.csv
 models/tfl6_patchworks_model/analysis/p44*/
 models/tfl6_patchworks_model/analysis/headless_runs/
+models/tfl6_patchworks_model_mp11_candidate/blocks/
+models/tfl6_patchworks_model_mp11_candidate/tracks/
+models/tfl6_patchworks_model_mp11_candidate/patchworksLog.csv
+models/tfl6_patchworks_model_mp11_candidate/analysis/p*/
+models/tfl6_patchworks_model_mp11_candidate/analysis/headless_runs/
 releases/
 plots/
 docs/_build/
@@ -33,3 +38,4 @@ docs/_build/
 data/*.feather
 data/*.pkl
 data/model_input_bundle/
+data/mp11_model_input_bundle/
