@@ -3734,3 +3734,15 @@
   comparison tables do not treat screenshot-only evidence as release QA; and
 - marked P13.1b complete in `ROADMAP.md`, leaving P13.2 KPI/caveat comparison
   reporting as the next bounded Phase 13 step.
+
+## 2026-06-28 - Built MP11 Phase 13 KPI and caveat report
+
+- added `scripts/build_p13_mp11_kpi_caveat_report.py`;
+- generated `planning/tfl6_mp11_phase13_kpi_caveat_report.{csv,json,md}` with
+  `42` rows covering harvest flow, land base, source/THLB constraints,
+  sensitivities, KPI gaps, reviewed figure evidence, and runtime-build
+  evidence;
+- labelled rows by evidence strength, evidence role, blocker/caveat status,
+  and release-decision implication; and
+- marked P13.2 complete in `ROADMAP.md`, leaving P13.3 Sphinx documentation
+  and teaching guidance as the next bounded Phase 13 step.
