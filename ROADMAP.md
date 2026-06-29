@@ -1034,7 +1034,16 @@ Publication artifacts:
     not the older P13 archive.
   - [x] P15.1c Record artifact names, status vocabulary, WFP LBB caveats, and
     Phase 5 baseline boundary.
-- [ ] P15.2 Build MP11 harvest-system runtime archive and manifest (`#149`).
+- [x] P15.2 Build MP11 harvest-system runtime archive and manifest (`#149`).
+  - [x] P15.2a Add
+    `scripts/build_p15_harvest_system_archive_publication_qa.py`.
+  - [x] P15.2b Build local archive
+    `releases/tfl6_mp11_harvest_system_candidate_runtime_p15_2.zip`.
+  - [x] P15.2c Emit tracked manifest
+    `releases/tfl6_mp11_harvest_system_candidate_runtime_p15_2_manifest.yaml`.
+  - [x] P15.2d Emit
+    `planning/tfl6_mp11_phase15_archive_publication_qa.{csv,json,md}` with
+    status `local_archive_built_not_published`.
 - [ ] P15.3 Annex and publish archive through `arbutus-s3` (`#150`).
 - [ ] P15.4 Prove no-credential clean-checkout materialization (`#151`).
 - [ ] P15.5 Run direct launch and scenario smoke from materialized archive
@@ -1142,12 +1151,20 @@ The Phase 1 follow-on issues are placed into the future roadmap as follows:
    records the Phase 14 source-runtime boundary, publication artifact names,
    release-status vocabulary, hard validation gates, WFP LBB caveats, and Phase
    5 baseline boundary. P15 consumes the completed Phase 14 harvest-system
-   runtime, not the older P13 candidate archive. The next bounded task is P15.2
-   (`#149`): build the MP11 harvest-system runtime archive and manifest without
-   publishing yet.
+   runtime, not the older P13 candidate archive. P15.2 (`#149`) is complete:
+   `scripts/build_p15_harvest_system_archive_publication_qa.py` built local
+   archive `releases/tfl6_mp11_harvest_system_candidate_runtime_p15_2.zip`,
+   emitted manifest
+   `releases/tfl6_mp11_harvest_system_candidate_runtime_p15_2_manifest.yaml`,
+   and wrote `planning/tfl6_mp11_phase15_archive_publication_qa.{csv,json,md}`.
+   The archive contains `46` files, includes both all-system `tracks/` and
+   no-heli `tracks_no_heli/`, passed ZIP integrity/member-count checks, and has
+   SHA256 `fcf8d3615f8bba65419d1a401d818c5eb87e7d75d3aa6007cfa6ada773536362`.
+   The next bounded task is P15.3 (`#150`): annex and publish the archive and
+   manifest through `arbutus-s3`.
 
 Historical leading-edge notes below are retained for audit context only; the
-active next step is P15.2.
+active next step is P15.3.
 
 0. Phase 14 is active on branch
    `feature/tfl6-mp11-harvest-system-operability`. P14.1 (`#139`) is complete:

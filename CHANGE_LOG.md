@@ -3965,3 +3965,21 @@
   `replacement_candidate_blocked`; and
 - kept Phase 5 as the accepted public teaching/runtime baseline until a later
   explicit replacement acceptance decision.
+
+## 2026-06-29 - Built MP11 Phase 15 harvest-system runtime archive
+
+- added `scripts/build_p15_harvest_system_archive_publication_qa.py`;
+- built local archive
+  `releases/tfl6_mp11_harvest_system_candidate_runtime_p15_2.zip`;
+- emitted tracked manifest
+  `releases/tfl6_mp11_harvest_system_candidate_runtime_p15_2_manifest.yaml`;
+- emitted `planning/tfl6_mp11_phase15_archive_publication_qa.{csv,json,md}`
+  with status `local_archive_built_not_published`;
+- recorded archive size `33,806,073` bytes and SHA256
+  `fcf8d3615f8bba65419d1a401d818c5eb87e7d75d3aa6007cfa6ada773536362`;
+- verified ZIP integrity and a `46`-file manifest member count;
+- included the Phase 14 harvest-system runtime config, XML/fragments, launch
+  surfaces, blocks/topology, all-system `tracks/`, and no-heli
+  `tracks_no_heli/`; and
+- marked P15.2 complete in `ROADMAP.md`, leaving P15.3 annex/publication to
+  `arbutus-s3` as the next bounded task.
