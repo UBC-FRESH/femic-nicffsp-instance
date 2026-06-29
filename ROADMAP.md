@@ -760,7 +760,7 @@ public CDED steep-slope proxy in the P9RF THLB surface.
   - [x] P11.3b Build candidate table/schema manifest or blocked stop report.
   - [x] P11.3c Record provenance and fallback policy for each candidate table.
 - [ ] P11.4 Generate MP11 ForestModel XML candidate or stop report (`#89`).
-  - [ ] P11.4a Audit existing Phase 5 XML provenance and bridge notes.
+  - [x] P11.4a Audit existing Phase 5 XML provenance and bridge notes.
   - [ ] P11.4b Build XML readiness manifest or stop report.
   - [ ] P11.4c Generate candidate `forestmodel.xml` and fragments under
     `output/patchworks_tfl6_mp11_candidate/` if readiness passes.
@@ -927,9 +927,14 @@ The Phase 1 follow-on issues are placed into the future roadmap as follows:
    `planning/tfl6_mp11_model_input_candidate_provenance_review.{csv,json,md}`;
    the P11.3c review records `12` passing candidate-scaffold roles, `1`
    non-blocking deferred comparison-metadata role, `0` blocked roles, and
-   P11.4a unlock status `p11_4a_audit_eligible`. P11.3 is complete. The next
-   bounded move is P11.4a: audit existing Phase 5 XML provenance and bridge
-   notes before any ForestModel XML generation.
+   P11.4a unlock status `p11_4a_audit_eligible`. P11.3 is complete.
+   `scripts/build_p11_mp11_xml_provenance_audit.py` emits
+   `planning/tfl6_mp11_phase11_xml_provenance_audit.{csv,json,md}`. The P11.4a
+   audit records `8` XML/component families, `7` families requiring P11.4b
+   readiness decisions, `1` non-blocking deferred harvest-system family, `0`
+   missing required Phase 5 notes, and P11.4b unlock status
+   `p11_4b_readiness_eligible`. No XML was generated. The next bounded move is
+   P11.4b: build the XML readiness manifest or stop report.
 0. Phase 9D and Phase 9E are complete. Step 210 now applies the public TSM
    strict Class V proxy, deducting `1.425 ha` against the MP11 Step 210 target
    `1,993.000 ha`; this is an explicit public-source coverage/semantic gap, not

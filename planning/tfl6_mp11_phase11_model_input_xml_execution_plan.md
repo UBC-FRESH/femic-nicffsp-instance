@@ -132,5 +132,15 @@ The review records `12` passing candidate-scaffold roles, `1` non-blocking
 deferred comparison-metadata role, `0` blocked roles, and P11.4a unlock status
 `p11_4a_audit_eligible`.
 
-P11.3 is complete. The next bounded move is P11.4a: audit existing Phase 5 XML
-provenance and bridge notes before any ForestModel XML generation.
+P11.3 is complete.
+
+P11.4a emitted
+`planning/tfl6_mp11_phase11_xml_provenance_audit.{csv,json,md}`. The audit
+records `8` XML/component families, `7` families requiring P11.4b readiness
+decisions, `1` non-blocking deferred harvest-system family, `0` missing
+required Phase 5 notes, and P11.4b unlock status
+`p11_4b_readiness_eligible`.
+
+P11.4a generated no model-input tables, ForestModel XML, Matrix Builder
+outputs, or Patchworks runtime artifacts. The next bounded move is P11.4b:
+build the XML readiness manifest or stop report.

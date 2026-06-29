@@ -1,5 +1,20 @@
 # Change Log
 
+## 2026-06-29 - Audited Phase 11 ForestModel XML provenance
+
+- added `scripts/build_p11_mp11_xml_provenance_audit.py` to verify the Phase 5
+  ForestModel XML/fragments, required bridge/blocker notes, and P11.3
+  candidate-provenance review before XML readiness work;
+- emitted `planning/tfl6_mp11_phase11_xml_provenance_audit.{csv,json,md}` with
+  `8` XML/component families, including `7` P11.4b-required readiness families
+  and `1` non-blocking deferred harvest-system family;
+- recorded the protected Phase 5 baseline XML hash, root metadata, fragment
+  sidecar evidence, and component-level P11.4b checks;
+- marked P11.4a complete in `ROADMAP.md` and moved the next bounded step to
+  P11.4b XML readiness manifest or stop report; and
+- generated no model-input tables, ForestModel XML, Matrix Builder outputs, or
+  Patchworks runtime artifacts.
+
 ## 2026-06-29 - Reviewed Phase 11 candidate provenance and fallback policy
 
 - added `scripts/build_p11_mp11_candidate_provenance_review.py` to verify

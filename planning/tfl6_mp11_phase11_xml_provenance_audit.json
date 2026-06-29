@@ -1,0 +1,176 @@
+{
+  "summary": {
+    "generated_at_utc": "2026-06-29T03:49:52+00:00",
+    "component_count": 8,
+    "p11_4b_required_count": 7,
+    "non_blocking_deferred_count": 1,
+    "missing_required_note_count": 0,
+    "p11_4a_unlock_status": "p11_4b_readiness_eligible",
+    "model_input_generation": "not_performed",
+    "xml_generation": "not_performed",
+    "matrix_builder": "not_performed",
+    "runtime_bundle_generation": "not_performed"
+  },
+  "inputs": {
+    "candidate_review_csv": "planning/tfl6_mp11_model_input_candidate_provenance_review.csv",
+    "phase5_inventory_csv": "planning/tfl6_mp11_phase11_phase5_provenance_inventory.csv"
+  },
+  "required_notes": {
+    "phase5_export_bridge_note": true,
+    "phase5_export_blocker_note": true,
+    "artifact_layout_note": true
+  },
+  "phase5_inventory_rows": 32,
+  "candidate_review_counts": {
+    "pass_candidate_scaffold": 12,
+    "deferred_non_blocking": 1
+  },
+  "baseline_xml": {
+    "path": "output/patchworks_tfl6_validated/forestmodel.xml",
+    "bytes": 2662799,
+    "sha256": "f95a7e29b95a9fcfabdd77036e3ac19611041e704a0aeef6257def190b2ff6a4",
+    "root_tag": "ForestModel",
+    "root_attributes": {
+      "description": "FEMIC Patchworks export",
+      "horizon": "300",
+      "year": "2026",
+      "match": "multi"
+    },
+    "tag_counts": {
+      "ForestModel": 1,
+      "assign": 3256,
+      "attribute": 12210,
+      "curve": 12583,
+      "define": 6,
+      "features": 1628,
+      "input": 1,
+      "output": 1,
+      "point": 5949,
+      "produce": 814,
+      "products": 814,
+      "retention": 814,
+      "select": 2442,
+      "succession": 1628,
+      "track": 1628,
+      "transition": 814,
+      "treatment": 814
+    }
+  },
+  "baseline_fragments": [
+    {
+      "path": "output/patchworks_tfl6_validated/fragments/fragments.cpg",
+      "bytes": 5,
+      "sha256": "3ad3031f5503a4404af825262ee8232cc04d4ea6683d42c5dd0a2f2a27ac9824"
+    },
+    {
+      "path": "output/patchworks_tfl6_validated/fragments/fragments.dbf",
+      "bytes": 10971993,
+      "sha256": "44256c1a44d7a5442da7a31cdcb1bd1ba341c771ce3ca899da47e62bc222b591"
+    },
+    {
+      "path": "output/patchworks_tfl6_validated/fragments/fragments.prj",
+      "bytes": 466,
+      "sha256": "4dc6a252b4e1e9468f9489c04fc559230f6d8b3f6ad8a79f02ba365a593636f5"
+    },
+    {
+      "path": "output/patchworks_tfl6_validated/fragments/fragments.shp",
+      "bytes": 19040188,
+      "sha256": "ad9552a5bd34ca0b95c0b9406695a5b3520609fd1c17d7cd303f2207f44dee5f"
+    },
+    {
+      "path": "output/patchworks_tfl6_validated/fragments/fragments.shx",
+      "bytes": 199132,
+      "sha256": "8e53d7ba8b7933db4bd2b1dcde38698ee623f8c3049c97baab96fd7bcf3a6ea1"
+    }
+  ],
+  "records": [
+    {
+      "component_family": "stand_universe_fragments",
+      "source_role": "stand_table",
+      "phase5_surface": "forestmodel_fragments",
+      "mp11_candidate_source": "P9RF candidate stand/source/THLB scaffold",
+      "p11_4a_action": "replace_after_readiness",
+      "baseline_artifacts": "output/patchworks_tfl6_validated/fragments/fragments.*",
+      "required_p11_4b_check": "Confirm candidate stand universe, THLB/NTHLB state, retained area, managed/unmanaged area, and group caveats before fragment export.",
+      "blocker_status": "p11_4b_required",
+      "notes": "Phase 5 fragments remain protected until MP11 candidate export passes."
+    },
+    {
+      "component_family": "export_compat_bridge",
+      "source_role": "export_compat_bridge",
+      "phase5_surface": "export_bridge_manifest",
+      "mp11_candidate_source": "MP11 candidate numeric/string bridge",
+      "p11_4a_action": "replace_after_readiness",
+      "baseline_artifacts": "data/model_input_bundle/export_compat/bridge_manifest.json",
+      "required_p11_4b_check": "Require deterministic AU/curve ID bridge and accepted candidate bundle paths before XML generation.",
+      "blocker_status": "p11_4b_required",
+      "notes": "The old P4.2 blocker proves the generic exporter needs a bridge."
+    },
+    {
+      "component_family": "curve_definitions",
+      "source_role": "curve_table; curve_points_table",
+      "phase5_surface": "forestmodel_xml",
+      "mp11_candidate_source": "accepted Phase 10R Table 57 curves plus retained natural curves",
+      "p11_4a_action": "replace_after_readiness",
+      "baseline_artifacts": "output/patchworks_tfl6_validated/forestmodel.xml",
+      "required_p11_4b_check": "Map every candidate curve ID to XML curve definitions and verify Tables 54/55 remain excluded.",
+      "blocker_status": "p11_4b_required",
+      "notes": "Phase 10R curve handoff is accepted, but XML curve wiring still needs readiness."
+    },
+    {
+      "component_family": "au_selects_and_assignments",
+      "source_role": "au_table; stand_au_assignment; stand_origin_assignment",
+      "phase5_surface": "forestmodel_xml",
+      "mp11_candidate_source": "Phase 5 scaffold with MP11 candidate AU/curve provenance",
+      "p11_4a_action": "extend_or_reuse_after_readiness",
+      "baseline_artifacts": "output/patchworks_tfl6_validated/forestmodel.xml",
+      "required_p11_4b_check": "Verify candidate AU, origin, and stand-AU assignment fields can produce complete XML selects without unmapped stands.",
+      "blocker_status": "p11_4b_required",
+      "notes": "Existing XML has Phase 5 select/assignment structure, not MP11 candidate truth."
+    },
+    {
+      "component_family": "treatments",
+      "source_role": "treatment_table",
+      "phase5_surface": "forestmodel_xml",
+      "mp11_candidate_source": "Phase 5 generic treatment defaults with MP11 rule caveats",
+      "p11_4a_action": "reuse_with_caveats",
+      "baseline_artifacts": "output/patchworks_tfl6_validated/forestmodel.xml",
+      "required_p11_4b_check": "Confirm generic treatment reuse is explicit and MP11 MHA, harvest-system, and scenario rules remain deferred metadata.",
+      "blocker_status": "p11_4b_required",
+      "notes": "Generic CC treatment can be a candidate scaffold, not final MP11 equivalence."
+    },
+    {
+      "component_family": "transitions",
+      "source_role": "transition_table",
+      "phase5_surface": "forestmodel_xml",
+      "mp11_candidate_source": "Phase 5 transition defaults with MP11 transition caveats",
+      "p11_4a_action": "reuse_with_caveats",
+      "baseline_artifacts": "output/patchworks_tfl6_validated/forestmodel.xml",
+      "required_p11_4b_check": "Confirm transition reuse is explicit and any MP11 transition fields remain deferred unless separately promoted.",
+      "blocker_status": "p11_4b_required",
+      "notes": "Transition defaults are scaffold rules only."
+    },
+    {
+      "component_family": "harvest_system_rules",
+      "source_role": "harvest_system_table",
+      "phase5_surface": "model_input_bundle",
+      "mp11_candidate_source": "deferred comparison metadata",
+      "p11_4a_action": "defer_not_xml_input",
+      "baseline_artifacts": "data/model_input_bundle/harvest_system_table.csv",
+      "required_p11_4b_check": "Verify no candidate XML treatment or report depends on stand-level harvest-system assignments.",
+      "blocker_status": "non_blocking_deferred",
+      "notes": "P11.3c keeps harvest-system assignments out of generated model-input tables."
+    },
+    {
+      "component_family": "reporting_groups",
+      "source_role": "group_table; cedar_signal_table; embedded_identity_table",
+      "phase5_surface": "forestmodel_xml",
+      "mp11_candidate_source": "Phase 5 reporting scaffold plus MP11 candidate caveat fields",
+      "p11_4a_action": "extend_after_readiness",
+      "baseline_artifacts": "output/patchworks_tfl6_validated/forestmodel.xml",
+      "required_p11_4b_check": "Verify which reporting groups are XML-facing, which remain Matrix/QA-facing, and which MP11 cedar/caveat signals are metadata only.",
+      "blocker_status": "p11_4b_required",
+      "notes": "Cedar and caveat signals must not become hidden model constraints."
+    }
+  ]
+}
