@@ -1,5 +1,16 @@
 # Change Log
 
+## 2026-06-28 - Clarified Phase 11 ForestModel XML build task
+
+- updated `ROADMAP.md` so `P11.4c` is the explicit task that generates the
+  MP11 candidate `forestmodel.xml` and fragments under
+  `output/patchworks_tfl6_mp11_candidate/` if XML readiness passes;
+- split P11.4 XML readiness, XML generation, and XML parse/QA into separate
+  roadmap subtasks; and
+- updated the Phase 11 execution plan to state that P11.4 owns ForestModel XML
+  candidate generation while Matrix Builder and runtime assembly remain Phase
+  12 work.
+
 ## 2026-06-28 - Clarified Phase 12 runtime-bundle build ownership
 
 - updated `ROADMAP.md` to make Phase 11's build boundary explicit: Phase 11 may

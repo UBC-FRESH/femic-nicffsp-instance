@@ -23,7 +23,7 @@ runtime artifacts.
   - P11.1 launch MP11 model-input/XML rebuild execution plan: `#86`;
   - P11.2 audit MP11 model-input promotion readiness: `#87`;
   - P11.3 build MP11 model-input candidate manifest or stop report: `#88`;
-  - P11.4 build ForestModel XML readiness manifest or stop report: `#89`;
+  - P11.4 generate MP11 ForestModel XML candidate or stop report: `#89`;
   - P11.5 define Phase 12 runtime-build handoff or blocker package: `#90`;
   - P11.6 close Phase 11 and hand off model-input/XML status: `#91`.
 
@@ -98,9 +98,13 @@ Planned tracked planning surfaces:
 - final Phase 11 closeout and Phase 12/13 handoff notes.
 
 Candidate generated model-input and XML outputs should not be written until
-P11.2 accepts the promotion-readiness manifest. When generated, they should use
-an explicit MP11 candidate namespace rather than overwriting the Phase 5
-accepted runtime surfaces without a separate replacement decision.
+the relevant child gate passes. P11.3 owns the candidate model-input manifest
+and any explicitly authorized generated scaffold. P11.4 owns the actual
+ForestModel XML candidate generation task: if P11.4 readiness passes, it should
+write `output/patchworks_tfl6_mp11_candidate/forestmodel.xml` and candidate
+fragments under `output/patchworks_tfl6_mp11_candidate/fragments/`. It must not
+run Matrix Builder or assemble a Patchworks runtime bundle; those belong to
+Phase 12.
 
 ## Current Phase 11 Edge
 

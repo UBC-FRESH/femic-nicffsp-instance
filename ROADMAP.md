@@ -759,10 +759,12 @@ public CDED steep-slope proxy in the P9RF THLB surface.
   - [ ] P11.3a Consume P11.2 readiness manifest.
   - [ ] P11.3b Build candidate table/schema manifest or blocked stop report.
   - [ ] P11.3c Record provenance and fallback policy for each candidate table.
-- [ ] P11.4 Build ForestModel XML readiness manifest or stop report (`#89`).
+- [ ] P11.4 Generate MP11 ForestModel XML candidate or stop report (`#89`).
   - [ ] P11.4a Audit existing Phase 5 XML provenance and bridge notes.
   - [ ] P11.4b Build XML readiness manifest or stop report.
-  - [ ] P11.4c Define parse/check commands for any future XML generation.
+  - [ ] P11.4c Generate candidate `forestmodel.xml` and fragments under
+    `output/patchworks_tfl6_mp11_candidate/` if readiness passes.
+  - [ ] P11.4d Parse/check generated XML and record XML readiness QA.
 - [ ] P11.5 Define Phase 12 runtime handoff or blocker package (`#90`).
   - [ ] P11.5a Build Phase 12 handoff or blocker summary.
   - [ ] P11.5b Post/update Phase 12 issue handoff.
