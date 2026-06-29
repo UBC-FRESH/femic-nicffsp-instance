@@ -3662,3 +3662,23 @@
   `direct_launch_smoke_pass`; and
 - marked P12.4 complete in `ROADMAP.md`, leaving P12.5 representative scenario
   smoke as the next build step.
+
+## 2026-06-28 - Passed MP11 representative scenario smoke
+
+- patched the MP11 candidate headless scenario helper so the base harvested
+  volume target is activated with a linear `20,000,000` per-period minimum
+  before even-flow activation;
+- ran the scheduler with 1,000 seed iterations plus a 5-second active dwell
+  before activating the even-flow target, then ran the even-flow target with
+  default non-linear penalty shape and min/max weights `10,000` for `200,000`
+  iterations;
+- ran scenario smoke with run ID
+  `tfl6_mp11_candidate_p12_5_harvest_smoke200k`;
+- verified return code `0`, terminal state `success`, `76,726` managed `CC`
+  schedule rows, nonzero final-period base harvested volume `14,104,784`, and
+  no stdout/stderr warning or error matches;
+- added `scripts/build_p12_mp11_scenario_smoke_qa.py` and
+  `planning/tfl6_mp11_scenario_smoke_qa.{csv,json,md}` with status
+  `scenario_smoke_pass`; and
+- marked P12.5 complete in `ROADMAP.md`, leaving P12.6 runtime closeout and
+  Phase 13 handoff as the next step.
