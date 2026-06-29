@@ -1,5 +1,28 @@
 # Change Log
 
+## 2026-06-29 - Corrected Phase 11 build path and generated MP11 candidate XML
+
+- reopened P11.4 issue `#89` after the initial XML readiness stop report proved
+  a missing generated-input surface rather than an acceptable endpoint;
+- added `scripts/build_p11_mp11_candidate_bundle.py` and generated the ignored
+  MP11 candidate model-input scaffold under `data/mp11_model_input_bundle/`;
+- emitted `planning/tfl6_mp11_candidate_bundle_build_summary.{csv,json,md}`
+  recording `18` active accepted Phase 10R MP11 Table 57 managed curves,
+  `648` active MP11 curve-point rows, `8,957` affected stand rows, and `9`
+  duplicate MP11 rows deferred by canonical AU identity;
+- regenerated the MP11 export compatibility bridge with `172` curve rows and
+  `30,651` curve-point rows, then reran XML readiness to `7` ready component
+  families, `0` blocked, and `1` non-blocking deferred harvest-system family;
+- generated candidate ForestModel XML and fragments under
+  `output/patchworks_tfl6_mp11_candidate/`;
+- added `scripts/build_p11_mp11_xml_generation_qa.py` and emitted
+  `planning/tfl6_mp11_forestmodel_xml_generation_qa.{csv,json,md}`, confirming
+  XML root `ForestModel`, `13,197` curve nodes, `2,442` select nodes, `814`
+  treatment nodes, `24,879` fragment rows, and `191,168.566447 ha` fragment
+  area; and
+- left Matrix Builder, Patchworks runtime assembly, scenario smoke, and release
+  QA for downstream Phase 12 work.
+
 ## 2026-06-29 - Built Phase 11 XML readiness stop report
 
 - added `scripts/build_p11_mp11_xml_readiness.py` to consume the P11.4a XML

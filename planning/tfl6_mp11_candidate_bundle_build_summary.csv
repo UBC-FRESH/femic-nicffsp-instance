@@ -1,0 +1,15 @@
+metric,value
+generated_at_utc,2026-06-29T03:59:16+00:00
+candidate_bundle_root,data/mp11_model_input_bundle
+active_mp11_curve_count,18
+accepted_phase10r_curve_rows,27
+duplicate_mp11_rows_deferred_by_canonical_au,9
+active_mp11_curve_point_rows,648
+affected_stand_rows,8957
+affected_au_rows,83
+export_compat_curve_rows,172
+export_compat_curve_point_rows,30651
+model_input_generation,performed_candidate_scaffold
+xml_generation,not_performed
+matrix_builder,not_performed
+runtime_bundle_generation,not_performed

@@ -762,10 +762,12 @@ public CDED steep-slope proxy in the P9RF THLB surface.
 - [x] P11.4 Generate MP11 ForestModel XML candidate or stop report (`#89`).
   - [x] P11.4a Audit existing Phase 5 XML provenance and bridge notes.
   - [x] P11.4b Build XML readiness manifest or stop report.
-  - [x] P11.4c Stop before candidate `forestmodel.xml` generation because
-    readiness blocked on missing MP11 candidate bundle/export-bridge outputs.
-  - [x] P11.4d Record XML parse/QA as not applicable because no XML was
-    generated under the stop-report branch.
+  - [x] P11.4c Build generated MP11 candidate model-input bundle and export
+    compatibility bridge under `data/mp11_model_input_bundle/`.
+  - [x] P11.4d Rerun XML readiness against generated MP11 candidate outputs.
+  - [x] P11.4e Generate candidate `forestmodel.xml` and fragments under
+    `output/patchworks_tfl6_mp11_candidate/` if readiness passes.
+  - [x] P11.4f Parse/check generated XML and record XML readiness QA.
 - [ ] P11.5 Define Phase 12 runtime handoff or blocker package (`#90`).
   - [ ] P11.5a Build Phase 12 handoff or blocker summary.
   - [ ] P11.5b Post/update Phase 12 issue handoff.
@@ -936,14 +938,32 @@ The Phase 1 follow-on issues are placed into the future roadmap as follows:
    missing required Phase 5 notes, and P11.4b unlock status
    `p11_4b_readiness_eligible`.
    `scripts/build_p11_mp11_xml_readiness.py` emits
-   `planning/tfl6_mp11_forestmodel_xml_readiness.{csv,json,md}`. The P11.4b
-   output is a stop report: `8` component families evaluated, `0` ready, `7`
-   blocked on missing MP11 candidate bundle/export-bridge outputs, `1`
+   `planning/tfl6_mp11_forestmodel_xml_readiness.{csv,json,md}`. The first
+   P11.4b output is a stop report: `8` component families evaluated, `0` ready,
+   `7` blocked on missing MP11 candidate bundle/export-bridge outputs, `1`
    non-blocking deferred harvest-system family, and P11.4c generation status
-   `blocked_missing_candidate_outputs`. P11.4 is complete through the stop-report
-   branch. No XML was generated. The next bounded move is P11.5: define the
-   Phase 12 handoff or blocker package, including the missing candidate
-   model-input bundle/export-bridge generation work.
+   `blocked_missing_candidate_outputs`. That stop report is evidence of the
+   missing build input, not the endpoint. Issue `#89` is reopened. The next
+   bounded move is P11.4c: build the generated MP11 candidate model-input
+   bundle and export compatibility bridge under `data/mp11_model_input_bundle/`.
+   P11.4c is complete: `scripts/build_p11_mp11_candidate_bundle.py` builds the
+   generated MP11 candidate scaffold under `data/mp11_model_input_bundle/` and
+   emits `planning/tfl6_mp11_candidate_bundle_build_summary.{csv,json,md}`.
+   The scaffold injects `18` active Phase 10R MP11 Table 57 managed curves
+   across `648` curve-point rows, affects `8,957` stand rows, defers `9`
+   duplicate Table 57 rows that map to already-selected canonical AU identities,
+   and regenerates the export compatibility bridge with `172` curve rows and
+   `30,651` curve-point rows. P11.4d reran XML readiness and now reports `7`
+   ready component families, `0` blocked, `1` non-blocking deferred
+   harvest-system family, and P11.4c generation status `eligible`. P11.4e
+   generated `output/patchworks_tfl6_mp11_candidate/forestmodel.xml` and
+   fragments from the MP11 candidate bridge. P11.4f records QA in
+   `planning/tfl6_mp11_forestmodel_xml_generation_qa.{csv,json,md}`: XML root
+   `ForestModel`, `13,197` curve nodes, `2,442` select nodes, `814` treatment
+   nodes, `24,879` fragment rows, and `191,168.566447 ha` fragment area. P11.4
+   is complete. The next bounded move is P11.5: define the Phase 12 runtime
+   handoff package for Matrix Builder/runtime work without running it in Phase
+   11.
 0. Phase 9D and Phase 9E are complete. Step 210 now applies the public TSM
    strict Class V proxy, deducting `1.425 ha` against the MP11 Step 210 target
    `1,993.000 ha`; this is an explicit public-source coverage/semantic gap, not

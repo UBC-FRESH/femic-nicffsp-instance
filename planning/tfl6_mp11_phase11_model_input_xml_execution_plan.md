@@ -153,8 +153,35 @@ blocked on missing MP11 candidate model-input bundle/export-bridge outputs, and
 candidate XML generation is blocked with status
 `blocked_missing_candidate_outputs`.
 
-P11.4 is complete through the stop-report branch. No model-input tables,
-ForestModel XML, Matrix Builder outputs, or Patchworks runtime artifacts were
-generated. The next bounded move is P11.5: define the Phase 12 handoff or
-blocker package, including the missing candidate model-input bundle/export
-bridge generation work.
+The stop report is evidence of the missing generated-input surface, not the
+endpoint for Phase 11. Issue `#89` is reopened. P11.4 remains active, and the
+next bounded move is P11.4c: build the generated MP11 candidate model-input
+bundle and export compatibility bridge under `data/mp11_model_input_bundle/`,
+then rerun XML readiness before attempting candidate ForestModel XML export.
+
+P11.4c corrected the missing build surface. It added
+`scripts/build_p11_mp11_candidate_bundle.py`, generated the ignored MP11
+candidate scaffold under `data/mp11_model_input_bundle/`, and emitted
+`planning/tfl6_mp11_candidate_bundle_build_summary.{csv,json,md}`. The build
+injects `18` active accepted Phase 10R MP11 Table 57 managed curves across
+`648` curve-point rows, affects `8,957` stand rows, defers `9` duplicate Table
+57 rows that map to already-selected canonical AU identities, and regenerates
+the export compatibility bridge with `172` curve rows and `30,651` curve-point
+rows.
+
+P11.4d reran `planning/tfl6_mp11_forestmodel_xml_readiness.{csv,json,md}` after
+the generated candidate bundle existed. The readiness output now reports `7`
+ready component families, `0` blocked, `1` non-blocking deferred harvest-system
+family, and P11.4c generation status `eligible`.
+
+P11.4e generated the MP11 candidate ForestModel package under
+`output/patchworks_tfl6_mp11_candidate/`. P11.4f added
+`scripts/build_p11_mp11_xml_generation_qa.py` and emitted
+`planning/tfl6_mp11_forestmodel_xml_generation_qa.{csv,json,md}`. The QA record
+confirms XML root `ForestModel`, `13,197` curve nodes, `2,442` select nodes,
+`814` treatment nodes, `24,879` fragment rows, and `191,168.566447 ha`
+fragment area.
+
+P11.4 is complete. Matrix Builder, Patchworks runtime assembly, scenario smoke,
+and release QA remain downstream. The next bounded move is P11.5: define the
+Phase 12 runtime handoff package.

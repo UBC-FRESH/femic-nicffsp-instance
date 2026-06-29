@@ -1,4 +1,4 @@
-# P11.4b MP11 ForestModel XML Readiness Stop Report
+# P11.4b MP11 ForestModel XML Readiness Manifest
 
 This P11.4b output evaluates whether the audited XML/component families can proceed to P11.4c candidate ForestModel XML generation.
 
@@ -11,12 +11,12 @@ P11.4b does not generate model-input tables, ForestModel XML, Matrix Builder out
 
 ## Summary
 
-- Result: `stop_report`
+- Result: `readiness_manifest`
 - XML/component families evaluated: `8`
-- Ready families: `0`
-- Blocked families: `7`
+- Ready families: `7`
+- Blocked families: `0`
 - Non-blocking deferred families: `1`
-- P11.4c generation status: `blocked_missing_candidate_outputs`
+- P11.4c generation status: `eligible`
 - Model-input generation: `not_performed`
 - ForestModel XML generation: `not_performed`
 - Matrix Builder: `not_performed`
@@ -26,17 +26,15 @@ P11.4b does not generate model-input tables, ForestModel XML, Matrix Builder out
 
 | Component | Status | Missing candidate outputs | Follow-up |
 | --- | --- | --- | --- |
-| `stand_universe_fragments` | `blocked_missing_candidate_outputs` | `data/mp11_model_input_bundle/stand_table.csv` | Generate and QA the MP11 candidate model-input bundle/export bridge before XML generation. |
-| `export_compat_bridge` | `blocked_missing_candidate_outputs` | `data/mp11_model_input_bundle/export_compat/bridge_manifest.json` | Generate and QA the MP11 candidate model-input bundle/export bridge before XML generation. |
-| `curve_definitions` | `blocked_missing_candidate_outputs` | `data/mp11_model_input_bundle/curve_table.csv; data/mp11_model_input_bundle/curve_points_table.csv` | Generate and QA the MP11 candidate model-input bundle/export bridge before XML generation. |
-| `au_selects_and_assignments` | `blocked_missing_candidate_outputs` | `data/mp11_model_input_bundle/au_table.csv; data/mp11_model_input_bundle/stand_au_assignment.csv; data/mp11_model_input_bundle/stand_origin_assignment.csv` | Generate and QA the MP11 candidate model-input bundle/export bridge before XML generation. |
-| `treatments` | `blocked_missing_candidate_outputs` | `data/mp11_model_input_bundle/treatment_table.csv` | Generate and QA the MP11 candidate model-input bundle/export bridge before XML generation. |
-| `transitions` | `blocked_missing_candidate_outputs` | `data/mp11_model_input_bundle/transition_table.csv` | Generate and QA the MP11 candidate model-input bundle/export bridge before XML generation. |
+| `stand_universe_fragments` | `ready_for_p11_4c_generation` | `-` | Carry this component into P11.4c XML generation under the MP11 candidate output root. |
+| `export_compat_bridge` | `ready_for_p11_4c_generation` | `-` | Carry this component into P11.4c XML generation under the MP11 candidate output root. |
+| `curve_definitions` | `ready_for_p11_4c_generation` | `-` | Carry this component into P11.4c XML generation under the MP11 candidate output root. |
+| `au_selects_and_assignments` | `ready_for_p11_4c_generation` | `-` | Carry this component into P11.4c XML generation under the MP11 candidate output root. |
+| `treatments` | `ready_for_p11_4c_generation` | `-` | Carry this component into P11.4c XML generation under the MP11 candidate output root. |
+| `transitions` | `ready_for_p11_4c_generation` | `-` | Carry this component into P11.4c XML generation under the MP11 candidate output root. |
 | `harvest_system_rules` | `deferred_non_blocking` | `-` | Preserve as deferred comparison metadata; do not require this component for P11.4c. |
-| `reporting_groups` | `blocked_missing_candidate_outputs` | `data/mp11_model_input_bundle/group_table.csv; data/mp11_model_input_bundle/cedar_signal_table.csv; data/mp11_model_input_bundle/embedded_identity_table.csv` | Generate and QA the MP11 candidate model-input bundle/export bridge before XML generation. |
+| `reporting_groups` | `ready_for_p11_4c_generation` | `-` | Carry this component into P11.4c XML generation under the MP11 candidate output root. |
 
-## Stop Condition
+## Generation Boundary
 
-P11.4c must not generate candidate ForestModel XML yet. The P11.3 candidate manifest defines planned model-input and export bridge paths, but the required candidate output files do not exist. Running the exporter against the protected Phase 5 bundle would produce Phase 5 XML under a new path, not an MP11 candidate XML package.
-
-The next implementation task must generate and QA the MP11 candidate model-input bundle/export bridge, or explicitly revise the Phase 11 roadmap so that bundle generation happens before P11.4c.
+P11.4c may generate candidate XML only under `output/patchworks_tfl6_mp11_candidate/` and must preserve the Phase 5 baseline paths.

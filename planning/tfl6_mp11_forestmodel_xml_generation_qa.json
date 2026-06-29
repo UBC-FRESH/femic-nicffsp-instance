@@ -1,0 +1,93 @@
+{
+  "summary": {
+    "generated_at_utc": "2026-06-29T04:01:19+00:00",
+    "xml_path": "output/patchworks_tfl6_mp11_candidate/forestmodel.xml",
+    "xml_bytes": 2668892,
+    "xml_root": "ForestModel",
+    "xml_curve_nodes": 13197,
+    "xml_select_nodes": 2442,
+    "xml_treatment_nodes": 814,
+    "fragment_rows": 24879,
+    "fragment_area_ha": 191168.566447,
+    "compat_curve_rows": 172,
+    "mp11_table57_curve_rows": 18,
+    "matrix_builder": "not_performed",
+    "runtime_bundle_generation": "not_performed"
+  },
+  "xml": {
+    "path": "output/patchworks_tfl6_mp11_candidate/forestmodel.xml",
+    "bytes": 2668892,
+    "sha256": "390e7e5a68469c0d008f68e4823944cb00da150953c42f9e96d1207414c1975c",
+    "root_tag": "ForestModel",
+    "root_attributes": {
+      "description": "FEMIC Patchworks export",
+      "horizon": "300",
+      "year": "2026",
+      "match": "multi"
+    },
+    "tag_counts": {
+      "ForestModel": 1,
+      "assign": 3256,
+      "attribute": 12210,
+      "curve": 13197,
+      "define": 6,
+      "features": 1628,
+      "input": 1,
+      "output": 1,
+      "point": 7247,
+      "produce": 814,
+      "products": 814,
+      "retention": 814,
+      "select": 2442,
+      "succession": 1628,
+      "track": 1628,
+      "transition": 814,
+      "treatment": 814
+    }
+  },
+  "fragments": {
+    "path": "output/patchworks_tfl6_mp11_candidate/fragments/fragments.shp",
+    "bytes": 19040188,
+    "sha256": "ad9552a5bd34ca0b95c0b9406695a5b3520609fd1c17d7cd303f2207f44dee5f",
+    "rows": 24879,
+    "area_ha": 191168.56644727234,
+    "columns": [
+      "FRAGMENT_I",
+      "BLOCK",
+      "AREA_HA",
+      "F_AGE",
+      "AU",
+      "IFM",
+      "ORIGIN",
+      "SILV_STATE",
+      "RETENTION",
+      "TSA",
+      "geometry"
+    ]
+  },
+  "compat_curves": {
+    "path": "data/mp11_model_input_bundle/export_compat/curve_table.csv",
+    "rows": 172,
+    "mp11_table57_curve_rows": 18,
+    "mp11_table57_curve_ids": [
+      "mp11_table57_future_managed_cwhvh1_cw_hw_h",
+      "mp11_table57_future_managed_cwhvh1_cw_hw_l",
+      "mp11_table57_future_managed_cwhvh1_cw_hw_m",
+      "mp11_table57_future_managed_cwhvh1_hw_ba_h",
+      "mp11_table57_future_managed_cwhvh1_hw_cw_h",
+      "mp11_table57_future_managed_cwhvh1_hw_ss_m",
+      "mp11_table57_future_managed_cwhvm1_ba_hw_m",
+      "mp11_table57_future_managed_cwhvm1_cw_hw_h",
+      "mp11_table57_future_managed_cwhvm1_cw_hw_m",
+      "mp11_table57_future_managed_cwhvm1_hw_cw_l",
+      "mp11_table57_future_managed_cwhvm1_hw_cw_m",
+      "mp11_table57_future_managed_cwhvm1_hw_dr_h",
+      "mp11_table57_future_managed_cwhvm1_hw_dr_l",
+      "mp11_table57_future_managed_cwhvm1_hw_ss_l",
+      "mp11_table57_future_managed_cwhvm1_hw_ss_m",
+      "mp11_table57_future_managed_cwhvm2_hw_ba_l",
+      "mp11_table57_future_managed_cwhvm2_hw_cw_h",
+      "mp11_table57_future_managed_cwhvm2_yc_hw_h"
+    ]
+  }
+}
