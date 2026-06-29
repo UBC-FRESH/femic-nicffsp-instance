@@ -915,14 +915,20 @@ Evidence basis:
 Planning note:
 `planning/tfl6_mp11_phase14_harvest_system_operability_plan.md`.
 
-- [ ] P14.1 Launch MP11 harvest-system operability execution plan (`#139`).
-  - [ ] P14.1a Create and link the Phase 14 parent/child issue tree.
-  - [ ] P14.1b Record source anchors, generated-output boundaries, and
+- [x] P14.1 Launch MP11 harvest-system operability execution plan (`#139`).
+  - [x] P14.1a Create and link the Phase 14 parent/child issue tree.
+  - [x] P14.1b Record source anchors, generated-output boundaries, and
     non-goals in the Phase 14 planning note.
-  - [ ] P14.1c Update `ROADMAP.md` and `CHANGE_LOG.md` without generating
+  - [x] P14.1c Update `ROADMAP.md` and `CHANGE_LOG.md` without generating
     model-input tables, XML, Matrix Builder outputs, or runtime artifacts.
-- [ ] P14.2 Mine MP11 and public-source evidence for harvest-system criteria
+- [x] P14.2 Mine MP11 and public-source evidence for harvest-system criteria
   (`#140`).
+  - [x] P14.2a Build
+    `planning/tfl6_mp11_phase14_harvest_system_evidence.{csv,json,md}`.
+  - [x] P14.2b Classify MP11 LBB as an unavailable private source, MP11 Table
+    20/Table 73 as aggregate comparison targets, P9D/VRI as public proxy
+    inputs, DRA roads as an access candidate, and MP11 helicopter economics as
+    candidate rules after metric build.
 - [ ] P14.3 Build public proxy metrics for ground, cable, and heli assignment
   (`#141`).
 - [ ] P14.4 Classify MP11 candidate stands by harvest system and QA against
@@ -1022,17 +1028,26 @@ The Phase 1 follow-on issues are placed into the future roadmap as follows:
 ## Current Next Steps
 
 0. Phase 14 is active on branch
-   `feature/tfl6-mp11-harvest-system-operability`. P14.1 (`#139`) is the next
-   bounded task: launch the MP11 harvest-system operability execution plan,
-   link the parent issue `#138` and child issues `#139` through `#146`, record
-   source anchors and output boundaries in
-   `planning/tfl6_mp11_phase14_harvest_system_operability_plan.md`, and update
-   `CHANGE_LOG.md`. P14.1 must not generate model-input tables, ForestModel
-   XML, Matrix Builder outputs, Patchworks runtime artifacts, or scenario
-   outputs.
+   `feature/tfl6-mp11-harvest-system-operability`. P14.1 (`#139`) is complete:
+   the parent issue `#138` and child issues `#139` through `#146` are open,
+   `planning/tfl6_mp11_phase14_harvest_system_operability_plan.md` records the
+   MP11 source anchors, WFP LBB/public-proxy boundaries, generated-output roots,
+   and non-goals, and no model-input tables, ForestModel XML, Matrix Builder
+   outputs, Patchworks runtime artifacts, or scenario outputs were generated.
+   P14.2 (`#140`) is complete:
+   `scripts/build_p14_harvest_system_evidence.py` emits
+   `planning/tfl6_mp11_phase14_harvest_system_evidence.{csv,json,md}` with
+   `16` evidence rows. The inventory records WFP LBB as unavailable/private,
+   MP11 Table 20 and Table 73 as aggregate comparison targets, P9D CDED slope
+   and VRI/VDYP inventory attributes as public proxy inputs, DRA roads as an
+   access-distance candidate needing review, and MP11 helicopter economic
+   thresholds as candidate rules after metric build. The next bounded task is
+   P14.3 (`#141`): build public proxy metric tables for ground, cable, and heli
+   assignment without yet generating model-input tables, XML, Matrix Builder
+   outputs, or Patchworks runtime artifacts.
 
 Historical leading-edge notes below are retained for audit context only; the
-active next step is P14.1.
+active next step is P14.3.
 
 0. Phase 11 is active on branch
    `feature/p11-model-input-xml-rebuild-plan`. P11.1 and P11.2 are complete.

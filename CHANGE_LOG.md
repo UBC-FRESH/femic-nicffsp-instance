@@ -3806,3 +3806,19 @@
 - recorded that Phase 14 is intended to convert deferred harvest-system caveats
   into runtime-visible public-proxy ground/cable/heli lanes without claiming
   WFP LBB equivalence or replacing the Phase 5 baseline.
+
+## 2026-06-28 - Built MP11 Phase 14 harvest-system evidence inventory
+
+- added `scripts/build_p14_harvest_system_evidence.py`;
+- generated
+  `planning/tfl6_mp11_phase14_harvest_system_evidence.{csv,json,md}` with `16`
+  evidence rows for MP11 harvest-system operability criteria;
+- recorded WFP LBB as unavailable/private source evidence, MP11 Table 20 and
+  Table 73 as aggregate comparison targets, P9D CDED slope and VRI/VDYP
+  inventory attributes as public proxy inputs, DRA roads as an access-distance
+  candidate needing review, and MP11 helicopter economic-operability thresholds
+  as candidate rules after metric build;
+- rejected the old MP10 ground/cable/heli DBH thresholds as current MP11 MHA
+  criteria; and
+- marked P14.2 complete in `ROADMAP.md`, leaving P14.3 public proxy metric
+  construction as the next bounded task.
