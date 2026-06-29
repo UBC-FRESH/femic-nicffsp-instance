@@ -3628,3 +3628,21 @@
   within rounding tolerance; and
 - marked P12.2 complete in `ROADMAP.md`, leaving P12.3 runtime assembly as the
   next build step.
+
+## 2026-06-28 - Assembled MP11 candidate runtime package
+
+- ran `femic patchworks build-blocks` against
+  `config/patchworks.runtime.mp11_candidate.windows.yaml` with topology radius
+  `200`;
+- generated the MP11 candidate block/topology surfaces under the ignored
+  `models/tfl6_patchworks_model_mp11_candidate/blocks/` root with `24,879`
+  block rows, `191,168.566447 ha`, valid `EPSG:3005` geometry, and `170,759`
+  topology rows;
+- assembled tracked candidate runtime launch/provenance surfaces under
+  `models/tfl6_patchworks_model_mp11_candidate/`, including README, lineage
+  registry, base PIN, headless helpers, and flow-target helper;
+- added `scripts/build_p12_mp11_runtime_package_manifest.py` and
+  `planning/tfl6_mp11_runtime_package_manifest.{csv,json,md}` with status
+  `candidate_runtime_package_assembled_pending_launch_smoke`; and
+- marked P12.3 complete in `ROADMAP.md`, leaving P12.4 direct launch smoke as
+  the next build step.

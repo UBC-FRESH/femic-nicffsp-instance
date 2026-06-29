@@ -1,0 +1,115 @@
+/*
+ * Shared Patchworks PIN body for the baseline TFL 6 runtime package.
+ * Wrapper pins must define `tracks_path_prefix` before sourcing this file.
+ */
+
+int periods = 30;
+Horizon.setHorizon(periods, 10);
+
+boolean useRoutes = false;
+boolean usePatches = false;
+
+sourceRelative("../scripts/targets/flowtargets.bsh");
+sourceRelative("headless_runtime_common.bsh");
+
+/*
+ * Locate the input matrix data files.
+ */
+blocks = tracks_path_prefix + "blocks.csv";
+curves = tracks_path_prefix + "curves.csv";
+features = tracks_path_prefix + "features.csv";
+products = tracks_path_prefix + "products.csv";
+tracknames = tracks_path_prefix + "tracknames.csv";
+treatments = tracks_path_prefix + "treatments.csv";
+accounts = tracks_path_prefix + "accounts.csv";
+stratas = tracks_path_prefix + "strata.csv";
+if (
+    AttributeStore.absoluteFile(tracks_path_prefix + "packages.csv").exists()
+    && AttributeStore.absoluteFile(tracks_path_prefix + "packageSequences.csv").exists()
+) {
+   packages = tracks_path_prefix + "packages.csv";
+   sequences = tracks_path_prefix + "packageSequences.csv";
+}
+
+/*
+ * Locate the shape file that contains candidate harvest block boundaries.
+ */
+block_shape = "../blocks/blocks.shp";
+block_key = "BLOCK";
+
+/*
+ * Locate road network files if a later TFL 6 variant enables routing.
+ */
+String roads_path_prefix = "../roads/";
+roadShapeFile = roads_path_prefix + "access.shp";
+roadShapeKey = "ACCESS_";
+if (useRoutes) {
+   vertices = roads_path_prefix + "vertices.csv";
+   segments = roads_path_prefix + "segments.csv";
+   destinations = roads_path_prefix + "destinations.csv";
+   linkages = roads_path_prefix + "linkages.csv";
+}
+
+int Patchworks_TargetInit() {
+   control.calculateGroups("AU");
+   control.calculateGroups("IFM");
+   control.calculateGroups("ORIGIN");
+   control.calculateGroups("SILV_STATE");
+   control.calculateGroups("RETENTION");
+   control.calculateGroups("TSA");
+
+   setupHarvestFlowTargets(control, periods, tracks_path_prefix);
+
+   control.inputTopology("../blocks/topology_blocks_200r.csv", 100d);
+
+   return 1;
+}
+
+int PatchWorks_Init() {
+   femicConfigureHeadlessFromArgs();
+
+   if (!femicHeadlessMode) {
+      classic_GUI(control);
+
+      DefaultTheme def = new DefaultTheme(
+         blockData,
+         new PolygonSymbol(new Color(204, 220, 204))
+      );
+      def.setCaption("TFL 6 Blocks");
+      Layer defLayer = new GeoRelLayer(blockData, def);
+      layers.add(defLayer);
+
+      UniqueValueTheme ifmTheme = new UniqueValueTheme(blockData);
+      ifmTheme.setFieldname("IFM");
+      ifmTheme.addElement(
+         new ThemeElement("managed", new PolygonSymbol(new Color(67, 162, 202))),
+         "managed"
+      );
+      ifmTheme.addElement(
+         new ThemeElement("unmanaged", new PolygonSymbol(new Color(178, 24, 43))),
+         "unmanaged"
+      );
+      ifmTheme.setCaption("IFM eligibility");
+      blockData.addTheme(ifmTheme);
+      GeoRelLayer ifmLayer = new GeoRelLayer(blockData, ifmTheme);
+      ifmLayer.setVisible(false);
+      layers.add(ifmLayer);
+
+      UniqueValueTheme currTreatTheme = new UniqueValueTheme(blockData);
+      currTreatTheme.setFieldname("CURRENTTREATMENT");
+      currTreatTheme.addElement(
+         new ThemeElement("CC", PolygonSymbol.getDefault(Symbol.FILL, Symbol.GEMS, 0)),
+         "CC"
+      );
+      currTreatTheme.setCaption("Current Treatments");
+      currTreatTheme.setUnclassified(new ThemeElement("", PolygonSymbol.erase));
+      blockData.addTheme(currTreatTheme);
+      GeoRelLayer currTreatLayer = new GeoRelLayer(blockData, currTreatTheme);
+      currTreatLayer.setVisible(false);
+      layers.add(currTreatLayer);
+   }
+
+   femicQueueHeadlessStage();
+
+   return 1;
+}

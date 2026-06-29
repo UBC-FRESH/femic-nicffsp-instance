@@ -782,7 +782,8 @@ public CDED steep-slope proxy in the P9RF THLB surface.
 
 Status: active. P12.1 launched the runtime-build issue tree and added the MP11
 candidate Matrix Builder config. P12.2 generated and inspected Matrix Builder
-tracks. P12.3 is the next runtime-assembly step.
+tracks. P12.3 assembled the candidate runtime package. P12.4 is the next direct
+launch-smoke step.
 
 Goal: run Matrix Builder, assemble an MP11-aligned Patchworks runtime package,
 and smoke-test direct launch plus representative base and sensitivity
@@ -809,10 +810,10 @@ candidate runtime package.
     groups, strata, treatments, and block references.
   - [x] P12.2c Record Matrix Builder QA in
     `planning/tfl6_mp11_matrix_builder_tracks_qa.{csv,json,md}`.
-- [ ] P12.3 Assemble MP11 candidate Patchworks runtime package (`#116`).
-  - [ ] P12.3a Build blocks/topology and launch surfaces under
+- [x] P12.3 Assemble MP11 candidate Patchworks runtime package (`#116`).
+  - [x] P12.3a Build blocks/topology and launch surfaces under
     `models/tfl6_patchworks_model_mp11_candidate/`.
-  - [ ] P12.3b Record runtime lineage and candidate package manifest.
+  - [x] P12.3b Record runtime lineage and candidate package manifest.
 - [ ] P12.4 Smoke-test direct Patchworks launch (`#117`).
 - [ ] P12.5 Smoke-test representative base and sensitivity scenarios (`#118`).
 - [ ] P12.6 Close runtime smoke phase and hand off Phase 13 release/docs QA
@@ -1017,6 +1018,16 @@ The Phase 1 follow-on issues are placed into the future roadmap as follows:
    `191,168.566447 ha`. The next bounded move is P12.3: assemble the candidate
    runtime package from the generated tracks without claiming release
    readiness.
+   P12.3 is complete on branch `feature/p12-3-mp11-runtime-package`: block and
+   topology build generated `24,879` block rows and `170,759` topology rows
+   under `models/tfl6_patchworks_model_mp11_candidate/blocks/`; compact launch
+   surfaces, README, and lineage registry were assembled under
+   `models/tfl6_patchworks_model_mp11_candidate/`; and
+   `scripts/build_p12_mp11_runtime_package_manifest.py` recorded
+   `planning/tfl6_mp11_runtime_package_manifest.{csv,json,md}` with status
+   `candidate_runtime_package_assembled_pending_launch_smoke`. The next
+   bounded move is P12.4: direct launch smoke from
+   `models/tfl6_patchworks_model_mp11_candidate/analysis/base.pin`.
 0. Phase 9D and Phase 9E are complete. Step 210 now applies the public TSM
    strict Class V proxy, deducting `1.425 ha` against the MP11 Step 210 target
    `1,993.000 ha`; this is an explicit public-source coverage/semantic gap, not

@@ -1,0 +1,144 @@
+schema_version: 1
+model_id: tfl6_patchworks_model_mp11_candidate
+model_root: models/tfl6_patchworks_model_mp11_candidate
+runtime_config: config/patchworks.runtime.mp11_candidate.windows.yaml
+phase: P12.3
+status: candidate_runtime_package_assembled_pending_launch_smoke
+
+artifact_inventory:
+  data:
+    fragments_shapefile:
+      path: output/patchworks_tfl6_mp11_candidate/fragments/fragments.shp
+      sidecars:
+        - output/patchworks_tfl6_mp11_candidate/fragments/fragments.dbf
+        - output/patchworks_tfl6_mp11_candidate/fragments/fragments.shx
+        - output/patchworks_tfl6_mp11_candidate/fragments/fragments.prj
+        - output/patchworks_tfl6_mp11_candidate/fragments/fragments.cpg
+      built_by:
+        command: >
+          python scripts/build_p11_mp11_candidate_bundle.py
+          and FEMIC Patchworks export in P11.4e
+      qa_status: candidate_p11_4f
+      evidence:
+        planning_note: planning/tfl6_mp11_forestmodel_xml_generation_qa.md
+        rows: 24879
+        area_ha: 191168.566447
+
+  yield:
+    forestmodel_xml:
+      path: output/patchworks_tfl6_mp11_candidate/forestmodel.xml
+      qa_status: candidate_p11_4f
+      evidence:
+        planning_note: planning/tfl6_mp11_forestmodel_xml_generation_qa.md
+        xml_root: ForestModel
+        xml_curve_nodes: 13197
+        xml_select_nodes: 2442
+        xml_treatment_nodes: 814
+
+  tracks:
+    matrix_outputs:
+      path_glob: models/tfl6_patchworks_model_mp11_candidate/tracks/*.csv
+      built_by:
+        command: >
+          python -m femic patchworks matrix-build
+          --instance-root external/femic-tfl6-instance
+          --config config/patchworks.runtime.mp11_candidate.windows.yaml
+          --run-id tfl6_mp11_candidate_p12_2_matrix_build
+      qa_status: candidate_p12_2
+      evidence:
+        planning_note: planning/tfl6_mp11_matrix_builder_tracks_qa.md
+        run_id: tfl6_mp11_candidate_p12_2_matrix_build
+        track_file_count: 13
+        features_rows: 86574
+        accounts_rows: 823
+        protoaccounts_rows: 823
+        accounts_proto_equal: true
+        products_rows: 26085
+        curves_rows: 1004368
+        messages_rows: 0
+        manifest_failures_count: 0
+
+  blocks:
+    blocks_shapefile:
+      path: models/tfl6_patchworks_model_mp11_candidate/blocks/blocks.shp
+      sidecars:
+        - models/tfl6_patchworks_model_mp11_candidate/blocks/blocks.dbf
+        - models/tfl6_patchworks_model_mp11_candidate/blocks/blocks.shx
+        - models/tfl6_patchworks_model_mp11_candidate/blocks/blocks.prj
+        - models/tfl6_patchworks_model_mp11_candidate/blocks/blocks.cpg
+      built_by:
+        command: >
+          python -m femic patchworks build-blocks
+          --instance-root external/femic-tfl6-instance
+          --config config/patchworks.runtime.mp11_candidate.windows.yaml
+          --topology-radius 200
+      qa_status: candidate_p12_3
+      evidence:
+        rows: 24879
+        crs: EPSG:3005
+        geometry_valid: true
+        area_ha: 191168.566447
+    topology_csv:
+      path: models/tfl6_patchworks_model_mp11_candidate/blocks/topology_blocks_200r.csv
+      built_by:
+        command: >
+          python -m femic patchworks build-blocks
+          --instance-root external/femic-tfl6-instance
+          --config config/patchworks.runtime.mp11_candidate.windows.yaml
+          --topology-radius 200
+      qa_status: candidate_p12_3
+      evidence:
+        rows: 170759
+        columns:
+          - BLOCK1
+          - BLOCK2
+          - DISTANCE
+          - LENGTH
+
+runtime_launch_surfaces:
+  baseline_pin:
+    path: models/tfl6_patchworks_model_mp11_candidate/analysis/base.pin
+    helper_scripts:
+      - models/tfl6_patchworks_model_mp11_candidate/analysis/base_variant_common.bsh
+      - models/tfl6_patchworks_model_mp11_candidate/analysis/headless_runtime_common.bsh
+      - models/tfl6_patchworks_model_mp11_candidate/scripts/targets/flowtargets.bsh
+    qa_status: candidate_p12_3_ready_for_p12_4_launch_smoke
+  direct_launch_smoke:
+    qa_status: not_performed
+    owner: P12.4
+  representative_scenario_smoke:
+    qa_status: not_performed
+    owner: P12.5
+
+publication_policy:
+  tracked_in_git:
+    - models/tfl6_patchworks_model_mp11_candidate/README.md
+    - models/tfl6_patchworks_model_mp11_candidate/lineage_registry.yaml
+    - models/tfl6_patchworks_model_mp11_candidate/analysis/base.pin
+    - models/tfl6_patchworks_model_mp11_candidate/analysis/base_variant_common.bsh
+    - models/tfl6_patchworks_model_mp11_candidate/analysis/headless_runtime_common.bsh
+    - models/tfl6_patchworks_model_mp11_candidate/scripts/targets/flowtargets.bsh
+  regenerated_by_default:
+    - data/mp11_model_input_bundle/
+    - output/patchworks_tfl6_mp11_candidate/
+    - models/tfl6_patchworks_model_mp11_candidate/tracks/
+    - models/tfl6_patchworks_model_mp11_candidate/blocks/
+    - models/tfl6_patchworks_model_mp11_candidate/patchworksLog.csv
+  excluded_from_publication_until_phase13:
+    - models/tfl6_patchworks_model_mp11_candidate/analysis/p*/
+    - models/tfl6_patchworks_model_mp11_candidate/analysis/headless_runs/
+    - runtime/
+
+caveats:
+  - This is an MP11 candidate scaffold, not a final release model.
+  - The Phase 5 stand universe and treatment/transition scaffold are reused.
+  - P9RF source/THLB caveats remain visible until a later source-layer rebuild.
+  - The 27 accepted Phase 10R Table 57 rows materialize as 18 active MP11 candidate curves.
+  - Tables 54/55 remain excluded until a public-safe AU-code mapping exists.
+  - Harvest-system assignment remains deferred comparison metadata.
+  - Direct launch smoke, scenario smoke, release QA, and publication remain downstream work.
+
+provenance_policy:
+  - generated blocks and tracks are ignored locally until Phase 13 publication policy is decided
+  - saved-stage smoke outputs are ignored locally and recorded through run manifests and notes
+  - update this registry whenever runtime-package inputs, commands, or launch surfaces change
