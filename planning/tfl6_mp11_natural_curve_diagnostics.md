@@ -30,7 +30,7 @@ or promote any row to model-input status.
 
 - The `77` selected top-area AU curve families remain the Phase 5 public
   natural-curve baseline for MP11 comparison.
-- Non-selected AU bins remain remapped through the existing lexicographic
+- Non-AU source stratum bins remain remapped through the existing lexicographic
   remap audit rather than becoming new hidden curve families.
 - Missing/raw-not-selected statuses are diagnostics for review, not model
   input failures by themselves.

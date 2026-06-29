@@ -23,12 +23,13 @@ Phase 4 may consume these reviewed artifacts:
 | THLB recipe | `config/tsr/thlb_netdown.recipe.yaml` | accepted Phase 2 THLB smoke/netdown recipe surface |
 | THLB status | `config/tsr/thlb_reconstructed.status.md` | accepted Phase 2 THLB status and benchmark-tolerance record |
 | Static AU contract | `planning/tfl6_au_yield_curve_contract.md` | accepted AU/yield/treatment-eligibility design |
-| Static AU universe | `planning/tfl6_static_au_universe.{csv,json,md}` | reviewed AU bins and selected top-area flags |
+| Static AU universe | `planning/tfl6_static_au_universe.{csv,json,md}` | canonical top-N L/M/H AU rows |
+| Source stratum-bin universe | `planning/tfl6_source_stratum_bin_universe.{csv,json,md}` | source strata/bin evidence retained for remap provenance |
 | Selected strata | `planning/tfl6_static_au_top_strata.csv` | top-area stratum set used for curve compilation |
 | Stand-to-AU review table | `planning/tfl6_stand_to_au_review.csv` | reviewed stand attribution source for Phase 3 diagnostics |
 | Natural curves | `planning/tfl6_first_growth_au_curves.csv` | accepted natural/untreated VDYP curve table for selected AU families |
 | Natural-curve diagnostics | `planning/tfl6_first_growth_shape_diagnostics.{csv,md}` | accepted shape diagnostics with revisit caveat |
-| Non-selected AU remap | `planning/tfl6_first_growth_au_remap_audit.{csv,md}` | lexicographic remap audit for non-selected AU bins |
+| Source-bin remap | `planning/tfl6_first_growth_au_remap_audit.{csv,md}` | lexicographic remap audit for non-AU source stratum bins |
 | TIPSY parameter library | `planning/tfl6_mp10_tipsy_parameter_library.{csv,json,md}` | MP10 Tables 27-29 parameter evidence |
 | TIPSY crosswalk | `planning/tfl6_tipsy_parameter_crosswalk.{csv,json,md}` | selected-AU to MP10 row/fallback mapping |
 | BTC handoff | `data/03_input-tfl6.csv` | selected-AU BatchTIPSY input |
@@ -81,7 +82,7 @@ must be present and auditable.
 | THLB / IFM | accepted THLB share/flag, `IFM`/managed treatment eligibility, unmanaged/retention/reserve context |
 | Curve provenance | `ORIGIN`, natural/untreated curve ID, treated/managed curve ID, curve source, curve QA status |
 | Static AU | `au_id`, stratum code, BEC zone/subzone/variant/phase, top-two species combo, L/M/H SI class, selected top-area flag |
-| AU remap | selected curve family, non-selected AU remap target, remap confidence/reason |
+| Source-bin remap | selected curve family, non-AU source-bin remap target, remap confidence/reason |
 | Yield curves | natural curve ID, treated curve ID, curve table key, curve diagnostics key |
 | Treatment options | accepted base `clearcut_and_plant`, implicit `grow`, CT/fertilization hook flags, deferred treatment blockers |
 | Transitions | initial state, managed/unmanaged state, retained/reserve state, regenerated state, deferred/special hook state |
@@ -106,7 +107,7 @@ Before P4.1 can hand the bundle to XML/Matrix Builder work, it must check:
   missing-curve rationale, because NTHLB forest still has to grow;
 - treated curve IDs are present for every schedulable selected AU family or
   have explicit fallback/missing rationale;
-- non-selected AU bins map to selected curve families through the recorded
+- non-AU source stratum bins map to selected curve families through the recorded
   lexicographic remap audit;
 - CT and fertilization hooks remain group-gated to K3Z/NICF core/reference and
   accepted expansion groups;

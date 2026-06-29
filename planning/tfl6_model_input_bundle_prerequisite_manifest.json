@@ -121,7 +121,7 @@
     {
       "id": "nonselected_au_remap",
       "path": "planning/tfl6_first_growth_au_remap_audit.csv",
-      "role": "lexicographic remap audit for non-selected AU bins",
+      "role": "lexicographic remap audit for non-AU source stratum bins",
       "availability": "present"
     },
     {

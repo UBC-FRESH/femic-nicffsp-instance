@@ -37,7 +37,7 @@ The actual curve rebuild is Phase 10R (`#92`).
 | AU/curve-lane generator | `scripts/build_p10_mp11_au_curve_lane_crosswalk.py` | Maps canonical AUs to natural, early managed, recent managed, and future managed lanes. |
 | AU/curve-lane crosswalk | `planning/tfl6_mp11_au_curve_lane_crosswalk.md` | Records `1,536` AU/lane rows with matching CSV/JSON. |
 | Natural-curve diagnostic generator | `scripts/build_p10_mp11_natural_curve_diagnostics.py` | Repackages Phase 5 public VDYP natural-curve evidence for MP11 review. |
-| Natural-curve diagnostics | `planning/tfl6_mp11_natural_curve_diagnostics.md` | Records `384` AU rows, including `77` selected curve families and `307` remaps. |
+| Natural-curve diagnostics | `planning/tfl6_mp11_natural_curve_diagnostics.md` | Records `77` canonical top-N AU curve families plus source-bin remap provenance. |
 | Managed-curve diagnostic generator | `scripts/build_p10_mp11_managed_curve_diagnostics.py` | Joins MP11 managed-lane gates to Phase 5 managed-curve comparison diagnostics. |
 | Managed-curve diagnostics | `planning/tfl6_mp11_managed_curve_diagnostics.md` | Records `1,152` managed AU/lane rows, all blocked pending parser review. |
 
@@ -58,9 +58,9 @@ Those tasks are assigned to Phase 10R.
 
 ## Headline Findings
 
-- The stable FEMIC canonical AU universe remains `384` AUs.
+- The stable FEMIC canonical AU universe is the `77` top-N L/M/H AU set.
 - The selected top-area natural curve family set remains `77` AUs, with `307`
-  non-selected AU bins remapped to selected curve families.
+  non-AU source stratum bins remapped to selected curve families.
 - P10.2 normalized `48` public-safe MP11 parameter rows from Tables 54-60.
 - P10.3 mapped all canonical AUs to four curve lanes: natural unmanaged, early
   managed, recent managed, and future managed.

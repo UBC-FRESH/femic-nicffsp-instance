@@ -1,5 +1,49 @@
 # Change Log
 
+## 2026-06-28 - Recorded MP11 managed curve-generation blocker
+
+- added `scripts/build_p10r_mp11_managed_curve_rebuild_blocker.py` to inspect
+  P10R.3 handoff candidates and record whether managed curve generation can
+  run;
+- emitted `planning/tfl6_mp11_managed_curve_rebuild.{csv,json,md}` as a
+  blocker package;
+- confirmed `27` future-managed handoff candidate rows exist, but no accepted
+  BatchTIPSY/TIPSY executable is available in configured local paths or `PATH`;
+- recorded that P10R.4 does not generate curves, does not parse rebuilt curve
+  outputs, and must not be treated as an MP11 managed-curve rebuild; and
+- left P10R.4 open as a real toolchain blocker pending an accepted Windows
+  TIPSY/BatchTIPSY runtime and inspected generated outputs.
+
+## 2026-06-28 - Built MP11 TIPSY handoff candidates and blockers
+
+- added `scripts/build_p10r_mp11_tipsy_handoff.py` to convert P10R.2 parser
+  rows into conservative BatchTIPSY handoff candidates and row-level blocker
+  diagnostics;
+- emitted `planning/tfl6_mp11_tipsy_handoff.{csv,json,md}` and
+  `planning/tfl6_mp11_tipsy_handoff_map.csv`;
+- produced `27` future-managed candidate rows from Table 57 using decoded
+  public future-AU BEC signals, MP11 one-year regeneration delay, and MP11 OAF
+  defaults emitted as BTC factors `0.85` and `0.95`;
+- blocked `105` Table 54/55 existing/recent managed rows pending a public MP11
+  AU-code to BEC/site-series mapping; and
+- retained `9` parser-review rows from P10R.2 as non-promotable handoff
+  blockers.
+
+## 2026-06-28 - Parsed MP11 TIPSY row tables for Phase 10R
+
+- added `scripts/build_p10r_mp11_tipsy_row_parse.py` to parse public MP11
+  Tables 54, 55, and 57 into per-AU TIPSY row candidates;
+- emitted `planning/tfl6_mp11_tipsy_row_parse.{csv,json,md}` with page/table
+  provenance, parser confidence, raw-cell evidence, species composition, site
+  index fields, genetic-gain fields, and area fields;
+- recorded `141` parsed rows: `79` Table 54 early managed rows, `34` Table 55
+  recent managed rows, and `28` Table 57 future managed rows;
+- retained `9` review-required rows, including known PDF page-break repairs for
+  `R301` and `Fvm205`, so later handoff work cannot silently promote ambiguous
+  parser outputs; and
+- marked P10R.2 complete and moved the active roadmap edge to P10R.3 handoff
+  QA.
+
 ## 2026-06-28 - Added missing P9RF THLB Sphinx closeout documentation
 
 - amended `AGENTS.md` to make phase-closeout documentation mandatory: affected
@@ -3069,3 +3113,228 @@
   and public Pages checks have all passed; and
 - closed P5.4 child issue `#40` and Phase 5 parent issue `#15` after posting
   final closeout comments.
+
+## 2026-06-28 - Detected Windows TIPSY runtime for P10R.4
+
+- materialized the public MP11 PDF in ignored runtime source space and reran
+  the P10R parser, handoff, and managed-curve blocker scripts;
+- confirmed the parser still emits `141` MP11 rows and the handoff still emits
+  `27` future-managed curve-generation candidates, with `105` existing/recent
+  rows blocked pending public AU-code mapping and `9` parser-review rows;
+- updated `scripts/build_p10r_mp11_managed_curve_rebuild_blocker.py` so
+  executable discovery delegates to FEMIC's parent-package BTC API, which
+  resolves the documented Windows default
+  `C:\Program Files\TIPSY 4.7\BTC\TIPSYbtc.exe`;
+- regenerated `planning/tfl6_mp11_managed_curve_rebuild.{csv,json,md}` with
+  `ready_for_manual_tool_execution_review` instead of a missing-executable
+  blocker; and
+- left P10R.4 open because no MP11 managed curves have been generated, parsed,
+  inspected, compared, or promoted.
+
+## 2026-06-28 - Parsed P10R.4 MP11 managed BTC outputs
+
+- ran the `27` P10R.3 future-managed candidate rows through FEMIC's existing
+  `python -m femic tipsy run-btc ...` surface, writing raw BTC outputs under
+  ignored `runtime/mp11_yield/`;
+- inspected the BTC manifest and outputs: manifest status `ok`, exit code `0`,
+  `27` output rows, and `0` BTC error rows;
+- extended `scripts/build_p10r_mp11_managed_curve_rebuild_blocker.py` so it
+  parses the real BTC `MVcon_*` / `MVdec_*` columns when runtime output is
+  present;
+- emitted `planning/tfl6_mp11_managed_curves.{csv,json}` with `972`
+  age-by-curve rows across all `27` candidate feature IDs;
+- regenerated `planning/tfl6_mp11_managed_curve_rebuild.{csv,json,md}` with
+  per-candidate max-volume and representative-age summaries; and
+- kept every parsed row `not_model_input`, leaving P10R.4e comparison against
+  Phase 5 fallback curves as the next review step.
+
+## 2026-06-28 - Compared P10R.4 MP11 managed curves to Phase 5 fallbacks
+
+- added `scripts/build_p10r_mp11_managed_curve_comparison.py` to compare the
+  generated MP11 Table 57 future-managed candidates against nearest Phase 5
+  future-managed fallback curves;
+- matched all `27` generated candidates to Phase 5 comparison references using
+  BEC zone/subzone, species overlap, and weighted site-index proximity;
+- emitted `planning/tfl6_mp11_managed_curve_comparison.{csv,json,md}`;
+- classified `13` candidates as large-difference review rows, `11` as
+  moderate-difference review rows, and `3` as low-difference rows; and
+- marked P10R.4 complete in `ROADMAP.md` while keeping every comparison row
+  `not_model_input` and leaving P10R.5 plot refresh as the next edge.
+
+## 2026-06-28 - Generated P10R.5 managed curve review plots
+
+- added `scripts/build_p10r_mp11_managed_curve_plots.py` to overlay each
+  generated MP11 Table 57 future-managed curve against its matched Phase 5
+  fallback curve;
+- wrote `27` review PNGs under ignored
+  `plots/mp11_managed_curve_comparison/`;
+- emitted
+  `planning/tfl6_mp11_managed_curve_plot_manifest.{csv,json,md}` with plot
+  paths, comparison classes, source curve IDs, deltas, and review/model-input
+  status fields;
+- confirmed every manifest row has a non-empty plot and remains
+  `not_model_input`; and
+- marked P10R.5 managed-plot subtasks complete while leaving natural-curve
+  plot refresh and review-reference updates open.
+
+## 2026-06-28 - Marked P10R managed curves tentatively passed for sequencing
+
+- added `scripts/mark_p10r_mp11_managed_curves_tentative.py` to record the
+  maintainer decision that all `27` regenerated MP11 managed curves are
+  `tentatively_passed_review`;
+- updated `planning/tfl6_mp11_managed_curves.{csv,json}` so all `972`
+  age-by-curve rows carry the tentative review status;
+- updated
+  `planning/tfl6_mp11_managed_curve_comparison.{csv,json,md}` and
+  `planning/tfl6_mp11_managed_curve_plot_manifest.{csv,json,md}` so the
+  comparison and plot review surfaces carry the same status while preserving
+  the large/moderate/low difference classifications;
+- kept every row `not_model_input`; and
+- moved the active P10R.5 edge to updated VDYP/natural curve generation and
+  AU-wise TIPSY-vs-VDYP diagnostic plots.
+
+## 2026-06-28 - Generated P10R TIPSY-vs-VDYP diagnostics
+
+- added `scripts/build_p10r_mp11_tipsy_vdyp_diagnostics.py` to build AU-wise
+  overlays between the tentatively reviewed MP11 Table 57 TIPSY curves and the
+  matching public VDYP `smoothed_bin_pchip` natural curves;
+- emitted `planning/tfl6_mp11_vdyp_natural_curve_slice.{csv,json}` with
+  `8,073` review-slice rows across `27` MP11 candidates and `20` public VDYP
+  natural AUs;
+- generated `27` ignored diagnostic PNGs under
+  `plots/mp11_tipsy_vdyp_diagnostics/`;
+- emitted
+  `planning/tfl6_mp11_tipsy_vdyp_diagnostic_manifest.{csv,json,md}` with
+  ratio, RMSE, diagnostic-class, plot-path, review-status, and
+  model-input-status fields;
+- classified the diagnostics as `13` TIPSY-above-VDYP rows, `4`
+  TIPSY-below-VDYP rows, `8` moderate-difference rows, and `2` close rows;
+- confirmed every manifest row has a non-empty plot and remains
+  `not_model_input`; and
+- marked P10R.5 complete, leaving P10R.6 closeout and Phase 11 unblock/defer
+  decision as the next edge.
+
+## 2026-06-28 - Recorded P10R TIPSY-vs-VDYP plot review failures
+
+- added `scripts/mark_p10r_tipsy_vdyp_plot_review.py` to record maintainer
+  review of the AU-wise TIPSY-vs-VDYP diagnostic plots;
+- marked `24` generated MP11 managed curves as
+  `passed_tipsy_vdyp_sanity_review`;
+- marked `FMH01`, `FMH22`, and `Fvh103` as
+  `failed_tipsy_below_vdyp_sanity_review` because their generated TIPSY
+  plantation curves sit substantially below matched public VDYP natural curves;
+- propagated the review result through
+  `planning/tfl6_mp11_managed_curves.{csv,json}`,
+  `planning/tfl6_mp11_managed_curve_comparison.{csv,json,md}`,
+  `planning/tfl6_mp11_managed_curve_plot_manifest.{csv,json,md}`, and
+  `planning/tfl6_mp11_tipsy_vdyp_diagnostic_manifest.{csv,json,md}`;
+- kept every row `not_model_input`; and
+- moved P10R.6 toward an explicit repair-or-exclude decision for the three
+  failed managed curves before any Phase 11 handoff.
+
+## 2026-06-28 - Audited rejected P10R TIPSY input parameters
+
+- added `scripts/build_p10r_rejected_tipsy_parameter_audit.py` to unpack the
+  BatchTIPSY input parameters for `FMH01`, `FMH22`, and `Fvh103`;
+- emitted `planning/tfl6_mp11_rejected_tipsy_parameter_audit.{csv,json,md}`;
+- confirmed `Fvh103` has an obvious low-SI issue: TIPSY weighted SI `8.495`
+  versus area-weighted VRI SI `11.606` in the allocated public AU
+  `cwhvh1_cw_hw_l`;
+- confirmed `FMH01` and `FMH22` do not have low TIPSY SI relative to their
+  allocated public AU, but do have a suspect BEC/allocation mismatch: TIPSY
+  handoff decoded as `MH/mm` while the allocated VDYP AU is `cwhvm2_hw_ba_l`;
+- kept every audit row `not_model_input`; and
+- left P10R.6 focused on repairing or excluding those three failed managed
+  curves before any Phase 11 handoff.
+
+## 2026-06-28 - Locked P10R MP11 managed curve-generation recipe
+
+- added `scripts/run_p10r_mp11_curve_generation_recipe.py` as the reproducible
+  runner for P10R MP11 managed curve generation;
+- added `planning/tfl6_mp11_curve_generation_recipe.md` to document the locked
+  command sequence, AU-selection policy, VRI-median-SI policy, runtime
+  boundary, and validation gates;
+- locked candidate TIPSY site-index inputs to the matched canonical top-N AU
+  VRI median SI for every planted-species SI column, while retaining parsed
+  MP11 per-species SI only as provenance;
+- blocked `FMH01` and `FMH22` before BTC handoff because they decode to
+  `MH/mm` and do not map to canonical top-N AUs;
+- regenerated the supported `25` candidate curves and `25` AU-wise
+  TIPSY-vs-VDYP diagnostic plots through FEMIC's existing `tipsy run-btc`
+  surface; and
+- kept every generated curve and diagnostic row `not_model_input`, with
+  `Fvh103` remaining the only substantially-below-VDYP diagnostic row.
+
+## 2026-06-28 - Cleaned stale P10R rejected-curve audit state
+
+- removed the obsolete rejected-curve parameter audit generated before the
+  canonical-top-N / VRI-median-SI repair;
+- removed `scripts/build_p10r_rejected_tipsy_parameter_audit.py` and
+  `planning/tfl6_mp11_rejected_tipsy_parameter_audit.{csv,json,md}` from the
+  active artifact set;
+- removed the obsolete hard-coded plot-review marker script that would
+  recreate the pre-repair `FMH01` / `FMH22` / `Fvh103` failed review state;
+- removed the obsolete tentative-pass marker script that predates the locked
+  recipe and current diagnostic state;
+- folded managed-curve comparison plot regeneration into the locked recipe,
+  replacing the stale `27`-row managed plot manifest with the current `25`-row
+  manifest;
+- updated `ROADMAP.md` so P10R.6a is complete and the active edge moves to
+  P10R.6b closeout; and
+- retained the locked recipe as the authoritative reproducibility surface for
+  the supported `25` candidate curves, with `FMH01` and `FMH22` blocked before
+  BTC handoff and `Fvh103` as the only remaining substantially-below-VDYP
+  diagnostic row.
+
+## 2026-06-28 - Wrote Phase 10R curve-rebuild closeout
+
+- added `planning/tfl6_mp11_phase10r_curve_rebuild_closeout.md` as the Phase
+  10R closeout surface;
+- summarized the locked recipe, VRI-median-SI input policy, supported `25`
+  Table 57 candidate curves, blocked Tables 54/55 rows, blocked `FMH01` /
+  `FMH22` rows, and remaining `Fvh103` diagnostic caveat;
+- restated that every generated curve, comparison, and diagnostic row remains
+  `not_model_input`; and
+- marked P10R.6b complete in `ROADMAP.md`, moving the active edge to P10R.6c
+  status reconciliation and P10R.6d validation.
+
+## 2026-06-28 - Reconciled Phase 10R issue status
+
+- updated GitHub issue `#92` to reflect completed P10R.1-P10R.5 work and the
+  current P10R.6 locked-recipe state;
+- updated GitHub issue `#98` to mark artifact audit, recipe lock, closeout, and
+  issue-status reconciliation complete while leaving final validation,
+  PR/commit closeout, and Phase 11 unblock/defer decision open;
+- posted progress comments on issues `#92` and `#98` with the locked validation
+  counts and current blockers; and
+- marked P10R.6c complete in `ROADMAP.md`, leaving P10R.6d final validation as
+  the active edge.
+
+## 2026-06-28 - Ran Phase 10R final validation
+
+- reran the locked Phase 10R curve-generation recipe, regenerating the BTC
+  handoff, BTC outputs, parsed managed curves, managed comparison plots, and
+  TIPSY-vs-VDYP diagnostic plots;
+- confirmed locked validation counts: `25` handoff candidates, BTC manifest
+  `ok`, BTC exit code `0`, `0` BTC error rows, `900` managed curve rows, `25`
+  managed comparison plots, `25` TIPSY-vs-VDYP diagnostic plots, `0` BEC
+  mismatches, and `0` SI-input mismatches;
+- ran Ruff on the active Phase 10R recipe/generator scripts;
+- ran Sphinx warning-clean for the TFL 6 docs;
+- searched active Phase 10R surfaces for stale pre-repair review state and
+  personal local path fragments; and
+- marked P10R.6d complete in `ROADMAP.md`, leaving the Phase 11 unblock/defer
+  decision as the remaining P10R.6 item.
+
+## 2026-06-28 - Closed Phase 10R with Phase 11 blocker handoff
+
+- marked Phase 10R and P10R.6 complete in `ROADMAP.md`;
+- completed P10R.6e by recording that Phase 10R closes with a blocker handoff,
+  not accepted model-input curves;
+- updated the Phase 11 roadmap status so P11.1/P11.2 launch and
+  promotion-readiness audit work may proceed from the locked Phase 10R review
+  surfaces;
+- kept P11.3+ model-input bundle construction and ForestModel XML generation
+  blocked until the Phase 11 readiness audit decides `Fvh103`, Tables 54/55,
+  and `FMH01` / `FMH22`; and
+- updated the Phase 10R closeout note with the same Phase 11 boundary.

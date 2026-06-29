@@ -1,0 +1,88 @@
+{
+  "recipe_id": "p10r_mp11_managed_curve_generation",
+  "recipe_version": 1,
+  "generated_at_utc": "2026-06-29T01:24:47.145607+00:00",
+  "site_index_policy": "Use the matched canonical top-N AU VRI median SI as the TIPSY input for every planted species SI column; retain parsed MP11 SI only as provenance.",
+  "au_policy": "Generate only candidate rows that map to canonical top-N L/M/H AUs by BEC zone/subzone and species overlap. Rows without a canonical top-N BEC match remain blocked.",
+  "commands": [
+    {
+      "command": "python external/femic-tfl6-instance/scripts/build_p10r_mp11_tipsy_handoff.py",
+      "returncode": 0,
+      "stdout_tail": "{\n  \"generated_at_utc\": \"2026-06-29T01:23:55.752708+00:00\",\n  \"input_rows\": \"planning//tfl6_mp11_tipsy_row_parse.csv\",\n  \"output_handoff_csv\": \"planning//tfl6_mp11_tipsy_handoff.csv\",\n  \"output_handoff_map_csv\": \"planning//tfl6_mp11_tipsy_handoff_map.csv\",\n  \"parsed_row_count\": 141,\n  \"handoff_candidate_count\": 25,\n  \"status_counts\": {\n    \"blocked_missing_public_au_to_bec_mapping\": 105,\n    \"blocked_no_canonical_top_n_au_for_bec\": 2,\n    \"candidate_for_curve_generation\": 25,\n    \"review_required_parser_warning\": 9\n  },\n  \"source_table_status_counts\": {\n    \"('Table 54', 'blocked_missing_public_au_to_bec_mapping')\": 73,\n    \"('Table 54', 'review_required_parser_warning')\": 6,\n    \"('Table 55', 'blocked_missing_public_au_to_bec_mapping')\": 32,\n    \"('Table 55', 'review_required_parser_warning')\": 2,\n    \"('Table 57', 'blocked_no_canonical_top_n_au_for_bec')\": 2,\n    \"('Table 57', 'candidate_for_curve_generation')\": 25,\n    \"('Table 57', 'review_required_parser_warning')\": 1\n  },\n  \"oaf_policy\": \"MP11 narrative OAF defaults: OAF1=15% and OAF2=5%, emitted as BTC factors 0.85 and 0.95.\",\n  \"regen_delay_policy\": \"Future managed candidate rows use one-year regeneration delay from MP11 Section 8.2.7.1.\",\n  \"site_index_policy\": \"Candidate BTC rows use the matched canonical top-N AU VRI median SI as the TIPSY site-index input for every planted species SI column. Parsed MP11 per-species SI values are retained only as provenance.\",\n  \"join_boundary\": \"Table 57 rows can produce standalone future-managed curve-generation candidates. They must first map to a canonical top-N FEMIC AU. Tables 54/55 remain blocked pending a public MP11 existing/recent AU-code to BEC/site-series mapping before BatchTIPSY handoff.\",\n  \"use_boundary\": \"Rows are handoff candidates only and remain not_model_input.\"\n}\n",
+      "stderr_tail": ""
+    },
+    {
+      "command": "python -m femic tipsy run-btc planning/tfl6_mp11_tipsy_handoff.csv --output-csv runtime/mp11_yield/p10r_mp11_candidate_04_output.csv --error-csv runtime/mp11_yield/p10r_mp11_candidate_04_error.csv --scratch-dir runtime/mp11_yield/scratch --log-dir runtime/mp11_yield/logs --run-id p10r_mp11_candidate --instance-root external/femic-tfl6-instance",
+      "returncode": 0,
+      "stdout_tail": "BTC run completed mode=TSR exit_code=0 \noutput=<tfl6_instance>/runtime/mp11_yi\neld/p10r_mp11_candidate_04_output.csv\nerror: \n<tfl6_instance>/runtime/mp11_yield/p10\nr_mp11_candidate_04_error.csv\nmanifest: \n<tfl6_instance>/runtime/mp11_yield/log\ns/btc_manifest-p10r_mp11_candidate.json\n",
+      "stderr_tail": ""
+    },
+    {
+      "command": "python external/femic-tfl6-instance/scripts/build_p10r_mp11_managed_curve_rebuild_blocker.py",
+      "returncode": 0,
+      "stdout_tail": "{\n  \"generated_at_utc\": \"2026-06-29T01:24:15.097849+00:00\",\n  \"input_handoff_csv\": \"planning//tfl6_mp11_tipsy_handoff.csv\",\n  \"input_handoff_map_csv\": \"planning//tfl6_mp11_tipsy_handoff_map.csv\",\n  \"handoff_candidate_count\": 25,\n  \"blocked_or_review_rows\": 116,\n  \"searched_executable_candidates\": [\n    \"explicit --btc-exe / FEMIC_BATCHTIPSY_EXE\",\n    \"C://Program Files//TIPSY 4.7//BTC//TIPSYbtc.exe\"\n  ],\n  \"found_executables_or_runners\": [\n    \"C://Program Files//TIPSY 4.7//BTC//TIPSYbtc.exe (default)\"\n  ],\n  \"curve_generation_status\": \"generated_curve_output_inspected\",\n  \"curve_generation_note\": \"FEMIC BTC generated real MP11 candidate outputs from the P10R.3 handoff. The parsed curves are retained as review surfaces only; they are not model inputs and have not yet been compared against Phase 5 fallback curves.\",\n  \"btc_output_csv\": \"runtime//mp11_yield//p10r_mp11_candidate_04_output.csv\",\n  \"btc_error_csv\": \"runtime//mp11_yield//p10r_mp11_candidate_04_error.csv\",\n  \"btc_manifest_path\": \"runtime//mp11_yield//logs//btc_manifest-p10r_mp11_candidate.json\",\n  \"btc_manifest_status\": \"ok\",\n  \"btc_manifest_exit_code\": 0,\n  \"btc_error_rows\": 0,\n  \"parsed_curve_rows\": 900,\n  \"parsed_curve_feature_count\": 25,\n  \"accepted_next_action\": \"Compare the parsed P10R.4 candidate curves against Phase 5 fallback curves where useful, then keep any promotion decision review-gated.\",\n  \"use_boundary\": \"These artifacts are review surfaces. They are generated MP11 candidate curves, but they remain not_model_input until reviewed and explicitly accepted.\"\n}\n",
+      "stderr_tail": ""
+    },
+    {
+      "command": "python external/femic-tfl6-instance/scripts/build_p10r_mp11_managed_curve_comparison.py",
+      "returncode": 0,
+      "stdout_tail": "{\n  \"row_count\": 25,\n  \"phase5_match_count\": 25,\n  \"comparison_class_counts\": {\n    \"large_difference_review_required\": 11,\n    \"low_difference\": 3,\n    \"moderate_difference_review_required\": 11\n  }\n}\n",
+      "stderr_tail": ""
+    },
+    {
+      "command": "clean stale mp11_managed_curve_comparison PNGs",
+      "plot_dir": "plots/mp11_managed_curve_comparison",
+      "removed_png_count": 25
+    },
+    {
+      "command": "python external/femic-tfl6-instance/scripts/build_p10r_mp11_managed_curve_plots.py",
+      "returncode": 0,
+      "stdout_tail": "Generated 25 MP11-vs-Phase-5 managed curve plots under plots/mp11_managed_curve_comparison\n",
+      "stderr_tail": ""
+    },
+    {
+      "command": "clean stale mp11_tipsy_vdyp_diagnostics PNGs",
+      "plot_dir": "plots/mp11_tipsy_vdyp_diagnostics",
+      "removed_png_count": 25
+    },
+    {
+      "command": "python external/femic-tfl6-instance/scripts/build_p10r_mp11_tipsy_vdyp_diagnostics.py",
+      "returncode": 0,
+      "stdout_tail": "Generated P10R TIPSY-vs-VDYP diagnostics: plots=25 blocked=0 vdyp_slice_rows=7475\n",
+      "stderr_tail": ""
+    }
+  ],
+  "validation": {
+    "handoff_rows": 25,
+    "candidate_rows": 25,
+    "btc_manifest_status": "ok",
+    "btc_exit_code": 0,
+    "btc_error_rows": 0,
+    "curve_features": 25,
+    "curve_rows": 900,
+    "comparison_rows": 25,
+    "managed_plot_manifest_rows": 25,
+    "managed_plot_count": 25,
+    "diagnostic_manifest_rows": 25,
+    "diagnostic_plot_count": 25,
+    "bec_mismatch_count": 0,
+    "si_mismatch_count": 0,
+    "diagnostic_class_counts": {
+      "tipsy_substantially_above_vdyp": 17,
+      "tipsy_substantially_below_vdyp": 1,
+      "tipsy_vdyp_close": 2,
+      "tipsy_vdyp_moderate_difference": 5
+    }
+  },
+  "artifact_sha256": {
+    "planning/tfl6_mp11_tipsy_handoff.csv": "224365b3b9c642dffbabaef48f934a1ab26f767294ef6767b6c7a32ed60c8d97",
+    "planning/tfl6_mp11_tipsy_handoff_map.csv": "2191efd6a8b52574daf1ec988402207d7f3f2d151e80280360d76ba23b314a48",
+    "planning/tfl6_mp11_managed_curves.csv": "ef63b0b54cd89ef90eec32ca9cef2218162d4cf0145bb2681103c7af0a4306ee",
+    "planning/tfl6_mp11_managed_curve_comparison.csv": "6d77588a4b82148ee7b92cbd815fd2f8cbab48babaf2791ff45347b8374aebe1",
+    "planning/tfl6_mp11_managed_curve_plot_manifest.csv": "b1950a00074dbc1f4f9345590c3074389b69df76f50d6e377f1dc9f4856bbd79",
+    "planning/tfl6_mp11_tipsy_vdyp_diagnostic_manifest.csv": "61602d12ccc587fba37d480ccabe6b1abfee56fdd4114c6ae9f61a2fa90658ff",
+    "runtime/mp11_yield/p10r_mp11_candidate_04_output.csv": "33a88c11d8dec57f811eca106b8f6600325fdce8227b24cf9e928042755de157",
+    "runtime/mp11_yield/p10r_mp11_candidate_04_error.csv": "0eff291ae3fdc7c2968460b8431ef1105a16ec0274fca1d971e90debac96d551",
+    "runtime/mp11_yield/logs/btc_manifest-p10r_mp11_candidate.json": "0ffc5035aad3c1db82f37a2d32c615a7c602c683a4e55f2f03badda0f1af1259"
+  }
+}

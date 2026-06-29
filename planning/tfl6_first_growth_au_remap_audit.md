@@ -3,26 +3,26 @@
 ## Purpose
 
 Record the P3.4 natural/untreated curve cardinality contract: build curves
-only for the selected top-area AU set, then remap non-selected AU bins onto
+only for the selected top-area AU set, then remap non-AU source stratum bins onto
 that selected canonical curve universe using the established FEMIC
 lexicographic stratum-name matching pattern.
 
 ## Counts
 
-- All static AU bins: `384`
-- Selected top-area AU bins with canonical curves: `77`
-- Non-selected AU bins requiring remap/imputation: `307`
-- Non-selected AU bins with an alias different from source: `307`
+- Source stratum bins: `384`
+- Canonical top-N AUs with curves: `77`
+- Non-AU source stratum bins requiring remap/imputation: `307`
+- Non-AU source stratum bins with an alias different from source: `307`
 
 ## Contract
 
 - `canonical_curve_au_id` is the curve key to use for Phase 4 natural/
   untreated curve lookup.
 - selected top-area AUs map to themselves.
-- non-selected AUs map to the closest selected AU by the FEMIC
+- non-AU source stratum bins map to the closest selected AU by the FEMIC
   lexicographic alias rule, weighted by selected-area support when ties
   occur.
-- non-selected AUs are not published as separate canonical natural curve
+- non-AU source stratum bins are not published as separate canonical natural curve
   families.
 
 ## Largest Non-Selected Remaps

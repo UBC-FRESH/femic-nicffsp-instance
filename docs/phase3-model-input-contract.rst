@@ -87,7 +87,7 @@ P4.1 should produce or preserve these semantic field families:
    * - Static AU
      - BEC/species/site-index class identity
    * - AU remap
-     - selected top-area curve-family remap for non-selected AU bins
+     - selected top-area curve-family remap for non-AU source stratum bins
    * - Yield curves
      - natural and treated curve table keys and diagnostics
    * - Treatment options

@@ -48,9 +48,9 @@ Large runtime/audit artifacts remain under ignored runtime output:
 - AU diagnostics generated: `380`
 - Raw accepted first-growth curve candidates: `276`
 - Raw insufficient-source AU candidates: `104`
-- Static AU bins in the P3.4b universe: `384`
-- Selected top-area AU bins retained as canonical curve families: `77`
-- Non-selected AU bins remapped/imputed to selected curve families: `307`
+- Source stratum bins in the P3.4b review universe: `384`
+- Canonical top-N L/M/H AUs retained as curve families: `77`
+- Non-AU source stratum bins remapped/imputed to selected curve families: `307`
 - Sparse-support diagnostic flags: `186`
 - Selected accepted curve family: `smoothed_bin_pchip`
 - L/M/H selected-AU-family comparison plots: `26`

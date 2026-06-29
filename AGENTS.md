@@ -150,6 +150,37 @@ rule, compute a reviewable result, compare it to the published checkpoint,
 explain the residual, correct the method if needed, and stop before the next
 deduction until the current gate is defensible.
 
+## Real Blockers And Stop Conditions
+
+When a required external executable, proprietary runtime, private input, source
+layer, credential, maintainer decision, or benchmark-defining assumption is
+missing, that is a real blocker. Do not convert a real blocker into adjacent
+make-work, speculative downstream tasks, placeholder artifacts, or roadmap
+progress.
+
+For real blockers:
+
+- Stop the affected task at the blocker boundary.
+- State exactly what is missing, where it was searched for, why it is required,
+  and what work remains impossible without it.
+- Commit only useful pre-blocker work: parsers, manifests, diagnostics,
+  validation evidence, issue/roadmap/changelog synchronization, and a concise
+  handoff package.
+- Ask the maintainer for the missing input or an explicit decision before doing
+  more work downstream of the blocker.
+- Do not advance the roadmap edge, close the issue as successful, open
+  downstream implementation tasks, or produce substitute artifacts unless the
+  maintainer explicitly approves a blocker path.
+- If the next useful action belongs in another environment, write a handoff note
+  with exact branch, commit, paths, commands, expected inputs, expected outputs,
+  and validation checks.
+
+For TIPSY, VDYP, Patchworks, Matrix Builder, or other non-public/proprietary
+toolchain steps, executable absence is a stop condition. A coding agent may
+record the blocker and prepare handoff instructions, but must not claim model
+input, yield curve, Matrix Builder, or Patchworks progress until the appropriate
+runtime has actually been supplied and its outputs have been inspected.
+
 ## Verification
 
 Bootstrap-level validation:

@@ -33,26 +33,26 @@ def _write_markdown(audit: pd.DataFrame, output_path: Path) -> None:
         "## Purpose",
         "",
         "Record the P3.4 natural/untreated curve cardinality contract: build curves",
-        "only for the selected top-area AU set, then remap non-selected AU bins onto",
+        "only for the selected top-area AU set, then remap non-AU source stratum bins onto",
         "that selected canonical curve universe using the established FEMIC",
         "lexicographic stratum-name matching pattern.",
         "",
         "## Counts",
         "",
-        f"- All static AU bins: `{all_count}`",
-        f"- Selected top-area AU bins with canonical curves: `{selected_count}`",
-        f"- Non-selected AU bins requiring remap/imputation: `{len(non_selected)}`",
-        f"- Non-selected AU bins with an alias different from source: `{alias_used}`",
+        f"- Source stratum bins: `{all_count}`",
+        f"- Canonical top-N AUs with curves: `{selected_count}`",
+        f"- Non-AU source stratum bins requiring remap/imputation: `{len(non_selected)}`",
+        f"- Non-AU source stratum bins with an alias different from source: `{alias_used}`",
         "",
         "## Contract",
         "",
         "- `canonical_curve_au_id` is the curve key to use for Phase 4 natural/",
         "  untreated curve lookup.",
         "- selected top-area AUs map to themselves.",
-        "- non-selected AUs map to the closest selected AU by the FEMIC",
+        "- non-AU source stratum bins map to the closest selected AU by the FEMIC",
         "  lexicographic alias rule, weighted by selected-area support when ties",
         "  occur.",
-        "- non-selected AUs are not published as separate canonical natural curve",
+        "- non-AU source stratum bins are not published as separate canonical natural curve",
         "  families.",
         "",
         "## Largest Non-Selected Remaps",
@@ -67,7 +67,7 @@ def _write_markdown(audit: pd.DataFrame, output_path: Path) -> None:
         "lexmatch_alias_used",
     ]
     if top_preview.empty:
-        lines.append("No non-selected AU bins require remap.")
+        lines.append("No non-AU source stratum bins require remap.")
     else:
         lines.append(top_preview[preview_cols].to_markdown(index=False))
     lines.extend(
@@ -84,7 +84,9 @@ def _write_markdown(audit: pd.DataFrame, output_path: Path) -> None:
 
 
 def main() -> None:
-    static_au = pd.read_csv(INSTANCE_ROOT / "planning" / "tfl6_static_au_universe.csv")
+    static_au = pd.read_csv(
+        INSTANCE_ROOT / "planning" / "tfl6_source_stratum_bin_universe.csv"
+    )
     static_au["selected_top_90_stratum"] = static_au["selected_top_90_stratum"].astype(
         bool
     )
@@ -146,9 +148,9 @@ def main() -> None:
     )
     print(
         {
-            "all_au_bins": len(audit),
-            "selected_curve_au_bins": int(audit["selected_top_90_stratum"].sum()),
-            "non_selected_remaps": int((~audit["selected_top_90_stratum"]).sum()),
+            "source_stratum_bins": len(audit),
+            "canonical_top_n_aus": int(audit["selected_top_90_stratum"].sum()),
+            "non_au_source_bin_remaps": int((~audit["selected_top_90_stratum"]).sum()),
         }
     )
 

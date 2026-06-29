@@ -12,7 +12,9 @@ import pandas as pd
 INSTANCE_ROOT = Path(__file__).resolve().parents[1]
 CROSSWALK_PATH = INSTANCE_ROOT / "planning" / "tfl6_mp11_au_curve_lane_crosswalk.csv"
 CURVES_PATH = INSTANCE_ROOT / "planning" / "tfl6_first_growth_au_curves.csv"
-FIT_DIAGNOSTICS_PATH = INSTANCE_ROOT / "planning" / "tfl6_first_growth_au_fit_diagnostics.csv"
+FIT_DIAGNOSTICS_PATH = (
+    INSTANCE_ROOT / "planning" / "tfl6_first_growth_au_fit_diagnostics.csv"
+)
 REMAP_PATH = INSTANCE_ROOT / "planning" / "tfl6_first_growth_au_remap_audit.csv"
 PLOT_MANIFEST_PATH = INSTANCE_ROOT / "planning" / "tfl6_first_growth_plot_manifest.csv"
 
@@ -36,7 +38,10 @@ def build_diagnostics() -> pd.DataFrame:
             curve_age_min=("age", "min"),
             curve_age_max=("age", "max"),
             max_volume=("volume", "max"),
-            age_at_max_volume=("age", lambda s: int(s.iloc[curves.loc[s.index, "volume"].argmax()])),
+            age_at_max_volume=(
+                "age",
+                lambda s: int(s.iloc[curves.loc[s.index, "volume"].argmax()]),
+            ),
         )
         .reset_index()
     )
@@ -84,7 +89,10 @@ def build_diagnostics() -> pd.DataFrame:
     def status(row: pd.Series) -> str:
         if bool(row["selected_top_90_stratum"]) and bool(row.get("accepted", False)):
             return "selected_curve_family_available"
-        if pd.notna(row.get("canonical_curve_au_id")) and row["canonical_curve_au_id"] != row["au_id"]:
+        if (
+            pd.notna(row.get("canonical_curve_au_id"))
+            and row["canonical_curve_au_id"] != row["au_id"]
+        ):
             return "remapped_to_selected_curve_family"
         if pd.notna(row.get("curve_point_count")):
             return "raw_curve_available_not_selected"
@@ -103,7 +111,9 @@ def build_diagnostics() -> pd.DataFrame:
             "natural_curve_missing_review_required": "review_required",
         }
     )
-    return diag.sort_values(["selected_top_90_stratum", "area_ha"], ascending=[False, False])
+    return diag.sort_values(
+        ["selected_top_90_stratum", "area_ha"], ascending=[False, False]
+    )
 
 
 def write_outputs(df: pd.DataFrame) -> None:
@@ -112,16 +122,28 @@ def write_outputs(df: pd.DataFrame) -> None:
         "generated_at_utc": datetime.now(UTC).isoformat(),
         "row_count": int(len(df)),
         "au_count": int(df["au_id"].nunique()),
-        "status_counts": df["natural_curve_status"].value_counts().sort_index().to_dict(),
-        "review_status_counts": df["review_status"].value_counts().sort_index().to_dict(),
+        "status_counts": df["natural_curve_status"]
+        .value_counts()
+        .sort_index()
+        .to_dict(),
+        "review_status_counts": df["review_status"]
+        .value_counts()
+        .sort_index()
+        .to_dict(),
         "selected_top_90_rows": int(df["selected_top_90_stratum"].sum()),
         "total_area_ha": float(df["area_ha"].sum()),
-        "selected_top_90_area_ha": float(df.loc[df["selected_top_90_stratum"], "area_ha"].sum()),
+        "selected_top_90_area_ha": float(
+            df.loc[df["selected_top_90_stratum"], "area_ha"].sum()
+        ),
         "plot_count": int(df["plot_count"].sum()),
-        "model_input_status_counts": df["model_input_status"].value_counts().sort_index().to_dict(),
+        "model_input_status_counts": df["model_input_status"]
+        .value_counts()
+        .sort_index()
+        .to_dict(),
     }
     OUTPUT_JSON.write_text(
-        json.dumps({**summary, "records": df.to_dict(orient="records")}, indent=2) + "\n",
+        json.dumps({**summary, "records": df.to_dict(orient="records")}, indent=2)
+        + "\n",
         encoding="utf-8",
     )
 
@@ -161,7 +183,7 @@ def write_outputs(df: pd.DataFrame) -> None:
             "",
             "- The `77` selected top-area AU curve families remain the Phase 5 public",
             "  natural-curve baseline for MP11 comparison.",
-            "- Non-selected AU bins remain remapped through the existing lexicographic",
+            "- Non-AU source stratum bins remain remapped through the existing lexicographic",
             "  remap audit rather than becoming new hidden curve families.",
             "- Missing/raw-not-selected statuses are diagnostics for review, not model",
             "  input failures by themselves.",
@@ -175,7 +197,9 @@ def write_outputs(df: pd.DataFrame) -> None:
         ]
     )
     for _, row in df.head(25).iterrows():
-        max_volume = "" if pd.isna(row["max_volume"]) else f"{float(row['max_volume']):.3f}"
+        max_volume = (
+            "" if pd.isna(row["max_volume"]) else f"{float(row['max_volume']):.3f}"
+        )
         lines.append(
             f"| `{row['au_id']}` | {float(row['area_ha']):.3f} | "
             f"`{row['species_combo']}` | `{row['si_class']}` | "

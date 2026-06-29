@@ -585,7 +585,7 @@ readiness evidence and blocker diagnostics. The actual curve rebuild is Phase
 
 ## Phase 10R: MP11 Curve Parser And Curve Rebuild (`#92`)
 
-Status: active.
+Status: complete.
 
 Goal: execute the actual MP11 curve rebuild that Phase 10 scoped but did not
 complete. This phase owns reviewed parsing of MP11 Tables 54, 55, and 57,
@@ -598,39 +598,50 @@ natural/managed curve plots or a maintainer-reviewable blocker package.
   - [x] P10R.1b Add Phase 10R roadmap and issue references.
   - [x] P10R.1c Add the Phase 10R execution plan.
   - [x] P10R.1d Mark Phase 11 blocked pending accepted Phase 10R outputs.
-- [ ] P10R.2 Parse MP11 Tables 54, 55, and 57 per-AU TIPSY rows (`#94`).
-  - [ ] P10R.2a Locate source pages and table boundaries for Tables 54, 55,
+- [x] P10R.2 Parse MP11 Tables 54, 55, and 57 per-AU TIPSY rows (`#94`).
+  - [x] P10R.2a Locate source pages and table boundaries for Tables 54, 55,
     and 57.
-  - [ ] P10R.2b Implement parser/extraction script.
-  - [ ] P10R.2c Emit public-safe row tables with page/table provenance.
-  - [ ] P10R.2d Add QA summaries for missing, wrapped, or ambiguous rows.
-  - [ ] P10R.2e Review row counts and representative rows manually.
-- [ ] P10R.3 QA managed-yield rows and build BatchTIPSY handoff inputs (`#95`).
-  - [ ] P10R.3a Join parsed rows to the AU/curve-lane crosswalk.
-  - [ ] P10R.3b Validate density, regeneration delay, genetic gain, VRAF,
+  - [x] P10R.2b Implement parser/extraction script.
+  - [x] P10R.2c Emit public-safe row tables with page/table provenance.
+  - [x] P10R.2d Add QA summaries for missing, wrapped, or ambiguous rows.
+  - [x] P10R.2e Review row counts and representative rows manually.
+- [x] P10R.3 QA managed-yield rows and build BatchTIPSY handoff inputs (`#95`).
+  - [x] P10R.3a Join parsed rows to the AU/curve-lane crosswalk.
+  - [x] P10R.3b Validate density, regeneration delay, genetic gain, VRAF,
     utilization, and site assumptions.
-  - [ ] P10R.3c Emit handoff CSV/JSON/Markdown manifests.
-  - [ ] P10R.3d Record unsupported rows and maintainer decisions required.
-- [ ] P10R.4 Run and parse MP11 managed curve generation (`#96`).
-  - [ ] P10R.4a Run accepted BatchTIPSY/TIPSY or local-equivalent commands.
-  - [ ] P10R.4b Capture tool versions, commands, inputs, outputs, and failures.
-  - [ ] P10R.4c Parse output curves to normalized tables.
-  - [ ] P10R.4d Emit diagnostics for failed or unsupported rows.
-  - [ ] P10R.4e Compare candidate outputs against Phase 5 fallback curves.
-- [ ] P10R.5 Regenerate natural and managed curve plots and overlays (`#97`).
-  - [ ] P10R.5a Inventory existing curve plot locations.
-  - [ ] P10R.5b Generate refreshed natural curve review plots where inputs
-    support it.
-  - [ ] P10R.5c Generate rebuilt managed curve plots from P10R.4 outputs.
-  - [ ] P10R.5d Emit plot manifests with source/provenance links.
-  - [ ] P10R.5e Update review/planning references to the new plot library.
-- [ ] P10R.6 Close curve-rebuild phase and hand off accepted curve candidates
+  - [x] P10R.3c Emit handoff CSV/JSON/Markdown manifests.
+  - [x] P10R.3d Record unsupported rows and maintainer decisions required.
+- [x] P10R.4 Run and parse MP11 managed curve generation (`#96`) - Windows
+  BatchTIPSY/TIPSY execution, output parsing, inspection, and Phase 5 fallback
+  comparison complete for the `25` supported future-managed candidates. Every
+  row remains review-gated as `not_model_input`; the curve-generation recipe is
+  locked to canonical top-N AUs and VRI median SI inputs.
+  - [x] P10R.4a Run accepted BatchTIPSY/TIPSY or local-equivalent commands.
+  - [x] P10R.4b Capture tool versions, commands, inputs, outputs, and failures.
+  - [x] P10R.4c Parse output curves to normalized tables.
+  - [x] P10R.4d Emit diagnostics for failed or unsupported rows.
+  - [x] P10R.4e Compare candidate outputs against Phase 5 fallback curves.
+- [x] P10R.5 Regenerate natural and managed curve plots and overlays (`#97`) -
+  managed Phase 10R-vs-Phase 5 overlays, public VDYP curve slices, and
+  AU-wise MP11 TIPSY-vs-VDYP diagnostic plots complete. All rows remain
+  `not_model_input`; `FMH01` and `FMH22` are blocked before BTC handoff because
+  they do not map to canonical top-N AUs, and `Fvh103` remains the only
+  substantially-below-VDYP sanity row after the VRI-median-SI rerun.
+  - [x] P10R.5a Inventory existing curve plot locations.
+  - [x] P10R.5b Generate updated VDYP/natural curves and AU-wise
+    TIPSY-vs-VDYP diagnostic plots where inputs support it.
+  - [x] P10R.5c Generate rebuilt managed curve plots from P10R.4 outputs.
+  - [x] P10R.5d Emit plot manifests with source/provenance links.
+  - [x] P10R.5e Update review/planning references to the new plot library.
+- [x] P10R.6 Close curve-rebuild phase and hand off accepted curve candidates
   (`#98`).
-  - [ ] P10R.6a Audit Phase 10R artifacts and generated-output hygiene.
-  - [ ] P10R.6b Write Phase 10R closeout.
-  - [ ] P10R.6c Update roadmap, changelog, and issue statuses.
-  - [ ] P10R.6d Run final validation.
-  - [ ] P10R.6e Unblock or explicitly defer Phase 11 based on accepted outputs.
+  - [x] P10R.6a Audit Phase 10R artifacts, rejected-curve parameters, and
+    generated-output hygiene.
+  - [x] P10R.6a1 Lock the reproducible MP11 managed curve-generation recipe.
+  - [x] P10R.6b Write Phase 10R closeout.
+  - [x] P10R.6c Update roadmap, changelog, and issue statuses.
+  - [x] P10R.6d Run final validation.
+  - [x] P10R.6e Unblock or explicitly defer Phase 11 based on accepted outputs.
 
 ## Phase 9D: Public DEM Steep-Slope Proxy Repair (`#100`)
 
@@ -712,17 +723,19 @@ coverage explains only a very small portion of the MP11 Step 210 netdown.
 
 ## Phase 11: MP11 Model-Input Bundle And ForestModel XML Rebuild (`#68`)
 
-Status: planned and blocked.
+Status: active for launch/readiness audit; model-input/XML generation blocked.
 
 Goal: build the MP11-aligned model-input bundle and ForestModel XML from
 accepted source-layer, THLB, AU/yield, treatment, transition, MHA,
 harvest-system, and reporting contracts.
 
-Phase 11 must not proceed until Phase 10R closes with accepted curve candidates
-or an explicit maintainer-approved blocker path. Phase 9D is complete and
-Step 220 now has an accepted public CDED steep-slope proxy in the P9RF THLB
-surface. Existing P11 issues `#86` through `#91` are retained as the future
-model-input/XML issue tree, but they are not active work.
+Phase 10R is closed with a maintainer-approved blocker handoff rather than
+accepted model-input curves. Phase 11 may start P11.1 launch/readiness-audit
+work from the locked Phase 10R review surfaces, but P11.3+ model-input bundle
+construction and ForestModel XML generation remain blocked until the Phase 11
+readiness audit records explicit decisions for `Fvh103`, Tables 54/55, and
+`FMH01` / `FMH22`. Phase 9D is complete and Step 220 now has an accepted public
+CDED steep-slope proxy in the P9RF THLB surface.
 
 - [ ] P11.1 Launch MP11 model-input/XML rebuild execution plan (`#86`).
   - [ ] P11.1a Audit governing contracts and handoff blockers.
@@ -860,13 +873,58 @@ The Phase 1 follow-on issues are placed into the future roadmap as follows:
    full P9RF rerun, Step 290 Current THLB is `122,763.421 ha` (`+2,664.421 ha`
    versus MP11), and Step 310 Long-term Land Base is `121,336.593 ha`
    (`+2,664.593 ha` versus MP11).
-1. Phase 10R is active on branch
-   `feature/p10r-curve-rebuild-roadmap-correction`. P10R.1 is complete.
+1. Phase 10R is closed on branch
+   `feature/p10r-curve-rebuild-roadmap-correction`.
    `planning/tfl6_mp11_phase10r_curve_rebuild_execution_plan.md` records the
    actual curve-rebuild issue tree, artifact layout, parser gates,
    curve-generation gates, plot refresh expectations, and Phase 11 blocker.
-   The active edge is P10R.2: parse MP11 Tables 54, 55, and 57 per-AU TIPSY
-   rows (`#94`). Phase 11 is planned and blocked until Phase 10R closes.
+   P10R.2 parsed MP11 Tables 54, 55, and 57 into
+   `planning/tfl6_mp11_tipsy_row_parse.{csv,json,md}`: `141` rows total
+   (`79` Table 54, `34` Table 55, `28` Table 57), with `132`
+   high-confidence parser candidates and `9` rows retained as
+   review-required. P10R.3 now emits
+   `planning/tfl6_mp11_tipsy_handoff.{csv,json,md}` plus
+   `planning/tfl6_mp11_tipsy_handoff_map.csv` from the canonical top-N AU
+   universe: `25` future-managed candidate rows are handoff-ready, `105`
+   existing/recent rows are blocked pending a public MP11 AU-code to
+   BEC/site-series mapping, `2` `MH/mm` future-managed rows (`FMH01`,
+   `FMH22`) are blocked because they do not map to canonical top-N AUs, and
+   `9` rows remain parser review-required. The locked recipe is
+   `scripts/run_p10r_mp11_curve_generation_recipe.py` and
+   `planning/tfl6_mp11_curve_generation_recipe.md`. It uses FEMIC's existing
+   `python -m femic tipsy run-btc ...` surface and writes
+   `planning/tfl6_mp11_curve_generation_recipe_lock.json` with command
+   provenance, validation results, and SHA-256 hashes. The recipe uses the
+   matched canonical top-N AU VRI median SI as `tipsy_input_si` for every
+   positive planted-species SI column; parsed MP11 per-species SI is retained
+   only as provenance. The current BTC rerun returns manifest status `ok`, exit
+   code `0`, `25` output rows, and `0` error rows under ignored
+   `runtime/mp11_yield/`. The parsed review surfaces are
+   `planning/tfl6_mp11_managed_curves.{csv,json}` with `900` age-by-curve rows
+   and regenerated `planning/tfl6_mp11_managed_curve_rebuild.{csv,json,md}`
+   with `generated_curve_output_inspected`. P10R.4e emits
+   `planning/tfl6_mp11_managed_curve_comparison.{csv,json,md}`: all `25`
+   supported candidates match comparison references. P10R.5 emits
+   `planning/tfl6_mp11_vdyp_natural_curve_slice.{csv,json}` and
+   `planning/tfl6_mp11_tipsy_vdyp_diagnostic_manifest.{csv,json,md}` with
+   `25` AU-wise MP11 TIPSY-vs-public-VDYP diagnostic plots under ignored
+   `plots/mp11_tipsy_vdyp_diagnostics/`. The diagnostic validation finds no
+   handoff `MH/mm` candidates, no plotted BEC mismatches, no positive SI column
+   differing from `tipsy_input_si`, and no missing/empty plots. `Fvh103`
+   remains the only substantially-below-VDYP diagnostic row; every generated
+   row remains `not_model_input`. The obsolete rejected-curve audit generated
+   before the canonical-top-N / VRI-median-SI repair has been removed from the
+   active artifact set. The Phase 10R closeout is
+   `planning/tfl6_mp11_phase10r_curve_rebuild_closeout.md`. GitHub issues
+   `#92` and `#98` have been closed from the locked `25`-candidate state.
+   P10R.6d final validation passed: the locked recipe reran, Ruff passed on
+   active recipe/generator scripts, Sphinx built warning-clean, and stale-state
+   / personal-path hygiene searches were clean. P10R.6e records a blocker
+   handoff, not accepted model-input curves: P11.1/P11.2 launch and
+   promotion-readiness audit work may proceed from the locked review surfaces,
+   but P11.3+ model-input bundle construction and ForestModel XML generation
+   remain blocked until the readiness audit decides `Fvh103`, Tables 54/55, and
+   `FMH01` / `FMH22`.
 2. Phase 7 is closed. PR `#56` merged the MP11 figure-extraction test
    closeout into `main`. The final closeout surface is
    `planning/tfl6_mp11_figure_extraction_closeout.md` with matching CSV/JSON.

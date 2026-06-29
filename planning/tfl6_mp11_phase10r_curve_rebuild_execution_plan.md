@@ -91,6 +91,82 @@ Phase 10R must proceed through these gates:
 
 No step may silently substitute MP10/Phase 5 curves as MP11 rebuilt curves.
 
+## P10R.2 Parser Closeout
+
+P10R.2 is complete as a parser-candidate gate, not as model-input promotion.
+The implemented parser is
+`scripts/build_p10r_mp11_tipsy_row_parse.py`, which reads the public MP11 PDF
+from an ignored source-input location and emits:
+
+- `planning/tfl6_mp11_tipsy_row_parse.csv`;
+- `planning/tfl6_mp11_tipsy_row_parse.json`;
+- `planning/tfl6_mp11_tipsy_row_parse.md`.
+
+The parser extracted `141` per-AU TIPSY rows:
+
+- Table 54 early managed rows: `79`;
+- Table 55 recent managed rows: `34`;
+- Table 57 future managed rows: `28`.
+
+The QA split is `132` high-confidence parser candidates and `9`
+review-required rows. Review-required rows include seven species-percentage
+totals above 100 in the visible table text and two known page-break repairs
+(`R301` and `Fvm205`). These rows remain `not_model_input`; P10R.3 must join
+the parsed rows to AU/curve lanes and either accept, repair, or explicitly
+quarantine review-required rows before handoff generation.
+
+## P10R.3 Handoff Closeout
+
+P10R.3 is complete as a handoff-candidate and blocker-diagnostic gate. The
+implemented generator is `scripts/build_p10r_mp11_tipsy_handoff.py`, which
+reads `planning/tfl6_mp11_tipsy_row_parse.csv` and emits:
+
+- `planning/tfl6_mp11_tipsy_handoff.csv`;
+- `planning/tfl6_mp11_tipsy_handoff_map.csv`;
+- `planning/tfl6_mp11_tipsy_handoff.json`;
+- `planning/tfl6_mp11_tipsy_handoff.md`.
+
+The generator produced `27` future-managed candidate rows suitable for the
+next curve-generation gate. It also recorded `105` existing/recent managed
+rows as blocked because MP11 Tables 54 and 55 use existing AU codes that do
+not carry enough public BEC/site-series information for direct BatchTIPSY
+handoff. The remaining `9` rows are parser-review rows inherited from P10R.2.
+
+The P10R.3 output is intentionally partial and auditable: P10R.4 may run only
+accepted candidate rows unless a maintainer accepts an additional public
+mapping or repair for blocked rows. No row is promoted to model input.
+
+## P10R.4 Curve-Generation Status
+
+P10R.4 is no longer blocked at the Windows BatchTIPSY/TIPSY executable
+boundary for the accepted future-managed candidates. The useful current status
+script is `scripts/build_p10r_mp11_managed_curve_rebuild_blocker.py`, which
+reads the P10R.3 handoff candidates, inspects ignored runtime BTC outputs when
+present, parses generated curves, and emits:
+
+- `planning/tfl6_mp11_managed_curve_rebuild.csv`;
+- `planning/tfl6_mp11_managed_curve_rebuild.json`;
+- `planning/tfl6_mp11_managed_curve_rebuild.md`;
+- `planning/tfl6_mp11_managed_curves.csv`;
+- `planning/tfl6_mp11_managed_curves.json`;
+- `planning/tfl6_mp11_managed_curve_comparison.csv`;
+- `planning/tfl6_mp11_managed_curve_comparison.json`;
+- `planning/tfl6_mp11_managed_curve_comparison.md`.
+
+The accepted FEMIC-native BTC run used `python -m femic tipsy run-btc ...`
+against `planning/tfl6_mp11_tipsy_handoff.csv` and wrote raw outputs under
+ignored `runtime/mp11_yield/`. Inspected runtime evidence shows manifest status
+`ok`, exit code `0`, `27` output rows, and `0` BTC error rows. The parsed curve
+surface contains `972` age-by-curve rows across all `27` future-managed
+candidate feature IDs.
+
+P10R.4e compared all `27` generated future-managed candidates against nearest
+Phase 5 future-managed fallback references. The comparison classified `13`
+large-difference rows, `11` moderate-difference rows, and `3` low-difference
+rows. This remains a review surface, not model input. Every parsed and compared
+row remains `not_model_input` before any downstream plot, model-input, or XML
+promotion.
+
 ## Plot-Refresh Requirement
 
 P10R.5 is the task that updates curve plots. Plot outputs must distinguish:
