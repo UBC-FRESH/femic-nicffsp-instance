@@ -1,0 +1,113 @@
+{
+  "inputs": {
+    "xml_audit_csv": "planning/tfl6_mp11_phase11_xml_provenance_audit.csv",
+    "candidate_manifest_csv": "planning/tfl6_mp11_model_input_candidate_manifest.csv"
+  },
+  "summary": {
+    "generated_at_utc": "2026-06-29T03:52:43+00:00",
+    "component_count": 8,
+    "ready_count": 0,
+    "blocked_count": 7,
+    "deferred_non_blocking_count": 1,
+    "readiness_status_counts": {
+      "blocked_missing_candidate_outputs": 7,
+      "deferred_non_blocking": 1
+    },
+    "p11_4b_result": "stop_report",
+    "p11_4c_generation_status": "blocked_missing_candidate_outputs",
+    "model_input_generation": "not_performed",
+    "xml_generation": "not_performed",
+    "matrix_builder": "not_performed",
+    "runtime_bundle_generation": "not_performed"
+  },
+  "records": [
+    {
+      "component_family": "stand_universe_fragments",
+      "source_role": "stand_table",
+      "p11_4a_action": "replace_after_readiness",
+      "required_candidate_roles": "stand_table",
+      "missing_candidate_outputs": "data/mp11_model_input_bundle/stand_table.csv",
+      "deferred_roles": "",
+      "readiness_status": "blocked_missing_candidate_outputs",
+      "p11_4c_generation_decision": "block_p11_4c_xml_generation",
+      "required_followup": "Generate and QA the MP11 candidate model-input bundle/export bridge before XML generation."
+    },
+    {
+      "component_family": "export_compat_bridge",
+      "source_role": "export_compat_bridge",
+      "p11_4a_action": "replace_after_readiness",
+      "required_candidate_roles": "export_compat_bridge",
+      "missing_candidate_outputs": "data/mp11_model_input_bundle/export_compat/bridge_manifest.json",
+      "deferred_roles": "",
+      "readiness_status": "blocked_missing_candidate_outputs",
+      "p11_4c_generation_decision": "block_p11_4c_xml_generation",
+      "required_followup": "Generate and QA the MP11 candidate model-input bundle/export bridge before XML generation."
+    },
+    {
+      "component_family": "curve_definitions",
+      "source_role": "curve_table; curve_points_table",
+      "p11_4a_action": "replace_after_readiness",
+      "required_candidate_roles": "curve_table; curve_points_table",
+      "missing_candidate_outputs": "data/mp11_model_input_bundle/curve_table.csv; data/mp11_model_input_bundle/curve_points_table.csv",
+      "deferred_roles": "",
+      "readiness_status": "blocked_missing_candidate_outputs",
+      "p11_4c_generation_decision": "block_p11_4c_xml_generation",
+      "required_followup": "Generate and QA the MP11 candidate model-input bundle/export bridge before XML generation."
+    },
+    {
+      "component_family": "au_selects_and_assignments",
+      "source_role": "au_table; stand_au_assignment; stand_origin_assignment",
+      "p11_4a_action": "extend_or_reuse_after_readiness",
+      "required_candidate_roles": "au_table; stand_au_assignment; stand_origin_assignment",
+      "missing_candidate_outputs": "data/mp11_model_input_bundle/au_table.csv; data/mp11_model_input_bundle/stand_au_assignment.csv; data/mp11_model_input_bundle/stand_origin_assignment.csv",
+      "deferred_roles": "",
+      "readiness_status": "blocked_missing_candidate_outputs",
+      "p11_4c_generation_decision": "block_p11_4c_xml_generation",
+      "required_followup": "Generate and QA the MP11 candidate model-input bundle/export bridge before XML generation."
+    },
+    {
+      "component_family": "treatments",
+      "source_role": "treatment_table",
+      "p11_4a_action": "reuse_with_caveats",
+      "required_candidate_roles": "treatment_table",
+      "missing_candidate_outputs": "data/mp11_model_input_bundle/treatment_table.csv",
+      "deferred_roles": "",
+      "readiness_status": "blocked_missing_candidate_outputs",
+      "p11_4c_generation_decision": "block_p11_4c_xml_generation",
+      "required_followup": "Generate and QA the MP11 candidate model-input bundle/export bridge before XML generation."
+    },
+    {
+      "component_family": "transitions",
+      "source_role": "transition_table",
+      "p11_4a_action": "reuse_with_caveats",
+      "required_candidate_roles": "transition_table",
+      "missing_candidate_outputs": "data/mp11_model_input_bundle/transition_table.csv",
+      "deferred_roles": "",
+      "readiness_status": "blocked_missing_candidate_outputs",
+      "p11_4c_generation_decision": "block_p11_4c_xml_generation",
+      "required_followup": "Generate and QA the MP11 candidate model-input bundle/export bridge before XML generation."
+    },
+    {
+      "component_family": "harvest_system_rules",
+      "source_role": "harvest_system_table",
+      "p11_4a_action": "defer_not_xml_input",
+      "required_candidate_roles": "",
+      "missing_candidate_outputs": "",
+      "deferred_roles": "harvest_system_table",
+      "readiness_status": "deferred_non_blocking",
+      "p11_4c_generation_decision": "skip_generation_for_component",
+      "required_followup": "Preserve as deferred comparison metadata; do not require this component for P11.4c."
+    },
+    {
+      "component_family": "reporting_groups",
+      "source_role": "group_table; cedar_signal_table; embedded_identity_table",
+      "p11_4a_action": "extend_after_readiness",
+      "required_candidate_roles": "group_table; cedar_signal_table; embedded_identity_table",
+      "missing_candidate_outputs": "data/mp11_model_input_bundle/group_table.csv; data/mp11_model_input_bundle/cedar_signal_table.csv; data/mp11_model_input_bundle/embedded_identity_table.csv",
+      "deferred_roles": "",
+      "readiness_status": "blocked_missing_candidate_outputs",
+      "p11_4c_generation_decision": "block_p11_4c_xml_generation",
+      "required_followup": "Generate and QA the MP11 candidate model-input bundle/export bridge before XML generation."
+    }
+  ]
+}

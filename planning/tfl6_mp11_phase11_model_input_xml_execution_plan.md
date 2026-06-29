@@ -144,3 +144,17 @@ required Phase 5 notes, and P11.4b unlock status
 P11.4a generated no model-input tables, ForestModel XML, Matrix Builder
 outputs, or Patchworks runtime artifacts. The next bounded move is P11.4b:
 build the XML readiness manifest or stop report.
+
+P11.4b emitted
+`planning/tfl6_mp11_forestmodel_xml_readiness.{csv,json,md}` as a stop report.
+The stop report evaluates `8` XML/component families: `0` are ready, `7` are
+blocked on missing MP11 candidate model-input bundle/export-bridge outputs, and
+`1` harvest-system family remains non-blocking deferred metadata. P11.4c
+candidate XML generation is blocked with status
+`blocked_missing_candidate_outputs`.
+
+P11.4 is complete through the stop-report branch. No model-input tables,
+ForestModel XML, Matrix Builder outputs, or Patchworks runtime artifacts were
+generated. The next bounded move is P11.5: define the Phase 12 handoff or
+blocker package, including the missing candidate model-input bundle/export
+bridge generation work.

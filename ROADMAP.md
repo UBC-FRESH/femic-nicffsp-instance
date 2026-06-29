@@ -759,12 +759,13 @@ public CDED steep-slope proxy in the P9RF THLB surface.
   - [x] P11.3a Consume P11.2 readiness manifest.
   - [x] P11.3b Build candidate table/schema manifest or blocked stop report.
   - [x] P11.3c Record provenance and fallback policy for each candidate table.
-- [ ] P11.4 Generate MP11 ForestModel XML candidate or stop report (`#89`).
+- [x] P11.4 Generate MP11 ForestModel XML candidate or stop report (`#89`).
   - [x] P11.4a Audit existing Phase 5 XML provenance and bridge notes.
-  - [ ] P11.4b Build XML readiness manifest or stop report.
-  - [ ] P11.4c Generate candidate `forestmodel.xml` and fragments under
-    `output/patchworks_tfl6_mp11_candidate/` if readiness passes.
-  - [ ] P11.4d Parse/check generated XML and record XML readiness QA.
+  - [x] P11.4b Build XML readiness manifest or stop report.
+  - [x] P11.4c Stop before candidate `forestmodel.xml` generation because
+    readiness blocked on missing MP11 candidate bundle/export-bridge outputs.
+  - [x] P11.4d Record XML parse/QA as not applicable because no XML was
+    generated under the stop-report branch.
 - [ ] P11.5 Define Phase 12 runtime handoff or blocker package (`#90`).
   - [ ] P11.5a Build Phase 12 handoff or blocker summary.
   - [ ] P11.5b Post/update Phase 12 issue handoff.
@@ -933,8 +934,16 @@ The Phase 1 follow-on issues are placed into the future roadmap as follows:
    audit records `8` XML/component families, `7` families requiring P11.4b
    readiness decisions, `1` non-blocking deferred harvest-system family, `0`
    missing required Phase 5 notes, and P11.4b unlock status
-   `p11_4b_readiness_eligible`. No XML was generated. The next bounded move is
-   P11.4b: build the XML readiness manifest or stop report.
+   `p11_4b_readiness_eligible`.
+   `scripts/build_p11_mp11_xml_readiness.py` emits
+   `planning/tfl6_mp11_forestmodel_xml_readiness.{csv,json,md}`. The P11.4b
+   output is a stop report: `8` component families evaluated, `0` ready, `7`
+   blocked on missing MP11 candidate bundle/export-bridge outputs, `1`
+   non-blocking deferred harvest-system family, and P11.4c generation status
+   `blocked_missing_candidate_outputs`. P11.4 is complete through the stop-report
+   branch. No XML was generated. The next bounded move is P11.5: define the
+   Phase 12 handoff or blocker package, including the missing candidate
+   model-input bundle/export-bridge generation work.
 0. Phase 9D and Phase 9E are complete. Step 210 now applies the public TSM
    strict Class V proxy, deducting `1.425 ha` against the MP11 Step 210 target
    `1,993.000 ha`; this is an explicit public-source coverage/semantic gap, not

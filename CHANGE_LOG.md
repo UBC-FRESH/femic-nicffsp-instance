@@ -1,5 +1,20 @@
 # Change Log
 
+## 2026-06-29 - Built Phase 11 XML readiness stop report
+
+- added `scripts/build_p11_mp11_xml_readiness.py` to consume the P11.4a XML
+  provenance audit and P11.3 candidate manifest;
+- emitted `planning/tfl6_mp11_forestmodel_xml_readiness.{csv,json,md}` as a
+  stop report with `8` XML/component families evaluated, `0` ready families,
+  `7` families blocked on missing MP11 candidate bundle/export-bridge outputs,
+  and `1` non-blocking deferred harvest-system family;
+- marked P11.4 complete through the stop-report branch in `ROADMAP.md`, with
+  P11.4c generation blocked by `blocked_missing_candidate_outputs`;
+- recorded that running the exporter against the protected Phase 5 bundle would
+  produce Phase 5 XML under a new path, not an MP11 candidate XML package; and
+- generated no model-input tables, ForestModel XML, Matrix Builder outputs, or
+  Patchworks runtime artifacts.
+
 ## 2026-06-29 - Audited Phase 11 ForestModel XML provenance
 
 - added `scripts/build_p11_mp11_xml_provenance_audit.py` to verify the Phase 5
