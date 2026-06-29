@@ -1,5 +1,18 @@
 # Change Log
 
+## 2026-06-28 - Consumed Phase 11 readiness manifest for P11.3
+
+- added `planning/tfl6_mp11_p11_3_readiness_consumption.{json,md}` to record
+  P11.3a consumption of the P11.2 promotion-readiness manifest and candidate
+  schema-bridge inputs;
+- preserved the candidate-only caveats for P9RF source/THLB, deferred MP11
+  rule fields, Tables 54/55 exclusion, figure-value exclusion, and private-data
+  boundaries before candidate-manifest construction;
+- marked P11.3a complete in `ROADMAP.md` and moved the next bounded step to
+  P11.3b candidate table/schema manifest or blocked stop report; and
+- generated no model-input tables, ForestModel XML, Matrix Builder outputs, or
+  Patchworks runtime artifacts.
+
 ## 2026-06-28 - Clarified Phase 11 ForestModel XML build task
 
 - updated `ROADMAP.md` so `P11.4c` is the explicit task that generates the

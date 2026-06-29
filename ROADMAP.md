@@ -756,7 +756,7 @@ public CDED steep-slope proxy in the P9RF THLB surface.
   - [x] P11.2d Decide whether P11.3 may build a candidate scaffold or must
     remain blocked.
 - [ ] P11.3 Build MP11 model-input candidate manifest or stop report (`#88`).
-  - [ ] P11.3a Consume P11.2 readiness manifest.
+  - [x] P11.3a Consume P11.2 readiness manifest.
   - [ ] P11.3b Build candidate table/schema manifest or blocked stop report.
   - [ ] P11.3c Record provenance and fallback policy for each candidate table.
 - [ ] P11.4 Generate MP11 ForestModel XML candidate or stop report (`#89`).
@@ -916,8 +916,12 @@ The Phase 1 follow-on issues are placed into the future roadmap as follows:
    `planning/tfl6_mp11_p11_2_candidate_schema_bridge.{csv,json,md}`. The
    readiness manifest reports `11` gates, `0` blocked hard gates, `2`
    deferred soft gates, `9` passing gates, and P11.3 unlock status
-   `candidate_manifest_eligible`. The next bounded move is P11.3a: consume the
-   readiness manifest without writing model-input bundle tables or XML outputs.
+   `candidate_manifest_eligible`.
+   `planning/tfl6_mp11_p11_3_readiness_consumption.{json,md}` records P11.3a
+   consumption of the readiness manifest and preserves the candidate-only
+   caveats. The next bounded move is P11.3b: build the candidate table/schema
+   manifest or blocked stop report without writing model-input bundle tables or
+   XML outputs.
 0. Phase 9D and Phase 9E are complete. Step 210 now applies the public TSM
    strict Class V proxy, deducting `1.425 ha` against the MP11 Step 210 target
    `1,993.000 ha`; this is an explicit public-source coverage/semantic gap, not
