@@ -3760,3 +3760,21 @@
   screenshot-only release-evidence claims explicitly out of scope; and
 - marked P13.3 complete in `ROADMAP.md`, leaving P13.4 archive and
   materialization QA as the next bounded Phase 13 step.
+
+## 2026-06-28 - Built MP11 Phase 13 archive materialization QA
+
+- added `scripts/build_p13_mp11_archive_materialization_qa.py`;
+- built the ignored local candidate archive
+  `releases/tfl6_mp11_candidate_runtime_p13_4.zip`;
+- emitted `planning/tfl6_mp11_phase13_archive_materialization_qa.{csv,json,md}`
+  and `releases/tfl6_mp11_candidate_runtime_p13_4_manifest.yaml`;
+- recorded `32` public-safe runtime inputs covering the MP11 candidate config,
+  ForestModel XML/fragments, Matrix Builder tracks, block/topology surfaces,
+  launch helpers, README, and lineage registry;
+- verified local ZIP integrity, archive size `28,053,959` bytes, and archive
+  SHA256 `ec6377ce6e887ab18882e3b4c0dbb282be4a1aae5435e186913f720e36f5cb75`;
+- left the candidate archive unpublished and clean-checkout materialization
+  pending publication or P13.5 decision, preserving Phase 5 as the accepted
+  runtime baseline; and
+- marked P13.4 complete in `ROADMAP.md`, leaving P13.5 release-status decision
+  and Phase 13 closeout as the next bounded task.

@@ -875,11 +875,11 @@ Execution plan:
   - [x] P13.3a Document Phase 5 baseline status, MP11 candidate status, public
     data reconstruction limits, comparison evidence, and teaching workflows.
   - [x] P13.3b Run Sphinx warning-clean.
-- [ ] P13.4 Prepare MP11 candidate runtime archive and materialization QA
+- [x] P13.4 Prepare MP11 candidate runtime archive and materialization QA
   (`#130`).
-  - [ ] P13.4a Decide which generated tracks, blocks, launch surfaces,
+  - [x] P13.4a Decide which generated tracks, blocks, launch surfaces,
     manifests, and logs are public-safe and publishable.
-  - [ ] P13.4b Build archive manifest, checksums, and clean-checkout
+  - [x] P13.4b Build archive manifest, checksums, and clean-checkout
     materialization or blocker evidence.
 - [ ] P13.5 Decide MP11 release status and Phase 5 baseline relationship
   (`#131`).
@@ -1131,8 +1131,17 @@ The Phase 1 follow-on issues are placed into the future roadmap as follows:
    `docs/phase13-mp11-candidate-runtime.rst`, clarifying that Phase 5 remains
    the accepted teaching/runtime baseline while the MP11 candidate is a
    smoke-tested comparison and advanced teaching surface pending archive QA and
-   release-status decision. The next bounded move is P13.4 (`#130`): prepare
-   MP11 candidate runtime archive and materialization QA.
+   release-status decision. P13.4 (`#130`) built a local ignored MP11 candidate
+   archive, tracked the archive/materialization QA in
+   `planning/tfl6_mp11_phase13_archive_materialization_qa.{csv,json,md}`, and
+   recorded the archive manifest at
+   `releases/tfl6_mp11_candidate_runtime_p13_4_manifest.yaml`. The candidate
+   archive passed local ZIP integrity and checksum checks but remains
+   unpublished, so clean-checkout materialization is pending publication or the
+   P13.5 release decision. The next bounded move is P13.5 (`#131`): decide
+   `replace_phase5`, `supplement_phase5`, or `experimental_only`, then close
+   Phase 13 if roadmap, changelog, archive QA, docs, and issue comments are
+   synchronized.
 0. Phase 9D and Phase 9E are complete. Step 210 now applies the public TSM
    strict Class V proxy, deducting `1.425 ha` against the MP11 Step 210 target
    `1,993.000 ha`; this is an explicit public-source coverage/semantic gap, not
