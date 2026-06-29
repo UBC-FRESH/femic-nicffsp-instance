@@ -740,7 +740,7 @@ now has an accepted public CDED steep-slope proxy in the P9RF THLB surface.
 
 - [ ] P11.1 Launch MP11 model-input/XML rebuild execution plan (`#86`).
   - [x] P11.1a Audit governing contracts and handoff blockers.
-  - [ ] P11.1b Inventory existing Phase 5 model-input/XML provenance surfaces.
+  - [x] P11.1b Inventory existing Phase 5 model-input/XML provenance surfaces.
   - [ ] P11.1c Define Phase 11 artifact layout and generated-output hygiene.
   - [ ] P11.1d Define promotion gates and stop conditions.
 - [ ] P11.2 Audit MP11 model-input promotion readiness (`#87`).
@@ -867,15 +867,17 @@ The Phase 1 follow-on issues are placed into the future roadmap as follows:
 ## Current Next Steps
 
 0. Phase 11 is active on branch
-   `feature/p11-model-input-xml-rebuild-plan`. P11.1a is complete:
+   `feature/p11-model-input-xml-rebuild-plan`. P11.1a and P11.1b are complete.
    `planning/tfl6_mp11_phase11_model_input_xml_execution_plan.md` audits the
    governing MP11 promotion contracts, the repaired P9RF THLB endpoint, the
    accepted 27-curve Phase 10R handoff, the deferred Tables 54/55 boundary, and
    the stop conditions that still prevent immediate model-input/XML generation.
-   The next bounded move is P11.1b: inventory the existing Phase 5 model-input
-   bundle, ForestModel XML, Matrix Builder, and runtime provenance surfaces so
-   Phase 11 can define replacement, supplement, and generated-output hygiene
-   rules.
+   `planning/tfl6_mp11_phase11_phase5_provenance_inventory.{csv,json,md}`
+   inventories the Phase 5 model-input bundle, export bridge, ForestModel XML,
+   fragments, Matrix Builder tracks, runtime package, smoke evidence, and public
+   release archive. The next bounded move is P11.1c: define the Phase 11
+   artifact layout and generated-output hygiene rules so MP11 candidate outputs
+   cannot be confused with the accepted Phase 5 baseline.
 0. Phase 9D and Phase 9E are complete. Step 210 now applies the public TSM
    strict Class V proxy, deducting `1.425 ha` against the MP11 Step 210 target
    `1,993.000 ha`; this is an explicit public-source coverage/semantic gap, not

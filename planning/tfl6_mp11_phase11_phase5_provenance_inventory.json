@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "phase": "P11.1b",
+  "branch": "feature/p11-model-input-xml-rebuild-plan",
+  "purpose": "Inventory existing Phase 5 model-input, ForestModel XML, Matrix Builder, and runtime provenance surfaces before MP11 model-input/XML rebuild work.",
+  "status": "phase5_inventory_complete_no_generation",
+  "phase5_baseline": {
+    "runtime_archive": "releases/tfl6_patchworks_runtime_p5_2.zip",
+    "runtime_archive_sha256": "17f56d11faeba89170fc48e202d1bfe83c2dd40b53e7409d8cdb8c1c487c2f9f",
+    "runtime_archive_size_bytes": 28000736,
+    "runtime_manifest": "releases/tfl6_patchworks_runtime_p5_2_manifest.yaml",
+    "forestmodel_xml": "output/patchworks_tfl6_validated/forestmodel.xml",
+    "forestmodel_xml_sha256": "f95a7e29b95a9fcfabdd77036e3ac19611041e704a0aeef6257def190b2ff6a4",
+    "fragments_shp_sha256": "ad9552a5bd34ca0b95c0b9406695a5b3520609fd1c17d7cd303f2207f44dee5f",
+    "accepted_release_status": "public_materializable_phase5_teaching_baseline"
+  },
+  "model_input_bundle": {
+    "role": "generated_rebuild_provenance_excluded_from_release_archive",
+    "bundle_manifest": "data/model_input_bundle/bundle_manifest.json",
+    "qa_summary": "data/model_input_bundle/qa/bundle_qa_summary.json",
+    "record_counts": {
+      "au_table.csv": 407,
+      "cedar_signal_table.csv": 25019,
+      "curve_points_table.csv": 90840,
+      "curve_table.csv": 507,
+      "embedded_identity_table.csv": 25019,
+      "group_table.csv": 125095,
+      "harvest_system_table.csv": 25019,
+      "stand_au_assignment.csv": 25019,
+      "stand_origin_assignment.csv": 25019,
+      "stand_table.csv": 25019,
+      "transition_table.csv": 5,
+      "treatment_table.csv": 4
+    },
+    "area_summary": {
+      "aflb_area_ha": 191168.5973859994,
+      "thlb_area_ha": 139995.79828704227,
+      "nthlb_area_ha": 51172.79909895713,
+      "managed_share_area_weighted": 0.7323158730111347
+    },
+    "warning_summary": {
+      "fatal_missing_curve_rows": 0,
+      "treated_curve_fallback_rows": 136,
+      "treated_curve_fallback_area_ha": 749.3959709085457,
+      "harvest_system_unassigned_rows": 25019
+    }
+  },
+  "export_compat_bridge": {
+    "bridge_manifest": "data/model_input_bundle/export_compat/bridge_manifest.json",
+    "numeric_au_rows": 407,
+    "curve_rows": 170,
+    "curve_point_rows": 30579,
+    "checkpoint_rows": 25019,
+    "missing_checkpoint_au_rows": 0,
+    "missing_unmanaged_curve_rows": 0,
+    "missing_managed_curve_rows": 0
+  },
+  "matrix_builder": {
+    "accepted_run_id": "tfl6_p43_matrix_accounts_wait20",
+    "manifest": "runtime/logs/patchworks_matrixbuilder_manifest-tfl6_p43_matrix_accounts_wait20.json",
+    "returncode": 0,
+    "accounts_sync": "synced",
+    "track_rows": {
+      "accounts.csv": 211,
+      "protoaccounts.csv": 211,
+      "features.csv": 86574,
+      "products.csv": 26085,
+      "curves.csv": 991672,
+      "blocks.csv": 47218,
+      "groups.csv": 24879,
+      "strata.csv": 28858,
+      "treatments.csv": 17390
+    }
+  },
+  "runtime_package": {
+    "blocks_rows": 24879,
+    "blocks_area_ha": 191168.566,
+    "topology_rows": 170759,
+    "direct_launch_smoke_run_id": "tfl6_p44b_launch0",
+    "direct_launch_smoke_returncode": 0,
+    "scenario_smoke_run_id": "tfl6_p44d_harvest_smoke200",
+    "scenario_smoke_returncode": 0,
+    "scenario_smoke_scheduled_rows": 801,
+    "scenario_smoke_target": "product.HarvestedVolume.managed.Total.CC"
+  },
+  "phase11_decision": {
+    "preserve_phase5_baseline": true,
+    "write_mp11_candidate_outputs_separately": true,
+    "do_not_overwrite_phase5_release_payload_before_runtime_qa": true,
+    "next_step": "P11.1c define Phase 11 artifact layout and generated-output hygiene"
+  }
+}

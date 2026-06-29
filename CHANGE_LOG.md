@@ -3368,3 +3368,18 @@
   and model-input/XML stop conditions; and
 - marked P11.1a complete in `ROADMAP.md`, leaving P11.1b Phase 5
   model-input/XML provenance inventory as the next bounded move.
+
+## 2026-06-28 - Inventoried Phase 5 provenance for Phase 11
+
+- added `planning/tfl6_mp11_phase11_phase5_provenance_inventory.{csv,json,md}`
+  for the P11.1b inventory;
+- recorded Phase 5 model-input bundle row counts, QA warnings, export-compat
+  bridge counts, ForestModel XML and fragments checksums, Matrix Builder track
+  counts, runtime package evidence, direct launch smoke, scenario smoke, and
+  public release archive identity;
+- clarified that `data/model_input_bundle/` is rebuild provenance and not part
+  of the Phase 5 public runtime archive;
+- preserved the Phase 5 runtime archive as the accepted teaching baseline until
+  an MP11 candidate runtime passes downstream QA; and
+- marked P11.1b complete in `ROADMAP.md`, leaving P11.1c artifact layout and
+  generated-output hygiene as the next bounded move.
