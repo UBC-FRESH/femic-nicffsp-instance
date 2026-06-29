@@ -1,5 +1,20 @@
 # Change Log
 
+## 2026-06-28 - Added Phase 11 promotion-readiness audit generator
+
+- added `scripts/build_p11_mp11_promotion_readiness.py` to consume
+  `planning/tfl6_mp11_phase11_promotion_gates.csv` and prepare the P11.2
+  readiness records required before MP11 model-input promotion;
+- included a `--dry-run` mode so P11.2a can validate the audit logic without
+  emitting the tracked readiness Markdown/CSV/JSON outputs reserved for
+  P11.2b;
+- dry-run validation reported `11` gates, `3` blocked hard gates, `2`
+  deferred soft gates, `6` passing gates, and `0` missing source artifacts;
+- marked P11.2a complete in `ROADMAP.md` and moved the next bounded step to
+  P11.2b readiness-output emission; and
+- generated no model-input tables, ForestModel XML, Matrix Builder outputs, or
+  Patchworks runtime artifacts.
+
 ## 2026-06-28 - Defined Phase 11 promotion gates and stop conditions
 
 - added `planning/tfl6_mp11_phase11_promotion_gates.{csv,json,md}` to define

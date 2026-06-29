@@ -100,9 +100,13 @@ accepted runtime surfaces without a separate replacement decision.
 
 ## Current Phase 11 Edge
 
-P11.1a through P11.1d are complete. The Phase 5 provenance inventory, artifact
-layout, and promotion-gates notes define the entry contract for P11.2.
+P11.1a through P11.1d and P11.2a are complete. The Phase 5 provenance
+inventory, artifact layout, promotion-gates notes, and readiness generator
+define the entry contract for P11.2 readiness-output emission.
 
-The next bounded move is P11.2a: build the promotion-readiness audit generator
-from `planning/tfl6_mp11_phase11_promotion_gates.{csv,json,md}` without writing
-candidate model-input bundle or ForestModel XML outputs.
+The next bounded move is P11.2b: run
+`scripts/build_p11_mp11_promotion_readiness.py` to emit
+`planning/tfl6_mp11_model_input_promotion_readiness.{csv,json,md}` without
+writing candidate model-input bundle or ForestModel XML outputs. The P11.2a
+dry run reports `11` gates, `3` blocked hard gates, `2` deferred soft gates,
+`6` passing gates, and `0` missing source artifacts.

@@ -744,7 +744,7 @@ now has an accepted public CDED steep-slope proxy in the P9RF THLB surface.
   - [x] P11.1c Define Phase 11 artifact layout and generated-output hygiene.
   - [x] P11.1d Define promotion gates and stop conditions.
 - [ ] P11.2 Audit MP11 model-input promotion readiness (`#87`).
-  - [ ] P11.2a Build promotion-readiness audit generator.
+  - [x] P11.2a Build promotion-readiness audit generator.
   - [ ] P11.2b Emit readiness Markdown/CSV/JSON outputs.
   - [ ] P11.2c Classify blockers and required maintainer decisions.
   - [ ] P11.2d Decide whether P11.3 may build a candidate scaffold or must
@@ -881,9 +881,13 @@ The Phase 1 follow-on issues are placed into the future roadmap as follows:
    the Phase 5 baseline protection rule.
    `planning/tfl6_mp11_phase11_promotion_gates.{csv,json,md}` defines the
    hard and soft gates P11.2 must evaluate before P11.3 can write candidate
-   model-input tables or P11.4 can attempt XML readiness. The next bounded move
-   is P11.2a: build the promotion-readiness audit generator without writing
-   candidate model-input bundle or XML outputs.
+   model-input tables or P11.4 can attempt XML readiness.
+   `scripts/build_p11_mp11_promotion_readiness.py` is the P11.2a generator.
+   A dry run currently reports `11` gates, `3` blocked hard gates, `2`
+   deferred soft gates, `6` passing gates, and `0` missing source artifacts.
+   The next bounded move is P11.2b: emit
+   `planning/tfl6_mp11_model_input_promotion_readiness.{csv,json,md}` without
+   writing candidate model-input bundle or XML outputs.
 0. Phase 9D and Phase 9E are complete. Step 210 now applies the public TSM
    strict Class V proxy, deducting `1.425 ha` against the MP11 Step 210 target
    `1,993.000 ha`; this is an explicit public-source coverage/semantic gap, not
