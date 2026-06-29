@@ -854,13 +854,39 @@ QA, and replacement/supplement decision evidence after a rebuilt runtime passes
 direct source, model-input, XML, Matrix Builder, Patchworks, scenario, docs,
 archive, and manifest checks.
 
+Execution plan:
+`planning/tfl6_mp11_phase13_comparison_release_qa_plan.md`.
+
 - [ ] P13.1 Document candidate runtime positioning and comparison starting
   assumptions (`#70`).
   - [x] P13.1a Record the maintainer screenshot interpretation and MP11 Figure
     2 context in
     `planning/tfl6_mp11_phase13_candidate_runtime_positioning.md`.
   - [ ] P13.1b Convert screenshot-informed positioning into reproducible
-    tracked scenario comparison tables.
+    tracked scenario comparison tables (`#127`).
+- [ ] P13.2 Build MP11 KPI and caveat comparison report (`#128`).
+  - [ ] P13.2a Compare land base, THLB, source-layer caveats, yield/curve
+    caveats, growing stock, age/seral context, cedar/old-cedar evidence,
+    harvest-system caveats, and selected MP11 sensitivity evidence where
+    tracked sources already exist.
+  - [ ] P13.2b Label each comparison row by evidence strength and
+    release-decision implication.
+- [ ] P13.3 Update MP11 Sphinx docs and teaching guidance (`#129`).
+  - [ ] P13.3a Document Phase 5 baseline status, MP11 candidate status, public
+    data reconstruction limits, comparison evidence, and teaching workflows.
+  - [ ] P13.3b Run Sphinx warning-clean.
+- [ ] P13.4 Prepare MP11 candidate runtime archive and materialization QA
+  (`#130`).
+  - [ ] P13.4a Decide which generated tracks, blocks, launch surfaces,
+    manifests, and logs are public-safe and publishable.
+  - [ ] P13.4b Build archive manifest, checksums, and clean-checkout
+    materialization or blocker evidence.
+- [ ] P13.5 Decide MP11 release status and Phase 5 baseline relationship
+  (`#131`).
+  - [ ] P13.5a Decide `replace_phase5`, `supplement_phase5`, or
+    `experimental_only`.
+  - [ ] P13.5b Close Phase 13 only after docs, release QA, archive/materialization,
+    roadmap, changelog, and issue comments are synchronized.
 
 ## Dependency Order
 
@@ -1091,9 +1117,11 @@ The Phase 1 follow-on issues are placed into the future roadmap as follows:
    candidate run produced approximately `1.15 million m3/year`, which is
    plausibly close to the MP11 base-case/LRSY evidence given a slightly larger
    public-data THLB and missing WFP constraints, but remains candidate evidence
-   rather than release QA or WFP model equivalence. The next bounded move is
-   P13.1b: convert this positioning into reproducible tracked scenario
-   comparison tables.
+   rather than release QA or WFP model equivalence. Phase 13 now has an
+   explicit execution plan in
+   `planning/tfl6_mp11_phase13_comparison_release_qa_plan.md` and child issues
+   `#127` through `#131`. The next bounded move is P13.1b (`#127`): convert
+   this positioning into reproducible tracked scenario comparison tables.
 0. Phase 9D and Phase 9E are complete. Step 210 now applies the public TSM
    strict Class V proxy, deducting `1.425 ha` against the MP11 Step 210 target
    `1,993.000 ha`; this is an explicit public-source coverage/semantic gap, not

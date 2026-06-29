@@ -3710,3 +3710,16 @@
 - updated `ROADMAP.md` to mark Phase 13 active and frame P13.1 as the
   candidate-runtime positioning and comparison-starting-assumption step, with
   formal reproducible comparison tables still pending.
+
+## 2026-06-28 - Added MP11 Phase 13 execution plan and child issue tree
+
+- created Phase 13 child issues `#127` through `#131` for reproducible scenario
+  comparison tables, KPI/caveat comparison reporting, Sphinx docs and teaching
+  guidance, runtime archive/materialization QA, and final release-status
+  decision;
+- added `planning/tfl6_mp11_phase13_comparison_release_qa_plan.md` to define
+  the Phase 13 execution sequence, evidence labels, starting inputs, non-goals,
+  and release-decision gates; and
+- expanded `ROADMAP.md` so Phase 13 is governed by a concrete gated plan rather
+  than a broad release-QA placeholder, with P13.1b (`#127`) as the next bounded
+  comparison-table task.
