@@ -3983,3 +3983,19 @@
   `tracks_no_heli/`; and
 - marked P15.2 complete in `ROADMAP.md`, leaving P15.3 annex/publication to
   `arbutus-s3` as the next bounded task.
+
+## 2026-06-29 - Published MP11 Phase 15 harvest-system runtime archive
+
+- annexed
+  `releases/tfl6_mp11_harvest_system_candidate_runtime_p15_2.zip` and
+  `releases/tfl6_mp11_harvest_system_candidate_runtime_p15_2_manifest.yaml`;
+- copied both artifacts to `arbutus-s3`;
+- verified `git annex whereis` reports local and `arbutus-s3` copies for both
+  artifacts;
+- verified `git annex info arbutus-s3` reports public remote metadata and `5`
+  remote keys;
+- updated the release manifest and
+  `planning/tfl6_mp11_phase15_archive_publication_qa.{csv,json,md}` to status
+  `published_materialization_pending`; and
+- marked P15.3 complete in `ROADMAP.md`, leaving P15.4 no-credential
+  clean-checkout materialization as the next bounded task.

@@ -1044,7 +1044,13 @@ Publication artifacts:
   - [x] P15.2d Emit
     `planning/tfl6_mp11_phase15_archive_publication_qa.{csv,json,md}` with
     status `local_archive_built_not_published`.
-- [ ] P15.3 Annex and publish archive through `arbutus-s3` (`#150`).
+- [x] P15.3 Annex and publish archive through `arbutus-s3` (`#150`).
+  - [x] P15.3a Annex the P15 archive and manifest.
+  - [x] P15.3b Copy both artifacts to `arbutus-s3`.
+  - [x] P15.3c Verify `git annex whereis` reports local and `arbutus-s3`
+    copies for both artifacts.
+  - [x] P15.3d Update archive QA status to
+    `published_materialization_pending`.
 - [ ] P15.4 Prove no-credential clean-checkout materialization (`#151`).
 - [ ] P15.5 Run direct launch and scenario smoke from materialized archive
   (`#152`).
@@ -1160,11 +1166,15 @@ The Phase 1 follow-on issues are placed into the future roadmap as follows:
    The archive contains `46` files, includes both all-system `tracks/` and
    no-heli `tracks_no_heli/`, passed ZIP integrity/member-count checks, and has
    SHA256 `fcf8d3615f8bba65419d1a401d818c5eb87e7d75d3aa6007cfa6ada773536362`.
-   The next bounded task is P15.3 (`#150`): annex and publish the archive and
-   manifest through `arbutus-s3`.
+   P15.3 (`#150`) is complete: the archive and manifest were annexed, copied
+   to `arbutus-s3`, verified with `git annex whereis` as present both locally
+   and on `arbutus-s3`, and the archive QA status was updated to
+   `published_materialization_pending`. `git annex info arbutus-s3` reports
+   public remote metadata and `5` remote keys. The next bounded task is P15.4
+   (`#151`): prove no-credential clean-checkout materialization.
 
 Historical leading-edge notes below are retained for audit context only; the
-active next step is P15.3.
+active next step is P15.4.
 
 0. Phase 14 is active on branch
    `feature/tfl6-mp11-harvest-system-operability`. P14.1 (`#139`) is complete:

@@ -1,10 +1,10 @@
-# TFL 6 MP11 Phase 15 Archive Publication QA
+﻿# TFL 6 MP11 Phase 15 Archive Publication QA
 
-This P15.2 report records the local archive and manifest build for the Phase 14 MP11 harvest-system candidate runtime. It does not publish the archive or prove clean-checkout materialization.
+This report records the P15.2 local archive/manifest build and the P15.3 publication status for the Phase 14 MP11 harvest-system candidate runtime. It does not prove clean-checkout materialization.
 
 ## Summary
 
-- archive_status: `local_archive_built_not_published`
+- archive_status: `published_materialization_pending`
 - archive_path: `releases/tfl6_mp11_harvest_system_candidate_runtime_p15_2.zip`
 - manifest_path: `releases/tfl6_mp11_harvest_system_candidate_runtime_p15_2_manifest.yaml`
 - archive_size_bytes: `33806073`
@@ -17,7 +17,7 @@ This P15.2 report records the local archive and manifest build for the Phase 14 
 
 | ID | Status | Value | Evidence | Replacement implication |
 | --- | --- | --- | --- | --- |
-| `archive_status` | `local_archive_built_not_published` | `releases/tfl6_mp11_harvest_system_candidate_runtime_p15_2.zip` | `archive_built_and_zip_integrity_checked` | candidate_archive_ready_for_publication_step |
+| `archive_status` | `published_materialization_pending` | `releases/tfl6_mp11_harvest_system_candidate_runtime_p15_2.zip` | `archive_built_and_zip_integrity_checked` | candidate_archive_published_pending_materialization |
 | `archive_sha256` | `recorded` | `fcf8d3615f8bba65419d1a401d818c5eb87e7d75d3aa6007cfa6ada773536362` | `releases/tfl6_mp11_harvest_system_candidate_runtime_p15_2_manifest.yaml` | supports_publication_and_materialization_checks |
 | `archive_size_bytes` | `recorded` | `33806073` | `releases/tfl6_mp11_harvest_system_candidate_runtime_p15_2_manifest.yaml` | supports_publication_and_materialization_checks |
 | `phase5_relationship` | `baseline_preserved` | `phase5_remains_accepted_baseline_pending_replacement_acceptance` | `releases/tfl6_mp11_harvest_system_candidate_runtime_p15_2_manifest.yaml` | p15_is_replacement_candidate_review_not_silent_replacement |
@@ -92,10 +92,18 @@ This P15.2 report records the local archive and manifest build for the Phase 14 
 - `data/downloads/`
 - `data/bc/`
 
+## Publication Evidence
+
+- annex_remote: `arbutus-s3`
+- remote_bucket: `ubc-fresh-femic-tfl6-instance`
+- publicurl: `https://object-arbutus.cloud.computecanada.ca/ubc-fresh-femic-tfl6-instance`
+- publication_status: `published_materialization_pending`
+- clean_checkout_materialization: `pending_p15_4`
+
 ## Boundary
 
-- P15.2 builds the local archive and tracked manifest only.
-- Publication to `arbutus-s3` remains P15.3.
+- P15.2 built the local archive and tracked manifest.
+- P15.3 annexed and copied the archive and manifest to `arbutus-s3`.
 - No-credential materialization remains P15.4.
 - Archive-derived launch and scenario smoke remain P15.5.
 - The archive is a replacement candidate input, not an automatic Phase 5 replacement.

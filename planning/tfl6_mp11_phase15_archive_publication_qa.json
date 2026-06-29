@@ -1,10 +1,10 @@
-{
+﻿{
   "artifact_id": "tfl6_mp11_harvest_system_candidate_runtime_p15_2",
   "archive_path": "releases/tfl6_mp11_harvest_system_candidate_runtime_p15_2.zip",
   "manifest_path": "releases/tfl6_mp11_harvest_system_candidate_runtime_p15_2_manifest.yaml",
   "archive_size_bytes": 33806073,
   "archive_sha256": "fcf8d3615f8bba65419d1a401d818c5eb87e7d75d3aa6007cfa6ada773536362",
-  "publication_status": "local_archive_built_not_published",
+  "publication_status": "published_materialization_pending",
   "source_runtime_phase": "phase14_harvest_system_candidate",
   "phase5_relationship": "phase5_remains_accepted_baseline_pending_replacement_acceptance",
   "included_file_count": 46,
@@ -22,10 +22,10 @@
   "summary_rows": [
     {
       "id": "archive_status",
-      "status": "local_archive_built_not_published",
+      "status": "published_materialization_pending",
       "value": "releases/tfl6_mp11_harvest_system_candidate_runtime_p15_2.zip",
       "evidence": "archive_built_and_zip_integrity_checked",
-      "replacement_implication": "candidate_archive_ready_for_publication_step"
+      "replacement_implication": "candidate_archive_published_pending_materialization"
     },
     {
       "id": "archive_sha256",
