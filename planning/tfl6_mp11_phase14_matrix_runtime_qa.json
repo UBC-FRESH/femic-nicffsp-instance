@@ -1,0 +1,243 @@
+{
+  "summary": {
+    "generated_at_utc": "2026-06-29T06:38:47+00:00",
+    "runtime_package_status": "harvest_system_candidate_runtime_assembled_pending_smoke",
+    "matrix_run_id": "tfl6_mp11_harvest_system_p14_6_matrix_build",
+    "matrix_returncode": 0,
+    "track_file_count": 13,
+    "features_rows": 93330,
+    "accounts_rows": 829,
+    "protoaccounts_rows": 829,
+    "products_rows": 46605,
+    "treatments_rows": 18642,
+    "messages_rows": 0,
+    "cc_ground_treatment_rows": 10790,
+    "cc_cable_treatment_rows": 6960,
+    "cc_heli_treatment_rows": 892,
+    "cc_ground_product_rows": 5395,
+    "cc_cable_product_rows": 3480,
+    "cc_heli_product_rows": 446,
+    "aggregate_cc_product_rows": 18642,
+    "block_rows": 24879,
+    "block_area_ha": 191168.566447,
+    "block_crs": "EPSG:3005",
+    "block_geometry_valid": true,
+    "topology_rows": 170759,
+    "fragment_rows": 24879,
+    "fragment_area_ha": 191168.566447,
+    "split_treatment_nodes": 2442,
+    "split_product_selects": 2442,
+    "direct_launch_smoke": "not_performed",
+    "scenario_smoke": "not_performed"
+  },
+  "hard_checks": {
+    "matrix_returncode_zero": true,
+    "track_files_present": true,
+    "messages_header_only": true,
+    "accounts_proto_equal": true,
+    "split_treatments_present": true,
+    "split_products_present": true,
+    "block_geometry_valid": true,
+    "topology_present": true,
+    "no_manifest_failures": true
+  },
+  "tracks": {
+    "row_counts": {
+      "features.csv": 93330,
+      "protoaccounts.csv": 829,
+      "accounts.csv": 829,
+      "products.csv": 46605,
+      "curves.csv": 1084555,
+      "groups.csv": 24879,
+      "strata.csv": 31110,
+      "treatments.csv": 18642,
+      "blocks.csv": 47218,
+      "tracknames.csv": 15555,
+      "packages.csv": 0,
+      "packageSequences.csv": 0,
+      "messages.csv": 0
+    },
+    "accounts_proto_equal": true,
+    "split_treatment_rows": {
+      "CC_GROUND": 10790,
+      "CC_CABLE": 6960,
+      "CC_HELI": 892
+    },
+    "split_product_rows": {
+      "ground": 5395,
+      "cable": 3480,
+      "heli": 446,
+      "aggregate": 18642
+    },
+    "track_file_count": 13
+  },
+  "blocks": {
+    "block_rows": 24879,
+    "block_area_ha": 191168.56644727234,
+    "block_crs": "EPSG:3005",
+    "block_geometry_valid": true,
+    "topology_rows": 170759,
+    "topology_columns": [
+      "BLOCK1",
+      "BLOCK2",
+      "DISTANCE",
+      "LENGTH"
+    ]
+  },
+  "matrix_manifest": {
+    "path": "runtime/logs/patchworks_matrixbuilder_manifest-tfl6_mp11_harvest_system_p14_6_matrix_build.json",
+    "warnings": [
+      "Processing completed.  Review warnings and exit when finished."
+    ],
+    "failures": []
+  },
+  "log_scan": {
+    "stdout": {
+      "path": "runtime/logs/patchworks_matrixbuilder_stdout-tfl6_mp11_harvest_system_p14_6_matrix_build.log",
+      "bytes": 0,
+      "error_count": 0,
+      "warning_count": 0,
+      "failed_count": 0,
+      "exception_count": 0
+    },
+    "stderr": {
+      "path": "runtime/logs/patchworks_matrixbuilder_stderr-tfl6_mp11_harvest_system_p14_6_matrix_build.log",
+      "bytes": 885,
+      "error_count": 0,
+      "warning_count": 1,
+      "failed_count": 0,
+      "exception_count": 0
+    }
+  },
+  "tracked_package_files": [
+    {
+      "path": "models/tfl6_patchworks_model_mp11_harvest_system_candidate/README.md",
+      "bytes": 1386,
+      "sha256": "a4a2f62f05bea8b65115fb4f18ce53b8445a2a3a7596e4cd57a48a78041858d3"
+    },
+    {
+      "path": "models/tfl6_patchworks_model_mp11_harvest_system_candidate/lineage_registry.yaml",
+      "bytes": 3894,
+      "sha256": "e5a0e5751f7fdd00f81cd20021d033afe7614a2fb182838b5df159c25cf26ff8"
+    },
+    {
+      "path": "models/tfl6_patchworks_model_mp11_harvest_system_candidate/analysis/base.pin",
+      "bytes": 157,
+      "sha256": "279ed1c4b5fad324fe3b9dd036e872211fc9f567947c428727409db0a1b4d0ff"
+    },
+    {
+      "path": "models/tfl6_patchworks_model_mp11_harvest_system_candidate/analysis/base_variant_common.bsh",
+      "bytes": 3785,
+      "sha256": "c17e67d6a021813bf5a829ce548df3a0af513d9c1dd088432f789a99b8c24d6b"
+    },
+    {
+      "path": "models/tfl6_patchworks_model_mp11_harvest_system_candidate/analysis/headless_runtime_common.bsh",
+      "bytes": 10831,
+      "sha256": "63f944120fcd78c8cb4b632dd16669ce9ca5bfdda40f088f2ce270813b0f52a4"
+    },
+    {
+      "path": "models/tfl6_patchworks_model_mp11_harvest_system_candidate/scripts/targets/flowtargets.bsh",
+      "bytes": 2187,
+      "sha256": "7282f221530db247242c0f3b7d37d698f59f16e0e81953f6f4f4b278ae46afc2"
+    }
+  ],
+  "generated_track_files": [
+    {
+      "path": "models/tfl6_patchworks_model_mp11_harvest_system_candidate/tracks/features.csv",
+      "bytes": 3444497,
+      "sha256": "7fcaf6f604b6b4c5713b2d063f082e77207e6bcb7631cf39cda86ec38c7c3982"
+    },
+    {
+      "path": "models/tfl6_patchworks_model_mp11_harvest_system_candidate/tracks/protoaccounts.csv",
+      "bytes": 60762,
+      "sha256": "34c3b7c2c4e5e21f68bb6e6cbd0d99431143e653585f83b8875f15f0b8f3dbbb"
+    },
+    {
+      "path": "models/tfl6_patchworks_model_mp11_harvest_system_candidate/tracks/accounts.csv",
+      "bytes": 60762,
+      "sha256": "34c3b7c2c4e5e21f68bb6e6cbd0d99431143e653585f83b8875f15f0b8f3dbbb"
+    },
+    {
+      "path": "models/tfl6_patchworks_model_mp11_harvest_system_candidate/tracks/products.csv",
+      "bytes": 2821608,
+      "sha256": "8572fe8a884e94c1444dd123a7544c1a2cb67ff50d99b8204acd81badcb40900"
+    },
+    {
+      "path": "models/tfl6_patchworks_model_mp11_harvest_system_candidate/tracks/curves.csv",
+      "bytes": 17033244,
+      "sha256": "d0892553b6e100edfd599d1d448855aedc7fb04995f0b97b5ac3dcb12f63693b"
+    },
+    {
+      "path": "models/tfl6_patchworks_model_mp11_harvest_system_candidate/tracks/groups.csv",
+      "bytes": 337266,
+      "sha256": "a1e990ed463cc5cd791ae1eac81044451284bbad8438d5ab8f96a9ba125d18cf"
+    },
+    {
+      "path": "models/tfl6_patchworks_model_mp11_harvest_system_candidate/tracks/strata.csv",
+      "bytes": 2170533,
+      "sha256": "1362d5d2dfd3bed0bb679708365f82875aab56f6a3dd0b56e59830fdf6d1e3b1"
+    },
+    {
+      "path": "models/tfl6_patchworks_model_mp11_harvest_system_candidate/tracks/treatments.csv",
+      "bytes": 851273,
+      "sha256": "03dc081ae44430bd3fdea6026f099e71293254fcf32a5e7f94cc656bf69a6c38"
+    },
+    {
+      "path": "models/tfl6_patchworks_model_mp11_harvest_system_candidate/tracks/blocks.csv",
+      "bytes": 1477233,
+      "sha256": "e2607720ae6e9f0b9fb4287ecd9e6075def2bdf8ba19334c651074db2a79b2af"
+    },
+    {
+      "path": "models/tfl6_patchworks_model_mp11_harvest_system_candidate/tracks/tracknames.csv",
+      "bytes": 2018546,
+      "sha256": "4fc8778f7885c560b83e5e9ee09d71e3d0c1163a2f83b69c174e2e47d190171f"
+    },
+    {
+      "path": "models/tfl6_patchworks_model_mp11_harvest_system_candidate/tracks/packages.csv",
+      "bytes": 61,
+      "sha256": "49d15b75d8d0286e7bb2ffe81de1b8d35fe1e02520a10b8edabbf72a1e3a0162"
+    },
+    {
+      "path": "models/tfl6_patchworks_model_mp11_harvest_system_candidate/tracks/packageSequences.csv",
+      "bytes": 25,
+      "sha256": "f5fc343b5c4868e72048fa30176f52bf56cd21c95b77bd1c9cddca4a7cd63cb7"
+    },
+    {
+      "path": "models/tfl6_patchworks_model_mp11_harvest_system_candidate/tracks/messages.csv",
+      "bytes": 66,
+      "sha256": "dc63c922915d439fe5ea75e3e69a6f07581fa2a705b289b9780c865f40582182"
+    }
+  ],
+  "generated_block_files": [
+    {
+      "path": "models/tfl6_patchworks_model_mp11_harvest_system_candidate/blocks/blocks.shp",
+      "bytes": 19040188,
+      "sha256": "ad9552a5bd34ca0b95c0b9406695a5b3520609fd1c17d7cd303f2207f44dee5f"
+    },
+    {
+      "path": "models/tfl6_patchworks_model_mp11_harvest_system_candidate/blocks/blocks.dbf",
+      "bytes": 12962345,
+      "sha256": "dc15a041eb3eed85b06e121c438516c86301c8e4d839b6e1916020430b7f4f7d"
+    },
+    {
+      "path": "models/tfl6_patchworks_model_mp11_harvest_system_candidate/blocks/blocks.shx",
+      "bytes": 199132,
+      "sha256": "8e53d7ba8b7933db4bd2b1dcde38698ee623f8c3049c97baab96fd7bcf3a6ea1"
+    },
+    {
+      "path": "models/tfl6_patchworks_model_mp11_harvest_system_candidate/blocks/blocks.prj",
+      "bytes": 466,
+      "sha256": "4dc6a252b4e1e9468f9489c04fc559230f6d8b3f6ad8a79f02ba365a593636f5"
+    },
+    {
+      "path": "models/tfl6_patchworks_model_mp11_harvest_system_candidate/blocks/blocks.cpg",
+      "bytes": 5,
+      "sha256": "3ad3031f5503a4404af825262ee8232cc04d4ea6683d42c5dd0a2f2a27ac9824"
+    },
+    {
+      "path": "models/tfl6_patchworks_model_mp11_harvest_system_candidate/blocks/topology_blocks_200r.csv",
+      "bytes": 4394747,
+      "sha256": "2709734f92c0c3bb6bdcbefee7ef4d9c6c9e1b539c28a2f70984320a37bba179"
+    }
+  ]
+}

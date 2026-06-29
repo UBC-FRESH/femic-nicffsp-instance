@@ -3791,3 +3791,277 @@
   clean-checkout materialization is pending, maintainer base-scenario export
   remains unreproduced, and MP11 source/constraint caveats remain visible; and
 - marked P13.5 and Phase 13 complete in `ROADMAP.md`.
+
+## 2026-06-28 - Opened MP11 Phase 14 harvest-system operability lane
+
+- created branch `feature/tfl6-mp11-harvest-system-operability`;
+- opened parent issue `#138` and child issues `#139` through `#146` for the
+  Phase 14 harvest-system operability implementation sequence;
+- added
+  `planning/tfl6_mp11_phase14_harvest_system_operability_plan.md` with MP11 PDF
+  source anchors, WFP LBB/public-proxy boundaries, generated-output roots, and
+  non-goals;
+- updated `ROADMAP.md` with Phase 14 as the active lane and P14.1 (`#139`) as
+  the next bounded task; and
+- recorded that Phase 14 is intended to convert deferred harvest-system caveats
+  into runtime-visible public-proxy ground/cable/heli lanes without claiming
+  WFP LBB equivalence or replacing the Phase 5 baseline.
+
+## 2026-06-28 - Built MP11 Phase 14 harvest-system evidence inventory
+
+- added `scripts/build_p14_harvest_system_evidence.py`;
+- generated
+  `planning/tfl6_mp11_phase14_harvest_system_evidence.{csv,json,md}` with `16`
+  evidence rows for MP11 harvest-system operability criteria;
+- recorded WFP LBB as unavailable/private source evidence, MP11 Table 20 and
+  Table 73 as aggregate comparison targets, P9D CDED slope and VRI/VDYP
+  inventory attributes as public proxy inputs, DRA roads as an access-distance
+  candidate needing review, and MP11 helicopter economic-operability thresholds
+  as candidate rules after metric build;
+- rejected the old MP10 ground/cable/heli DBH thresholds as current MP11 MHA
+  criteria; and
+- marked P14.2 complete in `ROADMAP.md`, leaving P14.3 public proxy metric
+  construction as the next bounded task.
+
+## 2026-06-29 - Built MP11 Phase 14 harvest-system public proxy metrics
+
+- added `scripts/build_p14_public_proxy_metrics.py`;
+- generated
+  `planning/tfl6_mp11_phase14_public_proxy_metrics.{csv,json,md}` with
+  `25,019` stand-level public proxy metric rows;
+- recorded `22,614` managed-current-THLB rows, `17,395` rows with P9D CDED
+  slope joins, all rows with nearest-DRA-road access distance, and `3,326`
+  rows passing the public-proxy helicopter economic-operability test;
+- kept WFP LBB unavailable/private, P9D slope as non-LiDAR public slope
+  context, nearest-DRA-road distance as non-flight-distance access context, and
+  public VRI species/volume as non-WFP-ITI proxy evidence; and
+- marked P14.3 complete in `ROADMAP.md`, leaving P14.4 classification and
+  MP11 Table 20/Table 73 area-volume QA as the next bounded task.
+
+## 2026-06-29 - Classified MP11 Phase 14 harvest-system proxy lanes
+
+- added `scripts/build_p14_harvest_system_classification.py`;
+- generated
+  `planning/tfl6_mp11_phase14_harvest_system_classification.{csv,json,md}` and
+  `planning/tfl6_mp11_phase14_harvest_system_classification_qa.csv`;
+- classified managed current THLB in the candidate scaffold into public-proxy
+  ground, cable, and heli lanes while leaving rows outside managed current THLB
+  as `not_applicable`;
+- recorded candidate managed-current-THLB assignments of `80,241.389 ha`
+  ground, `56,677.061 ha` cable, and `3,077.349 ha` heli over the
+  `139,995.798 ha` candidate scaffold total;
+- compared the classification against MP11 Table 73 and recorded normalized
+  area-share residuals of `+0.017` percentage points for ground, `+0.885` for
+  cable, and `-0.902` for heli, while keeping direct target residuals caveated
+  because WFP LBB geometry is unavailable and the candidate scaffold total is
+  larger than the MP11 Table 73 total; and
+- marked P14.4 complete in `ROADMAP.md`, leaving P14.5 split-lane model-input
+  and ForestModel XML rebuild as the next bounded task.
+
+## 2026-06-29 - Built MP11 Phase 14 split-lane model input and XML
+
+- added generated-root ignores for
+  `data/mp11_harvest_system_model_input_bundle/` and the future
+  `models/tfl6_patchworks_model_mp11_harvest_system_candidate/` runtime
+  outputs;
+- added `scripts/build_p14_harvest_system_model_input_xml.py`;
+- generated the ignored
+  `data/mp11_harvest_system_model_input_bundle/` candidate bundle by applying
+  P14.4 public-proxy harvest-system assignments to stand, harvest-system,
+  group, treatment, transition, and export-compat checkpoint surfaces;
+- generated ignored ForestModel XML/fragments under
+  `output/patchworks_tfl6_mp11_harvest_system_candidate/`;
+- post-processed the XML to expose `CC_GROUND`, `CC_CABLE`, and `CC_HELI`
+  clearcut lanes keyed by fragment `HVSYS`, while retaining aggregate `.CC`
+  product labels for all-system reporting;
+- emitted
+  `planning/tfl6_mp11_phase14_model_input_xml_build_summary.{csv,json,md}`,
+  recording `814` treatment nodes for each split lane, `2,442` `HVSYS` split
+  managed selects, `2,442` split product selects, and zero remaining
+  `treatment eq 'CC'` product selects; and
+- marked P14.5 complete in `ROADMAP.md`, leaving P14.6 Matrix Builder and
+  harvest-system candidate runtime assembly as the next bounded task.
+
+## 2026-06-29 - Assembled MP11 Phase 14 harvest-system candidate runtime
+
+- added
+  `config/patchworks.runtime.mp11_harvest_system_candidate.windows.yaml`;
+- fixed the P14.5 XML post-process so the `HVSYS` field is bound to the
+  fragment `HVSYS` column before Matrix Builder;
+- ran Matrix Builder with run ID
+  `tfl6_mp11_harvest_system_p14_6_matrix_build`;
+- generated `13` track files with `93,330` feature rows, `829` account rows,
+  `46,605` product rows, `18,642` treatment rows, and `0` message rows;
+- verified split track evidence for `10,790` `CC_GROUND`, `6,960` `CC_CABLE`,
+  and `892` `CC_HELI` treatment rows, plus system-specific harvested-volume
+  product rows and retained aggregate `.CC` product rows;
+- ran `femic patchworks build-blocks` with topology radius `200`, producing
+  `24,879` block rows, `191,168.566447 ha`, valid `EPSG:3005` geometry, and
+  `170,759` topology rows;
+- assembled tracked launch/provenance surfaces under
+  `models/tfl6_patchworks_model_mp11_harvest_system_candidate/`;
+- emitted `planning/tfl6_mp11_phase14_matrix_runtime_qa.{csv,json,md}` with
+  status `harvest_system_candidate_runtime_assembled_pending_smoke`; and
+- marked P14.6 complete in `ROADMAP.md`, leaving P14.7 direct launch,
+  all-system scenario, and no-heli scenario smoke as the next bounded task.
+
+## 2026-06-29 - Smoke-tested MP11 Phase 14 harvest-system scenarios
+
+- added `scripts/build_p14_no_heli_tracks.py` and
+  `models/tfl6_patchworks_model_mp11_harvest_system_candidate/analysis/no_heli.pin`;
+- generated the ignored
+  `models/tfl6_patchworks_model_mp11_harvest_system_candidate/tracks_no_heli/`
+  track variant from the P14.6 Matrix Builder tracks;
+- removed `892` `CC_HELI` treatment rows, `2,230` `CC_HELI` product rows, and
+  the two stale `CC_HELI` account/protoaccount rows that caused Patchworks to
+  define a missing `flow.even.product.HarvestedVolume.managed.Total.CC_HELI`
+  target during no-heli startup;
+- emitted `planning/tfl6_mp11_phase14_no_heli_tracks.{csv,json,md}`;
+- ran direct launch smoke, all-system 200,000-iteration harvest smoke, and
+  no-heli 200,000-iteration harvest smoke for the harvest-system candidate
+  runtime;
+- emitted `planning/tfl6_mp11_phase14_scenario_smoke_qa.{csv,json,md}` with
+  status `p14_7_smoke_pass`;
+- verified the all-system schedule contains `76,635` rows across `CC_CABLE`,
+  `CC_GROUND`, and `CC_HELI`, while the no-heli schedule contains `75,086`
+  rows across `CC_CABLE` and `CC_GROUND` with no `CC_HELI` scheduled
+  treatments; and
+- marked P14.7 complete in `ROADMAP.md`, leaving P14.8 Phase 14 caveats,
+  comparison results, and closeout documentation as the next bounded task.
+
+## 2026-06-29 - Closed MP11 Phase 14 harvest-system documentation lane
+
+- added `planning/tfl6_mp11_phase14_closeout.md` with the final Phase 14
+  closeout boundary, evidence basis, classification comparison, runtime/smoke
+  results, caveats, and release-language guidance;
+- added `docs/phase14-mp11-harvest-system-operability.rst` and linked it from
+  the Sphinx index;
+- documented that WFP LBB remains unavailable/private and that the Phase 14
+  ground/cable/heli lanes are public-proxy assignments, not WFP-model
+  equivalence;
+- recorded the P14.4 normalized area-share comparison against MP11 Table 73,
+  the P14.5 split-lane XML result, the P14.6 Matrix Builder/runtime evidence,
+  and the P14.7 all-system/no-heli smoke results;
+- preserved Phase 5 as the accepted public teaching/runtime baseline and
+  described the Phase 14 runtime as a caveated MP11 candidate supplement for
+  comparison and advanced teaching; and
+- marked P14.8 and Phase 14 complete in `ROADMAP.md`.
+
+## 2026-06-29 - Opened MP11 Phase 15 runtime publication QA lane
+
+- created branch `feature/tfl6-mp11-p15-runtime-publication`;
+- created Phase 15 parent issue `#147` and child issues `#148` through `#154`;
+- added
+  `planning/tfl6_mp11_phase15_publication_replacement_candidate_plan.md`;
+- added Phase 15 to `ROADMAP.md` as the active MP11 harvest-system runtime
+  publication and replacement-candidate QA lane;
+- recorded that P15 consumes the completed Phase 14 harvest-system runtime, not
+  the older P13 archive;
+- locked publication artifact names
+  `releases/tfl6_mp11_harvest_system_candidate_runtime_p15_2.zip` and
+  `releases/tfl6_mp11_harvest_system_candidate_runtime_p15_2_manifest.yaml`;
+- recorded release-status vocabulary from `local_archive_built_not_published`
+  through `replacement_candidate_ready_for_review` or
+  `replacement_candidate_blocked`; and
+- kept Phase 5 as the accepted public teaching/runtime baseline until a later
+  explicit replacement acceptance decision.
+
+## 2026-06-29 - Built MP11 Phase 15 harvest-system runtime archive
+
+- added `scripts/build_p15_harvest_system_archive_publication_qa.py`;
+- built local archive
+  `releases/tfl6_mp11_harvest_system_candidate_runtime_p15_2.zip`;
+- emitted tracked manifest
+  `releases/tfl6_mp11_harvest_system_candidate_runtime_p15_2_manifest.yaml`;
+- emitted `planning/tfl6_mp11_phase15_archive_publication_qa.{csv,json,md}`
+  with status `local_archive_built_not_published`;
+- recorded archive size `33,806,073` bytes and SHA256
+  `fcf8d3615f8bba65419d1a401d818c5eb87e7d75d3aa6007cfa6ada773536362`;
+- verified ZIP integrity and a `46`-file manifest member count;
+- included the Phase 14 harvest-system runtime config, XML/fragments, launch
+  surfaces, blocks/topology, all-system `tracks/`, and no-heli
+  `tracks_no_heli/`; and
+- marked P15.2 complete in `ROADMAP.md`, leaving P15.3 annex/publication to
+  `arbutus-s3` as the next bounded task.
+
+## 2026-06-29 - Published MP11 Phase 15 harvest-system runtime archive
+
+- annexed
+  `releases/tfl6_mp11_harvest_system_candidate_runtime_p15_2.zip` and
+  `releases/tfl6_mp11_harvest_system_candidate_runtime_p15_2_manifest.yaml`;
+- copied both artifacts to `arbutus-s3`;
+- verified `git annex whereis` reports local and `arbutus-s3` copies for both
+  artifacts;
+- verified `git annex info arbutus-s3` reports public remote metadata and `5`
+  remote keys;
+- updated the release manifest and
+  `planning/tfl6_mp11_phase15_archive_publication_qa.{csv,json,md}` to status
+  `published_materialization_pending`; and
+- marked P15.3 complete in `ROADMAP.md`, leaving P15.4 no-credential
+  clean-checkout materialization as the next bounded task.
+
+## 2026-06-29 - Proved MP11 Phase 15 no-credential materialization
+
+- created a fresh shallow single-branch clone of
+  `feature/tfl6-mp11-p15-runtime-publication`;
+- fetched the `git-annex` branch metadata before enabling `arbutus-s3`, which
+  is required for this clean-clone materialization path;
+- cleared AWS/S3 credential environment variables before materialization;
+- verified `git annex info arbutus-s3` reported `creds: not available`,
+  `public: yes`, the expected public URL, and `5` remote keys;
+- fetched
+  `releases/tfl6_mp11_harvest_system_candidate_runtime_p15_2.zip` and
+  `releases/tfl6_mp11_harvest_system_candidate_runtime_p15_2_manifest.yaml`
+  from `arbutus-s3` with git-annex checksum `ok`;
+- verified materialized archive SHA256
+  `fcf8d3615f8bba65419d1a401d818c5eb87e7d75d3aa6007cfa6ada773536362`
+  against the manifest;
+- unpacked the archive and confirmed expected `base.pin`, `no_heli.pin`,
+  all-system track, and no-heli track files are present;
+- emitted `planning/tfl6_mp11_phase15_materialization_qa.{csv,json,md}`; and
+- marked P15.4 complete in `ROADMAP.md`, leaving P15.5 archive-derived direct
+  launch and scenario smoke as the next bounded task.
+
+## 2026-06-29 - Passed MP11 Phase 15 archive-derived runtime smoke
+
+- added `scripts/build_p15_materialized_runtime_smoke_qa.py` to inspect P15.5
+  Patchworks runs launched from the unpacked materialized archive payload;
+- handled Windows long-path saved-stage CSV inspection for archive-derived
+  Patchworks reports;
+- emitted
+  `planning/tfl6_mp11_phase15_materialized_runtime_smoke_qa.{csv,json,md}`
+  with status `materialized_runtime_smoke_pass`;
+- verified direct launch smoke from the materialized archive passed;
+- verified all-system 200,000-iteration scenario smoke passed with `76,693`
+  scheduled rows and treatment lanes `CC_CABLE`, `CC_GROUND`, and `CC_HELI`;
+- verified no-heli 200,000-iteration scenario smoke passed with `75,023`
+  scheduled rows, treatment lanes `CC_CABLE` and `CC_GROUND`, and no forbidden
+  `CC_HELI` treatment present; and
+- marked P15.5 complete in `ROADMAP.md`, leaving P15.6 publication docs and
+  caveat documentation as the next bounded task.
+
+## 2026-06-29 - Documented MP11 Phase 15 runtime publication
+
+- added `docs/phase15-mp11-runtime-publication.rst`;
+- linked the Phase 15 page from `docs/index.rst`;
+- documented the published archive and manifest paths, archive SHA256,
+  included runtime payload families, public-annex materialization command
+  sequence, and archive-derived direct-launch/all-system/no-heli smoke results;
+- documented that WFP LBB remains unavailable and the harvest-system lanes are
+  public proxies, not WFP-model-equivalence claims;
+- preserved Phase 5 as the accepted public baseline until a later explicit
+  replacement acceptance decision; and
+- marked P15.6 complete in `ROADMAP.md`, leaving P15.7 replacement-candidate
+  readiness decision and Phase 15 closeout as the next bounded task.
+
+## 2026-06-29 - Closed MP11 Phase 15 replacement-candidate QA
+
+- added `scripts/build_p15_replacement_candidate_decision.py`;
+- emitted
+  `planning/tfl6_mp11_phase15_replacement_candidate_decision.{csv,json,md}`;
+- recorded decision `replacement_candidate_ready_for_review`;
+- recorded `replace_phase5: False` and `wfp_model_equivalence: False`;
+- verified the decision is supported by archive publication, no-credential
+  materialization, checksum validation, direct launch, all-system scenario
+  smoke, no-heli scenario smoke, and publication documentation hard gates; and
+- marked P15.7 and Phase 15 complete in `ROADMAP.md`.

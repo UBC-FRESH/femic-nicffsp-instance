@@ -1,0 +1,99 @@
+{
+  "decision": "replacement_candidate_ready_for_review",
+  "phase5_baseline_status": "accepted_public_runtime_baseline_retained",
+  "mp11_harvest_system_candidate_status": "replacement_candidate_ready_for_review",
+  "replace_phase5": false,
+  "wfp_model_equivalence": false,
+  "rows": [
+    {
+      "gate": "planning_note",
+      "status": "pass",
+      "evidence": "planning/tfl6_mp11_phase15_publication_replacement_candidate_plan.md",
+      "rationale": "required P15 evidence surface is present"
+    },
+    {
+      "gate": "archive_qa",
+      "status": "pass",
+      "evidence": "planning/tfl6_mp11_phase15_archive_publication_qa.json",
+      "rationale": "required P15 evidence surface is present"
+    },
+    {
+      "gate": "archive_manifest",
+      "status": "pass",
+      "evidence": "releases/tfl6_mp11_harvest_system_candidate_runtime_p15_2_manifest.yaml",
+      "rationale": "required P15 evidence surface is present"
+    },
+    {
+      "gate": "materialization_qa",
+      "status": "pass",
+      "evidence": "planning/tfl6_mp11_phase15_materialization_qa.json",
+      "rationale": "required P15 evidence surface is present"
+    },
+    {
+      "gate": "materialized_runtime_smoke_qa",
+      "status": "pass",
+      "evidence": "planning/tfl6_mp11_phase15_materialized_runtime_smoke_qa.json",
+      "rationale": "required P15 evidence surface is present"
+    },
+    {
+      "gate": "phase15_docs",
+      "status": "pass",
+      "evidence": "docs/phase15-mp11-runtime-publication.rst",
+      "rationale": "required P15 evidence surface is present"
+    },
+    {
+      "gate": "archive_published",
+      "status": "pass",
+      "evidence": "planning/tfl6_mp11_phase15_archive_publication_qa.json",
+      "rationale": "archive and manifest were annexed, copied to arbutus-s3, and verified before materialization"
+    },
+    {
+      "gate": "archive_checksum",
+      "status": "pass",
+      "evidence": "planning/tfl6_mp11_phase15_materialization_qa.json",
+      "rationale": "materialized archive SHA256 matches the tracked manifest"
+    },
+    {
+      "gate": "public_no_credential_materialization",
+      "status": "pass",
+      "evidence": "planning/tfl6_mp11_phase15_materialization_qa.json",
+      "rationale": "clean checkout fetched archive and manifest from arbutus-s3 with credentials cleared"
+    },
+    {
+      "gate": "direct_launch_from_archive",
+      "status": "pass",
+      "evidence": "planning/tfl6_mp11_phase15_materialized_runtime_smoke_qa.json",
+      "rationale": "materialized archive direct launch returned success"
+    },
+    {
+      "gate": "all_system_scenario_from_archive",
+      "status": "pass",
+      "evidence": "planning/tfl6_mp11_phase15_materialized_runtime_smoke_qa.json",
+      "rationale": "all-system 200k smoke scheduled cable, ground, and heli lanes"
+    },
+    {
+      "gate": "no_heli_scenario_from_archive",
+      "status": "pass",
+      "evidence": "planning/tfl6_mp11_phase15_materialized_runtime_smoke_qa.json",
+      "rationale": "no-heli 200k smoke scheduled cable and ground lanes only and did not trip missing heli account startup errors"
+    },
+    {
+      "gate": "phase15_decision",
+      "status": "replacement_candidate_ready_for_review",
+      "evidence": "P15.1-P15.6 hard-gate evidence",
+      "rationale": "all publication, materialization, checksum, launch, scenario, and documentation hard gates pass"
+    },
+    {
+      "gate": "phase5_baseline",
+      "status": "accepted_baseline_retained",
+      "evidence": "Phase 5 release remains unchanged",
+      "rationale": "P15 creates a replacement candidate for review; it does not silently replace Phase 5"
+    },
+    {
+      "gate": "wfp_model_equivalence",
+      "status": "not_claimed",
+      "evidence": "docs/phase15-mp11-runtime-publication.rst",
+      "rationale": "WFP LBB is unavailable and harvest-system lanes remain public proxy assignments"
+    }
+  ]
+}

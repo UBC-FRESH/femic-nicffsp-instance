@@ -1,0 +1,121 @@
+{
+  "summary": {
+    "generated_at_utc": "2026-06-29T06:33:41+00:00",
+    "candidate_bundle_root": "data/mp11_harvest_system_model_input_bundle",
+    "patchworks_output_root": "output/patchworks_tfl6_mp11_harvest_system_candidate",
+    "forestmodel_xml": "output/patchworks_tfl6_mp11_harvest_system_candidate/forestmodel.xml",
+    "fragments_path": "output/patchworks_tfl6_mp11_harvest_system_candidate/fragments/fragments.shp",
+    "stand_table_rows": 25019,
+    "stand_clearcut_eligible_rows": 22614,
+    "harvest_system_eligible_rows": 22614,
+    "harvest_system_group_rows": 25019,
+    "checkpoint_rows": 25019,
+    "fragment_rows": 24879,
+    "fragment_area_ha": 191168.566447,
+    "xml_root": "ForestModel",
+    "xml_select_nodes": 5698,
+    "xml_treatment_nodes": 2442,
+    "managed_cc_selects_replaced": 814,
+    "split_managed_selects": 2442,
+    "product_cc_selects_replaced": 814,
+    "split_product_selects": 2442,
+    "hvsys_selects": 2442,
+    "matrix_builder": "not_performed",
+    "runtime_bundle_generation": "not_performed",
+    "scenario_smoke": "not_performed"
+  },
+  "bundle_updates": {
+    "stand_table_rows": 25019,
+    "stand_clearcut_eligible_rows": 22614,
+    "harvest_system_table_rows": 25019,
+    "harvest_system_eligible_rows": 22614,
+    "group_table_rows": 150114,
+    "harvest_system_group_rows": 25019,
+    "treatment_table_rows": 7,
+    "transition_table_rows": 8,
+    "checkpoint_rows": 25019,
+    "checkpoint_hvsys_counts": {
+      "GROUND": 12905,
+      "CABLE": 9055,
+      "NOT_APPLICABLE": 2405,
+      "HELI": 654
+    }
+  },
+  "record_counts": {
+    "stand_table.csv": 25019,
+    "harvest_system_table.csv": 25019,
+    "treatment_table.csv": 7,
+    "transition_table.csv": 8,
+    "group_table.csv": 150114,
+    "export_compat/au_table.csv": 407,
+    "export_compat/curve_table.csv": 172,
+    "export_compat/curve_points_table.csv": 30651
+  },
+  "fragments": {
+    "fragment_rows": 24879,
+    "fragment_area_ha": 191168.56644727234,
+    "fragment_hvsys_counts": {
+      "GROUND": 12830,
+      "CABLE": 9008,
+      "NOT_APPLICABLE": 2389,
+      "HELI": 652
+    },
+    "fragment_hvsys_area_ha": {
+      "CABLE": 72242.87891839717,
+      "GROUND": 101533.09219171264,
+      "HELI": 4281.999608665405,
+      "NOT_APPLICABLE": 13110.595728497156
+    }
+  },
+  "xml": {
+    "xml_path": "output/patchworks_tfl6_mp11_harvest_system_candidate/forestmodel.xml",
+    "xml_sha256": "d895703182219ff70ff6b35f140fa03ac650805b6b871c09d5763690cdd93f2e",
+    "xml_root": "ForestModel",
+    "xml_tag_counts": {
+      "ForestModel": 1,
+      "assign": 9768,
+      "attribute": 31746,
+      "curve": 32733,
+      "define": 7,
+      "features": 3256,
+      "input": 1,
+      "output": 1,
+      "point": 7247,
+      "produce": 2442,
+      "products": 2442,
+      "retention": 2442,
+      "select": 5698,
+      "succession": 3256,
+      "track": 3256,
+      "transition": 2442,
+      "treatment": 2442
+    },
+    "managed_cc_selects_replaced": 814,
+    "split_managed_selects": 2442,
+    "product_cc_selects_replaced": 814,
+    "split_product_selects": 2442,
+    "hvsys_selects": 2442,
+    "treatment_label_counts": {
+      "CC_CABLE": 814,
+      "CC_GROUND": 814,
+      "CC_HELI": 814
+    }
+  },
+  "inputs": {
+    "source_bundle": "data/mp11_model_input_bundle",
+    "classification": "planning/tfl6_mp11_phase14_harvest_system_classification.csv"
+  },
+  "outputs": {
+    "candidate_bundle": "data/mp11_harvest_system_model_input_bundle",
+    "patchworks_output": "output/patchworks_tfl6_mp11_harvest_system_candidate",
+    "qa_csv": "planning/tfl6_mp11_phase14_model_input_xml_build_summary.csv",
+    "qa_json": "planning/tfl6_mp11_phase14_model_input_xml_build_summary.json",
+    "qa_md": "planning/tfl6_mp11_phase14_model_input_xml_build_summary.md"
+  },
+  "non_goals": [
+    "No Matrix Builder run is performed in P14.5.",
+    "No Patchworks runtime package is assembled in P14.5.",
+    "No all-system or no-heli scenario smoke is run in P14.5.",
+    "The split lanes are public-proxy harvest-system lanes, not WFP LBB reconstruction."
+  ]
+}

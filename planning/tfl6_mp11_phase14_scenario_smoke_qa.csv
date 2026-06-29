@@ -1,0 +1,16 @@
+run,metric,value
+direct_launch,qa_status,pass
+direct_launch,schedule_rows,0
+direct_launch,scheduled_treatments,
+direct_launch,forbidden_treatments_present,
+direct_launch,saved_file_count,3395
+all_system,qa_status,pass
+all_system,schedule_rows,76635
+all_system,scheduled_treatments,"CC_CABLE,CC_GROUND,CC_HELI"
+all_system,forbidden_treatments_present,
+all_system,saved_file_count,3395
+no_heli,qa_status,pass
+no_heli,schedule_rows,75086
+no_heli,scheduled_treatments,"CC_CABLE,CC_GROUND"
+no_heli,forbidden_treatments_present,
+no_heli,saved_file_count,3383

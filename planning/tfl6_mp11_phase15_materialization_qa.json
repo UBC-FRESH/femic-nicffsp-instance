@@ -1,0 +1,36 @@
+{
+  "phase": "P15.4",
+  "status": "materialized_smoke_pending",
+  "clone_path_class": "temp_clean_checkout",
+  "clone_mode": "shallow_single_branch_no_tags",
+  "branch": "feature/tfl6-mp11-p15-runtime-publication",
+  "git_annex_metadata_step": "fetch origin git-annex before enabling arbutus-s3",
+  "annex_remote": {
+    "name": "arbutus-s3",
+    "bucket": "ubc-fresh-femic-tfl6-instance",
+    "publicurl": "https://object-arbutus.cloud.computecanada.ca/ubc-fresh-femic-tfl6-instance",
+    "uuid": "861b7dd7-fff0-4637-b0a2-b9b4668dca71",
+    "creds": "not available",
+    "public": "yes",
+    "remote_annex_keys": 5
+  },
+  "materialized_artifacts": {
+    "archive": "releases/tfl6_mp11_harvest_system_candidate_runtime_p15_2.zip",
+    "manifest": "releases/tfl6_mp11_harvest_system_candidate_runtime_p15_2_manifest.yaml",
+    "archive_sha256": "fcf8d3615f8bba65419d1a401d818c5eb87e7d75d3aa6007cfa6ada773536362",
+    "manifest_archive_sha256": "fcf8d3615f8bba65419d1a401d818c5eb87e7d75d3aa6007cfa6ada773536362",
+    "git_annex_get": "checksum_ok"
+  },
+  "unpack": {
+    "path_class": "temp_clean_checkout_runtime_p15_materialized_archive",
+    "expected_files_present": true,
+    "checked_files": [
+      "models/tfl6_patchworks_model_mp11_harvest_system_candidate/analysis/base.pin",
+      "models/tfl6_patchworks_model_mp11_harvest_system_candidate/analysis/no_heli.pin",
+      "models/tfl6_patchworks_model_mp11_harvest_system_candidate/tracks/accounts.csv",
+      "models/tfl6_patchworks_model_mp11_harvest_system_candidate/tracks_no_heli/accounts.csv"
+    ]
+  },
+  "next_status": "p15_5_archive_derived_smoke_pending",
+  "phase5_relationship": "phase5_remains_accepted_baseline_pending_replacement_acceptance"
+}

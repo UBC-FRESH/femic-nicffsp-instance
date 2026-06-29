@@ -1,0 +1,361 @@
+{
+  "summary": {
+    "generated_at_utc": "2026-06-29T06:54:01+00:00",
+    "qa_status": "p14_7_smoke_pass",
+    "direct_launch_status": "pass",
+    "all_system_status": "pass",
+    "no_heli_status": "pass",
+    "all_system_schedule_rows": 76635,
+    "no_heli_schedule_rows": 75086,
+    "all_system_treatments": "CC_CABLE,CC_GROUND,CC_HELI",
+    "no_heli_treatments": "CC_CABLE,CC_GROUND",
+    "no_heli_forbidden_present": "none",
+    "release_qa": "not_performed"
+  },
+  "runs": [
+    {
+      "name": "direct_launch",
+      "qa_status": "pass",
+      "manifest": {
+        "run_id": "tfl6_mp11_harvest_system_p14_7_launch0",
+        "raw_returncode": 0,
+        "returncode": 0,
+        "mode": "headless_pin",
+        "failures": [],
+        "headless_automation": {
+          "terminal_state": "success",
+          "detected_marker": "[FEMIC headless] saveStage completed"
+        },
+        "inputs": {
+          "stage_label": "p14_7_launch0",
+          "iterations": 0,
+          "scenario_mode": "none",
+          "scenario_target": null,
+          "scenario_min_annual": null
+        },
+        "outputs": {
+          "stage_dir": "models/tfl6_patchworks_model_mp11_harvest_system_candidate/analysis/p14_7_launch0",
+          "saved_file_count": 3395
+        }
+      },
+      "stage_dir": "models/tfl6_patchworks_model_mp11_harvest_system_candidate/analysis/p14_7_launch0",
+      "stage_file_count": 3395,
+      "target_status_rows": 833,
+      "target_summary_rows": 25823,
+      "schedule_rows": 0,
+      "scheduled_treatments": [],
+      "treatment_counts": {},
+      "forbidden_treatments_present": [],
+      "target_status": {
+        "base": {
+          "target": "product.HarvestedVolume.managed.Total.CC",
+          "present": true,
+          "periods": 31,
+          "active": false,
+          "minactive": false,
+          "maxactive": false,
+          "linear": false
+        },
+        "flow": {
+          "target": "flow.even.product.HarvestedVolume.managed.Total.CC",
+          "present": true,
+          "periods": 31,
+          "active": false,
+          "minactive": false,
+          "maxactive": false,
+          "linear": false
+        }
+      },
+      "target_summary": {
+        "base": {
+          "target": "product.HarvestedVolume.managed.Total.CC",
+          "present": true,
+          "rows": 31,
+          "minimum_unique": [
+            0.0
+          ],
+          "minweight_unique": [
+            1.0
+          ],
+          "maxweight_unique": [
+            1.0
+          ],
+          "final_period_current": 0.0
+        },
+        "flow": {
+          "target": "flow.even.product.HarvestedVolume.managed.Total.CC",
+          "present": true,
+          "rows": 31,
+          "minimum_unique": [
+            0.0
+          ],
+          "minweight_unique": [
+            1.0
+          ],
+          "maxweight_unique": [
+            1.0
+          ],
+          "final_period_current": 0.0
+        }
+      },
+      "log_scan": {
+        "stdout": {
+          "path": "runtime/logs/patchworks_headless_stdout-tfl6_mp11_harvest_system_p14_7_launch0.log",
+          "bytes": 170,
+          "error": 0,
+          "warning": 0,
+          "exception": 0,
+          "failed": 0
+        },
+        "stderr": {
+          "path": "runtime/logs/patchworks_headless_stderr-tfl6_mp11_harvest_system_p14_7_launch0.log",
+          "bytes": 86,
+          "error": 0,
+          "warning": 0,
+          "exception": 0,
+          "failed": 0
+        }
+      },
+      "source_manifests": {
+        "headless_manifest": "runtime/logs/patchworks_headless_manifest-tfl6_mp11_harvest_system_p14_7_launch0.json",
+        "stdout_log": "runtime/logs/patchworks_headless_stdout-tfl6_mp11_harvest_system_p14_7_launch0.log",
+        "stderr_log": "runtime/logs/patchworks_headless_stderr-tfl6_mp11_harvest_system_p14_7_launch0.log",
+        "trace_log": "runtime/logs/patchworks_headless_trace-tfl6_mp11_harvest_system_p14_7_launch0.log"
+      }
+    },
+    {
+      "name": "all_system",
+      "qa_status": "pass",
+      "manifest": {
+        "run_id": "tfl6_mp11_harvest_system_p14_7_all_system_200k",
+        "raw_returncode": 0,
+        "returncode": 0,
+        "mode": "headless_pin",
+        "failures": [],
+        "headless_automation": {
+          "terminal_state": "success",
+          "detected_marker": "[FEMIC headless] saveStage completed"
+        },
+        "inputs": {
+          "stage_label": "p14_7_all_system_200k",
+          "iterations": 200000,
+          "scenario_mode": "max-even-flow-smoke",
+          "scenario_target": "product.HarvestedVolume.managed.Total.CC",
+          "scenario_min_annual": 20000000.0
+        },
+        "outputs": {
+          "stage_dir": "models/tfl6_patchworks_model_mp11_harvest_system_candidate/analysis/p14_7_all_system_200k",
+          "saved_file_count": 3395
+        }
+      },
+      "stage_dir": "models/tfl6_patchworks_model_mp11_harvest_system_candidate/analysis/p14_7_all_system_200k",
+      "stage_file_count": 3395,
+      "target_status_rows": 833,
+      "target_summary_rows": 25823,
+      "schedule_rows": 76635,
+      "scheduled_treatments": [
+        "CC_CABLE",
+        "CC_GROUND",
+        "CC_HELI"
+      ],
+      "treatment_counts": {
+        "CC_CABLE": 30624,
+        "CC_GROUND": 43857,
+        "CC_HELI": 2154
+      },
+      "forbidden_treatments_present": [],
+      "target_status": {
+        "base": {
+          "target": "product.HarvestedVolume.managed.Total.CC",
+          "present": true,
+          "periods": 31,
+          "active": true,
+          "minactive": true,
+          "maxactive": false,
+          "linear": true
+        },
+        "flow": {
+          "target": "flow.even.product.HarvestedVolume.managed.Total.CC",
+          "present": true,
+          "periods": 31,
+          "active": true,
+          "minactive": true,
+          "maxactive": true,
+          "linear": false
+        }
+      },
+      "target_summary": {
+        "base": {
+          "target": "product.HarvestedVolume.managed.Total.CC",
+          "present": true,
+          "rows": 31,
+          "minimum_unique": [
+            20000000.0
+          ],
+          "minweight_unique": [
+            1.0
+          ],
+          "maxweight_unique": [
+            1.0
+          ],
+          "final_period_current": 14067377.0
+        },
+        "flow": {
+          "target": "flow.even.product.HarvestedVolume.managed.Total.CC",
+          "present": true,
+          "rows": 31,
+          "minimum_unique": [
+            0.0
+          ],
+          "minweight_unique": [
+            10000.0
+          ],
+          "maxweight_unique": [
+            10000.0
+          ],
+          "final_period_current": 0.0
+        }
+      },
+      "log_scan": {
+        "stdout": {
+          "path": "runtime/logs/patchworks_headless_stdout-tfl6_mp11_harvest_system_p14_7_all_system_200k.log",
+          "bytes": 170,
+          "error": 0,
+          "warning": 0,
+          "exception": 0,
+          "failed": 0
+        },
+        "stderr": {
+          "path": "runtime/logs/patchworks_headless_stderr-tfl6_mp11_harvest_system_p14_7_all_system_200k.log",
+          "bytes": 86,
+          "error": 0,
+          "warning": 0,
+          "exception": 0,
+          "failed": 0
+        }
+      },
+      "source_manifests": {
+        "headless_manifest": "runtime/logs/patchworks_headless_manifest-tfl6_mp11_harvest_system_p14_7_all_system_200k.json",
+        "stdout_log": "runtime/logs/patchworks_headless_stdout-tfl6_mp11_harvest_system_p14_7_all_system_200k.log",
+        "stderr_log": "runtime/logs/patchworks_headless_stderr-tfl6_mp11_harvest_system_p14_7_all_system_200k.log",
+        "trace_log": "runtime/logs/patchworks_headless_trace-tfl6_mp11_harvest_system_p14_7_all_system_200k.log"
+      }
+    },
+    {
+      "name": "no_heli",
+      "qa_status": "pass",
+      "manifest": {
+        "run_id": "tfl6_mp11_harvest_system_p14_7_no_heli_200k",
+        "raw_returncode": 0,
+        "returncode": 0,
+        "mode": "headless_pin",
+        "failures": [],
+        "headless_automation": {
+          "terminal_state": "success",
+          "detected_marker": "[FEMIC headless] saveStage completed"
+        },
+        "inputs": {
+          "stage_label": "p14_7_no_heli_200k",
+          "iterations": 200000,
+          "scenario_mode": "max-even-flow-smoke",
+          "scenario_target": "product.HarvestedVolume.managed.Total.CC",
+          "scenario_min_annual": 20000000.0
+        },
+        "outputs": {
+          "stage_dir": "models/tfl6_patchworks_model_mp11_harvest_system_candidate/analysis/p14_7_no_heli_200k",
+          "saved_file_count": 3383
+        }
+      },
+      "stage_dir": "models/tfl6_patchworks_model_mp11_harvest_system_candidate/analysis/p14_7_no_heli_200k",
+      "stage_file_count": 3383,
+      "target_status_rows": 830,
+      "target_summary_rows": 25730,
+      "schedule_rows": 75086,
+      "scheduled_treatments": [
+        "CC_CABLE",
+        "CC_GROUND"
+      ],
+      "treatment_counts": {
+        "CC_CABLE": 30917,
+        "CC_GROUND": 44169
+      },
+      "forbidden_treatments_present": [],
+      "target_status": {
+        "base": {
+          "target": "product.HarvestedVolume.managed.Total.CC",
+          "present": true,
+          "periods": 31,
+          "active": true,
+          "minactive": true,
+          "maxactive": false,
+          "linear": true
+        },
+        "flow": {
+          "target": "flow.even.product.HarvestedVolume.managed.Total.CC",
+          "present": true,
+          "periods": 31,
+          "active": true,
+          "minactive": true,
+          "maxactive": true,
+          "linear": false
+        }
+      },
+      "target_summary": {
+        "base": {
+          "target": "product.HarvestedVolume.managed.Total.CC",
+          "present": true,
+          "rows": 31,
+          "minimum_unique": [
+            20000000.0
+          ],
+          "minweight_unique": [
+            1.0
+          ],
+          "maxweight_unique": [
+            1.0
+          ],
+          "final_period_current": 13835833.0
+        },
+        "flow": {
+          "target": "flow.even.product.HarvestedVolume.managed.Total.CC",
+          "present": true,
+          "rows": 31,
+          "minimum_unique": [
+            0.0
+          ],
+          "minweight_unique": [
+            10000.0
+          ],
+          "maxweight_unique": [
+            10000.0
+          ],
+          "final_period_current": 0.0
+        }
+      },
+      "log_scan": {
+        "stdout": {
+          "path": "runtime/logs/patchworks_headless_stdout-tfl6_mp11_harvest_system_p14_7_no_heli_200k.log",
+          "bytes": 173,
+          "error": 0,
+          "warning": 0,
+          "exception": 0,
+          "failed": 0
+        },
+        "stderr": {
+          "path": "runtime/logs/patchworks_headless_stderr-tfl6_mp11_harvest_system_p14_7_no_heli_200k.log",
+          "bytes": 86,
+          "error": 0,
+          "warning": 0,
+          "exception": 0,
+          "failed": 0
+        }
+      },
+      "source_manifests": {
+        "headless_manifest": "runtime/logs/patchworks_headless_manifest-tfl6_mp11_harvest_system_p14_7_no_heli_200k.json",
+        "stdout_log": "runtime/logs/patchworks_headless_stdout-tfl6_mp11_harvest_system_p14_7_no_heli_200k.log",
+        "stderr_log": "runtime/logs/patchworks_headless_stderr-tfl6_mp11_harvest_system_p14_7_no_heli_200k.log",
+        "trace_log": "runtime/logs/patchworks_headless_trace-tfl6_mp11_harvest_system_p14_7_no_heli_200k.log"
+      }
+    }
+  ]
+}

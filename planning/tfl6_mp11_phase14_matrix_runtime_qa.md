@@ -1,0 +1,48 @@
+# TFL 6 MP11 Phase 14 Matrix Runtime QA
+
+This P14.6 output records Matrix Builder and runtime package assembly for the MP11 harvest-system candidate. It does not run direct launch smoke or scenarios.
+
+## Summary
+
+- generated_at_utc: `2026-06-29T06:38:47+00:00`
+- runtime_package_status: `harvest_system_candidate_runtime_assembled_pending_smoke`
+- matrix_run_id: `tfl6_mp11_harvest_system_p14_6_matrix_build`
+- matrix_returncode: `0`
+- track_file_count: `13`
+- features_rows: `93330`
+- accounts_rows: `829`
+- protoaccounts_rows: `829`
+- products_rows: `46605`
+- treatments_rows: `18642`
+- messages_rows: `0`
+- cc_ground_treatment_rows: `10790`
+- cc_cable_treatment_rows: `6960`
+- cc_heli_treatment_rows: `892`
+- cc_ground_product_rows: `5395`
+- cc_cable_product_rows: `3480`
+- cc_heli_product_rows: `446`
+- aggregate_cc_product_rows: `18642`
+- block_rows: `24879`
+- block_area_ha: `191168.566447`
+- block_crs: `EPSG:3005`
+- block_geometry_valid: `True`
+- topology_rows: `170759`
+- fragment_rows: `24879`
+- fragment_area_ha: `191168.566447`
+- split_treatment_nodes: `2442`
+- split_product_selects: `2442`
+- direct_launch_smoke: `not_performed`
+- scenario_smoke: `not_performed`
+
+## Split-Lane Track Evidence
+
+| Surface | Ground | Cable | Heli | Aggregate |
+| --- | ---: | ---: | ---: | ---: |
+| Treatments | `10790` | `6960` | `892` | `n/a` |
+| Products | `5395` | `3480` | `446` | `18642` |
+
+## Boundary
+
+- Direct launch smoke remains P14.7.
+- All-system and no-heli scenario smoke remain P14.7.
+- WFP LBB remains unavailable; this runtime uses public-proxy `HVSYS` lanes.

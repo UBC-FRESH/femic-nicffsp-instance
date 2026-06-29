@@ -39,3 +39,10 @@ data/*.feather
 data/*.pkl
 data/model_input_bundle/
 data/mp11_model_input_bundle/
+data/mp11_harvest_system_model_input_bundle/
+models/tfl6_patchworks_model_mp11_harvest_system_candidate/blocks/
+models/tfl6_patchworks_model_mp11_harvest_system_candidate/tracks/
+models/tfl6_patchworks_model_mp11_harvest_system_candidate/tracks_no_heli/
+models/tfl6_patchworks_model_mp11_harvest_system_candidate/patchworksLog.csv
+models/tfl6_patchworks_model_mp11_harvest_system_candidate/analysis/p*/
+models/tfl6_patchworks_model_mp11_harvest_system_candidate/analysis/headless_runs/

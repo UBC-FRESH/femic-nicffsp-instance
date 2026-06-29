@@ -1,0 +1,309 @@
+{
+  "summary": {
+    "generated_at_utc": "2026-06-29T07:31:40+00:00",
+    "qa_status": "materialized_runtime_smoke_pass",
+    "materialized_root_class": "temp_clean_checkout_runtime_p15_materialized_archive",
+    "log_dir_class": "temp_materialized_archive_log_dir",
+    "direct_launch_status": "pass",
+    "all_system_status": "pass",
+    "no_heli_status": "pass",
+    "all_system_schedule_rows": 76693,
+    "no_heli_schedule_rows": 75023,
+    "all_system_treatments": "CC_CABLE,CC_GROUND,CC_HELI",
+    "no_heli_treatments": "CC_CABLE,CC_GROUND",
+    "no_heli_forbidden_present": "none",
+    "replacement_candidate_decision": "pending_p15_7"
+  },
+  "runs": [
+    {
+      "name": "direct_launch",
+      "qa_status": "pass",
+      "run_id": "tfl6_mp11_harvest_system_p15_5_archive_launch0",
+      "stage_label": "p15_5_archive_launch0",
+      "stage_path_class": "temp_materialized_archive_stage",
+      "raw_returncode": 0,
+      "returncode": 0,
+      "terminal_state": "success",
+      "detected_marker": "[FEMIC headless] saveStage completed",
+      "iterations": 0,
+      "scenario_mode": "none",
+      "scenario_target": null,
+      "scenario_min_annual": null,
+      "stage_file_count": 3395,
+      "target_status_rows": 833,
+      "target_summary_rows": 25823,
+      "schedule_rows": 0,
+      "scheduled_treatments": [],
+      "treatment_counts": {},
+      "forbidden_treatments_present": [],
+      "target_status": {
+        "base": {
+          "target": "product.HarvestedVolume.managed.Total.CC",
+          "present": true,
+          "periods": 31,
+          "active": false,
+          "minactive": false,
+          "maxactive": false,
+          "linear": false
+        },
+        "flow": {
+          "target": "flow.even.product.HarvestedVolume.managed.Total.CC",
+          "present": true,
+          "periods": 31,
+          "active": false,
+          "minactive": false,
+          "maxactive": false,
+          "linear": false
+        }
+      },
+      "target_summary": {
+        "base": {
+          "target": "product.HarvestedVolume.managed.Total.CC",
+          "present": true,
+          "rows": 31,
+          "minimum_unique": [
+            0.0
+          ],
+          "minweight_unique": [
+            1.0
+          ],
+          "maxweight_unique": [
+            1.0
+          ],
+          "final_period_current": 0.0
+        },
+        "flow": {
+          "target": "flow.even.product.HarvestedVolume.managed.Total.CC",
+          "present": true,
+          "rows": 31,
+          "minimum_unique": [
+            0.0
+          ],
+          "minweight_unique": [
+            1.0
+          ],
+          "maxweight_unique": [
+            1.0
+          ],
+          "final_period_current": 0.0
+        }
+      },
+      "log_scan": {
+        "stdout": {
+          "path_class": "temp_materialized_archive_log",
+          "bytes": 256,
+          "error": 0,
+          "warning": 0,
+          "exception": 0,
+          "failed": 0
+        },
+        "stderr": {
+          "path_class": "temp_materialized_archive_log",
+          "bytes": 86,
+          "error": 0,
+          "warning": 0,
+          "exception": 0,
+          "failed": 0
+        }
+      }
+    },
+    {
+      "name": "all_system",
+      "qa_status": "pass",
+      "run_id": "tfl6_mp11_harvest_system_p15_5_archive_all_system_200k",
+      "stage_label": "p15_5_archive_all_system_200k",
+      "stage_path_class": "temp_materialized_archive_stage",
+      "raw_returncode": 0,
+      "returncode": 0,
+      "terminal_state": "success",
+      "detected_marker": "[FEMIC headless] saveStage completed",
+      "iterations": 200000,
+      "scenario_mode": "max-even-flow-smoke",
+      "scenario_target": "product.HarvestedVolume.managed.Total.CC",
+      "scenario_min_annual": 20000000.0,
+      "stage_file_count": 3395,
+      "target_status_rows": 833,
+      "target_summary_rows": 25823,
+      "schedule_rows": 76693,
+      "scheduled_treatments": [
+        "CC_CABLE",
+        "CC_GROUND",
+        "CC_HELI"
+      ],
+      "treatment_counts": {
+        "CC_CABLE": 30718,
+        "CC_GROUND": 43814,
+        "CC_HELI": 2161
+      },
+      "forbidden_treatments_present": [],
+      "target_status": {
+        "base": {
+          "target": "product.HarvestedVolume.managed.Total.CC",
+          "present": true,
+          "periods": 31,
+          "active": true,
+          "minactive": true,
+          "maxactive": false,
+          "linear": true
+        },
+        "flow": {
+          "target": "flow.even.product.HarvestedVolume.managed.Total.CC",
+          "present": true,
+          "periods": 31,
+          "active": true,
+          "minactive": true,
+          "maxactive": true,
+          "linear": false
+        }
+      },
+      "target_summary": {
+        "base": {
+          "target": "product.HarvestedVolume.managed.Total.CC",
+          "present": true,
+          "rows": 31,
+          "minimum_unique": [
+            20000000.0
+          ],
+          "minweight_unique": [
+            1.0
+          ],
+          "maxweight_unique": [
+            1.0
+          ],
+          "final_period_current": 14100793.0
+        },
+        "flow": {
+          "target": "flow.even.product.HarvestedVolume.managed.Total.CC",
+          "present": true,
+          "rows": 31,
+          "minimum_unique": [
+            0.0
+          ],
+          "minweight_unique": [
+            10000.0
+          ],
+          "maxweight_unique": [
+            10000.0
+          ],
+          "final_period_current": 0.0
+        }
+      },
+      "log_scan": {
+        "stdout": {
+          "path_class": "temp_materialized_archive_log",
+          "bytes": 256,
+          "error": 0,
+          "warning": 0,
+          "exception": 0,
+          "failed": 0
+        },
+        "stderr": {
+          "path_class": "temp_materialized_archive_log",
+          "bytes": 86,
+          "error": 0,
+          "warning": 0,
+          "exception": 0,
+          "failed": 0
+        }
+      }
+    },
+    {
+      "name": "no_heli",
+      "qa_status": "pass",
+      "run_id": "tfl6_mp11_harvest_system_p15_5_archive_no_heli_200k",
+      "stage_label": "p15_5_archive_no_heli_200k",
+      "stage_path_class": "temp_materialized_archive_stage",
+      "raw_returncode": 0,
+      "returncode": 0,
+      "terminal_state": "success",
+      "detected_marker": "[FEMIC headless] saveStage completed",
+      "iterations": 200000,
+      "scenario_mode": "max-even-flow-smoke",
+      "scenario_target": "product.HarvestedVolume.managed.Total.CC",
+      "scenario_min_annual": 20000000.0,
+      "stage_file_count": 3383,
+      "target_status_rows": 830,
+      "target_summary_rows": 25730,
+      "schedule_rows": 75023,
+      "scheduled_treatments": [
+        "CC_CABLE",
+        "CC_GROUND"
+      ],
+      "treatment_counts": {
+        "CC_CABLE": 30906,
+        "CC_GROUND": 44117
+      },
+      "forbidden_treatments_present": [],
+      "target_status": {
+        "base": {
+          "target": "product.HarvestedVolume.managed.Total.CC",
+          "present": true,
+          "periods": 31,
+          "active": true,
+          "minactive": true,
+          "maxactive": false,
+          "linear": true
+        },
+        "flow": {
+          "target": "flow.even.product.HarvestedVolume.managed.Total.CC",
+          "present": true,
+          "periods": 31,
+          "active": true,
+          "minactive": true,
+          "maxactive": true,
+          "linear": false
+        }
+      },
+      "target_summary": {
+        "base": {
+          "target": "product.HarvestedVolume.managed.Total.CC",
+          "present": true,
+          "rows": 31,
+          "minimum_unique": [
+            20000000.0
+          ],
+          "minweight_unique": [
+            1.0
+          ],
+          "maxweight_unique": [
+            1.0
+          ],
+          "final_period_current": 13826257.0
+        },
+        "flow": {
+          "target": "flow.even.product.HarvestedVolume.managed.Total.CC",
+          "present": true,
+          "rows": 31,
+          "minimum_unique": [
+            0.0
+          ],
+          "minweight_unique": [
+            10000.0
+          ],
+          "maxweight_unique": [
+            10000.0
+          ],
+          "final_period_current": 0.0
+        }
+      },
+      "log_scan": {
+        "stdout": {
+          "path_class": "temp_materialized_archive_log",
+          "bytes": 259,
+          "error": 0,
+          "warning": 0,
+          "exception": 0,
+          "failed": 0
+        },
+        "stderr": {
+          "path_class": "temp_materialized_archive_log",
+          "bytes": 86,
+          "error": 0,
+          "warning": 0,
+          "exception": 0,
+          "failed": 0
+        }
+      }
+    }
+  ]
+}

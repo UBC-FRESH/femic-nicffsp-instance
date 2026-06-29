@@ -1,0 +1,64 @@
+{
+  "generated_at_utc": "2026-06-29T06:19:30.321018+00:00",
+  "phase": "P14.3",
+  "status": "public_proxy_metrics_built",
+  "inputs": {
+    "stand_table": "data/mp11_model_input_bundle/stand_table.csv",
+    "aflb_geometry": "data/mp11_model_input_bundle/input_geometry/aflb_current.feather",
+    "p9d_slope_stats": "planning/tfl6_mp11_p9d_public_dem_slope_zonal_stats.csv",
+    "dra_roads": "data/source/tfl_6/roads/dra_roads_tfl6.gpkg",
+    "evidence_inventory": "planning/tfl6_mp11_phase14_harvest_system_evidence.json"
+  },
+  "outputs": {
+    "metrics_csv": "planning/tfl6_mp11_phase14_public_proxy_metrics.csv",
+    "summary_json": "planning/tfl6_mp11_phase14_public_proxy_metrics.json",
+    "summary_md": "planning/tfl6_mp11_phase14_public_proxy_metrics.md"
+  },
+  "summary": {
+    "row_count": 25019,
+    "managed_current_thlb_rows": 22614,
+    "managed_current_thlb_area_ha": 139995.7982662951,
+    "rows_with_age": 24862,
+    "rows_with_volume": 21541,
+    "rows_with_slope": 17395,
+    "rows_with_road_distance": 25019,
+    "rows_with_cw_fd_yc": 25019,
+    "managed_rows_with_all_core_metrics": 13864,
+    "heli_proxy_pass_rows": 3326,
+    "heli_proxy_pass_managed_area_ha": 12048.363112477113,
+    "high_steepness_context_rows": 438,
+    "high_steepness_context_managed_area_ha": 1365.620824812732,
+    "missing_field_counts": {
+      "none": 14263,
+      "slope": 7278,
+      "volume": 3094,
+      "volume;slope": 227,
+      "age;volume;slope": 119,
+      "age;volume": 38
+    },
+    "access_distance_proxy_bin_counts": {
+      "0_499_m": 18087,
+      "1000_plus_m": 4032,
+      "500_999_m": 2900
+    },
+    "heli_economic_metric_status_counts": {
+      "age_not_gt_80": 9693,
+      "tested_0_499_m": 7458,
+      "missing_volume": 3321,
+      "tested_1000_plus_m": 2492,
+      "tested_500_999_m": 1898,
+      "missing_age_volume": 157
+    }
+  },
+  "field_boundary": {
+    "slope": "P9D public CDED source-polygon slope stats; not WFP LiDAR slope.",
+    "access": "Nearest DRA road distance; not MP11 helicopter flight distance.",
+    "species": "Public VRI species percentages; not WFP ITI/LiDAR species inference.",
+    "volume": "Public VRI live stand volume proxy; not WFP ITI volume."
+  },
+  "non_goals": [
+    "No harvest-system classification is accepted in P14.3.",
+    "No model-input tables are generated in P14.3.",
+    "No ForestModel XML, Matrix Builder outputs, Patchworks runtime artifacts, or scenarios are generated."
+  ]
+}

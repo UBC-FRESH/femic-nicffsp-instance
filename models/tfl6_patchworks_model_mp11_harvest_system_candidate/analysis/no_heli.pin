@@ -1,0 +1,6 @@
+/*
+ * TFL 6 MP11 harvest-system candidate no-heli Patchworks PIN wrapper.
+ */
+
+String tracks_path_prefix = "../tracks_no_heli/";
+sourceRelative("base_variant_common.bsh");

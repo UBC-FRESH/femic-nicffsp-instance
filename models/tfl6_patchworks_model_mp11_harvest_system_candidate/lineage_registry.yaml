@@ -1,0 +1,85 @@
+schema_version: 1
+model_id: tfl6_patchworks_model_mp11_harvest_system_candidate
+model_root: models/tfl6_patchworks_model_mp11_harvest_system_candidate
+runtime_config: config/patchworks.runtime.mp11_harvest_system_candidate.windows.yaml
+phase: P14.6
+status: harvest_system_candidate_runtime_assembled_pending_smoke
+
+artifact_inventory:
+  data:
+    fragments_shapefile:
+      path: output/patchworks_tfl6_mp11_harvest_system_candidate/fragments/fragments.shp
+      qa_status: p14_5_split_lane_xml
+      evidence:
+        planning_note: planning/tfl6_mp11_phase14_model_input_xml_build_summary.md
+        rows: 24879
+        area_ha: 191168.566447
+        hvsys_field: HVSYS
+  yield:
+    forestmodel_xml:
+      path: output/patchworks_tfl6_mp11_harvest_system_candidate/forestmodel.xml
+      qa_status: p14_5_split_lane_xml
+      evidence:
+        xml_root: ForestModel
+        split_treatment_nodes: 2442
+        split_product_selects: 2442
+  tracks:
+    matrix_outputs:
+      path_glob: models/tfl6_patchworks_model_mp11_harvest_system_candidate/tracks/*.csv
+      qa_status: p14_6_matrix_builder_tracks_pass
+      evidence:
+        planning_note: planning/tfl6_mp11_phase14_matrix_runtime_qa.md
+        run_id: tfl6_mp11_harvest_system_p14_6_matrix_build
+        track_file_count: 13
+        features_rows: 93330
+        accounts_rows: 829
+        products_rows: 46605
+        treatments_rows: 18642
+        messages_rows: 0
+  blocks:
+    blocks_shapefile:
+      path: models/tfl6_patchworks_model_mp11_harvest_system_candidate/blocks/blocks.shp
+      qa_status: p14_6_runtime_blocks_pass
+      evidence:
+        rows: 24879
+        crs: EPSG:3005
+        geometry_valid: true
+        area_ha: 191168.566447
+    topology_csv:
+      path: models/tfl6_patchworks_model_mp11_harvest_system_candidate/blocks/topology_blocks_200r.csv
+      qa_status: p14_6_runtime_blocks_pass
+      evidence:
+        rows: 170759
+
+runtime_launch_surfaces:
+  baseline_pin:
+    path: models/tfl6_patchworks_model_mp11_harvest_system_candidate/analysis/base.pin
+    helper_scripts:
+      - models/tfl6_patchworks_model_mp11_harvest_system_candidate/analysis/base_variant_common.bsh
+      - models/tfl6_patchworks_model_mp11_harvest_system_candidate/analysis/headless_runtime_common.bsh
+      - models/tfl6_patchworks_model_mp11_harvest_system_candidate/scripts/targets/flowtargets.bsh
+    qa_status: p14_6_ready_for_launch_smoke
+
+publication_policy:
+  tracked_in_git:
+    - models/tfl6_patchworks_model_mp11_harvest_system_candidate/README.md
+    - models/tfl6_patchworks_model_mp11_harvest_system_candidate/lineage_registry.yaml
+    - models/tfl6_patchworks_model_mp11_harvest_system_candidate/analysis/base.pin
+    - models/tfl6_patchworks_model_mp11_harvest_system_candidate/analysis/base_variant_common.bsh
+    - models/tfl6_patchworks_model_mp11_harvest_system_candidate/analysis/headless_runtime_common.bsh
+    - models/tfl6_patchworks_model_mp11_harvest_system_candidate/scripts/targets/flowtargets.bsh
+  regenerated_by_default:
+    - data/mp11_harvest_system_model_input_bundle/
+    - output/patchworks_tfl6_mp11_harvest_system_candidate/
+    - models/tfl6_patchworks_model_mp11_harvest_system_candidate/tracks/
+    - models/tfl6_patchworks_model_mp11_harvest_system_candidate/blocks/
+    - models/tfl6_patchworks_model_mp11_harvest_system_candidate/patchworksLog.csv
+  excluded_from_publication_until_p14_closeout:
+    - models/tfl6_patchworks_model_mp11_harvest_system_candidate/analysis/p*/
+    - models/tfl6_patchworks_model_mp11_harvest_system_candidate/analysis/headless_runs/
+    - runtime/
+
+caveats:
+  - WFP LBB remains unavailable; HVSYS is a public proxy.
+  - Direct launch smoke and scenario smoke are downstream P14.7 work.
+  - This package does not replace the Phase 5 accepted public teaching/runtime baseline.
