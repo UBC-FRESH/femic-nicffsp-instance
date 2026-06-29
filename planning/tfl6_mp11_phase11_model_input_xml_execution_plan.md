@@ -120,6 +120,12 @@ readiness manifest reports `11` gates, `0` blocked hard gates, `2` deferred
 soft gates, `9` passing gates, and P11.3 unlock status
 `candidate_manifest_eligible`.
 
-The next bounded move is P11.3b: build the candidate table/schema manifest or a
-blocked stop report without writing model-input bundle tables or ForestModel
-XML outputs.
+P11.3b emitted
+`planning/tfl6_mp11_model_input_candidate_manifest.{csv,json,md}` from the
+P11.2 readiness and schema-bridge inputs. The manifest records `13` table
+roles: `12` are eligible for a later generated scaffold and `1` is deferred
+not eligible (`harvest_system_table`).
+
+The next bounded move is P11.3c: review the candidate manifest provenance and
+fallback policy for each table without writing model-input bundle tables or
+ForestModel XML outputs.

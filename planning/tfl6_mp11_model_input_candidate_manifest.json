@@ -1,0 +1,181 @@
+{
+  "schema_version": 1,
+  "phase": "P11.3b",
+  "generated_at_utc": "2026-06-29T03:42:58.705135+00:00",
+  "generator": "scripts/build_p11_mp11_candidate_manifest.py",
+  "readiness_json": "planning/tfl6_mp11_model_input_promotion_readiness.json",
+  "schema_bridge_csv": "planning/tfl6_mp11_p11_2_candidate_schema_bridge.csv",
+  "readiness_unlock_status": "candidate_manifest_eligible",
+  "blocked_hard_gate_count": 0,
+  "row_count": 13,
+  "generation_eligibility_counts": {
+    "deferred_not_eligible": 1,
+    "eligible_for_later_generated_scaffold": 12
+  },
+  "bridge_action_counts": {
+    "defer": 1,
+    "extend": 4,
+    "replace": 4,
+    "reuse": 4
+  },
+  "candidate_manifest_status": "candidate_manifest_ready",
+  "scope_boundary": "This manifest records candidate table roles only. It does not write model-input bundle tables, ForestModel XML, Matrix Builder outputs, or Patchworks runtime artifacts.",
+  "records": [
+    {
+      "table_role": "stand_table",
+      "bridge_action": "replace",
+      "p11_3_candidate_source": "P9RF resultant-fragment source/THLB candidate contract",
+      "source_artifacts": "planning/tfl6_mp11_p11_2_candidate_scaffold_decisions.md; planning/tfl6_mp11_p9rf_table12_resultant_vs_p9r_comparison.md",
+      "candidate_output_path": "data/mp11_model_input_bundle/stand_table.csv",
+      "required_caveat_fields": "p9rf_step_status; p9rf_current_thlb_delta_ha; sensitive_source_exclusion; deferred_public_source",
+      "fallback_or_exclusion_policy": "Use P9RF resultant-fragment source/THLB candidate only; preserve review-required and deferred step caveats.",
+      "downstream_status": "candidate_manifest_only",
+      "generation_eligibility": "eligible_for_later_generated_scaffold",
+      "candidate_output_policy": "manifest_only_until_p11_3_generation_decision"
+    },
+    {
+      "table_role": "au_table",
+      "bridge_action": "extend",
+      "p11_3_candidate_source": "Phase 5 AU scaffold plus accepted Phase 10R curve-handoff targets",
+      "source_artifacts": "planning/tfl6_mp11_p11_2_candidate_schema_bridge.md; planning/tfl6_mp11_phase10r_curve_rebuild_closeout.md",
+      "candidate_output_path": "data/mp11_model_input_bundle/au_table.csv",
+      "required_caveat_fields": "phase10r_curve_handoff_status; table54_55_exclusion",
+      "fallback_or_exclusion_policy": "Extend Phase 5 AU scaffold with accepted Phase 10R Table 57 curve-handoff targets; keep Tables 54/55 excluded.",
+      "downstream_status": "candidate_manifest_only",
+      "generation_eligibility": "eligible_for_later_generated_scaffold",
+      "candidate_output_policy": "manifest_only_until_p11_3_generation_decision"
+    },
+    {
+      "table_role": "curve_table",
+      "bridge_action": "replace",
+      "p11_3_candidate_source": "accepted 27 Phase 10R Table 57 managed curves plus retained natural curves",
+      "source_artifacts": "planning/tfl6_mp11_phase10r_curve_rebuild_closeout.md; planning/tfl6_mp11_managed_curve_comparison.md",
+      "candidate_output_path": "data/mp11_model_input_bundle/curve_table.csv",
+      "required_caveat_fields": "phase10r_curve_status; not_model_input_until_generated",
+      "fallback_or_exclusion_policy": "Use accepted 27 Phase 10R Table 57 managed curves and retained natural curves; exclude Tables 54/55.",
+      "downstream_status": "candidate_manifest_only",
+      "generation_eligibility": "eligible_for_later_generated_scaffold",
+      "candidate_output_policy": "manifest_only_until_p11_3_generation_decision"
+    },
+    {
+      "table_role": "curve_points_table",
+      "bridge_action": "replace",
+      "p11_3_candidate_source": "accepted Phase 10R managed curve points and retained natural curve points",
+      "source_artifacts": "planning/tfl6_mp11_managed_curves.json; planning/tfl6_mp11_natural_curve_diagnostics.json",
+      "candidate_output_path": "data/mp11_model_input_bundle/curve_points_table.csv",
+      "required_caveat_fields": "curve_source_family; phase10r_review_status",
+      "fallback_or_exclusion_policy": "Use accepted Phase 10R managed curve points and retained natural curve points when generation is later authorized.",
+      "downstream_status": "candidate_manifest_only",
+      "generation_eligibility": "eligible_for_later_generated_scaffold",
+      "candidate_output_policy": "manifest_only_until_p11_3_generation_decision"
+    },
+    {
+      "table_role": "stand_au_assignment",
+      "bridge_action": "extend",
+      "p11_3_candidate_source": "Phase 5 assignment scaffold plus MP11 candidate provenance fields",
+      "source_artifacts": "planning/tfl6_mp11_p11_2_candidate_schema_bridge.md; planning/tfl6_mp11_phase11_phase5_provenance_inventory.md",
+      "candidate_output_path": "data/mp11_model_input_bundle/stand_au_assignment.csv",
+      "required_caveat_fields": "phase5_assignment_source; mp11_candidate_provenance",
+      "fallback_or_exclusion_policy": "Extend Phase 5 assignment scaffold and add MP11 candidate provenance fields.",
+      "downstream_status": "candidate_manifest_only",
+      "generation_eligibility": "eligible_for_later_generated_scaffold",
+      "candidate_output_policy": "manifest_only_until_p11_3_generation_decision"
+    },
+    {
+      "table_role": "stand_origin_assignment",
+      "bridge_action": "reuse",
+      "p11_3_candidate_source": "Phase 5 origin scaffold until MP11 source review replaces it",
+      "source_artifacts": "planning/tfl6_mp11_phase11_phase5_provenance_inventory.md",
+      "candidate_output_path": "data/mp11_model_input_bundle/stand_origin_assignment.csv",
+      "required_caveat_fields": "origin_source; replacement_review_status",
+      "fallback_or_exclusion_policy": "Reuse Phase 5 origin scaffold until an MP11 source review replaces it.",
+      "downstream_status": "candidate_manifest_only",
+      "generation_eligibility": "eligible_for_later_generated_scaffold",
+      "candidate_output_policy": "manifest_only_until_p11_3_generation_decision"
+    },
+    {
+      "table_role": "treatment_table",
+      "bridge_action": "reuse",
+      "p11_3_candidate_source": "Phase 5 defaults with MP11 rule gaps marked deferred",
+      "source_artifacts": "planning/tfl6_mp11_p11_2_candidate_scaffold_decisions.md; planning/tfl6_mp11_operability_harvest_mha_scenario_contract.md",
+      "candidate_output_path": "data/mp11_model_input_bundle/treatment_table.csv",
+      "required_caveat_fields": "rule_status; mp11_rule_deferred_reason",
+      "fallback_or_exclusion_policy": "Reuse Phase 5 treatment defaults; MP11 MHA, harvest-system, and scenario rules remain deferred metadata.",
+      "downstream_status": "candidate_manifest_only",
+      "generation_eligibility": "eligible_for_later_generated_scaffold",
+      "candidate_output_policy": "manifest_only_until_p11_3_generation_decision"
+    },
+    {
+      "table_role": "transition_table",
+      "bridge_action": "reuse",
+      "p11_3_candidate_source": "Phase 5 defaults with MP11 transition gaps marked deferred",
+      "source_artifacts": "planning/tfl6_mp11_p11_2_candidate_scaffold_decisions.md; planning/tfl6_mp11_operability_harvest_mha_scenario_contract.md",
+      "candidate_output_path": "data/mp11_model_input_bundle/transition_table.csv",
+      "required_caveat_fields": "transition_source; mp11_transition_deferred_reason",
+      "fallback_or_exclusion_policy": "Reuse Phase 5 transition defaults until MP11 transitions are separately accepted.",
+      "downstream_status": "candidate_manifest_only",
+      "generation_eligibility": "eligible_for_later_generated_scaffold",
+      "candidate_output_policy": "manifest_only_until_p11_3_generation_decision"
+    },
+    {
+      "table_role": "harvest_system_table",
+      "bridge_action": "defer",
+      "p11_3_candidate_source": "no accepted MP11 stand-level harvest-system classifier yet",
+      "source_artifacts": "planning/tfl6_mp11_operability_harvest_mha_scenario_contract.md",
+      "candidate_output_path": "",
+      "required_caveat_fields": "harvest_system_status; unavailable_or_proxy_basis",
+      "fallback_or_exclusion_policy": "Do not generate stand-level harvest-system assignments; aggregate MP11 percentages remain comparison targets only.",
+      "downstream_status": "deferred_not_model_input",
+      "generation_eligibility": "deferred_not_eligible",
+      "candidate_output_policy": "not_eligible_for_generation"
+    },
+    {
+      "table_role": "group_table",
+      "bridge_action": "extend",
+      "p11_3_candidate_source": "Phase 5 reporting scaffold plus P9RF/MP11 candidate caveat groups",
+      "source_artifacts": "planning/tfl6_mp11_p11_2_candidate_scaffold_decisions.md; planning/tfl6_mp11_kpi_qa_reporting_contract.md",
+      "candidate_output_path": "data/mp11_model_input_bundle/group_table.csv",
+      "required_caveat_fields": "group_source; p9rf_caveat_group; kpi_role",
+      "fallback_or_exclusion_policy": "Extend Phase 5 reporting groups with candidate caveat groups; runtime-only KPI reports defer to later phases.",
+      "downstream_status": "candidate_manifest_only",
+      "generation_eligibility": "eligible_for_later_generated_scaffold",
+      "candidate_output_policy": "manifest_only_until_p11_3_generation_decision"
+    },
+    {
+      "table_role": "cedar_signal_table",
+      "bridge_action": "extend",
+      "p11_3_candidate_source": "Phase 5 cedar-reporting scaffold plus MP11 comparison/provenance fields",
+      "source_artifacts": "planning/tfl6_mp11_kpi_qa_reporting_contract.md; planning/tfl6_mp11_baseline_and_promotion_contract.md",
+      "candidate_output_path": "data/mp11_model_input_bundle/cedar_signal_table.csv",
+      "required_caveat_fields": "cedar_signal_source; figure_evidence_status",
+      "fallback_or_exclusion_policy": "Extend Phase 5 cedar-reporting scaffold with comparison/provenance fields only; planning-only figures stay out of model inputs.",
+      "downstream_status": "candidate_manifest_only",
+      "generation_eligibility": "eligible_for_later_generated_scaffold",
+      "candidate_output_policy": "manifest_only_until_p11_3_generation_decision"
+    },
+    {
+      "table_role": "embedded_identity_table",
+      "bridge_action": "reuse",
+      "p11_3_candidate_source": "preserve Phase 5 embedded identity scaffold",
+      "source_artifacts": "planning/tfl6_mp11_phase11_phase5_provenance_inventory.md",
+      "candidate_output_path": "data/mp11_model_input_bundle/embedded_identity_table.csv",
+      "required_caveat_fields": "identity_source; preservation_status",
+      "fallback_or_exclusion_policy": "Reuse Phase 5 embedded identity scaffold.",
+      "downstream_status": "candidate_manifest_only",
+      "generation_eligibility": "eligible_for_later_generated_scaffold",
+      "candidate_output_policy": "manifest_only_until_p11_3_generation_decision"
+    },
+    {
+      "table_role": "export_compat_bridge",
+      "bridge_action": "replace",
+      "p11_3_candidate_source": "new MP11 candidate bridge if P11.3 later emits generated tables",
+      "source_artifacts": "planning/tfl6_mp11_p11_2_candidate_schema_bridge.md; planning/tfl6_mp11_phase11_artifact_layout.md",
+      "candidate_output_path": "data/mp11_model_input_bundle/export_compat/bridge_manifest.json",
+      "required_caveat_fields": "bridge_action; phase5_baseline_protection",
+      "fallback_or_exclusion_policy": "Replace Phase 5 export bridge only if P11.3 later authorizes generated candidate tables.",
+      "downstream_status": "candidate_manifest_only",
+      "generation_eligibility": "eligible_for_later_generated_scaffold",
+      "candidate_output_policy": "manifest_only_until_p11_3_generation_decision"
+    }
+  ]
+}

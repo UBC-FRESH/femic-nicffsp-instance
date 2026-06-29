@@ -1,5 +1,20 @@
 # Change Log
 
+## 2026-06-28 - Built Phase 11 candidate model-input manifest
+
+- added `scripts/build_p11_mp11_candidate_manifest.py` to consume the P11.2
+  promotion-readiness output and candidate schema bridge;
+- emitted `planning/tfl6_mp11_model_input_candidate_manifest.{csv,json,md}`
+  with `13` candidate table roles, including `12` roles eligible for a later
+  generated scaffold and `1` deferred role (`harvest_system_table`);
+- recorded bridge action, source artifacts, planned candidate output path,
+  required caveat fields, fallback/exclusion policy, downstream status, and
+  generation eligibility for each role;
+- marked P11.3b complete in `ROADMAP.md` and moved the next bounded step to
+  P11.3c provenance/fallback review; and
+- generated no model-input tables, ForestModel XML, Matrix Builder outputs, or
+  Patchworks runtime artifacts.
+
 ## 2026-06-28 - Consumed Phase 11 readiness manifest for P11.3
 
 - added `planning/tfl6_mp11_p11_3_readiness_consumption.{json,md}` to record
