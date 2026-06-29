@@ -6,7 +6,7 @@ P11.5 does not run Matrix Builder, assemble a Patchworks runtime, run scenario s
 
 ## Summary
 
-- generated_at_utc: `2026-06-29T04:04:32+00:00`
+- generated_at_utc: `2026-06-29T04:08:38+00:00`
 - handoff_status: `phase12_runtime_handoff_ready`
 - candidate_bundle_root: `data/mp11_model_input_bundle`
 - active_mp11_curve_count: `18`

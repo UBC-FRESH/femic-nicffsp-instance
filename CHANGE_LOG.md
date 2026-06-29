@@ -3582,3 +3582,19 @@
   QA pass; and
 - marked P11.1c complete in `ROADMAP.md`, leaving P11.1d promotion gates and
   stop conditions as the next bounded move.
+
+## 2026-06-28 - Closed Phase 11 model-input/XML handoff
+
+- added `scripts/build_p11_mp11_phase11_closeout.py` and
+  `planning/tfl6_mp11_phase11_closeout.{csv,json,md}` as the final P11.6
+  closeout surface;
+- verified that Phase 11 built the MP11 candidate model-input bundle, export
+  bridge, ForestModel XML, and fragments under the ignored candidate roots;
+- recorded the candidate XML handoff to Phase 12 with XML root `ForestModel`,
+  `13,197` curve nodes, `24,879` fragment rows, and `191,168.566447 ha`
+  fragment area;
+- preserved the accepted Phase 5 teaching/runtime baseline and confirmed
+  Matrix Builder tracks, runtime blocks, and scenario-smoke roots were not
+  created in Phase 11; and
+- marked P11.6 and Phase 11 complete in `ROADMAP.md`, leaving P12.1/P12.2 as
+  the next runtime-build step.

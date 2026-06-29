@@ -1,0 +1,8 @@
+closeout_item,status,path,phase11_result,next_owner
+candidate_model_input_bundle,built,data/mp11_model_input_bundle/,Generated candidate scaffold and export bridge.,P12.1-P12.2
+candidate_forestmodel_xml,built,output/patchworks_tfl6_mp11_candidate/forestmodel.xml,Generated candidate ForestModel XML for Matrix Builder input.,P12.2
+candidate_fragments,built,output/patchworks_tfl6_mp11_candidate/fragments/fragments.shp,Generated candidate fragments alongside XML.,P12.2
+phase5_baseline,preserved,data/model_input_bundle/ and output/patchworks_tfl6_validated/,Accepted teaching/runtime baseline was not overwritten.,Phase 13 release decision
+matrix_builder_tracks,not_performed,models/tfl6_patchworks_model_mp11_candidate/tracks/,Deliberately left for the runtime-build phase.,P12.2
+runtime_bundle,not_performed,models/tfl6_patchworks_model_mp11_candidate/,Patchworks runtime assembly is not a Phase 11 output.,P12.3
+scenario_smoke,not_performed,models/tfl6_patchworks_model_mp11_candidate/analysis/,Direct launch and scenario smoke wait for runtime assembly.,P12.4-P12.5

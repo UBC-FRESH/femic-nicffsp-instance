@@ -771,12 +771,12 @@ public CDED steep-slope proxy in the P9RF THLB surface.
 - [x] P11.5 Define Phase 12 runtime handoff or blocker package (`#90`).
   - [x] P11.5a Build Phase 12 handoff or blocker summary.
   - [x] P11.5b Post/update Phase 12 issue handoff.
-- [ ] P11.6 Close Phase 11 and hand off model-input/XML status (`#91`).
-  - [ ] P11.6a Audit Phase 11 artifacts and generated-output hygiene.
-  - [ ] P11.6b Write Phase 11 closeout and Phase 12/13 handoff note.
-  - [ ] P11.6c Run final validation and model-input/XML checks.
-  - [ ] P11.6d Open and merge Phase 11 PR.
-  - [ ] P11.6e Close parent and child issues with final links.
+- [x] P11.6 Close Phase 11 and hand off model-input/XML status (`#91`).
+  - [x] P11.6a Audit Phase 11 artifacts and generated-output hygiene.
+  - [x] P11.6b Write Phase 11 closeout and Phase 12/13 handoff note.
+  - [x] P11.6c Run final validation and model-input/XML checks.
+  - [x] P11.6d Open and merge Phase 11 PR.
+  - [x] P11.6e Close parent and child issues with final links.
 
 ## Phase 12: MP11 Patchworks Runtime And Scenario Smoke (`#69`)
 
@@ -972,6 +972,15 @@ The Phase 1 follow-on issues are placed into the future roadmap as follows:
    candidate-scaffold caveats, and keeps Matrix Builder, runtime assembly,
    scenario smoke, and release QA marked `not_performed`. The next bounded move
    is P11.6: close Phase 11 and hand off model-input/XML status.
+   P11.6 is complete: `scripts/build_p11_mp11_phase11_closeout.py` emits
+   `planning/tfl6_mp11_phase11_closeout.{csv,json,md}` with status
+   `complete_model_input_xml_handoff`. Phase 11 built
+   `data/mp11_model_input_bundle/`,
+   `output/patchworks_tfl6_mp11_candidate/forestmodel.xml`, and
+   `output/patchworks_tfl6_mp11_candidate/fragments/fragments.shp`, preserved
+   the Phase 5 teaching/runtime baseline, and left Matrix Builder/runtime
+   outputs uncreated. The next bounded move is P12.1/P12.2: launch the runtime
+   build issues and run Matrix Builder from the candidate XML/fragments.
 0. Phase 9D and Phase 9E are complete. Step 210 now applies the public TSM
    strict Class V proxy, deducting `1.425 ha` against the MP11 Step 210 target
    `1,993.000 ha`; this is an explicit public-source coverage/semantic gap, not
