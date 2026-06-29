@@ -1,0 +1,14 @@
+table_role,bridge_action,p11_3_candidate_source,candidate_output_policy
+stand_table,replace,P9RF resultant-fragment source/THLB candidate contract,manifest_only_until_p11_3_generation_decision
+au_table,extend,Phase 5 AU scaffold plus accepted Phase 10R curve-handoff targets,manifest_only_until_p11_3_generation_decision
+curve_table,replace,accepted 27 Phase 10R Table 57 managed curves plus retained natural curves,manifest_only_until_p11_3_generation_decision
+curve_points_table,replace,accepted Phase 10R managed curve points and retained natural curve points,manifest_only_until_p11_3_generation_decision
+stand_au_assignment,extend,Phase 5 assignment scaffold plus MP11 candidate provenance fields,manifest_only_until_p11_3_generation_decision
+stand_origin_assignment,reuse,Phase 5 origin scaffold until MP11 source review replaces it,manifest_only_until_p11_3_generation_decision
+treatment_table,reuse,Phase 5 defaults with MP11 rule gaps marked deferred,manifest_only_until_p11_3_generation_decision
+transition_table,reuse,Phase 5 defaults with MP11 transition gaps marked deferred,manifest_only_until_p11_3_generation_decision
+harvest_system_table,defer,no accepted MP11 stand-level harvest-system classifier yet,not_eligible_for_generation
+group_table,extend,Phase 5 reporting scaffold plus P9RF/MP11 candidate caveat groups,manifest_only_until_p11_3_generation_decision
+cedar_signal_table,extend,Phase 5 cedar-reporting scaffold plus MP11 comparison/provenance fields,manifest_only_until_p11_3_generation_decision
+embedded_identity_table,reuse,preserve Phase 5 embedded identity scaffold,manifest_only_until_p11_3_generation_decision
+export_compat_bridge,replace,new MP11 candidate bridge if P11.3 later emits generated tables,manifest_only_until_p11_3_generation_decision

@@ -1,0 +1,8 @@
+handoff_item,path,phase12_owner,status,caveat
+matrix_builder_input_xml,output/patchworks_tfl6_mp11_candidate/forestmodel.xml,P12.2,ready_for_matrix_builder_candidate,Candidate scaffold XML; not final MP11 release truth.
+matrix_builder_fragments,output/patchworks_tfl6_mp11_candidate/fragments/fragments.shp,P12.2,ready_for_matrix_builder_candidate,Fragments inherit Phase 5 stand universe and P9RF/source caveats.
+candidate_bundle,data/mp11_model_input_bundle/,P12.1,generated_candidate_scaffold,Generated and ignored; tracked summaries carry compact provenance.
+candidate_export_bridge,data/mp11_model_input_bundle/export_compat/,P12.2,ready_for_exporter_runtime_bridge,Bridge is deterministic numeric compatibility surface for FEMIC exporter.
+matrix_builder_tracks_root,models/tfl6_patchworks_model_mp11_candidate/tracks/,P12.2,not_started_phase12,Do not create until Matrix Builder runs in Phase 12.
+runtime_package_root,models/tfl6_patchworks_model_mp11_candidate/,P12.3,not_started_phase12,"Runtime assembly, launch surfaces, and topology are Phase 12 work."
+scenario_smoke,models/tfl6_patchworks_model_mp11_candidate/analysis/,P12.4-P12.5,not_started_phase12,Direct launch and scenario smoke must follow Matrix Builder/runtime assembly.

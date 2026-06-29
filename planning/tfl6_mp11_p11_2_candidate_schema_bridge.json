@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "phase": "P11.2",
+  "purpose": "Define MP11 candidate schema-bridge table roles before P11.3 candidate manifest work.",
+  "status": "candidate_schema_bridge_defined_no_generation",
+  "bridge_actions": [
+    "reuse",
+    "replace",
+    "extend",
+    "defer"
+  ],
+  "candidate_manifest": "planning/tfl6_mp11_model_input_candidate_manifest.{csv,json,md}",
+  "phase5_baseline_rule": "Accepted Phase 5 paths must not be overwritten.",
+  "candidate_output_policy": "P11.3 may build a candidate manifest first; generated model-input tables require a later explicit P11.3 generation decision.",
+  "table_role_count": 13,
+  "deferred_roles": [
+    "harvest_system_table"
+  ],
+  "non_goals": [
+    "no model-input table generation",
+    "no ForestModel XML generation",
+    "no Matrix Builder run",
+    "no Patchworks runtime run",
+    "no Phase 5 baseline overwrite"
+  ]
+}

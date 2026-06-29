@@ -1,0 +1,192 @@
+{
+  "summary": {
+    "generated_at_utc": "2026-06-29T03:59:16+00:00",
+    "candidate_bundle_root": "data/mp11_model_input_bundle",
+    "active_mp11_curve_count": 18,
+    "accepted_phase10r_curve_rows": 27,
+    "duplicate_mp11_rows_deferred_by_canonical_au": 9,
+    "active_mp11_curve_point_rows": 648,
+    "affected_stand_rows": 8957,
+    "affected_au_rows": 83,
+    "export_compat_curve_rows": 172,
+    "export_compat_curve_point_rows": 30651,
+    "model_input_generation": "performed_candidate_scaffold",
+    "xml_generation": "not_performed",
+    "matrix_builder": "not_performed",
+    "runtime_bundle_generation": "not_performed"
+  },
+  "selected_curves": [
+    {
+      "mp11_feature_id": 611173,
+      "canonical_au_id": "cwhvh1_cw_hw_h",
+      "candidate_curve_id": "mp11_table57_future_managed_cwhvh1_cw_hw_h",
+      "mp11_thlb_area_ha": 2751,
+      "review_status": "accepted_for_phase11_curve_handoff"
+    },
+    {
+      "mp11_feature_id": 611153,
+      "canonical_au_id": "cwhvh1_cw_hw_l",
+      "candidate_curve_id": "mp11_table57_future_managed_cwhvh1_cw_hw_l",
+      "mp11_thlb_area_ha": 294,
+      "review_status": "accepted_for_phase11_curve_handoff"
+    },
+    {
+      "mp11_feature_id": 611143,
+      "canonical_au_id": "cwhvh1_cw_hw_m",
+      "candidate_curve_id": "mp11_table57_future_managed_cwhvh1_cw_hw_m",
+      "mp11_thlb_area_ha": 1604,
+      "review_status": "accepted_for_phase11_curve_handoff"
+    },
+    {
+      "mp11_feature_id": 611183,
+      "canonical_au_id": "cwhvh1_hw_ba_h",
+      "candidate_curve_id": "mp11_table57_future_managed_cwhvh1_hw_ba_h",
+      "mp11_thlb_area_ha": 781,
+      "review_status": "accepted_for_phase11_curve_handoff"
+    },
+    {
+      "mp11_feature_id": 611193,
+      "canonical_au_id": "cwhvh1_hw_cw_h",
+      "candidate_curve_id": "mp11_table57_future_managed_cwhvh1_hw_cw_h",
+      "mp11_thlb_area_ha": 57,
+      "review_status": "accepted_for_phase11_curve_handoff"
+    },
+    {
+      "mp11_feature_id": 611163,
+      "canonical_au_id": "cwhvh1_hw_ss_m",
+      "candidate_curve_id": "mp11_table57_future_managed_cwhvh1_hw_ss_m",
+      "mp11_thlb_area_ha": 3871,
+      "review_status": "accepted_for_phase11_curve_handoff"
+    },
+    {
+      "mp11_feature_id": 611243,
+      "canonical_au_id": "cwhvm1_ba_hw_m",
+      "candidate_curve_id": "mp11_table57_future_managed_cwhvm1_ba_hw_m",
+      "mp11_thlb_area_ha": 298,
+      "review_status": "accepted_for_phase11_curve_handoff"
+    },
+    {
+      "mp11_feature_id": 611343,
+      "canonical_au_id": "cwhvm1_cw_hw_h",
+      "candidate_curve_id": "mp11_table57_future_managed_cwhvm1_cw_hw_h",
+      "mp11_thlb_area_ha": 14134,
+      "review_status": "accepted_for_phase11_curve_handoff"
+    },
+    {
+      "mp11_feature_id": 611333,
+      "canonical_au_id": "cwhvm1_cw_hw_m",
+      "candidate_curve_id": "mp11_table57_future_managed_cwhvm1_cw_hw_m",
+      "mp11_thlb_area_ha": 49,
+      "review_status": "accepted_for_phase11_curve_handoff"
+    },
+    {
+      "mp11_feature_id": 611353,
+      "canonical_au_id": "cwhvm1_hw_cw_l",
+      "candidate_curve_id": "mp11_table57_future_managed_cwhvm1_hw_cw_l",
+      "mp11_thlb_area_ha": 890,
+      "review_status": "accepted_for_phase11_curve_handoff"
+    },
+    {
+      "mp11_feature_id": 611213,
+      "canonical_au_id": "cwhvm1_hw_cw_m",
+      "candidate_curve_id": "mp11_table57_future_managed_cwhvm1_hw_cw_m",
+      "mp11_thlb_area_ha": 62618,
+      "review_status": "accepted_for_phase11_curve_handoff"
+    },
+    {
+      "mp11_feature_id": 611283,
+      "canonical_au_id": "cwhvm1_hw_dr_h",
+      "candidate_curve_id": "mp11_table57_future_managed_cwhvm1_hw_dr_h",
+      "mp11_thlb_area_ha": 1298,
+      "review_status": "accepted_for_phase11_curve_handoff"
+    },
+    {
+      "mp11_feature_id": 611323,
+      "canonical_au_id": "cwhvm1_hw_dr_l",
+      "candidate_curve_id": "mp11_table57_future_managed_cwhvm1_hw_dr_l",
+      "mp11_thlb_area_ha": 75,
+      "review_status": "accepted_for_phase11_curve_handoff"
+    },
+    {
+      "mp11_feature_id": 611293,
+      "canonical_au_id": "cwhvm1_hw_ss_l",
+      "candidate_curve_id": "mp11_table57_future_managed_cwhvm1_hw_ss_l",
+      "mp11_thlb_area_ha": 388,
+      "review_status": "accepted_for_phase11_curve_handoff"
+    },
+    {
+      "mp11_feature_id": 611253,
+      "canonical_au_id": "cwhvm1_hw_ss_m",
+      "candidate_curve_id": "mp11_table57_future_managed_cwhvm1_hw_ss_m",
+      "mp11_thlb_area_ha": 10206,
+      "review_status": "accepted_for_phase11_curve_handoff"
+    },
+    {
+      "mp11_feature_id": 611403,
+      "canonical_au_id": "cwhvm2_hw_ba_l",
+      "candidate_curve_id": "mp11_table57_future_managed_cwhvm2_hw_ba_l",
+      "mp11_thlb_area_ha": 939,
+      "review_status": "accepted_for_phase11_curve_handoff"
+    },
+    {
+      "mp11_feature_id": 611383,
+      "canonical_au_id": "cwhvm2_hw_cw_h",
+      "candidate_curve_id": "mp11_table57_future_managed_cwhvm2_hw_cw_h",
+      "mp11_thlb_area_ha": 192,
+      "review_status": "accepted_for_phase11_curve_handoff"
+    },
+    {
+      "mp11_feature_id": 611233,
+      "canonical_au_id": "cwhvm2_yc_hw_h",
+      "candidate_curve_id": "mp11_table57_future_managed_cwhvm2_yc_hw_h",
+      "mp11_thlb_area_ha": 3659,
+      "review_status": "accepted_for_phase11_curve_handoff"
+    }
+  ],
+  "bridge_manifest": {
+    "generated_for": "P11.4c MP11 candidate ForestModel exporter compatibility bridge",
+    "compat_dir": "data/mp11_model_input_bundle/export_compat",
+    "au_rows": 407,
+    "curve_rows": 172,
+    "curve_point_rows": 30651,
+    "checkpoint_rows": 25019,
+    "au_id_start": 6000001,
+    "curve_id_start": 610000001,
+    "missing_checkpoint_au_rows": 0,
+    "missing_unmanaged_curve_rows": 0,
+    "missing_managed_curve_rows": 0,
+    "managed_share_min": 0.0,
+    "managed_share_max": 0.8450613814688143,
+    "age_zero_rows": 79
+  },
+  "record_counts": {
+    "au_table.csv": 407,
+    "curve_table.csv": 525,
+    "curve_points_table.csv": 91488,
+    "stand_table.csv": 25019,
+    "stand_au_assignment.csv": 25019,
+    "stand_origin_assignment.csv": 25019,
+    "treatment_table.csv": 4,
+    "transition_table.csv": 5,
+    "group_table.csv": 125095,
+    "cedar_signal_table.csv": 25019,
+    "embedded_identity_table.csv": 25019,
+    "export_compat/au_table.csv": 407,
+    "export_compat/curve_table.csv": 172,
+    "export_compat/curve_points_table.csv": 30651,
+    "export_compat/id_crosswalk.csv": 579
+  },
+  "checksums_sha256": {
+    "au_table.csv": "d6636d44360fe04b47447f72e02d28235a0cf957343b171da07c2213466cbe1c",
+    "curve_table.csv": "16eafa0e4ffa487e4d21f29c0157de1408eb9036725bd64ab673c4a661c3bb0d",
+    "curve_points_table.csv": "7cdc9d246895c696996ff5e44d6485e8cf868747880e39903c779b90ead339a1",
+    "stand_table.csv": "3dc7e998e86180b64f8d64bd68aa891407268e024f30055d7159ed710a764b13",
+    "stand_au_assignment.csv": "e27ce4bfc87e82fa8927d31f25d5ac2f755ad866231f5ec1f244b1f4f81cabb4",
+    "stand_origin_assignment.csv": "b8943114789a8e628398076af0c59fb525596de01ca070537e083f21b7a4a5d5",
+    "export_compat/au_table.csv": "a227ab4d7bb68bc8fe00a473009f5c0655bf0971a9eccbd7cb9a65b9edac43bf",
+    "export_compat/curve_table.csv": "de90b00ea48725416312856580c35c7f18ec0ed5aa4e41af8c6588e48d1c804b",
+    "export_compat/curve_points_table.csv": "96ab39964719a06067c6e665eec9178b7b395cf9b15bd73c81eb6bbbb5c14de3",
+    "export_compat/bridge_manifest.json": "c8b8e4209138505e9c69769a3097aa37eb3b374ab4e3250507da674b7fce3714",
+    "export_compat/aflb_current_export_compat.feather": "a5c2cb299613c26117651376ca35da30b371d2558a7376ba5fbbc53a5ae471ae"
+  }
+}

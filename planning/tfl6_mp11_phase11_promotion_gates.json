@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "phase": "P11.1d",
+  "branch": "feature/p11-model-input-xml-rebuild-plan",
+  "purpose": "Define Phase 11 promotion gates and stop conditions before P11.2 readiness audit.",
+  "status": "promotion_gates_defined_no_generation",
+  "readiness_output": "planning/tfl6_mp11_model_input_promotion_readiness.{csv,json,md}",
+  "hard_gates": [
+    "p11_gate_01_baseline_protection",
+    "p11_gate_02_source_thlb",
+    "p11_gate_03_curve_handoff",
+    "p11_gate_04_deferred_tables_54_55",
+    "p11_gate_05_figure_evidence",
+    "p11_gate_06_rule_contracts",
+    "p11_gate_07_schema_bridge",
+    "p11_gate_08_private_data"
+  ],
+  "soft_gates": [
+    "p11_gate_09_kpi_reporting",
+    "p11_gate_10_xml_readiness",
+    "p11_gate_11_runtime_boundary"
+  ],
+  "p11_3_unlock_rule": "P11.3 may start only after all hard gates pass and soft-gate deferrals are recorded as non-blocking.",
+  "stop_report_rule": "If any hard gate is blocked, P11.2 must write a stop report and keep P11.3 model-input generation blocked.",
+  "non_goals": [
+    "no model-input bundle generation",
+    "no ForestModel XML generation",
+    "no Matrix Builder run",
+    "no Patchworks runtime run",
+    "no promotion of figure-derived values without accepted model-contract status",
+    "no overwrite of accepted Phase 5 baseline paths"
+  ],
+  "next_step": "P11.2 build promotion-readiness audit generator and emit readiness manifest"
+}

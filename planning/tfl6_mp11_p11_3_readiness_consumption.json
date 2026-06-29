@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "phase": "P11.3a",
+  "status": "readiness_consumed_candidate_manifest_eligible",
+  "consumed_inputs": [
+    "planning/tfl6_mp11_model_input_promotion_readiness.{csv,json,md}",
+    "planning/tfl6_mp11_p11_2_candidate_scaffold_decisions.md",
+    "planning/tfl6_mp11_p11_2_candidate_schema_bridge.{csv,json,md}",
+    "planning/tfl6_mp11_phase11_artifact_layout.{csv,json,md}"
+  ],
+  "readiness_summary": {
+    "gate_count": 11,
+    "blocked_hard_gate_count": 0,
+    "passing_gate_count": 9,
+    "deferred_soft_gate_count": 2,
+    "missing_source_artifact_count": 0,
+    "p11_3_unlock_status": "candidate_manifest_eligible"
+  },
+  "candidate_manifest": "planning/tfl6_mp11_model_input_candidate_manifest.{csv,json,md}",
+  "p11_3b_decision": "build candidate table/schema manifest or blocked stop report",
+  "non_goals": [
+    "no generated model-input tables",
+    "no ForestModel XML or fragments",
+    "no Matrix Builder outputs",
+    "no Patchworks runtime package",
+    "no release archive work",
+    "no replacement of Phase 5 baseline"
+  ],
+  "next_step": "P11.3b build candidate table/schema manifest or blocked stop report"
+}

@@ -1,5 +1,188 @@
 # Change Log
 
+## 2026-06-29 - Packaged Phase 12 runtime handoff
+
+- added `scripts/build_p11_mp11_phase12_runtime_handoff.py` to verify generated
+  candidate bundle/XML inputs and emit a Phase 12 runtime handoff package;
+- emitted `planning/tfl6_mp11_phase12_runtime_handoff.{csv,json,md}` with
+  handoff status `phase12_runtime_handoff_ready`;
+- pointed Phase 12 Matrix Builder work at
+  `output/patchworks_tfl6_mp11_candidate/forestmodel.xml` and
+  `output/patchworks_tfl6_mp11_candidate/fragments/fragments.shp`;
+- recorded generated candidate bundle/export bridge inputs, candidate-scaffold
+  caveats, and the required Phase 12 sequence; and
+- left Matrix Builder, runtime assembly, scenario smoke, and release QA as
+  downstream work.
+
+## 2026-06-29 - Corrected Phase 11 build path and generated MP11 candidate XML
+
+- reopened P11.4 issue `#89` after the initial XML readiness stop report proved
+  a missing generated-input surface rather than an acceptable endpoint;
+- added `scripts/build_p11_mp11_candidate_bundle.py` and generated the ignored
+  MP11 candidate model-input scaffold under `data/mp11_model_input_bundle/`;
+- emitted `planning/tfl6_mp11_candidate_bundle_build_summary.{csv,json,md}`
+  recording `18` active accepted Phase 10R MP11 Table 57 managed curves,
+  `648` active MP11 curve-point rows, `8,957` affected stand rows, and `9`
+  duplicate MP11 rows deferred by canonical AU identity;
+- regenerated the MP11 export compatibility bridge with `172` curve rows and
+  `30,651` curve-point rows, then reran XML readiness to `7` ready component
+  families, `0` blocked, and `1` non-blocking deferred harvest-system family;
+- generated candidate ForestModel XML and fragments under
+  `output/patchworks_tfl6_mp11_candidate/`;
+- added `scripts/build_p11_mp11_xml_generation_qa.py` and emitted
+  `planning/tfl6_mp11_forestmodel_xml_generation_qa.{csv,json,md}`, confirming
+  XML root `ForestModel`, `13,197` curve nodes, `2,442` select nodes, `814`
+  treatment nodes, `24,879` fragment rows, and `191,168.566447 ha` fragment
+  area; and
+- left Matrix Builder, Patchworks runtime assembly, scenario smoke, and release
+  QA for downstream Phase 12 work.
+
+## 2026-06-29 - Built Phase 11 XML readiness stop report
+
+- added `scripts/build_p11_mp11_xml_readiness.py` to consume the P11.4a XML
+  provenance audit and P11.3 candidate manifest;
+- emitted `planning/tfl6_mp11_forestmodel_xml_readiness.{csv,json,md}` as a
+  stop report with `8` XML/component families evaluated, `0` ready families,
+  `7` families blocked on missing MP11 candidate bundle/export-bridge outputs,
+  and `1` non-blocking deferred harvest-system family;
+- marked P11.4 complete through the stop-report branch in `ROADMAP.md`, with
+  P11.4c generation blocked by `blocked_missing_candidate_outputs`;
+- recorded that running the exporter against the protected Phase 5 bundle would
+  produce Phase 5 XML under a new path, not an MP11 candidate XML package; and
+- generated no model-input tables, ForestModel XML, Matrix Builder outputs, or
+  Patchworks runtime artifacts.
+
+## 2026-06-29 - Audited Phase 11 ForestModel XML provenance
+
+- added `scripts/build_p11_mp11_xml_provenance_audit.py` to verify the Phase 5
+  ForestModel XML/fragments, required bridge/blocker notes, and P11.3
+  candidate-provenance review before XML readiness work;
+- emitted `planning/tfl6_mp11_phase11_xml_provenance_audit.{csv,json,md}` with
+  `8` XML/component families, including `7` P11.4b-required readiness families
+  and `1` non-blocking deferred harvest-system family;
+- recorded the protected Phase 5 baseline XML hash, root metadata, fragment
+  sidecar evidence, and component-level P11.4b checks;
+- marked P11.4a complete in `ROADMAP.md` and moved the next bounded step to
+  P11.4b XML readiness manifest or stop report; and
+- generated no model-input tables, ForestModel XML, Matrix Builder outputs, or
+  Patchworks runtime artifacts.
+
+## 2026-06-29 - Reviewed Phase 11 candidate provenance and fallback policy
+
+- added `scripts/build_p11_mp11_candidate_provenance_review.py` to verify
+  source-artifact presence, required caveat fields, fallback/exclusion policy,
+  and P11.4a requirements for each P11.3 candidate table role;
+- emitted
+  `planning/tfl6_mp11_model_input_candidate_provenance_review.{csv,json,md}`
+  with `13` reviewed roles, including `12` passing candidate-scaffold roles,
+  `1` non-blocking deferred comparison-metadata role, and `0` blocked roles;
+- marked P11.3 complete in `ROADMAP.md` and moved the next bounded step to
+  P11.4a Phase 5 XML provenance and bridge-note audit; and
+- generated no model-input tables, ForestModel XML, Matrix Builder outputs, or
+  Patchworks runtime artifacts.
+
+## 2026-06-28 - Built Phase 11 candidate model-input manifest
+
+- added `scripts/build_p11_mp11_candidate_manifest.py` to consume the P11.2
+  promotion-readiness output and candidate schema bridge;
+- emitted `planning/tfl6_mp11_model_input_candidate_manifest.{csv,json,md}`
+  with `13` candidate table roles, including `12` roles eligible for a later
+  generated scaffold and `1` deferred role (`harvest_system_table`);
+- recorded bridge action, source artifacts, planned candidate output path,
+  required caveat fields, fallback/exclusion policy, downstream status, and
+  generation eligibility for each role;
+- marked P11.3b complete in `ROADMAP.md` and moved the next bounded step to
+  P11.3c provenance/fallback review; and
+- generated no model-input tables, ForestModel XML, Matrix Builder outputs, or
+  Patchworks runtime artifacts.
+
+## 2026-06-28 - Consumed Phase 11 readiness manifest for P11.3
+
+- added `planning/tfl6_mp11_p11_3_readiness_consumption.{json,md}` to record
+  P11.3a consumption of the P11.2 promotion-readiness manifest and candidate
+  schema-bridge inputs;
+- preserved the candidate-only caveats for P9RF source/THLB, deferred MP11
+  rule fields, Tables 54/55 exclusion, figure-value exclusion, and private-data
+  boundaries before candidate-manifest construction;
+- marked P11.3a complete in `ROADMAP.md` and moved the next bounded step to
+  P11.3b candidate table/schema manifest or blocked stop report; and
+- generated no model-input tables, ForestModel XML, Matrix Builder outputs, or
+  Patchworks runtime artifacts.
+
+## 2026-06-28 - Clarified Phase 11 ForestModel XML build task
+
+- updated `ROADMAP.md` so `P11.4c` is the explicit task that generates the
+  MP11 candidate `forestmodel.xml` and fragments under
+  `output/patchworks_tfl6_mp11_candidate/` if XML readiness passes;
+- split P11.4 XML readiness, XML generation, and XML parse/QA into separate
+  roadmap subtasks; and
+- updated the Phase 11 execution plan to state that P11.4 owns ForestModel XML
+  candidate generation while Matrix Builder and runtime assembly remain Phase
+  12 work.
+
+## 2026-06-28 - Clarified Phase 12 runtime-bundle build ownership
+
+- updated `ROADMAP.md` to make Phase 11's build boundary explicit: Phase 11 may
+  build or stop-report MP11 candidate model-input, export bridge, and
+  ForestModel XML/fragments, but it does not assemble the Patchworks runtime
+  bundle;
+- expanded Phase 12 (`#69`) with concrete runtime-build subtasks for Matrix
+  Builder tracks, candidate runtime package assembly, direct launch smoke,
+  scenario smoke, manifests, and Phase 13 handoff; and
+- updated the Phase 11 execution plan to state that runtime-bundle build
+  ownership starts in Phase 12 after the Phase 11 model-input/XML handoff.
+
+## 2026-06-28 - Resolved Phase 11 readiness blockers for candidate scaffold
+
+- added `planning/tfl6_mp11_p11_2_candidate_scaffold_decisions.md` to accept
+  P9RF source/THLB and Phase 5 rule defaults only for P11.3 candidate-manifest
+  work, with MP11 caveats and deferred rule fields explicit;
+- added `planning/tfl6_mp11_p11_2_candidate_schema_bridge.{csv,json,md}` to
+  classify Phase 5 bundle table families as `reuse`, `replace`, `extend`, or
+  `defer` for the MP11 candidate schema bridge;
+- updated `scripts/build_p11_mp11_promotion_readiness.py` so the former
+  `source_thlb`, `rule_contracts`, and `schema_bridge` hard blockers pass only
+  through the candidate-only contracts;
+- emitted `planning/tfl6_mp11_model_input_promotion_readiness.{csv,json,md}`,
+  reporting `11` gates, `0` blocked hard gates, `2` deferred soft gates, `9`
+  passing gates, and P11.3 unlock status `candidate_manifest_eligible`;
+- marked P11.2 complete in `ROADMAP.md` and moved the next bounded step to
+  P11.3a readiness-manifest consumption; and
+- generated no model-input tables, ForestModel XML, Matrix Builder outputs, or
+  Patchworks runtime artifacts.
+
+## 2026-06-28 - Added Phase 11 promotion-readiness audit generator
+
+- added `scripts/build_p11_mp11_promotion_readiness.py` to consume
+  `planning/tfl6_mp11_phase11_promotion_gates.csv` and prepare the P11.2
+  readiness records required before MP11 model-input promotion;
+- included a `--dry-run` mode so P11.2a can validate the audit logic without
+  emitting the tracked readiness Markdown/CSV/JSON outputs reserved for
+  P11.2b;
+- dry-run validation reported `11` gates, `3` blocked hard gates, `2`
+  deferred soft gates, `6` passing gates, and `0` missing source artifacts;
+- marked P11.2a complete in `ROADMAP.md` and moved the next bounded step to
+  P11.2b readiness-output emission; and
+- generated no model-input tables, ForestModel XML, Matrix Builder outputs, or
+  Patchworks runtime artifacts.
+
+## 2026-06-28 - Defined Phase 11 promotion gates and stop conditions
+
+- added `planning/tfl6_mp11_phase11_promotion_gates.{csv,json,md}` to define
+  the hard and soft gates P11.2 must evaluate before any MP11 candidate
+  model-input bundle, export bridge, ForestModel XML, Matrix Builder output, or
+  Patchworks runtime artifact is generated;
+- required P11.2 to emit
+  `planning/tfl6_mp11_model_input_promotion_readiness.{csv,json,md}` with
+  gate-level decisions, blockers, caveats, and next-action ownership;
+- kept P11.3 model-input generation blocked unless all hard gates pass and
+  soft-gate deferrals are explicitly non-blocking;
+- updated `ROADMAP.md` and the Phase 11 execution plan so the next bounded
+  move is P11.2a promotion-readiness audit-generator work;
+- marked P11.1 complete after defining the final promotion-gate subtask; and
+- generated no model-input tables, ForestModel XML, Matrix Builder outputs, or
+  Patchworks runtime artifacts.
+
 ## 2026-06-28 - Recorded MP11 managed curve-generation blocker
 
 - added `scripts/build_p10r_mp11_managed_curve_rebuild_blocker.py` to inspect
@@ -3355,3 +3538,63 @@
 - updated the Phase 10R recipe, closeout, and roadmap notes so Phase 11 can
   proceed from the accepted 27-curve handoff while model-input tables remain
   an explicit Phase 11 materialization step.
+
+## 2026-06-28 - Launched Phase 11 model-input/XML planning
+
+- pushed the Phase 1-5 basecamp summary to `main` so the instance worktree no
+  longer carries an unrelated untracked planning note;
+- created branch `feature/p11-model-input-xml-rebuild-plan` for Phase 11;
+- added `planning/tfl6_mp11_phase11_model_input_xml_execution_plan.md` as the
+  P11.1 launch audit surface;
+- recorded the governing MP11 promotion contracts, repaired P9RF THLB
+  endpoint, accepted 27-curve Phase 10R handoff, deferred Tables 54/55 boundary,
+  and model-input/XML stop conditions; and
+- marked P11.1a complete in `ROADMAP.md`, leaving P11.1b Phase 5
+  model-input/XML provenance inventory as the next bounded move.
+
+## 2026-06-28 - Inventoried Phase 5 provenance for Phase 11
+
+- added `planning/tfl6_mp11_phase11_phase5_provenance_inventory.{csv,json,md}`
+  for the P11.1b inventory;
+- recorded Phase 5 model-input bundle row counts, QA warnings, export-compat
+  bridge counts, ForestModel XML and fragments checksums, Matrix Builder track
+  counts, runtime package evidence, direct launch smoke, scenario smoke, and
+  public release archive identity;
+- clarified that `data/model_input_bundle/` is rebuild provenance and not part
+  of the Phase 5 public runtime archive;
+- preserved the Phase 5 runtime archive as the accepted teaching baseline until
+  an MP11 candidate runtime passes downstream QA; and
+- marked P11.1b complete in `ROADMAP.md`, leaving P11.1c artifact layout and
+  generated-output hygiene as the next bounded move.
+
+## 2026-06-28 - Defined Phase 11 artifact layout
+
+- added `planning/tfl6_mp11_phase11_artifact_layout.{csv,json,md}` as the
+  P11.1c generated-output hygiene contract;
+- defined MP11 candidate generated roots under `data/mp11_model_input_bundle/`,
+  `output/patchworks_tfl6_mp11_candidate/`, `runtime/mp11_model_input_xml/`,
+  `plots/mp11_model_input_xml/`, and
+  `models/tfl6_patchworks_model_mp11_candidate/`;
+- added explicit `.gitignore` rules for the MP11 candidate model-input bundle
+  and candidate Patchworks runtime generated-output subdirectories;
+- locked the rule that Phase 11 must not overwrite accepted Phase 5 payloads
+  before downstream model-input, XML, Matrix Builder, runtime, docs, and release
+  QA pass; and
+- marked P11.1c complete in `ROADMAP.md`, leaving P11.1d promotion gates and
+  stop conditions as the next bounded move.
+
+## 2026-06-28 - Closed Phase 11 model-input/XML handoff
+
+- added `scripts/build_p11_mp11_phase11_closeout.py` and
+  `planning/tfl6_mp11_phase11_closeout.{csv,json,md}` as the final P11.6
+  closeout surface;
+- verified that Phase 11 built the MP11 candidate model-input bundle, export
+  bridge, ForestModel XML, and fragments under the ignored candidate roots;
+- recorded the candidate XML handoff to Phase 12 with XML root `ForestModel`,
+  `13,197` curve nodes, `24,879` fragment rows, and `191,168.566447 ha`
+  fragment area;
+- preserved the accepted Phase 5 teaching/runtime baseline and confirmed
+  Matrix Builder tracks, runtime blocks, and scenario-smoke roots were not
+  created in Phase 11; and
+- marked P11.6 and Phase 11 complete in `ROADMAP.md`, leaving P12.1/P12.2 as
+  the next runtime-build step.

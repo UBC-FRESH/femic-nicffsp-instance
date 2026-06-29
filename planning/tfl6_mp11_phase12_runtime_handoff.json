@@ -1,0 +1,107 @@
+{
+  "summary": {
+    "generated_at_utc": "2026-06-29T04:08:38+00:00",
+    "handoff_status": "phase12_runtime_handoff_ready",
+    "candidate_bundle_root": "data/mp11_model_input_bundle",
+    "active_mp11_curve_count": 18,
+    "duplicate_mp11_rows_deferred_by_canonical_au": 9,
+    "xml_readiness_ready_count": 7,
+    "xml_readiness_blocked_count": 0,
+    "xml_path": "output/patchworks_tfl6_mp11_candidate/forestmodel.xml",
+    "xml_curve_nodes": 13197,
+    "fragment_rows": 24879,
+    "fragment_area_ha": 191168.566447,
+    "matrix_builder": "not_performed",
+    "runtime_bundle_generation": "not_performed",
+    "scenario_smoke": "not_performed",
+    "release_qa": "not_performed"
+  },
+  "generated_inputs": {
+    "candidate_bundle_root": {
+      "path": "data/mp11_model_input_bundle",
+      "exists": true,
+      "bytes": null
+    },
+    "candidate_export_bridge": {
+      "path": "data/mp11_model_input_bundle/export_compat",
+      "exists": true,
+      "bytes": null
+    },
+    "candidate_export_bridge_manifest": {
+      "path": "data/mp11_model_input_bundle/export_compat/bridge_manifest.json",
+      "exists": true,
+      "bytes": 521
+    },
+    "candidate_export_checkpoint": {
+      "path": "data/mp11_model_input_bundle/export_compat/aflb_current_export_compat.feather",
+      "exists": true,
+      "bytes": 29199298
+    },
+    "candidate_forestmodel_xml": {
+      "path": "output/patchworks_tfl6_mp11_candidate/forestmodel.xml",
+      "exists": true,
+      "bytes": 2668892
+    },
+    "candidate_fragments": {
+      "path": "output/patchworks_tfl6_mp11_candidate/fragments/fragments.shp",
+      "exists": true,
+      "bytes": 19040188
+    }
+  },
+  "handoff_rows": [
+    {
+      "handoff_item": "matrix_builder_input_xml",
+      "path": "output/patchworks_tfl6_mp11_candidate/forestmodel.xml",
+      "phase12_owner": "P12.2",
+      "status": "ready_for_matrix_builder_candidate",
+      "caveat": "Candidate scaffold XML; not final MP11 release truth."
+    },
+    {
+      "handoff_item": "matrix_builder_fragments",
+      "path": "output/patchworks_tfl6_mp11_candidate/fragments/fragments.shp",
+      "phase12_owner": "P12.2",
+      "status": "ready_for_matrix_builder_candidate",
+      "caveat": "Fragments inherit Phase 5 stand universe and P9RF/source caveats."
+    },
+    {
+      "handoff_item": "candidate_bundle",
+      "path": "data/mp11_model_input_bundle/",
+      "phase12_owner": "P12.1",
+      "status": "generated_candidate_scaffold",
+      "caveat": "Generated and ignored; tracked summaries carry compact provenance."
+    },
+    {
+      "handoff_item": "candidate_export_bridge",
+      "path": "data/mp11_model_input_bundle/export_compat/",
+      "phase12_owner": "P12.2",
+      "status": "ready_for_exporter_runtime_bridge",
+      "caveat": "Bridge is deterministic numeric compatibility surface for FEMIC exporter."
+    },
+    {
+      "handoff_item": "matrix_builder_tracks_root",
+      "path": "models/tfl6_patchworks_model_mp11_candidate/tracks/",
+      "phase12_owner": "P12.2",
+      "status": "not_started_phase12",
+      "caveat": "Do not create until Matrix Builder runs in Phase 12."
+    },
+    {
+      "handoff_item": "runtime_package_root",
+      "path": "models/tfl6_patchworks_model_mp11_candidate/",
+      "phase12_owner": "P12.3",
+      "status": "not_started_phase12",
+      "caveat": "Runtime assembly, launch surfaces, and topology are Phase 12 work."
+    },
+    {
+      "handoff_item": "scenario_smoke",
+      "path": "models/tfl6_patchworks_model_mp11_candidate/analysis/",
+      "phase12_owner": "P12.4-P12.5",
+      "status": "not_started_phase12",
+      "caveat": "Direct launch and scenario smoke must follow Matrix Builder/runtime assembly."
+    }
+  ],
+  "source_manifests": {
+    "bundle_summary_json": "planning/tfl6_mp11_candidate_bundle_build_summary.json",
+    "xml_readiness_json": "planning/tfl6_mp11_forestmodel_xml_readiness.json",
+    "xml_qa_json": "planning/tfl6_mp11_forestmodel_xml_generation_qa.json"
+  }
+}

@@ -1,0 +1,20 @@
+surface_id,surface_family,path,tracking_policy,owner_phase,may_write_before_p11_2,phase5_collision_risk,hygiene_rule
+phase11_execution_plan,planning,planning/tfl6_mp11_phase11_model_input_xml_execution_plan.md,tracked_git,P11.1,yes,none,Compact planning contract only.
+phase5_provenance_inventory,planning,planning/tfl6_mp11_phase11_phase5_provenance_inventory.{csv,json,md},tracked_git,P11.1,yes,none,Compact inventory; no generated model payload.
+phase11_artifact_layout,planning,planning/tfl6_mp11_phase11_artifact_layout.{csv,json,md},tracked_git,P11.1,yes,none,Defines generated-output hygiene before P11.2.
+promotion_readiness,planning,planning/tfl6_mp11_model_input_promotion_readiness.{csv,json,md},tracked_git,P11.2,yes,none,Must decide table roles before bundle generation.
+candidate_manifest_or_stop,planning,planning/tfl6_mp11_model_input_candidate_manifest.{csv,json,md},tracked_git,P11.3,no,none,Write only after P11.2 readiness decision.
+xml_readiness_or_stop,planning,planning/tfl6_mp11_forestmodel_xml_readiness.{csv,json,md},tracked_git,P11.4,no,none,Write only after candidate manifest or stop report.
+mp11_bundle_root,model_input_bundle,data/mp11_model_input_bundle/,ignored_generated,P11.3,no,low,"MP11 candidate bundle root; never overwrite data/model_input_bundle/."
+mp11_input_geometry,model_input_bundle,data/mp11_model_input_bundle/input_geometry/,ignored_generated,P11.3,no,low,MP11 candidate AFLB/THLB geometry handoff only.
+mp11_bundle_qa,model_input_bundle,data/mp11_model_input_bundle/qa/,ignored_generated,P11.3,no,low,MP11 candidate bundle QA only.
+mp11_export_compat,model_input_bundle,data/mp11_model_input_bundle/export_compat/,ignored_generated,P11.4,no,low,MP11 candidate generic-export bridge only.
+mp11_forestmodel_output,forestmodel_xml,output/patchworks_tfl6_mp11_candidate/,ignored_generated,P11.4,no,low,MP11 candidate XML/fragments; do not write output/patchworks_tfl6_validated/.
+mp11_candidate_runtime_root,runtime_package,models/tfl6_patchworks_model_mp11_candidate/,mixed_later_decision,P12,no,medium,Phase 12 may track compact launch surfaces but generated tracks/blocks/logs stay ignored.
+mp11_candidate_tracks,runtime_package,models/tfl6_patchworks_model_mp11_candidate/tracks/,ignored_generated,P12,no,low,Matrix Builder generated tracks only.
+mp11_candidate_blocks,runtime_package,models/tfl6_patchworks_model_mp11_candidate/blocks/,ignored_generated,P12,no,low,Generated blocks/topology only.
+mp11_candidate_analysis_saved_stages,runtime_package,models/tfl6_patchworks_model_mp11_candidate/analysis/p*/,ignored_generated,P12,no,low,Saved-stage smoke output only.
+mp11_candidate_headless_runs,runtime_package,models/tfl6_patchworks_model_mp11_candidate/analysis/headless_runs/,ignored_generated,P12,no,low,Headless runtime logs/output only.
+mp11_runtime_logs,runtime_logs,runtime/mp11_model_input_xml/,ignored_generated,P11-P12,yes,none,Command logs/manifests only; compact results copied to planning if accepted.
+mp11_plots,plots,plots/mp11_model_input_xml/,ignored_generated,P11-P13,yes,none,Review plots only; keep bulky PNGs ignored unless explicitly accepted.
+mp11_release_archive,release_archive,releases/tfl6_patchworks_runtime_mp11_candidate_*.zip,annex_or_release_later,P13,no,low,Do not publish until runtime QA and release decision pass.

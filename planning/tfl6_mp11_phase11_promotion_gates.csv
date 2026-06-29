@@ -1,0 +1,12 @@
+gate_id,gate_type,target_role,required_condition,stop_condition_or_deferral
+p11_gate_01_baseline_protection,hard,all generated outputs,Candidate paths use MP11 namespace from artifact layout,Stop if any generated output would overwrite accepted Phase 5 model-input XML runtime or release paths
+p11_gate_02_source_thlb,hard,stand universe and THLB/NTHLB state,P9RF resultant-fragment THLB is classified for every model-input table role,Stop if geometry managed share unmanaged share area or group-field sources cannot be identified
+p11_gate_03_curve_handoff,hard,natural and managed curves,Accepted Phase 10R curve handoff maps deterministically to model-input curve IDs,Stop if any accepted curve lacks feature ID curve ID source row canonical AU target or review status
+p11_gate_04_deferred_tables_54_55,hard,early/recent managed curves,Tables 54/55 remain excluded unless a public-safe AU-code mapping is accepted,Stop if model-input tables consume Tables 54/55 without that mapping
+p11_gate_05_figure_evidence,hard,all numeric model fields,Figure-derived values are excluded unless separately promoted to accepted model contract,Stop if any figure-recovered value enters model inputs from comparison/planning/raw status
+p11_gate_06_rule_contracts,hard,treatments transitions MHA harvest system operability scenarios,Phase 8/10 rule contracts classify accepted proxy sensitivity unavailable and deferred rules,Stop if P11.3 would need invented fields not covered by reviewed contracts
+p11_gate_07_schema_bridge,hard,model-input tables and export compatibility,P11.2 names candidate table roles and reuse/replace/extend relationship to Phase 5 schema,Stop if P11.3 cannot define tables keys field names and export bridge needs
+p11_gate_08_private_data,hard,all promoted fields,Non-public WFP dependencies are marked unavailable proxied sensitivity-only or deferred,Stop if generated inputs imply private WFP stand-level data or unpublished model internals
+p11_gate_09_kpi_reporting,soft,reporting and QA fields,KPI/reporting targets are classified by downstream role,May defer runtime-only and docs-only outputs to Phases 12/13
+p11_gate_10_xml_readiness,soft,ForestModel XML,P11.2 identifies whether enough metadata exists for P11.4 XML readiness,May defer XML generation with stop report if P11.3 cannot produce candidate manifest
+p11_gate_11_runtime_boundary,soft,Matrix Builder and Patchworks runtime,Runtime checks are assigned to Phase 12 unless P11.4 defines parse-only XML check,Must not run Matrix Builder or Patchworks runtime in P11.2/P11.3

@@ -1,0 +1,14 @@
+metric,value
+generated_at_utc,2026-06-29T04:08:38+00:00
+xml_path,output/patchworks_tfl6_mp11_candidate/forestmodel.xml
+xml_bytes,2668892
+xml_root,ForestModel
+xml_curve_nodes,13197
+xml_select_nodes,2442
+xml_treatment_nodes,814
+fragment_rows,24879
+fragment_area_ha,191168.566447
+compat_curve_rows,172
+mp11_table57_curve_rows,18
+matrix_builder,not_performed
+runtime_bundle_generation,not_performed

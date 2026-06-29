@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "phase": "P11.1c",
+  "branch": "feature/p11-model-input-xml-rebuild-plan",
+  "purpose": "Define Phase 11 MP11 artifact layout and generated-output hygiene before model-input/XML generation.",
+  "status": "layout_defined_no_generation",
+  "baseline_protection": {
+    "phase5_model_input_root": "data/model_input_bundle/",
+    "phase5_xml_root": "output/patchworks_tfl6_validated/",
+    "phase5_runtime_root": "models/tfl6_patchworks_model/",
+    "phase5_release_archive": "releases/tfl6_patchworks_runtime_p5_2.zip",
+    "rule": "Do not overwrite accepted Phase 5 payloads until an MP11 replacement runtime passes downstream QA and a replacement decision is recorded."
+  },
+  "tracked_planning_surfaces": [
+    "planning/tfl6_mp11_phase11_model_input_xml_execution_plan.md",
+    "planning/tfl6_mp11_phase11_phase5_provenance_inventory.{csv,json,md}",
+    "planning/tfl6_mp11_phase11_artifact_layout.{csv,json,md}",
+    "planning/tfl6_mp11_model_input_promotion_readiness.{csv,json,md}",
+    "planning/tfl6_mp11_model_input_candidate_manifest.{csv,json,md}",
+    "planning/tfl6_mp11_forestmodel_xml_readiness.{csv,json,md}"
+  ],
+  "candidate_generated_roots": {
+    "model_input_bundle": "data/mp11_model_input_bundle/",
+    "export_compat_bridge": "data/mp11_model_input_bundle/export_compat/",
+    "forestmodel_xml": "output/patchworks_tfl6_mp11_candidate/",
+    "runtime_package": "models/tfl6_patchworks_model_mp11_candidate/",
+    "logs": "runtime/mp11_model_input_xml/",
+    "plots": "plots/mp11_model_input_xml/"
+  },
+  "write_gates": {
+    "before_p11_2": [
+      "tracked planning notes",
+      "runtime/mp11_model_input_xml/ command logs for audits only",
+      "plots/mp11_model_input_xml/ review plots if needed"
+    ],
+    "p11_3_allowed_after_readiness": [
+      "data/mp11_model_input_bundle/",
+      "planning/tfl6_mp11_model_input_candidate_manifest.{csv,json,md}"
+    ],
+    "p11_4_allowed_after_candidate_manifest": [
+      "data/mp11_model_input_bundle/export_compat/",
+      "output/patchworks_tfl6_mp11_candidate/",
+      "planning/tfl6_mp11_forestmodel_xml_readiness.{csv,json,md}"
+    ],
+    "phase12_or_later": [
+      "models/tfl6_patchworks_model_mp11_candidate/tracks/",
+      "models/tfl6_patchworks_model_mp11_candidate/blocks/",
+      "models/tfl6_patchworks_model_mp11_candidate/analysis/p*/",
+      "releases/tfl6_patchworks_runtime_mp11_candidate_*.zip"
+    ]
+  },
+  "required_hygiene_checks": [
+    "candidate paths must include mp11 or mp11_candidate namespace",
+    "Phase 5 accepted paths must not be modified by P11 candidate generation",
+    "tracked planning artifacts must contain no personal local paths",
+    "ignored generated outputs must be summarized by compact tracked manifests",
+    "release archives remain ignored/annexed and require a later publication decision",
+    "Matrix Builder and runtime outputs remain out of scope until XML readiness passes"
+  ],
+  "gitignore_updates": [
+    "data/mp11_model_input_bundle/",
+    "models/tfl6_patchworks_model_mp11_candidate/blocks/",
+    "models/tfl6_patchworks_model_mp11_candidate/tracks/",
+    "models/tfl6_patchworks_model_mp11_candidate/patchworksLog.csv",
+    "models/tfl6_patchworks_model_mp11_candidate/analysis/p*/",
+    "models/tfl6_patchworks_model_mp11_candidate/analysis/headless_runs/"
+  ],
+  "next_step": "P11.1d define promotion gates and stop conditions"
+}

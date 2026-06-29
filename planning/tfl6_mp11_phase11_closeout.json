@@ -1,0 +1,130 @@
+{
+  "summary": {
+    "generated_at_utc": "2026-06-29T04:08:39+00:00",
+    "phase11_status": "complete_model_input_xml_handoff",
+    "candidate_bundle_root": "data/mp11_model_input_bundle",
+    "candidate_xml": "output/patchworks_tfl6_mp11_candidate/forestmodel.xml",
+    "candidate_fragments": "output/patchworks_tfl6_mp11_candidate/fragments/fragments.shp",
+    "active_mp11_curve_count": 18,
+    "duplicate_mp11_rows_deferred_by_canonical_au": 9,
+    "xml_root": "ForestModel",
+    "xml_curve_nodes": 13197,
+    "fragment_rows": 24879,
+    "fragment_area_ha": 191168.566447,
+    "matrix_builder": "not_performed",
+    "runtime_bundle_generation": "not_performed",
+    "phase12_handoff_status": "phase12_runtime_handoff_ready"
+  },
+  "closeout_rows": [
+    {
+      "closeout_item": "candidate_model_input_bundle",
+      "status": "built",
+      "path": "data/mp11_model_input_bundle/",
+      "phase11_result": "Generated candidate scaffold and export bridge.",
+      "next_owner": "P12.1-P12.2"
+    },
+    {
+      "closeout_item": "candidate_forestmodel_xml",
+      "status": "built",
+      "path": "output/patchworks_tfl6_mp11_candidate/forestmodel.xml",
+      "phase11_result": "Generated candidate ForestModel XML for Matrix Builder input.",
+      "next_owner": "P12.2"
+    },
+    {
+      "closeout_item": "candidate_fragments",
+      "status": "built",
+      "path": "output/patchworks_tfl6_mp11_candidate/fragments/fragments.shp",
+      "phase11_result": "Generated candidate fragments alongside XML.",
+      "next_owner": "P12.2"
+    },
+    {
+      "closeout_item": "phase5_baseline",
+      "status": "preserved",
+      "path": "data/model_input_bundle/ and output/patchworks_tfl6_validated/",
+      "phase11_result": "Accepted teaching/runtime baseline was not overwritten.",
+      "next_owner": "Phase 13 release decision"
+    },
+    {
+      "closeout_item": "matrix_builder_tracks",
+      "status": "not_performed",
+      "path": "models/tfl6_patchworks_model_mp11_candidate/tracks/",
+      "phase11_result": "Deliberately left for the runtime-build phase.",
+      "next_owner": "P12.2"
+    },
+    {
+      "closeout_item": "runtime_bundle",
+      "status": "not_performed",
+      "path": "models/tfl6_patchworks_model_mp11_candidate/",
+      "phase11_result": "Patchworks runtime assembly is not a Phase 11 output.",
+      "next_owner": "P12.3"
+    },
+    {
+      "closeout_item": "scenario_smoke",
+      "status": "not_performed",
+      "path": "models/tfl6_patchworks_model_mp11_candidate/analysis/",
+      "phase11_result": "Direct launch and scenario smoke wait for runtime assembly.",
+      "next_owner": "P12.4-P12.5"
+    }
+  ],
+  "phase11_generated_inputs": {
+    "candidate_bundle_root": {
+      "path": "data/mp11_model_input_bundle",
+      "exists": true,
+      "bytes": null
+    },
+    "candidate_bridge_manifest": {
+      "path": "data/mp11_model_input_bundle/export_compat/bridge_manifest.json",
+      "exists": true,
+      "bytes": 521
+    },
+    "candidate_export_checkpoint": {
+      "path": "data/mp11_model_input_bundle/export_compat/aflb_current_export_compat.feather",
+      "exists": true,
+      "bytes": 29199298
+    },
+    "candidate_forestmodel_xml": {
+      "path": "output/patchworks_tfl6_mp11_candidate/forestmodel.xml",
+      "exists": true,
+      "bytes": 2668892
+    },
+    "candidate_fragments": {
+      "path": "output/patchworks_tfl6_mp11_candidate/fragments/fragments.shp",
+      "exists": true,
+      "bytes": 19040188
+    }
+  },
+  "phase5_baseline_inputs": {
+    "phase5_bridge_manifest": {
+      "path": "data/model_input_bundle/export_compat/bridge_manifest.json",
+      "exists": true,
+      "bytes": 500
+    },
+    "phase5_forestmodel_xml": {
+      "path": "output/patchworks_tfl6_validated/forestmodel.xml",
+      "exists": true,
+      "bytes": 2662799
+    }
+  },
+  "phase12_runtime_outputs": {
+    "matrix_builder_tracks": {
+      "path": "models/tfl6_patchworks_model_mp11_candidate/tracks",
+      "exists": false,
+      "bytes": null
+    },
+    "runtime_blocks": {
+      "path": "models/tfl6_patchworks_model_mp11_candidate/blocks",
+      "exists": false,
+      "bytes": null
+    },
+    "scenario_smoke": {
+      "path": "models/tfl6_patchworks_model_mp11_candidate/analysis/headless_runs",
+      "exists": false,
+      "bytes": null
+    }
+  },
+  "source_manifests": {
+    "bundle_summary_json": "planning/tfl6_mp11_candidate_bundle_build_summary.json",
+    "xml_qa_json": "planning/tfl6_mp11_forestmodel_xml_generation_qa.json",
+    "phase12_handoff_json": "planning/tfl6_mp11_phase12_runtime_handoff.json"
+  }
+}
