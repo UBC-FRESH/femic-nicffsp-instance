@@ -3355,3 +3355,16 @@
 - updated the Phase 10R recipe, closeout, and roadmap notes so Phase 11 can
   proceed from the accepted 27-curve handoff while model-input tables remain
   an explicit Phase 11 materialization step.
+
+## 2026-06-28 - Launched Phase 11 model-input/XML planning
+
+- pushed the Phase 1-5 basecamp summary to `main` so the instance worktree no
+  longer carries an unrelated untracked planning note;
+- created branch `feature/p11-model-input-xml-rebuild-plan` for Phase 11;
+- added `planning/tfl6_mp11_phase11_model_input_xml_execution_plan.md` as the
+  P11.1 launch audit surface;
+- recorded the governing MP11 promotion contracts, repaired P9RF THLB
+  endpoint, accepted 27-curve Phase 10R handoff, deferred Tables 54/55 boundary,
+  and model-input/XML stop conditions; and
+- marked P11.1a complete in `ROADMAP.md`, leaving P11.1b Phase 5
+  model-input/XML provenance inventory as the next bounded move.
