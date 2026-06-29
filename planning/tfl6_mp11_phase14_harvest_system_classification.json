@@ -1,0 +1,204 @@
+{
+  "generated_at_utc": "2026-06-29T06:22:58.066552+00:00",
+  "phase": "P14.4",
+  "status": "harvest_system_proxy_classification_built",
+  "inputs": {
+    "public_proxy_metrics": "planning/tfl6_mp11_phase14_public_proxy_metrics.csv"
+  },
+  "outputs": {
+    "classification_csv": "planning/tfl6_mp11_phase14_harvest_system_classification.csv",
+    "qa_csv": "planning/tfl6_mp11_phase14_harvest_system_classification_qa.csv",
+    "summary_json": "planning/tfl6_mp11_phase14_harvest_system_classification.json",
+    "summary_md": "planning/tfl6_mp11_phase14_harvest_system_classification.md"
+  },
+  "classification_rules": [
+    "not_applicable for stands outside managed current THLB",
+    "heli when MP11 Tables 27-29 economic proxy passes and the stand has nearest-DRA-road distance >= 1000 m or P9D slope p90 >= 80%",
+    "cable when public CDED mean slope >= 30%",
+    "cable low-confidence fallback when slope is missing and DRA distance > 1500 m",
+    "ground when public CDED mean slope < 30%",
+    "ground low-confidence fallback when slope is missing and DRA distance <= 1500 m"
+  ],
+  "mp11_targets": {
+    "ground": {
+      "mp11_label": "ground",
+      "target_area_ha": 68845.0,
+      "target_volume_m3": 19216294.0,
+      "target_area_share_pct": 57.3,
+      "target_volume_share_pct": 53.4
+    },
+    "cable": {
+      "mp11_label": "cable",
+      "target_area_ha": 47524.0,
+      "target_volume_m3": 14563331.0,
+      "target_area_share_pct": 39.6,
+      "target_volume_share_pct": 40.5
+    },
+    "heli": {
+      "mp11_label": "non_conventional_heli",
+      "target_area_ha": 3730.0,
+      "target_volume_m3": 2223221.0,
+      "target_area_share_pct": 3.1,
+      "target_volume_share_pct": 6.2
+    }
+  },
+  "summary": {
+    "row_count": 25019,
+    "managed_current_thlb_rows": 22614,
+    "managed_current_thlb_area_ha": 139995.7982662951,
+    "managed_current_thlb_volume_m3": 45043117.37474213,
+    "classification_counts": {
+      "ground": 12905,
+      "cable": 9055,
+      "not_applicable": 2405,
+      "heli": 654
+    },
+    "managed_classification_area_by_system": [
+      {
+        "harvest_system_candidate": "cable",
+        "rows": 9055,
+        "area_ha": 56677.06059814284,
+        "volume_m3": 20342940.21761593
+      },
+      {
+        "harvest_system_candidate": "ground",
+        "rows": 12905,
+        "area_ha": 80241.38859046067,
+        "volume_m3": 22778489.535020187
+      },
+      {
+        "harvest_system_candidate": "heli",
+        "rows": 654,
+        "area_ha": 3077.3490776915746,
+        "volume_m3": 1921687.6221060115
+      }
+    ],
+    "managed_classification_area_by_confidence": [
+      {
+        "harvest_system_candidate": "cable",
+        "harvest_system_confidence": "low",
+        "rows": 559,
+        "area_ha": 2742.54985232952
+      },
+      {
+        "harvest_system_candidate": "cable",
+        "harvest_system_confidence": "medium",
+        "rows": 8496,
+        "area_ha": 53934.51074581332
+      },
+      {
+        "harvest_system_candidate": "ground",
+        "harvest_system_confidence": "low",
+        "rows": 5037,
+        "area_ha": 29156.0880675368
+      },
+      {
+        "harvest_system_candidate": "ground",
+        "harvest_system_confidence": "medium",
+        "rows": 7868,
+        "area_ha": 51085.30052292388
+      },
+      {
+        "harvest_system_candidate": "heli",
+        "harvest_system_confidence": "medium",
+        "rows": 654,
+        "area_ha": 3077.3490776915746
+      }
+    ],
+    "qa_rows": [
+      {
+        "harvest_system": "ground",
+        "mp11_label": "ground",
+        "candidate_rows": 12905,
+        "candidate_area_ha": 80241.38859046067,
+        "candidate_volume_m3": 22778489.535020187,
+        "candidate_area_share_pct": 57.31699778433943,
+        "candidate_volume_share_pct": 50.5704108921049,
+        "mp11_table73_area_ha": 68845.0,
+        "mp11_table73_volume_m3": 19216294.0,
+        "mp11_area_share_pct": 57.3,
+        "mp11_volume_share_pct": 53.4,
+        "direct_area_residual_ha": 11396.388590460672,
+        "direct_volume_residual_m3": 3562195.5350201875,
+        "scaled_area_target_ha": 80217.5924065871,
+        "scaled_volume_target_m3": 24053024.6781123,
+        "scaled_area_residual_ha": 23.79618387357914,
+        "scaled_volume_residual_m3": -1274535.1430921108,
+        "area_share_residual_pct_points": 0.016997784339430666,
+        "volume_share_residual_pct_points": -2.829589107895096,
+        "qa_caveat": "Candidate totals use the current public-proxy THLB scaffold and public VRI volume proxies; direct residuals are not WFP LBB stand-level errors."
+      },
+      {
+        "harvest_system": "cable",
+        "mp11_label": "cable",
+        "candidate_rows": 9055,
+        "candidate_area_ha": 56677.06059814284,
+        "candidate_volume_m3": 20342940.21761593,
+        "candidate_area_share_pct": 40.48482975920014,
+        "candidate_volume_share_pct": 45.163260012334774,
+        "mp11_table73_area_ha": 47524.0,
+        "mp11_table73_volume_m3": 14563331.0,
+        "mp11_area_share_pct": 39.6,
+        "mp11_volume_share_pct": 40.5,
+        "direct_area_residual_ha": 9153.060598142838,
+        "direct_volume_residual_m3": 5779609.2176159285,
+        "scaled_area_target_ha": 55438.33611345287,
+        "scaled_volume_target_m3": 18242462.53677056,
+        "scaled_area_residual_ha": 1238.7244846899703,
+        "scaled_volume_residual_m3": 2100477.6808453687,
+        "area_share_residual_pct_points": 0.8848297592001373,
+        "volume_share_residual_pct_points": 4.663260012334774,
+        "qa_caveat": "Candidate totals use the current public-proxy THLB scaffold and public VRI volume proxies; direct residuals are not WFP LBB stand-level errors."
+      },
+      {
+        "harvest_system": "heli",
+        "mp11_label": "non_conventional_heli",
+        "candidate_rows": 654,
+        "candidate_area_ha": 3077.3490776915746,
+        "candidate_volume_m3": 1921687.6221060115,
+        "candidate_area_share_pct": 2.198172456460407,
+        "candidate_volume_share_pct": 4.266329095560325,
+        "mp11_table73_area_ha": 3730.0,
+        "mp11_table73_volume_m3": 2223221.0,
+        "mp11_area_share_pct": 3.1,
+        "mp11_volume_share_pct": 6.2,
+        "direct_area_residual_ha": -652.6509223084254,
+        "direct_volume_residual_m3": -301533.3778939885,
+        "scaled_area_target_ha": 4339.869746255149,
+        "scaled_volume_target_m3": 2792673.277234012,
+        "scaled_area_residual_ha": -1262.5206685635744,
+        "scaled_volume_residual_m3": -870985.6551280003,
+        "area_share_residual_pct_points": -0.9018275435395933,
+        "volume_share_residual_pct_points": -1.9336709044396754,
+        "qa_caveat": "Candidate totals use the current public-proxy THLB scaffold and public VRI volume proxies; direct residuals are not WFP LBB stand-level errors."
+      },
+      {
+        "harvest_system": "managed_current_thlb_total",
+        "mp11_label": "table73_total",
+        "candidate_rows": 22614,
+        "candidate_area_ha": 139995.7982662951,
+        "candidate_volume_m3": 45043117.37474213,
+        "candidate_area_share_pct": 100.0,
+        "candidate_volume_share_pct": 100.0,
+        "mp11_table73_area_ha": 120099.0,
+        "mp11_table73_volume_m3": 36002846.0,
+        "mp11_area_share_pct": 100.0,
+        "mp11_volume_share_pct": 100.0,
+        "direct_area_residual_ha": 19896.79826629511,
+        "direct_volume_residual_m3": 9040271.374742128,
+        "scaled_area_target_ha": 139995.7982662951,
+        "scaled_volume_target_m3": 45043117.37474213,
+        "scaled_area_residual_ha": 0.0,
+        "scaled_volume_residual_m3": 0.0,
+        "area_share_residual_pct_points": 0.0,
+        "volume_share_residual_pct_points": 0.0,
+        "qa_caveat": "Total row shows the candidate scaffold total before later model-input promotion; Phase 14 does not change THLB truth by itself."
+      }
+    ]
+  },
+  "non_goals": [
+    "No model-input tables are generated in P14.4.",
+    "No ForestModel XML, Matrix Builder outputs, Patchworks runtime artifacts, or scenarios are generated.",
+    "The classification is a public proxy and does not reconstruct WFP LBB."
+  ]
+}

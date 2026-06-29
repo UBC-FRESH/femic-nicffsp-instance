@@ -940,8 +940,19 @@ Planning note:
   - [x] P14.3c Record that P14.3 does not classify stands, does not accept
     WFP LBB equivalence, and does not generate model-input tables, ForestModel
     XML, Matrix Builder outputs, Patchworks runtime artifacts, or scenarios.
-- [ ] P14.4 Classify MP11 candidate stands by harvest system and QA against
+- [x] P14.4 Classify MP11 candidate stands by harvest system and QA against
   MP11 targets (`#142`).
+  - [x] P14.4a Add `scripts/build_p14_harvest_system_classification.py`.
+  - [x] P14.4b Generate
+    `planning/tfl6_mp11_phase14_harvest_system_classification.{csv,json,md}`
+    and
+    `planning/tfl6_mp11_phase14_harvest_system_classification_qa.csv`.
+  - [x] P14.4c Classify managed current THLB into public-proxy `ground`,
+    `cable`, and `heli` lanes while keeping non-managed-current-THLB rows
+    `not_applicable`.
+  - [x] P14.4d Compare aggregate candidate area/volume against MP11 Table 73
+    direct targets and normalized area/volume shares, preserving the caveat
+    that WFP LBB geometry is unavailable.
 - [ ] P14.5 Rebuild MP11 model-input tables and ForestModel XML with split CC
   lanes (`#143`).
 - [ ] P14.6 Run Matrix Builder and assemble harvest-system candidate runtime
@@ -1059,12 +1070,23 @@ The Phase 1 follow-on issues are placed into the future roadmap as follows:
    and `3,326` rows passing the public-proxy helicopter economic test. These
    metrics are inputs to P14.4 only; they are not accepted harvest-system
    classifications and they do not generate model-input tables, XML, Matrix
-   Builder outputs, Patchworks runtime artifacts, or scenarios. The next
-   bounded task is P14.4 (`#142`): classify candidate stands from the public
-   proxy metrics and QA area/volume results against MP11 Table 20 and Table 73.
+   Builder outputs, Patchworks runtime artifacts, or scenarios. P14.4 (`#142`)
+   is complete:
+   `scripts/build_p14_harvest_system_classification.py` emits
+   `planning/tfl6_mp11_phase14_harvest_system_classification.{csv,json,md}` and
+   `planning/tfl6_mp11_phase14_harvest_system_classification_qa.csv`. The
+   public-proxy classifier assigns `80,241.389 ha` to ground, `56,677.061 ha`
+   to cable, and `3,077.349 ha` to heli over `139,995.798 ha` of managed
+   current THLB in the candidate scaffold. Normalized area-share residuals
+   against MP11 Table 73 are `+0.017` percentage points for ground, `+0.885`
+   for cable, and `-0.902` for heli; direct residuals remain caveated because
+   the candidate scaffold total is larger than the MP11 Table 73 total and WFP
+   LBB geometry is unavailable. The next bounded task is P14.5 (`#143`):
+   rebuild MP11 candidate model-input tables and ForestModel XML with split
+   clearcut lanes for the public-proxy ground/cable/heli assignments.
 
 Historical leading-edge notes below are retained for audit context only; the
-active next step is P14.4.
+active next step is P14.5.
 
 0. Phase 11 is active on branch
    `feature/p11-model-input-xml-rebuild-plan`. P11.1 and P11.2 are complete.

@@ -3837,3 +3837,23 @@
   public VRI species/volume as non-WFP-ITI proxy evidence; and
 - marked P14.3 complete in `ROADMAP.md`, leaving P14.4 classification and
   MP11 Table 20/Table 73 area-volume QA as the next bounded task.
+
+## 2026-06-29 - Classified MP11 Phase 14 harvest-system proxy lanes
+
+- added `scripts/build_p14_harvest_system_classification.py`;
+- generated
+  `planning/tfl6_mp11_phase14_harvest_system_classification.{csv,json,md}` and
+  `planning/tfl6_mp11_phase14_harvest_system_classification_qa.csv`;
+- classified managed current THLB in the candidate scaffold into public-proxy
+  ground, cable, and heli lanes while leaving rows outside managed current THLB
+  as `not_applicable`;
+- recorded candidate managed-current-THLB assignments of `80,241.389 ha`
+  ground, `56,677.061 ha` cable, and `3,077.349 ha` heli over the
+  `139,995.798 ha` candidate scaffold total;
+- compared the classification against MP11 Table 73 and recorded normalized
+  area-share residuals of `+0.017` percentage points for ground, `+0.885` for
+  cable, and `-0.902` for heli, while keeping direct target residuals caveated
+  because WFP LBB geometry is unavailable and the candidate scaffold total is
+  larger than the MP11 Table 73 total; and
+- marked P14.4 complete in `ROADMAP.md`, leaving P14.5 split-lane model-input
+  and ForestModel XML rebuild as the next bounded task.
