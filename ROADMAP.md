@@ -864,12 +864,12 @@ Execution plan:
     `planning/tfl6_mp11_phase13_candidate_runtime_positioning.md`.
   - [x] P13.1b Convert screenshot-informed positioning into reproducible
     tracked scenario comparison tables (`#127`).
-- [ ] P13.2 Build MP11 KPI and caveat comparison report (`#128`).
-  - [ ] P13.2a Compare land base, THLB, source-layer caveats, yield/curve
+- [x] P13.2 Build MP11 KPI and caveat comparison report (`#128`).
+  - [x] P13.2a Compare land base, THLB, source-layer caveats, yield/curve
     caveats, growing stock, age/seral context, cedar/old-cedar evidence,
     harvest-system caveats, and selected MP11 sensitivity evidence where
     tracked sources already exist.
-  - [ ] P13.2b Label each comparison row by evidence strength and
+  - [x] P13.2b Label each comparison row by evidence strength and
     release-decision implication.
 - [ ] P13.3 Update MP11 Sphinx docs and teaching guidance (`#129`).
   - [ ] P13.3a Document Phase 5 baseline status, MP11 candidate status, public
@@ -1124,8 +1124,11 @@ The Phase 1 follow-on issues are placed into the future roadmap as follows:
    `planning/tfl6_mp11_phase13_scenario_comparison.{csv,json,md}` and
    `planning/tfl6_mp11_phase13_scenario_period_comparison.csv`, separating the
    MP11 base-case target, adjusted-LRSY context, P12.5 tracked smoke output,
-   and maintainer interactive context. The next bounded move is P13.2 (`#128`):
-   build the broader MP11 KPI and caveat comparison report.
+   and maintainer interactive context. P13.2 (`#128`) produced
+   `planning/tfl6_mp11_phase13_kpi_caveat_report.{csv,json,md}` with `42`
+   comparison rows, evidence labels, blocker/caveat counts, and release
+   implications. The next bounded move is P13.3 (`#129`): update Sphinx docs
+   and teaching guidance.
 0. Phase 9D and Phase 9E are complete. Step 210 now applies the public TSM
    strict Class V proxy, deducting `1.425 ha` against the MP11 Step 210 target
    `1,993.000 ha`; this is an explicit public-source coverage/semantic gap, not
