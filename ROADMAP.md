@@ -857,7 +857,7 @@ archive, and manifest checks.
 Execution plan:
 `planning/tfl6_mp11_phase13_comparison_release_qa_plan.md`.
 
-- [ ] P13.1 Document candidate runtime positioning and comparison starting
+- [x] P13.1 Document candidate runtime positioning and comparison starting
   assumptions (`#70`).
   - [x] P13.1a Record the maintainer screenshot interpretation and MP11 Figure
     2 context in
@@ -871,10 +871,10 @@ Execution plan:
     tracked sources already exist.
   - [x] P13.2b Label each comparison row by evidence strength and
     release-decision implication.
-- [ ] P13.3 Update MP11 Sphinx docs and teaching guidance (`#129`).
-  - [ ] P13.3a Document Phase 5 baseline status, MP11 candidate status, public
+- [x] P13.3 Update MP11 Sphinx docs and teaching guidance (`#129`).
+  - [x] P13.3a Document Phase 5 baseline status, MP11 candidate status, public
     data reconstruction limits, comparison evidence, and teaching workflows.
-  - [ ] P13.3b Run Sphinx warning-clean.
+  - [x] P13.3b Run Sphinx warning-clean.
 - [ ] P13.4 Prepare MP11 candidate runtime archive and materialization QA
   (`#130`).
   - [ ] P13.4a Decide which generated tracks, blocks, launch surfaces,
@@ -1127,8 +1127,12 @@ The Phase 1 follow-on issues are placed into the future roadmap as follows:
    and maintainer interactive context. P13.2 (`#128`) produced
    `planning/tfl6_mp11_phase13_kpi_caveat_report.{csv,json,md}` with `42`
    comparison rows, evidence labels, blocker/caveat counts, and release
-   implications. The next bounded move is P13.3 (`#129`): update Sphinx docs
-   and teaching guidance.
+   implications. P13.3 (`#129`) added the public Sphinx page
+   `docs/phase13-mp11-candidate-runtime.rst`, clarifying that Phase 5 remains
+   the accepted teaching/runtime baseline while the MP11 candidate is a
+   smoke-tested comparison and advanced teaching surface pending archive QA and
+   release-status decision. The next bounded move is P13.4 (`#130`): prepare
+   MP11 candidate runtime archive and materialization QA.
 0. Phase 9D and Phase 9E are complete. Step 210 now applies the public TSM
    strict Class V proxy, deducting `1.425 ha` against the MP11 Step 210 target
    `1,993.000 ha`; this is an explicit public-source coverage/semantic gap, not

@@ -3746,3 +3746,17 @@
   and release-decision implication; and
 - marked P13.2 complete in `ROADMAP.md`, leaving P13.3 Sphinx documentation
   and teaching guidance as the next bounded Phase 13 step.
+
+## 2026-06-28 - Documented MP11 Phase 13 candidate runtime status
+
+- added `docs/phase13-mp11-candidate-runtime.rst` and linked it from the
+  Sphinx teaching-note index;
+- documented that Phase 5 remains the accepted teaching/runtime baseline while
+  the MP11 runtime is a smoke-tested candidate for comparison and advanced
+  teaching workflows;
+- summarized the MP11 base-case comparison, adjusted-LRSY context, maintainer
+  interactive context, P12.5 smoke-output boundary, and P13 KPI/caveat report;
+- kept WFP-model equivalence, approved AAC, Phase 5 replacement, and
+  screenshot-only release-evidence claims explicitly out of scope; and
+- marked P13.3 complete in `ROADMAP.md`, leaving P13.4 archive and
+  materialization QA as the next bounded Phase 13 step.
