@@ -1,5 +1,17 @@
 # Change Log
 
+## 2026-06-28 - Clarified Phase 12 runtime-bundle build ownership
+
+- updated `ROADMAP.md` to make Phase 11's build boundary explicit: Phase 11 may
+  build or stop-report MP11 candidate model-input, export bridge, and
+  ForestModel XML/fragments, but it does not assemble the Patchworks runtime
+  bundle;
+- expanded Phase 12 (`#69`) with concrete runtime-build subtasks for Matrix
+  Builder tracks, candidate runtime package assembly, direct launch smoke,
+  scenario smoke, manifests, and Phase 13 handoff; and
+- updated the Phase 11 execution plan to state that runtime-bundle build
+  ownership starts in Phase 12 after the Phase 11 model-input/XML handoff.
+
 ## 2026-06-28 - Resolved Phase 11 readiness blockers for candidate scaffold
 
 - added `planning/tfl6_mp11_p11_2_candidate_scaffold_decisions.md` to accept

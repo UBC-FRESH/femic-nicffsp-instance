@@ -730,13 +730,19 @@ Goal: build the MP11-aligned model-input bundle and ForestModel XML from
 accepted source-layer, THLB, AU/yield, treatment, transition, MHA,
 harvest-system, and reporting contracts.
 
+Build boundary: Phase 11 may build or stop-report the MP11 candidate
+model-input bundle, export bridge, and ForestModel XML/fragments. Phase 11 does
+not assemble the Patchworks runtime bundle. The first roadmap phase that
+actually runs Matrix Builder and builds the Patchworks runtime package is
+Phase 12 (`#69`).
+
 Phase 10R is closed with all `27` MP11 Table 57 future-managed curves accepted
 for the Phase 11 curve handoff. The locked recipe emits TIPSY BEC and SI from
 the target canonical top-N AU VRI record. Phase 11 can proceed to explicit
-model-input table, ForestModel XML, and Patchworks package work from that
-surface. Tables 54/55 remain deferred unless a later public-safe existing or
-recent managed AU-code mapping is supplied. Phase 9D is complete and Step 220
-now has an accepted public CDED steep-slope proxy in the P9RF THLB surface.
+model-input table and ForestModel XML work from that surface. Tables 54/55
+remain deferred unless a later public-safe existing or recent managed AU-code
+mapping is supplied. Phase 9D is complete and Step 220 now has an accepted
+public CDED steep-slope proxy in the P9RF THLB surface.
 
 - [x] P11.1 Launch MP11 model-input/XML rebuild execution plan (`#86`).
   - [x] P11.1a Audit governing contracts and handoff blockers.
@@ -774,6 +780,25 @@ Status: planned.
 Goal: run Matrix Builder, assemble an MP11-aligned Patchworks runtime package,
 and smoke-test direct launch plus representative base and sensitivity
 scenarios before any release claim.
+
+Build ownership: Phase 12 is the runtime-build phase. It consumes the accepted
+Phase 11 model-input/XML handoff and produces Matrix Builder tracks, blocks,
+topology, launch surfaces, scenario smoke outputs, runtime manifests, and a
+candidate runtime package.
+
+- [ ] P12.1 Launch runtime-build execution plan and child issues.
+- [ ] P12.2 Run Matrix Builder from the accepted MP11 ForestModel XML.
+  - [ ] P12.2a Generate Matrix Builder tracks under
+    `models/tfl6_patchworks_model_mp11_candidate/tracks/`.
+  - [ ] P12.2b Inspect accounts, protoaccounts, features, products, curves,
+    groups, strata, treatments, and block references.
+- [ ] P12.3 Assemble MP11 candidate Patchworks runtime package.
+  - [ ] P12.3a Build blocks/topology and launch surfaces under
+    `models/tfl6_patchworks_model_mp11_candidate/`.
+  - [ ] P12.3b Record runtime lineage and candidate package manifest.
+- [ ] P12.4 Smoke-test direct Patchworks launch.
+- [ ] P12.5 Smoke-test representative base and sensitivity scenarios.
+- [ ] P12.6 Close runtime smoke phase and hand off Phase 13 release/docs QA.
 
 ## Phase 13: MP11 Comparison Documentation And Release QA (`#70`)
 

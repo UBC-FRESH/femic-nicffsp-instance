@@ -7,6 +7,10 @@ rebuild. Phase 11 promotes only accepted MP11 public-data rebuild surfaces into
 explicit model-input and XML contracts before any Matrix Builder or Patchworks
 runtime work starts.
 
+Phase 11 does not build the Patchworks runtime bundle. Runtime-bundle build
+ownership starts in Phase 12 (`#69`), after Phase 11 has produced an accepted
+model-input/XML handoff or a blocker package.
+
 This P11.1 launch note records the governing handoff audit. It does not
 generate model-input tables, ForestModel XML, Matrix Builder outputs, or
 runtime artifacts.
@@ -20,7 +24,7 @@ runtime artifacts.
   - P11.2 audit MP11 model-input promotion readiness: `#87`;
   - P11.3 build MP11 model-input candidate manifest or stop report: `#88`;
   - P11.4 build ForestModel XML readiness manifest or stop report: `#89`;
-  - P11.5 define Phase 12 runtime handoff or blocker package: `#90`;
+  - P11.5 define Phase 12 runtime-build handoff or blocker package: `#90`;
   - P11.6 close Phase 11 and hand off model-input/XML status: `#91`.
 
 ## Governing Accepted Handoffs
