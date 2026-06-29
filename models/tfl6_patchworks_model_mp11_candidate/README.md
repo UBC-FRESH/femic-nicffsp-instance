@@ -20,8 +20,9 @@ Current modeling boundary:
 - Generic `CC` remains the only accepted treatment lane in the candidate tracks.
 - Harvest-system assignment remains deferred comparison metadata, not a
   stand-level treatment classifier.
-- Direct launch smoke, scenario smoke, release QA, and publication remain
-  downstream work.
+- Direct launch smoke and representative scenario smoke passed in Phase 12.
+- Release QA, comparison documentation, publication, and baseline replacement
+  decisions remain downstream Phase 13 work.
 
 Generated blocks, tracks, saved-stage outputs, logs, and package scratch files
 remain ignored in Git. Tracked planning manifests carry compact provenance and

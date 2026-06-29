@@ -1,0 +1,98 @@
+{
+  "summary": {
+    "generated_at_utc": "2026-06-29T05:16:10+00:00",
+    "phase": "P12.6",
+    "closeout_status": "candidate_runtime_smoke_pass_phase13_ready",
+    "parent_issue": "#69",
+    "child_issue": "#119",
+    "matrix_run_id": "tfl6_mp11_candidate_p12_2_matrix_build",
+    "matrix_qa_status": "matrix_builder_tracks_generated_inspection_pass",
+    "track_file_count": 13,
+    "features_rows": 86574,
+    "accounts_rows": 823,
+    "products_rows": 26085,
+    "matrix_messages_rows": 0,
+    "runtime_model_root": "models/tfl6_patchworks_model_mp11_candidate",
+    "block_rows": 24879,
+    "block_area_ha": 191168.566447,
+    "topology_rows": 170759,
+    "direct_launch_run_id": "tfl6_mp11_candidate_p12_4_launch0",
+    "direct_launch_status": "direct_launch_smoke_pass",
+    "direct_launch_saved_file_count": 3359,
+    "scenario_run_id": "tfl6_mp11_candidate_p12_5_harvest_smoke200k",
+    "scenario_status": "scenario_smoke_pass",
+    "scenario_iterations": 200000,
+    "scenario_schedule_rows": 76726,
+    "scenario_scheduled_types": "MANAGED",
+    "scenario_scheduled_treatments": "CC",
+    "scenario_base_target_linear": true,
+    "scenario_base_minimum_all_20m": true,
+    "scenario_base_final_period_current": 14104784.0,
+    "scenario_flow_target_linear": false,
+    "scenario_flow_weights_all_10000": true,
+    "release_qa": "not_performed",
+    "phase13_handoff": "ready"
+  },
+  "hard_checks": {
+    "matrix_builder_tracks": true,
+    "runtime_package_manifest": true,
+    "direct_launch_smoke": true,
+    "scenario_smoke": true,
+    "scenario_trace_order": true,
+    "scenario_saved_outputs": true,
+    "generated_runtime_outputs": true,
+    "no_logged_warning_error_matches": true
+  },
+  "output_presence": {
+    "models/tfl6_patchworks_model_mp11_candidate/tracks/features.csv": "present",
+    "models/tfl6_patchworks_model_mp11_candidate/tracks/accounts.csv": "present",
+    "models/tfl6_patchworks_model_mp11_candidate/blocks/blocks.shp": "present",
+    "models/tfl6_patchworks_model_mp11_candidate/blocks/topology_blocks_200r.csv": "present",
+    "models/tfl6_patchworks_model_mp11_candidate/analysis/p12_5_harvest_smoke200k/scenario/schedule.csv": "present",
+    "models/tfl6_patchworks_model_mp11_candidate/analysis/p12_5_harvest_smoke200k/scenario/targetStatus.csv": "present",
+    "models/tfl6_patchworks_model_mp11_candidate/analysis/p12_5_harvest_smoke200k/scenario/targetSummary.csv": "present",
+    "models/tfl6_patchworks_model_mp11_candidate/analysis/p12_4_launch0/scenario/targetStatus.csv": "present",
+    "models/tfl6_patchworks_model_mp11_candidate/analysis/p12_4_launch0/scenario/targetSummary.csv": "present"
+  },
+  "phase13_inputs": [
+    {
+      "name": "candidate_runtime_package",
+      "path": "models/tfl6_patchworks_model_mp11_candidate/",
+      "status": "candidate_smoke_passed"
+    },
+    {
+      "name": "matrix_builder_tracks_qa",
+      "path": "planning/tfl6_mp11_matrix_builder_tracks_qa.{csv,json,md}",
+      "status": "matrix_builder_tracks_generated_inspection_pass"
+    },
+    {
+      "name": "runtime_package_manifest",
+      "path": "planning/tfl6_mp11_runtime_package_manifest.{csv,json,md}",
+      "status": "candidate_runtime_package_assembled_pending_launch_smoke"
+    },
+    {
+      "name": "direct_launch_qa",
+      "path": "planning/tfl6_mp11_direct_launch_qa.{csv,json,md}",
+      "status": "direct_launch_smoke_pass"
+    },
+    {
+      "name": "scenario_smoke_qa",
+      "path": "planning/tfl6_mp11_scenario_smoke_qa.{csv,json,md}",
+      "status": "scenario_smoke_pass"
+    },
+    {
+      "name": "lineage_registry",
+      "path": "models/tfl6_patchworks_model_mp11_candidate/lineage_registry.yaml",
+      "status": "updated_for_phase12_closeout"
+    }
+  ],
+  "caveats": [
+    "Phase 12 proves candidate runtime buildability and smoke behavior, not final MP11 release readiness.",
+    "The Phase 5 stand universe and treatment/transition scaffold remain reused.",
+    "P9RF source/THLB caveats remain visible until a later public-source rebuild resolves or replaces them.",
+    "Tables 54/55 remain excluded until a public-safe AU-code mapping exists.",
+    "Harvest-system assignment remains deferred comparison metadata, not a stand-level treatment classifier.",
+    "Release archive QA, documentation publication, scenario comparison, and Phase 5 replacement decisions are Phase 13 work.",
+    "WFP model equivalence and approved AAC claims are out of scope for Phase 12."
+  ]
+}

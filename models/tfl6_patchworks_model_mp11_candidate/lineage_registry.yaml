@@ -2,8 +2,8 @@ schema_version: 1
 model_id: tfl6_patchworks_model_mp11_candidate
 model_root: models/tfl6_patchworks_model_mp11_candidate
 runtime_config: config/patchworks.runtime.mp11_candidate.windows.yaml
-phase: P12.3
-status: candidate_runtime_package_assembled_pending_launch_smoke
+phase: P12.6
+status: candidate_runtime_smoke_pass_phase13_ready
 
 artifact_inventory:
   data:
@@ -185,7 +185,9 @@ caveats:
   - The 27 accepted Phase 10R Table 57 rows materialize as 18 active MP11 candidate curves.
   - Tables 54/55 remain excluded until a public-safe AU-code mapping exists.
   - Harvest-system assignment remains deferred comparison metadata.
-  - Direct launch smoke, scenario smoke, release QA, and publication remain downstream work.
+  - Direct launch smoke and representative scenario smoke passed in Phase 12.
+  - Release QA, comparison documentation, publication, and baseline replacement
+    decisions remain downstream Phase 13 work.
 
 provenance_policy:
   - generated blocks and tracks are ignored locally until Phase 13 publication policy is decided

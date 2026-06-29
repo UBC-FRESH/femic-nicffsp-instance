@@ -780,11 +780,11 @@ public CDED steep-slope proxy in the P9RF THLB surface.
 
 ## Phase 12: MP11 Patchworks Runtime And Scenario Smoke (`#69`)
 
-Status: active. P12.1 launched the runtime-build issue tree and added the MP11
-candidate Matrix Builder config. P12.2 generated and inspected Matrix Builder
-tracks. P12.3 assembled the candidate runtime package. P12.4 passed direct
-launch smoke. P12.5 passed representative scenario smoke. P12.6 is the next
-runtime-smoke closeout and Phase 13 handoff step.
+Status: complete. P12.1 launched the runtime-build issue tree and added the
+MP11 candidate Matrix Builder config. P12.2 generated and inspected Matrix
+Builder tracks. P12.3 assembled the candidate runtime package. P12.4 passed
+direct launch smoke. P12.5 passed representative scenario smoke. P12.6 closed
+the runtime-smoke lane and handed the candidate runtime to Phase 13.
 
 Goal: run Matrix Builder, assemble an MP11-aligned Patchworks runtime package,
 and smoke-test direct launch plus representative base and sensitivity
@@ -830,12 +830,21 @@ candidate runtime package.
     surfaces.
   - [x] P12.5d Record scenario QA in
     `planning/tfl6_mp11_scenario_smoke_qa.{csv,json,md}`.
-- [ ] P12.6 Close runtime smoke phase and hand off Phase 13 release/docs QA
+- [x] P12.6 Close runtime smoke phase and hand off Phase 13 release/docs QA
   (`#119`).
+  - [x] P12.6a Build
+    `planning/tfl6_mp11_phase12_runtime_closeout.{csv,json,md}`.
+  - [x] P12.6b Confirm Matrix Builder tracks, blocks/topology, direct launch
+    smoke, and representative scenario smoke outputs exist.
+  - [x] P12.6c Update runtime lineage and candidate-package README with the
+    Phase 12 smoke-pass status and Phase 13 boundary.
 
 ## Phase 13: MP11 Comparison Documentation And Release QA (`#70`)
 
-Status: planned.
+Status: planned. Phase 13 starts from the P12.6 closeout package and decides
+whether the smoke-tested MP11 candidate runtime is suitable for comparison
+documentation, release packaging, teaching updates, and baseline
+replacement/supplement positioning.
 
 Goal: publish MP11 comparison documentation, teaching updates, release archive
 QA, and replacement/supplement decision evidence after a rebuilt runtime passes
@@ -1063,8 +1072,13 @@ The Phase 1 follow-on issues are placed into the future roadmap as follows:
    `3,359` files, wrote `76,726` managed `CC` schedule rows, retained nonzero
    final-period base harvested volume `14,104,784`, and recorded
    `planning/tfl6_mp11_scenario_smoke_qa.{csv,json,md}` with status
-   `scenario_smoke_pass`. The next bounded move is P12.6: close runtime smoke
-   and hand off Phase 13 release/docs QA.
+   `scenario_smoke_pass`. P12.6 then closed the runtime-smoke lane with
+   `planning/tfl6_mp11_phase12_runtime_closeout.{csv,json,md}`, verified the
+   generated runtime outputs are present, updated candidate runtime lineage,
+   and handed Phase 13 a candidate runtime smoke-pass package. The next
+   bounded move is Phase 13 planning/issue activation for comparison
+   documentation and release QA; do not treat P12 smoke as release QA or WFP
+   model equivalence.
 0. Phase 9D and Phase 9E are complete. Step 210 now applies the public TSM
    strict Class V proxy, deducting `1.425 ha` against the MP11 Step 210 target
    `1,993.000 ha`; this is an explicit public-source coverage/semantic gap, not

@@ -3682,3 +3682,18 @@
   `scenario_smoke_pass`; and
 - marked P12.5 complete in `ROADMAP.md`, leaving P12.6 runtime closeout and
   Phase 13 handoff as the next step.
+
+## 2026-06-28 - Closed MP11 Phase 12 runtime-smoke lane
+
+- added `scripts/build_p12_mp11_runtime_closeout.py` and
+  `planning/tfl6_mp11_phase12_runtime_closeout.{csv,json,md}` with status
+  `candidate_runtime_smoke_pass_phase13_ready`;
+- verified the Phase 12 closeout from tracked Matrix Builder, runtime-package,
+  direct-launch, and scenario-smoke QA manifests plus the generated tracks,
+  blocks/topology, and saved-stage outputs still present locally;
+- updated the MP11 candidate runtime README and lineage registry to record that
+  direct launch smoke and representative scenario smoke passed in Phase 12; and
+- marked P12.6 and Phase 12 complete in `ROADMAP.md`, leaving Phase 13
+  comparison documentation and release QA as the next lane while preserving
+  Phase 5 as the accepted teaching/runtime baseline until replacement QA
+  passes.
