@@ -3697,3 +3697,16 @@
   comparison documentation and release QA as the next lane while preserving
   Phase 5 as the accepted teaching/runtime baseline until replacement QA
   passes.
+
+## 2026-06-28 - Activated MP11 Phase 13 positioning lane
+
+- added `planning/tfl6_mp11_phase13_candidate_runtime_positioning.md` to record
+  the initial maintainer interpretation of the smoke-tested MP11 candidate
+  runtime after local interactive Patchworks review;
+- documented that an approximately `1.15 million m3/year` candidate even-flow
+  result is plausibly in the same broad range as the WFP MP11 base-case/LRSY
+  evidence, while remaining above WFP's base case for explainable public-data
+  THLB and incomplete-constraint reasons; and
+- updated `ROADMAP.md` to mark Phase 13 active and frame P13.1 as the
+  candidate-runtime positioning and comparison-starting-assumption step, with
+  formal reproducible comparison tables still pending.

@@ -841,15 +841,26 @@ candidate runtime package.
 
 ## Phase 13: MP11 Comparison Documentation And Release QA (`#70`)
 
-Status: planned. Phase 13 starts from the P12.6 closeout package and decides
+Status: active. Phase 13 starts from the P12.6 closeout package and decides
 whether the smoke-tested MP11 candidate runtime is suitable for comparison
 documentation, release packaging, teaching updates, and baseline
-replacement/supplement positioning.
+replacement/supplement positioning. P13.1 records the initial candidate-runtime
+positioning: the local interactive MP11 candidate run is plausibly in the same
+model family as the WFP MP11 base-case evidence, but remains above WFP's base
+case for explainable public-data/scaffold reasons and is not yet release QA.
 
 Goal: publish MP11 comparison documentation, teaching updates, release archive
 QA, and replacement/supplement decision evidence after a rebuilt runtime passes
 direct source, model-input, XML, Matrix Builder, Patchworks, scenario, docs,
 archive, and manifest checks.
+
+- [ ] P13.1 Document candidate runtime positioning and comparison starting
+  assumptions (`#70`).
+  - [x] P13.1a Record the maintainer screenshot interpretation and MP11 Figure
+    2 context in
+    `planning/tfl6_mp11_phase13_candidate_runtime_positioning.md`.
+  - [ ] P13.1b Convert screenshot-informed positioning into reproducible
+    tracked scenario comparison tables.
 
 ## Dependency Order
 
@@ -1075,10 +1086,14 @@ The Phase 1 follow-on issues are placed into the future roadmap as follows:
    `scenario_smoke_pass`. P12.6 then closed the runtime-smoke lane with
    `planning/tfl6_mp11_phase12_runtime_closeout.{csv,json,md}`, verified the
    generated runtime outputs are present, updated candidate runtime lineage,
-   and handed Phase 13 a candidate runtime smoke-pass package. The next
-   bounded move is Phase 13 planning/issue activation for comparison
-   documentation and release QA; do not treat P12 smoke as release QA or WFP
-   model equivalence.
+   and handed Phase 13 a candidate runtime smoke-pass package. P13.1 records
+   the initial candidate-runtime positioning: the local interactive MP11
+   candidate run produced approximately `1.15 million m3/year`, which is
+   plausibly close to the MP11 base-case/LRSY evidence given a slightly larger
+   public-data THLB and missing WFP constraints, but remains candidate evidence
+   rather than release QA or WFP model equivalence. The next bounded move is
+   P13.1b: convert this positioning into reproducible tracked scenario
+   comparison tables.
 0. Phase 9D and Phase 9E are complete. Step 210 now applies the public TSM
    strict Class V proxy, deducting `1.425 ha` against the MP11 Step 210 target
    `1,993.000 ha`; this is an explicit public-source coverage/semantic gap, not
