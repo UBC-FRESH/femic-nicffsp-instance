@@ -4065,3 +4065,23 @@
   materialization, checksum validation, direct launch, all-system scenario
   smoke, no-heli scenario smoke, and publication documentation hard gates; and
 - marked P15.7 and Phase 15 complete in `ROADMAP.md`.
+
+## 2026-06-30 - Published expanded Patchworks model payloads
+
+- removed the ignore boundary for non-scenario Patchworks model payloads under
+  `models/`;
+- added `.gitattributes` policy so expanded model payloads are tracked through
+  DataLad/git-annex;
+- annexed 73 non-scenario model payload files covering blocks, tracks,
+  `tracks_no_heli`, and model-root `patchworksLog.csv` files across the Phase
+  5, MP11 candidate, and MP11 harvest-system candidate model packages;
+- kept Patchworks smoke/scenario output directories under
+  `models/**/analysis/p*/` and `models/**/analysis/headless_runs/` ignored as
+  local run evidence rather than required runnable model inputs;
+- copied all tracked `models/**` annex keys to `arbutus-s3`;
+- verified `git annex find models --not --in arbutus-s3` returns no missing
+  remote copies and `git ls-files -o --exclude-standard models` returns no
+  untracked non-ignored model files; and
+- proved a fresh clone can materialize the tracked model tree from
+  `arbutus-s3` with `datalad get -r models`, leaving zero model annex keys
+  missing locally.
