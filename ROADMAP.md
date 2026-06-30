@@ -1868,3 +1868,31 @@ Phase 14 lane has no active next step.
     parent `#15` are closed. Future work should be opened as new follow-on
     phase/task issues rather than reopening this first teaching-release
     closeout.
+
+## Phase 16: Track Expanded Patchworks Models For Full Materialization (`#156`)
+
+- [x] P16.1 Promote expanded non-scenario `models/**` payloads to tracked
+  instance artifacts.
+  - [x] P16.1a Remove ignore rules that leave expanded Patchworks runtime
+    model directories outside the tracked DataLad/git-annex surface.
+  - [x] P16.1b Add repository annex policy for expanded model payloads.
+  - [x] P16.1c Add every non-scenario-output file under `models/` to
+    Git/git-annex tracking.
+- [ ] P16.2 Publish expanded model payloads to `arbutus-s3`.
+  - [ ] P16.2a Copy annexed `models/**` keys to `arbutus-s3`.
+  - [ ] P16.2b Verify no tracked `models/**` annex keys are missing from
+    `arbutus-s3`.
+  - [ ] P16.2c Verify no local `models/**` files remain untracked.
+- [ ] P16.3 Prove materialization and close the publication gap.
+  - [ ] P16.3a Prove a fresh clone can materialize the expanded model tree.
+  - [ ] P16.3b Record the verification in `CHANGE_LOG.md` and issue comments.
+  - [ ] P16.3c Push the repaired instance branch and update the parent FEMIC
+    submodule pointer.
+
+Phase 16 supersedes the Phase 5/15 archive-only runtime publication boundary
+for expanded model directories. Release archives remain reviewed convenience
+artifacts, but the runnable instance contract now requires the non-scenario
+`models/**` payload itself to be tracked and retrievable through the instance
+DataLad/git-annex remote. Patchworks smoke/scenario output directories under
+`models/**/analysis/p*/` and `models/**/analysis/headless_runs/` remain local
+run evidence rather than required model inputs.

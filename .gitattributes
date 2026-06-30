@@ -1,0 +1,2 @@
+# Expanded Patchworks runtime models are materialized through DataLad/git-annex.
+models/** annex.largefiles=anything
